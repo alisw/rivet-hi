@@ -1,0 +1,38 @@
+Name: ATLAS_2011_I894867
+Year: 2011
+Summary: Measurement of the inelastic proton-proton cross-section at $\sqrt{s} = $7 TeV.
+Experiment: ATLAS
+Collider: LHC
+SpireID: 9021310
+InspireID: 894867
+Status: VALIDATED
+Authors:
+ - Anton Karneyeu <Anton.Karneyeu@cern.ch>
+ - Sercan Sen <Sercan.Sen@cern.ch>
+References:
+ - arXiv:1104.0326 [hep-ex]
+RunInfo:
+   Inelastic events (non-diffractive and inelastic diffractive).
+NumEvents: 100K
+Beams: [p+, p+]
+Energies: [7000]
+Description:
+    'Inelastic cross-section is measured for $\xi > 5 \times 10^{-6}$, where
+    $\xi=M_X^2/s$ is calculated from the invariant mass, $M_X$,
+    of hadrons selected using the largest rapidity gap in the event.'
+BibKey: Aad:2011eu
+BibTeX: '@Article{Aad:2011eu,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of the inelastic proton--proton cross-section
+                        at $\sqrt{s}=7$ TeV with the ATLAS detector}",
+      collaboration  = "ATLAS Collaboration",
+      journal        = "Nature Commun.",
+      volume         = "2",
+      pages          = "463",
+      doi            = "10.1038/ncomms1472",
+      year           = "2011",
+      eprint         = "1104.0326",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2011-047",
+      SLACcitation   = "%%CITATION = ARXIV:1104.0326;%%",}'

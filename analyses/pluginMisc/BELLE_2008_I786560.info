@@ -1,0 +1,39 @@
+Name: BELLE_2008_I786560
+Summary: Measurement of Semi-Leptonic Tau Decays into $\pi^\pm\pi^0$
+Status: VALIDATED
+Experiment: Belle
+Collider: KEKB
+Authors:
+ - Peter Richardson <Peter.Richardson@durham.ac.uk>
+References:
+ -  Phys.Rev. D78 (2008) 072006
+ -  arXiv:0805.3773
+ -  doi:10.1103/PhysRevD.78.072006
+
+RunInfo:
+  Tau production, can be any process but original data was in
+  $e^+ e^-$ at the $\Upsilon(4S)$ resonance, with CoM boosts of
+  8.0 GeV~($e^-$) and 3.5~GeV~($e^+$)
+NumEvents: 1000000
+InspireID: 786560
+Beams: [e+, e-]
+Energies: [[3.5, 8.0]]
+PtCuts: [0]
+Description: High-statistics measurement of the branching fraction for $\tau\to\pi^-\pi^0\nu_\tau$ and the invariant mass spectrum of the produced $\pi^-\pi^0$ system using 72.2fb$^{-1}$of data recorded with the Belle detector at the KEKB asymmetric-energy $e^+e^-$ collider. 
+BibKey: Fujikawa:2008ma
+BibTeX: '@article{Fujikawa:2008ma,
+      author         = "Fujikawa, M. and others",
+      title          = "{High-Statistics Study of the tau- ---&gt; pi- pi0
+                        nu(tau) Decay}",
+      collaboration  = "Belle Collaboration",
+      journal        = "Phys.Rev.",
+      volume         = "D78",
+      pages          = "072006",
+      doi            = "10.1103/PhysRevD.78.072006",
+      year           = "2008",
+      eprint         = "0805.3773",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "BELLE-2008-16, KEK-2008-10",
+      SLACcitation   = "%%CITATION = ARXIV:0805.3773;%%",
+}'

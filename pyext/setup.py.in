@@ -1,0 +1,65 @@
+#! /usr/bin/env python
+
+from distutils.core import setup
+from distutils.extension import Extension
+from glob import glob
+
+## Extension definition
+import os.path
+incdir1 = os.path.abspath("@abs_top_srcdir@/include")
+incdir2 = os.path.abspath("@abs_top_builddir@/include")
+incdir3 = os.path.abspath("@abs_srcdir@/rivet")
+incdir4 = os.path.abspath("@abs_builddir@/rivet")
+
+srcdir = os.path.abspath("@abs_top_srcdir@/src")
+libdir = os.path.abspath("@abs_top_builddir@/src/.libs")
+
+## Assemble the library search dirs
+lookupdirs = [
+    libdir,
+    "@HEPMCLIBPATH@",
+    "@FASTJETLIBPATH@",
+    "@YODALIBPATH@" ]
+
+if "RIVET_LOCAL" in os.environ:
+  BASE_LINK_ARGS = ["-L@abs_top_builddir@/src/.libs"]
+else:
+  BASE_LINK_ARGS = ["-L@prefix@/lib"]
+  
+
+
+## Be careful with extracting the GSL path from the flags string
+# import re
+# re_libdirflag = re.compile(r".*-L\s*(\S+).*")
+# re_match = re_libdirflag.search("@GSL_LDFLAGS@")
+# if re_match:
+    # lookupdirs.append( re_match.group(1) )
+
+## A helper function
+def ext(name, depends=[], statics=[]):
+    fullname = '@abs_builddir@/rivet/%s.cpp' % name
+    if not os.path.isfile(fullname): # distcheck has it in srcdir
+      fullname = os.path.relpath("@abs_srcdir@/rivet/%s.cpp" % name)
+
+    return Extension(
+        "rivet.%s" % name,
+        [fullname] + statics,
+        language="c++",
+#        depends=depends,
+        include_dirs=[incdir1, incdir2, incdir3, incdir4],
+        # extra_compile_args="-I@prefix@/include @PYEXT_CXXFLAGS@ @HEPMCCPPFLAGS@ @FASTJETCPPFLAGS@ @YODACPPFLAGS@ @GSLCPPFLAGS@".split(),
+        extra_compile_args="-I@prefix@/include @PYEXT_CXXFLAGS@ @HEPMCCPPFLAGS@ @FASTJETCPPFLAGS@ @YODACPPFLAGS@".split(),
+        extra_link_args=BASE_LINK_ARGS,
+        library_dirs=lookupdirs,
+        runtime_library_dirs=lookupdirs[1:],
+        libraries=["HepMC", "fastjet", "YODA", "Rivet"])
+        # libraries=["gsl", "HepMC", "fastjet", "YODA", "Rivet"])
+
+#header_files = glob("../include/Rivet/*.h") + glob("../include/Rivet/Utils/*.h")
+
+extns = [ext("core")]#, header_files)]
+
+setup(name = "rivet",
+      version="@PACKAGE_VERSION@",
+      ext_modules = extns,
+      packages = ["rivet"])

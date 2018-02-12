@@ -1,0 +1,43 @@
+Name: CMS_2016_I1491953
+Year: 2016
+Summary: Differential cross sections for associated production of a W boson and jets at 8 TeV
+Experiment: CMS
+Collider: LHC
+InspireID: 1491953
+Status: VALIDATED
+Authors:
+ - Emanuela.Barberis@cern.ch
+ - b.bhawandeep@cern.ch
+ - apichart.hortiangtham@cern.ch
+ - Kadir.Ocalan@cern.ch
+ - philippe.gras@cern.ch
+References:
+ - Phys.Rev. D95 (2017) 052002
+ - doi:10.1103/PhysRevD.95.052002
+ - arXiv:1610.04222
+ - CMS-SMP-14-023
+RunInfo:
+  8 TeV $pp \to W+jets$.
+Beams: [p+, p+]
+Energies: [8000]
+NumEvents: 76000000
+NeedCrossSection: True
+Description:
+  'Differential cross sections for a W boson produced in association with jets are measured in a data sample of proton-proton collisions at a center-of-mass energy of 8 TeV recorded with the CMS detector and corresponding to an integrated luminosity of 19.6 inverse femtobarns. The W bosons are identified through their decay into a muon and a neutrino. The cross sections are reported as functions of jet multiplicity, jet transverse momenta, and the scalar sum of jet transverse momenta ($H_T$) for different jet multiplicities. Distributions of the angular correlations between the jets and the muon are examined, as well as the average number of jets as a function of $H_T$ and as a function of angular variables. The cross sections are measured in the fiducial region defined by a muon with $p_T > 25$ GeV and pseudorapidity $|\eta| < 2.1$, and by a transverse mass between the muon and the missing transverse energy $M_T > 50$ GeV. Jets are reconstructed using the anti-kT algorithm with a distance parameter R = 0.5, and only jets with $p_T > 30$ GeV, $|\eta| < 2.4$, and a separation of $\Delta R > 0.5$ from the muon are considered.'
+BibKey: Khachatryan:2016fue
+BibTeX: '@article{Khachatryan:2016fue,
+      author         = "Khachatryan, Vardan and others",
+      title          = "{Measurements of differential cross sections for
+                        associated production of a W boson and jets in
+                        proton-proton collisions at $\sqrt{s} =$ 8 TeV}",
+      collaboration  = "CMS",
+      journal        = "Phys. Rev. D",
+      year           = "2016",
+      doi            = "10.1103/PhysRevD.95.052002",
+      note           = "[Phys. Rev.D95,052002(2017)]",
+      eprint         = "1610.04222",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-SMP-14-023, CERN-EP-2016-231, CERN-PH-EP-2016-231",
+      SLACcitation   = "%%CITATION = ARXIV:1610.04222;%%"
+}'

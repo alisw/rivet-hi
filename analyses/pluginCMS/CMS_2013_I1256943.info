@@ -1,0 +1,56 @@
+Name: CMS_2013_I1256943
+Year: 2013
+Summary: Cross-section and angular correlations in $Z$ boson with $b$-hadrons events at $\sqrt{s} = 7$ TeV
+Experiment: CMS
+Collider: LHC
+InspireID: 1256943
+Status: VALIDATED
+Authors:
+ - Lorenzo Viliani <lorenzo.viliani@cern.ch>
+ - Piergiulio Lenzi <piergiulio.lenzi@cern.ch>
+References:
+ - 10.1007 / JHEP12(2013)039
+ - arXiv:1310.1349
+ - CERN-PH-EP-2013-153
+ - CMS-EWK-11-015
+RunInfo:
+  '$pp$ collisions with $\sqrt{s} = 7$ TeV. Selection of events with exactly two
+  $b$-hadrons and a lepton pair from the $Z$ boson decay. Each lepton has $p_T > 20$ GeV
+  and $|\eta| < 2.4$ and the dilepton invariant mass is $81 < M_{\ell\ell} < 101$ GeV. The
+  $b$-hadrons have $p_T > 15$ GeV and $|\eta| < 2$. The differential cross sections
+  are measured for $p_T > 0$ and $p_T > 50$ GeV.'
+NumEvents: 1000000
+NeedCrossSection: yes
+Beams: [p+, p+]
+Energies: [7000]
+Description:
+  'A study of proton-proton collisions in which two $b$-hadrons
+  are produced in association with a $Z$ boson is reported. The
+  collisions were recorded at a centre-of-mass energy of 7 TeV
+  with the CMS detector at the LHC, for an integrated luminosity
+  of 5.2/fb. The $b$-hadrons are identified by means of
+  displaced secondary vertices, without the use of reconstructed jets,
+  permitting the study of $b$-hadron pair production at small angular
+  separation. Differential cross sections are presented as a function
+  of the angular separation of the $b$-hadrons and the $Z$ boson.
+  In addition, inclusive measurements are presented. For both the
+  inclusive and differential studies,different ranges of $Z$ boson
+  momentum are considered.'
+BibKey: Chatrchyan:2013zja
+BibTeX: '@article{Chatrchyan:2013zja,
+      author         = "Chatrchyan, Serguei and others",
+      title          = "{Measurement of the cross section and angular
+                        correlations for associated production of a $Z$ boson with
+                        b-hadrons in $pp$ collisions at $\sqrt{s} =$ 7 TeV}",
+      collaboration  = "CMS Collaboration",
+      journal        = "JHEP",
+      volume         = "1312",
+      pages          = "039",
+      doi            = "10.1007/JHEP12(2013)039",
+      year           = "2013",
+      eprint         = "1310.1349",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-EWK-11-015, CERN-PH-EP-2013-153",
+      SLACcitation   = "%%CITATION = ARXIV:1310.1349;%%",
+}'

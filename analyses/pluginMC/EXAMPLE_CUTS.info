@@ -1,0 +1,12 @@
+Name: EXAMPLE_CUTS
+Summary: A demo to show the new cut system in Rivet analyses
+Status: EXAMPLE
+Authors:
+ - David Grellscheid <david.grellscheid@durham.ac.uk>
+RunInfo:
+  All event types will be accepted.
+NumEvents: 1000000
+PtCuts: [0]
+Description:
+  "This analysis is a demonstration of the Rivet cut system and
+  functionality."

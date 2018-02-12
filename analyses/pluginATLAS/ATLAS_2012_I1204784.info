@@ -1,0 +1,38 @@
+Name: ATLAS_2012_I1204784
+Year: 2012
+Summary: Measurement of angular correlations in Drell-Yan lepton pairs to probe $Z/\gamma^*$ boson transverse momentum
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1204784
+Status: VALIDATED
+Authors:
+ - Elena Yatsenko <elena.yatsenko.de@gmail.com>
+ - Kiran Joshi <kiran.joshi@cern.ch>
+References:
+ - arXiv:1211.6899 [hep-ex]
+RunInfo:
+  $Z/\gamma^*$ production with decays to electrons and/or muons.
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [7000]
+Description:
+  A measurement of angular correlations in Drell-Yan lepton pairs via the $\phi^*$ observable is presented. This
+  variable probes the same physics as the $Z/\gamma^*$  boson transverse momentum with a better experimental
+  resolution. The $Z/\gamma^* \to ee$ and $Z/\gamma^* \to \mu \mu$ decays produced in proton--proton collisions
+  at a centre-of-mass energy of $\sqrt{s} = 7\;\TeV$ are used. Normalised differential cross sections as a
+  function of $\phi^*$ are measured separately for electron and muon decay channels. The cross-section is also
+  measured double differentially as a function of $\phi^*$ for three independent bins of the $Z$ boson rapidity.
+BibKey: Aad:2012wfa
+BibTeX: '@article{Aad:2012wfa,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of angular correlations in Drell-Yan lepton
+                        pairs to probe $Z/\gamma^*$ boson transverse momentum at
+                        $\sqrt{s}=7\;\TeV$ with the ATLAS detector}",
+      collaboration  = "ATLAS Collaboration",
+      year           = "2012",
+      eprint         = "1211.6899",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2012-325",
+      SLACcitation   = "%%CITATION = ARXIV:1211.6899;%%",
+}'

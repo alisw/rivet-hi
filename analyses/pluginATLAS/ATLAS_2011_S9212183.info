@@ -1,0 +1,35 @@
+Name: ATLAS_2011_S9212183
+Year: 2011
+Summary: 0-lepton squark and gluino search
+Experiment: ATLAS
+Collider: LHC
+SpiresID: 9212183
+InspireID: 930002
+Status: VALIDATED
+Authors:
+ - Chris Wymant <c.m.wymant@durham.ac.uk>
+ - David Grellscheid <david.grellscheid@durham.ac.uk>
+References:
+ - arXiv:1109.6572
+RunInfo:
+  BSM signal events at 7000 GeV.
+NumEvents: 10000 for BSM signals
+Beams: [p+, p+]
+Energies: [7000]
+Description:
+  '0-lepton search for squarks and gluinos by ATLAS at 7 TeV
+  with an integrated luminosity of $1.04\,\mathrm{fb}^{-1}$.
+  Event counts in five signal regions are implemented as one-bin
+  histograms.'
+BibKey: Aad:2011ib
+BibTeX: '@article{Aad:2011ib,
+      author         = "Aad, Georges and others",
+      title          = "{Search for squarks and gluinos using final states with
+                        jets and missing transverse momentum with the ATLAS
+                        detector in $\sqrt{s}$ = 7 TeV proton-proton collisions}",
+      collaboration  = "ATLAS",
+      year           = "2011",
+      eprint         = "1109.6572",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+}'

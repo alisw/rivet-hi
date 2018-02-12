@@ -1,0 +1,43 @@
+Name: LHCB_2014_I1262703
+Year: 2014
+Summary: Study of forward Z + jet production in $pp$ collisions at $\sqrt{s}=7$ TeV in the LHCb fiducial phase-space
+Experiment: LHCb
+Collider: LHC
+InspireID: 1262703
+Status: VALIDATED
+Authors:
+ - William Barter <barter@hep.phy.cam.ac.uk>
+ - Albert Bursche <albert.bursche@physik.uzh.ch>
+ - Marek Sirendi <sirendi@hep.phy.cam.ac.uk>
+References:
+ - 'J. High Energy Phys.1401:033,2014'
+ - 'doi:10.1007/jhep01(2014)033'
+ - 'arXiv:hep-ex/1310.8197'
+RunInfo:
+  $pp$ $Z +$ jet events at 7 TeV with direct $\mu$ decays
+NumEvents: 100000
+NeedCrossSection: no
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [20.]
+Description:
+  'A study of forward $Z +$ jet production in $pp$ collisions at $\sqrt{s}=7$ TeV is presented.
+  Results are shown for two jet thresholds of $p_T>10$ GeV and $p_T>20$ GeV. Total
+  cross-sections and six differential cross-sections are measured.'
+BibKey: Aaij:2013nxa
+BibTeX: '@article{Aaij:2013nxa,
+      author         = "Aaij, Roel and others",
+      title          = "{Study of forward Z + jet production in $pp$ collisions at
+                        $\sqrt{s} = 7$ TeV}",
+      collaboration  = "LHCb collaboration",
+      journal        = "JHEP",
+      volume         = "1401",
+      pages          = "033",
+      doi            = "10.1007/JHEP01(2014)033",
+      year           = "2014",
+      eprint         = "1310.8197",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "LHCB-PAPER-2013-058, CERN-PH-EP-2013-198",
+      SLACcitation   = "%%CITATION = ARXIV:1310.8197;%%",
+}'

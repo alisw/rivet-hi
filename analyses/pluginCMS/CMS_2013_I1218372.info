@@ -1,0 +1,42 @@
+Name: CMS_2013_I1218372
+Year: 2013
+Summary: Study of the underlying event at forward rapidity in proton--proton collisions at the LHC
+Experiment: CMS
+Collider: LHC
+InspireID: 1218372
+Status: VALIDATED
+Authors:
+ - Samantha Dooling <samantha.dooling@desy.de>
+References:
+ - JHEP 1304 (2013) 072
+ - 10.1007/JHEP04(2013)072
+ - CMS-FWD-11-003
+ - arXiv:1302.2394
+RunInfo:
+   Inelastic events (non-diffractive and diffractive) at $\sqrt{s}$ = 0.9, 2.76 and 7 TeV.
+NumEvents: 1 Mio
+Beams:  [p+, p+]
+Energies: [900, 2760, 7000]
+Description:
+  'Ratio of the energy deposited in the  pseudorapidity range $-6.6 < \eta < -5.2$
+   for events with a charged particle jet with $|\eta|<2$ with respect to the
+   energy in  inclusive events, as a function of charged particle jet transverse
+   momentum for $\sqrt{s}=$0.9, 2.76 and 7 TeV.'
+
+BibKey: 'Chatrchyan:2013gfi'
+BibTeX: '@article{Chatrchyan:2013gfi,
+      author         = "Chatrchyan, Serguei and others",
+      title          = "{Study of the underlying event at forward rapidity in pp
+                        collisions at $\sqrt{s}$ = 0.9, 2.76, and 7 TeV}",
+      collaboration  = "CMS Collaboration",
+      journal        = "JHEP",
+      volume         = "1304",
+      pages          = "072",
+      doi            = "10.1007/JHEP04(2013)072",
+      year           = "2013",
+      eprint         = "1302.2394",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-FWD-11-003, CERN-PH-EP-2013-012",
+      SLACcitation   = "%%CITATION = ARXIV:1302.2394;%%",
+}'

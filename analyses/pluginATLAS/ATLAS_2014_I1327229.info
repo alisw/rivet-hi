@@ -1,0 +1,44 @@
+Name: ATLAS_2014_I1327229
+Year: 2014
+Summary: Inclusive multilepton search at 8 TeV
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1327229
+Status: VALIDATED
+Authors:
+ - Joern Mahlstedt <joern.mahlstedt@cern.ch>
+References:
+ - arXiv:1411.2921 [hep-ex]
+RunInfo:
+  Any process producing at least 3 leptons (e.g. pair production of doubly-charged Higgs or excited leptons)
+Beams: [p+, p+]
+Energies: [8000]
+PtCuts: [1,5,10,10]
+NeedCrossSection: True
+Description:
+  A generic search for anomalous production of events with at least three charged leptons is presented. The data sample consists of
+  $pp$ collisions at $\sqrt{s} = 8$\,TeV collected in 2012 by the ATLAS experiment at the CERN Large Hadron Collider, and corresponds
+  to an integratedi luminosity of 20.3\,$\text{fb}^{−1}$. Events are required to have at least three selected lepton candidates, at
+  least two of which must be electrons or muons, while the third may be a hadronically decaying tau. Selected events are categorized
+  based on their lepton flavour content and signal regions are constructed using several kinematic variables of interest. No significant
+  deviations from Standard Model predictions are observed. Model-independent upper limits on contributions from beyond the Standard Model
+  phenomena are provided for each signal region, along with prescription to re-interpret the limits for any model. Constraints are also
+  placed on models predicting doubly charged Higgs bosons and excited leptons. For doubly charged Higgs bosons decaying to $e\tau$ or
+  $\muon\tau$, lower limits on the mass are set at 400\,GeV at 95\,\% confidence level. For excited leptons, constraints are provided as
+  functions of both the mass of the excited state and the compositeness scale $\Lambda$, with the strongest mass constraints arising in
+  regions where the mass equals $\Lambda$. In such scenarios, lower mass limits are set at 3.0\,TeV for excited electrons and muons,
+  2.5\,TeV for excited taus, and 1.6\,TeV for every excited-neutrino flavour.
+BibKey: Aad:2014hja
+BibTeX: '@article{Aad:2014hja,
+      author         = "Aad, Georges and others",
+      title          = "{Search for new phenomena in events with three or more
+                        charged leptons in $pp$ collisions at $\sqrt{s}=8$ TeV
+                        with the ATLAS detector}",
+      collaboration  = "ATLAS",
+      year           = "2014",
+      eprint         = "1411.2921",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2014-255",
+      SLACcitation   = "%%CITATION = ARXIV:1411.2921;%%"
+}'

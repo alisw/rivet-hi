@@ -1,0 +1,59 @@
+Name: ATLAS_2016_I1448301
+Year: 2016
+Summary: Zg(g) cross sections at 8 TeV
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1448301
+Status: VALIDATED
+Authors:
+ - Hulin Wang <Hulin.Wang@cern.ch>
+ - Evgeny Soldatov <Evgeny.Soldatov@cern.ch>
+ - Christian Gutschow <chris.g@cern.ch>
+References:
+  - Phys.Rev. D93 (2016) no.11, 112002
+  - doi:10.1103/PhysRevD.93.112002
+  - arXiv:1604.05232 [hep-ex]
+Keywords:
+ - multiboson
+ - triboson
+ - diphoton
+ - photon
+ - Z
+RunInfo: p + p -> e+ e- gamma (gamma) at 8 TeV
+Luminosity_fb: 20.3
+Beams: [p+, p+]
+Energies: [8000]
+PtCuts: [25,25,15] 
+Description:
+  'The production of $Z$ bosons with one or two isolated high-energy photons is studied using pp collisions at $\sqrt{s}=8$ TeV.
+  The analyses use a data sample with an integrated luminosity of 20.3 fb${}^{-1}$ collected by the ATLAS detector during the 
+  2012 LHC data taking. The $Z\gamma$ and $Z\gamma\gamma$ production cross sections are measured with leptonic ($e^+e^-$, 
+  $\mu^+\mu^-$, $\nu\bar{\nu}$) decays of the Z boson, in extended fiducial regions defined in terms of the lepton and photon 
+  acceptance. They are then compared to cross-section predictions from the Standard Model, where the sources of the photons are 
+  radiation off initial-state quarks and radiative Z-boson decay to charged leptons, and from fragmentation of final-state quarks 
+  and gluons into photons. The yields of events with photon transverse energy $E_\text{T}>250$ GeV from $\ell^+\ell^-\gamma$ events 
+  and with $E_\text{T}>400$ GeV from $\nu\bar{\nu}\gamma$ events are used to search for anomalous triple gauge-boson couplings
+  $ZZ\gamma$ and $Z\gamma\gamma$. The yields of events with diphoton invariant mass $m_{\gamma\gamma}>200$ GeV from 
+  $\ell^+\ell^-\gamma\gamma$ events and with $m_{\gamma\gamma}>300$ GeV from $\nu\bar{\nu}\gamma\gamma$ events are used to search 
+  for anomalous quartic gauge-boson couplings $ZZ\gamma\gamma$ and $Z\gamma\gamma\gamma$. No deviations from Standard Model predictions
+  are observed and limits are placed on parameters used to describe anomalous triple and quartic gauge-boson couplings.
+  The lepton channel can be specified by using the relevant plugins (_EL, _MU, _NU). The default plugin uses the electron channel.'
+BibKey: Aad:2016sau
+BibTeX: '@article{Aad:2016sau,
+      author         = "Aad, Georges and others",
+      title          = "{Measurements of $Z\gamma$ and $Z\gamma\gamma$ production
+                        in $pp$ collisions at $\sqrt{s}=$ 8 TeV with the ATLAS
+                        detector}",
+      collaboration  = "ATLAS",
+      journal        = "Phys. Rev.",
+      volume         = "D93",
+      year           = "2016",
+      number         = "11",
+      pages          = "112002",
+      doi            = "10.1103/PhysRevD.93.112002",
+      eprint         = "1604.05232",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-EP-2016-049",
+      SLACcitation   = "%%CITATION = ARXIV:1604.05232;%%"
+}'

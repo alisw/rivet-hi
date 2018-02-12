@@ -1,0 +1,34 @@
+Name: ALEPH_2014_I1267648
+Year: 2014
+Summary: Normalised spectral functions of hadronic tau decays
+Experiment: ALEPH
+Collider: LEP
+InspireID: 1267648
+Status: VALIDATED
+Authors:
+ - Holger Schulz <holger.schulz@durham.ac.uk>
+RunInfo: Hadronic tau decays.
+NumEvents: 100000
+NeedCrossSection: no
+Description:
+  'Spectral functions of pionic tau decays measured with ALEPH. The data is taken
+  from http://aleph.web.lal.in2p3.fr/tau/specfun.html'
+BibKey: Davier:2013sfa
+BibTeX: '
+@article{Davier:2013sfa,
+      author         = "Davier, Michel and Hoecker, Andreas and Malaescu, Bogdan
+                        and Yuan, Chang-Zheng and Zhang, Zhiqing",
+      title          = "{Update of the ALEPH non-strange spectral functions from
+                        hadronic $\tau$ decays}",
+      journal        = "Eur. Phys. J.",
+      volume         = "C74",
+      year           = "2014",
+      number         = "3",
+      pages          = "2803",
+      doi            = "10.1140/epjc/s10052-014-2803-9",
+      eprint         = "1312.1501",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "LAL-13-390",
+      SLACcitation   = "%%CITATION = ARXIV:1312.1501;%%"
+}'

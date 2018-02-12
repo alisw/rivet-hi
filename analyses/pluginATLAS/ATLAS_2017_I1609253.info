@@ -1,0 +1,47 @@
+Name: ATLAS_2017_I1609253
+Year: 2017
+Summary: Multijet transverse energy-energy correlations (TEEC) at 8 TeV
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1609253
+Status: VALIDATED
+Authors:
+ - Javier Llorente Merino <javier.llorente.merino@cern.ch>
+ - Christian Gutschow <chris.g@cern.ch>
+References:
+ - submitted to EPJC
+ - arXiv:1707.02562 [hep-ex]
+Keywords:
+ - JETS
+ - EEC
+RunInfo:
+   p p ->  j j + X at 8 TeV
+Luminosity_fb: 20.2
+Beams: [p+, p+]
+Energies: [8000]
+PtCuts: [100,100]
+NeedCrossSection: False
+Description:
+  'Measurements of transverse energy-energy correlations and their associated asymmetries in multi-jet events using the ATLAS
+  detector at the LHC are presented. The data used correspond to $\sqrt{s} = 8$ TeV proton-proton collisions with an integrated
+  luminosity of 20.2 fb$^{-1}$. The results are presented in bins of the scalar sum of the transverse momenta of the two leading
+  jets, unfolded to the particle level and compared to the predictions from Monte Carlo simulations. A comparison with
+  next-to-leading-order perturbative QCD is also performed, showing excellent agreement within the uncertainties. From this comparison,
+  the value of the strong coupling constant is extracted for different energy regimes, thus testing the running of $\alpha_\text{s}(\mu)$
+  predicted in QCD up to scales over 1 TeV. A global fit to the transverse energy-energy correlation distributions yields
+  $\alpha_\text{s}(m_Z) = 0.1162\pm 0.0011\text{(exp.)}^{+0.0084}_{-0.0070}\text{(theo.)}$, while a global fit to the asymmetry
+  distributions yields a value of $\alpha_\text{s}(m_Z) = 0.1196\pm 0.0013\text{(exp.)}^{+0.0075}_{-0.0045}\text{(theo.)}$.'
+BibKey: Aaboud:2017fml
+BibTeX: '@article{Aaboud:2017fml,
+      author         = "Aaboud, Morad and others",
+      title          = "{Determination of the strong coupling constant $\alpha_s$
+                        from transverse energy-energy correlations in multijet
+                        events at $\sqrt{s} = 8$ TeV using the ATLAS detector}",
+      collaboration  = "ATLAS",
+      year           = "2017",
+      eprint         = "1707.02562",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-EP-2017-093",
+      SLACcitation   = "%%CITATION = ARXIV:1707.02562;%%"
+}'

@@ -1,0 +1,37 @@
+Name: CLEO_2004_S5809304
+Summary: Charm hadrons from fragmentation near the $\Upsilon(4S)$
+Status: VALIDATED
+Authors:
+ - Peter Richardson <Peter.Richardson@durham.ac.uk>
+References:
+ - Phys.Rev.D70:112001,2004.
+ - arXiv:hep-ex/0402040
+RunInfo:
+  $e^+ e^-$ analysis near the $\Upsilon(4S)$ resonance
+NumEvents: 1000000
+SpiresID: 6265367
+InspireID: 645209
+Beams: [e+, e-]
+Energies: [10.52]
+PtCuts: [0]
+Description:
+  Analysis of charm quark fragmentation at 10.5 GeV, based on a data
+  sample of 103 fb collected by the CLEO experiment. 
+  Fragmentation into charm is studied for the charmed hadron ground states, 
+  namely $D^0$, $D^+$, as well as the excited states 
+  $D^{*0}$ and $D^{*+}$. This analysis can be used to constrain charm fragmentation 
+  in Monte Carlo generators. 
+BibKey: Artuso:2004pj
+BibTeX: '@Article{Artuso:2004pj,
+     author    = "Artuso, M. and others",
+ collaboration = "CLEO",
+     title     = "{Charm meson spectra in $e+ e-$ annihilation at 10.5 GeV}",
+     journal   = "Phys. Rev.",
+     volume    = "D70",
+     year      = "2004",
+     pages     = "112001",
+     eprint    = "hep-ex/0402040",
+     archivePrefix = "arXiv",
+     doi       = "10.1103/PhysRevD.70.112001",
+     SLACcitation  = "%%CITATION = HEP-EX/0402040;%%"
+}'

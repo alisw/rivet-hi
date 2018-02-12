@@ -1,0 +1,37 @@
+Name: CMS_PAS_FSQ_12_020
+Year: 2015
+Summary: Studies of the underlying event at 7 TeV with leading charged particles
+Experiment: CMS
+Collider: LHC
+Status: VALIDATED
+Authors:
+ - Hannes Jung (hannes.jung@cern.ch)
+ - Paolo Gunnellini (paolo.gunnellini@desy.de)
+References:
+ - CERN-PH-EP-2015-291
+RunInfo:
+  Minimum bias events at 7 TeV.
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [7000]
+Description:
+  'We study charged particle production in proton--proton collisions at 7 TeV. We use the direction
+  of the charged particle with the largest transverse momentum in each event to define three
+  regions of $\eta$--$\phi$ space: toward, away, and transverse. The average number and the
+  average scalar pT sum of charged particles in the transverse region are sensitive to the
+  modeling of the underlying event. The transverse region is divided into a MAX and MIN transverse
+  region, which helps separate the hard component (initial and final-state radiation) from the
+  beam--beam remnant and multiple parton interaction components of the scattering.'
+BibKey: Khachatryan:2015pea
+BibTeX: '@article{Khachatryan:2015pea,
+      author         = "Khachatryan, Vardan and others",
+      title          = "{Event generator tunes obtained from underlying event and
+                        multiparton scattering measurements}",
+      collaboration  = "CMS",
+      year           = "2015",
+      eprint         = "1512.00815",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-GEN-14-001, CERN-PH-EP-2015-291",
+      SLACcitation   = "%%CITATION = ARXIV:1512.00815;%%"
+}'

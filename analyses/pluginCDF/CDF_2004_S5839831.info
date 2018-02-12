@@ -1,0 +1,53 @@
+Name: CDF_2004_S5839831
+Year: 2004
+Summary: Transverse cone and `Swiss cheese' underlying event studies
+Experiment: CDF
+Collider: Tevatron Run 1
+SpiresID: 5839831
+InspireID: 647490
+Status: VALIDATED
+Authors:
+ - Andy Buckley <andy.buckley@cern.ch>
+References:
+ - Phys. Rev. D70, 072002 (2004)
+ - arXiv:hep-ex/0404004
+RunInfo:
+  QCD events at $\sqrt{s} = 630$ \& 1800 GeV.
+  Several $\pT^\text{min}$ cutoffs are probably required to fill the
+  profile histograms, e.g. 0 (min bias), 30, 90, 150 GeV at 1800 GeV,
+  and 0 (min bias), 20, 90, 150 GeV at 630 GeV.
+NumEvents: 1000000
+Beams: [p-, p+]
+Energies: [630, 1800]
+PtCuts: [0, 30, 90, 150] # for 1800, [0, 20, 90, 150] for 630
+Description:
+  This analysis studies the underlying event via transverse cones of
+  $R = 0.7$ at 90 degrees in \phi relative to the leading (highest E) jet,
+  at $\sqrt{s} = 630$ and 1800 GeV. This is similar to the 2001 CDF UE
+  analysis, except that cones, rather than the whole central \eta range
+  are used. The transverse cones are categorised as `TransMIN' and
+  `TransMAX' on an event-by-event basis, to give greater sensitivity to
+  the UE component.
+
+  `Swiss Cheese' distributions, where cones around
+  the leading $n$ jets are excluded from the distributions, are also
+  included for $n = 2, 3$.  This analysis is useful for constraining the
+  energy evolution of the underlying event, since it performs the same
+  analyses at two distinct CoM energies.
+
+  WARNING! The pT plots are normalised to raw number of events. The min bias
+  data have not been reproduced by MC, and are not recommended for tuning.
+BibKey: Acosta:2004wqa
+BibTeX: '@Article{Acosta:2004wqa,
+     author    = "Acosta, Darin E. and others",
+     collaboration = "CDF",
+     title     = "{The underlying event in hard interactions at the Tevatron $\bar{p}p$  collider}",
+     journal   = "Phys. Rev.",
+     volume    = "D70",
+     year      = "2004",
+     pages     = "072002",
+     eprint    = "hep-ex/0404004",
+     archivePrefix = "arXiv",
+     doi       = "10.1103/PhysRevD.70.072002",
+     SLACcitation  = "%%CITATION = HEP-EX/0404004;%%"
+}'

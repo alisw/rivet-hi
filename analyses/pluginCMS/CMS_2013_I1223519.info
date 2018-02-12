@@ -1,0 +1,46 @@
+Name: CMS_2013_I1223519
+Year: 2013
+Summary: Searches for SUSY using $\alpha_T$ and $b$-quark multiplicity at 8~\TeV
+Experiment: CMS
+Collider: LHC
+InspireID: 1223519
+Status: UNVALIDATED
+Authors:
+ - Andy Buckley <andy.buckley@cern.ch>
+References:
+- 'arXiv:1303.2985'
+RunInfo: SM background or BSM physics model, depending on interpretation usage
+NumEvents: 50000
+NeedCrossSection: yes
+Beams: [p+, p+]
+Energies: [8000]
+Description:
+  'An inclusive search for supersymmetric processes that produce final states with jets
+   and missing transverse energy in $pp$ collisions at 8\;\TeV. The data sample corresponds
+   to an integrated luminosity of 11.7/fb collected by the CMS experiment. In this search,
+   a dimensionless kinematic variable, $\alpha_T$, is used to discriminate between events
+   with genuine and misreconstructed missing transverse energy. The search was based on
+   an examination of the number of reconstructed jets per event, the scalar sum of
+   transverse energies of these jets, and the number of these jets identified as originating
+   from bottom quarks. No significant excess of events over the standard model expectation
+   was found.'
+BibKey: Chatrchyan:2013mys
+BibTeX: '@article{Chatrchyan:2013mys,
+      author         = "Chatrchyan, Serguei and others",
+      title          = "{Search for supersymmetry in hadronic final states with
+                        missing transverse energy using the variables $\alpha_T$
+                        and b-quark multiplicity in pp collisions at $\sqrt s=8$
+                        TeV}",
+      collaboration  = "CMS",
+      journal        = "Eur. Phys. J.",
+      volume         = "C73",
+      year           = "2013",
+      number         = "9",
+      pages          = "2568",
+      doi            = "10.1140/epjc/s10052-013-2568-6",
+      eprint         = "1303.2985",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-SUS-12-028, CERN-PH-EP-2013-037",
+      SLACcitation   = "%%CITATION = ARXIV:1303.2985;%%"
+}'

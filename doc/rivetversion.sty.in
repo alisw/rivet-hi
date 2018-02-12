@@ -1,0 +1,2 @@
+\RequirePackage{xspace}
+\DeclareRobustCommand{\RivetVersion}{@PACKAGE_VERSION@\xspace}

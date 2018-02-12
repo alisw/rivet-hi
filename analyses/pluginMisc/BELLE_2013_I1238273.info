@@ -1,0 +1,34 @@
+Name: BELLE_2013_I1238273
+Year: 2013
+Summary: Exclusive semileptonic B-decays
+Experiment: BELLE
+Collider: KEKB
+InspireID: 1238273
+Status: VALIDATED
+Authors:
+ - Holger Schulz <holger.schulz@cern.ch>
+RunInfo:
+  Events with B-decays, either particle guns or collisions.
+NumEvents: 10000
+NeedCrossSection: no
+Description:
+  'Implementation of Lorentz invariant q2 distributions ("form factor") for semileptonic B decays'
+BibKey: Sibidanov:2013rkk
+BibTeX: '@article{Sibidanov:2013rkk,
+      author         = "Sibidanov, A. and others",
+      title          = "{Study of Exclusive $B \to X_u \ell \nu$ Decays and
+                        Extraction of $\|V_{ub}\|$ using Full Reconstruction
+                        Tagging at the Belle Experiment}",
+      collaboration  = "Belle",
+      journal        = "Phys. Rev.",
+      volume         = "D88",
+      year           = "2013",
+      number         = "3",
+      pages          = "032005",
+      doi            = "10.1103/PhysRevD.88.032005",
+      eprint         = "1306.2781",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "BELLE-PREPRINT-2013-9, KEK-PREPRINT-2013-8",
+      SLACcitation   = "%%CITATION = ARXIV:1306.2781;%%"
+}'

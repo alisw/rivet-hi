@@ -1,0 +1,48 @@
+Name: ATLAS_2012_I1119557
+Year: 2012
+Summary: Jet shapes and jet masses
+Experiment: ATLAS
+Collider: LHC 7TeV
+InspireID: 1119557
+Status: VALIDATED
+Authors:
+ - Lily Asquith <lasquith@hep.anl.gov>
+ - Roman Lysak <lysak@fzu.cz>
+References:
+ - Phys.Rev. D86 (2012) 072006
+ - doi:10.1103/PhysRevD.86.072006
+ - arXiv:1206.5369 [hep-ex]
+RunInfo:
+  QCD events at 7 TeV, leading-pT jets with $\pT > 300\;GeV$.
+NumEvents: 1000000
+NeedCrossSection: no
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [300]
+Description:
+  'Measurements are presented of the properties of high transverse
+   momentum jets, produced in proton-proton collisions at a
+   center-of-mass energy of $\sqrt{s} = 7$\;TeV. Jet mass, width,
+   eccentricity, planar flow and angularity are measured for jets
+   reconstructed using the anti-$k_t$ algorithm with distance parameters
+   $R = 0.6$ and 1.0, with transverse momentum $pT > 300$\;GeV and
+   pseudorapidity $|\eta| < 2$.'
+BibKey: Aad:2012meb
+BibTeX: '@article{Aad:2012meb,
+      author         = "Aad, Georges and others",
+      title          = "{ATLAS measurements of the properties of jets for boosted
+                        particle searches}",
+      collaboration  = "ATLAS Collaboration",
+      journal        = "Phys.Rev.",
+      volume         = "D86",
+      pages          = "072006",
+      doi            = "10.1103/PhysRevD.86.072006",
+      year           = "2012",
+      eprint         = "1206.5369",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2012-149",
+      SLACcitation   = "%%CITATION = ARXIV:1206.5369;%%",
+}'
+ToDo:
+ - Validate the eccentricity plot (commented out for now)

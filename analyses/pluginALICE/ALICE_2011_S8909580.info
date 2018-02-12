@@ -1,0 +1,39 @@
+Name: ALICE_2011_S8909580
+Year: 2011
+Summary: Strange particle production in proton-proton collisions at $\sqrt{s} = 0.9$ TeV with ALICE at the LHC.
+Experiment: ALICE
+Collider: LHC
+SpiresID: 8909580
+InspireID: 881474
+Status: VALIDATED
+Authors:
+ - Pablo Bueno Gomez <UO189399@uniovi.es>
+ - Eva Sicking <esicking@cern.ch>
+References:
+ - Eur.Phys.J.C71:1594,2011.
+RunInfo:
+  Diffractive events need to be switched on.
+NumEvents: 5000000
+Beams: [p+, p+]
+Energies: [900]
+PtCuts:
+Description:
+  'Tranverse momentum spectra of strange particles ($K^0_S$, $\Lambda$, $\phi$
+   and $\Xi$) in $pp$ collisions at $\sqrt{s} = 0.9$\;TeV with ALICE at the LHC.
+   The ratio of cross-sections as a function of pT for $\Lambda/K^0_S$ is also included.'
+BibKey: Aamodt:2011zza
+BibTeX: '@article{Aamodt:2011zza,
+      author         = "Aamodt, K. and others",
+      title          = "{Strange particle production in proton--proton collisions at $\sqrt{s} = 0.9$ TeV with ALICE at the LHC}",
+      collaboration  = "ALICE Collaboration",
+      journal        = "Eur.Phys.J.",
+      volume         = "C71",
+      pages          = "1594",
+      doi            = "10.1140/epjc/s10052-011-1594-5",
+      year           = "2011",
+      eprint         = "1012.3257",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2010-065",
+      SLACcitation   = "%%CITATION = ARXIV:1012.3257;%%",
+}'

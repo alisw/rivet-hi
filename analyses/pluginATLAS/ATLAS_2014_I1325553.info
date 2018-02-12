@@ -1,0 +1,39 @@
+Name: ATLAS_2014_I1325553
+Year: 2014
+Summary: Measurement of the inclusive jet cross-section at 7 TeV
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1325553
+Status: VALIDATED
+Authors:
+  - Vojtech Pleskot <vojtech.pleskot@cern.ch>
+References:
+  - arXiv:1410.8857 [hep-ex]
+RunInfo:
+  p p -> jet + X. $\sqrt{s} = 7$~TeV.
+NumEvents: 1000000
+NeedCrossSection: yes
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [100]
+Description:
+  Measurement of the inclusive jet cross-section in proton--proton collisions at a centre-of-mass energy
+  of 7 TeV using a data set corresponding to an integrated luminosity of 4.5/fb collected with the
+  ATLAS detector at the Large Hadron Collider in 2011. Jets are identified using the anti-$k_t$ algorithm
+  with radius parameter values of 0.4 and 0.6. The double-differential cross-sections are presented
+  as a function of the jet transverse momentum and the jet rapidity, covering jet transverse momenta
+  from 100 GeV to 2 TeV.
+BibKey: Aad:2014vwa,
+BibTeX: '@article{Aad:2014vwa,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of the inclusive jet cross-section in
+                        proton-proton collisions at $\sqrt{s}=7$ TeV using 4.5~fb$^{-1}$
+                        of data with the ATLAS detector}",
+      collaboration  = "ATLAS Collaboration",
+      year           = "2014",
+      eprint         = "1410.8857",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2014-155",
+      SLACcitation   = "%%CITATION = ARXIV:1410.8857;%%",
+}'

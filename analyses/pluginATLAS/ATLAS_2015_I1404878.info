@@ -1,0 +1,46 @@
+Name: ATLAS_2015_I1404878
+Year: 2015
+Summary: ttbar (to l+jets) differential cross sections at 8 TeV
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1404878
+Status: VALIDATED
+Authors:
+ - Francesco La Ruffa <francesco.la.ruffa@cern.ch>
+ - Christian Gutschow <chris.g@cern.ch>
+References:
+ - Submitted to EPJC
+ - arXiv:1511.04716 [hep-ex]
+RunInfo:
+ non-all-hadronic ttbar production at 8 TeV
+NeedCrossSection: yes
+Beams: [p+, p+]
+Energies: [8000]
+PtCuts: [25.]
+Description:
+  Measurements of normalized differential cross-sections of top-quark pair production are presented as a function of the top-quark,
+  $t\bar{t}$ system and event-level kinematic observables in proton-proton collisions at a centre-of-mass energy of 
+  $\sqrt{s} = 8$ TeV. The observables have been chosen to emphasize the $t\bar{t}$ production process and to be sensitive to effects 
+  of initial- and final-state radiation, to the different parton distribution functions, and to non-resonant processes and higher-order 
+  corrections. The dataset corresponds to an integrated luminosity of 20.3 fb${}^{-1}$, recorded in 2012 with the ATLAS detector at the 
+  CERN Large Hadron Collider. Events are selected in the lepton$+$jets channel, requiring exactly one charged lepton and at least four 
+  jets with at least two of the jets tagged as originating from a $b$-quark. The measured spectra are corrected for detector effects and 
+  are compared to several Monte Carlo simulations. The results are in fair agreement with the predictions over a wide kinematic range.
+  Nevertheless, most generators predict a harder top-quark transverse momentum distribution at high values than what is observed in
+  the data. Predictions beyond NLO accuracy improve the agreement with data at high top-quark transverse momenta. Using the current
+  settings and parton distribution functions, the rapidity distributions are not well modelled by any generator under consideration.
+  However, the level of agreement is improved when more recent sets of parton distribution functions are used.
+BibKey: Aad:2015mbv
+BibTeX: '@article{Aad:2015mbv,
+      author         = "Aad, Georges and others",
+      title          = "{Measurements of top-quark pair differential
+                        cross-sections in the lepton+jets channel in $pp$
+                        collisions at $\sqrt{s}=8$ TeV using the ATLAS detector}",
+      collaboration  = "ATLAS",
+      year           = "2015",
+      eprint         = "1511.04716",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2015-239",
+      SLACcitation   = "%%CITATION = ARXIV:1511.04716;%%"
+}'

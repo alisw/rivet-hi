@@ -1,0 +1,43 @@
+Name: ATLAS_2011_S8924791
+Year: 2010
+Summary: Jet shapes at 7 TeV in ATLAS
+Experiment: ATLAS
+Collider: LHC
+InspireID: 882984
+SpiresID: 8924791
+InspireID: 882984
+Status: VALIDATED
+Authors:
+ - Andy Buckley <andy.buckley@cern.ch>
+ - Francesc Vives <fvives@ifae.es>
+ - Judith Katzy <judith.katzy@cern.ch>
+References:
+ - arXiv:1101.0070
+RunInfo:
+  $pp$ QCD interactions at 7 TeV GeV, corresponding to JX samples. Matching plots to
+  kinematic $\pT$ cut samples, or merging from slices or $\pT$-enhanced sampling is advised.
+NumEvents: 10000000
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [10, 20, 40, 70, 150, 200, 300]
+Description:
+  Measurement of jet shapes in inclusive jet production in $pp$ collisions at 7 TeV
+  based on 3 pb$^{-1}$ of data. Jets are reconstructed in $|\eta| < 5$ using the
+  anti-$k_\perp$ algorithm with $30 < \pT < 600$ GeV and $|y| < 2.8$.
+BibKey: Aad:2011kq
+BibTeX: '@article{Aad:2011kq,
+      author         = "Aad, G. and others",
+      title          = "{Study of jet shapes in inclusive jet production in $pp$
+                        collisions at $\sqrt{s}=7$~TeV using the ATLAS detector}",
+      collaboration  = "ATLAS",
+      journal        = "Phys. Rev.",
+      volume         = "D83",
+      year           = "2011",
+      pages          = "052003",
+      doi            = "10.1103/PhysRevD.83.052003",
+      eprint         = "1101.0070",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2010-077",
+      SLACcitation   = "%%CITATION = ARXIV:1101.0070;%%"
+}'

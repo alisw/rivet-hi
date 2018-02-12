@@ -1,0 +1,57 @@
+Name: ATLAS_2017_I1495243
+Year: 2016
+Summary: $t\bar{t}$ + jets at 13 TeV
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1495243
+Status: VALIDATED
+Authors:
+ - Callie Bertsche <c.bertsche@cern.ch>
+ - Judith Katzy <judith.katzy@desy.de>
+ - Krishna Kulkarni <krishna.kulkarni@desy.de>
+ - Christian Gutschow <chris.g@cern.ch>
+References:
+ - Eur.Phys.J. C77 (2017) no.4, 220
+ - doi:10.1140/epjc/s10052-017-4766-0
+ - arXiv:1610.09978 [hep-ex]
+Keywords:
+ - TTBAR
+ - GAPFRACTIONS
+RunInfo:
+  p + p -> ttbar (dileptonic, needs high statistics [~2 million] to populate gap fractions).
+Luminosity_fb: 3.2
+Beams: [p+, p+]
+Energies: [13000]
+PtCuts: [25]
+NeedCrossSection: True
+Description:
+  'Measurements of jet activity in top-quark pair events produced in proton–proton collisions are presented, using 3.2 fb$^{-1}$
+  of $pp$ collision data at a centre-of-mass energy of 13 TeV collected by the ATLAS experiment at the Large Hadron Collider.
+  Events are chosen by requiring an opposite-charge $e\mu$ pair and two $b$-tagged jets in the final state. The normalised differential
+  cross-sections of top-quark pair production are presented as functions of additional-jet multiplicity and transverse momentum,
+  $p_\text{T}$. The fraction of signal events that do not contain additional jet activity in a given rapidity region, the gap fraction,
+  is measured as a function of the $p_\text{T}$ threshold for additional jets, and is also presented for different invariant mass regions
+  of the $e\mu b\bar{b}$ system. All measurements are corrected for detector effects and presented as particle-level distributions
+  compared to predictions with different theoretical approaches for QCD radiation. While the kinematics of the jets from top-quark
+  decays are  described well, the generators show differing levels of agreement with the measurements of observables that depend
+  on the production of additional jets.'
+BibKey: Aaboud:2016xii
+BibTeX: '@article{Aaboud:2016xii,
+      author         = "Aaboud, Morad and others",
+      title          = "{Measurement of jet activity produced in top-quark events
+                        with an electron, a muon and two $b$-tagged jets in the
+                        final state in $pp$ collisions at $\sqrt{s}=13$ TeV with
+                        the ATLAS detector}",
+      collaboration  = "ATLAS",
+      journal        = "Eur. Phys. J.",
+      volume         = "C77",
+      year           = "2017",
+      number         = "4",
+      pages          = "220",
+      doi            = "10.1140/epjc/s10052-017-4766-0",
+      eprint         = "1610.09978",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-EP-2016-218",
+      SLACcitation   = "%%CITATION = ARXIV:1610.09978;%%"
+}'

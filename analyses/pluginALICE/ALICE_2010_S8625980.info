@@ -1,0 +1,38 @@
+Name: ALICE_2010_S8625980
+Year: 2010
+Summary: Pseudorapidities at three energies, charged multiplicity at 7 TeV
+Experiment: ALICE
+Collider: LHC
+SpiresID: 8625980
+InspireID: 852264
+Status: VALIDATED
+Authors:
+ - Holger Schulz <holger.schulz@physik.hu-berlin.de>
+ - Jan Fiete Grosse-Oetringhaus@cern.ch <Jan.Fiete.Grosse-Oetringhaus@cern.ch>
+References:
+ - Eur.Phys.J. C68 (2010) 345-354
+ - arXiv:1004.3514 [hep-ex]
+RunInfo:
+  Diffractive events need to be enabled.
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [900, 2360, 7000]
+Description:
+  'This is an ALICE publication with pseudorapities for 0.9, 2.36 and $7\;\TeV$
+  and the charged multiplicity at $7\;\TeV$. The analysis requires at least on
+  charged particle in the event. Only the INEL distributions are considered here'
+BibKey: Aamodt:2010pp
+BibTeX: '@article{Aamodt:2010pp,
+      author         = "Aamodt, K. and others",
+      title          = "{Charged-particle multiplicity measurement in
+                        proton-proton collisions at $\sqrt{s} = 7$ TeV with ALICE at LHC}",
+      collaboration  = "ALICE",
+      journal        = "Eur.Phys.J.",
+      volume         = "C68",
+      pages          = "345-354",
+      doi            = "10.1140/epjc/s10052-010-1350-2",
+      year           = "2010",
+      eprint         = "1004.3514",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+}'

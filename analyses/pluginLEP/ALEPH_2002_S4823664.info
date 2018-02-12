@@ -1,0 +1,38 @@
+Name: ALEPH_2002_S4823664
+Year: 2002
+Summary: $\eta$ and $\omega$ Production in Hadronic $Z^0$ Decays
+Experiment: OPAL
+Collider: LEP 1
+SpiresID: 4823664
+InspireID: 569165
+Status: VALIDATED
+Authors:
+ - Peter Richardson <Peter.Richardson@durham.ac.uk>
+References:
+ - Phys.Lett. B528 (2002) 19-33
+ - hep-ex/0201012
+RunInfo:
+  Hadronic Z decay events generated on the Z pole ($\sqrt{s} = 91.2$ GeV)
+NumEvents: 1000000
+Beams: [e+, e-]
+Energies: [91.2]
+PtCuts: [0]
+Description: The production of $\eta$ and $\omega$ mesons measured using 4 millon $Z^0$ events
+   by the ALEPH experiment at LEP. Only the fragmentation functions are implemented.
+BibKey: Heister:2001kp
+BibTeX: '@article{Heister:2001kp,
+      author         = "Heister, A. and others",
+      title          = "{Inclusive production of the omega and eta mesons in Z
+                        decays, and the muonic branching ratio of the omega}",
+      collaboration  = "ALEPH Collaboration",
+      journal        = "Phys.Lett.",
+      volume         = "B528",
+      pages          = "19-33",
+      doi            = "10.1016/S0370-2693(02)01220-0",
+      year           = "2002",
+      eprint         = "hep-ex/0201012",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-EP-2001-090",
+      SLACcitation   = "%%CITATION = HEP-EX/0201012;%%",
+}'

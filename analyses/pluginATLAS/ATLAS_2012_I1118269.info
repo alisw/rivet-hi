@@ -1,0 +1,42 @@
+Name: ATLAS_2012_I1118269
+Year: 2012
+Summary: $b$-hadron production cross-section using decays to $D^*\mu^-X$ at $\sqrt{s} = 7$\;TeV
+Experiment: ATLAS
+Collider: LHC
+SpiresID: 9626190
+InspireID: 1118269
+Status: VALIDATED
+Authors:
+ - Andy Buckley <andy.buckley@ed.ac.uk>
+ - Sercan Sen <sercan.sen@cern.ch>
+ - Peter Skands <Peter.Skands@cern.ch>
+References:
+ - arXiv:1206.3122 [hep-ex]
+RunInfo:
+  pp to b-hadron + X at 7 TeV, i.e. switch on "HardQCD:gg2bbbar" and "HardQCD:qqbar2bbbar" flags in Pythia8.
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [0]
+Description:
+  'Measurement of $b$-hadron production cross section using 3.3\;pb$^{-1}$ of integrated luminosity, collected during the 2010 LHC run.
+   The $b$-hadrons are selected by partially reconstructing $D^{*}\mu^-X$ final states using only direct semileptonic decays of $b$ to $D^*\mu^-X$.
+   Differential cross sections as functions of $p_\perp$ and $|\eta|$.'
+BibKey: :2012fc
+BibTeX: '@article{:2012fc,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of the $b$-hadron production cross section
+                        using decays to $D^*\mu^-X$ final states in $pp$
+                        collisions at $\sqrt{s} = 7$\;TeV with the ATLAS detector}",
+      collaboration  = "ATLAS Collaboration",
+      journal        = "Nucl.Phys.",
+      volume         = "B864",
+      pages          = "341-381",
+      doi            = "10.1016/j.nuclphysb.2012.07.009",
+      year           = "2012",
+      eprint         = "1206.3122",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2012-121",
+      SLACcitation   = "%%CITATION = ARXIV:1206.3122;%%",
+}'

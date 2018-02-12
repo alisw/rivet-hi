@@ -1,0 +1,47 @@
+Name: ATLAS_2015_I1394865
+Year: 2015
+Summary: Inclusive 4-lepton lineshape
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1394865
+Status: VALIDATED
+Authors:
+ - Bing Li <bing.li@cern.ch>
+References:
+ - Phys.Lett. B753 (2016) 552-572
+ - doi:10.1016/j.physletb.2015.12.048
+ - arXiv:1509.07844 [hep-ex]
+Keywords:
+ - diboson
+ - leptons
+ - lineshape
+RunInfo:
+  '$p p \to \ell \ell \ell \ell + X$'
+Luminosity_fb: 20.3
+Beams: [p+, p+]
+Energies: [8000]
+PtCuts: [20., 15., 10., 8.]
+Description:
+   The four-lepton (4$\ell$, $\ell = e,\mu$) production cross section is measured in the mass range from 80 to 1000 GeV
+   using 20.3 fb$^{-1}$ of data in $pp$ collisions at $\sqrt{s}=8$ TeV collected with the ATLAS detector at the LHC.
+   The $4\ell$ events are produced in the decays of resonant $Z$ and Higgs bosons and the non-resonant $ZZ$ continuum
+   originating from $q\bar{q}$, $gg$, $qg$ initial states. A total of 476 signal candidate events are observed with a
+   background expectation of 26.2$\pm$3.6 events, enabling the measurement of the integrated cross section and the
+   differential cross section as a function of the invariant mass and transverse momentum of the four-lepton system.
+BibKey: Aad:2015rka,
+BibTeX: '@article{Aad:2015rka,
+      author         = "Aad, Georges and others",
+      title          = "{Measurements of four-lepton production in $pp$
+                        collisions at $\sqrt{s}=$ 8 TeV with the ATLAS detector}",
+      collaboration  = "ATLAS",
+      journal        = "Phys. Lett.",
+      volume         = "B753",
+      year           = "2016",
+      pages          = "552-572",
+      doi            = "10.1016/j.physletb.2015.12.048",
+      eprint         = "1509.07844",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2015-220",
+      SLACcitation   = "%%CITATION = ARXIV:1509.07844;%%"
+}'

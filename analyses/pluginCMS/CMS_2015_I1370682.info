@@ -1,0 +1,52 @@
+Name: CMS_2015_I1370682
+Year: 2015
+Summary: Differential top quark pair production cross-sections in $pp$ collisions at $\sqrt{s} = 8$ TeV
+Experiment: CMS
+Collider: LHC
+InspireID: 1370682
+Status: VALIDATED
+Authors:
+ - Javier Fernandez <Javier.Fernandez@cern.ch>
+ - Jungwan John Goh <Junghwan.Goh@cern.ch>
+ - Efe Yazgan <efe.yazgan@cern.ch>
+ - Markus Seidel <markus.seidel@cern.ch>
+ - James Keaveney <james.keaveney@vub.ac.be>
+ - Elvire Bouvier <e.bouvier@cern.ch>
+ - Benedikt Maier <benedikt.maier@cern.ch>
+References:
+ - Eur.Phys.J. C75 (2015) 542 (the analysis)
+ - CMS-PAS-TOP-15-011 (Rivet implementation)
+RunInfo:
+  $pp$ QCD interactions at $\sqrt{s} = 8$ TeV. Data collected by CMS during the year 2012.
+Luminosity: 19.7 /fb
+Beams: [p+, p+]
+Energies: [8000]
+Description:
+  'The reconstruction of particle-level top quarks and anti-quarks is implemented in this module.
+  Measurements at $\sqrt{s} = 8~\TeV$ are based on parton-level information in the full phase
+  space using MADGRAPH+PYTHIA6. To match the particle-level top quark distributions to the
+  measurements unfolded to the parton-level, a correction function to the particle-level
+  distributions, derived using the same MADGRAPH+PYTHIA6 configuration that was used for the
+  original measurement of the data points, is applied.  Using the same MC configuration as used
+  for the unfolding to correct back the parton-level to particle-level, the model dependence
+  introduced in unfolding to parton-level and extrapolating the measurement to the full phase
+  space is eliminated. See the paper for full object selection and correction details.'
+BibKey: Khachatryan:2015oqa
+BibTeX: '@article{Khachatryan:2015oqa,
+      author         = "Khachatryan, Vardan and others",
+      title          = "{Measurement of the differential cross section for top
+                        quark pair production in pp collisions at $\sqrt{s} =
+                        8\,\TeV$}",
+      collaboration  = "CMS",
+      journal        = "Eur. Phys. J.",
+      volume         = "C75",
+      year           = "2015",
+      number         = "11",
+      pages          = "542",
+      doi            = "10.1140/epjc/s10052-015-3709-x",
+      eprint         = "1505.04480",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-TOP-12-028, CERN-PH-EP-2015-117",
+      SLACcitation   = "%%CITATION = ARXIV:1505.04480;%%"
+}'

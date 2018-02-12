@@ -1,0 +1,47 @@
+Name: ATLAS_2014_I1307243
+Year: 2014
+Summary: Measurements of jet vetoes and azimuthal decorrelations in dijet events produced in pp collisions at $\sqrt{s}$ = 7 TeV using the ATLAS detector
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1307243
+Status: VALIDATED
+Authors:
+ - James Robinson <james.robinson@cern.ch>
+References:
+ - EPJ C74,3117 (2014)
+ - doi:10.1140/epjc/s10052-014-3117-7
+ - arXiv:hep-ex/1407.5756
+RunInfo:
+  pp -> jet jet x. sqrt(s) = 7000 GeV. Jets with pT > 60, 50 GeV
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [60, 50]
+NeedCrossSection: True
+Description:
+  'Additional jet activity in dijet events is measured using $pp$ collisions at ATLAS at a centre-of-mass energy of 7 TeV, for jets reconstructed using the anti-kt algorithm with radius parameter R=0.6.
+  This is done using variables such as the fraction of dijet events without an additional jet in the rapidity interval bounded by the dijet subsystem and correlations between the azimuthal angles of the dijets.
+  They are presented, both with and without a veto on additional jet activity in the rapidity interval, as a function of the mean transverse momentum of the dijets and of the rapidity interval size.
+  The double differential dijet cross section is also measured as a function of the interval size and the azimuthal angle between the dijets.
+  These variables probe differences in the approach to resummation of large logarithms when performing QCD calculations. The data are compared to POWHEG, interfaced to the PYTHIA 8 and HERWIG parton shower generators, as well as to HEJ with and without interfacing it to the ARIADNE parton shower generator.
+  None of the theoretical predictions agree with the data across the full phase-space considered; however, POWHEG+PYTHIA 8 and HEJ+ARIADNE are found to provide the best agreement with the data.
+  These measurements use the full data sample collected with the ATLAS detector in 7 TeV $pp$ collisions at the LHC and correspond to integrated luminosities of 36.1 pb$^-1$ and 4.5 fb$^-1$ for data collected during 2010 and 2011 respectively.'
+BibKey: Aad:2014pua
+BibTeX: '@article{Aad:2014pua,
+      author         = "Aad, Georges and others",
+      title          = "{Measurements of jet vetoes and azimuthal decorrelations
+                        in dijet events produced in $pp$ collisions at $\sqrt{s}$
+                        = 7 TeV using the ATLAS detector}",
+      collaboration  = "ATLAS Collaboration",
+      journal        = "Eur.Phys.J.",
+      number         = "11",
+      volume         = "C74",
+      pages          = "3117",
+      doi            = "10.1140/epjc/s10052-014-3117-7",
+      year           = "2014",
+      eprint         = "1407.5756",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2014-132",
+      SLACcitation   = "%%CITATION = ARXIV:1407.5756;%%",
+}'

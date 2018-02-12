@@ -1,0 +1,117 @@
+Name: CMS_2014_I1305624
+Year: 2014
+Summary: Study of hadronic event-shape variables in multijet final states in $pp$ collisions at $\sqrt{s} = 7$ TeV
+Experiment: CMS
+Collider: LHC
+InspireID: 1305624
+Status: VALIDATED
+Authors:
+ - Sunanda Banerjee <Sunanda.Banerjee@cern.ch>
+ - Sandeep Bhowmik <Sandeep.Bhowmik@cern.ch>
+ - Monoranjan Guchait <Monoranjan.Guchait@cern.ch>
+ - Gobinda Majumder <Gobinda.Majumder@cern.ch>
+ - Manas Maity < Manas.Maity@cern.ch>
+ - Debarati Roy <Debarati.Roy@cern.ch>
+References:
+ - 10.1007/JHEP10(2014)087
+ - arXiv:1407.2856
+ - CMS-PAS-SMP-12-022
+ - CERN-PH-EP-2014-146
+RunInfo:
+  $pp$ QCD interactions at $\sqrt{s} = 7$ TeV. Data collected by CMS during the year 2011.
+NumEvents: 2234304
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [30.0]
+Description:
+  'Event-shape variables, which are sensitive to perturbative and nonperturbative
+   aspects of quantum chromodynamic (QCD) interactions, are studied in multijet
+   events recorded in proton-proton collisions at $\sqrt{s}=7$ TeV. Events are
+   selected with at least one jet with transverse momentum $p_T > 110$ GeV and
+   pseudorapidity $\mid\eta\mid < 2.4$, in a data sample corresponding to
+   integrated luminosities of up to $5 fb^{-1}$. The distributions of five
+   event-shape variables in various leading jet $p_T$ ranges are compared to
+   predictions from different QCD Monte Carlo event generators.
+
+   Five event-shape variables are analyzed in this paper: the transverse thrust
+   $\tau_{\perp}$, the total jet broadening $B_{tot}$, the total jet mass
+   $\rho_{tot}$, the total transverse jet mass $\rho^T_{tot}$ and the third-jet
+   resolution parameter $Y_{23}$. In the formulae below, $p_{T,i}$, $\eta_i$, and
+   $\phi_i$ represent the transverse momentum, pseudorapidity, and azimuthal angle
+   of the $i$th jet, and $\hat{n}_{T}$ is the unit vector that maximizes the sum of
+   the projections of $\vec{p}_{T,i}$. The transverse thrust axis $\hat{n}_{T}$ and
+   the beam form the so-called event plane. Based on the direction of
+   $\hat{n}_{T}$, the transverse region is separated into an upper side
+   $\cal{C}_U$, consisting of all jets with $\vec{p}_{T}\cdot\hat{n}_{T}$ $>$ 0,
+   and a lower side $\cal{C}_L$, with $\vec{p}_{T}\cdot\hat{n}_{T}$ $<$ 0. The jet
+   broadening and third-jet resolution variables require at least three jets,
+   whereas the calculation of other variables requires at least two jets. The
+   $\hat{n}_{T}$ vector is defined only up to a global sign - choosing one sign or
+   the other has no consequence since it simply exchanges the upper and lower
+   events regions.
+
+   Transverse Thrust : The event thrust observable in the transverse plane is
+   defined as \begin{eqnarray} \tau_{\perp} & \equiv & 1 - \max_{\hat{n}_{T}}
+   \frac{\sum_i |\vec{p}_{T,i} \cdot \hat{n}_{T} |}{\sum_i p_{T,i}}
+   \end{eqnarray} This variable probes the hadronization process and is sensitive
+   to the modeling of two-jet and multijet topologies. In this paper ``multijet''
+   refers to ``more-than-two-jet''. In the limit of a perfectly balanced two-jet
+   event, $\tau_{\perp}$ is zero, while in isotropic multijet events it amounts
+   to $(1-2/\pi)$.
+
+   Jet Broadenings : The pseudorapidities and the azimuthal angles of the axes for
+   the upper and lower event regions are defined by \begin{eqnarray} \eta_X &
+   \equiv & \frac{\sum_{i\in{\cal{C}}_X} p_{T,i}\eta_i}{\sum_{i\in{\cal{C}}_X}
+   p_{T,i}} ~, \\ \phi_X & \equiv & \frac{\sum_{i\in{\cal{C}}_X}
+   p_{T,i}\phi_i}{\sum_{i\in{\cal{C}}_X} p_{T,i}} ~, \end{eqnarray} where $X$
+   refers to upper ($U$) or lower ($L$) side. From these, the jet broadening
+   variable in each region is defined as \begin{eqnarray} B_{X} & \equiv &
+   \frac{1}{2P_{T}} \sum_{i\in{\cal{C}}_X}p_{T,i}\sqrt{(\eta_i -\eta_X)^2 +
+   (\phi_i - \phi_X)^2} ~, \end{eqnarray} where $P_{T}$ is the scalar sum of
+   the transverse momenta of all the jets. The total jet broadening is then
+   defined as \begin{eqnarray} B_{tot} & \equiv & B_{U} + B_{L}.
+   \end{eqnarray} Jet Masses : The normalized squared invariant mass of the
+   jets in the upper and lower regions of the event is defined by
+   \begin{eqnarray} \rho_X & \equiv & \frac{M^2_X}{P^2}, \end{eqnarray} where
+   $M_X$ is the invariant mass of the constituents of the jets in the region
+   $X$, and $P$ is the scalar sum of the momenta of all constituents in both
+   sides.  The jet mass variable is defined as the sum of the masses in the
+   upper and lower regions, \begin{eqnarray} \rho_{tot} & \equiv & \rho_U +
+   \rho_L ~.  \end{eqnarray} The corresponding jet mass in the transverse
+   plane, $\rho^T_{tot}$, is also similarly calculated in transverse plane.
+
+   Third-jet resolution parameter : The third-jet resolution parameter is defined
+   as \begin{eqnarray} Y_{23} \equiv
+   \frac{\mathrm{min}(p_{T,3}^2,[\mathrm{min}(p_{T,i}, p_{T,j})^2 \times (\Delta
+   R_{ij})^2/R^2])}{P_{12}^2} ~, \end{eqnarray} where i, j run over all three
+   jets, $(\Delta R_{ij})^2 = (\eta_i - \eta_j)^2 + (\phi_i - \phi_j)^2$, and
+   $p_{T,3}$ is the transverse momentum of the third jet in the event. If there
+   are more than three jets in the event, they are iteratively merged using the
+   $k_T$ algorithm with a distance parameter $R = 0.6$. To compute $P_{12}$,
+   three jets are merged into two using the procedure described above and
+   $P_{12}$ is then defined as the scalar sum of the transverse momenta of the
+   two remaining jets.  The $Y_{23}$ variable estimates the relative strength of
+   the $p_T$ of the third jet with respect to the other two jets. It vanishes for
+   two-jet events, and a nonzero value of $Y_{23}$ indicates the presence of hard
+   parton emission, which tests the parton showering model of QCD event
+   generators. A test like this is less sensitive to the details of the
+   underlying event (UE) and parton hadronization models than the other
+   event-shape variables.'
+
+BibKey: 'Khachatryan:2014ika'
+BibTeX: '@article{Khachatryan:2014ika,
+      author         = "Khachatryan, Vardan and others",
+      title          = "{Study of hadronic event-shape variables in multijet
+                        final states in $pp$ collisions at $\sqrt{s} = 7$~TeV}",
+      collaboration  = "CMS Collaboration",
+      journal        = "JHEP",
+      volume         = "1410",
+      pages          = "87",
+      doi            = "10.1007/JHEP10(2014)087",
+      year           = "2014",
+      eprint         = "1407.2856",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-SMP-12-022, CERN-PH-EP-2014-146",
+      SLACcitation   = "%%CITATION = ARXIV:1407.2856;%%",
+}'

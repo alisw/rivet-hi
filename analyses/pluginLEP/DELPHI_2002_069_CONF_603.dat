@@ -1,0 +1,106 @@
+### 
+### The data is take from the conference note DELPHI 2002-069 CONF 603
+### "A Study of the b-Quark Fragmentation Function with the DELPHI at LEP I"
+### 
+
+# BEGIN PLOT
+# END PLOT
+
+# BEGIN HISTOGRAM f_xB_prim
+# Table 9 in the publication
+Title=b quark fragmentation function $f(x_B^{prim})$
+ErrorBars=1
+LineColor=blue
+PolyMarker=*
+0.100	0.287	0.051	0.031
+0.287	0.395	0.481	0.039
+0.395	0.503	0.536	0.045
+0.503	0.606	0.887	0.059
+0.606	0.699	1.294	0.066
+0.699	0.777	1.849	0.072
+0.777	0.851	2.728	0.076
+0.851	0.907	3.478	0.082
+0.907	0.951	2.324	0.133
+0.951	1.000	0.442	0.076
+# END HISTOGRAM
+
+# BEGIN HISTOGRAM f_xB_weak
+# Table 12 in the publication
+Title=b quark fragmentation function $f(x_B^{weak})$
+ErrorBars=1
+LineColor=red
+PolyMarker=*
+0.100	0.281	0.029	0.036
+0.281	0.389	0.516	0.044
+0.389	0.491	0.552	0.046
+0.491	0.589	0.940	0.056
+0.589	0.681	1.282	0.064
+0.681	0.764	2.060	0.075
+0.764	0.828	2.904	0.088
+0.828	0.896	3.139	0.103
+0.896	0.946	1.549	0.094
+0.946	1.000	0.358	0.048
+# END HISTOGRAM
+
+# BEGIN HISTOGRAM f_z
+# Table 15 in the publication
+Title=b quark fragmentation function $f(z)$
+ErrorBars=1
+LineColor=black
+PolyMarker=*
+0.000	0.440	0.000	0.006
+0.440	0.590	0.000	0.000
+0.590	0.710	0.005	0.021
+0.710	0.790	0.408	0.309
+0.790	0.870	3.720	0.287
+0.870	0.950	6.875	0.362
+0.950	1.000	2.312	0.459
+# END HISTOGRAM
+
+# BEGIN HISTOGRAM mean_f_xB_prim
+Title=Mean of the b quark fragmentation function $f(x_B^{prim})$
+ErrorBars=1
+LineColor=blue
+PolyMarker=*
+91	91	0.7346	0.0056
+# END HISTOGRAM
+
+# BEGIN HISTOGRAM mean_f_xB_weak
+Title=Mean of the b quark fragmentation function $f(x_B^{weak})$
+ErrorBars=1
+LineColor=red
+PolyMarker=*
+91	91	0.7153	0.0052
+# END HISTOGRAM
+
+# BEGIN HISTOGRAM mean_f_z
+Title=Mean of the b quark fragmentation function $f(z)$
+ErrorBars=1
+LineColor=black
+PolyMarker=*
+91	91	0.8872	0.0055
+# END HISTOGRAM
+
+# BEGIN HISTOGRAM var_f_xB_prim
+Title=Variance of the b quark fragmentation function $f(x_B^{prim})$
+ErrorBars=1
+LineColor=blue
+PolyMarker=*
+91	91	0.0318	0.0005
+# END HISTOGRAM
+
+# BEGIN HISTOGRAM var_f_xB_weak
+Title=Variance of the b quark fragmentation function $f(x_B^{weak})$
+ErrorBars=1
+LineColor=red
+PolyMarker=*
+91	91	0.0300	0.0004
+# END HISTOGRAM
+
+# BEGIN HISTOGRAM var_f_z
+Title=Variance of the b quark fragmentation function $f(z)$
+ErrorBars=1
+LineColor=black
+PolyMarker=*
+91	91	0.0027	0.0001
+# END HISTOGRAM

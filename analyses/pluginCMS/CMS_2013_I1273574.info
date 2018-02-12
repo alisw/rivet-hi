@@ -1,0 +1,44 @@
+Name: CMS_2013_I1273574
+Year: 2013
+Summary: Studies of 4-jet production in proton-proton collisions at $\sqrt{s} = 7$ TeV
+Experiment: CMS
+Collider: LHC
+InspireID: 1273574
+Status: VALIDATED
+Authors:
+ - P. Gunnellini
+ - A. Buckley
+References:
+ - CMS-FSQ-12-013
+ - CERN-PH-EP-2013-229
+ - arXiv:1312.6440
+ - Submitted to Phys. Rev. D
+RunInfo:
+   Hard QCD events with \pT cut at generator level of 45 GeV
+NumEvents: 500000
+NeedCrossSection: yes
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: 2 jets with $\pT > 50$ GeV; 2 jets with $\pT > 20$ GeV
+Description:
+  Measurements are presented of exclusive 4-jet production cross
+  sections as a function of the transverse momentum $p_T$,
+  pseudorapidity $\eta$, as well as of correlations in azimuthal
+  angle and $p_T$ balance among the jets. The data sample was
+  collected at a centre-of-mass energy of 7 TeV with the CMS
+  detector at the LHC, corresponding to an integrated luminosity
+  of 36 pb$^{-1}$. The jets are reconstructed with the
+  anti-$k_T$ jet algorithm in a range of $|\eta|<4.7$.
+BibKey: Chatrchyan:2013qza
+BibTeX: '@article{Chatrchyan:2013qza,
+      author         = "Chatrchyan, Serguei and others",
+      title          = "{Measurement of four-jet production in proton-proton
+                        collisions at sqrt(s)=7 TeV}",
+      collaboration  = " CMS Collaboration",
+      year           = "2013",
+      eprint         = "1312.6440",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-FSQ-12-013, CERN-PH-EP-2013-229",
+      SLACcitation   = "%%CITATION = ARXIV:1312.6440;%%",
+}'

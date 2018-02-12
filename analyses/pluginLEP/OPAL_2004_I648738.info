@@ -1,0 +1,48 @@
+Name: OPAL_2004_I648738
+Year: 2004
+Summary: Quark and gluon jet fragmentation functions
+Experiment: OPAL
+Collider: LEP
+InspireID: 648738
+Status: VALIDATED
+Authors:
+ - Daniel Reichelt [d.reichelt@cern.ch]
+References:
+ - Eur.Phys.J. C37 (2004) no.1, 25-47
+ - hep-ex/0404026
+RunInfo:
+  For quark fragmentation $e^+e^-\to q\bar{q}$ events are required, while for gluon fragmentation
+  the fictonal $e^+e^-\to gg$ process is required.
+NumEvents: 1000000
+NeedCrossSection: no
+Beams: [e+, e-]
+Energies: [12.8,26.8,48.0,91.2,93.0,97.0,197.0]
+NeedCrossSection: False
+Description:
+  Measurement of the fragmentation functions for quarks and gluons at LEP. Useful for studying the properties
+  of gluon jets and the differences between quark and gluon jets. For the study of gluon jets the fictional
+  $e^+e^-\to g g $ process must be used. The data in histograms labelled "hemisphere fragmentation" are measured
+  from jets defined by hemispheres, with an energy scale defined by $E=\sqrt{s}/2$,
+  while data in histograms named "durham fragmentation" are measured from jets defined by the durham algorithm
+  with $Q_\mathrm{jet}=E_\mathrm{jet}\sin(\theta/2)$ as the energy scale. The rivet analysis defines the jet
+  flavour from the initial quarks, as the data are corrected for impurities, and defines all jets as
+  hemispheres with energy scale $E=\sqrt{s}/2$.
+BibKey: Abbiendi:2004pr
+BibTeX: '@article{Abbiendi:2004pr,
+      author         = "Abbiendi, G. and others",
+      title          = "{Scaling violations of quark and gluon jet fragmentation
+                        functions in e+ e- annihilations at s**(1/2) = 91.2-GeV
+                        and 183-GeV to 209-GeV}",
+      collaboration  = "OPAL",
+      journal        = "Eur. Phys. J.",
+      volume         = "C37",
+      year           = "2004",
+      number         = "1",
+      pages          = "25-47",
+      doi            = "10.1140/epjc/s2004-01964-4",
+      eprint         = "hep-ex/0404026",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2004-011",
+      SLACcitation   = "%%CITATION = HEP-EX/0404026;%%"
+}'

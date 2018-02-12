@@ -1,0 +1,31 @@
+Name: ALEPH_1995_I382179
+Year: 1995
+Summary: Inclusive pi+-, K+- and (p, anti-p) differential cross-sections at the Z resonance
+Experiment: ALEPH
+Collider: LEP
+InspireID: 382179
+Status: VALIDATED
+Authors:
+ - Simone Amoroso <amoroso@cern.ch>
+References:
+ - Z.Phys. C66 (1995) 355-366
+ - doi:10.1007/BF01556360
+RunInfo: e+e- production at the Z-peak with hadronic decays
+Beams: [e+,e-]
+Energies: [91.2]
+Description: Inclusive spectra of pions, Kaons, protons and antiprotons in hadronic decays of the Z0  measured as a function of z.
+BibKey: Buskulic:1994ft
+BibTeX: '@article{Buskulic:1994ft,
+      author         = "Buskulic, D. and others",
+      title          = "{Inclusive pi+-, K+- and (p, anti-p) differential
+                        cross-sections at the Z resonance}",
+      collaboration  = "ALEPH",
+      journal        = "Z. Phys.",
+      volume         = "C66",
+      year           = "1995",
+      pages          = "355-366",
+      doi            = "10.1007/BF01556360",
+      reportNumber   = "CERN-PPE-94-201, FSU-SCRI-95-62",
+      SLACcitation   = "%%CITATION = ZEPYA,C66,355;%%"
+}'
+

@@ -1,0 +1,21 @@
+Name: ATLAS_2012_CONF_2012_104
+Year: 2012
+Summary: Search for supersymmetry at 8 TeV in final states with jets, missing transverse momentum and one lepton with the ATLAS detector.
+Experiment: ATLAS
+Collider: LHC
+Status: OBSOLETE
+Authors:
+ - Peter Richardson <Peter.Richardson@durham.ac.uk>
+References:
+ - ATLAS-CONF-2012-104
+RunInfo:
+  BSM signal events at 8000 GeV.
+NumEvents: 25000 for BSM signals
+Beams: [p+, p+]
+Energies: [8000]
+Description:
+  'One lepton search for supersymmmetric particles by ATLAS at 8 TeV with $5.8\,\text{fb}^{-1}$ integrated luminosity.
+  Event counts in the signal regions are implemented as one-bin histograms.
+  Histograms for effective mass are implemented for the two
+  signal hard lepton signal regions and the ratio of missing transverse energy
+  to effective mass for the soft lepton region.'

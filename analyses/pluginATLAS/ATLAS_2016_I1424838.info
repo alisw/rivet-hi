@@ -1,0 +1,37 @@
+Name: ATLAS_2016_I1424838
+Year: 2015
+Summary: Event shapes in leptonic $Z$-events
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1424838
+Status: VALIDATED
+Authors:
+ - Holger Schulz <hschulz@cern.ch>
+#References:
+# - <Example: Phys.Lett.B639:151-158,2006, Erratum-ibid.B658:285-289,2008>
+# - <Example: doi:10.1016/j.physletb.2006.04.048>
+# - <Example: arXiv:hep-ex/0511054 (plus erratum)>
+RunInfo:
+   $Z \to \ell\ell$ with $p_\perp(\ell)>20$~GeV
+NumEvents: 1000000
+NeedCrossSection: no
+Beams: [p+, p+]
+Energies: [7000]
+Description:
+  'Measurement of transverse event-shape observables ($N_\text{ch}$,
+  $\sum\pT$, thrust, beam-thrust, $F$-parameter, and spherocity)
+  in $Z \to \ell\ell$ events at 7~TeV for different $\pT(Z)$ regions.'
+BibKey: Aad:2016ria
+BibTeX: '@article{Aad:2016ria,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of event-shape observables in $Z \to
+                        \ell^+ \ell^-$ events in $pp$ collisions at
+                        $\sqrt{s}=7$~\TeV with the ATLAS detector at the LHC}",
+      collaboration  = "ATLAS",
+      year           = "2016",
+      eprint         = "1602.08980",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-EP-2016-015",
+      SLACcitation   = "%%CITATION = ARXIV:1602.08980;%%"
+}'

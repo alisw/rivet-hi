@@ -1,0 +1,39 @@
+Name: DELPHI_2000_S4328825
+Year: 2000
+Summary: Hadronization properties of $b$ quarks compared to light quarks in $e^+ e^-\to q \bar{q}$ from 183\;GeV to 200\;GeV
+Experiment: OPAL
+Collider: LEP 2
+SpiresID: 4328825
+InspireID: 524693
+Status: VALIDATED
+Authors:
+ - Peter Richardson <Peter.Richardson@durham.ac.uk>
+References:
+ - Phys.Lett.B479:118-128,2000
+ - hep-ex/0103022
+ - DELPHI 2002-052 CONF 586
+RunInfo:
+  Hadronic Z decay events generated on the Z pole ($\sqrt{s} = 91.2$\;GeV)
+NumEvents: 1000000
+Beams: [e+, e-]
+Energies: [183,189,192,196,200,206]
+PtCuts: [0]
+Description: Measurements of the mean charged multiplicities separately for $b\bar b$,
+  $c\bar{c}$ and light quark ($uds$) initiated events in $e^+e^-$ interactions at energies
+  above the $Z^0$ mass. In addition to the energy points in the original paper
+  one additional point at 206;GeV is included from a later preliminary result.
+BibKey: Abreu:2000nt
+BibTeX: '@Article{Abreu:2000nt,
+     author    = "Abreu, P. and others",
+     collaboration = "DELPHI",
+     title     = "{Hadronization properties of b quarks compared to light
+                  quarks in $e^+ e^- \to q \bar{q}$ from 183\;GeV to 200\;GeV}",
+     journal   = "Phys. Lett.",
+     volume    = "B479",
+     year      = "2000",
+     pages     = "118-128",
+     eprint    = "hep-ex/0103022",
+     archivePrefix = "arXiv",
+     doi       = "10.1016/S0370-2693(00)00312-9",
+     SLACcitation  = "%%CITATION = HEP-EX/0103022;%%"
+}'

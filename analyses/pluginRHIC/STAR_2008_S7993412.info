@@ -1,0 +1,41 @@
+Name: STAR_2008_S7993412
+Year: 2008
+Summary: Di-hadron correlations in $d$-Au at 200 GeV
+Experiment: STAR
+Collider: RHIC d-Au 200 GeV
+SpiresID: 7993412
+InspireID: 810030
+Status: UNVALIDATED
+Authors:
+ - Christine Nattrass <christine.nattrass@yale.edu>
+ - Hendrik Hoeth <hendrik.hoeth@cern.ch>
+References:
+ - arXiv:0809.5261 [nucl-ex]
+RunInfo:
+  $d$-Au at 200 GeV, but use $pp$ Monte Carlo! See description.
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [200]
+PtCuts: [0]
+Description:
+  Correlation in $\eta$ and $\phi$ between the charged hadron with the
+  highest pT (``trigger particle'') and the other charged hadrons in the
+  event (``associated particles''). The data was collected in d-Au
+  collisions at 200 GeV. Nevertheless, it is very proton--proton like and
+  can therefore be compared to $pp$ Monte Carlo (not for tuning, but for
+  qualitative studies.)
+BibKey: Nattrass:2008tw
+BibTeX: '@Article{Nattrass:2008tw,
+     author    = "Nattrass, Christine",
+     title     = "{Energy and system dependence of high-$p_T$ triggered two-
+                  particle near-side correlations}",
+     journal   = "Eur. Phys. J.",
+     volume    = "C62",
+     year      = "2009",
+     pages     = "265-269",
+     eprint    = "0809.5261",
+     archivePrefix = "arXiv",
+     primaryClass  =  "nucl-ex",
+     doi       = "10.1140/epjc/s10052-009-1037-8",
+     SLACcitation  = "%%CITATION = 0809.5261;%%"
+}'

@@ -1,0 +1,36 @@
+Name: ATLAS_2015_I1394679
+Year: 2015
+Summary: Multijets at 8 TeV
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1394679
+Status: VALIDATED
+Authors:
+ - Sabrina Sacerdoti <Sabrina.Sacerdoti@cern.ch>
+References:
+ - arXiv:1509.07335 [hep-ex]
+RunInfo:
+  p + p -> j j j j + X
+Beams: [p+, p+]
+Energies: [8000]
+PtCuts: [100,64,60]
+NeedCrossSection: True
+Description:
+  Differential cross sections for the production of at least four jets have been measured in proton-proton collisions at
+  $\sqrt{s}=8$\,TeV at the Large Hadron Collider using the ATLAS detector. The dataset corresponds to an integrated luminosity
+  of 20.3\,fb^{-1}. The cross sections are corrected for detector effects and presented as a function of the jet momenta,
+  invariant masses, minimum and maximum opening angles and other kinematic variables.
+BibKey: Aad:2015nda
+BibTeX: '@article{Aad:2015nda,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of four-jet differential cross sections in
+                        $\sqrt{s}=8$ TeV proton--proton collisions using the ATLAS
+                        detector}",
+      collaboration  = "ATLAS",
+      year           = "2015",
+      eprint         = "1509.07335",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2015-181",
+      SLACcitation   = "%%CITATION = ARXIV:1509.07335;%%"
+}'

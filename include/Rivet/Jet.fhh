@@ -1,0 +1,38 @@
+// -*- C++ -*-
+#ifndef RIVET_Jet_FHH
+#define RIVET_Jet_FHH
+
+#include "Rivet/Tools/RivetSTL.hh"
+#include "Rivet/Tools/RivetFastJet.hh"
+
+namespace Rivet {
+
+
+  /// @name Jet declarations
+  //@{
+
+  // Forward declaration
+  class Jet;
+
+  /// Typedef for a collection of Jet objects.
+  typedef std::vector<Jet> Jets;
+
+  //@}
+
+
+  /// @name Jet function/functor declarations
+  //@{
+
+  /// std::function instantiation for functors taking a Jet and returning a bool
+  using JetSelector = function<bool(const Jet&)>;
+
+  /// std::function instantiation for functors taking two Jets and returning a bool
+  using JetSorter = function<bool(const Jet&, const Jet&)>;
+
+  //@}
+
+
+}
+
+
+#endif

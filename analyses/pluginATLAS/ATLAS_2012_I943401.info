@@ -1,0 +1,43 @@
+Name: ATLAS_2012_I943401
+Year: 2012
+Summary: Search for supersymmetry with 2 leptons and missing transverse energy
+Experiment: ATLAS
+Collider: LHC
+InspireID: 943401
+Status: VALIDATED
+Authors:
+ - Peter Richardson <Peter.Richardson@durham.ac.uk>
+References:
+ - arXiv:1110.6189
+RunInfo:
+  BSM signal events at 7000 GeV.
+NumEvents: 25000 for BSM signals
+Beams: [p+, p+]
+Energies: [7000]
+Description:
+  'Results of three searches for the production of supersymmetric particles decaying into final
+   states with missing transverse momentum and exactly two isolated leptons, electrons or muons.
+   The analysis uses a data sample collected during the first half of 2011 that
+   corresponds to a total integrated luminosity of 1 $\text{fb}^{-1}$ of $\sqrt{s} = 7$\,TeV
+   proton-proton collisions recorded with the ATLAS detector at the Large Hadron Collider.
+   Opposite-sign and same-sign dilepton events are studied separately.
+   Additionally, in opposite- sign events, a search is made for an excess of same-flavour
+   over different-flavour lepton pairs.'
+BibKey: Aad:2011cwa
+BibTeX: '@article{Aad:2011cwa,
+      author         = "Aad, Georges and others",
+      title          = "{Searches for supersymmetry with the ATLAS detector using
+                        final states with two leptons and missing transverse
+                        momentum in sqrt{s} = 7 TeV proton-proton collisions}",
+      collaboration  = "ATLAS Collaboration",
+      journal        = "Phys.Lett.",
+      volume         = "B709",
+      pages          = "137-157",
+      doi            = "10.1016/j.physletb.2012.01.076",
+      year           = "2012",
+      eprint         = "1110.6189",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2011-165",
+      SLACcitation   = "%%CITATION = ARXIV:1110.6189;%%",
+}'

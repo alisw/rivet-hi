@@ -1,0 +1,39 @@
+Name: OPAL_1998_S3780481
+Year: 1998
+Summary: Measurements of flavor dependent fragmentation functions in $Z^0 -> q \bar{q}$ events
+Experiment: OPAL
+Collider: LEP 1
+SpiresID: 3780481
+InspireID: 472637
+Status: VALIDATED
+Authors:
+ - Hendrik Hoeth <hendrik.hoeth@cern.ch>
+References:
+ - Eur. Phys. J, C7, 369--381 (1999)
+ - hep-ex/9807004
+RunInfo:
+  Hadronic Z decay events generated on the Z pole ($\sqrt{s} = 91.2$ GeV)
+NumEvents: 1000000
+Beams: [e+, e-]
+Energies: [91.2]
+PtCuts: [0]
+Description:
+  Measurement of scaled momentum distributions and total charged
+  multiplicities in flavour tagged events at LEP 1. OPAL measured these
+  observables in uds-, c-, and b-events separately. An inclusive
+  measurement is also included.
+BibKey: Ackerstaff:1998hz
+BibTeX: '@Article{Ackerstaff:1998hz,
+     author    = "Ackerstaff, K. and others",
+ collaboration = "OPAL",
+     title     = "{Measurements of flavour dependent fragmentation functions
+                  in  Z0 --> q anti-q events}",
+     journal   = "Eur. Phys. J.",
+     volume    = "C7",
+     year      = "1999",
+     pages     = "369-381",
+     eprint    = "hep-ex/9807004",
+     archivePrefix = "arXiv",
+     doi       = "10.1007/s100529901067",
+     SLACcitation  = "%%CITATION = HEP-EX/9807004;%%"
+}'

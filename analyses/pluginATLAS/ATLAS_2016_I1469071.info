@@ -1,0 +1,53 @@
+Name: ATLAS_2016_I1469071
+Year: 2016
+Summary: Measurement of the WZ production cross section at 13 TeV
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1469071
+Status: VALIDATED
+Authors:
+ - Elena Yatsenko <elena.yatsenko@cern.ch>
+References:
+ - Phys. Lett. B 762 (2016) 1
+ - arXiv:1606.04017 [hep-ex]
+ - doi:10.1016/j.physletb.2016.08.052
+Keywords:
+ - WZ
+ - DIBOSON
+RunInfo:
+  pp -> WZ + X, diboson decays to electrons and muons
+NeedCrossSection: yes
+Luminosity_fb: 3.2
+Beams: [p+, p+]
+Energies: [13000]
+PtCuts: [15,25]
+Description:
+  'The production of $W^\pm Z$ events in proton--proton collisions at a centre-of-mass energy of 13 TeV is measured with the ATLAS detector
+  at the LHC. The collected data correspond to an integrated luminosity of 3.2 fb${}^{-1}$ . The $W^\pm Z$ candidates are reconstructed using
+  leptonic decays of the gauge bosons into electrons or muons. The measured inclusive cross section in the detector fiducial region
+  for leptonic decay modes is $\sigma(W^\pm Z\to\ell^\prime\nu\ell\ell \text{fid.}) = 63.2\pm 3.2$(stat.)$\pm 2.6$(sys.)$\pm 1.5$(lumi.) fb.
+  In comparison, the next-to-leading-order Standard Model prediction is 53.4-2.8+3.6 fb. The extrapolation of the measurement from
+  the fiducial to the total phase space yields $\sigma(W^\pm Z\text{tot.})=50.6\pm 2.6$(stat.)$\pm 2.0$(sys.)$\pm 0.9$(th.)$\pm 1.2$(lumi.) pb,
+  in agreement with a recent next-to-next-to-leading-order calculation of 48.2-1.0+1.1 pb. The cross section as a function of jet multiplicity
+  is also measured, together with the charge-dependent $W^+Z$ and $W^-Z$ cross sections and their ratio.
+  Users should note that explicit matching of lepton flavour between individual SM neutrinos and charged leptons is used in this analysis
+  routine, to match the MC-based correction to the fiducial region applied in the paper. The data are therefore only valid under the
+  assumption of the Standard Model and cannot be used for BSM reinterpretation.'
+BibKey: Aaboud:2016yus
+BibTeX: '@article{Aaboud:2016yus,
+      author         = "Aaboud, Morad and others",
+      title          = "{Measurement of the $W^{\pm}Z$ boson pair-production
+                        cross section in $pp$ collisions at $\sqrt{s}=13$ TeV with
+                        the ATLAS Detector}",
+      collaboration  = "ATLAS",
+      journal        = "Phys. Lett.",
+      volume         = "B762",
+      year           = "2016",
+      pages          = "1-22",
+      doi            = "10.1016/j.physletb.2016.08.052",
+      eprint         = "1606.04017",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-EP-2016-108",
+      SLACcitation   = "%%CITATION = ARXIV:1606.04017;%%"
+}'

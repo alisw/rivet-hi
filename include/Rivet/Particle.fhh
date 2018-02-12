@@ -1,0 +1,54 @@
+// -*- C++ -*-
+#ifndef RIVET_Particle_FHH
+#define RIVET_Particle_FHH
+
+#include "Rivet/Tools/RivetSTL.hh"
+
+namespace Rivet {
+
+
+  /// @name Particle declarations
+  //@{
+
+  // Forward declaration
+  class Particle;
+
+  /// Typedefs for a vector of Particle objects.
+  typedef std::vector<Particle> Particles; //< New form, cf. Jets
+  /// @deprecated Use Particles instead. Will be removed
+  typedef std::vector<Particle> ParticleVector; //< Old form
+
+  /// Typedef for a pair of Particle objects.
+  typedef std::pair<Particle, Particle> ParticlePair;
+
+  //@}
+
+
+  /// @name Particle function/functor declarations
+  //@{
+
+  /// std::function instantiation for functors taking a Particle and returning a bool
+  using ParticleSelector = function<bool(const Particle&)>;
+
+  /// std::function instantiation for functors taking two Particles and returning a bool
+  using ParticleSorter = function<bool(const Particle&, const Particle&)>;
+
+  //@}
+
+
+  /// @name PdgId declarations
+  //@{
+
+  /// Typedefs for a PDG ID code.
+  typedef int PdgId;
+  //typedef PdgId PID; //< can't do this, because it's also a (sub)namespace
+
+  /// Typedef for a pair of particle names.
+  typedef std::pair<PdgId, PdgId> PdgIdPair;
+
+  //@}
+
+
+}
+
+#endif

@@ -1,0 +1,41 @@
+Name: LHCB_2011_I917009
+Year: 2011
+Summary: $V^0$ production ratios in $pp$ collisions at $\sqrt{s}= 0.9$ and 7 TeV at LHCb
+Experiment: LHCb
+Collider: LHC
+InspireID: 917009
+Status: VALIDATED
+Authors:
+ - Alex Grecu <Alex.Grecu@cern.ch>
+References:
+ - JHEP08:034,2011
+ - arXiv:1107.0882[hep-ex]
+ - doi:10.1007/JHEP08(2011)034
+RunInfo:
+  QCD events. LHCb minimum bias, Perugia 0 and Perugia NOCR tune events used for reproducing published histograms.
+NumEvents: 5000000
+Beams: [p+, p+]
+Energies: [900, 7000]
+# PtCuts: [[0.25, 2.5], [0.15,2.5]]
+Description:
+  This paper presents the production ratios for $\bar{\Lambda}/\Lambda$ and
+  $\bar{\Lambda}/K_{s}^{0}$ measured by LHCb detector in 2010 at $\sqrt{s} = 0.9$
+  TeV and 7 TeV as functions of the transverse momentum $p_\perp$ and the rapidity $y$
+  in the ranges $0.15 < p_\perp < 2.50\;\GeV/c$ and $2.0 < y < 4.5$, respectively.
+  The results for the two energies are merged and represented as a function of
+  rapidity loss $\Delta y = y_{\mathrm{beam}} - y$.
+NeedsCrossSection: true
+BibKey: Aaij:2011va
+BibTeX: '@article{Aaij:2011va,
+      author         = "Aaij, R. and others",
+      title          = "{Measurement of $V^0$ production ratios in $pp$ collisions at $\sqrt{s} = 0.9$ and 7\,TeV}",
+      collaboration  = "LHCb Collaboration",
+      journal        = "JHEP",
+      volume         = "1108",
+      pages          = "034",
+      doi            = "10.1007/JHEP08(2011)034",
+      year           = "2011",
+      eprint         = "1107.0882",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+}'

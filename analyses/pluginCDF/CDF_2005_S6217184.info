@@ -1,0 +1,42 @@
+Name: CDF_2005_S6217184
+Year: 2005
+Summary: CDF Run II jet shape analysis
+Experiment: CDF
+Collider: Tevatron Run 2
+SpiresID: 6217184
+InspireID: 682179
+Status: VALIDATED
+Authors:
+ - Lars Sonnenschein <Lars.Sonnenschein@cern.ch>
+ - Andy Buckley <andy.buckley@cern.ch>
+References:
+ - Phys.Rev.D71:112002,2005
+ - doi:10.1103/PhysRevD.71.112002
+ - arXiv:hep-ex/0505013
+RunInfo:
+  QCD events at $\sqrt{s} = 1960$ GeV.
+  Jet $\pT^\text{min}$ in plots is 37 GeV/$c$ -- choose a
+  generator min $\pT$ well below this.
+NumEvents: 1000000
+Beams: [p-, p+]
+Energies: [1960]
+PtCuts: [30]
+Description:
+  Measurement of jet shapes in inclusive jet production in $p \bar{p}$
+  collisions at center-of-mass energy $\sqrt{s} = 1.96$ TeV. The data cover
+  jet transverse momenta from 37--380 GeV and absolute jet rapidities in
+  the range 0.1--0.7.
+BibKey: Acosta:2005ix
+BibTeX: '@Article{Acosta:2005ix,
+     author    = "Acosta, Darin E. and others",
+     collaboration = "CDF",
+     title     = "{Study of jet shapes in inclusive jet production in $p\bar{p}$ collisions  at $\sqrt{s} = 1.96$ TeV}",
+     journal   = "Phys. Rev.",
+     volume    = "D71",
+     year      = "2005",
+     pages     = "112002",
+     eprint    = "hep-ex/0505013",
+     archivePrefix = "arXiv",
+     doi       = "10.1103/PhysRevD.71.112002",
+     SLACcitation  = "%%CITATION = HEP-EX/0505013;%%"
+}'

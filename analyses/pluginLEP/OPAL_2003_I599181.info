@@ -1,0 +1,40 @@
+Name: OPAL_2003_I599181
+Year: 2003
+Summary: Inclusive analysis of the b quark fragmentation function in Z decays
+Experiment: OPAL
+Collider: LEP2
+InspireID: 599181
+Status: VALIDATED
+Authors:
+ - Simone Amoroso <amoroso@cern.ch>
+References:
+ - Eur.Phys.J.C29:463-478,2003
+ - doi:10.1140/epjc/s2003-01229-x
+ - arXiv:hep-ex/0210031
+RunInfo:  Hadronic Z decay events generated on the Z pole ($\sqrt{s} = 91.2$ GeV)
+
+NumEvents: 1000000
+NeedCrossSection: no
+Beams: [e+,e-]
+Energies: [91.2]
+Description:
+  'A study of b quark fragmentation function is presented using inclusively reconstructed weakly decaying B hadrons. 
+  The measurement uses about four million hadronic Z decays recorded in 1992-2000 with the OPAL detector at LEP.'
+BibKey: Abbiendi:2002vt
+BibTeX: '@article{Abbiendi:2002vt,
+      author         = "Abbiendi, G. and others",
+      title          = "{Inclusive analysis of the b quark fragmentation function
+                        in Z decays at LEP}",
+      collaboration  = "OPAL",
+      journal        = "Eur. Phys. J.",
+      volume         = "C29",
+      year           = "2003",
+      pages          = "463-478",
+      doi            = "10.1140/epjc/s2003-01229-x",
+      eprint         = "hep-ex/0210031",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-EP-2002-051",
+      SLACcitation   = "%%CITATION = HEP-EX/0210031;%%"
+}'
+

@@ -1,0 +1,40 @@
+Name: ATLAS_2011_I919017
+Year: 2011
+Summary: Measurement of ATLAS track jet properties at 7 TeV
+Experiment: ATLAS
+Collider: LHC
+InspireID: 919017
+Status: VALIDATED
+Authors:
+ - Seth Zenz <seth.zenz@cern.ch>
+ - Andy Buckley <andy.buckley@cern.ch>
+References:
+ - Phys.Rev.D 84 (2011) 054001
+ - doi:10.1103/PhysRevD.84.054001
+ - arXiv:1107.3311
+ - ATLAS-STDM-2010-14
+ - CERN-PH-EP-2011-110
+RunInfo:
+  Min bias QCD at 7 TeV.
+NumEvents: 10000000
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [0, 15]
+Description:
+  ATLAS measurement of track jet pT, multiplicity per jet, longitudinal fragmentation,
+  transverse momentum, radius w.r.t jet axis distributions, with
+  jets constructed from charged tracks with $pT > 300$ MeV, using the anti-$k_T$ jet
+  algorithm with $R = 0.4, 0.6$.
+NeedCrossSection: yes
+BibKey: Aad:2011gn
+BibTeX: '@article{Aad:2011gn,
+      author         = "Aad, Georges and others",
+      title          = "{Properties of jets measured from tracks in proton--proton
+                        collisions at center-of-mass energy $\sqrt{s} = 7$\;TeV with
+                        the ATLAS detector}",
+      collaboration  = "ATLAS",
+      year           = "2011",
+      eprint         = "1107.3311",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+}'

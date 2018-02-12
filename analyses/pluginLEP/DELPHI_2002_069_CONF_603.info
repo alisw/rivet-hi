@@ -1,0 +1,23 @@
+Name: DELPHI_2002_069_CONF_603
+Year: 2002 (note)
+Summary: Study of the b-quark fragmentation function at LEP 1
+Experiment: DELPHI
+Collider: LEP 1
+Status: OBSOLETE
+Authors:
+ - Hendrik Hoeth <hendrik.hoeth@cern.ch>
+References:
+ - DELPHI note 2002-069-CONF-603 (ICHEP 2002)
+RunInfo:
+  Hadronic Z decay events generated on the Z pole ($\sqrt{s} = 91.2$ GeV)
+NumEvents: 1000000
+Beams: [e+, e-]
+Energies: [91.2]
+PtCuts: [0]
+Description:
+  Measurement of the $b$-quark fragmentation function by DELPHI using 1994
+  LEP 1 data. The fragmentation function for both weakly decaying and
+  primary $b$-quarks has been determined in a model independent way.
+  Nevertheless the authors trust $f(x_B^\text{weak})$ more than
+  $f(x_B^\text{prim})$. Note --- this analysis is superseded by
+  DELPHI_2011_I890503.

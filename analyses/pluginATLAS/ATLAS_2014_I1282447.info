@@ -1,0 +1,56 @@
+Name: ATLAS_2014_I1282447
+Year: 2014
+Summary: W + charm production at 7 TeV
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1282447
+Status: VALIDATED
+Authors:
+ - Kristin Lohwasser <kristin.lohwasser@cern.ch>
+References:
+ - JHEP 1405 (2014) 068
+ - doi:10.1007/JHEP05(2014)068
+ - arXiv:1402.6263 [hep-ex]
+RunInfo:
+  W+c and inclusive double production in pp collisions
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [20,25,5]
+NeedCrossSection: True
+Description:
+  This routine implements the measurement of $W$ boson production in association with a single charm quark with $4.6~\text{fb}^{-1}$
+  of $pp$ collision data at $\sqrt{s} = 7$~TeV collected with the ATLAS detector at the Large Hadron Collider. 
+  Results are quoted for the $W$ boson production decaying into either an electron or muon and the charm quark being identified as 
+  any charmed hadron above 5~GeV inside $\Delta R = 0.4$ of a jet with more than 25~GeV. Alternatively the presence of the charm quark
+  is indicated by the presence of a $D$ or a $D^*$ meson with a $p_\text{T}$ above 8~GeV. The cross sections are quoted for the number
+  of opposite sign minus same sign events, where the signs under consideration are the charge of the $W$ boson and the charmed hadrons
+  tagging the event. Given are the integrated and differential cross sections as a function of the pseudorapidity of the lepton from 
+  the $W$-boson decay are measured. Additionally, the cross-section ratios $\sigma(W^+ + bar{c}) / \sigma(W^- + c)$ as well as the 
+  $p_\text{T}$ dependent cross sections of the $D$/$D^*$ mesons normalized to the $W$ inclusive cross sections are published. The 
+  measured data is unfolded to the Born level. One should therefore take care to run on samples without QED radiation off of the electrons.
+  IMPORTANT NOTICE --- For the MC predictions in the paper, the branching fractions to $D$ and $D^*$ mesons have been adapted to be
+  0.2256 ($D$) and 0.2287 ($D^*$) (LEP/HERA combination). Some suggestion on how to do post-processing -- in case separate samples for 
+  $W^+ + c$ and $W^- + c$ and inclusive $W$ are used -- are included in the cc-file. This post-processing is needed to properly 
+  display the histograms for the cross section ratio plots $\sigma(W^+ + bar{c}) / \sigma(W^- + c)$ as well as for the cross section 
+  ratios of $W + D^{(*)}$ production over inclusive $W$ production ($\sigma(W^{+/-} D^{(*)}) / \sigma(W^{+/-})$) as a function of 
+  the $D^{(*)}$ meson transverse momentum.
+BibKey: Aad:2014xca
+BibTeX: '@article{Aad:2014xca,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of the production of a $W$ boson in
+                        association with a charm quark in $pp$ collisions at
+                        $\sqrt{s} =$ 7 TeV with the ATLAS detector}",
+      collaboration  = "ATLAS Collaboration",
+      journal        = "JHEP",
+      volume         = "1405",
+      pages          = "068",
+      doi            = "10.1007/JHEP05(2014)068",
+      year           = "2014",
+      eprint         = "1402.6263",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2014-007",
+      SLACcitation   = "%%CITATION = ARXIV:1402.6263;%%",
+}'
+

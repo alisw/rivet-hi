@@ -1,0 +1,43 @@
+Name: ATLAS_2012_I1124167
+Year: 2012
+Summary: Measurement of charged-particle event shape variables
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1124167
+Status: VALIDATED
+Authors:
+ - Deepak Kar <deepak.kar@cern.ch>
+References:
+ - arXiv:1207.6915
+ - Phys.Rev. D88 (2013) 032004
+ - 10.1103/PhysRevD.88.032004
+RunInfo: Minimum bias events with at least 6 charged particles at 7 TeV
+NumEvents: 1000000
+NeedCrossSection: no
+Beams: [p+, p+]
+Energies: [7000]
+Description:
+  'The measurement of charged-particle event shape variables is presented in inclusive inelastic $pp$ collisions at a center-of-mass energy of
+   7 TeV using the ATLAS detector at the LHC. The observables studied are the transverse thrust, thrust minor, and transverse sphericity,
+   each defined using the final-state charged particles momentum components perpendicular to the beam direction.
+   Events with at least six charged particles are selected by a minimum-bias trigger.
+   In addition to the differential distributions, the evolution of each event shape variable as a function of
+   the leading charged-particle transverse momentum, charged-particle multiplicity, and summed transverse momentum is presented.'
+BibKey: Aad:2012fza
+BibTeX: '@article{Aad:2012fza,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of charged-particle event shape variables in
+                        $\sqrt{s}=7$ TeV proton-proton interactions with the ATLAS
+                        detector}",
+      collaboration  = "ATLAS Collaboration",
+      journal        = "Phys.Rev.",
+      volume         = "D88",
+      pages          = "032004",
+      doi            = "10.1103/PhysRevD.88.032004",
+      year           = "2013",
+      eprint         = "1207.6915",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2012-178",
+      SLACcitation   = "%%CITATION = ARXIV:1207.6915;%%",
+}'

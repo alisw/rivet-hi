@@ -1,0 +1,113 @@
+#! /usr/bin/env bash
+## -*- sh -*-
+## @configure_input@
+
+tmp=$(echo $* | egrep -- '--\<help\>|-\<h\>')
+if test $# -eq 0 || test -n "$tmp"; then
+    echo "rivet-config: configuration tool for the Rivet generator validation system"
+    echo "              http://projects.hepforge.org/rivet/"
+    echo
+    echo "Usage: $( basename $0 ) [--help|-h] | "
+    echo "           [--{prefix,datadir,libdir,includedir}] | "
+    echo "           [--{cppflags,ldflags,ldlibs}] | "
+    echo "           [--version]"
+    echo "Options:"
+    echo "  --help | -h   : show this help message"
+    echo
+    echo "  --prefix      : show the installation prefix (cf. autoconf)"
+    echo "  --includedir  : show the path to the directory containing the Rivet headers"
+    echo "  --libdir      : show the path to the directory containing the Rivet libraries"
+    echo "  --datadir     : show the path to the directory containing Rivet data"
+    echo "  --pythonpath  : show the path(s) to the directory containing Rivet's Python package"
+    echo
+    echo "  --guess-prefix: try to use the runtime prefix, rather than that set at install-time"
+    echo
+    echo "  --cxx         : returns a compiler string matching that used to build Rivet"
+    echo "  --cflags|--cppflags : returns a Rivet '-I' string for insertion into CPPFLAGS"
+    echo "  --ldflags     : returns a Rivet '-L' string for insertion into LDFLAGS"
+    echo "  --libs        : returns a Rivet '-L/-l' string for insertion into LIBS or LIBADD"
+    echo
+    echo "  --version     : returns Rivet release version number"
+fi
+
+
+## These variables need to exist
+## Note no use of $DESTDIR... we ignore it so that destdir can be used
+## for temp installs later copied to /
+tmp=$( echo "$*" | egrep -- '--\<guess-prefix\>')
+if [[ -n "$tmp" ]]; then
+    bindir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+    prefix=$(dirname $bindir)
+    exec_prefix=$prefix
+else
+    prefix=@prefix@
+    exec_prefix=@exec_prefix@
+fi
+datarootdir=@datarootdir@
+
+
+OUT=""
+
+## "Atomic" build info, for "roll your own build" obsessives
+tmp=$( echo "$*" | egrep -- '--\<prefix\>')
+test -n "$tmp" && OUT="$OUT @prefix@"
+
+tmp=$( echo "$*" | egrep -- '--\<includedir\>')
+test -n "$tmp" && OUT="$OUT @includedir@"
+
+tmp=$( echo "$*" | egrep -- '--\<libdir\>')
+test -n "$tmp" && OUT="$OUT @libdir@"
+
+tmp=$( echo "$*" | egrep -- '--\<datadir\>')
+test -n "$tmp" && OUT="$OUT @datadir@/@PACKAGE_TARNAME@"
+
+tmp=$( echo "$*" | egrep -- '--\<pythonpath\>')
+test -n "$tmp" && OUT="$OUT @RIVET_PYTHONPATH@"
+
+
+## "Pre-rolled" build info
+tmp=$( echo "$*" | egrep -- '--\<cxx\>')
+test -n "$tmp" && OUT="$OUT @RIVETCXX@"
+
+tmp=$( echo "$*" | egrep -- '--\<cflags\>|--\<cxxflags\>')
+test -n "$tmp" && OUT="$OUT @RIVETCXXFLAGS@"
+
+tmp=$( echo "$*" | egrep -- '--\<cppflags\>')
+if test -n "$tmp"; then
+    irivet="@includedir@"
+    test -n "$irivet" && OUT="$OUT -I${irivet}"
+    ihepmc="@HEPMCINCPATH@"
+    test -n "$ihepmc" && OUT="$OUT -I${ihepmc}"
+    iyoda="@YODAINCPATH@"
+    test -n "$iyoda" && OUT="$OUT -I${iyoda}"
+    ifastjet="@FASTJETINCPATH@"
+    test -n "$ifastjet" && OUT="$OUT -I${ifastjet}"
+    # igsl="@GSLINCPATH@"
+    # test -n "$igsl" && OUT="$OUT -I${igsl}"
+    # iboost="@BOOST_CPPFLAGS@"
+    # test -n "$iboost" && OUT="$OUT ${iboost}"
+fi
+
+tmp=$( echo "$*" | egrep -- '--\<ldflags\>|--\<libs\>')
+if test -n "$tmp"; then
+    lrivet="@libdir@"
+    test -n "$lrivet" && OUT="$OUT -L${lrivet}"
+    lhepmc="@HEPMCLIBPATH@"
+    test -n "$lhepmc" && OUT="$OUT -L${lhepmc} -lHepMC"
+    lyoda="@YODALIBPATH@"
+    test -n "$lyoda" && OUT="$OUT -L${lyoda} -lYODA"
+    lfastjet="@FASTJETCONFIGLIBADD@"
+    test -n "$lfastjet" && OUT="$OUT ${lfastjet}"
+    # lgsl="@GSLLIBPATH@"
+    # test -n "$lgsl" && OUT="$OUT -L${lgsl}"
+fi
+
+tmp=$( echo "$*" | egrep -- '--\<libs\>|--\<ldadd\>')
+test -n "$tmp" && OUT="$OUT -lRivet"
+
+
+## Version
+tmp=$( echo "$*" | egrep -- '--\<version\>')
+test -n "$tmp" && echo @PACKAGE_VERSION@ && exit 0
+
+echo $OUT

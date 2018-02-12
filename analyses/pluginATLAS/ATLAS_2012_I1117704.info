@@ -1,0 +1,25 @@
+Name: ATLAS_2012_I1117704
+Year: 2012
+Summary: High jet multiplicity squark and gluino search
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1117704
+Status: VALIDATED
+Authors:
+ - Peter Richardson <peter.richardson@durham.ac.uk>
+References:
+ - arXiv:1206.1760
+RunInfo:
+  BSM signal events at 7000 GeV.
+NumEvents: 25000 for BSM signals
+Beams: [p+, p+]
+Energies: [7000]
+NeedCrossSection: yes
+Description:
+  'Search for SUSY using events with 6 or more jets in
+   association with missing transverse momentum produced in proton-proton
+   collisions at a centre-of-mass energy of 7 TeV. The data sample has a total
+   integrated luminosity of 4.7 fb$^{-1}$. Distributions
+   in the W and top control regions are not produced, while in addition to
+   the plots from the paper the count of events in the different signal regions
+   is included.'

@@ -1,0 +1,37 @@
+Name: SLD_2004_S5693039
+Year: 2004
+Summary: Production of $\pi^+$, $\pi^-$, $K^+$, $K^-$, $p$ and $\bar p$ in Light ($uds$), $c$ and $b$ Jets from Z Decays
+Experiment: SLD
+Collider: SLC
+SpiresID: 5693039
+InspireID: 630327
+Status: VALIDATED
+Authors:
+ - Peter Richardson <Peter.Richardson@durham.ac.uk>
+References:
+ - Phys.Rev.D69:072003,2004
+ - arXiv:hep-ex/0310017
+RunInfo:
+  Hadronic Z decay events generated on the Z pole ($\sqrt{s} = 91.2$ GeV)
+NumEvents: 1000000
+Beams: [e+, e-]
+Energies: [91.2]
+PtCuts: [0]
+Description: Measurements of the differential production rates of stable charged particles in hadronic $Z^0$ decays, and of charged pions,
+   kaons and protons identified over a wide momentum range. In addition to flavour-inclusive $Z^0$ decays, measurements are made for $Z^0$
+   decays into light ($u$, $d$, $s$), $c$ and $b$ primary flavors.
+BibKey: Abe:2003iy
+BibTeX: '@Article{Abe:2003iy,
+     author    = "Abe, Koya and others",
+     collaboration = "SLD",
+     title     = "{Production of $\pi^+$, $\pi^-$, $K^+$, $K^-$, $p$ and $\bar p$ in light
+                  $(uds)$, $c$ and $b$ jets from $Z^0$ decays}",
+     journal   = "Phys. Rev.",
+     volume    = "D69",
+     year      = "2004",
+     pages     = "072003",
+     eprint    = "hep-ex/0310017",
+     archivePrefix = "arXiv",
+     doi       = "10.1103/PhysRevD.69.072003",
+     SLACcitation  = "%%CITATION = HEP-EX/0310017;%%"
+}'

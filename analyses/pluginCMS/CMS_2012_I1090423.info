@@ -1,0 +1,39 @@
+Name: CMS_2012_I1090423
+Year: 2012
+Summary: Dijet angular distributions in $pp$ collisions at $\sqrt{s} = 7$ TeV
+Experiment: CMS
+Collider: LHC
+InspireID: 1090423
+Status: VALIDATED
+Authors:
+ - A. Hinzmann
+References:
+ - JHEP 05 (2012) 055
+ - doi:10.1007/JHEP05(2012)055
+ - arXiv:hep-ex/1202.5535
+Beams: [p+, p+]
+Energies: [7000]
+RunInfo: QCD events with dijet mass greater 400 GeV
+Description:
+   'Measurement of dijet angular distributions in proton-proton collisions at a
+   center-of-mass energy of 7 TeV. The data sample has a total integrated
+   luminosity of 2.2 inverse femtobarns, recorded by the CMS experiment at the LHC.
+   Normalized dijet angular distributions have been measured for dijet invariant
+   masses from 0.4 TeV to above 3 TeV.'
+BibKey: Chatrchyan:2012bf
+BibTeX: '@article{Chatrchyan:2012bf,
+      author         = "Chatrchyan, Serguei and others",
+      title          = "{Search for quark compositeness in dijet angular
+                        distributions from $pp$ collisions at $\sqrt{s}=7$ TeV}",
+      collaboration  = "CMS Collaboration",
+      journal        = "JHEP",
+      volume         = "1205",
+      pages          = "055",
+      doi            = "10.1007/JHEP05(2012)055",
+      year           = "2012",
+      eprint         = "1202.5535",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-EXO-11-017, CERN-PH-EP-2012-044",
+      SLACcitation   = "%%CITATION = ARXIV:1202.5535;%%",
+}'

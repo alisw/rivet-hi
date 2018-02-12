@@ -1,0 +1,16 @@
+Name: MC_WWJETS
+Summary: Monte Carlo validation observables for $W^+[e^+ \, \nu]W^-[\mu^- \, \nu]$ + jets production
+Status: VALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+RunInfo:
+  $WW$ + jets analysis.
+NumEvents: 1000000
+PtCuts: [0]
+Description:
+  In addition to the typical jet observables this analysis contains observables
+  related to properties of the WW-pair momentum, correlations between the WW,
+  properties of the W bosons, properties of the leptons, correlations between
+  the opposite charge leptons and correlations with jets.
+NeedCrossSection: yes

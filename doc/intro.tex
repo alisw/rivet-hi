@@ -1,0 +1,61 @@
+This manual is a users' guide to using the Rivet generator validation
+system. Rivet is a C++ class library, which provides the infrastructure and
+calculational tools for particle-level analyses for high energy collider
+experiments, enabling physicists to
+validate event generator models and tunings with minimal effort and maximum
+portability. Rivet is designed to scale effectively to large numbers of analyses
+for truly global validation, by transparent use of an automated result caching
+system.
+
+The Rivet ethos, if it may be expressed succinctly, is that user analysis code
+should be extremely clean and easy to write --- ideally it should be
+sufficiently self-explanatory to in itself be a reference to the experimental
+analysis algorithm --- without sacrificing power or extensibility. The machinery
+to make this possible is intentionally hidden from the view of all but the most
+prying users. Generator independence is explicitly required by virtue of all
+analyses operating on the generic ``HepMC'' event record.
+
+The simplest way to use Rivet is via the \kbd{rivet} command line tool, which
+analyses textual HepMC event records as they are generated and produces output
+distributions in a structured textual format. The input events are generated
+using the generator's own steering program, which is typically provided for
+modern codes; for older generators which have no default way to produce HepMC
+output, the AGILe generator interface library and \kbd{agile-runmc} command may
+be useful. For those who wish to embed their analyses in some larger framework,
+Rivet can also be used as a library to run programmatically on HepMC event
+objects with no special executable being required.
+
+Before we get started, a declaration of intent: this manual is intended to be a
+guide to using Rivet, rather than a comprehensive and painstakingly maintained
+reference to the application programming interface (API) of the Rivet
+library. For that purpose the online documentation at
+\url{http://rivet.hepforge.org} should be sufficient -- in case of confusion
+please contact the authors at \url{rivet@projects.hepforge.org}. Similar API
+documentation is maintained for AGILe at \url{http://agile.hepforge.org}.
+
+
+\subsection{Typographic conventions}
+As is normal in computer user manuals, the typography in this manual is used to
+indicate whether we are describing source code elements, commands to be run in a
+terminal, the output of a command etc.
+
+The main such clue will be the use of \kbd{typewriter-style} text: this
+indicates the name of a command or code element --- class names, function names
+etc. Typewriter font is also used for commands to be run in a terminal, but in
+this case it will be prefixed by a dollar sign, as in \inp{echo "Hello" |
+  cat}.  The output of such a command on the terminal will be typeset in
+\outp{sans-serif} font. When we are documenting a code feature in detail (which
+is not the main point of this manual), we will use square brackets to indicate
+optional arguments, and italic font between angle brackets to represent an
+argument name which should be replaced by a value,
+e.g. \code{Event::applyProjection(\val{proj})}.
+
+% Following the example of Donald Knuth in his books on \TeX{}, in this document
+% we will indicate paragraphs of particular technicality or esoteric nature with a
+% ``dangerous bend''\marginpar{\bendimg\\Dangerous bend} sign. These will
+% typically describe internals of Rivet of which most people will be fortunate
+% enough to remain happily ignorant without adverse effects. However they may be
+% of interest to detail obsessives, the inordinately curious and Rivet
+% hackers. You can certainly skip them on a first reading. Similarly, you may see
+% double bend signs \marginpar{\dblbendimg\\Double bend} --- the same rules apply
+% for these, but even more strongly.

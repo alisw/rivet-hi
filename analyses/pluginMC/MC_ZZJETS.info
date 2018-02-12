@@ -1,0 +1,17 @@
+Name: MC_ZZJETS
+Summary: Monte Carlo validation observables for $Z[e^+ \, e^-]Z[\mu^+ \, \mu^-]$ + jets production
+Status: VALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+RunInfo:
+  $ZZ$ + jets analysis. Needs mass cut on lepton pairs to avoid
+  photon singularity, e.g. a min range of $66 < m_{ee} < 116$ GeV
+NumEvents: 1000000
+PtCuts: [0]
+Description:
+  In addition to the typical jet observables this analysis contains observables
+  related to properties of the ZZ-pair momentum, correlations between the ZZ,
+  properties of the Z bosons, properties of the leptons, correlations between
+  the opposite charge leptons and correlations with jets.
+NeedCrossSection: yes

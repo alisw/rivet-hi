@@ -1,0 +1,36 @@
+Name: OPAL_1993_S2692198
+Year: 1993
+Summary: Measurement of photon production at LEP 1
+Experiment: OPAL
+Collider: LEP Run 1
+SpiresID: 2692198
+InspireID: 343181
+Status: UNVALIDATED
+Authors:
+ - Peter Richardson <Peter.Richardson@durham.ac.uk>
+References:
+ - Z.Phys.C58:405-418,1993
+ - doi:10.1007/BF01557697
+RunInfo:
+  $e^+ e^- \to$ jet jet (+ photons)
+NumEvents: 1000000
+Beams: [e+, e-]
+Energies: [91.2]
+PtCuts: [0]
+Description:
+  Measurement of the production of photons in $e^+ e^-\to q \bar q$ events at LEP 1.
+BibKey: Acton:1992jk
+BibTeX: '@Article{Acton:1992jk,
+     author    = "Acton, P. D. and others",
+     collaboration = "OPAL",
+     title     = "{Studies of strong and electroweak interactions using final
+                  state photon emission in hadronic Z0 decays}",
+     journal   = "Z. Phys.",
+     volume    = "C58",
+     year      = "1993",
+     pages     = "405-418",
+     doi       = "10.1007/BF01557697",
+     SLACcitation  = "%%CITATION = ZEPYA,C58,405;%%"
+}'
+ToDo:
+ - Fix this! It looks nothing like the data, at least in the H++ benchmark tests.

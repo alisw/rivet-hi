@@ -1,0 +1,45 @@
+Name: OPAL_2001_S4553896
+Year: 2001
+Summary: Four-jet angles using Durham algorithm
+Experiment: OPAL
+Collider: LEP Run 1
+SpiresID: 4553896
+InspireID: 552446
+Status: VALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+ - Eur.Phys.J.C20:601-615,2001
+ - doi:10.1007/s100520100699
+ - arXiv:hep-ex/0101044
+RunInfo:
+  Hadronic Z decay events generated on the Z pole ($\sqrt{s} = 91.2$ GeV)
+  Hadronisation should be turned off because the data is corrected back to the
+  parton level.
+NumEvents: 10000000
+Beams: [e+, e-]
+Energies: [91.2]
+PtCuts: [0]
+Description:
+  'Angles between the leading (in energy) four jets defined using the Durham
+  algorithm with $y_\mathrm{cut}=0.008$. The data is presented at the parton
+  level and includes the Bengtsson-Zerwas, Korner-Schierholz-Willrodt and
+  Nachtmann-Reiter angles as well as the angle between the two softest jets.'
+BibKey: Abbiendi:2001qn
+BibTeX: '@Article{Abbiendi:2001qn,
+     author    = "Abbiendi, G. and others",
+ collaboration = "OPAL",
+     title     = "{A simultaneous measurement of the QCD colour factors and
+                  the strong  coupling}",
+     journal   = "Eur. Phys. J.",
+     volume    = "C20",
+     year      = "2001",
+     pages     = "601-615",
+     eprint    = "hep-ex/0101044",
+     archivePrefix = "arXiv",
+     doi       = "10.1007/s100520100699",
+     SLACcitation  = "%%CITATION = HEP-EX/0101044;%%"
+}'
+ToDo:
+ - Add y23 and R4(ycut) histograms
+ - Get data from HepData when available (so far just read off the plots)

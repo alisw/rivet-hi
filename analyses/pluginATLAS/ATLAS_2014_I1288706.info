@@ -1,0 +1,46 @@
+Name: ATLAS_2014_I1288706
+Year: 2014
+Summary: Measurement of the low-mass Drell-Yan differential cross section at 7 TeV
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1288706
+Status: VALIDATED
+Authors:
+  - Elena Yatsenko <elena.yatsenko@cern.ch>
+References:
+  - JHEP06(2014)112
+  - doi:10.1007/JHEP06(2014)112
+  - arXiv:1404.1212 [hep-ex]
+RunInfo:
+  Run with inclusive $Z$ events, with $Z/\gamma^*$ decays to electrons and/or muons at $\sqrt{s} = 7$~TeV.
+NumEvents: 1000000
+NeedCrossSection: yes
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [12, 15]
+Description:
+  Measurements of the differential cross section for the process $Z/\gamma^\ast \rightarrow l$ $(l = e, \mu)$
+  as a function of dilepton invariant mass in pp collisions at $\sqrt{s} = 7$~TeV.
+  The measurement is performed in the $e$ and $\mu$ channels 
+  for invariant masses between 26 GeV and 66 GeV in the fiducial region $p_\text{T}^\text{leading} > 15$~GeV,
+  $p_\text{T}^\text{subleading} > 12$~GeV, $|\eta| < 2.4$ using an integrated luminosity of 1.6~$\text{fb}^{-1}$. 
+  The analysis is extended to invariant masses as low as 12 GeV in the muon channel within a fiducal region of 
+  $p_\text{T}^\text{leading} > 9$~GeV, $p_\text{T}^\text{subleading} > 6$~GeV, $|\eta| < 2.4$ with 35~$\text{pb}^{-1}$.
+BibKey: Aad:2014qja
+BibTeX: '@article{Aad:2014qja,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of the low-mass Drell-Yan differential cross
+                        section at $\sqrt{s}$ = 7 TeV using the ATLAS detector}",
+      collaboration  = "ATLAS Collaboration",
+      journal        = "JHEP",
+      volume         = "1406",
+      pages          = "112",
+      doi            = "10.1007/JHEP06(2014)112",
+      year           = "2014",
+      eprint         = "1404.1212",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2014-020",
+      SLACcitation   = "%%CITATION = ARXIV:1404.1212;%%",
+}'
+

@@ -1,0 +1,30 @@
+// -*- C++ -*-
+#ifndef RIVET_Cmp_FHH
+#define RIVET_Cmp_FHH
+
+namespace Rivet {
+
+
+  // Forward-declare the Cmp template class
+  template <typename T>
+  class Cmp;
+
+
+  /// Enumerate the possible states of a Cmp object.
+  enum CmpState {
+    UNDEFINED = -2,   ///< Undefined state.
+    ASC = -1,         ///< The two objects are ordered (in ascending order).
+    ORDERED = -1,     ///< The two objects are ordered (in ascending order).
+    EQUAL = 0,        ///< The two objects are equivalent.
+    EQUIVALENT = 0,   ///< The two objects are equivalent.
+    DESC = 1,         ///< The two objects are anti-ordered (in descending order).
+    ANTIORDERED = 1,  ///< The two objects are anti-ordered (in descending order).
+    UNORDERED = 1,    ///< The two objects are anti-ordered (in descending order). // DEPRECATED!
+    UNEQUAL = 2,      ///< The two objects are unequal, without ordering implications.
+    INEQUIVALENT = 2, ///< The two objects are unequal, without ordering implications.
+  };
+
+
+}
+
+#endif

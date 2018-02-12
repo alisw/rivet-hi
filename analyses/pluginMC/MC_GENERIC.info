@@ -1,0 +1,11 @@
+Name: MC_GENERIC
+Summary: Generic MC testing analysis
+Status: VALIDATED
+Authors:
+ - Ian Bruce <ibruce@cern.ch>
+ - Andy Buckley <andy.buckley@cern.ch>
+NumEvents: 50000
+RunInfo: Any!
+Description:
+  Generic analysis of typical event distributions such as $\eta$, $y$,
+  $pT$, $\phi$\dots

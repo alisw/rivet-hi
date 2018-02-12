@@ -1,0 +1,52 @@
+Name: ATLAS_2014_I1306294_EL
+Year: 2014
+Summary: Measurement of Z boson in association with b-jets at 7 TeV in ATLAS, (electron channel)
+Experiment: ATLAS 
+Collider: LHC
+InspireID: 1306294
+Status: VALIDATED
+Authors:
+ - Gavin Hesketh <gavin.hesketh@ucl.ac.uk>
+References:
+ - arXiv:1407.3643 [hep-ex]
+ - JHEP 1410 (2014) 141
+RunInfo: Z+b(b) production in $pp$ collisions at $\sqrt{s} = 7$ TeV, electronic Z-decays
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: pT(jets) > 20 GeV, pT(leptons) > 20 GeV
+NeedsCrossSection: True
+Description:
+  'Measurements of differential production cross-sections of a $Z$
+   boson in association with $b$-jets in $pp$ collisions at $\sqrt{s}=7$
+   TeV are reported. The data analysed correspond to an integrated
+   luminosity of 4.6~fb$^{-1}$ recorded with the ATLAS detector at the
+   Large Hadron Collider. Particle-level cross-sections are determined
+   for events with a $Z$ boson decaying into an electron or muon pair,
+   and containing $b$-jets. For events with at least one $b$-jet, the
+   cross-section is presented as a function of the $Z$ boson transverse
+   momentum and rapidity, together with the inclusive $b$-jet
+   cross-section as a function of $b$-jet transverse momentum, rapidity
+   and angular separations between the $b$-jet and the $Z$ boson. For
+   events with at least two $b$-jets, the cross-section is determined as
+   a function of the invariant mass and angular separation of the two
+   highest transverse momentum $b$-jets, and as a function of the $Z$
+   boson transverse momentum and rapidity. Results are compared to
+   leading-order and next-to-leading-order perturbative QCD
+   calculations.
+   This Rivet module implements the event selection for Z decaying into electrons.
+   If you want to use muonic events, please refer to ATLAS\_2014\_I1306294\_MU'   
+BibKey: Aad:2014dvb
+BibTeX: '@article{Aad:2014dvb,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of differential production cross-sections
+                        for a $Z$ boson in association with $b$-jets in 7 TeV
+                        proton-proton collisions with the ATLAS detector}",
+      collaboration  = "ATLAS Collaboration",
+      year           = "2014",
+      eprint         = "1407.3643",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2014-118",
+      SLACcitation   = "%%CITATION = ARXIV:1407.3643;%%",
+}'

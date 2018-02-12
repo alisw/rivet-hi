@@ -1,0 +1,35 @@
+Name: DELPHI_1995_S3137023
+Year: 1995
+Summary: Strange baryon production in $Z$ hadronic decays at Delphi
+Experiment: DELPHI
+Collider: LEP 1
+SpiresID: 3137023
+InspireID: 394716
+Status: VALIDATED
+Authors:
+ - Hendrik Hoeth <hendrik.hoeth@cern.ch>
+References:
+ - Z. Phys. C, 67, 543--554 (1995)
+RunInfo:
+  Hadronic Z decay events generated on the Z pole ($\sqrt{s} = 91.2$ GeV)
+NumEvents: 1000000
+Beams: [e+, e-]
+Energies: [91.2]
+PtCuts: [0]
+Description:
+  Measurement of the $\Xi^-$ and $\Sigma^+(1385)/\Sigma^-(1385)$ scaled
+  momentum distributions by DELPHI at LEP 1. The paper also has the
+  production cross-sections of these particles, but that's not
+  implemented in Rivet.
+BibKey: Abreu:1995qx
+BibTeX: '@Article{Abreu:1995qx,
+     author    = "Abreu, P. and others",
+ collaboration = "DELPHI",
+     title     = "{Strange baryon production in Z hadronic decays}",
+     journal   = "Z. Phys.",
+     volume    = "C67",
+     year      = "1995",
+     pages     = "543-554",
+     doi       = "10.1007/BF01553980",
+     SLACcitation  = "%%CITATION = ZEPYA,C67,543;%%"
+}'

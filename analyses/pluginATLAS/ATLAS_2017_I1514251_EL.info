@@ -1,0 +1,45 @@
+Name: ATLAS_2017_I1514251_EL
+Year: 2017
+Summary: Z plus jets at 13 TeV, electron channel
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1514251
+Status: VALIDATED
+Authors:
+ - Gavin Hesketh <gavin.hesketh@cern.ch>
+References:
+ - arXiv:1702.05725 [hep-ex]
+ - submitted to EPJC
+Keywords:
+ - Z
+ - JETS
+RunInfo:
+  pp -> Z(->ee) + jets at 13 TeV
+Luminosity_fb: 3.16
+Beams: [p+, p+]
+Energies: [13000]
+PtCuts: [25, 25]
+Description:
+  'Measurements of the production cross section of a $Z$ boson in association with jets in proton-proton collisions at i
+  $\sqrt{s}=13$ TeV are presented, using data corresponding to an integrated luminosity of 3.16 fb${}^{-1}$ collected by
+  the ATLAS experiment at the CERN Large Hadron Collider in 2015. Inclusive and differential cross sections are measured
+  for events containing a $Z$ boson decaying to electrons or muons and produced in association with up to seven jets with
+  $p_\text{T}>30$ GeV and $|y|<2.5$. Predictions from different Monte Carlo generators based on leading-order and
+  next-to-leading-order matrix elements for up to two additional partons interfaced with parton shower and fixed-order
+  predictions at next-to-leading order and next-to-next-to-leading order are compared with the measured cross sections.
+  Good agreement within the uncertainties is observed for most of the modelled quantities, in particular with the generators
+  which use next-to-leading-order matrix elements and the more recent next-to-next-to-leading-order fixed-order predictions.'
+BibKey: Aaboud:2017hbk
+BibTeX: '@article{Aaboud:2017hbk,
+      author         = "Aaboud, Morad and others",
+      title          = "{Measurements of the production cross section of a $Z$
+                        boson in association with jets in pp collisions at
+                        $\sqrt{s} = 13$ TeV with the ATLAS detector}",
+      collaboration  = "ATLAS",
+      year           = "2017",
+      eprint         = "1702.05725",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-EP-2016-297",
+      SLACcitation   = "%%CITATION = ARXIV:1702.05725;%%"
+}'

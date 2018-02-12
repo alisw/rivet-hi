@@ -1,0 +1,45 @@
+Name: CDF_2001_S4751469
+Year: 2001
+Summary: Field \& Stuart Run I underlying event analysis.
+Experiment: CDF
+Collider: Tevatron Run 1
+SpiresID: 4751469
+InspireID: 564673
+Status: VALIDATED
+Authors:
+ - Andy Buckley <andy.buckley@cern.ch>
+References:
+ - Phys.Rev.D65:092002,2002
+ - FNAL-PUB 01/211-E
+RunInfo:
+  $p\bar{p}$ QCD interactions at 1800 GeV. The leading jet is binned from
+  0--49 GeV, and histos can usually can be filled with a single generator
+  run without kinematic sub-samples.
+NumEvents: 1000000
+Beams: [p-, p+]
+Energies: [1800]
+PtCuts: [0]
+Description:
+  The original CDF underlying event analysis, based on decomposing each
+  event into a transverse structure with ``toward'', ``away'' and
+  ``transverse'' regions defined relative to the azimuthal direction of
+  the leading jet in the event. Since the toward region is by definition
+  dominated by the hard process, as is the away region by momentum
+  balance in the matrix element, the transverse region is most sensitive
+  to multi-parton interactions. The transverse regions occupy $|\phi|
+  \in [60\degree, 120\degree]$ for $|\eta| < 1$. The $\pT$ ranges for the
+  leading jet are divided experimentally into the `min-bias' sample from
+  0--20 GeV, and the `JET20' sample from 18--49 GeV.
+BibKey: Affolder:2001xt
+BibTeX: '@Article{Affolder:2001xt,
+     author    = "Affolder, Anthony Allen and others",
+ collaboration = "CDF",
+     title     = "{Charged jet evolution and the underlying event in
+                  $p\bar{p}$ collisions at 1.8 TeV}",
+     journal   = "Phys. Rev.",
+     volume    = "D65",
+     year      = "2002",
+     pages     = "092002",
+     doi       = "10.1103/PhysRevD.65.092002",
+     SLACcitation  = "%%CITATION = PHRVA,D65,092002;%%"
+}'

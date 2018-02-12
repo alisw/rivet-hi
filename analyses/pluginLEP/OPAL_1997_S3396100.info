@@ -1,0 +1,36 @@
+Name: OPAL_1997_S3396100
+Year: 1997
+Summary: Strange baryon production in $Z$ hadronic decays at OPAL
+Experiment: OPAL
+Collider: LEP 1
+SpiresID: 3396100
+InspireID: 421978
+Status: VALIDATED
+Authors:
+ - Peter Richardson <Peter.Richardson@durham.ac.uk>
+References:
+ - Z. Phys. C, 73, 569--586 (1997)
+RunInfo:
+  Hadronic Z decay events generated on the Z pole ($\sqrt{s} = 91.2$ GeV)
+NumEvents: 1000000
+Beams: [e+, e-]
+Energies: [91.2]
+PtCuts: [0]
+Description:
+  Measurement of the $\Xi^-$, $\Lambda^0$, $\Sigma^+(1385)$, $\Sigma^-(1385)$,
+  $\Xi^0(1530)$ and $\Lambda^0(1520)$ scaled
+  momentum distributions by OPAL at LEP 1. The paper also has the
+  production cross-sections of these particles, but that is not
+  implemented in Rivet.
+BibKey: Alexander:1996qj
+BibTeX: '@Article{Alexander:1996qj,
+     author    = "Alexander, G. and others",
+     collaboration = "OPAL",
+     title     = "{Strange baryon production in hadronic $Z^0$ decays}",
+     journal   = "Z. Phys.",
+     volume    = "C73",
+     year      = "1997",
+     pages     = "569-586",
+     doi       = "10.1007/s002880050349",
+     SLACcitation  = "%%CITATION = ZEPYA,C73,569;%%"
+}'

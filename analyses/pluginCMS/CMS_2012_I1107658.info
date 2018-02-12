@@ -1,0 +1,51 @@
+Name: CMS_2012_I1107658
+Year: 2012
+Summary: Measurement of the underlying event activity in the Drell-Yan process at a centre-of-mass energy of 7 TeV
+Experiment: CMS
+Collider: LHC
+InspireID: 1107658
+Status: VALIDATED
+Authors:
+ - Sunil Bansal (sunil.bansal@cern.ch)
+References:
+  - CMS-QCD-11-012
+  - CERN-PH-EP-2012-085
+  - arXiv:1204.1411 [hep-ex]
+RunInfo: Drell-Yan events with $Z/\gamma^* \to \mu\mu$. $m(\mu,\mu) > 20$ GeV
+Beams: [p+, p+]
+Energies: [7000]
+NeedCrossSection: yes
+pT Cuts: $pT > 0.5$ GeV (all charged particles)
+Description:
+   A measurement of the underlying event activity using Drell-Yan events using
+   muonic final state.  The production of charged particles with pseudorapidity
+   $|\eta| < 2$ and transverse momentum $p_\perp > 0.5\,\GeV/c$ is studied in towards,
+   transverse and away region w.r.t. to the direction of di-muon system. The UE
+   activity is measured in terms of of a particle density and an energy
+   density. The particle density is computed as the average number of primary
+   charged particles per unit pseudorapidity and per unit azimuth. The energy
+   density is expressed in terms of the average of the scalar sum of the
+   transverse momenta of primary charged particles per unit pseudorapidity and
+   azimuth.  The ratio of the energy and particle density is also reported in 3
+   regions.  UE activity  is studied as a function of invariant mass of muon
+   pair ($M_{\mu\mu}$) by limiting the ISR contribution by requiring transverse
+   momentum of muon pair $p_\perp(\mu\mu) < 5\,\GeV/c$. The $p_\perp(\mu\mu)$
+   dependence is studied for the events having $M_{\mu\mu}$ in window of
+   81--101 GeV/$c$. The normalized charged particle multiplicity and $p_\perp$
+   spectrum of the charged particles in three regions also been reported for
+   events having $M_{\mu\mu}$ in window of 81--101 GeV/$c$. Multiplicity and $p_\perp$
+   spectra in the transverse region are also reported, for events having
+   $p_\perp(\mu\mu) < 5\,\GeV/c$.
+BibKey: Chatrchyan:2012tb
+BibTeX: '@article{Chatrchyan:2012tb,
+      author         = "Chatrchyan, Serguei and others",
+      title          = "{Measurement of the underlying event in the Drell-Yan process in proton-proton collisions at $\sqrt{s} = 7$ TeV}",
+      collaboration  = "CMS Collaboration",
+      year           = "2012",
+      eprint         = "1204.1411",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-QCD-11-012, CERN-PH-EP-2012-085",
+      SLACcitation   = "%%CITATION = ARXIV:1204.1411;%%",}'
+To do:
+ - Update references once EPJ assigns numbers (it is accepted)

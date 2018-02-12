@@ -1,0 +1,36 @@
+Name: ATLAS_2016_CONF_2016_092
+Year: 2016
+Summary: Inclusive jet cross sections using early 13 TeV data
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1482689
+Status: VALIDATED
+Authors:
+ - Stefan von Buddenbrock <stef.von.b@cern.ch>
+References:
+  - ATLAS-CONF-2016-092
+Keywords:
+ - JETS
+RunInfo: Soft and hard QCD events
+Luminosity_fb: 3.2
+Beams: [p+, p+]
+Energies: [13000]
+Description:
+  'This note presents the measurement of inclusive-jet cross-sections in proton--proton collisions at a centre-of-mass energy of 13TeV.
+  The measurement uses data corresponding to an integrated luminosity of 3.2 fb$^{-1}$ collected with the ATLAS detector at the 
+  Large Hadron Collider in 2015. Jets are clustered using the anti-$k_\text{t}$ algorithm with a radius parameter value of $R = 0.4$. 
+  Double differential inclusive-jet cross-sections are presented as a function of the jet transverse momentum, covering the range from 
+  100 GeV to about 3.2 TeV, and of the absolute jet rapidity, up to $|y| = 3$. The predictions of next-to-leading-order QCD calculations 
+  using several parton distribution function (PDF) sets and corrected for non-perturbative and electroweak effects are compared to the 
+  measured cross-sections. The predictions are consistent with the measured cross-sections within uncertainties.'
+BibKey: ATLAS:2016djc
+BibTeX: '@article{ATLAS:2016djc,
+      author         = "The ATLAS collaboration",
+      title          = "{Measurement of inclusive-jet cross-sections in
+                        proton-proton collisions at $\sqrt{s} = 13~\mathrm{TeV}$
+                        centre-of-mass energy with the ATLAS detector}",
+      collaboration  = "ATLAS",
+      year           = "2016",
+      reportNumber   = "ATLAS-CONF-2016-092",
+      SLACcitation   = "%%CITATION = ATLAS-CONF-2016-092;%%"
+}'

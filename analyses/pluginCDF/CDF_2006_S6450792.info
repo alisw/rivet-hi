@@ -1,0 +1,43 @@
+Name: CDF_2006_S6450792
+Year: 2006
+Summary: Inclusive jet cross section differential in pT
+Experiment: CDF
+Collider: Tevatron Run 2
+SpiresID: 6450792
+InspireID: 699933
+Status: VALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+ - Phys.Rev.D74:071103,2006
+ - doi:10.1103/PhysRevD.74.071103
+ - arXiv:hep-ex/0512020
+RunInfo:
+  $p\bar{p}$ -> jets at 1960 GeV
+NumEvents: 1000000
+Beams: [p-, p+]
+Energies: [1960]
+PtCuts: [61]
+Description:
+  Measurement of the inclusive jet cross section in ppbar interactions at
+  $\sqrt{s}=1.96$ TeV using 385 $\mathrm{pb}^{-1}$ of data. The data cover the jet
+  transverse momentum range from 61 to 620 GeV/c in $0.1 < |y| < 0.7$.
+  This analysis has been updated with more data in more rapidity bins in
+  CDF_2008_S7828950.
+NeedCrossSection: yes
+BibKey: Abulencia:2005yg
+BibTeX: '@Article{Abulencia:2005yg,
+     author    = "Abulencia, A. and others",
+ collaboration = "CDF",
+     title     = "{Measurement of the inclusive jet cross section in
+                  $p\bar{p}$ interactions at $\sqrt{s} =$ 1.96-TeV using a
+                  cone-based jet algorithm}",
+     journal   = "Phys. Rev.",
+     volume    = "D74",
+     year      = "2006",
+     pages     = "071103",
+     eprint    = "hep-ex/0512020",
+     archivePrefix = "arXiv",
+     doi       = "10.1103/PhysRevD.74.071103",
+     SLACcitation  = "%%CITATION = HEP-EX/0512020;%%"
+}'

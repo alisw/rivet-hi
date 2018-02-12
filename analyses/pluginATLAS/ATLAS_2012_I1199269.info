@@ -1,0 +1,52 @@
+Name: ATLAS_2012_I1199269
+Summary: Inclusive diphoton $+ X$ events at $\sqrt{s} = 7$~TeV
+Authors:
+ - Giovanni Marchiori <giovanni.marchiori@cern.ch>
+Status: VALIDATED
+References:
+ - arXiv:1211.1913 [hep-ex]
+ - JHEP 1301 (2013) 086
+RunInfo:
+  Inclusive diphoton $+ X$ events at $\sqrt{s} = 7$~TeV.
+NumEvents: 1000000
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1199269
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [25, 22]
+Description:
+  'The ATLAS experiment at the LHC has measured the production cross
+  section of events with two isolated photons in the final state, in
+  proton-proton collisions at $\sqrt{s} = 7$ TeV. The full data set
+  collected in 2011, corresponding to an integrated luminosity of 4.9
+  fb$^{-1}$, is used. The amount of background, from hadronic jets and
+  isolated electrons, is estimated with data-driven techniques and
+  subtracted. The total cross section, for two isolated photons with
+  transverse energies above 25 GeV and 22 GeV respectively, in the
+  acceptance of the electromagnetic calorimeter ($|\eta|<1.37$ and
+  $1.52<|\eta|<2.37$) and with an angular separation $\Delta R>0.4$, is
+  $44.0^{+3.2}_{-4.2}$ pb. The differential cross sections as a function of the
+  di-photon invariant mass, transverse momentum, azimuthal separation,
+  and cosine of the polar angle of the largest transverse energy photon
+  in the Collins--Soper di-photon rest frame are also measured. The
+  results are compared to the prediction of leading-order parton-shower
+  and next-to-leading-order and next-to-next-to-leading-order
+  parton-level generators.'
+BibTeX:
+  '@article{Aad:2012tba,
+        author         = "Aad, Georges and others",
+        title          = "{Measurement of isolated-photon pair production in $pp$
+                          collisions at $\sqrt{s}=7$ TeV with the ATLAS detector}",
+        collaboration  = "ATLAS Collaboration",
+        journal        = "JHEP",
+        volume         = "1301",
+        pages          = "086",
+        doi            = "10.1007/JHEP01(2013)086",
+        year           = "2013",
+        eprint         = "1211.1913",
+        archivePrefix  = "arXiv",
+        primaryClass   = "hep-ex",
+        reportNumber   = "CERN-PH-EP-2012-300",
+        SLACcitation   = "%%CITATION = ARXIV:1211.1913;%%",
+  }'

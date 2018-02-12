@@ -1,0 +1,54 @@
+Name: LHCB_2013_I1218996
+Year: 2013
+Summary: Charm hadron differential cross-sections in \pT and rapidity
+Experiment: LHCB
+Collider: LHC 7TeV
+InspireID: 1218996
+Status: VALIDATED
+Authors:
+ - Patrick Spradlin <patrick.spradlin@cern.ch>
+References:
+ - Nucl.Phys. B871 (2013) 1-20
+ - doi:10.1016/j.nuclphysb.2013.02.010
+ - arXiv:1302.2864 [hep-ex]
+ - LHCB-PAPER-2012-041, CERN-PH-EP-2013-009
+RunInfo: Minimum bias QCD events, proton--proton interactions at $\sqrt{s} = 7$ TeV.
+NumEvents: 5000000
+Beams:  [p+, p+]
+Energies: [7000]
+NeedCrossSection: True
+Description:
+  'Measurements of differential production cross-sections with respect to
+   transverse momentum, $d \sigma(H_c + \mathrm{c.c.}) / d p_T$, for charm
+   hadron species $H_c \in \{ D^0, D^+, D^\ast(2010)^+, D_s^+, \Lambda_c^+ \}$
+   in proton--proton collisions at center-of-mass energy
+   $\sqrt{s}= 7$ TeV.
+
+   The differential cross-sections are measured in bins of hadron transverse
+   momentum ($p_T$) and rapidity ($y$) with respect to the beam axis in the
+   region $0 < p_T < 8$ GeV/$c$ and $2.0 < y < 4.5$, where $p_T$ and $y$ are
+   measured in the proton--proton CM frame.  In this analysis code, it is
+   assumed that the event coordinate system is in the proton--proton CM frame
+   with the $z$-axis corresponding to the proton--proton collision axis (as
+   usual).
+
+   Contributions of charm hadrons from the decays of $b$-hadrons and other
+   particles with comparably large mean lifetimes have been removed in the
+   measurement. In this analysis code, this is implemented by counting only
+   charm hadrons that do not have an ancestor that contains a $b$ quark.'
+BibKey: Aaij:2013mga
+BibTeX: '@article{Aaij:2013mga,
+      author         = "Aaij, R and others",
+      title          = "{Prompt charm production in $pp$ collisions at $\sqrt{s}=7$ TeV}",
+      collaboration  = "LHCb collaboration",
+      journal        = "Nucl.Phys.",
+      volume         = "B871",
+      pages          = "1-20",
+      doi            = "10.1016/j.nuclphysb.2013.02.010",
+      year           = "2013",
+      eprint         = "1302.2864",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "LHCB-PAPER-2012-041, CERN-PH-EP-2013-009",
+      SLACcitation   = "%%CITATION = ARXIV:1302.2864;%%",
+}'

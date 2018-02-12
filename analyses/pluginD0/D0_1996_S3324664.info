@@ -1,0 +1,42 @@
+Name: D0_1996_S3324664
+Year: 1996
+Summary: Azimuthal decorrelation of jets widely separated in rapidity
+Experiment: D0
+Collider: Tevatron Run 1
+SpiresID: 3324664
+InspireID: 416886
+Status: VALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+ - Phys.Rev.Lett.77:595-600,1996
+ - doi:10.1103/PhysRevLett.77.595
+ - arXiv:hep-ex/9603010
+RunInfo:
+  $p \bar{p} \to \,\text{jets}$ at 1800\;\GeV
+NumEvents: 10000000
+Beams: [p-, p+]
+Energies: [1800]
+PtCuts: [10]
+Description:
+  First measurement of the azimuthal decorrelation between jets with
+  pseudorapidity separation up to five units. The data were accumulated using
+  the D0 detector during Tevatron Run 1 at $\sqrt{s} = 1.8\;\TeV$.
+  Requires di-jet events with at least one jet above 50 GeV and two jets
+  above 20 GeV.
+BibKey: Abachi:1996et
+BibTeX: '@Article{Abachi:1996et,
+     author    = "Abachi, S. and others",
+     collaboration = "D0",
+     title     = "{The azimuthal decorrelation of jets widely separated in rapidity}",
+     journal   = "Phys. Rev. Lett.",
+     volume    = "77",
+     year      = "1996",
+     pages     = "595-600",
+     eprint    = "hep-ex/9603010",
+     archivePrefix = "arXiv",
+     doi       = "10.1103/PhysRevLett.77.595",
+     SLACcitation  = "%%CITATION = HEP-EX/9603010;%%"
+}'
+ToDo:
+ - So far, this analysis is using the wrong jet algorithm.

@@ -1,0 +1,50 @@
+Name: CMS_2012_I941555
+Year: 2010
+Summary: Measurement of differential $Z/\gamma^*$ $p_T$ and y
+Experiment: CMS
+Collider: LHC
+InspireID: 941555
+Status: VALIDATED
+Authors:
+ - Luca Perrozzi <luca.perrozzi@cern.ch>
+ - Justin Hugon <justin.hugon@cern.ch>
+References:
+ - Phys.Rev. D85 (2012) 032002
+ - arXiv:1110.4973
+ - CMS-EWK-10-010
+ - CERN-PH-EP-2011-169
+RunInfo:
+  $p p \to \mu^+ \mu^-$+X 7 TeV.
+  Needs mass cut on lepton pair to avoid photon singularity,
+  restrict $Z/\gamma^*$ mass range to roughly $50~\text{GeV}/c^2 < m_{\mu\mu}
+    < 130~\text{GeV}/c^2$ for efficiency.
+  Result is corrected for QED FSR (i.e. leptons are dressed), so turn off in generator.
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [0]
+Description:
+  Cross section as a function of $p_T$ and y of the Z boson decaying into muons
+  in p p collisions at $\sqrt{s}$ = 7 TeV.  $p_T$ and y cross sections are measured for 
+  $60 < m_{\mu\mu} < 120$ GeV.  The $p_T$ cross section is measured for lepton $p_T > 20$ GeV
+  and $\eta < 2.1$, while the y cross section is extrapolated to all lepton $p_T$ and $\eta$.
+  This measurement was performed using 36 pb$^{-1}$ of data collected during 2010 with 
+  the CMS detector at the LHC.
+BibKey: 'Chatrchyan:2011wt'
+BibTeX: '@article{Chatrchyan:2011wt,
+      author         = "Chatrchyan, Serguei and others",
+      title          = "{Measurement of the Rapidity and Transverse Momentum
+                        Distributions of $Z$ Bosons in $pp$ Collisions at
+                        $\sqrt{s}=7$ TeV}",
+      collaboration  = "CMS Collaboration",
+      journal        = "Phys.Rev.",
+      volume         = "D85",
+      pages          = "032002",
+      doi            = "10.1103/PhysRevD.85.032002",
+      year           = "2012",
+      eprint         = "1110.4973",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-EWK-10-010, CERN-PH-EP-2011-169",
+      SLACcitation   = "%%CITATION = ARXIV:1110.4973;%%",
+}'

@@ -1,0 +1,12 @@
+Name: MC_MET
+Summary: Monte Carlo validation observables for missing transverse energy
+Status: VALIDATED
+Authors:
+ - Andy Buckley <andy.buckley@cern.ch>
+RunInfo:
+  Any event type, with or without "real MET".
+NumEvents: 10000
+Description:
+  Reports vector and scalar transverse momentum sums, based on total or
+  $|\eta| < 5$ detector acceptances.
+NeedCrossSection: no

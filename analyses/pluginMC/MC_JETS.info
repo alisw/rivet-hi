@@ -1,0 +1,14 @@
+Name: MC_JETS
+Summary: Monte Carlo validation observables for jet production
+Status: VALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+RunInfo:
+  Pure QCD jet production events at an arbitrary collider.
+NumEvents: 1000000
+PtCuts: [15]
+Description:
+  Jets with $p_\perp>20$ GeV are constructed with an anti-$k_\perp$ jet finder with
+  $R=0.4$ and projected onto many different observables.
+NeedCrossSection: yes

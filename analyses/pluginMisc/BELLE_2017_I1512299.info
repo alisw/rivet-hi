@@ -1,0 +1,27 @@
+Name: BELLE_2017_I1512299
+Year: 2017
+Summary: Decay kinematics of semileptonc B0bar to D*+ decays.
+Experiment: BELLE
+Collider: KEKB
+InspireID: 1512299
+Status: VALIDATED
+Authors:
+ - Holger Schulz <holger.schulz@durham.ac.uk>
+RunInfo: Semileptonic B0bar (-511) decays.
+NeedCrossSection: no
+Description:
+  'Unfolded measurement of recoil w, helicity and decay plane angles of semileptonc B0bar to D*+ decays. The data was used to determine Vcb. Note that the data in the paper does not account for the bin wodths. The data shipped with rivet is divided by the bin width and all curves are normalised to the partial width of B0bar-> D*+ ell nu'
+BibKey: Abdesselam:2017kjf
+BibTeX: '@article{Abdesselam:2017kjf,
+      author         = "Abdesselam, A. and others",
+      title          = "{Precise determination of the CKM matrix element $\left|
+                        V_{cb}\right|$ with $\bar B^0 \to D^{*\,+} \, \ell^- \,
+                        \bar \nu_\ell$ decays with hadronic tagging at Belle}",
+      collaboration  = "Belle",
+      year           = "2017",
+      eprint         = "1702.01521",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "BELLE-CONF-1612",
+      SLACcitation   = "%%CITATION = ARXIV:1702.01521;%%"
+}'

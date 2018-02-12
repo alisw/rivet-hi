@@ -1,0 +1,35 @@
+Name: ATLAS_2011_S8971293
+Year: 2011
+Summary: Dijet azimuthal decorrelations
+Experiment: ATLAS
+Collider: LHC
+SpiresID: 8971293
+InspireID: 889546
+Status: VALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+ - arXiv:1102.2696
+RunInfo:
+  pp QCD interactions at 7000 GeV. The distributions are binned in leading pT
+  starting at 110 GeV with the last bin starting at 800 GeV.
+NumEvents: 1000000000
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [20.0]
+Description:
+  'Dijet azimuthal decorrelation measured by ATLAS at 7 TeV. Jets are anti-$k_t$ with
+  $R = 0.6$, $p_\perp > 100$\;GeV, $|\eta| < 0.8$. The analysis is binned
+  in leading jet $p_\perp$ bins. All data is fully corrected for detector effects.'
+BibKey: Aad:2011ni
+BibTeX: '@Article{Aad:2011ni,
+     author    = "Collaboration, The ATLAS",
+     title     = "{Measurement of dijet azimuthal decorrelations in $pp$ Collisions at $\sqrt{s} = 7$ TeV}",
+     year      = "2011",
+     eprint    = "1102.2696",
+     archivePrefix = "arXiv",
+     primaryClass  =  "hep-ex",
+     SLACcitation  = "%%CITATION = 1102.2696;%%"
+}'
+ToDo:
+  Check BibKey and BibTeX consistency when fixed on SPIRES.

@@ -1,0 +1,51 @@
+Name: TOTEM_2014_I1328627
+Year: 2014
+Summary: Forward charged particle pseudorapidity density in $pp$ collisions at $\sqrt{s} = 8 \TeV$ using a displaced interaction point
+Experiment: TOTEM
+Collider: LHC
+InspireID: 1328627
+Status: VALIDATED
+Authors:
+ - Sercan Sen <Sercan.Sen@cern.ch>
+References:
+ - EPJ C75,126
+ - CERN-PH-EP-2014-260
+ - arxiv:1411.4963
+RunInfo:
+   $pp$ QCD interactions at 8 TeV.
+NumEvents: 100000
+NeedCrossSection: no
+Beams: [p+, p+]
+Energies: [8000]
+PtCuts: [0]
+Description:
+   'The pseudorapidity density of charged particles
+    $\mathrm{d}N_\mathrm{ch}/\mathrm{d}\eta$ is measured by the TOTEM experiment
+    in $pp$ collisions at $\sqrt{s} = 8$ TeV within the ranges $3.9 < \eta < 4.7$
+    and $-6.95 < \eta < -6.9$. Data were collected in a low intensity LHC
+    run with collisions occurring at a distance of 11.25\,m from the nominal
+    interaction point. The data sample is expected to include 96--97\% of the
+    inelastic proton--proton interactions. The measurement reported here
+    considers charged particles with $p_T > 0$ MeV/$c$, produced in inelastic
+    interactions with at least one charged particle in $-7 < \eta < -6$ or $3.7
+    < \eta < 4.8$. The $\mathrm{d}N_\mathrm{ch}/\mathrm{d}\eta$ has been found
+    to decrease with $|\eta|$, from $5.11 \pm 0.73$ at $\eta = 3.95$ to $1.81
+    \pm 0.56$ at $\eta = -6.925$.'
+BibKey: Antchev:2014lez
+BibTeX: '@article{Antchev:2014lez,
+      author         = "Antchev, G. and others",
+      title          = "{Measurement of the forward charged particle
+                        pseudorapidity density in $pp$ collisions at $\sqrt{s} = 8$
+                         \TeV using a displaced interaction point}",
+      collaboration  = "TOTEM",
+      journal        = "Eur. Phys. J.",
+      volume         = "C75",
+      year           = "2015",
+      number         = "3",
+      pages          = "126",
+      doi            = "10.1140/epjc/s10052-015-3343-7",
+      eprint         = "1411.4963",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2014-260",
+      SLACcitation   = "%%CITATION = ARXIV:1411.4963;%%"}'

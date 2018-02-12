@@ -1,0 +1,37 @@
+Name: OPAL_1998_S3749908
+Year: 1998
+Summary: Photon and Light Meson Production in Hadronic $Z^0$ Decays
+Experiment: OPAL
+Collider: LEP 1
+SpiresID: 3749908
+InspireID: 470419
+Status: VALIDATED
+Authors:
+ - Peter Richardson <Peter.Richardson@durham.ac.uk>
+References:
+ - Eur.Phys.J.C5:411-437,1998
+ - hep-ex/9805011
+RunInfo:
+  Hadronic Z decay events generated on the Z pole ($\sqrt{s} = 91.2$ GeV)
+NumEvents: 1000000
+Beams: [e+, e-]
+Energies: [91.2]
+PtCuts: [0]
+Description: The inclusive production rates and differential cross sections of photons
+   and mesons with a final state containing photons have been measured with the OPAL
+   detector at LEP. The light mesons covered by the measurements are the $\pi^0$, $\eta$,
+   $\rho(770)^\pm$, $\omega(782)$, $\eta'(958)$ and $a_0(980)^\pm$.
+BibKey: Ackerstaff:1998ap
+BibTeX: '@Article{Ackerstaff:1998ap,
+     author    = "Ackerstaff, K. and others",
+ collaboration = "OPAL",
+     title     = "{Photon and light meson production in hadronic Z0 decays}",
+     journal   = "Eur. Phys. J.",
+     volume    = "C5",
+     year      = "1998",
+     pages     = "411-437",
+     eprint    = "hep-ex/9805011",
+     archivePrefix = "arXiv",
+     doi       = "10.1007/s100520050286",
+     SLACcitation  = "%%CITATION = HEP-EX/9805011;%%"
+}'

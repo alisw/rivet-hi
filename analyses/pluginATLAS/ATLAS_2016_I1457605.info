@@ -1,0 +1,38 @@
+Name: ATLAS_2016_I1457605
+Year: 2016
+Summary: Inclusive prompt photons at 8 TeV
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1457605
+Status: VALIDATED
+Authors:
+ - Mark Stockton <chris.g@cern.ch>
+References:
+ - arXiv:1605.03495 [hep-ex]
+RunInfo:
+  Inclusive prompt photon production
+Beams: [p+, p+]
+Energies: [8000]
+PtCuts: [25]
+NeedCrossSection: True
+Description:
+  A measurement of the cross section for the inclusive production of isolated prompt photons in proton-proton collisions at a
+  centre-of-mass energy of $\sqrt{s} = 8$~TeV is presented. The measurement covers the pseudorapidity ranges $|\eta^\gamma| < 1.37$
+  $1.56 < |\eta^\gamma| < 2.37$ in the transverse energy range $25 < E^\gamma_\text{T} < 1500$~GeV. The results are based on an
+  integrated luminosity of 20.2~fb${}^{-1}$, recorded by the ATLAS detector at the LHC. Photon candidates are identified by combining
+  information from the calorimeters and the inner tracker. The background is subtracted using a data-driven technique, based on the
+  observed calorimeter shower-shape variables and the deposition of hadronic energy in a narrow cone around the photon candidate.
+BibKey: Aad:2016xcr
+BibTeX: '@article{Aad:2016xcr,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of the inclusive isolated prompt photon
+                        cross section in $pp$ collisions at $\sqrt{s} = 8$~TeV
+                        with the ATLAS detector}",
+      collaboration  = "ATLAS",
+      year           = "2016",
+      eprint         = "1605.03495",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-EP-2016-035",
+      SLACcitation   = "%%CITATION = ARXIV:1605.03495;%%"
+}'

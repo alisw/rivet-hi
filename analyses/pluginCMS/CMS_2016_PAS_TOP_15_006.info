@@ -1,0 +1,35 @@
+Name: CMS_2016_PAS_TOP_15_006
+Year: 2016
+Summary: Jet multiplicity in the top-quark pair lepton+jets final state at $\sqrt{s} = 8~\TeV$
+Experiment: CMS
+Collider: LHC
+InspireID: 1476015
+Status: VALIDATED
+Authors:
+ - Alexis Descroix
+ - Frederik Schaaf
+ - Markus Seidel <markus.seidel@cern.ch>
+References:
+ - CMS-PAS-TOP-15-006
+RunInfo:
+  ttbar events at sqrt(s) = 8 TeV (inclusive decay modes)
+Luminosity: 19.7 / fb
+Beams: [p+, p+]
+Energies: [8000]
+Description:
+	'The top-quark pair differential production cross section in $pp$ collisions at
+    $\sqrt{s}=8~\TeV$ as a function of the number of jets is measured in the
+    lepton+jets (e/mu+jets) final state for an integrated luminosity of 19.7/fb.
+    The cross section is presented in the visible phase space of the measurement.'
+BibKey: Khachatryan:2016ooc
+BibTeX: '@article{CMS:2016ooc,
+      author         = "CMS Collaboration",
+      title          = "{Measurement of the differential production cross section
+                        for top-quark pairs as a function of jet multiplicity in
+                        the lepton+jets final state at $\sqrt{s}=8$ TeV with the
+                        CMS detector}",
+      collaboration  = "CMS",
+      year           = "2016",
+      reportNumber   = "CMS-PAS-TOP-15-006",
+      SLACcitation   = "%%CITATION = CMS-PAS-TOP-15-006;%%"
+}'

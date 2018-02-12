@@ -1,0 +1,54 @@
+Name: D0_2008_S7719523
+Year: 2008
+Summary: Isolated $\gamma$ + jet cross-sections, differential in pT($\gamma$) for various $y$ bins
+Experiment: D0
+Collider: Tevatron Run 2
+SpiresID: 7719523
+InspireID: 782968
+Status: VALIDATED
+Authors:
+ - Andy Buckley <andy.buckley@cern.ch>
+ - Gavin Hesketh <gavin.hesketh@cern.ch>
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+ - Phys.Lett.B666:435-445,2008
+ - doi:10.1016/j.physletb.2008.06.076
+ - arXiv:0804.1107v2 [hep-ex]
+RunInfo:
+  "Produce only gamma + jet ($q,\\bar{q},g$) hard processes (for Pythia 6, this means MSEL=10
+  and MSUB indices 14, 29 & 115 enabled). The lowest bin edge is at 30 GeV, so a kinematic
+  pTmin cut is probably required to fill the histograms."
+NumEvents: 1000000
+Beams: [p-, p+]
+Energies: [1960]
+PtCuts: [20]
+Description:
+  The process $p \bar{p}$ -> photon + jet + X as studied by the D0 detector
+  at the Fermilab Tevatron collider at center-of-mass energy $\sqrt{s} = 1.96\;\TeV$.
+  Photons are reconstructed in the central rapidity region
+  $|y_\gamma| < 1.0$ with transverse momenta in the range 30--400\;GeV,
+  while jets are reconstructed in either the central $|y_\text{jet}| < 0.8$ or
+  forward $1.5 < |y_\text{jet}| < 2.5$ rapidity intervals with
+  $\pT^\text{jet} > 15\;\GeV$. The differential cross section
+  $\mathrm{d}^3 \sigma / \mathrm{d}{\pT^\gamma} \mathrm{d}{y_\gamma}
+  \mathrm{d}{y_\text{jet}}$ is measured as a function of $\pT^\gamma$ in four
+  regions, differing by the relative orientations of the photon and the
+  jet.  MC predictions have trouble with simultaneously describing the
+  measured normalization and $\pT^\gamma$ dependence of the cross section
+  in any of the four measured regions.
+NeedCrossSection: yes
+BibKey: Abazov:2008er
+BibTeX: '@Article{Abazov:2008er,
+     author    = "Abazov, V. M. and others",
+     collaboration = "D0",
+     title     = "{Measurement of the differential cross-section for the production of an isolated photon with associated jet in $p \bar{p}$ collisions at $\sqrt{s} = 1.96$ TeV}",
+     journal   = "Phys. Lett.",
+     volume    = "B666",
+     year      = "2008",
+     pages     = "435-445",
+     eprint    = "0804.1107",
+     archivePrefix = "arXiv",
+     primaryClass  =  "hep-ex",
+     doi       = "10.1016/j.physletb.2008.06.076",
+     SLACcitation  = "%%CITATION = 0804.1107;%%"
+}'

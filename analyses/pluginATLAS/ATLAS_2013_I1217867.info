@@ -1,0 +1,41 @@
+Name: ATLAS_2013_I1217867
+Year: 2013
+Summary: kT splitting scales in W->lv events
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1217867
+Status: VALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+ - arXiv:1302.1415 [hep-ex]
+RunInfo:
+  W+jet events in the electron and/or the muon decay channel.
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [0]
+NeedCrossSection: False
+Description:
+  'Cluster splitting scales are measured in events containing W bosons
+  decaying to electrons or muons. The measurement comprises the four hardest
+  splitting scales in a kT cluster sequence of the hadronic activity
+  accompanying the W boson, and ratios of these splitting scales.'
+BibKey: Aad:2013ueu
+BibTeX: '
+@article{Aad:2013ueu,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of $k_T$ splitting scales in $W\to \ell\nu$ events at
+                        $\sqrt{s}$=7 TeV with the ATLAS detector}",
+      collaboration  = " The ATLAS Collaboration",
+      year           = "2013",
+      eprint         = "1302.1415",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2013-003",
+      SLACcitation   = "%%CITATION = ARXIV:1302.1415;%%",
+}
+'
+ToDo:
+ - Get data into Hepdata
+ - Add journal information once available

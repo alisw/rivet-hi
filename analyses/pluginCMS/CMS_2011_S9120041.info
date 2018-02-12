@@ -1,0 +1,41 @@
+Name: CMS_2011_S9120041
+Year: 2011
+Summary: Traditional leading jet UE measurement at $\sqrt{s} = 0.9$ and 7 TeV
+Experiment: CMS
+Collider: LHC
+SpiresID: 9120041
+InspireID: 916908
+Status: VALIDATED
+Authors:
+ - Mohammed Zakaria (mzakaria@ufl.edu)
+References:
+  - J. High Energy Phys 09 (2011) 109
+RunInfo:
+   Requires inclusive inelastic events (non-diffractive and inelastic
+   diffractive). The profile plots require large statistics.
+Beams: [p+, p+]
+Energies: [900, 7000]
+Description:
+   A measurement of the underlying activity in scattering processes with a hard
+   scale in the several-GeV region is performed in proton-proton collisions at
+   Energies of 0.9 and 7\;TeV, using data collected by the CMS experiment at the
+   LHC. The production of charged particles with pseudorapidity |eta| < 2 and
+   transverse momentum $\pT > 0.5$\;GeV/$c$ is studied in the azimuthal region transverse
+   to that of the leading set of charged particles forming a track-jet. Various
+   comparisons are made between the two different energies and also beteen two
+   sets of cuts on \pT for leading track jet \pT-leading $> 3$\;GeV and pT-leading $> 20$\;GeV.
+   The activity is studied using 5 types of plots. Two profile plots for the
+   multiplicity of charged particles and the scalar sum of \pT. and three distributions
+   for the two previous quantities as well as \pT for all the particles in the
+   transverse region.
+BibKey: Chatrchyan:2011id
+BibTeX: '@article{Chatrchyan:2011id,
+      author         = "Chatrchyan, Serguei and others",
+      title          = "{Measurement of the Underlying Event Activity at the LHC
+                        with $\sqrt{s} = 7$\;TeV and comparison with $\sqrt{s} = 0.9$\;TeV}",
+      collaboration  = "CMS Collaboration",
+      year           = "2011",
+      eprint         = "1107.0330",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",}'
+

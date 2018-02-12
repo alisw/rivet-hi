@@ -1,0 +1,44 @@
+Name: CDF_2009_S8233977
+Year: 2009
+Summary: CDF Run 2 min bias cross-section analysis
+Experiment: CDF
+Collider: Tevatron Run 2
+SpiresID: 8233977
+InspireID: 817466
+Status: VALIDATED
+Authors:
+ - Hendrik Hoeth <hendrik.hoeth@cern.ch>
+ - Niccolo' Moggi <niccolo.moggi@bo.infn.it>
+References:
+ - Phys.Rev.D79:112005,2009
+ - doi:10.1103/PhysRevD.79.112005
+ - arXiv:0904.1098 [hep-ex]
+RunInfo:
+  $p\bar{p}$ QCD interactions at 1960~GeV. Particles with $c \tau > 10$ mm
+  should be set stable.
+NumEvents: 1000000
+Beams: [p-, p+]
+Energies: [1960]
+PtCuts: [0]
+Description:
+  Niccolo Moggi's min bias analysis. Minimum bias events are used to
+  measure the average track pT vs. charged multiplicity, a track pT
+  distribution and an inclusive $\sum E_T$ distribution.
+NeedCrossSection: yes
+BibKey: Aaltonen:2009ne
+BibTeX: '@Article{Aaltonen:2009ne,
+     author    = "Aaltonen, T. and others",
+ collaboration = "CDF",
+     title     = "{Measurement of Particle Production and Inclusive
+                  Differential Cross Sections in $p\bar{p}$ Collisions at
+                  $\sqrt{s}=1.96$ TeV}",
+     journal   = "Phys. Rev.",
+     volume    = "D79",
+     year      = "2009",
+     pages     = "112005",
+     eprint    = "0904.1098",
+     archivePrefix = "arXiv",
+     primaryClass  =  "hep-ex",
+     doi       = "10.1103/PhysRevD.79.112005",
+     SLACcitation  = "%%CITATION = 0904.1098;%%"
+}'

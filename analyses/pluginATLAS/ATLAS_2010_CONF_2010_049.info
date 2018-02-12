@@ -1,0 +1,30 @@
+Name: ATLAS_2010_CONF_2010_049
+Year: 2010
+Summary: Cross-section of and fragmentation function in anti-kt track jets
+Experiment: ATLAS
+Collider: LHC 7000GeV
+SpiresID: None
+Status: OBSOLETE
+Authors:
+ - Hendrik Hoeth <hendrik.hoeth@cern.ch>
+References:
+ - ATLAS-CONF-2010-049
+RunInfo:
+  pp QCD interactions at 7000 GeV including diffractive events.
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [0]
+Description:
+  Jets are identified and their properties studied using tracks measured by the
+  ATLAS Inner Detector. Events are selected using a minimum-bias trigger,
+  allowing the emergence of jets at low transverse momentum to be observed and
+  for jets to be studied independently of the calorimeter. Jets are
+  reconstructed using the anti-kt algorithm applied to tracks with two
+  parameter choices, 0.4 and 0.6. An inclusive jet transverse momentum cross
+  section measurement from 4 GeV to 80 GeV is shown, integrated over
+  $|\eta| < 0.57$ and corrected to charged particle-level truth jets. The
+  probability that a particular particle carries a fixed fraction of the jet
+  momentum (fragmentation function) is also measured.
+  All data is corrected to the particle level. ATTENTION - Data read from plots!
+NeedCrossSection: yes

@@ -1,0 +1,19 @@
+Name: ATLAS_2016_CONF_2016_078
+Year: 2016
+Summary: ATLAS ICHEP16 0-lepton SUSY search at 13~\TeV with 13.2/fb
+Experiment: ATLAS
+Collider: LHC
+Status: VALIDATED
+Authors:
+ - Andy Buckley <andy.buckley@cern.ch>
+RunInfo: BSM signal events.
+NumEvents: 10000
+NeedCrossSection: yes
+Beams: [p+, p+]
+Energies: [13000]
+Description:
+  'ATLAS search for SUSY in 13~TeV $pp$ collisions at LHC Run~2, using 13.2/fb of
+  integrated luminosity and events containing missing transverse momentum and
+  no isolated high-energy leptons.
+  Detailed info:
+  https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2016-078/ '

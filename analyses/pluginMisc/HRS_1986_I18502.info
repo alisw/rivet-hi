@@ -1,0 +1,37 @@
+Name: HRS_1986_I18502
+Year: 1986
+Summary: Charged Hadron multiplicity at 29 GeV
+Experiment: HRS
+Collider: PEP
+InspireID: 18502
+Status: VALIDATED
+Authors:
+ - Peter Richardson <peter.richardson@durham.ac.uk>
+References:
+- Phys.Rev. D34 (1986) 3304
+RunInfo: 
+  Hadronic e+e- events at $\sqrt{s} = 29.$ GeV
+NumEvents: 1000000
+Beams: [e+, e-]
+Energies: [29.]
+PtCuts: [0]
+Description:
+  The charged particle multiplicity distribution of hadronic $e^+e^-$ events,
+  as measured at $\sqrt{s} = 29.$ GeV using the HRS detector at
+  PEP.
+BibKey: Derrick:1986jx
+BibTeX: '@article{Derrick:1986jx,
+      author         = "Derrick, M. and others",
+      title          = "{Study of Quark Fragmentation in e+ e- Annihilation at
+                        29-GeV: Charged Particle Multiplicity and Single Particle
+                        Rapidity Distributions}",
+      booktitle      = "{Proceedings, 23RD International Conference on High
+                        Energy Physics, JULY 16-23, 1986, Berkeley, CA}",
+      journal        = "Phys. Rev.",
+      volume         = "D34",
+      year           = "1986",
+      pages          = "3304",
+      doi            = "10.1103/PhysRevD.34.3304",
+      reportNumber   = "ANL-HEP-PR-86-03, IUHEE-81, UM-HE-86-06, PU-86-560",
+      SLACcitation   = "%%CITATION = PHRVA,D34,3304;%%"
+}'

@@ -1,0 +1,44 @@
+Name: D0_2010_S8570965
+Year: 2010
+Summary: Direct photon pair production
+Experiment: CDF
+Collider: Tevatron Run 2
+SpiresID: 8570965
+InspireID: 846997
+Status: VALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+ - arXiv:1002.4917
+RunInfo:
+  All processes that can produce prompt photon pairs, e.g. $jj \to jj$,
+  $jj \to j\gamma$ and $jj \to \gamma \gamma$.
+  Non-prompt photons from hadron decays like $\pi$ and $\eta$ have been
+  corrected for.
+NumEvents: 10000000
+Beams: [p-, p+]
+Energies: [1960]
+PtCuts: [0]
+Description:
+  Direct photon pair production cross sections are measured using 4.2 fb$^{-1}$
+  of data. They are binned in diphoton mass, the transverse momentum of the
+  diphoton system, the azimuthal angle between the photons, and the polar
+  scattering angle of the photons. Also available are double differential cross
+  sections considering the last three kinematic variables in three diphoton
+  mass bins.
+  Note, the numbers in version 1 of the arXiv preprint were missing the dM
+  normalisation in the double differential cross sections. This has been
+  reported to and fixed by the authors in v2 and the journal submission.
+  HepData as well as the Rivet analysis have also been updated.
+NeedCrossSection: yes
+BibKey: Abazov:2010ah
+BibTeX: '@Article{Abazov:2010ah,
+     author    = "Abazov, V. M. and others",
+     collaboration = "D0",
+     title     = "{Measurement of direct photon pair production cross sections in $p \bar{p}$ collisions at $\sqrt{s} = 1.96$ TeV}",
+     year      = "2010",
+     eprint    = "1002.4917",
+     archivePrefix = "arXiv",
+     primaryClass  =  "hep-ex",
+     SLACcitation  = "%%CITATION = 1002.4917;%%"
+}'

@@ -1,0 +1,44 @@
+Name: BELLE_2013_I1216515
+Summary: Pion and kaon identified particle spectra at $\sqrt{s}=10.52$ GeV
+Status: VALIDATED
+Experiment: Belle
+Collider: KEKB
+Authors:
+ - Peter Richardson
+References:
+ - Phys.Rev.Lett. 111 (2013) 6, 062002
+ - arXiv:1301.6183
+ - doi:10.1103/PhysRevLett.111.062002
+
+Keywords:
+ - bdecays
+ - semileptonic
+RunInfo:
+  $e^+ e^-$ analysis at 10.52
+NumEvents: 1000000
+InspireID: 1216515
+Beams: [e+, e-]
+Energies: [[3.5,7.91]]
+PtCuts: [0]
+Description:
+  Analysis of the identified particle spectra for charged pions and kaons at 10.52 GeV. This
+  is continuum data below the $\Upsilon(4S)$ resonance.
+BibKey: Leitgab:2013qh
+BibTeX: '@article{Leitgab:2013qh,
+      author         = "Leitgab, M. and others",
+      title          = "{Precision Measurement of Charged Pion and Kaon
+                        Differential Cross Sections in e+e- Annihilation at
+                        s=10.52  GeV}",
+      collaboration  = "Belle Collaboration",
+      journal        = "Phys.Rev.Lett.",
+      number         = "6",
+      volume         = "111",
+      pages          = "062002",
+      doi            = "10.1103/PhysRevLett.111.062002",
+      year           = "2013",
+      eprint         = "1301.6183",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "BELLE-PREPRINT-2013-2, KEK-PREPRINT-2012-38",
+      SLACcitation   = "%%CITATION = ARXIV:1301.6183;%%",
+}'

@@ -1,0 +1,43 @@
+Name: CDF_2009_S8436959
+Year: 2009
+Summary: Measurement of the inclusive isolated prompt photon cross-section
+Experiment: CDF
+Collider: Tevatron Run 2
+SpiresID: 8436959
+InspireID: 834437
+Status: VALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+ - arXiv:0910.3623 [hep-ex]
+RunInfo:
+  $\gamma$ + jet processes in ppbar collisions at $\sqrt{s} = 1960$~GeV.
+  Minimum pT cut on the photon in the analysis is 30~GeV.
+NumEvents: 1000000
+Beams: [p-, p+]
+Energies: [1960]
+PtCuts: [30]
+Description:
+  A measurement of the cross section for the inclusive production of isolated
+  photons. The measurement covers the pseudorapidity region $|\eta^\gamma|<1.0$
+  and the transverse energy range $E_T^\gamma>30$~GeV and is based on 2.5~fb$^{-1}$
+  of integrated luminosity. The cross section is measured differential in
+  $E_\perp(\gamma)$.
+NeedCrossSection: yes
+BibKey: Aaltonen:2009ty
+BibTeX: '@Article{Aaltonen:2009ty,
+     author    = "Aaltonen, T. and others",
+ collaboration = "CDF",
+     title     = "{Measurement of the Inclusive Isolated Prompt Photon Cross
+                  Section in ppbar Collisions at sqrt{s} = 1.96 TeV using the
+                  CDF Detector}",
+     journal   = "Phys. Rev.",
+     volume    = "D80",
+     year      = "2009",
+     pages     = "111106",
+     eprint    = "0910.3623",
+     archivePrefix = "arXiv",
+     primaryClass  =  "hep-ex",
+     doi       = "10.1103/PhysRevD.80.111106",
+     SLACcitation  = "%%CITATION = 0910.3623;%%"
+}'

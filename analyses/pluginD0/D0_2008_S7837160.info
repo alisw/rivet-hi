@@ -1,0 +1,47 @@
+Name: D0_2008_S7837160
+Year: 2008
+Summary: Measurement of W charge asymmetry from D0 Run II
+Experiment: D0
+Collider: Tevatron Run 2
+SpiresID: 7837160
+InspireID: 791230
+Status: VALIDATED
+Authors:
+ - Andy Buckley <andy.buckley@cern.ch>
+ - Gavin Hesketh <gavin.hesketh@cern.ch>
+References:
+ - Phys.Rev.Lett.101:211801,2008
+ - doi:10.1103/PhysRevLett.101.211801
+ - arXiv:0807.3367v1 [hep-ex]
+RunInfo:
+  "* Event type: W production with decay to $e \\, \\nu_e$ only  
+   * for Pythia 6: MSEL = 12, MDME(206,1) = 1
+   * Energy: 1.96 TeV"
+NumEvents: 1000000
+Beams: [p-, p+]
+Energies: [1960]
+PtCuts: [0]
+Description:
+  Measurement of the electron charge asymmetry in $p \bar p \to W + X \to
+  e \nu_e + X$ events at a center of mass energy of 1.96 TeV. The asymmetry
+  is measured as a function of the electron transverse momentum and
+  pseudorapidity in the interval (-3.2, 3.2).  This data is sensitive to
+  proton parton distribution functions due to the valence asymmetry in
+  the incoming quarks which produce the W. Initial state radiation
+  should also affect the pT distribution.
+BibKey: Abazov:2008qv
+BibTeX: '@Article{Abazov:2008qv,
+     author    = "Abazov, V. M. and others",
+ collaboration = "D0",
+     title     = "{Measurement of the electron charge asymmetry in $p \bar{p}
+                  \to W + X \to e \nu + X$ events at $\sqrt{s}$ = 1.96-TeV}",
+     journal   = "Phys. Rev. Lett.",
+     volume    = "101",
+     year      = "2008",
+     pages     = "211801",
+     eprint    = "0807.3367",
+     archivePrefix = "arXiv",
+     primaryClass  =  "hep-ex",
+     doi       = "10.1103/PhysRevLett.101.211801",
+     SLACcitation  = "%%CITATION = 0807.3367;%%"
+}'

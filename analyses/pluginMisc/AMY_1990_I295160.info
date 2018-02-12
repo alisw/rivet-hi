@@ -1,0 +1,35 @@
+Name: AMY_1990_I295160
+Year: 1990
+Summary: Hadronic charged multiplicity measurement between 50 and 61.4 GeV
+Experiment: AMY
+Collider: TRISTAN
+InspireID: 295160
+Status: VALIDATED
+Authors:
+ - Peter Richardson <peter.richardson@durham.ac.uk>
+References:
+- Phys.Rev. D42 (1990) 737-747
+RunInfo: 
+  Hadronic e+ e- events generated below the Z pole
+NumEvents: 1000000
+Beams: [e+, e-]
+Energies: [50.0,52.0,55.0,56.0,57.0,60.0,60.8,61.4,57.0]
+PtCuts: [0]
+Description:
+  The charged particle multiplicity distribution of hadronic $e^+e^-$ events
+  as measured between 50 and 61.4 GeV using the AMY detector at
+  TRISTAN.
+BibKey: Zheng:1990iq
+BibTeX: '@article{Zheng:1990iq,
+      author         = "Zheng, H. W. and others",
+      title          = "{Charged hadron multiplicities in $e^+e^-$ annihilations
+                        at $\sqrt{s} = 50$ GeV - 61.4 GeV}",
+      collaboration  = "AMY",
+      journal        = "Phys. Rev.",
+      volume         = "D42",
+      year           = "1990",
+      pages          = "737-747",
+      doi            = "10.1103/PhysRevD.42.737",
+      reportNumber   = "KEK-Preprint-90-5, AMY-90-2, UR-1155, ER-13065-616",
+      SLACcitation   = "%%CITATION = PHRVA,D42,737;%%"
+}'

@@ -1,0 +1,42 @@
+Name: UA5_1989_S1926373
+Year: 1989
+Summary: UA5 charged multiplicity measurements
+Experiment: UA5
+Collider: CERN SPS
+SpiresID: 1926373
+InspireID: 267179
+Status: VALIDATED
+Authors:
+ - Holger Schulz <holger.schulz@physik.hu-berlin.de>
+ - Christophe L. J. Vaillant <c.l.j.j.vaillant@durham.ac.uk>
+ - Andy Buckley <andy.buckley@cern.ch>
+References:
+ - Z. Phys. C - Particles and Fields 43, 357-374 (1989)
+ - doi:10.1007/BF01506531
+RunInfo:
+  Minimum bias events at $\sqrt{s} = 200$ and 900 GeV.
+  Enable single and double diffractive events in addition to non-diffractive processes.
+NumEvents: 1000000
+Beams: [p-, p+]
+Energies: [200, 900]
+PtCuts: [0]
+Description:
+  Multiplicity distributions of charged particles produced in non-single-diffractive
+  collisions between protons and antiprotons at centre-of-mass energies of 200 and
+  900 GeV. The data were recorded in the UA5 streamer chambers at the CERN collider,
+  which was operated in a pulsed mode between the two energies. This analysis
+  confirms the violation of KNO scaling in full phase space found by the UA5 group
+  at an energy of 546 GeV, with similar measurements at 200 and 900 GeV.
+BibKey: Ansorge:1988kn
+BibTeX: '@Article{Ansorge:1988kn,
+     author    = "Ansorge, R. E. and others",
+ collaboration = "UA5",
+     title     = "{Charged Particle Multiplicity Distributions at 200-GeV and
+                  900-GeV Center-Of-Mass Energy}",
+     journal   = "Z. Phys.",
+     volume    = "C43",
+     year      = "1989",
+     pages     = "357",
+     doi       = "10.1007/BF01506531",
+     SLACcitation  = "%%CITATION = ZEPYA,C43,357;%%"
+}'

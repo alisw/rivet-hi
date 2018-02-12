@@ -1,0 +1,43 @@
+Name: ATLAS_2012_I1125575
+Year: 2012
+Summary: Studies of the underlying event at 7 TeV with track-jets
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1125575
+Status: VALIDATED
+Authors:
+ - Kiran Joshi <kiran.joshi@cern.ch>
+References:
+ - arXiv:1208.0563 [hep-ex]
+RunInfo:
+  Minimum bias events at 7 TeV.
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [7000]
+Description:
+  'Distributions sensitive to the underlying event are studied in events containing
+   one or more charged particles. Jets are reconstructed using the anti-$k_t$ algorithm
+   with radius parameter $R$ varying between 0.2 and 1.0. Distributions of the
+   charged-particle multiplicity, the scalar sum of the transverse momentum of charged
+   particles, and the average charged-particle pT are measured as functions of
+   $\pT^\text{jet}$ in regions transverse to and opposite the leading jet for
+   $4 \GeV < \pT^\text{jet} < 100 \GeV$. In addition, the $R$-dependence of the mean
+   values of these observables is studied.'
+BibKey: :2012fs
+BibTeX: '@article{:2012fs,
+      author         = "Aad, Georges and others",
+      title          = "{Underlying event characteristics and their dependence on
+                        jet size of charged-particle jet events in $pp$ collisions
+                        at $\sqrt{s}=7$ TeV with the ATLAS detector}",
+      collaboration  = "ATLAS Collaboration",
+      journal        = "Phys.Rev.",
+      volume         = "D86",
+      pages          = "072004",
+      doi            = "10.1103/PhysRevD.86.072004",
+      year           = "2012",
+      eprint         = "1208.0563",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2012-148",
+      SLACcitation   = "%%CITATION = ARXIV:1208.0563;%%",
+}'

@@ -1,0 +1,42 @@
+Name: D0_2001_S4674421
+Year: 2001
+Summary: Tevatron Run I differential W/Z boson cross-section analysis
+Experiment: D0
+Collider: Tevatron Run 1
+SpiresID: 4674421
+InspireID: 559624
+Status: VALIDATED
+Authors:
+ - Lars Sonnenschein <Lars.Sonnenschein@cern.ch>
+References:
+ - Phys.Lett.B517:299-308,2001
+ - doi:10.1016/S0370-2693(01)01020-6
+ - arXiv:hep-ex/0107012v2
+RunInfo:
+  $W/Z$ events with decays to first generation leptons, in $p\bar{p}$
+  collisions at $\sqrt{s} = 1800\;\GeV$
+NumEvents: 1000000
+Beams: [p-, p+]
+Energies: [1800]
+PtCuts: [0]
+Description:
+  Measurement of differential W/Z boson cross section and ratio in $p
+  \bar{p}$ collisions at center-of-mass energy $\sqrt{s} = 1.8\;\TeV$. The data
+  cover electrons and neutrinos in a pseudorapidity range of -2.5 to 2.5.
+NeedCrossSection: yes
+BibKey: Abazov:2001nta
+BibTeX: '@Article{Abazov:2001nta,
+     author    = "Abazov, V. M. and others",
+     collaboration = "D0",
+     title     = "{Measurement of the ratio of differential cross sections
+                  for $W$ and $Z$ boson production as a function of
+                  transverse momentum in $p\bar{p}$ collisions at $\sqrt{s} = 1.8$\;TeV}",
+     journal   = "Phys. Lett.",
+     volume    = "B517",
+     year      = "2001",
+     pages     = "299-308",
+     eprint    = "hep-ex/0107012",
+     archivePrefix = "arXiv",
+     doi       = "10.1016/S0370-2693(01)01020-6",
+     SLACcitation  = "%%CITATION = HEP-EX/0107012;%%"
+}'

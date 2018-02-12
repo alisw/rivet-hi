@@ -1,0 +1,15 @@
+Name: MC_ZINC_MU
+Summary: Monte Carlo validation observables for $Z[mu^+ \, mu^-]$ production
+Status: VALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+ - Gavin Hesketh <gavin.hesketh@ucl.ac.uk>
+References:
+RunInfo:
+  $mu^+ mu^-$ analysis. Needs mass cut on lepton pair to avoid
+  photon singularity, e.g. a min range of $66 < m_{mumu} < 116$ GeV
+NumEvents: 1000000
+PtCuts: [0]
+Description:
+  Monte Carlo validation observables for $Z[mu^+ \, mu^-]$ production
+NeedCrossSection: yes

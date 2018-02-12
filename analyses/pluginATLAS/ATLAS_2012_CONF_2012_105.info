@@ -1,0 +1,22 @@
+Name: ATLAS_2012_CONF_2012_105
+Year: 2012
+Summary: Search for supersymmetry with 2 same-sign leptons, jets and missing transverse energy
+Experiment: ATLAS
+Collider: LHC
+Status: OBSOLETE
+Authors:
+ - Peter Richardson <Peter.Richardson@durham.ac.uk>
+References:
+ - ATLAS-CONF-2012-105
+RunInfo:
+  BSM signal events at 8000 GeV.
+NumEvents: 25000 for BSM signals
+Beams: [p+, p+]
+Energies: [8000]
+Description:
+  'Results of the search for the production of supersymmetric particles decaying into final
+   states with missing transverse momentum and two isolated same-sign leptons, electrons or muons.
+   The analysis uses a data sample collected during the first half of 2012 that
+   corresponds to a total integrated luminosity o1 $5.8\,\text{fb}^{-1}$ of $\sqrt{s} = 8$\,TeV
+   proton-proton collisions recorded with the ATLAS detector at the Large Hadron Collider.
+   Opposite-sign and same-sign dilepton events are studied separately.'

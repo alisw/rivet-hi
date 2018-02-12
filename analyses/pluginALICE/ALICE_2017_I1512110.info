@@ -1,0 +1,45 @@
+Name: ALICE_2017_I1512110
+Year: 2017
+Summary: Invariant cross section of neutral pions measured at mid-rapidity in pp collisions
+         at $2.76\,$TeV.
+Experiment: ALICE
+Collider: LHC
+InspireID: 1512110
+Status: VALIDATED
+Authors:
+  Hendrik Poppenborg hendrik.poppenborg@cern.ch
+
+References:
+  Eur.Phys.J. C77 (2017) no.5, 339
+  doi:10.1140/epjc/s10052-017-5144-7
+  arXiv:hep-ex/1702.00917
+
+RunInfo:
+  Transverse momentum spectra of neutral pions and $\eta$ mesons measured at 0.4<p_T<40~GeV/c and 0.6<p_T<20~GeV/c, respectively, and the ratio $\pi^{0}/\eta$, obtained at mid-rapidity in pp collisions at $\sqrt(s) = 2.76\,$TeV with ALICE at the LHC.
+
+Beams: [p+, p+]
+Energies: [2760]
+
+Description:
+  Transverse momentum spectra of neutral pions and $\eta$ mesons measured at 0.4<p_T<40~GeV/c and 0.6<p_T<20~GeV/c, respectively, and the ratio $\pi^{0}/\eta$, obtained at mid-rapidity in pp collisions at $\sqrt(s) = 2.76\,$TeV with ALICE at the LHC.
+
+BibKey: Acharya:2017hyu
+BibTeX: '@article{Acharya:2017hyu,
+      author         = "Acharya, Shreyasi and others",
+      title          = "{Production of ${\pi ^0}$ and $\eta $ mesons up to high
+                        transverse momentum in pp collisions at 2.76 TeV}",
+      collaboration  = "ALICE",
+      journal        = "Eur. Phys. J.",
+      volume         = "C77",
+      year           = "2017",
+      number         = "5",
+      pages          = "339",
+      doi            = "10.1140/epjc/s10052-017-5144-7,
+                        10.1140/epjc/s10052-017-4890-x",
+      note           = "[Erratum: Eur. Phys. J.C77,no.9,586(2017)]",
+      eprint         = "1702.00917",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-EP-2017-019",
+      SLACcitation   = "%%CITATION = ARXIV:1702.00917;%%"
+}'

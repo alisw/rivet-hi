@@ -1,0 +1,44 @@
+Name: ATLAS_2011_I954993
+Year: 2011
+Summary: $WZ$ fiducial cross-section at 7 TeV in ATLAS
+Experiment: ATLAS
+Collider: LHC 7TeV
+InspireID: 954993
+Status: VALIDATED
+Authors:
+ - Lynn Marx   <Lynn.Marx@hep.manchester.ac.uk>
+ - Roman Lysak <lysak@fzu.cz>
+References:
+ - Phys.Lett. B709 (2012) 341-357
+ - arXiv:1111.5570
+RunInfo:
+  pp WZ events at 7 TeV  with direct e, mu W/Z boson decays (no taus from W/Z)
+NumEvents: 1000000
+NeedCrossSection: yes
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [0]
+Description:
+  'This is a measurement of $WZ$ production in 1.02 fb$^{-1}$ of
+   $pp$ collision data at $\sqrt{s} = $7 TeV collected by the ATLAS experiment
+   in 2011. Doubly leptonic decay events are selected with electrons,
+   muons and missing transverse momentum in the final state.
+   The measurement of the combined fiducial cross section for the $WZ$
+   bosons decaying directly into electrons and muons is performed.'
+BibKey: Aad:2011cx
+BibTeX: '@article{Aad:2011cx,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of the WZ production cross section and limits on anomalous triple gauge couplings
+                         in proton-proton collisions at $\sqrt{s} = 7$ TeV with the ATLAS detector}",
+      collaboration  = "ATLAS Collaboration",
+      journal        = "Phys.Lett.",
+      volume         = "B709",
+      pages          = "341-357",
+      doi            = "10.1016/j.physletb.2012.02.053",
+      year           = "2012",
+      eprint         = "1111.5570",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2011-184",
+      SLACcitation   = "%%CITATION = ARXIV:1111.5570;%%",
+}'

@@ -1,0 +1,44 @@
+Name: CDF_1993_S2742446
+Year: 1993
+Summary: Angular distribution of prompt photon
+Experiment: CDF
+Collider: Tevatron Run 1
+SpiresID: 2742446
+InspireID: 354237
+Status: UNVALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+ - Phys.Rev.Lett.71:679-683,1993
+ - doi:10.1103/PhysRevLett.71.679
+RunInfo:
+  All prompt photon production processes in $p \bar{p}$ at 1800 GeV.
+  Hadronisation should be switched off, because non-prompt photon production
+  has been corrected for.
+NumEvents: 10000000
+Beams: [p-, p+]
+Energies: [1800]
+PtCuts: [15]
+Description:
+  Data taken with the Collider Detector at Fermilab (CDF) during the 1988-1989
+  run of the Tevatron are used to measure the distribution of the center-of-mass
+  (rest frame of the initial state partons) angle between isolated prompt
+  photons and the beam direction. 
+  WARNING --- Implemented is the simplified c.m. definition
+  given in the paper. The rise of the data and the MC predictions presented in the 
+  latter could not be reproduced.
+BibKey: Abe:1993cv
+BibTeX: '@Article{Abe:1993cv,
+     author    = "Abe, F. and others",
+ collaboration = "CDF",
+     title     = "{The Center-of-mass angular distribution of prompt photons
+                  produced in $p\bar{p}$ collisions at $\sqrt{s} = 1.8$
+                  TeV}",
+     journal   = "Phys. Rev. Lett.",
+     volume    = "71",
+     year      = "1993",
+     pages     = "679-683",
+     doi       = "10.1103/PhysRevLett.71.679",
+     SLACcitation  = "%%CITATION = PRLTA,71,679;%%"
+}'
+ToDo:

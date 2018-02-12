@@ -1,0 +1,52 @@
+Name: CMS_2015_I1346843
+Year: 2014
+Summary: Measurement of differential cross-section of FSR photons in $Z$ decays
+Experiment: CMS
+Collider: LHC
+InspireID: 1346843
+Status: VALIDATED
+Authors:
+ - Andrew Kubik  <Andrew.Michael.Kubik@cern.ch>
+ - Michael Schmitt  <schmittm@lotus.phys.northwestern.edu>
+References:
+ - arXiv:1502.07940 [hep-ex]
+RunInfo:
+  $p p \to \mu^+ \mu^- \gamma$+X 7 TeV.
+  These cross sections are given for the fiducial region defined as follows
+  - Leading muon $p_T > 31$ GeV and abs(eta) < 2.4
+  - Trailing muon $p_T > 9$ GeV and abs(eta) < 2.4
+  - Photon $p_T > 5$ GeV
+  - Photon abs(eta) < 2.4 but not 1.4 < abs(eta) < 1.6
+  - Separation between photon and closest muon 0.05 < DeltaR < 3.0
+  - Di-muon invariant mass 30 < M_mumu < 87 GeV
+NumEvents: 1000000
+NeedCrossSection: true
+Beams: [p+, p+]
+Energies: [7000]
+Description:
+  'The differential cross sections for the production of photons in Z to mu+ mu-
+  gamma decays are presented as a function of the transverse energy of the
+  photon and its separation from the nearest muon. The data for these
+  measurements were collected with the CMS detector and correspond to an
+  integrated luminosity of 4.7 inverse femtobarns of pp collisions at sqrt(s) =
+  7 TeV delivered by the CERN LHC.'
+BibKey: Khachatryan:2015rja
+BibTeX: '@article{Khachatryan:2015rja,
+      author         = "Khachatryan, V. and others",
+      title          = "{Study of final-state radiation in decays of Z bosons
+                        produced in $pp$ collisions at 7 TeV}",
+      collaboration  = "CMS",
+      journal        = "Phys.Rev.",
+      number         = "9",
+      volume         = "D91",
+      pages          = "092012",
+      doi            = "10.1103/PhysRevD.91.092012",
+      year           = "2015",
+      eprint         = "1502.07940",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-EWK-11-016, CERN-PH-EP-2015-031",
+      SLACcitation   = "%%CITATION = ARXIV:1502.07940;%%",
+}'
+ToDo:
+ - Implement the analysis, test it, remove this ToDo, and mark as VALIDATED :-)

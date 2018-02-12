@@ -1,0 +1,15 @@
+Name: MC_TAUS
+Summary: Monte Carlo validation observables for tau production
+Status: VALIDATED
+Authors:
+ - Andy Buckey <andy.buckley@cern.ch>
+NumEvents: 10000
+Description:
+  Any taus with $p_\perp > 0.5$ GeV are found and projected onto many different observables.
+  There is currently no photon clustering on to these taus. Multiplicities are tracked for
+  both inclusive and prompt-only particles -- maybe a MC_PROMPTTAUS analysis is needed?
+NeedCrossSection: yes
+ToDo:
+  Include histograms relating to tau decays, e.g. decay product multiplicity, number of
+  hadronic vs. leptonic decays, maybe specific tau decays (or put that in a separate
+  MC_TAUDECAYS analysis?)

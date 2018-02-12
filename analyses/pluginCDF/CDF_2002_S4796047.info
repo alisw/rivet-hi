@@ -1,0 +1,48 @@
+Name: CDF_2002_S4796047
+Year: 2002
+Summary: CDF Run 1 charged multiplicity measurement
+Experiment: CDF
+Collider: Tevatron Run 1
+SpiresID: 4796047
+InspireID: 567774
+Status: VALIDATED
+Authors:
+ - Hendrik Hoeth <hendrik.hoeth@cern.ch>
+References:
+ - Phys.Rev.D65:072005,2002
+ - doi:10.1103/PhysRevD.65.072005
+RunInfo:
+  QCD events at $\sqrt{s} = 630$ and 1800 GeV.
+NumEvents: 1000000
+Beams: [p-, p+]
+Energies: [630, 1800]
+PtCuts: [0]
+Description:
+  A study of $p\bar{p}$ collisions at $\sqrt{s} = 1800$ and 630 GeV collected
+  using a minimum bias trigger in which the data set is divided into two
+  classes corresponding to `soft' and `hard' interactions. For each
+  subsample, the analysis includes measurements of the multiplicity,
+  transverse momentum (pT) spectra, and the average pT and event-by-event
+  pT dispersion as a function of multiplicity. A comparison of
+  results shows distinct differences in the behavior of the two samples
+  as a function of the center of mass energy. The properties of the soft
+  sample are invariant as a function of c.m. energy.
+
+  It should be noticed that minimum bias tunings of PYTHIA made by ATLAS
+  in early 2010, which used this among all other available data from CDF
+  and from ATLAS at 900~GeV and 7~TeV, found an unavoidable tension between
+  this data and the rest. Accordingly, this data was excluded from the fits.
+  Whether this reflects a problem with this dataset or with the PYTHIA MPI
+  model is a judgement for users to make!
+BibKey: Acosta:2001rm
+BibTeX: '@Article{Acosta:2001rm,
+     author    = "Acosta, Darin E. and others",
+     collaboration = "CDF",
+     title     = "{Soft and hard interactions in $p\bar{p}$ collisions at $\sqrt{s} = $ 1800~GeV and 630~GeV}",
+     journal   = "Phys. Rev.",
+     volume    = "D65",
+     year      = "2002",
+     pages     = "072005",
+     doi       = "10.1103/PhysRevD.65.072005",
+     SLACcitation  = "%%CITATION = PHRVA,D65,072005;%%"
+}'

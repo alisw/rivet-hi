@@ -1,0 +1,36 @@
+Name: PDG_HADRON_MULTIPLICITIES
+Year: 2008
+Summary: Hadron multiplicities in hadronic $e^+e^-$ events
+Experiment: PDG
+Collider: Various
+SpiresID: 7857373
+Status: VALIDATED
+Authors:
+ - Hendrik Hoeth <hendrik.hoeth@cern.ch>
+References:
+ - Phys. Lett. B, 667, 1 (2008)
+RunInfo:
+  Hadronic events in $e^+ e^-$ collisions
+NumEvents: 1000000
+Beams: [e+, e-]
+Energies: [10, 35, 91.2, 177]
+PtCuts: [0]
+Description:
+  Hadron multiplicities in hadronic $e^+e^-$ events, taken from Review of
+  Particle Properties 2008, table 40.1, page 355.   Average hadron
+  multiplicities per hadronic $e^+e^-$ annihilation event at $\sqrt{s}
+  \approx {}$ 10, 29--35, 91, and 130--200 GeV. The numbers are averages
+  from various experiments. Correlations of the systematic uncertainties
+  were considered for the calculation of the averages.
+BibKey: Amsler:2008zzb
+BibTeX: '@Article{Amsler:2008zzb,
+     author    = "Amsler, Claude and others",
+ collaboration = "Particle Data Group",
+     title     = "{Review of particle physics}",
+     journal   = "Phys. Lett.",
+     volume    = "B667",
+     year      = "2008",
+     pages     = "1",
+     doi       = "10.1016/j.physletb.2008.07.018",
+     SLACcitation  = "%%CITATION = PHLTA,B667,1;%%"
+}'

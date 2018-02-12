@@ -1,0 +1,14 @@
+Name: MC_ZZINC
+Summary: Monte Carlo validation observables for $Z[e^+ \, e^-]Z[\mu^+ \, \mu^-]$ production
+Status: VALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+RunInfo:
+  $ZZ$ + jets analysis. Needs mass cut on lepton pairs to avoid
+  photon singularity, e.g. a min range of $66 < m_{ee} < 116$ GeV
+NumEvents: 1000000
+PtCuts: [0]
+Description:
+  Monte Carlo validation observables for $Z[e^+ \, e^-]Z[\mu^+ \, \mu^-]$ production
+NeedCrossSection: yes

@@ -1,0 +1,117 @@
+%auto-ignore
+\usepackage{xspace,graphicx,mparhack,amsmath}
+\usepackage{amssymb,url,underscore,fancyvrb,cancel}
+\usepackage{hepnicenames,hepunits}
+\usepackage{picinpar,fancybox}
+\usepackage{microtype,relsize}
+%\usepackage{xcolor}
+%\usepackage{palatino,mathpazo}
+%\usepackage{utopia}
+%\usepackage{euler}
+
+\usepackage{rivetversion}
+
+\DeclareRobustCommand{\TODO}[1]{\ensuremath{\bigstar}{#1}\xspace}
+%\DeclareRobustCommand{\TODO}[1]{\textcolor{red!20!black}{\ensuremath{\bigstar}{#1}}\xspace}
+%\DeclareRobustCommand{\TOCHECK}[1]{\textcolor{blue!20!black}{\ensuremath{\bigcircle}{#1}}\xspace}
+
+%% Bold tt font
+\DeclareFontShape{OT1}{cmtt}{bx}{n}{<5><6><7><8><9><10><10.95><12><14.4><17.28><20.74><24.88>cmttb10}{}
+
+%% Auto bold math in bold environments
+\makeatletter
+\g@addto@macro\bfseries{\boldmath}
+\makeatother
+
+\newenvironment{snippet}{\Verbatim}{\endVerbatim}
+
+\newcommand{\kbd}[1]{\texttt{#1}\xspace}
+\newcommand{\inp}[1]{\textsf{\textdollar}\hspace{1mm}\texttt{#1}\xspace}
+\newcommand{\outp}[1]{\textsf{#1}\xspace}
+\newcommand{\code}[1]{\texttt{#1}\xspace}
+\newcommand{\var}[1]{\texttt{\textdollar{}#1}\xspace}
+\newcommand{\val}[1]{\textit{\ensuremath{\langle\text{\textrm{#1}\/}\rangle}}\xspace}
+\newcommand{\home}{\texttt{\ensuremath{\sim}}\xspace}
+
+%\newcommand{\RGnegate}{\texttt{\ensuremath{\sim}}}
+\newcommand{\Delphi}{\textsc{Delphi}\xspace}
+
+\newcommand{\cmdbreak}{\textbackslash\newline}
+
+\newcommand{\AppendixRef}[1]{appendix~\ref{#1}}
+\newcommand{\SectionRef}[1]{section~\ref{#1}}
+\newcommand{\SubsectionRef}[1]{sub-section~\ref{#1}}
+
+\let\oldmarginpar\marginpar
+\renewcommand\marginpar[1]{\-\oldmarginpar{\footnotesize \textit{#1}}}
+%\renewcommand\marginpar[1]{\-\oldmarginpar[\raggedleft\footnotesize \textit{#1}]%
+%{\raggedright\footnotesize \textit{#1}}}
+
+\newcommand{\warnimg}{\includegraphics[height=11mm]{slip}}
+\newcommand{\coneimg}{\includegraphics[height=13mm]{cone}}
+\newcommand{\bendimg}{\includegraphics[height=15mm]{bend}}
+\newcommand{\dblbendimg}{\bendimg\hspace{0.5mm}\bendimg}
+\newcommand{\thinkimg}{\includegraphics[height=16mm]{thinker}}
+
+\setlength{\fboxsep}{5mm}
+\setlength{\linewidth}{5pt}
+
+\newenvironment{detail}{\begin{window}[0,l,{\bendimg},{}]}{\end{window}\ignorespacesafterend}
+\newenvironment{dbldetail}{\begin{window}[0,l,{\dblbendimg},{}]}{\end{window}\ignorespacesafterend}
+
+%% Make narrower and box (box must be able to break over pages)
+\newenvironment{warning}{\vspace{5mm}\hrule\nobreak\vspace{3mm}\begingroup%
+  \begin{window}[0,l,{\warnimg},{}]
+  \setlength{\parindent}{0cm}\noindent}{%
+  \end{window}\endgroup\vspace{3mm}\nobreak\hrule\vspace{5mm}\ignorespacesafterend}
+
+%% Make narrower and box (box must be able to break over pages)
+\newenvironment{change}{\vspace{5mm}\hrule\nobreak\vspace{3mm}\begingroup%
+  \it\begin{window}[0,l,{\coneimg},{}]
+  \setlength{\parindent}{0cm}\noindent}{%
+  \end{window}\endgroup\vspace{3mm}\nobreak\hrule\vspace{5mm}\ignorespacesafterend}
+
+% \newenvironment{change}%
+% {\begin{Sbox}%
+%     \begin{minipage}{0.9\textwidth}%
+%       \window[0,l,{\coneimg},{}] \noindent\hspace{-0.8ex}}
+%     {\par\endwindow%
+%     \end{minipage}%
+%   \end{Sbox}%
+%   \vspace{2mm}%
+%   \noindent%
+%   \begin{center}%
+%     \cornersize{0.1}
+%     \Ovalbox{\TheSbox}%
+%   \end{center}%
+%   \vspace{2mm}%
+%   \ignorespacesafterend}
+
+%% Make narrower and box (box must be able to break over pages)
+\newenvironment{philosophy}{\vspace{5mm}\hrule\nobreak\vspace{3mm}\begingroup%
+  \it\begin{window}[0,l,{\thinkimg},{}]
+  \setlength{\parindent}{0cm}\noindent}{%
+  \end{window}\endgroup\vspace{3mm}\nobreak\hrule\vspace{5mm}\ignorespacesafterend}
+
+% \newenvironment{philosophy}%
+% {\begin{Sbox}%
+%     \begin{minipage}{0.9\textwidth}%
+%       \it
+%       \window[0,l,{\thinkimg},{}]
+%       \setlength{\parindent}{0cm}\noindent\hspace{-0.8ex}}
+%     {\par\endwindow%
+%     \end{minipage}%
+%   \end{Sbox}%
+%   \vspace{2mm}%
+%   \noindent%
+%   \begin{center}%
+%     \cornersize{0.01}
+%     \Ovalbox{\TheSbox}%
+%   \end{center}%
+%   \vspace{2mm}%
+%   \ignorespacesafterend}
+
+
+\newcommand{\pT}{\ensuremath{p_\perp}\xspace}
+\newcommand{\ET}{\ensuremath{E_\perp}\xspace}
+\newcommand{\MET}{\ensuremath{\cancel{E_\perp}}\xspace}

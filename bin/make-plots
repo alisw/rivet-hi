@@ -1,0 +1,2835 @@
+#! /usr/bin/env python
+
+"""\
+Usage: %prog [options] file.dat [file2.dat ...]
+
+TODO
+ * Optimise output for e.g. lots of same-height bins in a row
+ * Add a RatioFullRange directive to show the full range of error bars + MC envelope in the ratio
+ * Tidy LaTeX-writing code -- faster to compile one doc only, then split it?
+ * Handle boolean values flexibly (yes, no, true, false, etc. as well as 1, 0)
+"""
+
+from __future__ import print_function
+
+##
+## This program is copyright by Hendrik Hoeth <hoeth@linta.de> and
+## the Rivet team https://rivet.hepforge.org. It may be used
+## for scientific and private purposes. Patches are welcome, but please don't
+## redistribute changed versions yourself.
+##
+
+## Check the Python version
+import sys
+if sys.version_info[:3] < (2,6,0):
+    print("make-plots requires Python version >= 2.6.0... exiting")
+    sys.exit(1)
+
+## Try to rename the process on Linux
+try:
+    import ctypes
+    libc = ctypes.cdll.LoadLibrary('libc.so.6')
+    libc.prctl(15, 'make-plots', 0, 0, 0)
+except Exception as e:
+    pass
+
+
+import os, logging, re
+import tempfile
+import getopt
+import string
+from math import *
+
+
+## Regex patterns
+pat_begin_block = re.compile(r'^#+\s*BEGIN ([A-Z0-9_]+) ?(\S+)?')
+pat_end_block =   re.compile('^#+\s*END ([A-Z0-9_]+)')
+pat_comment = re.compile('^#|^\s*$')
+pat_property = re.compile('^(\w+?)=(.*)$')
+pat_path_property  = re.compile('^(\S+?)::(\w+?)=(.*)$')
+
+
+def fuzzyeq(a, b, tolerance=1e-6):
+    "Fuzzy equality comparison function for floats, with given fractional tolerance"
+    # if type(a) is not float or type(a) is not float:
+    #     print(a, b)
+    if (a == 0 and abs(b) < 1e-12) or (b == 0 and abs(a) < 1e-12):
+        return True
+    return 2.0*abs(a-b)/abs(a+b) < tolerance
+
+def inrange(x, a, b):
+    return x >= a and x < b
+
+def floatify(x):
+    if type(x) is str:
+        x = x.split()
+    if not hasattr(x, "__len__"):
+        x = [x]
+    x = [float(a) for a in x]
+    return x[0] if len(x) == 1 else x
+
+def floatpair(x):
+    if type(x) is str:
+        x = x.split()
+    if hasattr(x, "__len__"):
+        assert len(x) == 2
+        return [float(a) for a in x]
+    return [float(x), float(x)]
+
+
+def is_end_marker(line, blockname):
+    m = pat_end_block.match(line)
+    return m and m.group(1) == blockname
+
+def is_comment(line):
+    return pat_comment.match(line) is not None
+
+
+
+class Described(object):
+    "Inherited functionality for objects holding a 'description' dictionary"
+
+    def __init__(self):
+        pass
+
+    def has_attr(self, key):
+        return key in self.description
+
+    def set_attr(self, key, val):
+        self.description[key] = val
+
+    def attr(self, key, default=None):
+        return self.description.get(key, default)
+
+    def attr_bool(self, key, default=None):
+        x = self.attr(key, default)
+        if x is None: return None
+        if str(x).lower() in ["1", "true", "yes", "on"]: return True
+        if str(x).lower() in ["0", "false", "no", "off"]: return False
+        return None
+
+    def attr_int(self, key, default=None):
+        x = self.attr(key, default)
+        try:
+            x = int(x)
+        except:
+            x = None
+        return x
+
+    def attr_float(self, key, default=None):
+        x = self.attr(key, default)
+        try:
+            x = float(x)
+        except:
+            x = None
+        return x
+
+
+
+class InputData(Described):
+
+    def __init__(self, filename):
+        self.filename = filename
+        if not self.filename.endswith(".dat"):
+            self.filename += ".dat"
+        self.histos = {}
+        self.special = {}
+        self.functions = {}
+
+        self.description = {}
+        self.pathdescriptions = []
+
+        self.is2dim = False
+        f = open(self.filename)
+        for line in f:
+            m = pat_begin_block.match(line)
+            if m:
+                name, path = m.group(1,2)
+                if path is None and name != 'PLOT':
+                    raise Exception('BEGIN sections need a path name.')
+
+                ## Pass the reading of the block to separate functions
+                if name == 'PLOT':
+                    self.read_input(f);
+                elif name == 'SPECIAL':
+                    self.special[path] = Special(f)
+                elif name == 'HISTOGRAM' or name == 'HISTOGRAM2D':
+                    self.histos[path] = Histogram(f, p=path)
+                    # self.histos[path].path = path
+                    self.description['is2dim'] = self.histos[path].is2dim
+                elif name == 'HISTO1D':
+                    self.histos[path] = Histo1D(f, p=path)
+                elif name == 'HISTO2D':
+                    self.histos[path] = Histo2D(f, p=path)
+                    self.description['is2dim'] = True
+                elif name == 'COUNTER':
+                    self.histos[path] = Counter(f, p=path)
+                elif name == 'VALUE':
+                    self.histos[path] = Value(f, p=path)
+                elif name == 'FUNCTION':
+                    self.functions[path] = Function(f)
+#            elif is_comment(line):
+#                continue
+#            else:
+#                self.read_path_based_input(line)
+        f.close()
+
+        self.apply_config_files(opts.CONFIGFILES)
+
+        ## Plot (and subplot) sizing
+        # TODO: Use attr functions and bools properly
+        self.description.setdefault('PlotSizeX', 10.)
+        if self.description['is2dim']:
+            self.description['PlotSizeX'] -= 1.7
+            self.description['MainPlot'] = '1'
+            self.description['RatioPlot'] = '0'
+
+        if self.description.get('PlotSize', '') != '':
+            plotsizes = self.description['PlotSize'].split(',')
+            self.description['PlotSizeX'] = float(plotsizes[0])
+            self.description['PlotSizeY'] = float(plotsizes[1])
+            if len(plotsizes) == 3:
+                self.description['RatioPlotSizeY'] = float(plotsizes[2])
+            del self.description['PlotSize']
+
+        if self.description.get('MainPlot', '1') == '0':
+            ## Ratio, no main
+            self.description['RatioPlot'] = '1' #< don't allow both to be zero!
+            self.description['PlotSizeY'] = 0.
+            self.description.setdefault('RatioPlotSizeY', 9.)
+        else:
+            if self.description.get('RatioPlot', '0') == '1':
+                ## Main and ratio
+                self.description.setdefault('PlotSizeY', 6.)
+                self.description.setdefault('RatioPlotSizeY', self.description.get('RatioPlotYSize', 3.))
+            else:
+                ## Main, no ratio
+                self.description.setdefault('PlotSizeY', self.description.get('PlotYSize', 9.))
+                self.description['RatioPlotSizeY'] = 0.
+
+        ## Ensure numbers, not strings
+        self.description['PlotSizeX'] = float(self.description['PlotSizeX'])
+        self.description['PlotSizeY'] = float(self.description['PlotSizeY'])
+        self.description['RatioPlotSizeY'] = float(self.description['RatioPlotSizeY'])
+        # self.description['TopMargin'] = float(self.description['TopMargin'])
+        # self.description['BottomMargin'] = float(self.description['BottomMargin'])
+
+        self.description['LogX'] = str(self.description.get('LogX', 0)) in ["1", "yes", "true"]
+        self.description['LogY'] = str(self.description.get('LogY', 0)) in ["1", "yes", "true"]
+        self.description['LogZ'] = str(self.description.get('LogZ', 0)) in ["1", "yes", "true"]
+        if 'Rebin' in self.description:
+            for i in self.histos:
+                self.histos[i].description['Rebin'] = self.description['Rebin']
+
+        histoordermap = {}
+        histolist = list(self.histos.keys())
+        if 'DrawOnly' in self.description:
+            histolist = list(filter(list(self.histos.keys()).count, self.description['DrawOnly'].strip().split()))
+        for histo in histolist:
+            order = 0
+            if 'PlotOrder' in self.histos[histo].description:
+                order = int(self.histos[histo].description['PlotOrder'])
+            if not order in histoordermap:
+                histoordermap[order] = []
+            histoordermap[order].append(histo)
+        sortedhistolist = []
+        for i in sorted(histoordermap.keys()):
+            sortedhistolist.extend(histoordermap[i])
+        self.description['DrawOnly'] = sortedhistolist
+
+
+        ## Inherit various values from histograms if not explicitly set
+        for k in ['LogX', 'LogY', 'LogZ',
+                  'XLabel', 'YLabel', 'ZLabel',
+                  'XCustomMajorTicks', 'YCustomMajorTicks', 'ZCustomMajorTicks']:
+            self.inherit_from_histos(k)
+
+        return
+
+
+    @property
+    def is2dim(self):
+        return self.attr_bool("is2dim", False)
+    @is2dim.setter
+    def is2dim(self, val):
+        self.set_attr("is2dim", val)
+
+
+    @property
+    def drawonly(self):
+        x = self.attr("DrawOnly")
+        if type(x) is str:
+            self.drawonly = x #< use setter to listify
+        return x if x else []
+    @drawonly.setter
+    def drawonly(self, val):
+        if type(val) is str:
+            val = val.strip().split()
+        self.set_attr("DrawOnly", val)
+
+
+    @property
+    def stacklist(self):
+        x = self.attr("Stack")
+        if type(x) is str:
+            self.stacklist = x #< use setter to listify
+        return x if x else []
+    @stacklist.setter
+    def stacklist(self, val):
+        if type(val) is str:
+            val = val.strip().split()
+        self.set_attr("Stack", val)
+
+
+    @property
+    def plotorder(self):
+        x = self.attr("PlotOrder")
+        if type(x) is str:
+            self.plotorder = x #< use setter to listify
+        return x if x else []
+    @plotorder.setter
+    def plotorder(self, val):
+        if type(val) is str:
+            val = val.strip().split()
+        self.set_attr("PlotOrder", val)
+
+
+    @property
+    def plotsizex(self):
+        return self.attr_float("PlotSizeX")
+    @plotsizex.setter
+    def plotsizex(self, val):
+        self.set_attr("PlotSizeX", val)
+
+    @property
+    def plotsizey(self):
+        return self.attr_float("PlotSizeY")
+    @plotsizey.setter
+    def plotsizey(self, val):
+        self.set_attr("PlotSizeY", val)
+
+    @property
+    def plotsize(self):
+        return [self.plotsizex, self.plotsizey]
+    @plotsize.setter
+    def plotsize(self, val):
+        if type(val) is str:
+            val = [float(x) for x in val.split(",")]
+        assert len(val) == 2
+        self.plotsizex = val[0]
+        self.plotsizey = val[1]
+
+    @property
+    def ratiosizey(self):
+        return self.attr_float("RatioPlotSizeY")
+    @ratiosizey.setter
+    def ratiosizey(self, val):
+        self.set_attr("RatioPlotSizeY", val)
+
+
+    @property
+    def scale(self):
+        return self.attr_float("Scale")
+    @scale.setter
+    def scale(self, val):
+        self.set_attr("Scale", val)
+
+
+    @property
+    def xmin(self):
+        return self.attr_float("XMin")
+    @xmin.setter
+    def xmin(self, val):
+        self.set_attr("XMin", val)
+
+    @property
+    def xmax(self):
+        return self.attr_float("XMax")
+    @xmax.setter
+    def xmax(self, val):
+        self.set_attr("XMax", val)
+
+    @property
+    def xrange(self):
+        return [self.xmin, self.xmax]
+    @xrange.setter
+    def xrange(self, val):
+        if type(val) is str:
+            val = [float(x) for x in val.split(",")]
+        assert len(val) == 2
+        self.xmin = val[0]
+        self.xmax = val[1]
+
+
+    @property
+    def ymin(self):
+        return self.attr_float("YMin")
+    @ymin.setter
+    def ymin(self, val):
+        self.set_attr("YMin", val)
+
+    @property
+    def ymax(self):
+        return self.attr_float("YMax")
+    @ymax.setter
+    def ymax(self, val):
+        self.set_attr("YMax", val)
+
+    @property
+    def yrange(self):
+        return [self.ymin, self.ymax]
+    @yrange.setter
+    def yrange(self, val):
+        if type(val) is str:
+            val = [float(y) for y in val.split(",")]
+        assert len(val) == 2
+        self.ymin = val[0]
+        self.ymax = val[1]
+
+
+    # TODO: add more rw properties for plotsize(x,y), ratiosize(y),
+    #   show_mainplot, show_ratioplot, show_legend, log(x,y,z), rebin,
+    #   drawonly, legendonly, plotorder, stack,
+    #   label(x,y,z), majorticks(x,y,z), minorticks(x,y,z),
+    #   min(x,y,z), max(x,y,z), range(x,y,z)
+
+
+    def inherit_from_histos(self, k):
+        """Note: this will inherit the key from a random histogram:
+        only use if you're sure all histograms have this key!"""
+        if k not in self.description:
+            h = list(self.histos.values())[0]
+            if k in h.description:
+                self.description[k] = h.description[k]
+
+
+    def read_input(self, f):
+        for line in f:
+            if is_end_marker(line, 'PLOT'):
+                break
+            elif is_comment(line):
+                continue
+            m = pat_property.match(line)
+            if m:
+                prop, value = m.group(1,2)
+                if prop in self.description:
+                    logging.debug("Overwriting property %s = %s -> %s" % (prop, self.description[prop], value))
+                ## Use strip here to deal with DOS newlines containing \r
+                self.description[prop.strip()] = value.strip()
+
+
+    def apply_config_files(self, conffiles):
+        if conffiles is not None:
+            for filename in conffiles:
+                cf = open(filename,'r')
+                lines = cf.readlines()
+                for i in range(0, len(lines)):
+                    ## First evaluate PLOT sections
+                    m = pat_begin_block.match(lines[i])
+                    if m and m.group(1) == 'PLOT' and re.match(m.group(2),self.filename):
+                        while i<len(lines)-1:
+                            i = i+1
+                            if is_end_marker(lines[i], 'PLOT'):
+                                break
+                            elif is_comment(lines[i]):
+                                continue
+                            m = pat_property.match(lines[i])
+                            if m:
+                                prop, value = m.group(1,2)
+                                if prop in self.description:
+                                    logging.debug("Overwriting from conffile property %s = %s -> %s" % (prop, self.description[prop], value))
+                                ## Use strip here to deal with DOS newlines containing \r
+                                self.description[prop.strip()] = value.strip()
+                    elif is_comment(lines[i]):
+                        continue
+                    else:
+                        ## Then evaluate path-based settings, e.g. for HISTOGRAMs
+                        m = pat_path_property.match(lines[i])
+                        if m:
+                            regex, prop, value = m.group(1,2,3)
+                            for obj_dict in [self.special, self.histos, self.functions]:
+                                for path, obj in obj_dict.items():
+                                    if re.match(regex, path):
+                                        ## Use strip here to deal with DOS newlines containing \r
+                                        obj.description.update({prop.strip() : value.strip()})
+                cf.close()
+
+
+
+class Plot(object):
+
+    def __init__(self, inputdata):
+        pass
+
+    def set_normalization(self,inputdata):
+        for method in ['NormalizeToIntegral', 'NormalizeToSum']:
+            if method in inputdata.description:
+                for i in inputdata.drawonly:
+                    if not inputdata.histos[i].has_attr(method):
+                        inputdata.histos[i].set_attr(method, inputdata.attr(method))
+        if inputdata.scale:
+            for i in inputdata.drawonly:
+                inputdata.histos[i].scale = inputdata.scale
+        for i in inputdata.drawonly:
+            inputdata.histos[i].mangle_input()
+
+    def stack_histograms(self,inputdata):
+        if 'Stack' in inputdata.description:
+            stackhists = [h for h in inputdata.attr('Stack').strip().split() if h in inputdata.histos]
+            previous = ''
+            for i in stackhists:
+                if previous != '':
+                    inputdata.histos[i].add(inputdata.histos[previous])
+                previous = i
+
+    def set_histo_options(self,inputdata):
+        if 'ConnectGaps' in inputdata.description:
+            for i in inputdata.histos.keys():
+                if 'ConnectGaps' not in inputdata.histos[i].description:
+                    inputdata.histos[i].description['ConnectGaps'] = inputdata.description['ConnectGaps']
+        # Counter and Value only have dummy x-axis, ticks wouldn't make sense here, so suppress them:
+        if 'Value object' in str(inputdata.histos) or 'Counter object' in str(inputdata.histos):
+          inputdata.description['XCustomMajorTicks'] = ''
+          inputdata.description['XCustomMinorTicks'] = ''
+
+    def set_borders(self, inputdata):
+        self.set_xmax(inputdata)
+        self.set_xmin(inputdata)
+        self.set_ymax(inputdata)
+        self.set_ymin(inputdata)
+        self.set_zmax(inputdata)
+        self.set_zmin(inputdata)
+        inputdata.description['Borders'] = (self.xmin, self.xmax, self.ymin, self.ymax, self.zmin, self.zmax)
+
+    def set_xmin(self, inputdata):
+        self.xmin = inputdata.xmin
+        if self.xmin is None:
+            xmins = [inputdata.histos[h].getXMin() for h in inputdata.description['DrawOnly']]
+            self.xmin = min(xmins) if xmins else 0.0
+
+    def set_xmax(self,inputdata):
+        self.xmax = inputdata.xmax
+        if self.xmax is None:
+            xmaxs = [inputdata.histos[h].getXMax() for h in inputdata.description['DrawOnly']]
+            self.xmax = min(xmaxs) if xmaxs else 1.0
+
+
+    def set_ymin(self,inputdata):
+        if inputdata.ymin is not None:
+            self.ymin = inputdata.ymin
+        else:
+            ymins = [inputdata.histos[i].getYMin(self.xmin, self.xmax, inputdata.description['LogY']) for i in inputdata.attr('DrawOnly')]
+            minymin = min(ymins) if ymins else 0.0
+            if inputdata.description['is2dim']:
+                self.ymin = minymin
+            else:
+                showzero = inputdata.attr_bool("ShowZero", True)
+                if showzero:
+                    self.ymin = 0. if minymin > -1e-4 else 1.1*minymin
+                else:
+                    self.ymin = 1.1*minymin if minymin < -1e-4 else 0 if minymin < 1e-4 else 0.9*minymin
+                if inputdata.description['LogY']:
+                    ymins = [ymin for ymin in ymins if ymin > 0.0]
+                    if not ymins:
+                        if self.ymax == 0:
+                            self.ymax = 1
+                        ymins.append(2e-7*self.ymax)
+                    minymin = min(ymins)
+                    fullrange = opts.FULL_RANGE
+                    if inputdata.has_attr('FullRange'):
+                        fullrange = inputdata.attr_bool('FullRange')
+                    self.ymin = minymin/1.7 if fullrange else max(minymin/1.7, 2e-7*self.ymax)
+
+                if self.ymin == self.ymax:
+                    self.ymin -= 1
+                    self.ymax += 1
+
+    def set_ymax(self,inputdata):
+        if inputdata.has_attr('YMax'):
+            self.ymax = inputdata.attr_float('YMax')
+        else:
+            ymaxs = [inputdata.histos[h].getYMax(self.xmin, self.xmax) for h in inputdata.attr('DrawOnly')]
+            self.ymax = max(ymaxs) if ymaxs else 1.0
+            if not inputdata.is2dim:
+                self.ymax *= (1.7 if inputdata.attr_bool('LogY') else 1.1)
+
+    def set_zmin(self,inputdata):
+        if inputdata.has_attr('ZMin'):
+            self.zmin = inputdata.attr_float('ZMin')
+        else:
+            zmins = [inputdata.histos[i].getZMin(self.xmin, self.xmax, self.ymin, self.ymax) for i in inputdata.attr('DrawOnly')]
+            minzmin = min(zmins) if zmins else 0.0
+            self.zmin = minzmin
+            if zmins:
+                showzero = inputdata.attr_bool('ShowZero', True)
+                if showzero:
+                    self.zmin = 0 if minzmin > -1e-4 else 1.1*minzmin
+                else:
+                    self.zmin = 1.1*minzmin if minzmin < -1e-4 else 0. if minzmin < 1e-4 else 0.9*minzmin
+                if inputdata.attr_bool('LogZ', False):
+                    zmins = [zmin for zmin in zmins if zmin > 0]
+                    if not zmins:
+                        if self.zmax == 0:
+                            self.zmax = 1
+                        zmins.append(2e-7*self.zmax)
+                    minzmin = min(zmins)
+                    fullrange = inputdata.attr_bool("FullRange", opts.FULL_RANGE)
+                    self.zmin = minzmin/1.7 if fullrange else max(minzmin/1.7, 2e-7*self.zmax)
+
+                if self.zmin == self.zmax:
+                    self.zmin -= 1
+                    self.zmax += 1
+
+    def set_zmax(self,inputdata):
+        self.zmax = inputdata.attr_float('ZMax')
+        if self.zmax is None:
+            zmaxs = [inputdata.histos[h].getZMax(self.xmin, self.xmax, self.ymin, self.ymax) for h in inputdata.attr('DrawOnly')]
+            self.zmax = max(zmaxs) if zmaxs else 1.0
+
+
+    def draw(self):
+        pass
+
+
+    def write_header(self,inputdata):
+        if inputdata.description.get('LeftMargin', '') != '':
+            inputdata.description['LeftMargin'] = float(inputdata.description['LeftMargin'])
+        else:
+            inputdata.description['LeftMargin'] = 1.4
+        if inputdata.description.get('RightMargin', '') != '':
+            inputdata.description['RightMargin'] = float(inputdata.description['RightMargin'])
+        else:
+            inputdata.description['RightMargin'] = 0.35
+        if inputdata.description.get('TopMargin', '') != '':
+            inputdata.description['TopMargin'] = float(inputdata.description['TopMargin'])
+        else:
+            inputdata.description['TopMargin'] = 0.65
+        if inputdata.description.get('BottomMargin', '') != '':
+            inputdata.description['BottomMargin'] = float(inputdata.description['BottomMargin'])
+        else:
+            inputdata.description['BottomMargin'] = 0.95
+        if inputdata.description['is2dim']:
+            inputdata.description['RightMargin'] += 1.7
+        papersizex = inputdata.description['PlotSizeX'] + 0.1 + \
+                     inputdata.description['LeftMargin'] + inputdata.description['RightMargin']
+        papersizey = inputdata.description['PlotSizeY'] + inputdata.description['RatioPlotSizeY'] + 0.1 + \
+                     inputdata.description['TopMargin'] + inputdata.description['BottomMargin']
+        #
+        out = ""
+        out += '\\documentclass{article}\n'
+        if opts.OUTPUT_FONT == "MINION":
+            out += ('\\usepackage{minion}\n')
+        elif opts.OUTPUT_FONT == "PALATINO_OSF":
+            out += ('\\usepackage[osf,sc]{mathpazo}\n')
+        elif opts.OUTPUT_FONT == "PALATINO":
+            out += ('\\usepackage{mathpazo}\n')
+        elif opts.OUTPUT_FONT == "TIMES":
+            out += ('\\usepackage{mathptmx}\n')
+        elif opts.OUTPUT_FONT == "HELVETICA":
+            out += ('\\renewcommand{\\familydefault}{\\sfdefault}\n')
+            out += ('\\usepackage{sfmath}\n')
+            out += ('\\usepackage{helvet}\n')
+            out += ('\\usepackage[symbolgreek]{mathastext}\n')
+        for pkg in opts.LATEXPKGS:
+            out += ('\\usepackage{%s}\n' % pkg)
+        out += ('\\usepackage{pst-all}\n')
+        out += ('\\usepackage{xcolor}\n')
+        out += ('\\selectcolormodel{rgb}\n')
+        out += ('\\definecolor{red}{HTML}{EE3311}\n') # (Google uses 'DC3912')
+        out += ('\\definecolor{blue}{HTML}{3366FF}')
+        out += ('\\definecolor{green}{HTML}{109618}')
+        out += ('\\definecolor{orange}{HTML}{FF9900}')
+        out += ('\\definecolor{lilac}{HTML}{990099}')
+        out += ('\\usepackage{amsmath}\n')
+        out += ('\\usepackage{amssymb}\n')
+        out += ('\\usepackage{relsize}\n')
+        out += ('\\usepackage[dvips,\n')
+        out += ('  left=%4.3fcm, right=0cm,\n' % (inputdata.description['LeftMargin']-0.45,))
+        out += ('  top=%4.3fcm,  bottom=0cm,\n' % (inputdata.description['TopMargin']-0.30,))
+        out += ('  paperwidth=%scm,paperheight=%scm\n' % (papersizex,papersizey))
+        out += (']{geometry}\n')
+        out += ('\\begin{document}\n')
+        out += ('\\pagestyle{empty}\n')
+        out += ('\\SpecialCoor\n')
+        out += ('\\begin{pspicture}(0,0)(0,0)\n')
+        out += ('\\psset{xunit=%scm}\n' %(inputdata.description['PlotSizeX']))
+        if inputdata.description['is2dim']:
+            if inputdata.description.get('ColorSeries', '') != '':
+                colorseries = inputdata.description['ColorSeries']
+            else:
+                colorseries = '{hsb}{grad}[rgb]{0,0,1}{-.700,0,0}'
+            out += ('\\definecolorseries{gradientcolors}%s\n' % colorseries)
+            out += ('\\resetcolorseries[130]{gradientcolors}\n')
+        return out
+
+    def write_footer(self):
+        out = ""
+        out += ('\\end{pspicture}\n')
+        out += ('\\end{document}\n')
+        return out
+
+
+
+class MainPlot(Plot):
+
+    def __init__(self, inputdata):
+        self.set_normalization(inputdata)
+        self.stack_histograms(inputdata)
+        do_gof = inputdata.description.get('GofLegend', '0') == '1' or inputdata.description.get('GofFrame', '') != ''
+        do_taylor = inputdata.description.get('TaylorPlot', '0') == '1'
+        if do_gof and not do_taylor:
+            self.calculate_gof(inputdata)
+        self.set_histo_options(inputdata)
+        self.set_borders(inputdata)
+        self.yoffset = inputdata.description['PlotSizeY']
+        self.coors = Coordinates(inputdata)
+
+    def draw(self, inputdata):
+        out = ""
+        out += ('\n%\n% MainPlot\n%\n')
+        out += ('\\psset{yunit=%scm}\n' %(self.yoffset))
+        out += ('\\rput(0,-1){%\n')
+        out += ('\\psset{yunit=%scm}\n' %(inputdata.description['PlotSizeY']))
+        out += self._draw(inputdata)
+        out += ('}\n')
+        return out
+
+    def _draw(self, inputdata):
+        out = ""
+
+        ## Draw a white background first
+        # TODO: Allow specifying in-frame bg color
+        out += '\n'
+        out += '\\psframe[linewidth=0pt,linestyle=none,fillstyle=solid,fillcolor=white,dimen=middle](0,0)(1,1)\n'
+        out += '\n'
+
+        # TODO: do this more compactly, e.g. by assigning sorting keys!
+        if inputdata.attr_bool('DrawSpecialFirst', False):
+            for s in inputdata.special.values():
+                out += s.draw(self.coors)
+            if inputdata.attr_bool('DrawFunctionFirst', False):
+                for f in inputdata.functions.values():
+                    out += f.draw(self.coors)
+                for i in inputdata.description['DrawOnly']:
+                    out += inputdata.histos[i].draw(self.coors)
+            else:
+                for i in inputdata.description['DrawOnly']:
+                    out += inputdata.histos[i].draw(self.coors)
+                for f in inputdata.functions.values():
+                    out += f.draw(self.coors)
+        else:
+            if inputdata.attr_bool('DrawFunctionFirst', False):
+                for f in inputdata.functions.values():
+                    out += f.draw(self.coors)
+                for i in inputdata.description['DrawOnly']:
+                    out += inputdata.histos[i].draw(self.coors)
+            else:
+                for i in inputdata.description['DrawOnly']:
+                    out += inputdata.histos[i].draw(self.coors)
+                for f in inputdata.functions.values():
+                    out += f.draw(self.coors)
+            for s in inputdata.special.values():
+                out += s.draw(self.coors)
+
+        if inputdata.attr_bool('Legend', False):
+            legend = Legend(inputdata.description,inputdata.histos,inputdata.functions)
+            out += legend.draw()
+
+        if inputdata.description['is2dim']:
+            colorscale = ColorScale(inputdata.description, self.coors)
+            out += colorscale.draw()
+
+        frame = Frame()
+        out += frame.draw(inputdata)
+
+        xcustommajortickmarks = inputdata.attr_int('XMajorTickMarks', -1)
+        xcustomminortickmarks = inputdata.attr_int('XMinorTickMarks', -1)
+
+        xcustommajorticks = xcustomminorticks = None
+        if inputdata.attr('XCustomMajorTicks'):
+            xcustommajorticks = []
+            x_label_pairs = inputdata.attr('XCustomMajorTicks').strip().split() #'\t')
+            if len(x_label_pairs) % 2 == 0:
+                for i in range(0, len(x_label_pairs), 2):
+                    xcustommajorticks.append({'Value': float(x_label_pairs[i]), 'Label': x_label_pairs[i+1]})
+            else:
+                print("Warning: XCustomMajorTicks requires an even number of alternating pos/label entries")
+
+        if inputdata.attr('XCustomMinorTicks'):
+            xs = inputdata.attr('XCustomMinorTicks').strip().split() #'\t')
+            xcustomminorticks = [{'Value': float(x)} for x in xs]
+
+        xticks = XTicks(inputdata.description, self.coors)
+        drawxlabels = inputdata.attr_bool('PlotXTickLabels', True) and not inputdata.attr_bool('RatioPlot', False)
+
+        out += xticks.draw(custommajortickmarks=xcustommajortickmarks,
+                           customminortickmarks=xcustomminortickmarks,
+                           custommajorticks=xcustommajorticks,
+                           customminorticks=xcustomminorticks,
+                           drawlabels=drawxlabels)
+
+        ycustommajortickmarks = inputdata.attr_int('YMajorTickMarks', -1)
+        ycustomminortickmarks = inputdata.attr_int('YMinorTickMarks', -1)
+
+        ycustommajorticks = ycustomminorticks = None
+        if 'YCustomMajorTicks' in inputdata.description:
+            ycustommajorticks = []
+            y_label_pairs = inputdata.description['YCustomMajorTicks'].strip().split() #'\t')
+            if len(y_label_pairs) % 2 == 0:
+                for i in range(0, len(y_label_pairs), 2):
+                    ycustommajorticks.append({'Value': float(y_label_pairs[i]), 'Label': y_label_pairs[i+1]})
+            else:
+                print("Warning: YCustomMajorTicks requires an even number of alternating pos/label entries")
+
+        if inputdata.has_attr('YCustomMinorTicks'):
+            ys = inputdata.attr('YCustomMinorTicks').strip().split() #'\t')
+            ycustomminorticks = [{'Value': float(y)} for y in ys]
+
+        yticks = YTicks(inputdata.description, self.coors)
+        drawylabels = inputdata.attr_bool('PlotYTickLabels', True)
+
+        out += yticks.draw(custommajortickmarks=ycustommajortickmarks,
+                           customminortickmarks=ycustomminortickmarks,
+                           custommajorticks=ycustommajorticks,
+                           customminorticks=ycustomminorticks,
+                           drawlabels=drawylabels)
+
+        labels = Labels(inputdata.description)
+        if inputdata.attr_bool('RatioPlot', False):
+            olab = labels.draw(['Title','YLabel'])
+        else:
+            if not inputdata.description['is2dim']:
+                olab = labels.draw(['Title','XLabel','YLabel'])
+            else:
+                olab = labels.draw(['Title','XLabel','YLabel','ZLabel'])
+        out += olab
+        return out
+
+
+    def calculate_gof(self, inputdata):
+        refdata = inputdata.description.get('GofReference')
+        if refdata is None:
+            refdata = inputdata.description.get('RatioPlotReference')
+
+        if refdata is None:
+            inputdata.description['GofLegend'] = '0'
+            inputdata.description['GofFrame'] = ''
+            return
+
+        def pickcolor(gof):
+            color = None
+            colordefs = {}
+            for i in inputdata.description.setdefault('GofFrameColor', '0:green 3:yellow 6:red!70').strip().split():
+                foo = i.split(':')
+                if len(foo) != 2:
+                    continue
+                colordefs[float(foo[0])] = foo[1]
+            for i in sorted(colordefs.keys()):
+                if gof>=i:
+                    color=colordefs[i]
+            return color
+
+        inputdata.description.setdefault('GofLegend', '0')
+        inputdata.description.setdefault('GofFrame', '')
+        inputdata.description.setdefault('FrameColor', None)
+
+        for i in inputdata.description['DrawOnly']:
+            if i == refdata:
+                continue
+            if inputdata.description['GofLegend']!='1' and i!=inputdata.description['GofFrame']:
+                continue
+
+            if inputdata.description.get('GofType', "chi2") != 'chi2':
+                return
+            gof = inputdata.histos[i].getChi2(inputdata.histos[refdata])
+            if i == inputdata.description['GofFrame'] and inputdata.description['FrameColor'] is None:
+                inputdata.description['FrameColor'] = pickcolor(gof)
+            if inputdata.histos[i].description.setdefault('Title', '') != '':
+                inputdata.histos[i].description['Title'] += ', '
+            inputdata.histos[i].description['Title'] += '$\\chi^2/n={}$%1.2f' %gof
+
+
+
+class TaylorPlot(Plot):
+
+    def __init__(self, inputdata):
+        self.refdata = inputdata.description['TaylorPlotReference']
+        self.calculate_taylorcoordinates(inputdata)
+
+    def calculate_taylorcoordinates(self,inputdata):
+        foo = inputdata.description['DrawOnly'].pop(inputdata.description['DrawOnly'].index(self.refdata))
+        inputdata.description['DrawOnly'].append(foo)
+        for i in inputdata.description['DrawOnly']:
+            print(i)
+            print('meanbinval  = ', inputdata.histos[i].getMeanBinValue())
+            print('sigmabinval = ', inputdata.histos[i].getSigmaBinValue())
+            print('chi2/nbins  = ', inputdata.histos[i].getChi2(inputdata.histos[self.refdata]))
+            print('correlation = ', inputdata.histos[i].getCorrelation(inputdata.histos[self.refdata]))
+            print('distance    = ', inputdata.histos[i].getRMSdistance(inputdata.histos[self.refdata]))
+
+
+
+class RatioPlot(Plot):
+
+    def __init__(self, inputdata):
+
+        self.refdata = inputdata.description['RatioPlotReference']
+        self.yoffset = inputdata.description['PlotSizeY'] + inputdata.description['RatioPlotSizeY']
+
+        inputdata.description['RatioPlotStage'] = True
+        inputdata.description['PlotSizeY'] = inputdata.description['RatioPlotSizeY']
+        inputdata.description['LogY'] = False  # TODO: actually, log ratio plots could be useful...
+
+        # TODO: It'd be nice it this wasn't so MC-specific
+        rpmode = inputdata.description.get('RatioPlotMode', "mcdata")
+        if rpmode == 'deviation':
+            inputdata.description['YLabel'] = '$(\\text{MC}-\\text{data})$'
+            inputdata.description['YMin'] = -3.5
+            inputdata.description['YMax'] = 3.5
+        elif rpmode == 'datamc':
+            inputdata.description['YLabel'] = 'Data/MC'
+            inputdata.description['YMin'] = 0.5
+            inputdata.description['YMax'] = 1.5
+        else:
+            inputdata.description['YLabel'] = 'MC/Data'
+            inputdata.description['YMin'] = 0.5
+            inputdata.description['YMax'] = 1.5
+
+        if 'RatioPlotYLabel' in inputdata.description:
+            inputdata.description['YLabel'] = inputdata.description['RatioPlotYLabel']
+        inputdata.description['YLabel']='\\rput(-%s,0){%s}'%(0.5*inputdata.description['PlotSizeY']/inputdata.description['PlotSizeX'],inputdata.description['YLabel'])
+
+        if 'RatioPlotYMin' in inputdata.description:
+            inputdata.description['YMin'] = inputdata.description['RatioPlotYMin']
+        if 'RatioPlotYMax' in inputdata.description:
+            inputdata.description['YMax'] = inputdata.description['RatioPlotYMax']
+
+        if 'RatioPlotErrorBandColor' not in inputdata.description:
+            inputdata.description['RatioPlotErrorBandColor'] = 'yellow'
+        if inputdata.description.get('RatioPlotSameStyle', '0') == '0':
+            inputdata.histos[self.refdata].description['ErrorBandColor'] = inputdata.description['RatioPlotErrorBandColor']
+            inputdata.histos[self.refdata].description['ErrorBands'] = '1'
+            inputdata.histos[self.refdata].description['ErrorBars'] = '0'
+            inputdata.histos[self.refdata].description['LineStyle'] = 'solid'
+            inputdata.histos[self.refdata].description['LineColor'] = 'black'
+            inputdata.histos[self.refdata].description['LineWidth'] = '0.3pt'
+            inputdata.histos[self.refdata].description['PolyMarker'] = ''
+            inputdata.histos[self.refdata].description['ConnectGaps'] = '1'
+
+        self.calculate_ratios(inputdata)
+        self.set_borders(inputdata)
+        self.coors = Coordinates(inputdata)
+
+    def draw(self, inputdata):
+        out = ""
+        out += ('\n%\n% RatioPlot\n%\n')
+        out += ('\\psset{yunit=%scm}\n' %(self.yoffset))
+        out += ('\\rput(0,-1){%\n')
+        out += ('\\psset{yunit=%scm}\n' %(inputdata.description['PlotSizeY']))
+        out += self._draw(inputdata)
+        out += ('}\n')
+        return out
+
+    def calculate_ratios(self, inputdata):
+        foo = inputdata.description['DrawOnly'].pop(inputdata.description['DrawOnly'].index(self.refdata))
+        if inputdata.histos[self.refdata].description.get('ErrorBands', '0') == '1':
+            inputdata.description['DrawOnly'].insert(0,foo)
+        else:
+            inputdata.description['DrawOnly'].append(foo)
+        rpmode = inputdata.description.get('RatioPlotMode', "mcdata")
+        for i in inputdata.description['DrawOnly']:
+            if i != self.refdata:
+                if rpmode == 'deviation':
+                    inputdata.histos[i].deviation(inputdata.histos[self.refdata])
+                elif rpmode == 'datamc':
+                    inputdata.histos[i].dividereverse(inputdata.histos[self.refdata])
+                    inputdata.histos[i].description['ErrorBars'] = '1'
+                else:
+                    inputdata.histos[i].divide(inputdata.histos[self.refdata])
+        if rpmode == 'deviation':
+            inputdata.histos[self.refdata].deviation(inputdata.histos[self.refdata])
+        elif rpmode == 'datamc':
+            inputdata.histos[self.refdata].dividereverse(inputdata.histos[self.refdata])
+        else:
+            inputdata.histos[self.refdata].divide(inputdata.histos[self.refdata])
+
+
+    def _draw(self, inputdata):
+        out = ""
+
+        ## Draw a white background first
+        # TODO: Allow specifying in-frame bg color
+        out += '\n'
+        out += '\\psframe[linewidth=0pt,linestyle=none,fillstyle=solid,fillcolor=white,dimen=middle](0,0)(1,1)\n'
+        out += '\n'
+
+        for i in inputdata.description['DrawOnly']:
+            if inputdata.description.get('RatioPlotMode', 'mcdata') == 'datamc':
+                if i != self.refdata:
+                    out += inputdata.histos[i].draw(self.coors)
+            else:
+                out += inputdata.histos[i].draw(self.coors)
+
+        frame = Frame()
+        out += frame.draw(inputdata)
+
+        # TODO: so much duplication with MainPlot... yuck!
+        if inputdata.description.get('XMajorTickMarks', '') != '':
+            xcustommajortickmarks = int(inputdata.description['XMajorTickMarks'])
+        else:
+            xcustommajortickmarks = -1
+        if inputdata.description.get('XMinorTickMarks', '') != '':
+            xcustomminortickmarks = int(inputdata.description['XMinorTickMarks'])
+        else:
+            xcustomminortickmarks =- 1
+
+        xcustommajorticks = None
+        if 'XCustomMajorTicks' in inputdata.description: # and inputdata.description['XCustomMajorTicks']!='':
+            xcustommajorticks = []
+            tickstr = inputdata.description['XCustomMajorTicks'].strip().split() #'\t')
+            if not len(tickstr) % 2:
+                for i in range(0, len(tickstr), 2):
+                    xcustommajorticks.append({'Value': float(tickstr[i]), 'Label': tickstr[i+1]})
+
+        xcustomminorticks = None
+        if 'XCustomMinorTicks' in inputdata.description: # and inputdata.description['XCustomMinorTicks']!='':
+            xcustomminorticks = []
+            tickstr = inputdata.description['XCustomMinorTicks'].strip().split() #'\t')
+            for i in range(len(tickstr)):
+                xcustomminorticks.append({'Value': float(tickstr[i])})
+
+        xticks = XTicks(inputdata.description, self.coors)
+        drawlabels = inputdata.description.get('RatioPlotTickLabels', '1') == '1'
+        out += xticks.draw(custommajortickmarks=xcustommajortickmarks,
+                           customminortickmarks=xcustomminortickmarks,
+                           custommajorticks=xcustommajorticks,
+                           customminorticks=xcustomminorticks,
+                           drawlabels=drawlabels)
+
+
+        ycustommajortickmarks = inputdata.attr('YMajorTickMarks', '')
+        ycustommajortickmarks = int(ycustommajortickmarks) if ycustommajortickmarks else -1
+
+        ycustomminortickmarks = inputdata.attr('YMinorTickMarks', '')
+        ycustomminortickmarks = int(ycustomminortickmarks) if ycustomminortickmarks else -1
+
+        ycustommajorticks = None
+        if 'YCustomMajorTicks' in inputdata.description:
+            ycustommajorticks = []
+            tickstr = inputdata.description['YCustomMajorTicks'].strip().split() #'\t')
+            if not len(tickstr) % 2:
+                for i in range(0, len(tickstr), 2):
+                    ycustommajorticks.append({'Value': float(tickstr[i]), 'Label': tickstr[i+1]})
+
+        ycustomminorticks = None
+        if 'YCustomMinorTicks' in inputdata.description:
+            ycustomminorticks = []
+            tickstr = inputdata.description['YCustomMinorTicks'].strip().split() #'\t')
+            for i in range(len(tickstr)):
+                ycustomminorticks.append({'Value': float(tickstr[i])})
+
+        yticks = YTicks(inputdata.description, self.coors)
+        out += yticks.draw(custommajortickmarks=ycustommajortickmarks,
+                           customminortickmarks=ycustomminortickmarks,
+                           custommajorticks=ycustommajorticks,
+                           customminorticks=ycustomminorticks)
+
+        if not inputdata.attr_bool('MainPlot', True) and inputdata.attr_bool('Legend', False):
+            legend = Legend(inputdata.description, inputdata.histos, inputdata.functions)
+            out += legend.draw()
+
+        labels = Labels(inputdata.description)
+        lnames = ['XLabel','YLabel']
+        if not inputdata.attr_bool('MainPlot', True):
+            lnames.append("Title")
+        out += labels.draw(lnames)
+        return out
+
+
+
+class Legend(Described):
+
+    def __init__(self, description, histos, functions):
+        self.histos = histos
+        self.functions = functions
+        self.description = description
+
+    def draw(self):
+        out = ""
+        out += '\n%\n% Legend\n%\n'
+        out += '\\rput[tr](%s,%s){%%\n' % (self.getLegendXPos(), self.getLegendYPos())
+        ypos = -0.05*6/self.description['PlotSizeY']
+
+        legendordermap = {}
+        legendlist = self.description['DrawOnly'] + list(self.functions.keys())
+        if 'LegendOnly' in self.description:
+            legendlist = []
+            for legend in self.description['LegendOnly'].strip().split():
+                if legend in self.histos or legend in self.functions:
+                    legendlist.append(legend)
+        for legend in legendlist:
+            order = 0
+            if legend in self.histos and 'LegendOrder' in self.histos[legend].description:
+                order = int(self.histos[legend].description['LegendOrder'])
+            if legend in self.functions and 'LegendOrder' in self.functions[legend].description:
+                order = int(self.functions[legend].description['LegendOrder'])
+            if not order in legendordermap:
+                legendordermap[order] = []
+            legendordermap[order].append(legend)
+        foo = []
+        for i in sorted(legendordermap.keys()):
+            foo.extend(legendordermap[i])
+
+        rel_xpos_sign = 1.0
+        if self.getLegendAlign() == 'r':
+            rel_xpos_sign = -1.0
+        xpos1 = -0.10*rel_xpos_sign
+        xpos2 = -0.02*rel_xpos_sign
+
+        for i in foo:
+            if i in self.histos:
+                drawobject = self.histos[i]
+            elif i in self.functions:
+                drawobject = self.functions[i]
+            else:
+                continue
+            title = drawobject.getTitle()
+            if title == '':
+                continue
+            else:
+                out += ('\\rput[B%s](%s,%s){%s}\n' %(self.getLegendAlign(),rel_xpos_sign*0.1,ypos,title))
+                out += ('\\rput[B%s](%s,%s){%s\n' %(self.getLegendAlign(),rel_xpos_sign*0.1,ypos,'%'))
+                if drawobject.getErrorBands():
+                    out += ('\\psframe[linewidth=0pt,linestyle=none,fillstyle=solid,fillcolor=%s,opacity=%s]' %(drawobject.getErrorBandColor(),drawobject.getErrorBandOpacity()))
+                    out += ('(%s, 0.033)(%s, 0.001)\n' %(xpos1, xpos2))
+                out += ('\\psline[linestyle=' + drawobject.getLineStyle() \
+                            + ', linecolor=' + drawobject.getLineColor() \
+                            + ', linewidth=' + drawobject.getLineWidth() \
+                            + ', strokeopacity=' + drawobject.getLineOpacity() \
+                            + ', opacity=' + drawobject.getFillOpacity())
+                if drawobject.getLineDash() != '':
+                    out += (', dash=' + drawobject.getLineDash())
+                if drawobject.getFillStyle()!='none':
+                    out += (', fillstyle=' + drawobject.getFillStyle() \
+                                + ', fillcolor='  + drawobject.getFillColor() \
+                                + ', hatchcolor=' + drawobject.getHatchColor() \
+                                + ']{C-C}(%s, 0.030)(%s, 0.030)(%s, 0.004)(%s, 0.004)(%s, 0.030)\n' \
+                                %(xpos1, xpos2, xpos2, xpos1, xpos1))
+                else:
+                    out += ('](%s, 0.016)(%s, 0.016)\n' %(xpos1, xpos2))
+                if drawobject.getPolyMarker() != '':
+                    out += ('  \\psdot[dotstyle=' + drawobject.getPolyMarker() \
+                                + ', dotsize='    + drawobject.getDotSize()   \
+                                + ', dotscale='   + drawobject.getDotScale()  \
+                                + ', linecolor='  + drawobject.getLineColor() \
+                                + ', linewidth='  + drawobject.getLineWidth() \
+                                + ', linestyle='  + drawobject.getLineStyle() \
+                                + ', fillstyle='  + drawobject.getFillStyle() \
+                                + ', fillcolor='  + drawobject.getFillColor() \
+                                + ', strokeopacity=' + drawobject.getLineOpacity() \
+                                + ', opacity=' + drawobject.getFillOpacity() \
+                                + ', hatchcolor=' + drawobject.getHatchColor())
+                    if drawobject.getFillStyle()!='none':
+                        out += ('](%s, 0.028)\n' % (rel_xpos_sign*-0.06))
+                    else:
+                        out += ('](%s, 0.016)\n' % (rel_xpos_sign*-0.06))
+                out += ('}\n')
+                ypos -= 0.075*6/self.description['PlotSizeY']
+        if 'CustomLegend' in self.description:
+            for i in self.description['CustomLegend'].strip().split('\\\\'):
+                out += ('\\rput[B%s](%s,%s){%s}\n' %(self.getLegendAlign(),rel_xpos_sign*0.1,ypos,i))
+                ypos -= 0.075*6/self.description['PlotSizeY']
+        out += ('}\n')
+        return out
+
+    def getLegendXPos(self):
+        return self.description.get('LegendXPos', '0.95' if self.getLegendAlign() == 'r' else '0.53')
+
+    def getLegendYPos(self):
+        return self.description.get('LegendYPos', '0.93')
+
+    def getLegendAlign(self):
+        return self.description.get('LegendAlign', 'l')
+
+
+class ColorScale(Described):
+
+    def __init__(self, description, coors):
+        self.description = description
+        self.coors = coors
+
+    def draw(self):
+        out = ''
+        out += '\n%\n% ColorScale\n%\n'
+        out += '\\rput(1,0){\n'
+        out += '  \\psset{xunit=4mm}\n'
+        out += '  \\rput(0.5,0){\n'
+        out += '    \\psset{yunit=0.0076923, linestyle=none, fillstyle=solid}\n'
+        out += '    \\multido{\\ic=0+1,\\id=1+1}{130}{\n'
+        out += '      \\psframe[fillcolor={gradientcolors!![\\ic]},dimen=inner,linewidth=0.1pt](0, \\ic)(1, \\id)\n'
+        out += '    }\n'
+        out += '  }\n'
+        out += '  \\rput(0.5,0){\n'
+        out += '    \\psframe[linewidth=0.3pt,dimen=middle](0,0)(1,1)\n'
+
+        zcustommajortickmarks = self.attr_int('ZMajorTickMarks', -1)
+        zcustomminortickmarks = self.attr_int('ZMinorTickMarks', -1)
+
+        zcustommajorticks = zcustomminorticks = None
+        if self.attr('ZCustomMajorTicks'):
+            zcustommajorticks = []
+            z_label_pairs = self.attr('ZCustomMajorTicks').strip().split() #'\t')
+            if len(z_label_pairs) % 2 == 0:
+                for i in range(0, len(z_label_pairs), 2):
+                    zcustommajorticks.append({'Value': float(x_label_pairs[i]), 'Label': x_label_pairs[i+1]})
+            else:
+                print("Warning: ZCustomMajorTicks requires an even number of alternating pos/label entries")
+
+        if self.attr('ZCustomMinorTicks'):
+            zs = self.attr('ZCustomMinorTicks').strip().split() #'\t')
+            zcustomminorticks = [{'Value': float(x)} for x in xs]
+
+        drawzlabels = self.attr_bool('PlotZTickLabels', True)
+
+        zticks = ZTicks(self.description, self.coors)
+        out += zticks.draw(custommajortickmarks=zcustommajortickmarks,\
+                           customminortickmarks=zcustomminortickmarks,\
+                           custommajorticks=zcustommajorticks,\
+                           customminorticks=zcustomminorticks,
+                           drawlabels=drawzlabels)
+        out += '  }\n'
+        out += '}\n'
+        return out
+
+
+
+class Labels(Described):
+
+    def __init__(self, description):
+        self.description = description
+
+    def draw(self, axis=[]):
+        out = ""
+        out += ('\n%\n% Labels\n%\n')
+        if 'Title' in self.description and (axis.count('Title') or axis==[]):
+            out += ('\\rput(0,1){\\rput[lB](0, 1.7\\labelsep){\\normalsize '+self.description['Title']+'}}\n')
+        if 'XLabel' in self.description and (axis.count('XLabel') or axis==[]):
+            xlabelsep = 4.7
+            if 'XLabelSep' in self.description:
+                xlabelsep=float(self.description['XLabelSep'])
+            out += ('\\rput(1,0){\\rput[rB](0,-%4.3f\\labelsep){\\normalsize '%(xlabelsep) +self.description['XLabel']+'}}\n')
+        if 'YLabel' in self.description and (axis.count('YLabel') or axis==[]):
+            ylabelsep = 6.5
+            if 'YLabelSep' in self.description:
+                ylabelsep=float(self.description['YLabelSep'])
+            out += ('\\rput(0,1){\\rput[rB]{90}(-%4.3f\\labelsep,0){\\normalsize '%(ylabelsep) +self.description['YLabel']+'}}\n')
+        if 'ZLabel' in self.description and (axis.count('ZLabel') or axis==[]):
+            zlabelsep = 5.3
+            if 'ZLabelSep' in self.description:
+                zlabelsep=float(self.description['ZLabelSep'])
+            out += ('\\rput(1,1){\\rput(%4.3f\\labelsep,0){\\psset{xunit=4mm}\\rput[lB]{270}(1.5,0){\\normalsize '%(zlabelsep) +self.description['ZLabel']+'}}}\n')
+        return out
+
+
+
+class Special(Described):
+
+    def __init__(self, f):
+        self.description = {}
+        self.data = []
+        self.read_input(f)
+
+    def read_input(self, f):
+        for line in f:
+            if is_end_marker(line, 'SPECIAL'):
+                break
+            elif is_comment(line):
+                continue
+            else:
+                self.data.append(line)
+
+    def draw(self, coors):
+        out = ""
+        out += ('\n%\n% Special\n%\n')
+        import re
+        regex = re.compile(r'^(.*?)(\\physics[xy]?coor)\(\s?([0-9\.eE+-]+)\s?,\s?([0-9\.eE+-]+)\s?\)(.*)')
+        # TODO: More precise number string matching, something like this:
+        # num = r"-?[0-9]*(?:\.[0-9]*)(?:[eE][+-]?\d+]"
+        # regex = re.compile(r'^(.*?)(\\physics[xy]?coor)\(\s?(' + num + ')\s?,\s?(' + num + ')\s?\)(.*)')
+        for l in self.data:
+            while regex.search(l):
+                match = regex.search(l)
+                xcoor, ycoor = float(match.group(3)), float(match.group(4))
+                if match.group(2)[1:] in ["physicscoor", "physicsxcoor"]:
+                    xcoor = coors.phys2frameX(xcoor)
+                if match.group(2)[1:] in ["physicscoor", "physicsycoor"]:
+                    ycoor = coors.phys2frameY(ycoor)
+                line = "%s(%f, %f)%s" % (match.group(1), xcoor, ycoor, match.group(5))
+                l = line
+            out += l + "\n"
+        return out
+
+
+
+class DrawableObject(Described):
+
+    def __init__(self, f):
+        pass
+
+    def getTitle(self):
+        return self.description.get("Title", "")
+
+    def getLineStyle(self):
+        if 'LineStyle' in self.description:
+            ## I normally like there to be "only one way to do it", but providing
+            ## this dashdotted/dotdashed synonym just seems humane ;-)
+            if self.description['LineStyle'] in ('dashdotted', 'dotdashed'):
+                self.description['LineStyle']='dashed'
+                self.description['LineDash']='3pt 3pt .8pt 3pt'
+            return self.description['LineStyle']
+        else:
+            return 'solid'
+
+    def getLineDash(self):
+        if 'LineDash' in self.description:
+            # Check if LineStyle=='dashdotted' before returning something
+            self.getLineStyle()
+            return self.description['LineDash']
+        else:
+            return ''
+
+    def getLineWidth(self):
+        return self.description.get("LineWidth", "0.8pt")
+
+    def getLineColor(self):
+        return self.description.get("LineColor", "black")
+
+    def getLineOpacity(self):
+        return self.description.get("LineOpacity", "1.0")
+
+    def getFillColor(self):
+        return self.description.get("FillColor", "white")
+
+    def getFillOpacity(self):
+        return self.description.get("FillOpacity", "1.0")
+
+    def getHatchColor(self):
+        return self.description.get("HatchColor", "black")
+
+    def getFillStyle(self):
+        return self.description.get("FillStyle", "none")
+
+    def getPolyMarker(self):
+        return self.description.get("PolyMarker", "")
+
+    def getDotSize(self):
+        return self.description.get("DotSize", "2pt 2")
+
+    def getDotScale(self):
+        return self.description.get("DotScale", "1")
+
+    def getErrorBars(self):
+        return bool(int(self.description.get("ErrorBars", "0")))
+
+    def getErrorBands(self):
+        return bool(int(self.description.get("ErrorBands", "0")))
+
+    def getErrorBandColor(self):
+        return self.description.get("ErrorBandColor", "yellow")
+
+    def getErrorBandOpacity(self):
+        return self.description.get("ErrorBandOpacity", "1.0")
+
+    def getSmoothLine(self):
+        return bool(int(self.description.get("SmoothLine", "0")))
+
+    def startclip(self):
+        return '\\psclip{\\psframe[linewidth=0, linestyle=none](0,0)(1,1)}\n'
+
+    def stopclip(self):
+        return '\\endpsclip\n'
+
+    def startpsset(self):
+        out = ""
+        out += ('\\psset{linecolor='+self.getLineColor()+'}\n')
+        out += ('\\psset{linewidth='+self.getLineWidth()+'}\n')
+        out += ('\\psset{linestyle='+self.getLineStyle()+'}\n')
+        out += ('\\psset{fillstyle='+self.getFillStyle()+'}\n')
+        out += ('\\psset{fillcolor='+self.getFillColor()+'}\n')
+        out += ('\\psset{hatchcolor='+self.getHatchColor()+'}\n')
+        out += ('\\psset{strokeopacity='+self.getLineOpacity()+'}\n')
+        out += ('\\psset{opacity='+self.getFillOpacity()+'}\n')
+        if self.getLineDash()!='':
+            out += ('\\psset{dash='+self.getLineDash()+'}\n')
+        return out
+
+    def stoppsset(self):
+        out = ""
+        out += ('\\psset{linecolor=black}\n')
+        out += ('\\psset{linewidth=0.8pt}\n')
+        out += ('\\psset{linestyle=solid}\n')
+        out += ('\\psset{fillstyle=none}\n')
+        out += ('\\psset{fillcolor=white}\n')
+        out += ('\\psset{hatchcolor=black}\n')
+        out += ('\\psset{strokeopacity=1.0}\n')
+        out += ('\\psset{opacity=1.0}\n')
+        return out
+
+
+
+class Function(DrawableObject, Described):
+
+    def __init__(self, f):
+        self.description = {}
+        self.read_input(f)
+
+    def read_input(self, f):
+        self.code='def plotfunction(x):\n'
+        iscode=False
+        for line in f:
+            if is_end_marker(line, 'FUNCTION'):
+                break
+            elif is_comment(line):
+                continue
+            else:
+                m = pat_property.match(line)
+                if iscode:
+                    self.code+='    '+line
+                elif m:
+                    prop, value = m.group(1,2)
+                    if prop=='Code':
+                        iscode=True
+                    else:
+                        self.description[prop] = value
+        if not iscode:
+            print('++++++++++ ERROR: No code in function')
+        else:
+            foo = compile(self.code, '<string>', 'exec')
+            exec(foo)
+            self.plotfunction = plotfunction
+
+
+    def draw(self,coors):
+        out = ""
+        out += self.startclip()
+        out += self.startpsset()
+        xmin = coors.xmin()
+        if 'XMin' in self.description and self.description['XMin']:
+            xmin = float(self.description['XMin'])
+        xmax=coors.xmax()
+        if 'XMax' in self.description and self.description['XMax']:
+            xmax=float(self.description['XMax'])
+        # TODO: Space sample points logarithmically if LogX=1
+        dx = (xmax-xmin)/500.
+        x = xmin-dx
+        out += '\\pscurve'
+        if 'FillStyle' in self.description and self.description['FillStyle']!='none':
+            out += '(%s,%s)\n' % (coors.strphys2frameX(xmin),coors.strphys2frameY(coors.ymin()))
+        while x < (xmax+2*dx):
+            y = self.plotfunction(x)
+            out += ('(%s,%s)\n' % (coors.strphys2frameX(x), coors.strphys2frameY(y)))
+            x += dx
+        if 'FillStyle' in self.description and self.description['FillStyle']!='none':
+            out += '(%s,%s)\n' % (coors.strphys2frameX(xmax),coors.strphys2frameY(coors.ymin()))
+        out += self.stoppsset()
+        out += self.stopclip()
+        return out
+
+
+class BinData(object):
+    """\
+    Store bin edge and value+error(s) data for a 1D or 2D bin.
+
+    TODO: generalise/alias the attr names to avoid mention of x and y
+    """
+
+    def __init__(self, low, high, val, err):
+        #print("@", low, high, val, err)
+        self.low = floatify(low)
+        self.high = floatify(high)
+        self.val = float(val)
+        self.err = floatpair(err)
+
+    @property
+    def is2D(self):
+        return hasattr(self.low, "__len__") and hasattr(self.high, "__len__")
+
+    @property
+    def isValid(self):
+        invalid_val = (isnan(self.val) or isnan(self.err[0]) or isnan(self.err[1]))
+        if invalid_val:
+            return False
+        if self.is2D:
+            invalid_low = any(isnan(x) for x in self.low)
+            invalid_high = any(isnan(x) for x in self.high)
+        else:
+            invalid_low, invalid_high = isnan(self.low), isnan(self.high)
+        return not (invalid_low or invalid_high)
+
+    @property
+    def xmin(self):
+        return self.low
+    @xmin.setter
+    def xmin(self,x):
+        self.low = x
+
+    @property
+    def xmax(self):
+        return self.high
+    @xmax.setter
+    def xmax(self,x):
+        self.high = x
+
+    @property
+    def xmid(self):
+        # TODO: Generalise to 2D
+        return (self.xmin + self.xmax) / 2.0
+
+    @property
+    def xwidth(self):
+        # TODO: Generalise to 2D
+        assert self.xmin <= self.xmax
+        return self.xmax - self.xmin
+
+    @property
+    def y(self):
+        return self.val
+    @y.setter
+    def y(self, x):
+        self.val = x
+
+    @property
+    def ey(self):
+        return self.err
+    @ey.setter
+    def ey(self, x):
+        self.err = x
+
+    @property
+    def ymin(self):
+        return self.y - self.ey[0]
+
+    @property
+    def ymax(self):
+        return self.y + self.ey[1]
+
+    def __getitem__(self, key):
+        "dict-like access for backward compatibility"
+        if key in ("LowEdge"):
+            return self.xmin
+        elif key == ("UpEdge", "HighEdge"):
+            return self.xmax
+        elif key == "Content":
+            return self.y
+        elif key == "Errors":
+            return self.ey
+
+
+class Histogram(DrawableObject, Described):
+
+    def __init__(self, f, p=None):
+        self.description = {}
+        self.is2dim = False
+        self.data = []
+        self.read_input_data(f)
+        self.sigmabinvalue = None
+        self.meanbinvalue = None
+        self.path = p
+
+    def read_input_data(self, f):
+        for line in f:
+            if is_end_marker(line, 'HISTOGRAM'):
+                break
+            elif is_comment(line):
+                continue
+            else:
+                line = line.rstrip()
+                m = pat_property.match(line)
+                if m:
+                    prop, value = m.group(1,2)
+                    self.description[prop] = value
+                else:
+                    ## Detect symm errs
+                    linearray = line.split()
+                    if len(linearray) == 4:
+                        self.data.append(BinData(*linearray))
+                    ## Detect asymm errs
+                    elif len(linearray) == 5:
+                        self.data.append(BinData(linearray[0], linearray[1], linearray[2], [linearray[3],linearray[4]]))
+                    ## Detect two-dimensionality
+                    elif len(linearray) in [6,7]:
+                        self.is2dim = True
+                        # If asymm z error, use the max or average of +- error
+                        err = float(linearray[5])
+                        if len(linearray) == 7:
+                            if self.description.get("ShowMaxZErr", 1):
+                                err = max(err, float(linearray[6]))
+                            else:
+                                err = 0.5 * (err + float(linearray[6]))
+                        self.data.append(BinData([linearray[0], linearray[2]], [linearray[1], linearray[3]], linearray[4], err))
+                    ## Unknown histo format
+                    else:
+                        raise RuntimeError("Unknown HISTOGRAM data line format with %d entries" % len(linearray))
+
+
+    def mangle_input(self):
+        norm2int = self.attr_bool("NormalizeToIntegral", False)
+        norm2sum = self.attr_bool("NormalizeToSum", False)
+        if norm2int or norm2sum:
+            if norm2int and norm2sum:
+                print("Can't normalize to Integral and to Sum at the same time. Will normalize to the sum.")
+            foo = 0.0
+            # TODO: change to "in self.data"?
+            for i in range(len(self.data)):
+                if norm2sum:
+                    foo += self.data[i].val
+                else:
+                    foo += self.data[i].val*(self.data[i].xmax-self.data[i].xmin)
+
+            # TODO: change to "in self.data"?
+            if foo != 0:
+                for i in range(len(self.data)):
+                    self.data[i].val /= foo
+                    self.data[i].err[0] /= foo
+                    self.data[i].err[1] /= foo
+        scale = self.attr_float('Scale', 1.0)
+        if scale != 1.0:
+            # TODO: change to "in self.data"?
+            for i in range(len(self.data)):
+                self.data[i].val *= scale
+                self.data[i].err[0] *= scale
+                self.data[i].err[1] *= scale
+        if self.attr_int("Rebin", 1) > 1:
+            rebin = self.attr_int("Rebin", 1)
+            errortype = self.attr("ErrorType", "stat")
+            newdata = []
+            for i in range(0, (len(self.data)//rebin)*rebin, rebin):
+                foo = 0.
+                barl = 0.
+                baru = 0.
+                for j in range(rebin):
+                    binwidth = self.data[i+j].xwidth
+                    foo += self.data[i+j].val * binwidth
+                    if errortype == "stat":
+                        barl += (binwidth * self.data[i+j].err[0])**2
+                        baru += (binwidth * self.data[i+j].err[1])**2
+                    elif errortype == "env":
+                        barl += self.data[i+j].ymin * binwidth
+                        baru += self.data[i+j].ymax * binwidth
+                    else:
+                        logging.error("Rebinning for ErrorType not implemented.")
+                        sys.exit(1)
+                newbinwidth = self.data[i+rebin-1].xmax - self.data[i].xmin
+                newcentral = foo/newbinwidth
+                if errortype == "stat":
+                    newerror = [sqrt(barl)/newbinwidth, sqrt(baru)/newbinwidth]
+                elif errortype == "env":
+                    newerror = [(foo-barl)/newbinwidth, (baru-foo)/newbinwidth]
+                newdata.append(BinData(self.data[i].xmin, self.data[i+rebin-1].xmax, newcentral, newerror))
+            self.data = newdata
+
+    def add(self, name):
+        if len(self.data) != len(name.data):
+            print('+++ Error in Histogram.add() for %s: different numbers of bins' % self.path)
+        for i in range(len(self.data)):
+            if fuzzyeq(self.data[i].xmin, name.data[i].xmin) and \
+               fuzzyeq(self.data[i].xmax, name.data[i].xmax):
+                self.data[i].val += name.data[i].val
+                self.data[i].err[0] = sqrt(self.data[i].err[0]**2 + name.data[i].err[0]**2)
+                self.data[i].err[1] = sqrt(self.data[i].err[1]**2 + name.data[i].err[1]**2)
+            else:
+                print('+++ Error in Histogram.add() for %s: binning of histograms differs' % self.path)
+
+    def divide(self, name):
+        #print(name.path, self.path)
+        if len(self.data) != len(name.data):
+            print('+++ Error in Histogram.divide() for %s: different numbers of bins' % self.path)
+        for i in range(len(self.data)):
+            if fuzzyeq(self.data[i].xmin, name.data[i].xmin) and \
+               fuzzyeq(self.data[i].xmax, name.data[i].xmax):
+                try:
+                    self.data[i].err[0] /= name.data[i].val
+                except ZeroDivisionError:
+                    self.data[i].err[0]=0.
+                try:
+                    self.data[i].err[1] /= name.data[i].val
+                except ZeroDivisionError:
+                    self.data[i].err[1]=0.
+                try:
+                    self.data[i].val /= name.data[i].val
+                except ZeroDivisionError:
+                    self.data[i].val=1.
+#                self.data[i].err[0] = sqrt(self.data[i].err[0]**2 + name.data[i].err[0]**2)
+#                self.data[i].err[1] = sqrt(self.data[i].err[1]**2 + name.data[i].err[1]**2)
+            else:
+                print('+++ Error in Histogram.divide() for %s: binning of histograms differs' % self.path)
+
+    def dividereverse(self, name):
+        if len(self.data) != len(name.data):
+            print('+++ Error in Histogram.dividereverse() for %s: different numbers of bins' % self.path)
+        for i in range(len(self.data)):
+            if fuzzyeq(self.data[i].xmin, name.data[i].xmin) and \
+               fuzzyeq(self.data[i].xmax, name.data[i].xmax):
+                try:
+                    self.data[i].err[0] = name.data[i].err[0]/self.data[i].val
+                except ZeroDivisionError:
+                    self.data[i].err[0]=0.
+                try:
+                    self.data[i].err[1] = name.data[i].err[1]/self.data[i].val
+                except ZeroDivisionError:
+                    self.data[i].err[1]=0.
+                try:
+                    self.data[i].val = name.data[i].val/self.data[i].val
+                except ZeroDivisionError:
+                    self.data[i].val=1.
+            else:
+                print('+++ Error in Histogram.dividereverse(): binning of histograms differs')
+
+    def deviation(self, name):
+        if len(self.data) != len(name.data):
+            print('+++ Error in Histogram.deviation() for %s: different numbers of bins' % self.path)
+        for i in range(len(self.data)):
+            if fuzzyeq(self.data[i].xmin, name.data[i].xmin) and \
+               fuzzyeq(self.data[i].xmax, name.data[i].xmax):
+                self.data[i].val -= name.data[i].val
+                try:
+                    self.data[i].val /= 0.5*sqrt((name.data[i].err[0] + name.data[i].err[1])**2 + \
+                                                        (self.data[i].err[0] + self.data[i].err[1])**2)
+                except ZeroDivisionError:
+                    self.data[i].val = 0.0
+                try:
+                    self.data[i].err[0] /= name.data[i].err[0]
+                except ZeroDivisionError:
+                    self.data[i].err[0] = 0.0
+                try:
+                    self.data[i].err[1] /= name.data[i].err[1]
+                except ZeroDivisionError:
+                    self.data[i].err[1] = 0.0
+            else:
+                print('+++ Error in Histogram.deviation() for %s: binning of histograms differs' % self.path)
+
+    def getChi2(self, name):
+        chi2 = 0.
+        for i in range(len(self.data)):
+            if fuzzyeq(self.data[i].xmin, name.data[i].xmin) and \
+               fuzzyeq(self.data[i].xmax, name.data[i].xmax):
+                try:
+                    chi2 += (self.data[i].val-name.data[i].val)**2/((0.5*self.data[i].err[0]+0.5*self.data[i].err[1])**2 + (0.5*name.data[i].err[0]+0.5*name.data[i].err[1])**2)
+                except ZeroDivisionError:
+                    pass
+            else:
+                print('+++ Error in Histogram.getChi2() for %s: binning of histograms differs' % self.path)
+        return chi2/len(self.data)
+
+    def getSigmaBinValue(self):
+        if self.sigmabinvalue==None:
+            self.sigmabinvalue = 0.
+            sumofweights = 0.
+            for i in range(len(self.data)):
+                if self.is2dim:
+                    binwidth = abs( (self.data[i].xmax[0] - self.data[i].xmin[0])
+                                   *(self.data[i].xmax[1] - self.data[i].xmin[1]))
+                else:
+                    binwidth = abs(self.data[i].xmax - self.data[i].xmin)
+                self.sigmabinvalue += binwidth*(self.data[i].val-self.getMeanBinValue())**2
+                sumofweights += binwidth
+            self.sigmabinvalue = sqrt(self.sigmabinvalue/sumofweights)
+        return self.sigmabinvalue
+
+    def getMeanBinValue(self):
+        if self.meanbinvalue==None:
+            self.meanbinvalue = 0.
+            sumofweights = 0.
+            for i in range(len(self.data)):
+                if self.is2dim:
+                    binwidth = abs( (self.data[i].xmax[0] - self.data[i].xmin[0])
+                                   *(self.data[i].xmax[1] - self.data[i].xmin[1]))
+                else:
+                    binwidth = abs(self.data[i].xmax - self.data[i].xmin)
+                self.meanbinvalue += binwidth*self.data[i].val
+                sumofweights += binwidth
+            self.meanbinvalue /= sumofweights
+        return self.meanbinvalue
+
+    def getCorrelation(self, name):
+        correlation = 0.
+        sumofweights = 0.
+        for i in range(len(self.data)):
+            if fuzzyeq(self.data[i].xmin, name.data[i].xmin) and \
+               fuzzyeq(self.data[i].xmax, name.data[i].xmax):
+                if self.is2dim:
+                    binwidth = abs( (self.data[i].xmax[0] - self.data[i].xmin[0])
+                                  * (self.data[i].xmax[1] - self.data[i].xmin[1]) )
+                else:
+                    binwidth = abs(self.data[i].xmax - self.data[i].xmin)
+                correlation += binwidth * ( self.data[i].val - self.getMeanBinValue() ) \
+                                        * ( name.data[i].val - name.getMeanBinValue() )
+                sumofweights += binwidth
+            else:
+                print('+++ Error in Histogram.getCorrelation(): binning of histograms differs' % self.path)
+        correlation /= sumofweights
+        try:
+            correlation /= self.getSigmaBinValue()*name.getSigmaBinValue()
+        except ZeroDivisionError:
+            correlation = 0
+        return correlation
+
+    def getRMSdistance(self,name):
+        distance = 0.
+        sumofweights = 0.
+        for i in range(len(self.data)):
+            if fuzzyeq(self.data[i].xmin, name.data[i].xmin) and \
+               fuzzyeq(self.data[i].xmax, name.data[i].xmax):
+                if self.is2dim:
+                    binwidth = abs( (self.data[i].xmax[0] - self.data[i].xmin[0])
+                                  * (self.data[i].xmax[1] - self.data[i].xmin[1]) )
+                else:
+                    binwidth = abs(self.data[i].xmax - self.data[i].xmin)
+                distance += binwidth * ( (self.data[i].val - self.getMeanBinValue())
+                                        -(name.data[i].val - name.getMeanBinValue()))**2
+                sumofweights += binwidth
+            else:
+                print('+++ Error in Histogram.getRMSdistance() for %s: binning of histograms differs' % self.path)
+        distance = sqrt(distance/sumofweights)
+        return distance
+
+    def draw(self,coors):
+        seen_nan = False
+        out = ""
+        out += self.startclip()
+        out += self.startpsset()
+        if any(b.isValid for b in self.data):
+            out += "% START DATA\n"
+            if self.is2dim:
+                for b in self.data:
+                    out += ('\\psframe')
+                    color = int(129*coors.phys2frameZ(b.val))
+                    if b.val > coors.zmax():
+                        color = 129
+                    if b.val < coors.zmin():
+                        color = 0
+                    if b.val <= coors.zmin():
+                        out += ('[linewidth=0pt, linestyle=none, fillstyle=solid, fillcolor=white]')
+                    else:
+                        out += ('[linewidth=0pt, linestyle=none, fillstyle=solid, fillcolor={gradientcolors!!['+str(color)+']}]')
+                    out += ('(' + coors.strphys2frameX(b.low[0]) + ', ' \
+                                + coors.strphys2frameY(b.low[1]) + ')(' \
+                                + coors.strphys2frameX(b.high[0])  + ', ' \
+                                + coors.strphys2frameY(b.high[1])  + ')\n')
+            else:
+                if self.getErrorBands():
+                    self.description['SmoothLine'] = 0
+                    for b in self.data:
+                        if isnan(b.val) or isnan(b.err[0]) or isnan(b.err[1]):
+                            seen_nan = True
+                            continue
+                        out += ('\\psframe[dimen=inner,linewidth=0pt,linestyle=none,fillstyle=solid,fillcolor=%s,opacity=%s]' % (self.getErrorBandColor(),self.getErrorBandOpacity()))
+                        out += ('(' + coors.strphys2frameX(b.xmin) + ', ' \
+                                    + coors.strphys2frameY(b.val - b.err[0]) + ')(' \
+                                    + coors.strphys2frameX(b.xmax)  + ', ' \
+                                    + coors.strphys2frameY(b.val + b.err[1]) + ')\n')
+                if self.getErrorBars():
+                    for b in self.data:
+                        if isnan(b.val) or isnan(b.err[0]) or isnan(b.err[1]):
+                            seen_nan = True
+                            continue
+                        if b.val == 0. and b.err == [0.,0.]:
+                            continue
+                        out += ('\\psline')
+                        out += ('(' + coors.strphys2frameX(b.xmin) + ', ' \
+                                    + coors.strphys2frameY(b.val) + ')(' \
+                                    + coors.strphys2frameX(b.xmax)  + ', ' \
+                                    + coors.strphys2frameY(b.val) + ')\n')
+                        out += ('\\psline')
+                        bincenter = coors.strphys2frameX(.5*(b.xmin+b.xmax))
+                        out += ('(' + bincenter + ', ' \
+                                    + coors.strphys2frameY(b.val-b.err[0]) + ')(' \
+                                    + bincenter + ', ' \
+                                    + coors.strphys2frameY(b.val+b.err[1]) + ')\n')
+                if self.getSmoothLine():
+                    out += '\\psbezier'
+                else:
+                    out += '\\psline'
+                if self.getFillStyle() != 'none':   # make sure that filled areas go all the way down to the x-axis
+                    if coors.phys2frameX(self.data[0].xmin) > 1e-4:
+                        out += '(' + coors.strphys2frameX(self.data[0].xmin) + ', -0.1)\n'
+                    else:
+                        out += '(-0.1, -0.1)\n'
+                for i, b in enumerate(self.data):
+                    if isnan(b.val):
+                        seen_nan = True
+                        continue
+                    if self.getSmoothLine():
+                        out += ('(' + coors.strphys2frameX(0.5*(b.xmin+b.xmax)) + ', ' \
+                                    + coors.strphys2frameY(b.val) + ')\n')
+                    else:
+                        out += ('(' + coors.strphys2frameX(b.xmin) + ', ' \
+                                    + coors.strphys2frameY(b.val) + ')(' \
+                                    + coors.strphys2frameX(b.xmax)  + ', ' \
+                                    + coors.strphys2frameY(b.val) + ')\n')
+                        ## Join/separate data points, with vertical/diagonal lines
+                        if i+1 < len(self.data): #< If this is not the last point
+                            if self.description.get('ConnectBins', '1') != '1':
+                                out += ('\\psline')
+                            else:
+                                ## If bins are joined, but there is a gap in binning, choose whether to fill the gap
+                                if (abs(coors.phys2frameX(b.xmax) - coors.phys2frameX(self.data[i+1].xmin)) > 1e-4):
+                                    if self.description.get('ConnectGaps', '0') != '1':
+                                        out += ('\\psline')
+                                        # TODO: Perhaps use a new dashed line to fill the gap?
+                if self.getFillStyle() != 'none':  # make sure that filled areas go all the way down to the x-axis
+                    if (coors.phys2frameX(self.data[-1].xmax) < 1-1e-4):
+                        out += '(' + coors.strphys2frameX(self.data[-1].xmax) + ', -0.1)\n'
+                    else:
+                        out += '(1.1, -0.1)\n'
+            #
+            if self.getPolyMarker() != '':
+                for b in self.data:
+                    if isnan(b.val):
+                        seen_nan = True
+                        continue
+                    if b.val == 0. and b.err == [0.,0.]:
+                        continue
+                    out += ('\\psdot[dotstyle=%s,dotsize=%s,dotscale=%s](' % (self.getPolyMarker(),self.getDotSize(),self.getDotScale()) \
+                                + coors.strphys2frameX(.5*(b.xmin+b.xmax)) + ', ' \
+                                + coors.strphys2frameY(b.val) + ')\n')
+
+            out += "% END DATA\n"
+        else:
+            print("WARNING: No valid bin value/errors/edges to plot!")
+            out += "% NO DATA!\n"
+
+        out += self.stoppsset()
+        out += self.stopclip()
+        if seen_nan:
+            print("WARNING: NaN-valued value or error bar!")
+        return out
+
+    # def is2dimensional(self):
+    #     return self.is2dim
+
+    def getXMin(self):
+        if not self.data:
+            return 0
+        elif self.is2dim:
+            return min(b.low[0] for b in self.data)
+        else:
+            return min(b.xmin for b in self.data)
+
+    def getXMax(self):
+        if not self.data:
+            return 1
+        elif self.is2dim:
+            return max(b.high[0] for b in self.data)
+        else:
+            return max(b.xmax for b in self.data)
+
+    def getYMin(self, xmin, xmax, logy):
+        if not self.data:
+            return 0
+        elif self.is2dim:
+            return min(b.low[1] for b in self.data)
+        else:
+            yvalues = []
+            for b in self.data:
+                if (b.xmax > xmin or b.xmin >= xmin) and (b.xmin < xmax or b.xmax <= xmax):
+                    foo = b.val
+                    if self.getErrorBars() or self.getErrorBands():
+                        foo -= b.err[0]
+                    if not isnan(foo) and (not logy or foo > 0):
+                        yvalues.append(foo)
+            return min(yvalues) if yvalues else self.data[0].val
+
+    def getYMax(self, xmin, xmax):
+        if not self.data:
+            return 1
+        elif self.is2dim:
+            return max(b.high[1] for b in self.data)
+        else:
+            yvalues = []
+            for b in self.data:
+                if (b.xmax > xmin or b.xmin >= xmin) and (b.xmin < xmax or b.xmax <= xmax):
+                    foo = b.val
+                    if self.getErrorBars() or self.getErrorBands():
+                        foo += b.err[1]
+                    if not isnan(foo): # and (not logy or foo > 0):
+                        yvalues.append(foo)
+            return max(yvalues) if yvalues else self.data[0].val
+
+    def getZMin(self, xmin, xmax, ymin, ymax):
+        if not self.is2dim:
+            return 0
+        zvalues = []
+        for b in self.data:
+            if (b.xmax[0] > xmin and b.xmin[0] < xmax) and (b.xmax[1] > ymin and b.xmin[1] < ymax):
+                zvalues.append(b.val)
+        return min(zvalues)
+
+    def getZMax(self, xmin, xmax, ymin, ymax):
+        if not self.is2dim:
+            return 0
+        zvalues = []
+        for b in self.data:
+            if (b.xmax[0] > xmin and b.xmin[0] < xmax) and (b.xmax[1] > ymin and b.xmin[1] < ymax):
+                zvalues.append(b.val)
+        return max(zvalues)
+
+
+
+class Value(Histogram):
+
+    def read_input_data(self, f):
+        for line in f:
+            if is_end_marker(line, 'VALUE'):
+                break
+            elif is_comment(line):
+                continue
+            else:
+                line = line.rstrip()
+                m = pat_property.match(line)
+                if m:
+                    prop, value = m.group(1,2)
+                    self.description[prop] = value
+                else:
+                    linearray = line.split()
+                    if len(linearray) == 3:
+                        self.data.append(BinData(0.0, 1.0, linearray[0], [ linearray[1], linearray[2] ])) # dummy x-values
+                    else:
+                        raise Exception('Value does not have the expected number of columns. ' + line)
+
+    # TODO: specialise draw() here
+
+
+class Counter(Histogram):
+
+    def read_input_data(self, f):
+        for line in f:
+            if is_end_marker(line, 'COUNTER'):
+                break
+            elif is_comment(line):
+                continue
+            else:
+                line = line.rstrip()
+                m = pat_property.match(line)
+                if m:
+                    prop, value = m.group(1,2)
+                    self.description[prop] = value
+                else:
+                    linearray = line.split()
+                    if len(linearray) == 2:
+                        self.data.append(BinData(0.0, 1.0, linearray[0], [ linearray[1], linearray[1] ])) # dummy x-values
+                    else:
+                        raise Exception('Counter does not have the expected number of columns. ' + line)
+
+    # TODO: specialise draw() here
+
+
+class Histo1D(Histogram):
+
+    def read_input_data(self, f):
+        for line in f:
+            if is_end_marker(line, 'HISTO1D'):
+                break
+            elif is_comment(line):
+                continue
+            else:
+                line = line.rstrip()
+                m = pat_property.match(line)
+                if m:
+                    prop, value = m.group(1,2)
+                    self.description[prop] = value
+                else:
+                    linearray = line.split()
+                    ## Detect symm errs
+                    # TODO: Not sure what the 8-param version is for... auto-compatibility with YODA format?
+                    if len(linearray) in [4,8]:
+                        self.data.append(BinData(linearray[0], linearray[1], linearray[2], linearray[3]))
+                    ## Detect asymm errs
+                    elif len(linearray) == 5:
+                        self.data.append(BinData(linearray[0], linearray[1], linearray[2], [linearray[3],linearray[4]]))
+                    else:
+                        raise Exception('Histo1D does not have the expected number of columns. ' + line)
+
+    # TODO: specialise draw() here
+
+
+class Histo2D(Histogram):
+
+    def read_input_data(self, f):
+        self.is2dim = True #< Should really be done in a constructor, but this is easier for now...
+
+        for line in f:
+            if is_end_marker(line, 'HISTO2D'):
+                break
+            elif is_comment(line):
+                continue
+            else:
+                line = line.rstrip()
+                m = pat_property.match(line)
+                if m:
+                    prop, value = m.group(1,2)
+                    self.description[prop] = value
+                else:
+                    linearray = line.split()
+                    if len(linearray) in [6,7]:
+                        # If asymm z error, use the max or average of +- error
+                        err = float(linearray[5])
+                        if len(linearray) == 7:
+                            if self.description.get("ShowMaxZErr", 1):
+                                err = max(err, float(linearray[6]))
+                            else:
+                                err = 0.5 * (err + float(linearray[6]))
+                        self.data.append(BinData([linearray[0], linearray[2]], [linearray[1], linearray[3]], float(linearray[4]), err))
+                    else:
+                        raise Exception('Histo2D does not have the expected number of columns. '+line)
+
+    # TODO: specialise draw() here
+
+
+
+#############################
+
+
+
+class Frame(object):
+
+    def __init__(self):
+        self.framelinewidth = '0.3pt'
+
+    def draw(self,inputdata):
+        out = ('\n%\n% Frame\n%\n')
+        if inputdata.description.get('FrameColor') is not None:
+            color = inputdata.description['FrameColor']
+            # We want to draw this frame only once, so set it to False for next time:
+            inputdata.description['FrameColor']=None
+
+            # Calculate how high and wide the overall plot is
+            height = [0,0]
+            width  = inputdata.attr('PlotSizeX')
+            if inputdata.attr_bool('RatioPlot', False):
+                height[1] = -inputdata.description['RatioPlotSizeY']
+            if not inputdata.attr_bool('MainPlot', True):
+                height[0] = inputdata.description['PlotSizeY']
+            else:
+                height[0] = -height[1]
+                height[1] = 0
+
+            # Get the margin widths
+            left = inputdata.description['LeftMargin']+0.1
+            right = inputdata.description['RightMargin']+0.1
+            top = inputdata.description['TopMargin']+0.1
+            bottom = inputdata.description['BottomMargin']+0.1
+
+            #
+            out += ('\\rput(0,1){\\psline[linewidth=%scm,linecolor=%s](%scm,%scm)(%scm,%scm)}\n' %(top, color, -left, top/2, width+right, top/2))
+            out += ('\\rput(0,%scm){\\psline[linewidth=%scm,linecolor=%s](%scm,%scm)(%scm,%scm)}\n' %(height[1], bottom, color, -left, -bottom/2, width+right, -bottom/2))
+            out += ('\\rput(0,0){\\psline[linewidth=%scm,linecolor=%s](%scm,%scm)(%scm,%scm)}\n' %(left, color, -left/2, height[1]-0.05, -left/2, height[0]+0.05))
+            out += ('\\rput(1,0){\\psline[linewidth=%scm,linecolor=%s](%scm,%scm)(%scm,%scm)}\n' %(right, color, right/2, height[1]-0.05, right/2, height[0]+0.05))
+
+
+        out += ('\\psframe[linewidth='+self.framelinewidth+',dimen=middle](0,0)(1,1)\n')
+        return out
+
+
+
+class Ticks(object):
+
+    def __init__(self, description, coors):
+        self.majorticklinewidth = '0.3pt'
+        self.minorticklinewidth = '0.3pt'
+        self.majorticklength    = '9pt'
+        self.minorticklength    = '4pt'
+        self.description = description
+        self.coors = coors
+
+    def draw_ticks(self, vmin, vmax, plotlog=False, custommajorticks=None, customminorticks=None, custommajortickmarks=-1, customminortickmarks=-1, drawlabels=True, twosided=False):
+        if vmax <= vmin:
+            raise Exception("Cannot place tick marks. Inconsistent min=%s and max=%s" % (vmin,vmax))
+        out = ""
+        if plotlog:
+            if vmin <= 0 or vmax <= 0:
+                raise Exception("Cannot place log axis min or max tick <= 0")
+            if custommajorticks is None:
+                x = int(log10(vmin))
+                n_labels = 0
+                while x < log10(vmax) + 1:
+                    if 10**x >= vmin:
+                        ticklabel = 10**x
+                        if ticklabel > vmin and ticklabel < vmax:
+                            out += self.draw_majortick(ticklabel,twosided)
+                            if drawlabels:
+                                out += self.draw_majorticklabel(ticklabel)
+                                n_labels += 1
+                        if ticklabel == vmin or ticklabel == vmax:
+                            if drawlabels:
+                                out += self.draw_majorticklabel(ticklabel)
+                                n_labels+=1
+                        for i in range(2,10):
+                            ticklabel = i*10**(x-1)
+                            if ticklabel > vmin and ticklabel < vmax:
+                                out += self.draw_minortick(ticklabel,twosided)
+                                if drawlabels and n_labels == 0:
+                                    if (i+1)*10**(x-1) < vmax: # some special care for the last minor tick
+                                        out += self.draw_minorticklabel(ticklabel)
+                                    else:
+                                        out += self.draw_minorticklabel(ticklabel, last=True)
+                    x += 1
+            else:
+                print("Warning: custom major ticks not currently supported on log axes -- please contact the developers to request!")
+        elif custommajorticks is not None or customminorticks is not None:
+            if custommajorticks:
+                for i in range(len(custommajorticks)):
+                    value = custommajorticks[i]['Value']
+                    label = custommajorticks[i]['Label']
+                    if value >= vmin and value <= vmax:
+                        out += self.draw_majortick(value,twosided)
+                    if drawlabels:
+                        out += self.draw_majorticklabel(value, label=label)
+            if customminorticks:
+                for i in range(len(customminorticks)):
+                    value = customminorticks[i]['Value']
+                    if value >= vmin and value <= vmax:
+                        out += self.draw_minortick(value,twosided)
+        else:
+            vrange = vmax - vmin
+            if isnan(vrange):
+                vrange, vmin, vmax = 1, 1, 2
+            digits = int(log10(vrange))+1
+            if vrange <= 1:
+                digits -= 1
+            foo = int(vrange/(10**(digits-1)))
+            if foo/9. > 0.5:
+                tickmarks = 10
+            elif foo/9. > 0.2:
+                tickmarks = 5
+            elif foo/9. > 0.1:
+                tickmarks = 2
+
+            if custommajortickmarks > -1:
+                if custommajortickmarks not in [1, 2, 5, 10, 20]:
+                    print('+++ Error in Ticks.draw_ticks(): MajorTickMarks must be in [1, 2, 5, 10, 20]')
+                else:
+                    tickmarks = custommajortickmarks
+
+            if tickmarks == 2 or tickmarks == 20:
+                minortickmarks = 3
+            else:
+                minortickmarks = 4
+            if customminortickmarks > -1:
+                minortickmarks = customminortickmarks
+            #
+            x = 0
+            while x > vmin*10**digits:
+                x -= tickmarks*100**(digits-1)
+            while x <= vmax*10**digits:
+                if x >= vmin*10**digits - tickmarks*100**(digits-1):
+                    ticklabel = 1.*x/10**digits
+                    if int(ticklabel) == ticklabel:
+                        ticklabel = int(ticklabel)
+                    if float(ticklabel-vmin)/vrange >= -1e-5:
+                        if abs(ticklabel-vmin)/vrange > 1e-5 and abs(ticklabel-vmax)/vrange > 1e-5:
+                            out += self.draw_majortick(ticklabel,twosided)
+                        if drawlabels:
+                            out += self.draw_majorticklabel(ticklabel)
+
+                    xminor = x
+                    for i in range(minortickmarks):
+                        xminor += 1.*tickmarks*100**(digits-1)/(minortickmarks+1)
+                        ticklabel = 1.*xminor/10**digits
+                        if ticklabel > vmin and ticklabel < vmax:
+                            if abs(ticklabel-vmin)/vrange > 1e-5 and abs(ticklabel-vmax)/vrange > 1e-5:
+                                out += self.draw_minortick(ticklabel,twosided)
+                x += tickmarks*100**(digits-1)
+        return out
+
+    def draw(self):
+        pass
+
+    def draw_minortick(self, ticklabel, twosided):
+        pass
+
+    def draw_majortick(self, ticklabel, twosided):
+        pass
+
+    def draw_majorticklabel(self, ticklabel):
+        pass
+
+    def draw_minorticklabel(self, value, label='', last=False):
+        return ''
+
+    def get_ticklabel(self, value, plotlog=False, minor=False, lastminor=False):
+        label=''
+        prefix = ''
+        if plotlog:
+            bar = int(log10(value))
+            if bar < 0:
+                sign='-'
+            else:
+                sign='\\,'
+            if minor: # The power of ten is only to be added to the last minor tick label
+                if lastminor:
+                    label = str(int(value/(10**bar))) + "\\cdot" + '10$^{'+sign+'\\text{'+str(abs(bar))+'}}$'
+                else:
+                    label = str(int(value/(10**bar))) # The naked prefactor
+            else:
+                if bar==0:
+                    label = '1'
+                else:
+                    label = '10$^{'+sign+'\\text{%s}}$' % str(abs(bar))
+        else:
+            if fabs(value) < 1e-10:
+                value = 0
+            label = '%.3g' % value
+            if "e" in label:
+                a, b = label.split("e")
+                astr = "%2.1f" % float(a)
+                bstr = str(int(b))
+                label = "\\smaller{%s $\\!\\cdot 10^{%s} $}" % (astr, bstr)
+        return label
+
+
+
+class XTicks(Ticks):
+
+    def draw(self, custommajorticks=None, customminorticks=None, custommajortickmarks=-1, customminortickmarks=-1,drawlabels=True):
+        twosided = bool(int(self.description.get('XTwosidedTicks', '0')))
+        out = ""
+        out += ('\n%\n% X-Ticks\n%\n')
+        out += ('\\def\\majortickmarkx{\\psline[linewidth='+self.majorticklinewidth+'](0,0)(0,'+self.majorticklength+')}%\n')
+        out += ('\\def\\minortickmarkx{\\psline[linewidth='+self.minorticklinewidth+'](0,0)(0,'+self.minorticklength+')}%\n')
+        uselog = self.description['LogX'] and (self.coors.xmin() > 0 and self.coors.xmax() > 0)
+        out += self.draw_ticks(self.coors.xmin(), self.coors.xmax(),\
+                                   plotlog=uselog,\
+                                   custommajorticks=custommajorticks,\
+                                   customminorticks=customminorticks,\
+                                   custommajortickmarks=custommajortickmarks,\
+                                   customminortickmarks=customminortickmarks,\
+                                   drawlabels=drawlabels,\
+                                   twosided=twosided)
+        return out
+
+    def draw_minortick(self, ticklabel, twosided):
+        out = ''
+        out += '\\rput('+self.coors.strphys2frameX(ticklabel)+', 0){\\minortickmarkx}\n'
+        if twosided:
+            out += '\\rput{180}('+self.coors.strphys2frameX(ticklabel)+', 1){\\minortickmarkx}\n'
+        return out
+
+    def draw_minorticklabel(self, value, label='', last=False):
+        if not label:
+            label=self.get_ticklabel(value, int(self.description['LogX']), minor=True, lastminor=last)
+        if last: # Some more indentation for the last minor label
+            return ('\\rput('+self.coors.strphys2frameX(value)+', 0){\\rput[B](1.9\\labelsep,-2.3\\labelsep){\\strut{}'+label+'}}\n')
+        else:
+            return ('\\rput('+self.coors.strphys2frameX(value)+', 0){\\rput[B](0,-2.3\\labelsep){\\strut{}'+label+'}}\n')
+
+    def draw_majortick(self, ticklabel, twosided):
+        out = ''
+        out += '\\rput('+self.coors.strphys2frameX(ticklabel)+', 0){\\majortickmarkx}\n'
+        if twosided:
+            out += '\\rput{180}('+self.coors.strphys2frameX(ticklabel)+', 1){\\majortickmarkx}\n'
+        return out
+
+    def draw_majorticklabel(self, value, label=''):
+        if not label:
+            label = self.get_ticklabel(value, int(self.description['LogX']) and self.coors.xmin() > 0 and self.coors.xmax() > 0)
+        labelparts = label.split("\\n")
+        labelcode = label if len(labelparts) == 1 else ("\\shortstack{" + "\\\\ ".join(labelparts) +  "}")
+        rtn = "\\rput(" + self.coors.strphys2frameX(value) + ", 0){\\rput[t](0,-\\labelsep){" + labelcode + "}}\n"
+        return rtn
+
+
+
+class YTicks(Ticks):
+
+    def draw(self, custommajorticks=None, customminorticks=None, custommajortickmarks=-1, customminortickmarks=-1, drawlabels=True):
+        twosided = bool(int(self.description.get('YTwosidedTicks', '0')))
+        out = ""
+        out += ('\n%\n% Y-Ticks\n%\n')
+        out += ('\\def\\majortickmarky{\\psline[linewidth=%s](0,0)(%s,0)}%%\n' % (self.majorticklinewidth, self.majorticklength))
+        out += ('\\def\\minortickmarky{\\psline[linewidth=%s](0,0)(%s,0)}%%\n' % (self.minorticklinewidth, self.minorticklength))
+        uselog = self.description['LogY'] and self.coors.ymin() > 0 and self.coors.ymax() > 0
+        out += self.draw_ticks(self.coors.ymin(), self.coors.ymax(),
+                               plotlog=uselog,
+                               custommajorticks=custommajorticks,
+                               customminorticks=customminorticks,
+                               custommajortickmarks=custommajortickmarks,
+                               customminortickmarks=customminortickmarks,
+                               twosided=twosided,
+                               drawlabels=drawlabels)
+        return out
+
+    def draw_minortick(self, ticklabel, twosided):
+        out = ''
+        out += '\\rput(0, '+self.coors.strphys2frameY(ticklabel)+'){\\minortickmarky}\n'
+        if twosided:
+            out += '\\rput{180}(1, '+self.coors.strphys2frameY(ticklabel)+'){\\minortickmarky}\n'
+        return out
+
+    def draw_majortick(self, ticklabel, twosided):
+        out = ''
+        out += '\\rput(0, '+self.coors.strphys2frameY(ticklabel)+'){\\majortickmarky}\n'
+        if twosided:
+            out += '\\rput{180}(1, '+self.coors.strphys2frameY(ticklabel)+'){\\majortickmarky}\n'
+        return out
+
+    def draw_majorticklabel(self, value, label=''):
+        if not label:
+            label = self.get_ticklabel(value, int(self.description['LogY']) and self.coors.ymin() > 0 and self.coors.ymax() > 0)
+        if self.description.get('RatioPlotMode', 'mcdata') == 'deviation' and self.description.get('RatioPlotStage'):
+            rtn = '\\uput[180]{0}(0, '+self.coors.strphys2frameY(value)+'){\\strut{}'+label+'\\,$\\sigma$}\n'
+        else:
+            labelparts = label.split("\\n")
+            labelcode = label if len(labelparts) == 1 else ("\\shortstack{" + "\\\\ ".join(labelparts) +  "}")
+            rtn = "\\rput(0, " + self.coors.strphys2frameY(value) + "){\\rput[r](-\\labelsep,0){" + labelcode + "}}\n"
+        return rtn
+
+
+
+class ZTicks(Ticks):
+
+    def __init__(self, description, coors):
+        self.majorticklinewidth = '0.3pt'
+        self.minorticklinewidth = '0.3pt'
+        self.majorticklength    = '6pt'
+        self.minorticklength    = '2.6pt'
+        self.description = description
+        self.coors = coors
+
+    def draw(self, custommajorticks=None, customminorticks=None, custommajortickmarks=-1, customminortickmarks=-1, drawlabels=True):
+        out = ""
+        out += ('\n%\n% Z-Ticks\n%\n')
+        out += ('\\def\\majortickmarkz{\\psline[linewidth='+self.majorticklinewidth+'](0,0)('+self.majorticklength+',0)}%\n')
+        out += ('\\def\\minortickmarkz{\\psline[linewidth='+self.minorticklinewidth+'](0,0)('+self.minorticklength+',0)}%\n')
+        out += self.draw_ticks(self.coors.zmin(), self.coors.zmax(),\
+                                   plotlog=self.description['LogZ'],\
+                                   custommajorticks=custommajorticks,\
+                                   customminorticks=customminorticks,\
+                                   custommajortickmarks=custommajortickmarks,\
+                                   customminortickmarks=customminortickmarks,\
+                                   twosided=False,\
+                                   drawlabels=drawlabels)
+        return out
+
+    def draw_minortick(self, ticklabel, twosided):
+        return '\\rput{180}(1, '+self.coors.strphys2frameZ(ticklabel)+'){\\minortickmarkz}\n'
+
+    def draw_majortick(self, ticklabel, twosided):
+        return '\\rput{180}(1, '+self.coors.strphys2frameZ(ticklabel)+'){\\majortickmarkz}\n'
+
+    def draw_majorticklabel(self, value, label=''):
+        if label=='':
+            label = self.get_ticklabel(value, int(self.description['LogZ']))
+        if self.description.get('RatioPlotMode', "mcdata") == 'deviation' and self.description.get('RatioPlotStage'):
+            return ('\\uput[0]{0}(1, '+self.coors.strphys2frameZ(value)+'){\\strut{}'+label+'\\,$\\sigma$}\n')
+        else:
+            return ('\\uput[0]{0}(1, '+self.coors.strphys2frameZ(value)+'){\\strut{}'+label+'}\n')
+
+
+
+class Coordinates(object):
+
+    def __init__(self, inputdata):
+        self.description = inputdata.description
+
+    def phys2frameX(self, x):
+        if self.description['LogX']:
+            if x>0:
+                result = 1.*(log10(x)-log10(self.xmin()))/(log10(self.xmax())-log10(self.xmin()))
+            else:
+                return -10
+        else:
+            result = 1.*(x-self.xmin())/(self.xmax()-self.xmin())
+        if (fabs(result) < 1e-4):
+            return 0
+        else:
+            return min(max(result,-10),10)
+
+    def phys2frameY(self, y):
+        if self.description['LogY']:
+            if y > 0 and self.ymin() > 0 and self.ymax() > 0:
+                result = 1.*(log10(y)-log10(self.ymin()))/(log10(self.ymax())-log10(self.ymin()))
+            else:
+                return -10
+        else:
+            result = 1.*(y-self.ymin())/(self.ymax()-self.ymin())
+        if (fabs(result) < 1e-4):
+            return 0
+        else:
+            return min(max(result,-10),10)
+
+    def phys2frameZ(self, z):
+        if self.description['LogZ']:
+            if z>0:
+                result = 1.*(log10(z)-log10(self.zmin()))/(log10(self.zmax())-log10(self.zmin()))
+            else:
+                return -10
+        else:
+            result = 1.*(z-self.zmin())/(self.zmax()-self.zmin())
+        if (fabs(result) < 1e-4):
+            return 0
+        else:
+            return min(max(result,-10),10)
+
+    # TODO: Add frame2phys functions (to allow linear function sampling in the frame space rather than the physical space)
+
+    def strphys2frameX(self, x):
+        return str(self.phys2frameX(x))
+
+    def strphys2frameY(self, y):
+        return str(self.phys2frameY(y))
+
+    def strphys2frameZ(self, z):
+        return str(self.phys2frameZ(z))
+
+    def xmin(self):
+        return self.description['Borders'][0]
+
+    def xmax(self):
+        return self.description['Borders'][1]
+
+    def ymin(self):
+        return self.description['Borders'][2]
+
+    def ymax(self):
+        return self.description['Borders'][3]
+
+    def zmin(self):
+        return self.description['Borders'][4]
+
+    def zmax(self):
+        return self.description['Borders'][5]
+
+
+####################
+
+
+def try_cmd(args):
+    "Run the given command + args and return True/False if it succeeds or not"
+    import subprocess
+    try:
+        subprocess.check_output(args, stderr=subprocess.STDOUT)
+        return True
+    except:
+        return False
+
+def have_cmd(cmd):
+    return try_cmd(["which", cmd])
+
+
+import shutil, subprocess
+def process_datfile(datfile):
+    global opts
+    if not os.access(datfile, os.R_OK):
+        raise Exception("Could not read data file '%s'" % datfile)
+
+    datpath = os.path.abspath(datfile)
+    datfile = os.path.basename(datpath)
+    datdir = os.path.dirname(datpath)
+    outdir = opts.OUTPUT_DIR if opts.OUTPUT_DIR else datdir
+    filename = datfile.replace('.dat','')
+
+    ## Create a temporary directory
+    # cwd = os.getcwd()
+    tempdir = tempfile.mkdtemp('.make-plots')
+    tempdatpath = os.path.join(tempdir, datfile)
+    shutil.copy(datpath, tempdir)
+    if opts.NO_CLEANUP:
+        logging.info('Keeping temp-files in %s' % tempdir)
+
+    ## Make TeX file
+    inputdata = InputData(datpath)
+    texpath = os.path.join(tempdir, '%s.tex' % filename)
+    texfile = open(texpath, 'w')
+    p = Plot(inputdata)
+    texfile.write(p.write_header(inputdata))
+    if inputdata.attr_bool("MainPlot", True):
+        mp = MainPlot(inputdata)
+        texfile.write(mp.draw(inputdata))
+    if not inputdata.attr_bool("is2dim", False) and inputdata.attr_bool("RatioPlot", True) and inputdata.attr("RatioPlotReference"): # is not None:
+        rp = RatioPlot(inputdata)
+        texfile.write(rp.draw(inputdata))
+    texfile.write(p.write_footer())
+    texfile.close()
+
+    if opts.OUTPUT_FORMAT != ["TEX"]:
+
+        ## Check for the required programs
+        latexavailable = have_cmd("latex")
+        dvipsavailable = have_cmd("dvips")
+        convertavailable = have_cmd("convert")
+        ps2pnmavailable = have_cmd("ps2pnm")
+        pnm2pngavailable = have_cmd("pnm2png")
+
+        # TODO: It'd be nice to be able to control the size of the PNG between thumb and full-size...
+        #   currently defaults (and is used below) to a size suitable for thumbnails
+        def mkpngcmd(infile, outfile, outsize=450, density=300):
+            if convertavailable:
+                pngcmd = ["convert",
+                          "-flatten",
+                          "-density", str(density),
+                          infile,
+                          "-quality", "100",
+                          "-resize", "{size:d}x{size:d}>".format(size=outsize),
+                          #"-sharpen", "0x1.0",
+                          outfile]
+                #logging.debug(" ".join(pngcmd))
+                #pngproc = subprocess.Popen(pngcmd, stdout=subprocess.PIPE, cwd=tempdir)
+                #pngproc.wait()
+                return pngcmd
+            else:
+                raise Exception("Required PNG maker program (convert) not found")
+            # elif ps2pnmavailable and pnm2pngavailable:
+            #     pstopnm = "pstopnm -stdout -xsize=461 -ysize=422 -xborder=0.01 -yborder=0.01 -portrait " + infile
+            #     p1 = subprocess.Popen(pstopnm.split(), stdout=subprocess.PIPE, stderr=open("/dev/null", "w"), cwd=tempdir)
+            #     p2 = subprocess.Popen(["pnmtopng"], stdin=p1.stdout, stdout=open("%s/%s.png" % (tempdir, outfile), "w"), stderr=open("/dev/null", "w"), cwd=tempdir)
+            #     p2.wait()
+            # else:
+            #     raise Exception("Required PNG maker programs (convert, or ps2pnm and pnm2png) not found")
+
+        ## Run LaTeX (in no-stop mode)
+        logging.debug(os.listdir(tempdir))
+        texcmd = ["latex", "\scrollmode\input", texpath]
+        logging.debug("TeX command: " + " ".join(texcmd))
+        texproc = subprocess.Popen(texcmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, cwd=tempdir)
+        logging.debug(texproc.communicate()[0])
+        logging.debug(os.listdir(tempdir))
+
+        ## Run dvips
+        dvcmd = ["dvips", filename]
+        if not logging.getLogger().isEnabledFor(logging.DEBUG):
+            dvcmd.append("-q")
+        ## Handle Minion Font
+        if opts.OUTPUT_FONT == "MINION":
+            dvcmd.append('-Pminion')
+
+        ## Choose format
+        # TODO: Rationalise... this is a mess! Maybe we can use tex2pix?
+        if "PS" in opts.OUTPUT_FORMAT:
+            dvcmd += ["-o", "%s.ps" % filename]
+            logging.debug(" ".join(dvcmd))
+            dvproc = subprocess.Popen(dvcmd, stdout=subprocess.PIPE, cwd=tempdir)
+            dvproc.wait()
+        if "PDF" in opts.OUTPUT_FORMAT:
+            dvcmd.append("-f")
+            logging.debug(" ".join(dvcmd))
+            dvproc = subprocess.Popen(dvcmd, stdout=subprocess.PIPE, cwd=tempdir)
+            cnvproc = subprocess.Popen(["ps2pdf", "-"], stdin=dvproc.stdout, stdout=subprocess.PIPE, cwd=tempdir)
+            f = open(os.path.join(tempdir, "%s.pdf" % filename), "wb")
+            f.write(cnvproc.communicate()[0])
+            f.close()
+        if "EPS" in opts.OUTPUT_FORMAT:
+            dvcmd.append("-f")
+            logging.debug(" ".join(dvcmd))
+            dvproc = subprocess.Popen(dvcmd, stdout=subprocess.PIPE, cwd=tempdir)
+            cnvproc = subprocess.Popen(["ps2eps"], stdin=dvproc.stdout, stderr=subprocess.PIPE, stdout=subprocess.PIPE, cwd=tempdir)
+            f = open(os.path.join(tempdir, "%s.eps" % filename), "wb")
+            f.write(cnvproc.communicate()[0])
+            f.close()
+        if "PNG" in opts.OUTPUT_FORMAT:
+            dvcmd.append("-f")
+            logging.debug(" ".join(dvcmd))
+            dvproc = subprocess.Popen(dvcmd, stdout=subprocess.PIPE, cwd=tempdir)
+            #pngcmd = ["convert", "-flatten", "-density", "110", "-", "-quality", "100", "-sharpen", "0x1.0", "%s.png" % filename]
+            pngcmd = mkpngcmd("-", "%s.png" % filename)
+            logging.debug(" ".join(pngcmd))
+            pngproc = subprocess.Popen(pngcmd, stdin=dvproc.stdout, stdout=subprocess.PIPE, cwd=tempdir)
+            pngproc.wait()
+        logging.debug(os.listdir(tempdir))
+
+    ## Copy results back to main dir
+    for fmt in opts.OUTPUT_FORMAT:
+        outname = "%s.%s" % (filename, fmt.lower())
+        outpath = os.path.join(tempdir, outname)
+        if os.path.exists(outpath):
+            shutil.copy(outpath, outdir)
+        else:
+            logging.error("No output file '%s' from processing %s" % (outname, datfile))
+
+    ## Clean up
+    if not opts.NO_CLEANUP:
+        shutil.rmtree(tempdir, ignore_errors=True)
+
+
+####################
+
+
+if __name__ == '__main__':
+
+    ## Try to rename the process on Linux
+    try:
+        import ctypes
+        libc = ctypes.cdll.LoadLibrary('libc.so.6')
+        libc.prctl(15, 'make-plots', 0, 0, 0)
+    except Exception:
+        pass
+
+    ## Try to use Psyco optimiser
+    try:
+        import psyco
+        psyco.full()
+    except ImportError:
+        pass
+
+    ## Find number of (virtual) processing units
+    import multiprocessing
+    try:
+        numcores = multiprocessing.cpu_count()
+    except:
+        numcores = 1
+
+    ## Parse command line options
+    from optparse import OptionParser, OptionGroup
+    parser = OptionParser(usage=__doc__)
+    parser.add_option("-j", "-n", "--num-threads", dest="NUM_THREADS", type="int",
+                      default=numcores, help="max number of threads to be used [%s]" % numcores)
+    parser.add_option("-o", "--outdir", dest="OUTPUT_DIR", default=None,
+                      help="choose the output directory (default = .dat dir)")
+    parser.add_option("--font", dest="OUTPUT_FONT", choices="palatino,cm,times,helvetica,minion".split(","),
+                      default="palatino", help="choose the font to be used in the plots")
+    parser.add_option("--palatino", dest="OUTPUT_FONT", action="store_const", const="palatino", default="palatino",
+                      help="use Palatino as font (default). DEPRECATED: Use --font")
+    parser.add_option("--cm", dest="OUTPUT_FONT", action="store_const", const="cm", default="palatino",
+                      help="use Computer Modern as font. DEPRECATED: Use --font")
+    parser.add_option("--times", dest="OUTPUT_FONT", action="store_const", const="times", default="palatino",
+                      help="use Times as font. DEPRECATED: Use --font")
+    parser.add_option("--minion", dest="OUTPUT_FONT", action="store_const", const="minion", default="palatino",
+                      help="use Adobe Minion Pro as font. Note: You need to set TEXMFHOME first. DEPRECATED: Use --font")
+    parser.add_option("--helvetica", dest="OUTPUT_FONT", action="store_const", const="helvetica", default="palatino",
+                      help="use Helvetica as font. DEPRECATED: Use --font")
+    parser.add_option("-f", "--format", dest="OUTPUT_FORMAT", default="PDF",
+                      help="choose plot format, perhaps multiple comma-separated formats e.g. 'pdf' or 'tex,pdf,png' (default = PDF).")
+    parser.add_option("--ps", dest="OUTPUT_FORMAT", action="store_const", const="PS", default="PDF",
+                      help="create PostScript output (default). DEPRECATED")
+    parser.add_option("--pdf", dest="OUTPUT_FORMAT", action="store_const", const="PDF", default="PDF",
+                      help="create PDF output. DEPRECATED")
+    parser.add_option("--eps", dest="OUTPUT_FORMAT", action="store_const", const="EPS", default="PDF",
+                      help="create Encapsulated PostScript output. DEPRECATED")
+    parser.add_option("--png", dest="OUTPUT_FORMAT", action="store_const", const="PNG", default="PDF",
+                     help="create PNG output. DEPRECATED")
+    parser.add_option("--pspng", dest="OUTPUT_FORMAT", action="store_const", const="PS,PNG", default="PDF",
+                     help="create PS and PNG output. DEPRECATED")
+    parser.add_option("--pdfpng", dest="OUTPUT_FORMAT", action="store_const", const="PDF,PNG", default="PDF",
+                     help="create PDF and PNG output. DEPRECATED")
+    parser.add_option("--epspng", dest="OUTPUT_FORMAT", action="store_const", const="EPS,PNG", default="PDF",
+                     help="create EPS and PNG output. DEPRECATED")
+    parser.add_option("--tex", dest="OUTPUT_FORMAT", action="store_const", const="TEX", default="PDF",
+                      help="create TeX/LaTeX output.")
+    parser.add_option("--no-cleanup", dest="NO_CLEANUP", action="store_true", default=False,
+                      help="keep temporary directory and print its filename.")
+    parser.add_option("--no-subproc", dest="NO_SUBPROC", action="store_true", default=False,
+                      help="don't use subprocesses to render the plots in parallel -- useful for debugging.")
+    parser.add_option("--full-range", dest="FULL_RANGE", action="store_true", default=False,
+                      help="plot full y range in log-y plots.")
+    parser.add_option("-c", "--config", dest="CONFIGFILES", action="append", default=None,
+                      help="plot config file to be used. Overrides internal config blocks.")
+    verbgroup = OptionGroup(parser, "Verbosity control")
+    verbgroup.add_option("-v", "--verbose", action="store_const", const=logging.DEBUG, dest="LOGLEVEL",
+                         default=logging.INFO, help="print debug (very verbose) messages")
+    verbgroup.add_option("-q", "--quiet", action="store_const", const=logging.WARNING, dest="LOGLEVEL",
+                         default=logging.INFO, help="be very quiet")
+    parser.add_option_group(verbgroup)
+    opts, args = parser.parse_args()
+
+    ## Tweak the opts output
+    logging.basicConfig(level=opts.LOGLEVEL, format="%(message)s")
+    opts.OUTPUT_FONT = opts.OUTPUT_FONT.upper()
+    opts.OUTPUT_FORMAT = opts.OUTPUT_FORMAT.upper().split(",")
+    if opts.NUM_THREADS == 1:
+        opts.NO_SUBPROC = True
+
+    ## Check for no args
+    if len(args) == 0:
+        logging.error(parser.get_usage())
+        sys.exit(2)
+
+    ## Check that the files exist
+    for f in args:
+        if not os.access(f, os.R_OK):
+            print("Error: cannot read from %s" % f)
+            sys.exit(1)
+
+    ## Test for external programs (kpsewhich, latex, dvips, ps2pdf/ps2eps, and convert)
+    opts.LATEXPKGS = []
+    if opts.OUTPUT_FORMAT != ["TEX"]:
+        try:
+            ## latex
+            if not have_cmd("latex"):
+                logging.error("ERROR: required program 'latex' could not be found. Exiting...")
+                sys.exit(1)
+            ## dvips
+            if not have_cmd("dvips"):
+                logging.error("ERROR: required program 'dvips' could not be found. Exiting...")
+                sys.exit(1)
+
+            ## ps2pdf / ps2eps
+            if "PDF" in opts.OUTPUT_FORMAT:
+                if not have_cmd("ps2pdf"):
+                    logging.error("ERROR: required program 'ps2pdf' (for PDF output) could not be found. Exiting...")
+                    sys.exit(1)
+            elif "EPS" in opts.OUTPUT_FORMAT:
+                if not have_cmd("ps2eps"):
+                    logging.error("ERROR: required program 'ps2eps' (for EPS output) could not be found. Exiting...")
+                    sys.exit(1)
+            ## PNG output converter
+            if "PNG" in opts.OUTPUT_FORMAT:
+                if not have_cmd("convert"):
+                    logging.error("ERROR: required program 'convert' (for PNG output) could not be found. Exiting...")
+                    sys.exit(1)
+
+            ## kpsewhich: required for LaTeX package testing
+            if not have_cmd("kpsewhich"):
+                logging.warning("WARNING: required program 'kpsewhich' (for LaTeX package checks) could not be found")
+            else:
+                ## Check minion font
+                if opts.OUTPUT_FONT == "MINION":
+                    p = subprocess.Popen(["kpsewhich", "minion.sty"], stdout=subprocess.PIPE)
+                    p.wait()
+                    if p.returncode != 0:
+                        logging.warning('Warning: Using "--minion" requires minion.sty to be installed. Ignoring it.')
+                        opts.OUTPUT_FONT = "PALATINO"
+
+                ## Check for HEP LaTeX packages
+                # TODO: remove HEP-specifics/non-standards?
+                for pkg in ["hepnames", "hepunits", "underscore"]:
+                    p = subprocess.Popen(["kpsewhich", "%s.sty" % pkg], stdout=subprocess.PIPE)
+                    p.wait()
+                    if p.returncode == 0:
+                        opts.LATEXPKGS.append(pkg)
+
+                ## Check for Palatino old style figures and small caps
+                if opts.OUTPUT_FONT == "PALATINO":
+                    p = subprocess.Popen(["kpsewhich", "ot1pplx.fd"], stdout=subprocess.PIPE)
+                    p.wait()
+                    if p.returncode == 0:
+                        opts.OUTPUT_FONT = "PALATINO_OSF"
+        except Exception as e:
+            logging.warning("Problem while testing for external packages. I'm going to try and continue without testing, but don't hold your breath...")
+
+    def init_worker():
+        import signal
+        signal.signal(signal.SIGINT, signal.SIG_IGN)
+
+    ## Run rendering jobs
+    datfiles = args
+    plotword = "plots" if len(datfiles) > 1 else "plot"
+    logging.info("Making %d %s" % (len(datfiles), plotword))
+    if opts.NO_SUBPROC:
+        init_worker()
+        for i, df in enumerate(datfiles):
+            logging.info("Plotting %s (%d/%d remaining)" % (df, len(datfiles)-i, len(datfiles)))
+            process_datfile(df)
+    else:
+        pool = multiprocessing.Pool(opts.NUM_THREADS, init_worker)
+        try:
+            for i, _ in enumerate(pool.imap(process_datfile, datfiles)):
+                logging.info("Plotting %s (%d/%d remaining)" % (datfiles[i], len(datfiles)-i, len(datfiles)))
+            pool.close()
+        except KeyboardInterrupt:
+            print("Caught KeyboardInterrupt, terminating workers")
+            pool.terminate()
+        except ValueError as e:
+            print(e)
+            print("Perhaps your .dat file is corrupt?")
+            pool.terminate()
+        pool.join()

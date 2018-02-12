@@ -1,0 +1,36 @@
+Name: SLD_1996_S3398250
+Year: 1996
+Summary:  Charged particle multiplicities in heavy and light quark initiated events on the $Z^0$ peak 
+Experiment: SLD
+Collider: SLC
+SpiresID: 3398250
+InspireID: 422172
+Status: VALIDATED
+Authors:
+ - Peter Richardson <Peter.Richardson@durham.ac.uk>
+References:
+ - Phys.Lett.B386:475-485,1996
+ - hep-ex/9608008
+RunInfo:
+  Hadronic Z decay events generated on the Z pole ($\sqrt{s} = 91.2$ GeV)
+NumEvents: 1000000
+Beams: [e+, e-]
+Energies: [91.2]
+PtCuts: [0]
+Description: Measurements of the mean charged multiplicities separately for $b\bar b$,
+  $c\bar c$ and light quark ($uds$) initiated events in $e^+e^-$ interactions at the $Z^0$ mass.
+BibKey: Abe:1996zi
+BibTeX: '@Article{Abe:1996zi,
+     author    = "Abe, K. and others",
+     collaboration = "SLD",
+     title     = "{Measurement of the charged multiplicities in b, c and
+                  light quark  events from Z0 decays}",
+     journal   = "Phys. Lett.",
+     volume    = "B386",
+     year      = "1996",
+     pages     = "475-485",
+     eprint    = "hep-ex/9608008",
+     archivePrefix = "arXiv",
+     doi       = "10.1016/0370-2693(96)01025-8",
+     SLACcitation  = "%%CITATION = HEP-EX/9608008;%%"
+}'

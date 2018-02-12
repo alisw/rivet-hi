@@ -1,0 +1,43 @@
+Name: LHCB_2010_I867355
+Year: 2010
+Summary: Measurement of $\sigma(pp \to b \bar{b} X$ at $\sqrt{s} = 7$ TeV in the forward region
+Experiment: LHCb
+Collider: LHC
+SpiresID: 8785570
+InspireID: 867355
+Status: VALIDATED
+Authors:
+ - Andy Buckley <andy.buckley@ed.ac.uk>
+ - Sercan Sen <sercan.sen@cern.ch>
+ - Peter Skands <Peter.Skands@cern.ch>
+ - Sheldon Stone <stone@physics.syr.edu>
+References:
+ - arXiv:1009.2731 [hep-ex]
+RunInfo:
+  $pp$ to $b$-hadron + $X$ at 7 TeV. i.e., switch on "HardQCD:gg2bbbar"
+  and "HardQCD:qqbar2bbbar" flags in Pythia8.
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [0]
+Description:
+  'The average cross-section to produce $b$-flavoured or $\bar{b}$-flavoured
+  hadrons is measured in different pseudorapidity intervals over the entire
+  range of \pT, assuming the LEP (and Tevatron) fractions for fragmentation
+  into $b$-flavoured hadrons.'
+BibKey: Aaij:2010gn
+BibTeX: '@article{Aaij:2010gn,
+      author         = "Aaij, R. and others",
+      title          = "{Measurement of $\sigma(pp \to b \bar{b} X)$ at $\sqrt{s} = 7\;\TeV}$ in the forward region}",
+      collaboration  = "LHCb Collaboration",
+      journal        = "Phys.Lett.",
+      volume         = "B694",
+      pages          = "209-216",
+      doi            = "10.1016/j.physletb.2010.10.010",
+      year           = "2010",
+      eprint         = "1009.2731",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2010-029",
+      SLACcitation   = "%%CITATION = ARXIV:1009.2731;%%"
+}'

@@ -1,0 +1,49 @@
+Name: LHCB_2013_I1208105
+Year: 2013
+Summary: LHCb measurement of energy flow from $pp$ collisions at $\sqrt{s} = 7$ TeV
+Experiment: LHCb
+Collider: LHC
+InspireID: 1208105
+Status: VALIDATED
+Authors:
+ - Alex Grecu <Alex.Grecu@cern.ch>
+ - Dmytro Volyanskyy <Dmytro.Volyanskyy@cern.ch>
+ - Michael Schmelling <Michael.Schmelling@mpi-hd.mpg.de>
+References:
+ - arXiv:1212.4755 [hep-ex]
+ - Eur. Phys. J. C 73 (2012) 2421
+RunInfo:
+   Minimum bias events from $pp$ collisions at sqrt(s) = 7 TeV.
+NumEvents: 500000
+NeedCrossSection: no
+Beams: [p+, p+]
+Energies: [7000]
+Description:
+  'The energy flow created in $pp$ collisions at 7 TeV within the fiducial
+   pseudorapidity range of the LHCb detector ($1.9 < \eta < 4.9$) is measured for
+   inclusive minimum bias interactions, hard scattering processes and events with
+   enhanced or suppressed diffractive contribution.  Plots for these four event
+   classes are shown separately for all and charged only final state particles,
+   respectively. The total energy flow is measured by combining the charged energy
+   flow and a data-constrained MC estimate of the neutral component. For the two
+   highest eta bins the data-constrained measurements of the neutral energy were
+   extrapolated from the more central region as the LHCb electromagnetic
+   calorimeter has no detection coverage in that phase space domain.'
+BibKey: Aaij:1498718
+BibTeX: '@article{Aaij:1498718,
+      author       = "Aaij, R and others",
+      collaboration  = "LHCb Collaboration",
+      title        = {Measurement of the forward energy flow in $pp$ collisions at $\sqrt{s}$= 7 TeV},
+      journal      = {The European Physical Journal C},
+      volume       = {73},
+      number       = {5},
+      pages        = {2421. 15 p},
+      year         = {2013},
+      issn         = {1434-6044},
+      doi          = {10.1140/epjc/s10052-013-2421-y},
+      eprint       = {1212.4755},
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2012-346, LHCB-PAPER-2012-034",
+      SLACcitation   = "%%CITATION = ARXIV:1212.4755;%%"
+}'

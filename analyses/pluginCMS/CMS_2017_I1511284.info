@@ -1,0 +1,42 @@
+Name: CMS_2017_I1511284
+Year: 2017
+Summary: Measurement of the inclusive energy spectrum in the very forward direction in proton-proton collisions at 13 TeV
+Experiment: CMS
+Collider: LHC
+InspireID: 1511284
+Status: VALIDATED
+Authors:
+ - cms-pag-conveners-fsq@cern.ch
+ - sebastian.baur@cern.ch
+RunInfo:
+  Proton-proton beam, 13 TeV center-of-mass-energy, minimum-bias processes.
+NumEvents: 200000
+NeedCrossSection: yes
+Beams: [p+,p+]
+Energies: [13000]
+Description:
+  'The differential cross section for inclusive particle production as a
+   function of energy in proton-proton collisions at a center-of-mass energy of 13
+   TeV is measured in the very forward region of the CMS detector. The measurement
+   is based on data collected with the CMS apparatus at the LHC, and corresponds to
+   an integrated luminosity of 0.35 inverse microbarns. The energy is measured in
+   the CASTOR calorimeter, which covers the pseudorapidity region
+   $-6.6 < \eta < -5.2$. The results are given as a function of the total energy deposited
+   in CASTOR, as well as of its electromagnetic and hadronic components. The
+   spectra are sensitive to the modeling of multiparton interactions in pp
+   collisions, and provide new constraints for hadronic interaction models used in
+   collider and in high energy cosmic ray physics.'
+BibKey: 'Sirunyan:2017nsj'
+BibTeX: '@article{Sirunyan:2017nsj,
+      author         = "Sirunyan, Albert M and others",
+      title          = "{Measurement of the inclusive energy spectrum in the very
+                        forward direction in proton-proton collisions at
+                        $\sqrt{s}=13~\TeV$}",
+      collaboration  = "CMS",
+      year           = "2017",
+      eprint         = "1701.08695",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-FSQ-16-002, CERN-EP-2016-313",
+      SLACcitation   = "%%CITATION = ARXIV:1701.08695;%%"
+}'

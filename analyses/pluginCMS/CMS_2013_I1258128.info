@@ -1,0 +1,65 @@
+Name: CMS_2013_I1258128
+Year: 2013
+Summary: Rapidity distributions in exclusive $Z$ + jet and $\gamma$ + jet events in $pp$ collisions at $\sqrt{s} = 7$ TeV
+Experiment: CMS
+Collider: LHC
+InspireID: 1258128
+Status: VALIDATED
+Authors:
+ - Steve Linn <linn@cern.ch>,
+ - Shin-Shan Eiko Yu <syu@cern.ch>,
+ - Anil Sing Pratap <singh.ap79@gmail.com>,
+ - Lovedeep Kaur Saini <lvdeep9@gmail.com>,
+ - Kittikul Kovitanggoon <kovitang.cern@gmail.com>,
+ - Luis Lebolo <luis.lebolo@cern.ch>,
+ - Vanessa Gaultney Werner <vgaul001@fiu.edu>,
+ - Yun-Ju Lu <Yun-Ju.Lu@cern.ch>,
+ - Syue-Wei Li <Syue-Wei.Li@cern.ch>,
+ - Yu-Hsiang Chang <index0192@yahoo.com.tw>,
+ - Sung-Won Lee <Sungwon.Lee@ttu.edu>,
+ - Pete E.C. Markowitz <markowit@fiu.edu>,
+ - Darko Mekterovic <Darko.Mekterovic@cern.ch>,
+ - Jorge Rodriguez <jrodriguez@cern.ch>,
+ - Bhawan Uppal
+References:
+ - arXiv:1310.3082
+ - https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsSMP12004
+ - Submitted to Phys. Rev. Lett
+RunInfo:
+   Run MC generators with $Z$ decaying to leptonic modes + jets
+   and photon + jets at 7 TeV centre-of-mass energy.
+NumEvents: 2500000 for each process
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts:
+  '$Z$+jet: lepton $pT > 20$ GeV and lepton $|\eta| < 2.1$;
+            jet $pT > 30$ GeV, jet $|\eta| < 2.1$, exclusive 1 jet;
+            $Z pT > 40$ GeV, $76 < M_Z < 106$ GeV
+   $\gamma+jet: jet $pT > 30$ GeV, jet $|\eta| < 2.1$, exclusive 1 jet;
+            photon $pT > 40$ GeV, photon $|\eta| < 1.4442$'
+Description:
+  'Rapidity distributions are presented for events containing either a
+  $Z$ boson or a photon in association with a single jet in proton-proton
+  collisions produced at the CERN LHC. The data, collected with the CMS
+  detector at $\sqrt{s} = 7$ TeV, correspond to an integrated luminosity of 5.0/fb.
+  The individual rapidity distributions of the boson and the jet are
+  consistent within 5\% with expectations from perturbative QCD. However,
+  QCD predictions for the sum and the difference in rapidities of the two
+  final-state objects show significant discrepancies with CMS data. In
+  particular, next-to-leading-order QCD calculations, and two Monte Carlo
+  event generators using different methods to merge matrix-element
+  partons with evolved parton showers, appear inconsistent with the data
+  as well as with each other.'
+BibKey: Chatrchyan:2013oda
+BibTeX: '@article{Chatrchyan:2013oda,
+      author         = "Chatrchyan, Serguei and others",
+      title          = "{Rapidity distributions in exclusive $Z$+jet and photon+jet events in $pp$ collisions at $\sqrt{s}=7$ TeV}",
+      collaboration  = "CMS Collaboration",
+      year           = "2013",
+      eprint         = "1310.3082",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-SMP-12-004, CERN-PH-EP-2013-169",
+      SLACcitation   = "%%CITATION = ARXIV:1310.3082;%%",}'
+ToDo:
+ - Update reference when paper published

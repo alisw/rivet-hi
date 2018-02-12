@@ -1,0 +1,114 @@
+## For the UE data we run FastJet kt, antikt and SISCone. The radius/resolution
+## parameter is set to R=0.7. In the analysis particles are included for pT > 0.2
+## GeV/c and |eta|<1. We assume all particles have zero mass. Only jets with a
+## Neutral energy fractiong < 0.7 are included. For the transMin and transMax
+## delta(phi) is between pi/3 and 2pi/3 and delta(eta)<2.0. For the jet region
+## (unlike Rick and Renee) I have used the area of the jet to scale by so pi*R^2.
+## The tracking effic is ~0.8 (but that is an approximation below pT~0.6GeV it is
+## falling quite steeply).
+## 
+## I give you the data for the SISCone analysis but we see no difference, within
+## errors, between analyses usng the different jet finders.
+## 
+## For the mean NCharged/detadphi tracks. Here are the root histograms. The errors
+## are statistical only and so very small. However the sys. error is easily 20%
+## and likely a higher. The spread in the different jet finders is ~15%
+##
+## TH1 *minueTrackSis = new TH1F("minueTrackSis","",8,0,40);
+##   minueTrackSis->SetBinContent(2,0.15);
+##   minueTrackSis->SetBinContent(3,0.13);
+##   minueTrackSis->SetBinContent(4,0.12);
+##   minueTrackSis->SetBinContent(5,0.11);
+##   minueTrackSis->SetBinContent(6,0.1);
+##   minueTrackSis->SetBinContent(7,0.08);
+##   minueTrackSis->SetBinContent(8,0.09);
+##   minueTrackSis->SetBinError(2,0.002);
+##   minueTrackSis->SetBinError(3,0.001);
+##   minueTrackSis->SetBinError(4,0.002);
+##   minueTrackSis->SetBinError(5,0.003);
+##   minueTrackSis->SetBinError(6,0.005);
+##   minueTrackSis->SetBinError(7,0.007);
+##   minueTrackSis->SetBinError(8,0.015);
+##
+## TH1 *maxueTrackSis = new TH1F("maxueTrackSis","",8,0,40);
+##   maxueTrackSis->SetBinContent(2,0.67);
+##   maxueTrackSis->SetBinContent(3,0.62);
+##   maxueTrackSis->SetBinContent(4,0.6);
+##   maxueTrackSis->SetBinContent(5,0.57);
+##   maxueTrackSis->SetBinContent(6,0.56);
+##   maxueTrackSis->SetBinContent(7,0.51);
+##   maxueTrackSis->SetBinContent(8,0.5);
+##   maxueTrackSis->SetBinError(2,0.005);
+##   maxueTrackSis->SetBinError(3,0.003);
+##   maxueTrackSis->SetBinError(4,0.004);
+##   maxueTrackSis->SetBinError(5,0.007);
+##   maxueTrackSis->SetBinError(6,0.01);
+##   maxueTrackSis->SetBinError(7,0.02);
+##   maxueTrackSis->SetBinError(8,0.04);
+##
+## TH1 *awayTrackSis = new TH1F("awayTrackSis","",8,0,40);
+##   awayTrackSis->SetBinContent(2,1.9);
+##   awayTrackSis->SetBinContent(3,2.5);
+##   awayTrackSis->SetBinContent(4,3.2);
+##   awayTrackSis->SetBinContent(5,3.6);
+##   awayTrackSis->SetBinContent(6,3.8);
+##   awayTrackSis->SetBinContent(7,4.1);
+##   awayTrackSis->SetBinContent(8,4.1);
+##   awayTrackSis->SetBinError(2,0.009);
+##   awayTrackSis->SetBinError(3,0.016);
+##   awayTrackSis->SetBinError(4,0.038);
+##   awayTrackSis->SetBinError(5,0.089);
+##   awayTrackSis->SetBinError(6,0.19);
+##   awayTrackSis->SetBinError(7,0.4);
+##   awayTrackSis->SetBinError(8,0.8);
+
+
+# BEGIN PLOT
+Title=STAR underlying event, using SIScone
+Legend=1
+LegendXPos=0.5
+XLabel=leading jet $p_T$
+# END PLOT
+
+# BEGIN HISTOGRAM maxueTrackSis
+Title=transMAX charged particle density
+XLabel=leading jet $p_T$
+LineColor=green
+ErrorBars=1
+5	10	0.67	0.134
+10	15	0.62	0.124
+15	20	0.60	0.120
+20	25	0.57	0.114
+25	30	0.56	0.112
+30	35	0.51	0.104
+35	40	0.50	0.108
+# END HISTOGRAM
+
+# BEGIN HISTOGRAM minueTrackSis
+Title=transMIN charged particle density
+XLabel=leading jet $p_T$
+LineColor=red
+ErrorBars=1
+5	10	0.15	0.030
+10	15	0.13	0.026
+15	20	0.12	0.024
+20	25	0.11	0.022
+25	30	0.10	0.021
+30	35	0.08	0.017
+35	40	0.09	0.023
+# END HISTOGRAM
+
+# BEGIN HISTOGRAM awayTrackSis
+Title=away charged particle density
+XLabel=leading jet $p_T$
+LineColor=blue
+ErrorBars=1
+5	10	1.9	0.38
+10	15	2.5	0.50
+15	20	3.2	0.64
+20	25	3.6	0.73
+25	30	3.8	0.78
+30	35	4.1	0.91
+35	40	4.1	1.15
+# END HISTOGRAM
+

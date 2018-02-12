@@ -1,0 +1,41 @@
+Name: ATLAS_2012_I1183818
+Year: 2012
+Summary: Pseudorapidity dependence of the total transverse energy at 7 TeV
+Experiment: ATLAS
+Collider: LHC 7TeV
+InspireID: 1183818
+Status: VALIDATED
+Authors:
+ - Robindra Prabhu <prabhu@cern.ch>
+ - Peter Wijeratne <paw@hep.ucl.ac.uk>
+ - Roman Lysak <lysak@fzu.cz>
+References:
+ - arXiv:1208.6256
+RunInfo:
+  pp QCD interactions at 7 TeV, min bias and di-jet events
+NumEvents: 1000000
+NeedCrossSection: no
+Beams: [p+, p+]
+Energies: [7000]
+Description:
+  'The measurement of the sum of the transverse energy of particles as a
+   function of particle pseudorapidity, eta, in proton-proton collisions
+   at a centre-of-mass energy, $\sqrt{s} = 7\;\TeV$ using the ATLAS detector
+   at the Large Hadron Collider. The measurements are performed in the
+   region $|\eta| < 4.8$ for two event classes: those requiring the presence
+   of particles with a low transverse momentum and those requiring
+   particles with a significant transverse momentum (dijet events where both
+   jets have $E_T > 20$ GeV). In the second dataset measurements are made
+   in the region transverse to the hard scatter.'
+BibKey: :2012dr
+BibTeX: '@article{:2012dr,
+      author         = "Aad, Georges and others",
+      title          = "{Measurements of the pseudorapidity dependence of the total transverse energy in proton-proton collisions at $\sqrt{s} = 7$ TeV with ATLAS}",
+      collaboration  = "ATLAS Collaboration",
+      year           = "2012",
+      eprint         = "1208.6256",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2012-196",
+      SLACcitation   = "%%CITATION = ARXIV:1208.6256;%%",
+}'

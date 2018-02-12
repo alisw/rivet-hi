@@ -1,0 +1,58 @@
+Name: ATLAS_2016_I1426523
+Year: 2016
+Summary: Measurement of the WZ production cross section at 8 TeV
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1426523
+Status: VALIDATED
+Authors:
+ - Elena Yatsenko <elena.yatsenko@cern.ch>
+References:
+ - Phys. Rev. D 93, 092004 (2016)
+ - arXiv:1603.02151 [hep-ex]
+ - doi:10.1103/PhysRevD.93.092004
+Keywords:
+ - WZ
+ - DIBOSON
+RunInfo:
+  pp -> WZ + X, diboson decays to electrons and muons
+NeedCrossSection: yes
+Luminosity_fb: 20.3
+Beams: [p+, p+]
+Energies: [8000]
+PtCuts: [15,25]
+Description:
+  'This paper presents measurements of $W^\pm Z$ production in pp collisions at a center-of-mass energy of 8 TeV. The gauge bosons are
+  reconstructed using their leptonic decay modes into electrons and muons. The data were collected in 2012 by the ATLAS experiment
+  at the Large Hadron Collider and correspond to an integrated luminosity of 20.3 fb${}^{-1}$. The measured inclusive cross section in the
+  detector fiducial region is $\sigma(W^\pm Z\to \ell^\prime\nu\ell\ell) = 35.1\pm 0.9$(stat)$\pm 0.8$(sys)$\pm 0.8$(lumi) fb, for one
+  leptonic decay channel. In comparison, the next-to-leading-order Standard Model expectation is $30.0\pm 2.1$ fb.
+  Cross sections for $W^+ Z$ and $W^- Z$ production and their ratio are presented as well as differential cross sections for several
+  kinematic observables. Limits on anomalous triple gauge boson couplings are derived from the transverse mass spectrum of the
+  $W^\pm Z$ system. From the analysis of events with a $W$ and a $Z$ boson associated with two or more forward jets an upper limit at
+  95% confidence level on the $W^\pm Z$ scattering cross section of 0.63 fb, for each leptonic decay channel, is established,
+  while the Standard Model prediction at next-to-leading order is $0.13\pm 0.01$ fb. Limits on anomalous quartic gauge boson couplings
+  are also extracted. For distributions that include the infinity symbol ($\infty$) on the horizontal axis, the last bin will
+  include the events from the overflow bin. Users should note that explicit matching of lepton flavour between individual SM neutrinos
+  and charged leptons is used in this analysis routine, to match the MC-based correction to the fiducial region applied in the paper.
+  The data are therefore only valid under the assumption of the Standard Model and cannot be used for BSM reinterpretation.'
+BibKey: Aad:2016ett
+BibTeX: '@article{Aad:2016ett,
+      author         = "Aad, Georges and others",
+      title          = "{Measurements of $W^\pm Z$ production cross sections in
+                        $pp$ collisions at $\sqrt{s} = 8$ TeV with the ATLAS
+                        detector and limits on anomalous gauge boson
+                        self-couplings}",
+      collaboration  = "ATLAS",
+      journal        = "Phys. Rev.",
+      volume         = "D93",
+      year           = "2016",
+      number         = "9",
+      pages          = "092004",
+      doi            = "10.1103/PhysRevD.93.092004",
+      eprint         = "1603.02151",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-EP-2016-017",
+      SLACcitation   = "%%CITATION = ARXIV:1603.02151;%%"
+}'

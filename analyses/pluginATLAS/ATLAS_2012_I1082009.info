@@ -1,0 +1,39 @@
+Name: ATLAS_2012_I1082009
+Year: 2012
+Summary: $D^{*\pm}$ production in jets
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1082009
+Status: VALIDATED
+Authors:
+ - Peter Richardson <Peter.Richardson@durham.ac.uk>
+References:
+ - arXiv:1112.4432
+RunInfo:
+  All flavours of quark and gluon jet production at 7 TeV
+NumEvents: 10000000
+Beams: [p+, p+]
+Energies: [7000]
+Description:
+  Measurement of $D^{*\pm}$ meson production in jets from proton-proton collisions
+  at a centre-of-mass energy of $\sqrt{s}=7$ TeV at the LHC.
+  The measurement is based on a data sample recorded with the ATLAS detector with
+  an integrated luminosity of $0.30\,\text{pb}^{-1}$ for jets with transverse momentum
+  between 25 and 70 GeV in the pseudorapidity range $|eta| < 2.5$.
+BibKey: Aad:2011td
+BibTeX: '@Article{Aad:2011td,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of $D^{*\pm}$ meson production in jets from
+                        pp collisions at $\sqrt{s}=7$ TeV with the ATLAS detector}",
+      collaboration  = "ATLAS Collaboration",
+      journal        = "Phys.Rev.",
+      volume         = "D85",
+      pages          = "052005",
+      year           = "2012",
+      note           = "Long author list - awaiting processing",
+      eprint         = "1112.4432",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2011-180",
+      SLACcitation   = "%%CITATION = ARXIV:1112.4432;%%",
+}'

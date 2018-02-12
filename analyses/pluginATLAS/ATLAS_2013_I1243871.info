@@ -1,0 +1,32 @@
+Name: ATLAS_2013_I1243871
+Year: 2013
+Summary: Measurement of jet shapes in top quark pair events at $\sqrt{s} = 7$ TeV with ATLAS
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1243871
+Status: VALIDATED
+Authors:
+ - Javier Llorente <javier.llorente.merino@cern.ch>
+References:
+ - arXiv:1307.5749 [hep-ex]
+RunInfo: Top quark pair production in $pp$ collisions at $\sqrt{s} = 7$ TeV
+NumEvents: 1000000
+NeedCrossSection: no
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: pT(jets) > 30 GeV
+Description:
+  'Measurement of jet shapes in top pair events in the ATLAS 7 TeV run. b-jets are shown to
+   have a wider energy density distribution than light-quark induced jets.'
+BibKey: Aad:2013fba
+BibTeX: '@article{Aad:2013fba,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of jet shapes in top pair events at $\sqrt{s} = 7$ TeV using the ATLAS detector}",
+      collaboration  = "ATLAS Collaboration",
+      year           = "2013",
+      eprint         = "1307.5749",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2013-067",
+      SLACcitation   = "%%CITATION = ARXIV:1307.5749;%%",
+}'

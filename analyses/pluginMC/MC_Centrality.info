@@ -1,0 +1,42 @@
+Name: MC_CENTRALITY
+Summary: Template analysis for using CentralityBinner
+Status: UNVALIDATED
+Authors:
+ - Leif Lönnblad <leif.lonnblad@thep.lu.se>
+NumEvents: 50000
+References:
+ - arXiv:1508.00848 [hep-ex], Eur.Phys.J. C76 (2016) no.4, 199
+RunInfo: Any!
+Description:
+   Template analysis for using CentralityBinner for dynamically
+   determining centrality intervals using summed eT in the forward
+   region.  The reference data is from an ATLAS paper on charged
+   pseudo-rapidity distributions in different centrality bins in pPb
+   at 5.03 TeV. The pseudo-rapidity distributions are corrected for
+   detector effects, however, the distribution in the forward sum Et
+   used for the centrality determination is not corrected.
+   The pseudo-rapidity distributions are done in centrality bins
+   according to the generated sum Et, according to the bins in sum
+   Et obtained from the measurement, and the generators estimate of
+   the centrality.
+
+BibKey: Aad:2015zza
+BibTeX: '@article{Aad:2015zza,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of the centrality dependence of the
+                        charged-particle pseudorapidity distribution in
+                        proton–lead collisions at $\sqrt{s_{_\text {NN}}} =
+                        5.02$  TeV with the ATLAS detector}",
+      collaboration  = "ATLAS",
+      journal        = "Eur. Phys. J.",
+      volume         = "C76",
+      year           = "2016",
+      number         = "4",
+      pages          = "199",
+      doi            = "10.1140/epjc/s10052-016-4002-3",
+      eprint         = "1508.00848",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2015-160",
+      SLACcitation   = "%%CITATION = ARXIV:1508.00848;%%"
+}'

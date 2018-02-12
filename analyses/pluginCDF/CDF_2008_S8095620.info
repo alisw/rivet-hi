@@ -1,0 +1,49 @@
+Name: CDF_2008_S8095620
+Year: 2008
+Summary: CDF Run II Z+b-jet cross section paper, 2 fb-1
+Experiment: CDF
+Collider: Tevatron Run 2
+SpiresID: 8095620
+InspireID: 806082
+Status: VALIDATED
+Authors:
+ - Emily Nurse <nurse@hep.ucl.ac.uk>
+ - Steffen Schumann <s.schumann(at)thphys.uni-heidelberg.de>
+References:
+ - arXiv:0812.4458
+RunInfo:
+  Requires the process $p\bar{p} \rightarrow {Z} \rightarrow{\ell}\ell$, where $\ell$ is $e$ or $\mu$. Additional hard jets will also have to be included to get a good description. 
+NumEvents: 1000000
+Beams: [p-, p+]
+Energies: [1960]
+PtCuts: [0]
+Description:
+  Measurement of the b-jet production cross section for events
+  containing a $Z$ boson produced in $p\bar{p}$ collisions at
+  $\sqrt{s}=1.96$ TeV, using data corresponding to an integrated
+  luminosity of 2 fb$^{-1}$ collected by the CDF II detector at the
+  Tevatron. $Z$ bosons are selected in the electron and muon decay
+  modes. Jets are considered with transverse energy $E_T>20$ GeV and
+  pseudorapidity $|\eta|<1.5$. The ratio of the integrated $Z$ + b-jet
+  cross section to the inclusive $Z$ production cross section is
+  measured differentially in jet $E_T$, jet $\eta$, $Z$-boson transverse
+  momentum, number of jets, and number of b-jets. The first two
+  measurements have an entry for each b-jet in the event, the last three
+  measurements have one entry per event.
+BibKey: Aaltonen:2008mt
+BibTeX: '@Article{Aaltonen:2008mt,
+     author    = "Aaltonen, T. and others",
+ collaboration = "CDF",
+     title     = "{Measurement of Cross Sections for $b$ Jet Production in
+                  Events with a $Z$ Boson in $p^-$ anti-p Collisions at
+                  $\sqrt{s}$ = 1.96-TeV}",
+     journal   = "Phys. Rev.",
+     volume    = "D79",
+     year      = "2009",
+     pages     = "052008",
+     eprint    = "0812.4458",
+     archivePrefix = "arXiv",
+     primaryClass  =  "hep-ex",
+     doi       = "10.1103/PhysRevD.79.052008",
+     SLACcitation  = "%%CITATION = 0812.4458;%%"
+}'

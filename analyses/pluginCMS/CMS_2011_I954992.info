@@ -1,0 +1,44 @@
+Name: CMS_2011_I954992
+Year: 2011
+Summary: Exclusive photon-photon production of muon pairs in proton-proton collisions at $\sqrt{s} = 7$ TeV
+Experiment: CMS
+Collider: LHC
+SpiresID: 9279938
+InspireID: 954992
+Status: VALIDATED
+Authors:
+ - David d'Enterria <dde@cern.ch>
+ - Jonathan Hollar <jjhollar@mail.cern.ch>
+ - Sercan Sen <Sercan.Sen@cern.ch>
+References:
+ - arXiv:1111.5536 [hep-ex]
+RunInfo:
+  gamma gamma TO mu+ mu- process.
+NumEvents: 50000
+NeedCrossSection: no
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [0]
+Description:
+   'A measurement of the exclusive two-photon production of muon pairs in
+    proton-proton collisions at at a centre-of-mass energy 7 TeV with the final
+    state $p \mu^+ \mu^- p$, is reported using data corresponding to an
+    integrated luminosity of 40 pb$^-1$ collected in 2010.  The measured cross
+    section is obtained with a fit to the dimuon $p_T$ distribution for muon
+    pairs with invariant mass greater than 11.5 GeV with each muon $p_T > 4$
+    GeV and $|\eta| < 2.1$.'
+BibKey: Chatrchyan:2011ci
+BibTeX: '@article{Chatrchyan:2011ci,
+      author         = "Chatrchyan, Serguei and others",
+      title          = "{Exclusive photon--photon production of muon pairs in proton--proton collisions at $\sqrt{s} = 7$ TeV}",
+      collaboration  = "CMS Collaboration",
+      journal        = "JHEP",
+      volume         = "1201",
+      pages          = "052",
+      doi            = "10.1007/JHEP01(2012)052",
+      year           = "2012",
+      eprint         = "1111.5536",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2011-187, CMS-FWD-10-005",
+      SLACcitation   = "%%CITATION = ARXIV:1111.5536;%%",}'

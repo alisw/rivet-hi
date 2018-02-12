@@ -1,0 +1,42 @@
+Name: D0_2000_I503361
+Year: 2000
+Summary: D0 RunI measurement of the Z pT in the electron channel
+Experiment: D0
+Collider: Tevatron
+InspireID: 503361
+Status: VALIDATED
+Authors:
+ - Simone Amoroso <amoroso@cern.ch>
+References:
+ - Phys.Rev. D61 (2000) 032004
+ - doi:10.1103/PhysRevD.61.032004
+ - arXiv:hep-ex/9907009v1
+RunInfo: $Z\to ee$ event
+NumEvents: 1000000
+NeedCrossSection: no
+Beams: [p-,p+]
+Energies: [1800]
+Description: D0 measurement of the Drell-Yan differential cross section as a function of the transverse momentum in the electron channel. The dielectron invariant mass is required to be between  75 and 105 GeV.
+BibKey: Abbott:1999wk
+BibTeX: '@article{Abbott:1999wk,
+      author         = "Abbott, B. and others",
+      title          = "{Measurement of the inclusive differential cross section
+                        for $Z$ bosons as a function of transverse momentum in
+                        $\bar{p}p$ collisions at $\sqrt{s} = 1.8$ TeV}",
+      collaboration  = "D0",
+      journal        = "Phys.Rev.",
+      volume         = "D61",
+      pages          = "032004",
+      doi            = "10.1103/PhysRevD.61.032004",
+      year           = "2000",
+      eprint         = "hep-ex/9907009",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "FERMILAB-PUB-99-197-E",
+      SLACcitation   = "%%CITATION = HEP-EX/9907009;%%",
+}'
+ToDo:
+ - Implement the analysis, test it, remove this ToDo, and mark as VALIDATED :-)
+ 
+
+

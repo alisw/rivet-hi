@@ -1,0 +1,47 @@
+Name: ATLAS_2014_I1279489
+Year: 2014
+Summary: Measurements of electroweak production of dijets + $Z$ boson, and distributions sensitive to vector boson fusion
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1279489
+Status: VALIDATED
+Authors:
+ - Kiran Joshi <kiran.joshi@cern.ch>
+References:
+ - "JHEP 1404 (2014) 031"
+ - "arXiv:1401.7610 [hep-ex]"
+RunInfo:
+  Generate $Z$+jets events at 8 TeV, with $Z$ decaying to muons or electrons and $pT(j1)>55$ GeV, $pT(j2)>45$ GeV.
+NumEvents: 10000000
+NeedCrossSection: no
+Beams: [p+, p+]
+Energies: [8000]
+PtCuts: [55, 45]
+Description:
+  'Measurements differential distributions for inclusive $Z$-boson-plus-dijet production are performed
+  in five fiducial regions, each with different sensitivity to the electroweak contribution. Measured distributions
+  include the differential cross section as a function of the dijet invariant mass, the differential cross section
+  and a function of the dijet rapidity separation, the differential cross section as a function of the number of jets
+  in the rapidity interval bounded by the two leading jets. Other measurements include the jet veto effiency as a function
+  of the dijet invariant mass and rapdity separation, the normalized transverse momentum balance cut efficiency, and the
+  average number of jets falling into the rapidity interval boundd by the two leading jets, as a function of dijet invariant
+  mass and dijet rapidity separation.'
+BibKey: Aad:2014dta
+BibTeX: '@article{Aad:2014dta,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of the electroweak production of dijets in
+                        association with a Z-boson and distributions sensitive to
+                        vector boson fusion in proton-proton collisions at
+                        $\sqrt{s} =$ 8 TeV using the ATLAS detector}",
+      collaboration  = "ATLAS Collaboration",
+      journal        = "JHEP",
+      volume         = "1404",
+      pages          = "031",
+      doi            = "10.1007/JHEP04%282014%29031, 10.1007/JHEP04(2014)031",
+      year           = "2014",
+      eprint         = "1401.7610",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2013-227",
+      SLACcitation   = "%%CITATION = ARXIV:1401.7610;%%",
+}'

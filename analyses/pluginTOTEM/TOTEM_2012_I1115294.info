@@ -1,0 +1,43 @@
+Name: TOTEM_2012_I1115294
+Year: 2012
+Summary: Forward $\mathrm{d}N/\mathrm{d}\eta$ at 7\;TeV
+Experiment: TOTEM
+Collider: LHC
+InspireID: 1115294
+Status: VALIDATED
+Authors:
+ - Hendrik Hoeth <hendrik.hoeth@cern.ch>
+References:
+ - Europhys.Lett. 98 (2012) 31002
+ - arXiv:1205.4105
+ - CERN-PH-EP-2012-106
+ - TOTEM 2012-01
+RunInfo:
+  pp QCD interactions at 900 GeV and 7 TeV.
+NumEvents: 1000000
+NeedCrossSection: no
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [0]
+Description:
+  'The TOTEM experiment has measured the charged particle pseudorapidity
+  density $\mathrm{d}N_\text{ch}/\mathrm{d}\eta$ in $pp$ collisions at $\sqrt{s} = 7$\,TeV
+  for $5.3 < |\eta| < 6.4$ in events with at least one charged particle
+  with transverse momentum above 40\;MeV/$c$ in this pseudorapidity range.'
+BibKey: Aspell:2012ux
+BibTeX: '@article{Aspell:2012ux,
+      author         = "Aspell, P.",
+      title          = "{Measurement of the forward charged particle
+                        pseudorapidity density in $pp$ collisions at $\sqrt{s} =
+                        7$\;TeV with the TOTEM experiment}",
+      collaboration  = "TOTEM Collaboration",
+      journal        = "Europhys.Lett.",
+      volume         = "98",
+      pages          = "31002",
+      doi            = "10.1209/0295-5075/98/31002",
+      year           = "2012",
+      eprint         = "1205.4105",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      SLACcitation   = "%%CITATION = ARXIV:1205.4105;%%",
+}'

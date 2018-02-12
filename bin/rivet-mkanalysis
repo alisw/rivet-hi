@@ -1,0 +1,323 @@
+#! /usr/bin/env python
+
+"""\
+%prog: make templates of analysis source files for Rivet
+
+Usage: %prog [--help|-h] [--srcroot=<srcrootdir>] <analysisname>
+
+Without the --srcroot flag, the analysis files will be created in the current
+directory.
+"""
+
+import rivet, sys, os
+rivet.util.check_python_version()
+rivet.util.set_process_name(os.path.basename(__file__))
+import logging
+
+
+## Handle command line
+from optparse import OptionParser
+parser = OptionParser(usage=__doc__)
+parser.add_option("--srcroot", metavar="DIR", dest="SRCROOT", default=None,
+                  help="install the templates into the Rivet source tree (rooted " +
+                  "at directory DIR) rather than just creating all in the current dir")
+parser.add_option("-q", "--quiet", dest="LOGLEVEL", default=logging.INFO,
+                  action="store_const", const=logging.WARNING, help="only write out warning and error messages")
+parser.add_option("-v", "--verbose", dest="LOGLEVEL", default=logging.INFO,
+                  action="store_const", const=logging.DEBUG, help="provide extra debugging messages")
+parser.add_option("-i", "--inline-info", dest="INLINE", action="store_true",
+                  default=False, help="Put analysis info into source file instead of separate data file.")
+opts, args = parser.parse_args()
+logging.basicConfig(format="%(msg)s", level=opts.LOGLEVEL)
+ANANAMES = args
+
+
+## Work out installation paths
+ANAROOT = os.path.abspath(opts.SRCROOT or os.getcwd())
+if not os.access(ANAROOT, os.W_OK):
+    logging.error("Can't write to source root directory %s" % ANAROOT)
+    sys.exit(1)
+ANASRCDIR = os.getcwd()
+ANAINFODIR = os.getcwd()
+ANAPLOTDIR = os.getcwd()
+if opts.SRCROOT:
+    ANASRCDIR = os.path.join(ANAROOT, "src/Analyses")
+    ANAINFODIR = os.path.join(ANAROOT, "data/anainfo")
+    ANAPLOTDIR = os.path.join(ANAROOT, "data/plotinfo")
+    if not (os.path.exists(ANASRCDIR) and os.path.exists(ANAINFODIR) and os.path.exists(ANAPLOTDIR)):
+        logging.error("Rivet analysis dirs do not exist under %s" % ANAROOT)
+        sys.exit(1)
+if not (os.access(ANASRCDIR, os.W_OK) and os.access(ANAINFODIR, os.W_OK) and os.access(ANAPLOTDIR, os.W_OK)):
+    logging.error("Can't write to Rivet analysis dirs under %s" % ANAROOT)
+    sys.exit(1)
+
+
+## Check for disallowed characters in analysis names
+import string
+allowedchars = string.ascii_letters + string.digits + "_"
+all_ok = True
+for ananame in ANANAMES:
+    for c in ananame:
+        if c not in allowedchars:
+            logging.error("Analysis name '%s' contains disallowed character '%s'!" % (ananame, c))
+            all_ok = False
+            break
+if not all_ok:
+    logging.error("Exiting... please ensure that all analysis names are valid")
+    sys.exit(1)
+
+
+## Now make each analysis
+for ANANAME in ANANAMES:
+    logging.info("Writing templates for %s to %s" % (ANANAME, ANAROOT))
+
+    ## Extract some metadata from the name if it matches the standard pattern
+    import re
+    re_stdana = re.compile(r"^(\w+)_(\d{4})_(I|S)(\d+)$")
+    match = re_stdana.match(ANANAME)
+    STDANA = False
+    ANAEXPT = "<Insert the experiment name>"
+    ANACOLLIDER = "<Insert the collider name>"
+    ANAYEAR = "<Insert year of publication>"
+    INSPIRE_SPIRES = 'I'
+    ANAINSPIREID = "<Insert the Inspire ID>"
+    if match:
+        STDANA = True
+        ANAEXPT = match.group(1)
+        if ANAEXPT.upper() in ("ALICE", "ATLAS", "CMS", "LHCB"):
+            ANACOLLIDER = "LHC"
+        elif ANAEXPT.upper() in ("CDF", "D0"):
+            ANACOLLIDER = "Tevatron"
+        elif ANAEXPT.upper() == "BABAR":
+            ANACOLLIDER = "PEP-II"
+        elif ANAEXPT.upper() == "BELLE":
+            ANACOLLIDER = "KEKB"
+        ANAYEAR = match.group(2)
+        INSPIRE_SPIRES = match.group(3)
+        ANAINSPIREID = match.group(4)
+    if INSPIRE_SPIRES == "I":
+        ANAREFREPO = "Inspire"
+    else:
+        ANAREFREPO = "Spires"
+    KEYWORDS = {
+        "ANANAME" : ANANAME,
+        "ANAEXPT" : ANAEXPT,
+        "ANACOLLIDER" : ANACOLLIDER,
+        "ANAYEAR" : ANAYEAR,
+        "ANAREFREPO" : ANAREFREPO,
+        "ANAINSPIREID" : ANAINSPIREID
+        }
+
+    ## Try to get bib info from SPIRES
+    ANABIBKEY = ""
+    ANABIBTEX = ""
+    bibkey, bibtex = None, None
+    if STDANA:
+        try:
+            logging.debug("Getting Inspire/SPIRES biblio data for '%s'" % ANANAME)
+            bibkey, bibtex = rivet.spiresbib.get_bibtex_from_repo(INSPIRE_SPIRES, ANAINSPIREID)
+        except Exception as e:
+            logging.error("Inspire/SPIRES oops: %s" % e)
+        if bibkey and bibtex:
+            ANABIBKEY = bibkey
+            ANABIBTEX = bibtex
+    KEYWORDS["ANABIBKEY"] = ANABIBKEY
+    KEYWORDS["ANABIBTEX"] = ANABIBTEX
+
+
+    ## Try to download YODA data file from HepData
+    if STDANA:
+        try:
+            import tarfile, io
+            try:
+                from urllib.request import urlopen
+            except:
+                from urllib2 import urlopen
+            #
+            hdurl = None
+            if INSPIRE_SPIRES == "I":
+                hdurl = "http://www.hepdata.net/record/ins%s?format=yoda" % ANAINSPIREID
+            if hdurl:
+                logging.debug("Getting data file from HepData at %s" % hdurl)
+                response = urlopen(hdurl)
+                download=response.read()
+                if not download or "<html" in download:
+                    logging.warning("Problem encountered when getting data from HepData (%s). No reference data file written." % hdurl)
+                else:
+                    tar = tarfile.open(mode= "r:gz", fileobj = io.StringIO(download))
+                    fnames = tar.getnames()
+                    if len(fnames)>1:
+                        logging.warning("Found more than one file on downloaded archive. Not writing data file")
+                    else:
+                        tar.extractall()
+                        import os
+                        os.rename(fnames[0], "%s.yoda"%ANANAME)
+                response.close()
+            else:
+                logging.warning("Could not identify a URL for getting reference data from HepData. No reference data file written.")
+        except Exception as e:
+            logging.error("HepData oops: %s" % e)
+
+    INLINEMETHODS = ""
+    if opts.INLINE:
+        KEYWORDS["ANAREFREPO_LOWER"] = KEYWORDS["ANAREFREPO"].lower()
+        INLINEMETHODS = """
+  public:
+    string experiment()         const { return "%(ANAEXPT)s"; }
+    string year()               const { return "%(ANAYEAR)s"; }
+    string %(ANAREFREPO_LOWER)sId()          const { return "%(ANAINSPIREID)s"; }
+    string collider()           const { return ""; }
+    string summary()            const { return ""; }
+    string description()        const { return ""; }
+    string runInfo()            const { return ""; }
+    string bibKey()             const { return "%(ANABIBKEY)s"; }
+    string bibTeX()             const { return "%(ANABIBTEX)s"; }
+    string status()             const { return "UNVALIDATED"; }
+    vector<string> authors()    const { return vector<string>(); }
+    vector<string> references() const { return vector<string>(); }
+    vector<std::string> todos() const { return vector<string>(); }
+    """ % KEYWORDS
+        del KEYWORDS["ANAREFREPO_LOWER"]
+    KEYWORDS["INLINEMETHODS"] = INLINEMETHODS
+
+
+    if ANANAME.startswith("MC_"):
+        HISTOBOOKING = """\
+      _h_XXXX = bookProfile1D("myobs1", 20, 0.0, 100.0);
+      _h_YYYY = bookHisto1D("myobs2", {0.0, 1.0, 2.0, 4.0, 8.0, 16.0}); // or logspace(20, 1e-2, 1e3)
+      _h_ZZZZ = bookCounter("myobs3");""" % KEYWORDS
+    else:
+        HISTOBOOKING = """\
+      _h_XXXX = bookProfile1D(1, 1, 1);
+      _h_YYYY = bookHisto1D(2, 1, 1);
+      _h_ZZZZ = bookCounter(3, 1, 1);""" % KEYWORDS
+    KEYWORDS["HISTOBOOKING"] = HISTOBOOKING
+
+
+    ANASRCFILE = os.path.join(ANASRCDIR, ANANAME+".cc")
+    logging.debug("Writing implementation template to %s" % ANASRCFILE)
+    f = open(ANASRCFILE, "w")
+    src = '''\
+// -*- C++ -*-
+#include "Rivet/Analysis.hh"
+#include "Rivet/Projections/FinalState.hh"
+#include "Rivet/Projections/FastJets.hh"
+
+namespace Rivet {
+
+
+  /// @brief Add a short analysis description here
+  class %(ANANAME)s : public Analysis {
+  public:
+
+    /// Constructor
+    DEFAULT_RIVET_ANALYSIS_CTOR(%(ANANAME)s);
+
+
+    /// @name Analysis methods
+    //@{
+
+    /// Book histograms and initialise projections before the run
+    void init() {
+
+      // Initialise and register projections
+      declare(FinalState(Cuts::abseta < 5 && Cuts::pT > 100*MeV), "FS");
+
+      // Book histograms
+%(HISTOBOOKING)s
+
+    }
+
+
+    /// Perform the per-event analysis
+    void analyze(const Event& event) {
+
+      /// @todo Do the event by event analysis here
+
+    }
+
+
+    /// Normalise histograms etc., after the run
+    void finalize() {
+
+      normalize(_h_YYYY); // normalize to unity
+      scale(_h_ZZZZ, crossSection()/picobarn/sumOfWeights()); // norm to cross section
+
+    }
+
+    //@}
+
+
+    /// @name Histograms
+    //@{
+    Profile1DPtr _h_XXXX;
+    Histo1DPtr _h_YYYY;
+    CounterPtr _h_ZZZZ;
+    //@}
+%(INLINEMETHODS)s
+
+  };
+
+
+  // The hook for the plugin system
+  DECLARE_RIVET_PLUGIN(%(ANANAME)s);
+
+
+}
+''' % KEYWORDS
+    f.write(src)
+    f.close()
+
+    ANAPLOTFILE = os.path.join(ANAPLOTDIR, ANANAME+".plot")
+    logging.debug("Writing plot template to %s" % ANAPLOTFILE)
+    f = open(ANAPLOTFILE, "w")
+    src = '''\
+# BEGIN PLOT /%(ANANAME)s/d01-x01-y01
+#Title=[Uncomment and insert title for histogram d01-x01-y01 here]
+#XLabel=[Uncomment and insert x-axis label for histogram d01-x01-y01 here]
+#YLabel=[Uncomment and insert y-axis label for histogram d01-x01-y01 here]
+# + any additional plot settings you might like, see make-plots documentation
+# END PLOT
+
+# ... add more histograms as you need them ...
+''' % KEYWORDS
+    f.write(src)
+    f.close()
+
+    if opts.INLINE:
+        sys.exit(0)
+    ANAINFOFILE = os.path.join(ANAINFODIR, ANANAME+".info")
+    logging.debug("Writing info template to %s" % ANAINFOFILE)
+    f = open(ANAINFOFILE, "w")
+    src = """\
+Name: %(ANANAME)s
+Year: %(ANAYEAR)s
+Summary: <Insert short %(ANANAME)s description>
+Experiment: %(ANAEXPT)s
+Collider: %(ANACOLLIDER)s
+%(ANAREFREPO)sID: %(ANAINSPIREID)s
+Status: UNVALIDATED
+Authors:
+ - Your Name <your@email.address>
+#References:
+#- '<Example: Eur.Phys.J. C76 (2016) no.7, 392>'
+#- '<Example: DOI:10.1140/epjc/s10052-016-4184-8>'
+#- '<Example: arXiv:1605.03814>'
+RunInfo: <Describe event types, cuts, and other general generator config tips.>
+NeedCrossSection: no
+#Beams: <Insert beam pair(s), e.g. [p+, p+] or [[p-, e-], [p-, e+]]>
+#Energies: <Run energies or beam energy pairs in GeV, e.g. [13000] or [[8.0, 3.5]] or [630, 1800]. Order pairs to match "Beams">
+Description:
+  '<A fairly long description, including what is measured
+  and if possible what it is useful for in terms of MC validation
+  and tuning. Use LaTeX for maths like $\pT > 50\;\GeV$.>'
+BibKey: %(ANABIBKEY)s
+BibTeX: '%(ANABIBTEX)s'
+ToDo:
+ - Implement the analysis, test it, remove this ToDo, and mark as VALIDATED :-)
+
+""" % KEYWORDS
+    f.write(src)
+    f.close()
+
+    logging.info("Use e.g. 'rivet-buildplugin Rivet%s.so %s.cc' to compile the plugin" % (ANANAME, ANANAME))

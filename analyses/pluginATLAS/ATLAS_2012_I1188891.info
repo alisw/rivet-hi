@@ -1,0 +1,41 @@
+Name: ATLAS_2012_I1188891
+Year: 2012
+Summary: Flavour composition of dijet events at 7 TeV
+Experiment: ATLAS
+Collider: LHC 7TeV
+InspireID: 1188891
+Status: VALIDATED
+Authors:
+ - Cecile Lapoire <clapoire@cern.ch>
+ - Roman Lysak <lysak@fzu.cz>
+References:
+ - arXiv:1210.0441
+RunInfo:
+  pp di-jet events at 7 TeV
+NumEvents: 1000000
+NeedCrossSection: no
+Beams: [p+, p+]
+Energies: [7000]
+Description:
+  'The measurement of the flavour composition of dijet events produced
+   in pp collisions at $\sqrt{s}=7\;\TeV$ using the ATLAS detector.
+   Six possible combinations of light, charm and bottom jets are identified
+   in the dijet events, where the jet flavour is defined by the presence
+   of bottom, charm or solely light flavour hadrons in the jet.
+   The fractions of these dijet flavour states as functions of the leading
+   jet transverse momentum in the range 40 GeV to 500 GeV and jet
+   rapidity $|y| < 2.1$ are measured.'
+BibKey: Aad:2012ma
+BibTeX: '@article{Aad:2012ma,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of the flavour composition of dijet events
+                        in $pp$ collisions at $\sqrt{s}=7$ TeV with the ATLAS
+                        detector}",
+      collaboration  = "ATLAS Collaboration",
+      year           = "2012",
+      eprint         = "1210.0441",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      SLACcitation   = "%%CITATION = ARXIV:1210.0441;%%",
+}'
+

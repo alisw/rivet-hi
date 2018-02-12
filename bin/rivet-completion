@@ -1,0 +1,258 @@
+## -*- sh -*-
+## Analysis name completion for Rivet scripts
+
+## Load bash completion compatibility if zsh is used
+if test -n "$ZSH_VERSION"; then
+    autoload bashcompinit
+    bashcompinit
+fi
+
+
+## Create a _filedir helper function if not already present
+(type _filedir &> /dev/null) || \
+function _filedir() {
+    local cur prev commands options command
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    COMPREPLY=( $(compgen -W "$(ls ${cur}* 2> /dev/null)" -- ${cur}) )
+    return 0
+}
+
+
+##########################
+
+
+function _rivet() {
+    local cur prev commands options command
+    COMPREPLY=()
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
+
+    opts="--help --verbose --quiet --version --nevts --nskip --cross-section"
+    opts="$opts --analysis --analyses --runname --list-analyses --show-analysis --show-bibtex" #< intentionally skip --show-analyses alias
+    opts="$opts --analysis-path --analysis-path-append --pwd"
+    opts="$opts --histo-file --no-histo-file --histo-interval --event-timeout"
+    opts="$opts -a -A -n -h -x -H -l -v -q"
+    if [[ ${cur} == -* ]] ; then
+        COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+        if test -n "$COMPREPLY"; then
+            return 0
+        fi
+    fi
+
+    if (echo ${prev} | egrep -- "-\<a\>|--\<analysis\>|--\<analyses\>|--\<show-analysis\>|--\<show-analyses\>|--\<list-analyses\>" &> /dev/null); then
+        anas=$(rivet --list-analyses --quiet)
+        COMPREPLY=( $(compgen -W "$anas" -- ${cur}) )
+        return 0
+    fi
+
+    if (echo ${prev} | egrep -- "\<-n\>|--\<nevts\>|--\<runname\>|--\<histo-interval\>|--\<cross-section\>|\<-x\>|--\<event-timeout\>" &> /dev/null); then
+        COMPREPLY=()
+        return 0
+    fi
+
+    if (echo ${prev} | egrep -- "--\<histo-file\>|\<-H\>" &> /dev/null); then
+        _filedir "yoda|yoda.gz"
+        return 0
+    fi
+
+    if (echo ${prev} | egrep -- "--\<analysis-path\>|--\<analysis-path-append\>" &> /dev/null); then
+        _filedir -d
+        return 0
+    fi
+
+    _filedir
+    return 0
+}
+
+
+complete -F _rivet rivet
+
+
+##########################
+
+
+function _rivet_config() {
+    local cur prev commands options command
+    COMPREPLY=()
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
+
+    opts="--help --version"
+    opts="$opts --prefix --includedir --libdir --datadir"
+    opts="$opts --pythonpath --cppflags --ldflags --libs"
+    opts="$opts -h"
+    if [[ ${cur} == -* ]] ; then
+        COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+        if test -n "$COMPREPLY"; then
+            return 0
+        fi
+    fi
+
+    COMPREPLY=( $(compgen -W "$opts" -- ${cur}) )
+    if test -n "$COMPREPLY"; then
+        return 0
+    fi
+
+    return 0
+}
+
+
+complete -F _rivet_config rivet-config
+
+
+##########################
+
+
+function _rivet_buildplugin() {
+    local cur prev commands options command
+    COMPREPLY=()
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
+
+    opts="--help -h --with-root --cmd --dry-run"
+    if [[ ${cur} == -* ]] ; then
+        COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+        if test -n "$COMPREPLY"; then
+            return 0
+        fi
+    fi
+
+    # COMPREPLY=( $(compgen -W "$opts" -- ${cur}) )
+    # if test -n "$COMPREPLY"; then
+    #     return 0
+    # fi
+
+    _filedir
+    return 0
+}
+
+
+complete -F _rivet_buildplugin rivet-buildplugin
+
+
+##############################
+
+
+function _rivet_cmphistos() {
+    local cur prev commands options command
+    COMPREPLY=()
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
+
+    opts="--help -h"
+    opts="$opts --outdir -o"
+    opts="$opts --rivet-refs -R --no-rivet-refs"
+    opts="$opts --histogram-list -l"
+    opts="$opts --hier-out --linear --logarithmic --errs --mc-errs"
+    opts="$opts --no-ratio --rel-ratio --abs-ratio"
+    opts="$opts --all --show-mc-only --show-single --refid"
+    opts="$opts --no-plottitle"
+    opts="$opts --plotinfodir"
+    opts="$opts --no-rmgapbins"
+    opts="$opts --quiet -q --verbose -v"
+    if [[ ${cur} == -* ]] ; then
+        COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+        if test -n "$COMPREPLY"; then
+            return 0
+        fi
+    fi
+
+    if [[ ${prev} == "--plotinfodir" ]] ; then
+        _filedir -d
+        return 0
+    fi
+
+    if [[ ${prev} == "--show-single" ]]; then
+        COMPREPLY=( $(compgen -W "no mc ref all" -- ${cur}) )
+        return 0
+    fi
+
+    _filedir "yoda|yoda.gz"
+    return 0
+}
+
+
+complete -F _rivet_cmphistos -o default rivet-cmphistos
+
+
+##############################
+
+
+function _make_plots() {
+    local cur prev commands options command
+    COMPREPLY=()
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
+
+    opts="--help -h"
+    opts="$opts --num-threads -n"
+    opts="$opts --palatino --cm --times --minion"
+    opts="$opts --ps --pdf --eps --png --pdfpng --pspng"
+    opts="$opts --tex --no-cleanup --full-range"
+    opts="$opts --config -c"
+    opts="$opts --quiet -q --verbose -v"
+    if [[ ${cur} == -* ]] ; then
+        COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+        if test -n "$COMPREPLY"; then
+            return 0
+        fi
+    fi
+
+    _filedir dat
+    return 0
+}
+
+
+complete -F _make_plots -o default make-plots
+
+
+########################
+
+
+function _rivet_mkhtml() {
+    local cur prev commands options command
+    COMPREPLY=()
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
+
+    opts="--help -h"
+    opts="$opts --outputdir -o"
+    opts="$opts --title -t"
+    opts="$opts --config -c"
+    opts="$opts --single -s"
+    opts="$opts --no-ratio --errs --mc-errs --refid"
+    opts="$opts --num-threads --n"
+    opts="$opts --pdf --ps --booklet"
+    opts="$opts --ignore-unvalidated -i"
+    opts="$opts --match -m"
+    opts="$opts --unmatch -M"
+    opts="$opts --verbose -v"
+    if [[ ${cur} == -* ]] ; then
+        COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+        if test -n "$COMPREPLY"; then
+            return 0
+        fi
+    fi
+
+    ## Options with files / directories as the arg
+    if (echo ${prev} | egrep -- "--\<outputdir\>|\<-o\>" &> /dev/null); then
+        _filedir -d
+        return 0
+    fi
+    if (echo ${prev} | egrep -- "--\<config\>|\<-c\>" &> /dev/null); then
+        _filedir
+        return 0
+    fi
+
+    ## Options without an completeable arg
+    if (echo ${prev} | egrep -- "\<-t\>|--\<title\>|--\<refid\>|--\<n\>|--\<num-threads\>|\<-m\>|--\<match\>|\<-M\>|--\<unmatch\>" &> /dev/null); then
+        COMPREPLY=()
+        return 0
+    fi
+
+    _filedir "yoda|yoda.gz"
+    return 0
+}
+
+
+complete -F _rivet_mkhtml rivet-mkhtml

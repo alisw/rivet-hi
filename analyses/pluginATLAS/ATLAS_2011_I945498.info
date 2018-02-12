@@ -1,0 +1,41 @@
+Name: ATLAS_2011_I945498
+Year: 2011
+Summary: $Z$+jets in $pp$ at 7~TeV
+Experiment: ATLAS
+Collider: LHC
+InspireID: 945498
+Status: VALIDATED
+Authors:
+ - Evelin Meoni <evelin.meoni@cern.ch>
+ - Holger Schulz
+ - Roman Lysak <roman.lysak@cern.ch>
+References:
+ - arXiv:1111.2690v1 [hep-ex]
+ - CERN-PH-EP-2011-162
+RunInfo:
+  Z+jets, electronic and/or muonic Z-decays. Jets with transverse momentum $p_T > 30$ GeV and jet rapidity $|y| < 4.4$.
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [7000]
+NeedCrossSection: True
+Description:
+  'Production of jets in association with a $Z/\gamma^*$ boson in proton--proton
+   collisions at $\sqrt{s} = 7$ TeV with the ATLAS detector. The analysis includes
+   the full 2010 data set, collected with a low rate of multiple proton--proton
+   collisions in the accelerator, corresponding to an integrated luminosity of 36 pb$^{-1}$.
+   Inclusive jet cross sections in $Z/\gamma^*$ events, with $Z/\gamma^*$ decaying
+   into electron or muon pairs, are measured for jets with transverse momentum
+   $p_T > 30$ GeV and jet rapidity $|y| < 4.4$.'
+BibKey: Aad:2011qv
+BibTeX: '@article{Aad:2011qv,
+      key            = "945498",
+      title          = "{Measurement of the production cross section for $Z/\gamma^*$ in association with jets
+                         in $pp$ collisions at $\sqrt{s} = 7$ TeV with the ATLAS detector}",
+      collaboration  = "ATLAS Collaboration",
+      year           = "2011",
+      eprint         = "1111.2690",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2011-162",
+      SLACcitation   = "%%CITATION = ARXIV:1111.2690;%%",
+}'

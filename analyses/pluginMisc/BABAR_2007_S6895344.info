@@ -1,0 +1,38 @@
+Name: BABAR_2007_S6895344
+Summary: Inclusive $\Lambda_c^+$ Production in $e^+e^-$ Annihilation at $\sqrt{s}=10.54$ GeV and in $\Upsilon(4S)$ Decays.
+Experiment: BaBar
+Collider: PEP-II
+Status: VALIDATED
+Authors:
+ - Peter Richardson <Peter.Richardson@durham.ac.uk>
+References:
+ - Phys.Rev. D75 (2007) 012003
+ - hep-ex/0609004
+RunInfo:
+  $e^+ e^-$ analysis on the $\Upsilon(4S)$ resonance, with CoM boosts
+  of 8.0~GeV~($e^-$) and 3.5~GeV~($e^+$)
+NumEvents: 1000000
+SpiresID: 6895344
+InspireID: 725377
+Beams: [e+, e-]
+Energies: [[3.5, 8.0],[3.5,7.91]]
+PtCuts: [0]
+Description: Measurements of the total production rates and momentum distributions of the charmed baryon $\Lambda_c^+$ in
+             $e^+e^- \to$ hadrons at a centre-of-mass energy of 10.54 GeV and in $\Upsilon(4S)$ decays.
+BibKey: Aubert:2006cp
+BibTeX: '@article{Aubert:2006cp,
+      author         = "Aubert, Bernard and others",
+      title          = "{Inclusive $\Lambda_c^+$ Production in $e^+ e^-$ Annihilations
+                        at $\sqrt{s}=10.54$ GeV and in $\Upsilon(4S)$ Decays}",
+      collaboration  = "BABAR Collaboration",
+      journal        = "Phys.Rev.",
+      volume         = "D75",
+      pages          = "012003",
+      doi            = "10.1103/PhysRevD.75.012003",
+      year           = "2007",
+      eprint         = "hep-ex/0609004",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "SLAC-PUB-12074, BABAR-PUB-06-054",
+      SLACcitation   = "%%CITATION = HEP-EX/0609004;%%",
+}'

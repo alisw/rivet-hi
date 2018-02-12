@@ -1,0 +1,45 @@
+Name: ATLAS_2017_I1509919
+Year: 2017
+Summary: Track-based underlying event at 13 TeV in ATLAS
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1509919
+Status: VALIDATED
+Authors:
+ - Roman Lysak <roman.lysak@cern.ch>
+References:
+ - arXiv:1701.05390
+Keywords:
+ - tracks
+ - UE
+RunInfo:
+  '$pp$ QCD interactions at 13 TeV. Diffractive events should be included.'
+Luminosity_fb: 1.6*E-06
+Beams: [p+, p+]
+Energies: [13000]
+Description:
+  'We present charged-particle distributions sensitive to the underlying event, measured by the ATLAS detector in proton-proton
+  collisions at a centre-of-mass energy of 13 TeV, in low-luminosity Large Hadron Collider fills corresponding to an integrated
+  luminosity of 1.6 nb${}^{-1}$. The distributions were constructed using charged particles with absolute pseudorapidity less
+  than 2.5 and with transverse momentum greater than 500 MeV, in events with at least one such charged particle with transverse
+  momentum above 1 GeV. These distributions characterise the angular distribution of energy and particle flows with respect to
+  the charged particle with highest transverse momentum, as a function of both that momentum and of charged-particle multiplicity.
+  The results have been corrected for detector effects and are compared to the predictions of various Monte Carlo event generators,
+  experimentally establishing the level of underlying-event activity at LHC Run 2 energies and providing inputs for the development
+  of event generator modelling. The current models in use for UE modelling typically describe this data to 5% accuracy, compared
+  with data uncertainties of less than 1%.'
+BibKey: Aaboud:2017fwp
+BibTeX: '@article{Aaboud:2017fwp,
+      author         = "Aaboud, Morad and others",
+      title          = "{Measurement of charged-particle distributions sensitive
+                        to the underlying event in $\sqrt{s} = 13$ TeV
+                        proton-proton collisions with the ATLAS detector at the
+                        LHC}",
+      collaboration  = "ATLAS",
+      year           = "2017",
+      eprint         = "1701.05390",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-EP-2016-28, CERN-EP-2016-285",
+      SLACcitation   = "%%CITATION = ARXIV:1701.05390;%%"
+}'

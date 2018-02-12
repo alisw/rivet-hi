@@ -1,0 +1,47 @@
+Name: ALICE_2012_I1181770
+Year: 2012
+Summary: Measurement of inelastic, single- and double-diffraction cross sections in proton--proton collisions at the LHC with ALICE
+Experiment: ALICE
+Collider: LHC
+SpireID: 9732586
+InspireID: 1181770
+Status: VALIDATED
+Authors:
+ - Martin Poghosyan <Martin.Poghosyan@cern.ch>
+ - Sercan Sen <Sercan.Sen@cern.ch>
+ - Burak Bilki <bbilki@gmail.com>
+ - Andy Buckley <andy.buckley@cern.ch>
+References:
+ - arXiv:1208.4968 [hep-ex]
+RunInfo:
+   Inelastic events (non-diffractive and inelastic diffractive).
+NumEvents: 100K
+Beams: [p+, p+]
+Energies: [900, 2760, 7000]
+Description:
+  'Measurements of cross-sections of inelastic and diffractive processes in proton-proton collisions at $\sqrt{s} = 900$, 2760 and 7000 GeV.
+   The fractions of diffractive processes in inelastic collisions were determined from a study of gaps in charged particle pseudorapidity distributions.
+   Single-diffractive events are selected with $M_{X} < 200\;\GeV/c^2$ and double-diffractive events defined as NSD events with $\Delta\eta > 3$.
+   To measure the inelastic cross-section, beam properties were determined with van der Meer scans using a simulation of diffraction adjusted to data.
+
+   Note that these are experimental approximations to theoretical concepts -- it is not totally clear whether the data point values are model-independent.'
+BibKey: Abelev:2012sea
+BibTeX: '@article{Abelev:2012sea,
+      author         = "Abelev, Betty and others",
+      title          = "{Measurement of inelastic, single- and double-diffraction
+                        cross sections in proton--proton collisions at the LHC
+                        with ALICE}",
+      collaboration  = "ALICE",
+      journal        = "Eur. Phys. J.",
+      volume         = "C73",
+      year           = "2013",
+      number         = "6",
+      pages          = "2456",
+      doi            = "10.1140/epjc/s10052-013-2456-0",
+      eprint         = "1208.4968",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2012-138 [SIC!], CERN-PH-EP-2012-238,
+                        CERN-PH-EP-2012-138",
+      SLACcitation   = "%%CITATION = ARXIV:1208.4968;%%"
+}'

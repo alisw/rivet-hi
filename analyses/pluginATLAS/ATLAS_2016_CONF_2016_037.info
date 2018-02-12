@@ -1,0 +1,23 @@
+Name: ATLAS_2016_CONF_2016_037
+Year: 2016
+Summary: Search for SUSY in events with 2 same-sign leptons or 3 leptons, at 13~\TeV
+Experiment: ATLAS
+Collider: LHC
+Status: UNVALIDATED
+Authors:
+ - Andy Buckley <andy.buckley@cern.ch>
+RunInfo: BSM signal events
+NumEvents: 100000
+NeedCrossSection: no
+Beams: [p+, p+]
+Energies: [13000]
+Description:
+  'A search for strongly produced supersymmetric particles using signatures
+   involving multiple energetic jets and either two isolated same-sign leptons
+   ($e$ or $\mu$) or at least three isolated leptons. The analysis also utilises
+   other observables, such as $b$-tagged jets or missing transverse momentum,
+   to extend its sensitivity. A data sample of proton--proton collisions at
+   $\sqrt{s} = 13~\TeV$ recorded with the ATLAS detector at the Large Hadron Collider
+   in 2015 and 2016, corresponding to a total integrated luminosity of 13.2/fb,
+   is used for the search. No significant excess over the Standard Model
+   expectation is observed.'

@@ -1,0 +1,47 @@
+Name: ATLAS_2016_I1492320_3l
+Year: 2016
+Summary: WWW production at 8 TeV, 3L mode
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1492320
+Status: VALIDATED
+Authors:
+ - Alex Long <b.long@cern.ch>
+ - Ismet Siral <ismet.siral@cern.ch>
+ - Louis Helary <louis.helary@cern.ch>
+ - Christian Gutschow <chris.g@cern.ch>
+References:
+ - arXiv:1610.05088 [hep-ex]
+Keywords:
+ - triboson
+ - multiboson
+ - leptons
+RunInfo:
+  pp -> WWW production at 8 TeV
+Luminosity_fb: 20.3
+Beams: [p+, p+]
+Energies: [8000]
+PtCuts: [20,20,20]
+Description:
+  'This paper reports a search for triboson $W^\pm W^\pm W^\mp$ production in two decay channels
+  ($W^\pm W^\pm W^\mp \to \ell^\pm\nu \ell^\pm\nu \ell^\mp\nu$) and ($W^\pm W^\pm W^\mp \to \ell^\pm\nu \ell^\pm\nu jj$ with
+  $\ell = e,\mu$) in proton-proton collision data corresponding to an integrated luminosity of 20.3 fb${}^{-1}$ at a
+  centre-of-mass energy of 8 TeV with the ATLAS detector at the Large Hadron Collider. Events with exactly three charged
+  leptons, or two leptons with the same electric charge in association with two jets, are selected. The total number of events
+  observed in data is consistent with the Standard Model (SM) predictions. The observed 95 % confidence level upper limit on the SM
+  $W^\pm W^\pm W^\mp$ production cross section is found to be 730 fb with an expected limit of 560 fb in the absence of
+  SM $W^\pm W^\pm W^\mp$ production. Limits are also set on $WWWW$ anomalous quartic gauge couplings.'
+BibKey: Aaboud:2016ftt
+BibTeX: '@article{Aaboud:2016ftt,
+      author         = "Aaboud, Morad and others",
+      title          = "{Search for triboson $W^{\pm}W^{\pm}W^{\mp}$ production
+                        in $pp$ collisions at $\sqrt{s}=8$ TeV with the ATLAS
+                        detector}",
+      collaboration  = "ATLAS",
+      year           = "2016",
+      eprint         = "1610.05088",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-EP-2016-172",
+      SLACcitation   = "%%CITATION = ARXIV:1610.05088;%%"
+}'

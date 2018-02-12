@@ -1,0 +1,42 @@
+Name: BABAR_2007_S7266081
+Summary: Measurements of Semi-Leptonic Tau Decays into Three Charged Hadrons
+Status: VALIDATED
+Experiment: BaBar
+Collider: PEP-II
+Authors:
+ - Peter Richardson <Peter.Richardson@durham.ac.uk>
+References:
+ - Phys.Rev.Lett.100:011801,2008
+ - arXiv:0707.2981
+ - SLAC-R-936
+RunInfo:
+  Tau production, can be any process but original data was in
+  $e^+ e^-$ at the $\Upsilon(4S)$ resonance, with CoM boosts of
+  8.0 GeV~($e^-$) and 3.5~GeV~($e^+$)
+NumEvents: 1000000
+SpiresID: 7266081
+InspireID: 756323
+Beams: [e+, e-]
+Energies: [[3.5, 8.0]]
+PtCuts: [0]
+Description: Measurement of tau decays to three charged hadrons using
+ a data sample corresponding to an integrated luminosity of 342 fb$^{-1}$ collected
+ with the BABAR detector at the SLAC PEP-II electron-positron storage ring operating
+ at a center-of-mass energy near 10.58 GeV.
+BibKey: Aubert:2007mh
+BibTeX: '@Article{Aubert:2007mh,
+     author    = "Aubert, Bernard and others",
+     collaboration = "BABAR",
+     title     = "{Exclusive branching fraction measurements of semileptonic
+                  tau decays into three charged hadrons, $\tau^- \to \phi
+                  \pi^- \nu_\tau$ and $\tau^- \to \phi K^- \nu_\tau$}",
+     journal   = "Phys. Rev. Lett.",
+     volume    = "100",
+     year      = "2008",
+     pages     = "011801",
+     eprint    = "0707.2981",
+     archivePrefix = "arXiv",
+     primaryClass  =  "hep-ex",
+     doi       = "10.1103/PhysRevLett.100.011801",
+     SLACcitation  = "%%CITATION = 0707.2981;%%"
+}'

@@ -1,0 +1,39 @@
+Name: STAR_2006_S6500200
+Year: 2006
+Summary: Identified hadron spectra in pp at 200 GeV
+Experiment: STAR
+Collider: RHIC pp 200 GeV
+SpiresID: 6500200
+InspireID: 709170
+Status: VALIDATED
+Authors:
+ - Bedanga Mohanty <bedanga@rcf.bnl.gov>
+ - Hendrik Hoeth <hendrik.hoeth@cern.ch>
+References:
+ - Phys. Lett. B637, 161
+ - arXiv:nucl-ex/0601033
+RunInfo:
+  pp at 200 GeV
+NumEvents: 2500000
+Beams: [p+, p+]
+Energies: [200]
+PtCuts: [0]
+Description:
+  pT distributions of charged pions and (anti)protons in pp collisions
+  at $\sqrt{s} = 200$ GeV, measured by the STAR experiment at RHIC in
+  non-single-diffractive minbias events.
+BibKey: Adams:2006nd
+BibTeX: '@Article{Adams:2006nd,
+     author    = "Adams, John and others",
+ collaboration = "STAR",
+     title     = "{Identified hadron spectra at large transverse momentum in
+                  $p\,p$ and $d\,Au$ collisions at $\sqrt{s} = 200$ GeV}",
+     journal   = "Phys. Lett.",
+     volume    = "B637",
+     year      = "2006",
+     pages     = "161-169",
+     eprint    = "nucl-ex/0601033",
+     archivePrefix = "arXiv",
+     doi       = "10.1016/j.physletb.2006.04.032",
+     SLACcitation  = "%%CITATION = NUCL-EX/0601033;%%"
+}'

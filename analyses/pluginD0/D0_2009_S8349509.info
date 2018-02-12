@@ -1,0 +1,50 @@
+Name: D0_2009_S8349509
+Year: 2009
+Summary: Z+jets angular distributions
+Experiment: D0
+Collider: Tevatron Run 2
+SpiresID: 8349509
+InspireID: 826756
+Status: VALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+ - arXiv:0907.4286 [hep-ex]
+RunInfo:
+  $p \bar{p} \to \mu^+ \mu^-$ + jets at 1960~GeV.
+  Needs mass cut on lepton pair to avoid photon singularity,
+  looser than $65 < m_{ee} < 115$ GeV.
+NumEvents: 1000000
+Beams: [p-, p+]
+Energies: [1960]
+PtCuts: [0]
+Description:
+  First measurements at a hadron collider of differential cross
+  sections for $Z (\to \mu\mu)$+jet+X production in $\Delta\phi(Z, j)$,
+  $|\Delta y(Z, j)|$ and $|y_\mathrm{boost}(Z, j)|$.
+  Vector boson production in association with jets is an excellent
+  probe of QCD and constitutes the main background to many small
+  cross section processes, such as associated Higgs production.
+  These measurements are crucial tests of the predictions of perturbative
+  QCD and current event generators, which have varied success in
+  describing the data.
+  Using these measurements as inputs in tuning event generators will
+  increase the experimental sensitivity to rare signals.
+NeedCrossSection: yes
+BibKey: Abazov:2009pp
+BibTeX: '@Article{Abazov:2009pp,
+     author    = "Abazov, Victor Mukhamedovich and others",
+ collaboration = "D0",
+     title     = "{Measurement of $Z / \gamma^\ast +jet+X$ angular
+                  distributions in $p \bar{p}$ collisions at $\sqrt{s}=1.96$
+                  TeV}",
+     journal   = "Phys. Lett.",
+     volume    = "B682",
+     year      = "2010",
+     pages     = "370-380",
+     eprint    = "0907.4286",
+     archivePrefix = "arXiv",
+     primaryClass  =  "hep-ex",
+     doi       = "10.1016/j.physletb.2009.11.012",
+     SLACcitation  = "%%CITATION = 0907.4286;%%"
+}'

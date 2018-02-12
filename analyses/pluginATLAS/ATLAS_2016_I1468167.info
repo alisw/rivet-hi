@@ -1,0 +1,37 @@
+Name: ATLAS_2016_I1468167
+Year: 2016
+Summary: Measurement of the inelastic proton--proton cross-section at $\sqrt{s} = 13\,\TeV$
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1468167
+Status: VALIDATED
+Authors:
+ - Zachary Marshall <zach.marshall@cern.ch>
+ - Christian Gutschow <chris.g@cern.ch>
+References:
+ - 'arXiv:1606.02625 [hep-ex]'
+Keywords:
+ - minbias
+RunInfo:
+   Inelastic events (non-diffractive and inelastic diffractive).
+Luminosity_fb: 6.0*E-08
+Beams: [p+, p+]
+Energies: [13000]
+Description:
+    'Inelastic cross-section is measured for $\xi > 1 \times 10^{-6}$, where
+    $\xi=M_X^2/s$ is calculated from the invariant mass, $M_X$,
+    of hadrons selected using the largest rapidity gap in the event.'
+BibKey: Aaboud:2016mmw
+BibTeX: '@article{Aaboud:2016mmw,
+      author         = "Aaboud, Morad and others",
+      title          = "{Measurement of the Inelastic Proton-Proton Cross Section
+                        at $\sqrt{s} = 13$ TeV with the ATLAS Detector at the
+                        LHC}",
+      collaboration  = "ATLAS",
+      year           = "2016",
+      eprint         = "1606.02625",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-EP-2016-140",
+      SLACcitation   = "%%CITATION = ARXIV:1606.02625;%%"
+}'

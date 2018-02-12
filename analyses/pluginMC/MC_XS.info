@@ -1,0 +1,12 @@
+Name: MC_XS
+Summary: MC analysis for process total cross section
+Status: VALIDATED
+Authors:
+ - Marek Schoenherr <marek.schoenherr@tu-dresden.de>
+RunInfo: Suitable for any process.
+NumEvents: 1000
+PtCuts: [0]
+Description:
+  Analysis for bookkeeping of the total cross section, number of generated
+  events and the ratio of events with positive and negative weights.
+NeedsCrossSection: yes

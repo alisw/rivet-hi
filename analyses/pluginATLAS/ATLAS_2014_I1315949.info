@@ -1,0 +1,47 @@
+Name: ATLAS_2014_I1315949
+Year: 2014
+Summary: Distributions sensitive to the underlying event in inclusive Z-boson production at 7 TeV
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1315949
+Status: VALIDATED
+Authors:
+ - Deepak Kar <deepak.kar@cern.ch>
+References:
+ - Eur.Phys.J. C74 (2014) 3195
+ - doi:10.1140/epjc/s10052-014-3195-6
+ - arXiv:1409.3433 [hep-ex]
+RunInfo:
+  p + p -> Z + X ( Z -> mu^+ mu^- or e^+ e^- ). \sqrt{s} = 7 TeV
+NumEvents: 1000000
+NeedCrossSection: yes
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [20, 20]
+Description:
+  Charged-particle distributions sensitive to the properties of the underlying event are measured for an 
+  inclusive sample of events containing a $Z$-boson, decaying to an electron or muon pair. The measurement 
+  is based on data collected using the ATLAS detector at the LHC in proton–proton collisions at a 
+  centre-of-mass energy of 7 TeV with an integrated luminosity of 4.6~$\text{fb}^{−1}$. Distributions of 
+  the charged particle multiplicity and of the charged particle transverse momentum are measured in regions
+  of azimuthal angle defined with respect to the $Z$-boson direction.
+BibKey: Aad:2014jgf
+BibTeX: '@article{Aad:2014jgf,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of distributions sensitive to the underlying
+                        event in inclusive Z-boson production in $pp$ collisions
+                        at $\sqrt{s}=7$ TeV with the ATLAS detector}",
+      collaboration  = "ATLAS Collaboration",
+      journal        = "Eur.Phys.J.",
+      number         = "12",
+      volume         = "C74",
+      pages          = "3195",
+      doi            = "10.1140/epjc/s10052-014-3195-6",
+      year           = "2014",
+      eprint         = "1409.3433",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2014-162",
+      SLACcitation   = "%%CITATION = ARXIV:1409.3433;%%",
+}'
+

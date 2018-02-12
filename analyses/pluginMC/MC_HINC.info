@@ -1,0 +1,12 @@
+Name: MC_HINC
+Summary: Monte Carlo validation observables for $h[\tau^+ \, \tau^-]$ production
+Status: VALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+RunInfo:
+  $h [\to \tau^+ \tau^-]$.
+NumEvents: 1000000
+PtCuts: [0]
+Description:
+  Monte Carlo validation observables for $h[\tau^+ \, \tau^-]$ production
+NeedCrossSection: yes

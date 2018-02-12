@@ -1,0 +1,22 @@
+# BEGIN HISTOGRAM jet_pT_minbias
+Title=Differential jet cross-section, minbias trigger
+5.0	6.2	9.3e+06	4.5e+06
+6.2	7.6	2.7e+06	1.3e+06
+7.6	9.3	6.7e+05	3.2e+05
+9.3	11.4	1.84e+05	0.91e+05
+11.4	14.1	5.1e+04	2.6e+04
+# END HISTOGRAM
+
+# BEGIN HISTOGRAM jet_pT_high_tower_trigger
+Title=Differential jet cross-section, high tower trigger
+7.6	9.3	6.4e+05	3.2e+05
+9.3	11.4	2.4e+05	1.1e+05
+11.4	14.1	5.9e+04	2.9e+04
+14.1	17.3	1.19e+04	0.58e+04
+17.3	21.3	3.5e+03	1.7e+03
+21.3	26.2	7.8e+02	3.7e+02
+26.2	32.2	1.41e+02	0.69e+02
+32.2	39.6	2.2e+01	1.1e+01
+39.6	48.7	2.6e+00	1.4e+00
+# END HISTOGRAM
+

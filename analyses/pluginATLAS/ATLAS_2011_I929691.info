@@ -1,0 +1,45 @@
+Name: ATLAS_2011_I929691
+Year: 2011
+Summary: Jet fragmentation at 7 TeV
+Experiment: ATLAS
+Collider: LHC
+InspireID: 929691
+Status: VALIDATED
+Authors:
+ - Stefan von Buddenbrock <stef.von.b@cern.ch>
+References:
+ - "Eur.Phys.J.C 71 (2011) 1795"
+ - "doi:10.1140/epjc/s10052-011-1795-y"
+ - "arXiv:1109.5816 [hep-ex]"
+RunInfo:
+  Inclusive jet production
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [0.5]
+Description:
+   The jet fragmentation function and transverse profile for jets with 25 GeV $< p_\text{T~jet} < 500$ GeV and
+   $|\eta_\text{jet}| < 1.2$ produced in proton-proton collisions with a center-of-mass energy of 7 TeV are presented.
+   The measurement is performed using data with an integrated luminosity of 36 pb${}^{-1}$. Jets are reconstructed and
+   their momentum measured using calorimetric information. The momenta of the charged particle constituents are measured
+   using the tracking system. The distributions corrected for detector effects are compared with various Monte Carlo event
+   generators and generator tunes. Several of these choices show good agreement with the measured fragmentation function.
+   None of these choices reproduce both the transverse profile and fragmentation function over the full kinematic range of
+   the measurement.
+BibKey: Aad:2011sc
+BibTeX: '@article{Aad:2011sc,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of the jet fragmentation function and
+                        transverse profile in proton-proton collisions at a
+                        center-of-mass energy of 7 TeV with the ATLAS detector}",
+      collaboration  = "ATLAS",
+      journal        = "Eur. Phys. J.",
+      volume         = "C71",
+      year           = "2011",
+      pages          = "1795",
+      doi            = "10.1140/epjc/s10052-011-1795-y",
+      eprint         = "1109.5816",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2011-148",
+      SLACcitation   = "%%CITATION = ARXIV:1109.5816;%%"
+}'

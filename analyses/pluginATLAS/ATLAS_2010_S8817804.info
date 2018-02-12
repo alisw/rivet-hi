@@ -1,0 +1,40 @@
+Name: ATLAS_2010_S8817804
+Year: 2010
+Summary:  Inclusive jet cross section and di-jet mass and chi spectra at 7 TeV in ATLAS
+Experiment: ATLAS
+Collider:   LHC 7TeV
+SpiresID:   8817804
+InspireID: 871366
+Status:     VALIDATED
+Authors:
+ - James Monk <jmonk@cern.ch>
+References:
+ - arXiv:1009.5908
+RunInfo:
+  pp QCD jet production with a minimum jet pT of 60 GeV (inclusive) or 30 GeV (di-jets) at 7 TeV.
+NumEvents:  10000000
+Beams:    [p+, p+]
+Energies: [7000]
+PtCuts:   [30, 60]
+Description:
+  The first jet cross section measurement made with the ATLAS detector at the LHC.
+  Anti-kt jets with $R=0.4$ and $R=0.6$ are resconstructed within
+   $|y|<2.8$ and above 60~GeV for the inclusive jet
+  cross section plots.  For the di-jet plots the second jet must have pT>30~GeV.
+  Jet pT and di-jet mass spectra are plotted in bins of rapidity between $|y| = $
+  0.3, 0.8, 1.2, 2.1, and 2.8.  Di-jet $\chi$ spectra are plotted in bins of
+  di-jet mass between 340 GeV, 520 GeV, 800 GeV and 1200 GeV.
+NeedCrossSection: yes
+BibKey: Aad:2010wv
+BibTeX: '@Article{Aad:2010wv,
+     author    = "Aad, G. and others",
+     collaboration = "ATLAS",
+     title     = "{Measurement of inclusive jet and dijet cross sections in
+                  proton-proton collisions at 7 TeV centre-of-mass energy
+                  with the ATLAS detector}",
+     year      = "2010",
+     eprint    = "1009.5908",
+     archivePrefix = "arXiv",
+     primaryClass  =  "hep-ex",
+     SLACcitation  = "%%CITATION = 1009.5908;%%"
+}'

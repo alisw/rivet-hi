@@ -1,0 +1,38 @@
+Name: CMS_2013_I1272853
+Year: 2013
+Summary: Study of observables sensitive to double parton scattering in $W + 2$ jets process in $pp$ collisions at $\sqrt{s} = 7$~TeV
+Experiment: CMS
+Collider: LHC
+InspireID: 1272853
+Status: VALIDATED
+Authors:
+ - Sunil Bansal (sunil.bansal@cern.ch)
+References:
+  - CMS-FSQ-12-028
+  - CERN-PH-EP-2013-224
+  - arXiv:1312.5729
+  - Submitted to JHEP
+RunInfo: Only muonic decay of W boson
+Beams: [p+, p+]
+Energies: [7000]
+NeedCrossSection: yes
+PtCuts: muon with pT > 35 GeV, jets with pT > 20 GeV
+Description:
+  Double parton scattering is investigated in proton-proton collisions
+  at $\sqrt{s} = 7$~TeV where the final state includes a $W$ boson, which
+  decays into a muon and a neutrino, and two jets. The data sample
+  corresponds to an integrated luminosity of 5 inverse femtobarns,
+  collected with the CMS detector at the LHC.
+BibKey: Chatrchyan:2013xxa
+BibTeX: '@article{Chatrchyan:2013xxa,
+      author         = "Chatrchyan, Serguei and others",
+      title          = "{Study of double parton scattering using $W + 2$-jet events
+                        in proton-proton collisions at $\sqrt{s} = 7$~TeV}",
+      collaboration  = " CMS Collaboration",
+      year           = "2013",
+      eprint         = "1312.5729",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-FSQ-12-028, CERN-PH-EP-2013-224",
+      SLACcitation   = "%%CITATION = ARXIV:1312.5729;%%",
+}'

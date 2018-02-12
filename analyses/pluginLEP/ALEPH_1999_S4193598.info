@@ -1,0 +1,37 @@
+Name: ALEPH_1999_S4193598
+Year: 1999
+Summary: Scaled energy distribution of $D^*$ at LEP
+Experiment: ALEPH
+Collider: LEP
+SpiresID: 4193598
+InspireID: 507422
+Status: VALIDATED
+Authors:
+ - Holger Schulz <hschulz@physik.hu-berlin.de>
+References:
+ - Eur.Phys.J.C16:597-611,2000
+ - hep-ex/9909032
+ - CERN-EP-99-094
+RunInfo:
+  Hadronic $Z$ decays at 91.2\;GeV.
+NumEvents: 1000000
+NeedCrossSection: no
+Beams: [e+, e-]
+Energies: [91.2]
+Description:
+  'Study of charm production in $Z$ decays. Here, only the scaled energy distribution
+   of $D^{*\pm}$ is implemented. Should be very important for fragmentation tuning.'
+BibKey: Barate:1999bg
+BibTeX: '@article{Barate:1999bg,
+      author         = "Barate, R. and others",
+      title          = "{Study of charm production in Z decays}",
+      collaboration  = "ALEPH Collaboration",
+      journal        = "Eur.Phys.J.",
+      volume         = "C16",
+      pages          = "597-611",
+      doi            = "10.1007/s100520000421",
+      year           = "2000",
+      eprint         = "hep-ex/9909032",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+}'

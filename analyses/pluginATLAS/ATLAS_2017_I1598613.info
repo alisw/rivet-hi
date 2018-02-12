@@ -1,0 +1,44 @@
+Name: ATLAS_2017_I1598613
+Year: 2017
+Summary: BB to Jpsi plus mu at 8 TeV
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1598613
+Status: VALIDATED
+Authors:
+ - Gavin Hesketh <gavin.hesketh.cern.ch>
+ - Christian Gutschow <chris.g@cern.ch>
+References:
+  - arXiv:1705.03374 [hep-ex]
+  - submitted to JHEP
+Keywords:
+ - QCD
+ - BBAR
+ - JPSI
+ - MUONS
+RunInfo: p + p -> B(-> J/psi[-> mu mu] + X) B(-> mu + X)
+Luminosity_fb: 11.4
+Beams: [p+, p+]
+Energies: [8000]
+PtCuts: [6,6,6] 
+Description:
+  'A measurement of $b$-hadron pair production is presented, based on a dataset corresponding to an integrated luminosity of 
+  11.4 fb${}^{-1}$ of proton--proton collisions recorded at $\sqrt{s}=8$ TeV with the ATLAS detector at the LHC. Events are 
+  selected in which both a $b$-hadron $\to J/\psi(\to\mu\mu)+X$ and $b$-hadron $\to \mu + X$ were identified, and results are 
+  presented in a fiducial volume defined by kinematic requirements on three muons based on those used in the analysis. The fiducial 
+  cross section is measured to be $17.7\pm 0.1$(stat.)$\pm2.0$(syst.) nb. A number of normalised differential cross sections are i
+  also measured, and compared to predictions from the Pythia8, Herwig++, MadGraph5\_aMC@NLO+Pythia8 and Sherpa event generators,
+  providing constraints on heavy flavour production.'
+BibKey: Aaboud:2017vqt
+BibTeX: '@article{Aaboud:2017vqt,
+      author         = "Aaboud, Morad and others",
+      title          = "{Measurement of $b$-hadron pair production with the ATLAS
+                        detector in proton-proton collisions at $\sqrt{s}=8$ TeV}",
+      collaboration  = "ATLAS",
+      year           = "2017",
+      eprint         = "1705.03374",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-EP-2017-057",
+      SLACcitation   = "%%CITATION = ARXIV:1705.03374;%%"
+}'

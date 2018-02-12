@@ -1,0 +1,38 @@
+Name: CMS_2015_I1380605
+Year: 2015
+Summary: Per-event yield of the highest transverse momentum charged particle and charged-particle jet
+Experiment: CMS
+Collider: LHC
+InspireID: 1380605
+Status: VALIDATED
+Authors:
+ - Anastasia Grebenyuk <Anastasia.Grebenyuk@cern.ch>
+ - Hannes Jung <hannes.jung@desy.de>
+References:
+ - arXiv:1507.00233
+RunInfo:
+   '$sqrt{s}=8$ TeV, minbias events, no \pT cut on partons'
+NumEvents: 1000000
+NeedCrossSection: no
+Beams: [p+, p+]
+Energies: [8000]
+Description:
+  'The per-event yield of the highest transverse momentum charged particle and
+  charged-particle jet, integrated
+   above a given $p_{T\;min}$  threshold starting at $p_{T\;min}=0.8$ and $1$~GeV,
+   respectively, is studied in $pp$ collisions at $\sqrt{s} = 8$~\TeV.
+   The particles and the jets are measured in the pseudorapidity ranges
+   $|\eta| < 2.4$ and $1.9$, respectively.'
+BibKey: Khachatryan:2015fia
+BibTeX: '@article{Khachatryan:2015fia,
+      author         = "Khachatryan, Vardan and others",
+      title          = "{Production of leading charged particles and leading
+                        charged-particle jets at small transverse momenta in $pp$
+                        collisions at $\sqrt{s}=8 TeV}",
+      collaboration  = "CMS",
+      year           = "2015",
+      eprint         = "1507.00233",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-FSQ-12-032, CERN-PH-EP-2015-135",
+      SLACcitation   = "%%CITATION = ARXIV:1507.00233;%%",}'

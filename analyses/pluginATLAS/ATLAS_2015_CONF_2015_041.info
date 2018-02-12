@@ -1,0 +1,26 @@
+Name: ATLAS_2015_CONF_2015_041
+Year: 2015
+Summary: Z+jets at 13 TeV
+Experiment: ATLAS
+Collider: LHC
+InspireID: None
+Status: OBSOLETE
+Authors:
+ - Christian Gutschow <chris.g@cern.ch>
+References:
+ - ATLAS-CONF-2015-041
+RunInfo:
+  inclusive Z production in the electron channel
+Beams: [p+, p+]
+Energies: [13000]
+PtCuts: [25,30]
+NeedCrossSection: True
+Description:
+  Preliminary measurements of the cross section for the production of a $Z$ boson in association with jets in pp collisions at 
+  $\sqrt{s} = 13$\,TeV are presented, using data corresponding to an integrated luminosity of $85\,\text{pb}^{-1}$ collected 
+  by the ATLAS experiment at the Large Hadron Collider. The cross sections are measured for events containing a $Z$ boson 
+  decaying to electrons or muons and produced in association with up to four jets in the kinematical range of 
+  $p_\text{T} > 30$\,GeV and $|y| < 2.5$.
+  NB--Use the pliugin names ATLAS_2015_CONF_2015_041_EL or ATLAS_2015_CONF_2015_041_MU to specify the lepton channel.
+  Note -- this analysis is superseeded by ATLAS_2017_I1514251
+

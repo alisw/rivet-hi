@@ -1,0 +1,249 @@
+#! /usr/bin/env python
+
+import sys, os, re
+
+## Get output filename
+OUTNAME = "analyses"
+import sys
+if len(sys.argv) < 2:
+    pass
+    #print "Using output name '%s'" % OUTNAME
+else:
+    OUTNAME = sys.argv[1]
+
+## Add the rivet Python module build dir(s) to the Python module path, then import
+pybuild = os.path.abspath(os.path.join(os.getcwd(), "..", "pyext", "build"))
+pydirs = [os.path.join(pybuild, d) for d in os.listdir(pybuild)
+          if re.match(r"lib\..*-.*-%d\.%d" % (sys.version_info[0], sys.version_info[1]), d)]
+sys.path = pydirs + sys.path
+import rivet
+
+def niceify(s):
+    "Replace informal symbols in titles and descriptions with nice LaTeX forms"
+    t = rivet.util.texpand(s) \
+        .replace(r"->", r"\ensuremath{\to}") \
+        .replace(r"pT", r"\pT") \
+        .replace(r"sqrt(s)", r"\ensuremath{\sqrt{s}}")
+    return rivet.util.texpand(t)
+
+## Set up Rivet analysis plugin and info file path variables
+os.environ["RIVET_ANALYSIS_PATH"] = os.path.abspath("../src/Analyses/.libs") + "::"
+os.environ["RIVET_INFO_PATH"] = os.path.abspath("../data/anainfo") + "::"
+
+## Build analysis pages
+all_analyses = rivet.AnalysisLoader.analysisNames()
+pages = { "LEP and SLC":[], "Tevatron":[], "LHC":[], "SPS":[], "HERA":[], "RHIC":[], "Monte Carlo":[], "Example":[], "Misc.":[] }
+## Use list(...) ctor for 2.3 compatibility
+bib = {}
+for aname in sorted(list(all_analyses)):
+    #print "Handling analysis '%s'" % aname
+    page = ""
+    page += "\\typeout{Handling analysis %s}" % aname
+    safe_aname = aname.replace(r"_", r"\_")
+    ana = rivet.AnalysisLoader.getAnalysis(aname)
+    subtitle = "\\subsection{%s}\n" % safe_aname
+    if ana.bibKey() and ana.bibTeX():
+        bib[ana.bibKey()] = "%% (%s)\n" % aname + ana.bibTeX()
+        citetex = r"\cite{%s}" % ana.bibKey()
+        subtitle = "\\subsection[%s]{%s}\n" % (safe_aname, safe_aname + "\," + citetex)
+    page += subtitle
+    page += "\\textbf{%s}\\newline\n" % niceify(ana.summary())
+    if ana.requiredBeams():
+        def pid_to_str(pid):
+            if pid == 11:
+                return "$e^-$"
+            elif pid == -11:
+                return "$e^+$"
+            elif pid == 2212:
+                return "$p$"
+            elif pid == -2212:
+                return "$\\bar{p}$"
+            elif pid == 10000:
+                return "$*$"
+            else:
+                return str(pid)
+        beamstrs = []
+        for bp in ana.requiredBeams():
+            beamstrs.append(pid_to_str(bp[0]) + "\\," + pid_to_str(bp[1]))
+        page += "\\textbf{Beams:} %s \\newline\n" % ", ".join(beamstrs)
+    if ana.requiredEnergies():
+        page += "\\textbf{Energies:} %s GeV \\newline\n" % \
+            ", ".join(["(%0.1f, %0.1f)" % (epair[0], epair[1]) for epair in ana.requiredEnergies()])
+    if ana.experiment():
+        page += "\\textbf{Experiment:} %s" % ana.experiment()
+        if ana.collider():
+            page += " (%s)" % ana.collider()
+        page += "\\newline\n"
+    if ana.inspireId():
+        spiresbase = "http://inspire-hep.net/record"
+        page += "\\textbf{Inspire ID:} \\href{%s+%s}{%s}\\newline\n" % \
+            (spiresbase, ana.inspireId(), ana.inspireId())
+    elif ana.spiresId():
+        spiresbase = "http://inspire-hep.net/search?p=find+key"
+        page += "\\textbf{Spires ID:} \\href{%s+%s}{%s}\\newline\n" % \
+            (spiresbase, ana.spiresId(), ana.spiresId())
+    page += "\\textbf{Status:} %s\\newline\n" % ana.status()
+
+    if ana.authors():
+        page += "\\textbf{Authors:}\n \\penalty 100\n"
+        page += "\\begin{itemize}\n"
+        for a in ana.authors():
+            s = a
+            import re
+            if re.search(".* <.*@.*>", a):
+                name = " ".join(a.split()[:-1])
+                email = a.split()[-1].replace("<", "").replace(">", "")
+                #s = "\\href{mailto:%s}{%s}" % (email, name)
+                s = "%s $\\langle\,$\\href{mailto:%s}{%s}$\,\\rangle$" % (name, email, email)
+            page += "  \\item %s\n" % s
+        page += "\\end{itemize}\n"
+    else:
+        page += "\\textbf{No authors listed}\\\\ \n"
+
+
+    if ana.references():
+        page += "\\textbf{References:}\n \\penalty 100\n"
+        page += "\\begin{itemize}\n"
+        for r in ana.references():
+            if r.startswith("arXiv:"):
+                code = r.split()[0].replace("arXiv:", "")
+                url = "http://arxiv.org/abs/" + code
+                page += "  \\item %s \\href{%s}{%s}\n" % ("arXiv:", url, code)
+            elif r.startswith("doi:"):
+                code = r.replace("doi:", "")
+                url = "http://dx.doi.org/" + code
+                page += "  \\item %s \\href{%s}{%s}\n" % ("DOI:", url, code)
+            else:
+                page += "  \\item %s\n" % r
+        page += "\\end{itemize}\n"
+    else:
+        page += "\\textbf{No references listed}\\\\ \n"
+
+
+    if ana.runInfo():
+        page += "\\textbf{Run details:}\n \\penalty 100\n"
+        infos = ana.runInfo().split(" * ")
+        #print ana.runInfo(), "->", infos
+        page += "\\begin{itemize}\n"
+        for i in infos:
+            if i:
+                page += "\\item %s\n" % niceify(i)
+        page += "\\end{itemize}\n"
+    else:
+        page += "\\textbf{No run details listed}\\\\ \n"
+
+
+    for para in ana.description().split("\n\n"):
+        page += "\n\\noindent " + niceify(para) + "\n"
+
+
+    ## If we can see yoda, include histogram lists
+    try:
+        import yoda
+    except:
+        pass
+    else:
+        anarefpath = os.path.join("..", "data", "refdata", ana.name()+".yoda")
+        hpaths = None
+        if os.path.exists(anarefpath):
+            hpaths = yoda.read(anarefpath).keys()
+        paths_titles = {}
+        if hpaths:
+            pp = rivet.PlotParser([os.path.join("..", "data", "plotinfo")])
+            for hp in hpaths:
+                attrs = pp.getHeaders(hp)
+                if attrs.has_key("Title"):
+                    paths_titles[hp] = attrs["Title"]
+        if paths_titles:
+            page += "\n\\vspace{1em}\n\\noindent\n"
+            page += "\\textbf{Histograms (%d):}\n \\penalty 100\n" % len(paths_titles)
+            page += "\\begin{itemize}\n"
+            for hpath, htitle in sorted(paths_titles.iteritems()):
+                page += "  \\item %s ({\\smaller \\kbd{%s}})\n" % (htitle, hpath.replace(r"_", r"\_"))
+                # TODO: Truncate with a \dots after N ~ 50 or so?
+            page += "\\end{itemize}\n"
+
+    page += "\n\\clearpage\n"
+
+    page = rivet.util.texify(page)
+
+
+    if "MC_" in ana.name().upper():
+        pages["Monte Carlo"].append(page)
+    elif "LEP" in ana.collider() or "SLC" in ana.collider():
+        pages["LEP and SLC"].append(page)
+    elif "Tevatron" in ana.collider():
+        pages["Tevatron"].append(page)
+    elif "LHC" in ana.collider():
+        pages["LHC"].append(page)
+    elif "SPS" in ana.collider():
+        pages["SPS"].append(page)
+    elif "HERA" in ana.collider():
+        pages["HERA"].append(page)
+    elif "RHIC" in ana.collider():
+        pages["RHIC"].append(page)
+    elif "EXAMPLE" in ana.name().upper():
+        pages["Example"].append(page)
+    else:
+        pages["Misc."].append(page)
+
+
+## Write out LaTeX
+prefix = """\
+\\makeatletter
+
+\\let\\old@eta\\eta
+\\renewcommand{\\eta}{\\ensuremath{\\old@eta}\\xspace}
+\\let\\old@phi\\phi
+\\renewcommand{\\phi}{\\ensuremath{\\old@phi}\\xspace}
+
+\\providecommand{\\kT}{\\ensuremath{k_\\perp}\\xspace}
+\\providecommand{\\pT}{\\ensuremath{p_\\perp}\\xspace}
+\\providecommand{\\pTmin}{\\ensuremath{p_\\perp^\\text{min}}\\xspace}
+\\providecommand{\\kt}{\\ensuremath{k_\\mathrm{T}}\\xspace}
+\\providecommand{\\pt}{\\ensuremath{p_\\mathrm{T}}\\xspace}
+\\providecommand{\\ptmin}{\\ensuremath{p_\\mathrm{T}^\\text{min}}\\xspace}
+
+%\\renewcommand{\\d}[1]{\\ensuremath{\\mathrm{#1}}}
+\\renewcommand{\\d}{\\ensuremath{\\mathrm{d}}\\xspace}
+
+\\providecommand{\\eV}{\\ensuremath{\\text{e\\kern-0.15ex{}V}}\\xspace}
+\\providecommand{\\MeV}{\\ensuremath{\\text{M\\eV}}\\xspace}
+\\providecommand{\\GeV}{\\ensuremath{\\text{G\\eV}}\\xspace}
+\\providecommand{\\TeV}{\\ensuremath{\\text{T\\eV}}\\xspace}
+
+\\makeatother
+
+"""
+
+
+groups = {}
+for group, ps in pages.iteritems():
+    s = ""
+    #if len(ps):
+    s = "\\section{%s analyses}" % group + "\n\n\\clearpage\n\n".join(ps)
+    groups[group] = s
+
+body = \
+    groups["LEP and SLC"] + "\n\n" + \
+    groups["Tevatron"] + "\n\n" + \
+    groups["LHC"] + "\n\n" + \
+    groups["SPS"] + "\n\n" + \
+    groups["HERA"] + "\n\n" + \
+    groups["RHIC"] + "\n\n" + \
+    groups["Monte Carlo"] + "\n\n" + \
+    groups["Example"] + "\n\n" + \
+    groups["Misc."] + "\n\n"
+
+outstr = prefix + body
+
+## Write out to TeX and BibTeX files
+f = open("%s.tex" % OUTNAME, "w")
+f.write("%auto-ignore\n")
+f.write(outstr)
+f.close()
+f = open("%s.bib" % OUTNAME, "w")
+#
+bibentries = "\n\n".join(["%% %s\n%s" % (k,b) for k,b in bib.iteritems()])
+f.write(bibentries + "\n")
+f.close()

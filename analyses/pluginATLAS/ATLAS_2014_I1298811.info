@@ -1,0 +1,42 @@
+Name: ATLAS_2014_I1298811
+Year: 2014
+Summary: Leading jet underlying event at 7 TeV in ATLAS
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1298811
+Status: VALIDATED
+Authors:
+ - Andy Buckley <andy.buckley@cern.ch>
+References:
+ - arXiv:1406.0392
+ - Eur.Phys.J. C74 (2014) 2965
+ - DOI:10.1140/epjc/s10052-014-2965-5
+RunInfo:
+  pp QCD interactions at 7 TeV, recommended weighted and enhanced in lead jet pT.
+NumEvents: 100000
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [10]
+NeedsCrossSection: no
+Description:
+  Underlying event measurements with the ATLAS detector at the LHC at
+  a center-of-mass energy of 7 TeV, using the leading jet for event
+  azimuthal orientation and constructing standard transverse region
+  observables from both charged tracks and calorimeter clusters.
+BibKey: Aad:2014hia
+BibTeX: '@article{Aad:2014hia,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of the underlying event in jet events from 7
+                        TeV proton-proton collisions with the ATLAS detector}",
+      collaboration  = "ATLAS Collaboration",
+      journal        = "Eur.Phys.J.",
+      volume         = "C74",
+      pages          = "2965",
+      doi            = "10.1140/epjc/s10052-014-2965-5",
+      year           = "2014",
+      eprint         = "1406.0392",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2014-077",
+      SLACcitation   = "%%CITATION = ARXIV:1406.0392;%%",
+}'

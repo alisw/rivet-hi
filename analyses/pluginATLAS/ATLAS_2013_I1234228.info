@@ -1,0 +1,48 @@
+Name: ATLAS_2013_I1234228
+Year: 2013
+Summary: High-mass Drell-Yan at 7 TeV
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1234228
+Status: VALIDATED
+Authors:
+ - Christian Gutschow <chris.g@cern.ch>
+References:
+ - Phys.Lett. B725 (2013) 223-242
+ - doi:10.1016/j.physletb.2013.07.049
+ - arXiv:1305.4192 [hep-ex]
+Keywords:
+ - drellyan
+ - vjets
+RunInfo:
+  Drell-Yan production in pp collisons at 7 TeV
+Luminosity_fb: 4.9
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [25,25]
+NeedCrossSection: True
+Description:
+  This Letter reports a measurement of the high-mass Drell-Yan differential cross-section in proton-proton collisions at a
+  centre-of-mass energy of 7 TeV at the LHC. Based on an integrated luminosity of 4.9 fb$^{-1}$, the differential cross-section in the
+  $Z/\gamma^\ast \rightarrow e^+e^-$ channel is measured with the ATLAS detector as a function of the invariant mass, $m_{ee}$, in the range
+  $116< m_{ee} <1500$ GeV, for a fiducial region in which both the electron and the positron have transverse momentum $p_\text{T}>25$ GeV and
+  pseudorapidity $|\eta|<2.5$. A comparison is made to various event generators and to the predictions of perturbative QCD calculations
+  at next-to-next-to-leading order.
+BibKey: Aad:2013iua
+BibTeX: '@article{Aad:2013iua,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of the high-mass Drell--Yan differential
+                        cross-section in pp collisions at sqrt(s)=7 TeV with the
+                        ATLAS detector}",
+      collaboration  = "ATLAS",
+      journal        = "Phys. Lett.",
+      volume         = "B725",
+      year           = "2013",
+      pages          = "223-242",
+      doi            = "10.1016/j.physletb.2013.07.049",
+      eprint         = "1305.4192",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2013-064",
+      SLACcitation   = "%%CITATION = ARXIV:1305.4192;%%"
+}'

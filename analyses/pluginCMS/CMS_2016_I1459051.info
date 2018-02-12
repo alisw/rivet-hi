@@ -1,0 +1,55 @@
+Name: CMS_2016_I1459051
+Year: 2016
+Summary: Measurement of the inclusive jet cross-section in $pp$ collisions at $\sqrt{s} = 13\;\TeV$
+Experiment: CMS
+Collider: LHC
+SpiresID: 1459051
+Status: VALIDATED
+Authors:
+ - Paolo Gunnellini <paolo.gunnellini@desy.de>
+References:
+ - Eur.Phys.J. C76 (2016) no.8, 451
+ - CERN-EP-2016-104
+ - CMS-SMP-15-007
+RunInfo:
+   Inclusive hard QCD at 13 TeV center-of-mass energy, and ptHat (or equivalent) greater than 90 GeV
+NumEvents: 200k
+Beams: [p+, p+]
+Energies: [13000]
+PtCuts: Jet pT higher than 114 GeV
+Description:
+  'A measurement of the double-differential inclusive jet cross section as a function of
+  jet transverse momentum pT and absolute jet rapidity |y| is presented. The analysis is
+  based on proton-proton collisions collected by the CMS experiment at the LHC at a
+  centre-of-mass energy of 13 TeV. The data samples correspond to integrated luminosities
+  of 71 and 44 pb−1 for |y| < 3 and 3.2 < |y| < 4.7, respectively. Jets are reconstructed
+  with the anti-kt clustering algorithm for two jet sizes, R, of 0.7 and 0.4, in a phase
+  space region covering jet pT up to 2 TeV and jet rapidity up to |y| = 4.7. Predictions
+  of perturbative quantum chromodynamics at next-to-leading order precision, complemented
+  with electroweak and nonperturbative corrections, are used to compute the absolute scale
+  and the shape of the inclusive jet cross section. The cross-section difference in $R$,
+  when going to a smaller jet size of 0.4, is best described by Monte Carlo event generators
+  with next-to-leading order predictions matched to parton showering, hadronisation, and
+  multiparton interactions. In the phase space accessible with the new data, this
+  measurement provides a first indication that jet physics is as well understood at
+  $\sqrt(s) = 13\;\TeV$ as at smaller centre-of-mass energies.'
+NeedCrossSection: yes
+BibKey: Khachatryan:2016wdh
+BibTeX: '@article{Khachatryan:2016wdh,
+      author         = "Khachatryan, Vardan and others",
+      title          = "{Measurement of the double-differential inclusive jet
+                        cross section in proton–proton collisions at $\sqrt{s} =
+                        13\,\text {TeV} $}",
+      collaboration  = "CMS",
+      journal        = "Eur. Phys. J.",
+      volume         = "C76",
+      year           = "2016",
+      number         = "8",
+      pages          = "451",
+      doi            = "10.1140/epjc/s10052-016-4286-3",
+      eprint         = "1605.04436",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-SMP-15-007, CERN-EP-2016-104",
+      SLACcitation   = "%%CITATION = ARXIV:1605.04436;%%"
+}'

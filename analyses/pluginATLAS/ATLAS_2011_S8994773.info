@@ -1,0 +1,25 @@
+Name: ATLAS_2011_S8994773
+Year: 2011
+Summary: Calo-based underlying event at 900 GeV and 7 TeV in ATLAS
+Experiment: ATLAS
+Collider: LHC
+SpiresID: 8994773
+InspireID: 891834
+Status: VALIDATED
+Authors:
+ - Jinlong Zhang <jinlong@mail.cern.ch>
+ - Andy Buckley <andy.buckley@cern.ch>
+References:
+ - arXiv:1103.1816
+RunInfo:
+  pp QCD interactions at 900 GeV and 7 TeV. Diffractive events should be
+  included, but only influence the lowest bins. Multiple kinematic cuts
+  should not be required.
+NumEvents: 10000000
+Beams: [p+, p+]
+Energies: [900, 7000]
+PtCuts: [0]
+Description:
+  Underlying event measurements with the ATLAS detector at the LHC at
+  center-of-mass energies of 900 GeV and 7 TeV, using calorimeter
+  clusters rather than charged tracks.

@@ -1,0 +1,35 @@
+Name: OPAL_1996_S3257789
+Year: 1995
+Summary: $J/\psi$ and $\psi^\prime$ Production in Hadronic $Z^0$ Decays
+Experiment: OPAL
+Collider: LEP 1
+SpiresID: 3257789
+InspireID: 402487
+Status: VALIDATED
+Authors:
+ - Peter Richardson <Peter.Richardson@durham.ac.uk>
+References:
+ - Z.Phys. C70 (1996) 197-210
+RunInfo:
+  Hadronic Z decay events generated on the Z pole ($\sqrt{s} = 91.2$ GeV)
+NumEvents: 1000000
+Beams: [e+, e-]
+Energies: [91.2]
+PtCuts: [0]
+Description: The production of $J/\psi$ and $\psi^\prime$ mesons measured
+   by the OPAL experiment at LEP. The fragmentation function for $J/\psi$ and the
+   multiplicities of  $J/\psi$ and $\psi^\prime$ are included.
+BibKey: Alexander:1995qb
+BibTeX: '@article{Alexander:1995qb,
+      author         = "Alexander, G. and others",
+      title          = "{$J/\psi$ and $\psi^\prime$ production in hadronic $Z^0$
+                        decays}",
+      collaboration  = "OPAL Collaboration",
+      journal        = "Z.Phys.",
+      volume         = "C70",
+      pages          = "197-210",
+      doi            = "10.1007/s002880050096",
+      year           = "1996",
+      reportNumber   = "CERN-PPE-95-153",
+      SLACcitation   = "%%CITATION = ZEPYA,C70,197;%%",
+}'

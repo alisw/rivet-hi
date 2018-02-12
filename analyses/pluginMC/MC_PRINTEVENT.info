@@ -1,0 +1,11 @@
+Name: MC_PRINTEVENT
+Summary: Print out a dump of each event to standard output
+Status: VALIDATED
+Authors:
+ - Andy Buckley <andy.buckley@cern.ch>
+RunInfo: Can be used with any event type.
+NumEvents: 1
+Description:
+  'Print out a dump of the event structure to the terminal standard output,
+   in a conveniently human readable form with e.g. particle names in addition
+   to the usual numerical ID codes.'

@@ -1,0 +1,48 @@
+Name: ATLAS_2016_I1444991
+Year: 2016
+Summary: Higgs-to-WW differential cross sections at 8 TeV
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1444991
+Status: VALIDATED
+Authors:
+ - Kathrin Becker <kathrin.becker@cern.ch>
+References: 
+ - JHEP 1608 (2016) 104
+ - doi:10.1007/JHEP08(2016)104
+ - arXiv:1604.02997 [hep-ex]
+RunInfo:
+  gg -> H -> W W* -> enu munu production at 8 TeV
+Beams: [p+, p+]
+Energies: [8000]
+PtCuts: [25]
+NeedCrossSection: yes
+Description:
+  This paper describes a measurement of fiducial and differential cross sections of gluon-fusion Higgs boson production in the 
+  $H\rightarrow W W^\ast \rightarrow e\nu\mu\nu$ channel, using 20.3 fb$^{-1}$ of proton-proton collision data. The data were 
+  produced at a centre-of-mass energy of $\sqrt{s} = 8$ TeV at the CERN Large Hadron Collider and recorded by the ATLAS detector 
+  in 2012. Cross sections are measured from the observed $H\rightarrow W W^\ast \rightarrow e\nu\mu\nu$ signal yield in categories 
+  distinguished by the number of associated jets. The total cross section is measured in a fiducial region defined by the kinematic 
+  properties of the charged leptons and neutrinos. Differential cross sections are reported as a function of the number of jets, 
+  the Higgs boson transverse momentum, the dilepton rapidity, and the transverse momentum of the leading jet. The jet-veto efficiency, 
+  or fraction of events with no jets above a given transverse momentum threshold, is also reported. All measurements are compared to 
+  QCD predictions from Monte Carlo generators and fixed-order calculations, and are in agreement with the Standard Model predictions.
+BibKey: Aad:2016lvc
+BibTeX: '@article{Aad:2016lvc,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of fiducial differential cross sections of
+                        gluon-fusion production of Higgs bosons decaying to
+                        $WW^{*} \rightarrow e\nu\mu\nu$ with the ATLAS detector at $
+                        \sqrt{s}=8 $ TeV}",
+      collaboration  = "ATLAS",
+      journal        = "JHEP",
+      volume         = "08",
+      year           = "2016",
+      pages          = "104",
+      doi            = "10.1007/JHEP08(2016)104",
+      eprint         = "1604.02997",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-EP-2016-019",
+      SLACcitation   = "%%CITATION = ARXIV:1604.02997;%%"
+}'

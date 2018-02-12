@@ -1,0 +1,38 @@
+Name: ATLAS_2012_I946427
+Year: 2012
+Summary: Search for supersymmetry with diphotons and mising Transverse Momentum
+Experiment: ATLAS
+Collider: LHC
+InspireID: 946427
+Status: OBSOLETE
+Authors:
+ - Peter Richardson <Peter.Richardson@durham.ac.uk>
+References:
+ - arXiv:1111.4116
+ - Phys. Lett. B710 (2012) 519-537
+RunInfo:
+  BSM signal events at 7000 GeV.
+NumEvents: 25000 for BSM signals
+Beams: [p+, p+]
+Energies: [7000]
+Description:
+  'Search for diphoton events with large missing transverse momentum
+   with integrated luminosity 1.07$\text{fb}^{-1}$ at $\sqrt{s}=7$.
+   No excess of events was observed.'
+BibKey: Aad:2011zj
+BibTeX: '@article{Aad:2011zj,
+      author         = "Aad, Georges and others",
+      title          = "{Search for Diphoton Events with Large Missing Transverse
+                        Momentum in $1\,\text{fb}^{-1}$ of 7 TeV Proton-Proton Collision Data
+                        with the ATLAS Detector}",
+      collaboration  = "ATLAS Collaboration",
+      journal        = "Phys.Lett.",
+      volume         = "B710",
+      pages          = "519-537",
+      year           = "2012",
+      eprint         = "1111.4116",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2011-160",
+      SLACcitation   = "%%CITATION = ARXIV:1111.4116;%%",
+}'

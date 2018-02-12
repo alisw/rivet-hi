@@ -1,0 +1,37 @@
+Name: BABAR_2015_I1334693
+Year: 2015
+Summary: Exclusive semileptonic D0 to piminus decays.
+Experiment: BABAR
+Collider: PEP-II
+InspireID: 1334693
+Status: VALIDATED
+Keywords:
+ - ddecays
+ - semileptonic
+Authors:
+ - Holger Schulz <holger.schulz@cern.ch>
+RunInfo:
+  Events with D-decays, either particle guns or collisions.
+NumEvents: 10000
+NeedCrossSection: no
+Description:
+  'Implementation of Lorentz invariant q2 distributions ("form factor") for semileptonic D0 decays'
+BibKey: Lees:2014ihu
+BibTeX: '@article{Lees:2014ihu,
+      author         = "Lees, J. P. and others",
+      title          = "{Measurement of the $D^0 \to \pi^- e^+ \nu_e$
+                        differential decay branching fraction as a function of
+                        $q^2$ and study of form factor parameterizations}",
+      collaboration  = "BaBar",
+      journal        = "Phys. Rev.",
+      volume         = "D91",
+      year           = "2015",
+      number         = "5",
+      pages          = "052022",
+      doi            = "10.1103/PhysRevD.91.052022",
+      eprint         = "1412.5502",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "BABAR-PUB-14-014, SLAC-PUB-16172",
+      SLACcitation   = "%%CITATION = ARXIV:1412.5502;%%"
+}'

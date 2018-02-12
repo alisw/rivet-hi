@@ -1,0 +1,50 @@
+Name: ATLAS_2013_I1230812_EL
+Year: 2013
+Summary: $Z +$ jets in $pp$ at 7 TeV (electron channel)
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1230812
+Status: VALIDATED
+Authors:
+ - Katharina Bierwagen <katharina.bierwagen@cern.ch>
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+ - arXiv:1304.7098 [hep-ex]
+ - J. High Energy Phys. 07 (2013) 032
+RunInfo:
+  Z+jets, electronic Z-decays
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [7000]
+NeedCrossSection: True
+Description:
+  'Measurements of the production of jets of particles in association with a Z
+   boson in pp collisions at $\sqrt{s}$ = 7 TeV are presented, using data corresponding
+   to an integrated luminosity of 4.6/fb collected by the ATLAS experiment at
+   the Large Hadron Collider. Inclusive and differential jet cross sections in Z
+   events, with Z decaying into electron or muon pairs, are measured for jets with
+   transverse momentum $p_T > 30$ GeV and rapidity $|y| < 4.4$.
+
+   This Rivet module implements the event selection for Z decaying into electrons
+   and uses the data measured explicitly in this channel (not the combined results
+   shown in the paper plots). If you want to use muonic events, please refer to
+   ATLAS\_2013\_I1230812\_MU.
+   '
+BibKey: Aad:2013ysa
+BibTeX: '@article{Aad:2013ysa,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of the production cross section of jets in
+                        association with a Z boson in pp collisions at $\sqrt{s}$
+                        = 7 TeV with the ATLAS detector}",
+      collaboration  = "ATLAS Collaboration",
+      journal        = "JHEP",
+      volume         = "1307",
+      pages          = "032",
+      doi            = "10.1007/JHEP07(2013)032",
+      year           = "2013",
+      eprint         = "1304.7098",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2013-023",
+      SLACcitation   = "%%CITATION = ARXIV:1304.7098;%%",
+      }'

@@ -1,0 +1,35 @@
+Name: ATLAS_2012_I1190891
+Year: 2012
+Summary: 4 or more lepton plus missing transverse energy SUSY search
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1190891
+Status: UNVALIDATED
+Authors:
+ - Peter Richardson <peter.richardson@durham.ac.uk>
+References:
+ - ATLAS-CONF-2012-001
+ - ATLAS-CONF-2012-035
+ - arXiv:1210.4457
+RunInfo:
+  BSM signal events at 7000 GeV.
+NumEvents: 25000 for BSM signals
+Beams: [p+, p+]
+Energies: [7000]
+NeedCrossSection: yes
+Description:
+  'Search for R-parity violating SUSY using events with 4 or more leptons in association with
+   missing transverse energy in proton-proton
+   collisions at a centre-of-mass energy of 7 TeV. The data sample has a total
+   integrated luminosity of 4.7 fb$^{-1}$.'
+BibTeX: '@article{Aad:2012kr,
+      author         = "Aad, Georges and others",
+      title          = "{Search for R-parity-violating supersymmetry in events with four or more leptons in $\sqrt{s} = 7$ TeV $pp$ collisions with the ATLAS detector}",
+      collaboration  = "ATLAS Collaboration",
+      year           = "2012",
+      eprint         = "1210.4457",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2012-276",
+      SLACcitation   = "%%CITATION = ARXIV:1210.4457;%%",
+}'

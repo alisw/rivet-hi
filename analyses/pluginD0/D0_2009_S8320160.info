@@ -1,0 +1,39 @@
+Name: D0_2009_S8320160
+Year: 2009
+Summary: Dijet angular distributions
+Experiment: D0
+Collider: Tevatron Run 2
+SpiresID: 8320160
+InspireID: 824127
+Status: VALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+ - arXiv:0906.4819 [hep-ex]
+RunInfo:
+  $p \bar{p} \to$ jets at 1960 GeV
+NumEvents: 1000000
+Beams: [p-, p+]
+Energies: [1960]
+PtCuts: [0]
+Description:
+  Dijet angular distributions in different bins of dijet mass from 0.25
+  TeV to above 1.1 TeV in $p \bar{p}$ collisions at $\sqrt{s} = 1.96$ TeV,
+  based on an integrated luminosity of 0.7 fb$^{-1}$.
+BibKey: :2009mh
+BibTeX: '@Article{:2009mh,
+     author    = "Abazov, V. M. and others",
+ collaboration = "D0",
+     title     = "{Measurement of dijet angular distributions at
+                  sqrt{s}=1.96TeV and searches for quark compositeness and
+                  extra spatial dimensions}",
+     journal   = "Phys. Rev. Lett.",
+     volume    = "103",
+     year      = "2009",
+     pages     = "191803",
+     eprint    = "0906.4819",
+     archivePrefix = "arXiv",
+     primaryClass  =  "hep-ex",
+     doi       = "10.1103/PhysRevLett.103.191803",
+     SLACcitation  = "%%CITATION = 0906.4819;%%"
+}'

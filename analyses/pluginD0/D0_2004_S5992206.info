@@ -1,0 +1,39 @@
+Name: D0_2004_S5992206
+Year: 2004
+Summary: Run II jet azimuthal decorrelation analysis
+Experiment: D0
+Collider: Tevatron Run 2
+SpiresID: 5992206
+InspireID: 659398
+Status: VALIDATED
+Authors:
+ - Lars Sonnenschein <lars.sonnenschein@cern.ch>
+References:
+ - Phys. Rev. Lett., 94, 221801 (2005)
+ - arXiv:hep-ex/0409040
+RunInfo:
+  QCD events in ppbar interactions at $\sqrt{s} = 1960$ GeV.
+NumEvents: 1000000
+Beams: [p-, p+]
+Energies: [1960]
+PtCuts: [0]
+Description:
+  Correlations in the azimuthal angle between the two largest pT jets
+  have been measured using the D0 detector in ppbar collisions at
+  1960~GeV. The analysis is based on an inclusive dijet event sample in
+  the central rapidity region. The correlations are determined for four
+  different pT intervals.
+BibKey: Abazov:2004hm
+BibTeX: '@Article{Abazov:2004hm,
+     author    = "Abazov, V. M. and others",
+ collaboration = "D0",
+     title     = "{Measurement of dijet azimuthal decorrelations at central rapidities in $p\bar{p}$ collisions at $\sqrt{s} = 1.96$ TeV}",
+     journal   = "Phys. Rev. Lett.",
+     volume    = "94",
+     year      = "2005",
+     pages     = "221801",
+     eprint    = "hep-ex/0409040",
+     archivePrefix = "arXiv",
+     doi       = "10.1103/PhysRevLett.94.221801",
+     SLACcitation  = "%%CITATION = HEP-EX/0409040;%%"
+}'

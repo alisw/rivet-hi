@@ -1,0 +1,39 @@
+Name: STAR_2006_S6870392
+Year: 2006
+Summary: Inclusive jet cross-section in pp at 200 GeV
+Experiment: STAR
+Collider: RHIC pp 200 GeV
+SpiresID: 6870392
+InspireID: 723509
+Status: VALIDATED
+Authors:
+ - Hendrik Hoeth <hendrik.hoeth@cern.ch>
+References:
+ - Phys. Rev. Lett. 97, 252001
+ - hep-ex/0608030
+RunInfo:
+  pp at 200 GeV
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [200]
+PtCuts: [0]
+Description:
+  Inclusive jet cross section as a function of pT in pp collisions
+  at $\sqrt{s} = 200$ GeV, measured by the STAR experiment at RHIC.
+NeedCrossSection: yes
+BibKey: Abelev:2006uq
+BibTeX: '@Article{Abelev:2006uq,
+     author    = "Abelev, B. I. and others",
+ collaboration = "STAR",
+     title     = "{Longitudinal double-spin asymmetry and cross section for
+                  inclusive jet  production in polarized proton collisions at
+                  s**(1/2) = 200-GeV}",
+     journal   = "Phys. Rev. Lett.",
+     volume    = "97",
+     year      = "2006",
+     pages     = "252001",
+     eprint    = "hep-ex/0608030",
+     archivePrefix = "arXiv",
+     doi       = "10.1103/PhysRevLett.97.252001",
+     SLACcitation  = "%%CITATION = HEP-EX/0608030;%%"
+}'

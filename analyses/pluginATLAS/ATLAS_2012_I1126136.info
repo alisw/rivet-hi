@@ -1,0 +1,35 @@
+Name: ATLAS_2012_I1126136
+Year: 2012
+Summary: SUSY top partner search in jets with missing transverse momentum
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1126136
+Status: UNVALIDATED
+Authors:
+ - Peter Richardson <peter.richardson@durham.ac.uk>
+References:
+ - arXiv:1208.1447
+RunInfo:
+  BSM signal events at 7000 GeV.
+NumEvents: 25000 for BSM signals
+Beams: [p+, p+]
+Energies: [7000]
+NeedCrossSection: yes
+Description:
+  'Search for direct pair production of supersymmetric top squarks, assuming the stop_1 decays
+   into a top quark and the lightest supersymmetric particle, and that both top quarks decay
+   to purely hadronic final states. This search has an integrated luminosity
+   of 4.7 fb$^{-1}$ at $\sqrt{s} = 8$\,TeV.'
+BibTeX: '@article{:2012si,
+      author         = "Aad, Georges and others",
+      title          = "{Search for a supersymmetric partner to the top quark in
+                        final states with jets and missing transverse momentum at
+                        $\sqrt{s} = 7$ TeV with the ATLAS detector}",
+      collaboration  = "ATLAS Collaboration",
+      year           = "2012",
+      eprint         = "1208.1447",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2012-201",
+      SLACcitation   = "%%CITATION = ARXIV:1208.1447;%%",
+}'

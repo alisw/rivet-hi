@@ -1,0 +1,47 @@
+Name: CMS_2016_I1421646
+Year: 2016
+Summary: Dijet azimuthal decorrelations in $pp$ collisions at $\sqrt{s} = 8$ TeV
+Experiment: CMS
+Collider: LHC
+SpiresID: 1421646
+Status: VALIDATED
+Authors:
+ - Giannis Flouris, Panos Kokkas, Evangelos Paradas
+ - Klaus Rabbertz, Georg Sieber
+References:
+ - arXiv:1602.04384  [hep-ex]
+ - CERN-PH-EP-2016-013
+RunInfo:
+   QCD at $\sqrt{s} = 8\;\TeV$
+Beams: [p+, p+]
+Energies: [8000]
+PtCuts: [100]
+Description:
+ 'A measurement of the decorrelation of azimuthal angles between the two jets with the
+ largest transverse momenta is presented for seven regions of leading jet transverse
+ momentum up to 2.2 TeV. The analysis is based on the proton-proton collision data
+ collected with the CMS experiment at a centre-of-mass energy of 8 TeV corresponding
+ to an integrated luminosity of 19.7/fb. The dijet azimuthal decorrelation is caused by
+ the radiation of additional jets and probes the dynamics of multijet production. The
+ results are compared to fixed-order predictions of perturbative quantum chromodynamics
+ (QCD), and to simulations using Monte Carlo event generators that include parton showers,
+ hadronization, and multiparton interactions.  Event generators with only two outgoing
+ high transverse momentum partons fail to describe the measurement, even when supplemented
+ with next-to-leading-order QCD corrections and parton showers. Much better agreement
+ is achieved when at least three outgoing partons are complemented through either
+ next-to-leading-order predictions or parton showers.  This observation emphasizes
+ the need to improve predictions for multijet production.'
+BibKey: Khachatryan:2016hkr
+BibTeX: '@article{Khachatryan:2016hkr,
+      author         = "Khachatryan, Vardan and others",
+      title          = "{Measurement of dijet azimuthal decorrelation in $pp$
+                        collisions at $\sqrt{s}$ = 8 TeV}",
+      collaboration  = "CMS",
+      journal        = "Submitted to: Eur. Phys. J. C",
+      year           = "2016",
+      eprint         = "1602.04384",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-SMP-14-015, CERN-PH-EP-2016-013, CERN-EP-2016-013",
+      SLACcitation   = "%%CITATION = ARXIV:1602.04384;%%"
+}'

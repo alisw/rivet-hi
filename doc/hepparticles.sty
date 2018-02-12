@@ -1,0 +1,545 @@
+%% hepparticles --- flexible elementary particle symbols
+%% Author: Andy Buckley <andy@insectnation.org>
+%%
+%% This material is subject to the LaTeX Project Public License.
+%% See http://www.ctan.org/tex-archive/help/Catalogue/licenses.lppl.html
+%% for the details of that license.
+%%
+%%
+%% The macros provided are:
+%%
+%% For generic particle names e.g. all positively charged leptons:
+%%   \HepGenParticle{main}{subscript}{superscript}
+%%   \HepGenAntiParticle{main}{subscript}{superscript}
+%%
+%% For concrete particle names:
+%%   \HepParticle{main}{subscript}{superscript}
+%%   \HepAntiParticle{main}{subscript}{superscript}
+%%
+%% For supersymmetric "sparticles":
+%%   \HepSusyParticle{main}{subscript}{superscript}
+%%   \HepGenSusyParticle{main}{subscript}{superscript}
+%%   \HepSusyAntiParticle{main}{subscript}{superscript}
+%%   \HepGenSusyAntiParticle{main}{subscript}{superscript}
+%% 
+%% For resonance specifiers (just the extra terms):
+%%   \HepResonanceMassTerm{mainTermInParenths}{subscript}{superscript}
+%%   \HepResonanceSpecTerm{mainSpecTerm}{subscript}{superscript}
+%% 
+%% For the total particle name and resonance specifications: the
+%% ``formal'' definitions include the spectroscopic term and the 
+%% ``full'' versions pf each require the main particle name to be
+%% explicitly specified rather than just pass a \HepParticle as the first arg:
+%%   \HepParticleResonance{name}{mass}{massSub}{massSup}
+%%   \HepParticleResonanceFormal{name}{mass}{massSub}\
+%%                              {massSup}{spec}{specSub}{specSup}
+%%   \HepParticleResonanceFull{name}{sub}{sup}{mass}{massSub}{massSup}
+%%   \HepParticleResonanceFormalFull{name}{sub}{sup}\
+%%                                  {mass}{massSub}{massSup}\
+%%                                  {spec}{specSub}{specSup}
+%% 
+%% And finally, for containing processes describing the evolution 
+%% of these particles:
+%%   \HepProcess{iParticles \to fParticles}
+%% where \to is re-defined to have a bit of extra space.
+%% 
+%% There are probably some missing cases but they can be handled
+%% as explicit exceptions. You might also be interested in the
+%% ``heppennames'' package, which updates the "pennames" set of 
+%% typeset concrete particle names to use this more flexible scheme.
+
+
+%% Admin
+\def\fileversion{1.6}
+\def\filedate{2005/03/01}
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{hepparticles}[\filedate\space HEP particle typesetting (v\fileversion)]
+
+%% Package options
+\def\@italicNames{}%
+\def\@forceItalic{}%
+\def\@maybeSansSerif{yes}% default is ON
+\def\@emptyOption{}%
+\def\@empty{}%
+
+%% Make particle symbols behave as for generic math mode
+\DeclareOption{italic}{%
+  \def\@italicNames{yes}%
+}
+%% Force particle symbols to behave as for italic math mode
+\DeclareOption{itforce}{%
+  \def\@italicNames{yes}%
+  \def\@forceItalic{yes}%
+}
+%% Force upright particle names (default)
+\DeclareOption{notitalic}{%
+  \def\@italicNames{}%
+  \def\@forceItalic{}%
+}
+%% Allow particle names to be sans-serif in context (no italics, even for generic particles)
+\DeclareOption{maybess}{%
+  \def\@maybeSansSerif{yes}%
+}
+\DeclareOption{noss}{%
+  \def\@maybeSansSerif{}%
+}
+\ProcessOptions
+
+\RequirePackage{maybemath}[2005/2/22]
+%\RequirePackage{pxfonts}
+%\RequirePackage{xspace}
+
+
+%% An italicised overline from Philip Ratcliffe
+%\DeclareRobustCommand{\anti}{\@anti}
+%\DeclareRobustCommand{\@anti}[1]{\mathpalette{\@@anti}{#1}#1}
+%\DeclareRobustCommand{\@@anti}[2]{%
+%  \sbox[0]{$#1#2$}%
+%  \makebox[0pt][l]{$#1\kern0.3\ht0\overline{\kern-0.4\ht0\phantom{#2}}$}%
+%}
+
+%% -----------------------------------------------------------------------
+%% Styling commands (exported)
+%% -----------------------------------------------------------------------
+
+%% Undecorated particle style (boldness and sans-serif handling)
+\DeclareRobustCommand{\HepNormStyle}[1]{%
+  \ifx\@maybeSansSerif\@emptyOption%
+    {\ensuremath{\maybebm{#1}}}%
+    %{\ensuremath{#1}}% lots of problems with the bold math nesting... cocks up in italic mode
+  \else%
+    {\ensuremath{\maybebm{\maybesf{#1}}}}%
+  \fi%
+}
+
+%% Generic particle style (normal style with optional forced italics)
+\DeclareRobustCommand{\HepGenStyle}[1]{%
+  \ifx\@forceItalic\@emptyOption%
+    {\HepNormStyle{#1}}%
+  \else%
+    {\HepNormStyle{\mathit{#1}}}%
+  \fi%
+}
+
+%% Concrete particle style (normal style with upright and forced italic handling)
+%% HepNormStyle can't be used in the first portion as it's important that sf be the 
+%% innermost operator and that bm is the outermost so the rm must be sandwiched.
+%% The choice has been made to have forced-italics override the sf option, as you
+%% presumably have no sense of style if you use forced-it anyway :P
+\DeclareRobustCommand{\HepConStyle}[1]{%
+  \ifx\@forceItalic\@emptyOption%
+    \ifx\@maybeSansSerif\@emptyOption%
+      {\ensuremath{\maybebm{\mayberm{#1}}}}%
+    \else%
+      {\ensuremath{\maybebm{\mayberm{\maybesf{#1}}}}}%
+    \fi%
+  \else%
+    {\HepNormStyle{\maybeitrm{#1}}}%
+  \fi%
+}
+
+%\setcounter{errorcontextlines}{10}
+
+%% -----------------------------------------------------------------------
+%% Internal commands
+%% -----------------------------------------------------------------------
+
+%% Spacer used for filling in superscripts to stabilise placement
+\DeclareRobustCommand{\@dummysuper}{{\vphantom{\ast}}}
+%\DeclareRobustCommand{\@dummysuper}{\ast}
+
+%% Internal command for typesetting conditionally-bold terms with optional 
+%% following sub- and super-scripts. Used by most other commands
+\DeclareRobustCommand{\@HepMainSubSupTerm}[3]{%
+  {\def\myargtwo{#2}}%
+  {\def\myargthree{#3}}%
+  \ensuremath{%
+    \ifx\myargtwo\@empty%
+      \ifx\myargthree\@empty%
+        {#1}%
+      \else%
+        {{#1}^{#3}}%
+      \fi%
+    \else%
+      \ifx\myargthree\@empty%
+        {{#1}_{#2}}%
+      \else%
+        {{#1}_{#2}^{#3}}%
+      \fi%
+    \fi%
+    \mspace{-0.6mu}% I don't know why, but a 0.6mu space was arising compared to pure text names
+  }%
+}
+
+\DeclareRobustCommand{\@HepGenericSubSupTerm}[3]{%
+  {\def\myargtwo{#2}}%
+  \ifx\myargtwo\@empty%
+    {\HepGenStyle{\@HepMainSubSupTerm{#1}{}{#3}}}%
+  \else%
+    {\HepGenStyle{\@HepMainSubSupTerm{#1}{\mspace{-2mu}{#2}}{#3}}}%
+  \fi%
+}
+
+\DeclareMathAlphabet{\upright}{OML}{cmmu}{m}{r}
+
+\DeclareRobustCommand{\@HepConcreteSubSupTerm}[3]{%
+  {\def\myargtwo{#2}}%
+  %
+  %% Re-define lowercase Greek characters to be upright (using txfonts)
+%%   \begingroup%
+%%   \let\@Oldalpha\alpha%
+%%   \let\@Oldbeta\beta%
+%%   \let\@Oldgamma\gamma%
+%%   \let\@Olddelta\delta%
+%%   \let\@Oldepsilon\epsilon%
+%%   \let\@Oldvarepsilon\varepsilon%
+%%   \let\@Oldzeta\zeta%
+%%   \let\@Oldeta\eta%
+%%   \let\@Oldtheta\theta%
+%%   \let\@Oldvartheta\vartheta%
+%%   \let\@Oldiota\iota%
+%%   \let\@Oldkappa\kappa%
+%%   \let\@Oldlambda\lambda%
+%%   \let\@Oldmu\mu%
+%%   \let\@Oldnu\nu%
+%%   \let\@Oldxi\xi%
+%%   \let\@Oldpi\pi%
+%%   \let\@Oldvarpi\varpi%
+%%   \let\@Oldrho\rho%
+%%   \let\@Oldvarrho\varrho%
+%%   \let\@Oldsigma\sigma%
+%%   \let\@Oldvarsigma\varsigma%
+%%   \let\@Oldtau\tau%
+%%   \let\@Oldupsilon\upsilon%
+%%   \let\@Oldphi\phi%
+%%   \let\@Oldvarphi\varphi%
+%%   \let\@Oldchi\chi%
+%%   \let\@Oldpsi\psi%
+%%   \let\@Oldomega\omega%
+%%   \renewcommand{\alpha}{\alphaup}%
+%%   \renewcommand{\beta}{\betaup}%
+%%   \renewcommand{\gamma}{\gammaup}%
+%%   \renewcommand{\delta}{\deltaup}%
+%%   \renewcommand{\epsilon}{\epsilonup}%
+%%   \renewcommand{\varepsilon}{\varepsilonup}%
+%%   \renewcommand{\zeta}{\zetaup}%
+%%   \renewcommand{\eta}{\etaup}%
+%%   \renewcommand{\theta}{\thetaup}%
+%%   \renewcommand{\vartheta}{\varthetaup}%
+%%   \renewcommand{\iota}{\iotaup}%
+%%   \renewcommand{\kappa}{\kappaup}%
+%%   \renewcommand{\lambda}{\lambdaup}%
+%%   \renewcommand{\mu}{\muup}%
+%%   \renewcommand{\nu}{\nuup}%
+%%   \renewcommand{\xi}{\xiup}%
+%%   \renewcommand{\pi}{\piup}%
+%%   \renewcommand{\varpi}{\varpiup}%
+%%   \renewcommand{\rho}{\rhoup}%
+%%   \renewcommand{\varrho}{\varrhoup}%
+%%   \renewcommand{\sigma}{\sigmaup}%
+%%   \renewcommand{\varsigma}{\varsigmaup}%
+%%   \renewcommand{\tau}{\tauup}%
+%%   \renewcommand{\upsilon}{\upsilonup}%
+%%   \renewcommand{\phi}{\phiup}%
+%%   \renewcommand{\varphi}{\varphiup}%
+%%   \renewcommand{\chi}{\chiup}%
+%%   \renewcommand{\psi}{\psiup}%
+%%   \renewcommand{\omega}{\omegaup}%
+  %
+  \ifx\myargtwo\@empty%
+    %{\HepConStyle{\@HepMainSubSupTerm{#1}{}{#3}}}%
+    {\HepConStyle{\@HepMainSubSupTerm{\upright{#1}}{}{#3}}}%
+  \else%
+    {\HepConStyle{\@HepMainSubSupTerm{#1}{\maybeitsubscript{#2}}{#3}}}%
+  \fi%
+  %
+  %% Restore the normal behaviour of lowercase Greek characters
+%%   \renewcommand{\alpha}{\@Oldalpha}%
+%%   \renewcommand{\beta}{\@Oldbeta}%
+%%   \renewcommand{\gamma}{\@Oldgamma}%
+%%   \renewcommand{\delta}{\@Olddelta}%
+%%   \renewcommand{\epsilon}{\@Oldepsilon}%
+%%   \renewcommand{\varepsilon}{\@Oldvarepsilon}%
+%%   \renewcommand{\zeta}{\@Oldzeta}%
+%%   \renewcommand{\eta}{\@Oldeta}%
+%%   \renewcommand{\theta}{\@Oldtheta}%
+%%   \renewcommand{\vartheta}{\@Oldvartheta}%
+%%   \renewcommand{\iota}{\@Oldiota}%
+%%   \renewcommand{\kappa}{\@Oldkappa}%
+%%   \renewcommand{\lambda}{\@Oldlambda}%
+%%   \renewcommand{\mu}{\@Oldmu}%
+%%   \renewcommand{\nu}{\@Oldnu}%
+%%   \renewcommand{\xi}{\@Oldxi}%
+%%   \renewcommand{\pi}{\@Oldpi}%
+%%   \renewcommand{\varpi}{\@Oldvarpi}%
+%%   \renewcommand{\rho}{\@Oldrho}%
+%%   \renewcommand{\varrho}{\@Oldvarrho}%
+%%   \renewcommand{\sigma}{\@Oldsigma}%
+%%   \renewcommand{\varsigma}{\@Oldvarsigma}%
+%%   \renewcommand{\tau}{\@Oldtau}%
+%%   \renewcommand{\upsilon}{\@Oldupsilon}%
+%%   \renewcommand{\phi}{\@Oldphi}%
+%%   \renewcommand{\varphi}{\@Oldvarphi}%
+%%   \renewcommand{\chi}{\@Oldchi}%
+%%   \renewcommand{\psi}{\@Oldpsi}%
+%%   \renewcommand{\omega}{\@Oldomega}%
+%%   \endgroup%
+}
+
+%% Internal command for shifting sub- and super-scripts vertically to counter the effects of overlines etc.
+\DeclareRobustCommand{\@VerticalScriptShift}[2]{%
+  {\raisebox{#1}{\HepNormStyle{\scriptstyle{#2}}}}%
+}
+
+%% Generic version of the above
+\DeclareRobustCommand{\@GenericVerticalScriptShift}[2]{%
+  {\@VerticalScriptShift{#1}{\HepGenStyle{#2}}}%
+}
+
+%% Concrete version of the above
+\DeclareRobustCommand{\@ConcreteVerticalScriptShift}[2]{%
+  {\@VerticalScriptShift{#1}{\HepConStyle{#2}}}%
+}
+
+
+%% -----------------------------------------------------------------------
+%% Exported (public) commands
+%% -----------------------------------------------------------------------
+
+%% Alias for the internal particle (main-sub-sup) structure
+\DeclareRobustCommand{\HepParticleStruct}[3]{\@HepMainSubSupTerm{#1}{#2}{#3}}
+
+
+%% For generic particles like "lepton", "quark" etc (no upright font)
+\DeclareRobustCommand{\HepGenParticle}[3]{%
+  {\def\myargthree{#3}}%
+  \ifx\myargthree\@empty%
+    {\@HepGenericSubSupTerm{#1}{#2}{\@dummysuper}}% unmatched subscripts are very unstable
+  \else%
+    {\@HepGenericSubSupTerm{#1}{#2}{#3}}%
+  \fi%
+}
+
+%% For concrete HEP particle names like "B", "J/psi" etc
+\DeclareRobustCommand{\HepParticle}[3]{%
+  \ifx\@italicNames\@emptyOption%
+    {\def\myargthree{#3}}%
+    \ifx\myargthree\@empty%
+      {\@HepConcreteSubSupTerm{#1}{#2}{\@dummysuper}}% unmatched subscripts are very unstable
+    \else%
+      {\@HepConcreteSubSupTerm{#1}{#2}{#3}}%
+    \fi%
+  \else%
+    {\HepGenParticle{#1}{#2}{#3}}%
+  \fi%
+}
+
+%% For generic antiparticles
+\DeclareRobustCommand{\HepGenAntiParticle}[3]{%
+  {\def\myargtwo{#2}}%
+  {\def\myargthree{#3}}% 
+  \ifx\myargtwo\@empty%
+    \HepGenParticle%
+    {\overline{#1}}%
+    {}%
+    {\mspace{1mu}\@GenericVerticalScriptShift{-0.6ex}{#3}}%
+  \else%
+    \ifx\myargthree\@empty%
+      {\HepGenParticle%
+      {\overline{#1}}%
+      {\mspace{0mu}{#2}}%
+      {\mspace{1mu}\@GenericVerticalScriptShift{-0.55ex}{\@dummysuper}}}%
+    \else%
+      {\HepGenParticle%
+      {\overline{#1}}%
+      {\mspace{1mu}{#2}}%
+      {\mspace{1mu}\@GenericVerticalScriptShift{-0.55ex}{#3}}}%
+    \fi%
+  \fi%
+}
+
+
+%% For antiparticles
+\DeclareRobustCommand{\HepAntiParticle}[3]{%
+  \ifx\@italicNames\@emptyOption%
+    {\def\myargtwo{#2}}%
+    {\def\myargthree{#2}}%
+    \ifx\myargtwo\@empty%
+      {\HepParticle%
+      {\overline{#1}}%
+      {}%
+      {\mspace{1mu}\@ConcreteVerticalScriptShift{-0.6ex}{#3}}}%
+    \else%
+      \ifx\myargthree\@empty%
+        {\HepParticle%
+        {\overline{#1}}%
+        {\mspace{1mu}#2}%
+        {\mspace{1mu}\@ConcreteVerticalScriptShift{-0.55ex}{\@dummysuper}}}%
+      \else%
+        {\HepParticle%
+        {\overline{#1}}%
+        {\mspace{1mu}#2}%
+        {\mspace{1mu}\@ConcreteVerticalScriptShift{-0.55ex}{#3}}}%
+      \fi%
+    \fi%
+  \else%
+    {\HepGenAntiParticle{#1}{#2}{#3}}%
+  \fi%
+}
+
+%% For generic SUSY particles e.g. slepton, squark
+\DeclareRobustCommand{\HepGenSusyParticle}[3]{%
+  {\def\myargtwo{#2}}%
+  {\def\myargthree{#3}}%
+  \ifx\myargtwo\@empty%
+    {\HepGenParticle%
+    {\widetilde{#1}}%
+    {}%
+    {\mspace{1mu}{#3}}}%
+  \else%
+    \ifx\myargthree\@empty%
+      {\HepGenParticle%
+      {\widetilde{#1}}%
+      {\mspace{0mu}\@GenericVerticalScriptShift{0.0ex}{#2}}%
+      {}}%
+    \else%
+      {\HepGenParticle%
+      {\widetilde{#1}}%
+      {\mspace{0mu}#2}%
+      {\mspace{1mu}\@GenericVerticalScriptShift{-0.02ex}{#3}}}%
+    \fi%
+  \fi%
+}
+
+%% For SUSY particles
+\DeclareRobustCommand{\HepSusyParticle}[3]{%
+  \ifx\@italicNames\@emptyOption%
+    {\def\myargtwo{#2}}%
+    {\def\myargthree{#3}}%
+    \ifx\myargtwo\@empty%
+      {\HepParticle%
+      {\widetilde{#1}}%
+      {}%
+      {\mspace{1mu}{#3}}}%
+    \else%
+      \ifx\myargthree\@empty%
+        {\HepParticle%
+        {\widetilde{#1}}%
+        {\mspace{1mu}{#2}}%
+        {\mspace{1mu}{\@dummysuper}}}%
+      \else%
+        {\HepParticle%
+        {\widetilde{#1}}%
+        {\mspace{1mu}{#2}}%
+        {\mspace{1mu}{#3}}}%
+      \fi%
+    \fi%
+  \else%
+    {\HepGenSusyParticle{#1}{#2}{#3}}%
+  \fi%
+}
+
+%% For generic SUSY anti-particles e.g. slepton, squark
+\DeclareRobustCommand{\HepGenSusyAntiParticle}[3]{%
+    {\HepGenParticle%
+    {\overline{\widetilde{#1}}}%
+    {\mspace{0mu}{#2}}%
+    {\mspace{1mu}\@GenericVerticalScriptShift{-1.25ex}{#3}}}%
+}
+
+%% For SUSY anti-particles
+\DeclareRobustCommand{\HepSusyAntiParticle}[3]{%
+  \ifx\@italicNames\@emptyOption%
+    {\HepParticle%
+    {\overline{\widetilde{#1}}}%
+    {\mspace{0mu}{#2}}%
+    {\mspace{1mu}\@ConcreteVerticalScriptShift{-1.25ex}{#3}}}%
+  \else%
+    {\HepGenSusyAntiParticle{#1}{#2}{#3}}%
+  \fi%
+}
+
+
+%% Resonances and other such structures. These are actually pretty 
+%% complicated since the most general structure has a main particle 
+%% term, a mass term and a spectroscopic term: in total 9 possible arguments
+%% if we let each main term have optional following sub- and super-scripts!
+%% The mass and spectroscopic terms seem to be mixed up quite often... *sigh*
+%%
+%% Apologies for the interface changing yet again as I learn how general
+%% these terms can be! Hopefully stable now (touch wood)...
+
+%% For resonance mass specifications like the bracket in "J/psi(1S)"
+\DeclareRobustCommand{\HepResonanceMassTerm}[3]{%
+  \ifx\@italicNames\@emptyOption%
+    \@HepConcreteSubSupTerm{\left({#1}\right)}{#2}{#3}%
+  \else%
+    \@HepGenericSubSupTerm{\left({#1}\right)}{#2}{#3}%
+  \fi%
+}
+
+%% For resonance spectroscopic specifications like the P_11 in "N(1440)P_11"
+\DeclareRobustCommand{\HepResonanceSpecTerm}[3]{%
+  \ifx\@italicNames\@emptyOption%
+    \@HepConcreteSubSupTerm{#1}{#2}{#3}%
+  \else%
+    \@HepGenericSubSupTerm{#1}{#2}{#3}%
+  \fi%
+}
+
+%% For resonances like "J/psi(1S)" (first arg is a whole \HepParticle)
+\DeclareRobustCommand{\HepParticleResonance}[4]{%
+  \ensuremath{%
+    {#1}{\HepResonanceMassTerm{#2}{#3}{#4}}%
+  }%
+}
+
+%% For resonances like "N(1440)P_11" (first arg is a whole \HepParticle)
+\DeclareRobustCommand{\HepParticleResonanceFormal}[7]{%
+  \ensuremath{%
+    {\HepParticleResonance{#1}{#2}{#3}{#4}}\,{\HepResonanceSpecTerm{#5}{#6}{#7}}%
+  }%
+}
+
+%% For resonances like "J/psi(1S)" (all arguments ``spelt out'')
+\DeclareRobustCommand{\HepParticleResonanceFull}[6]{%
+  \HepParticleResonance{\HepParticle{#1}{#2}{#3}}{#4}{#5}{#6}%
+}
+
+%% For resonances like "N(1440)P_11" (all arguments ``spelt out'')
+\DeclareRobustCommand{\HepParticleResonanceFormalFull}[9]{%
+  \HepParticleResonanceFormal{\HepParticle{#1}{#2}{#3}}{#4}{#5}{#6}{#7}{#8}{#9}%
+}
+
+
+%% For typesetting HEP processes with these particle names.
+%% Help on how to widen the math spacing would be nice: I always
+%% find myself putting \, between particle names to make it look good.
+\let\@HepOldto\to
+\DeclareRobustCommand{\HepTo}{\ensuremath{\to}}%
+\DeclareRobustCommand{\HepProcess}[1]{%
+\ifx\pdfoutput\undefined%
+  \begingroup%
+  \renewcommand{\to}{\mspace{2mu}\@HepOldto\mspace{2mu}}% %this defn makes PDFTeX do bad things
+  \ensuremath{#1}%
+  \renewcommand{\to}{\@HepOldto}%
+  \endgroup%
+\else%
+  \ensuremath{#1}%
+\fi%
+}
+
+%% Remove mspace from hyperref labels in PDFTeX
+%% Thanks to Heiko Oberdiek and Donald Arseneau for
+%% providing this solution via comp.text.tex
+\@ifpackageloaded{hyperref}{
+  \pdfstringdefDisableCommands{%
+      \DeclareRobustCommand{\HepProcess}[1]{#1}
+      \let\mspace\@gobble
+      \def\to{to }
+      \def\HepTo{to }
+  }%
+}{} 
+
+%% For reference purposes :-)
+%\DeclareRobustCommand{\hepparticles}{\texttt{hepparticles}\xspace}

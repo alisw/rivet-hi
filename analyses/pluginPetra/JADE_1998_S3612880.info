@@ -1,0 +1,40 @@
+Name: JADE_1998_S3612880
+Year: 1998
+Summary: Event shapes for 22, 35 and 44 GeV
+Experiment: JADE
+Collider: PETRA
+SpiresID: 3612880
+InspireID: 447560
+Status: VALIDATED
+Authors:
+ - Holger Schulz <holger.schulz@physik.hu-berlin.de>
+References:
+ - arXiv:hep-ex/9708034
+ - Eur.Phys.J.C1:461-478,1998
+RunInfo:
+  Z->hadronic final states, bbar contributions have been corrected for as well as ISR
+NumEvents: 1000000
+Beams: [e-, e+]
+Energies: [22, 35,44]
+PtCuts: Use an inv. mass cut close to sqrt{s} to avoid photon cotribution (e.g. CKIN(1))
+Description:
+  Thrust, Jet Mass and Broadenings, Y23 for 35 and 44 GeV and only Y23 at 22 GeV.
+BibKey: MovillaFernandez:1997fr
+BibTeX: '@Article{MovillaFernandez:1997fr,
+     author    = "Movilla Fernandez, P. A. and Biebel, O. and Bethke, S. and
+                  Kluth, S. and Pfeifenschneider, P.",
+ collaboration = "JADE",
+     title     = "{A study of event shapes and determinations of $\alpha_s$
+                  using data of  $e^+ e^-$ annihilations at $\sqrt{s} =$ 22 GeV to
+                  44 GeV}",
+     journal   = "Eur. Phys. J.",
+     volume    = "C1",
+     year      = "1998",
+     pages     = "461-478",
+     eprint    = "hep-ex/9708034",
+     archivePrefix = "arXiv",
+     doi       = "10.1007/s100520050096",
+     SLACcitation  = "%%CITATION = HEP-EX/9708034;%%"
+}'
+ToDo:
+ - Trigger conditions?

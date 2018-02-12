@@ -1,0 +1,48 @@
+Name: CDF_2008_S7828950
+Year: 2008
+Summary: CDF Run II inclusive jet cross-section using the Midpoint algorithm
+Experiment: CDF
+Collider: Tevatron Run 2
+SpiresID: 7828950
+InspireID: 790693
+Status: VALIDATED
+Authors:
+ - Craig Group <group@fnal.gov>
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+ - arXiv:0807.2204
+ - Phys.Rev.D78:052006,2008
+RunInfo:
+  Requires $2\rightarrow{2}$ QCD scattering processes. The minimum jet
+  $E_\perp$ is 62 GeV, so a cut on kinematic pTmin may be required for
+  good statistics.
+NumEvents: 1000000
+Beams: [p-, p+]
+Energies: [1960]
+PtCuts: [62]
+Description:
+  Measurement of the inclusive jet cross section in $p\bar{p}$
+  collisions at $\sqrt{s}=1.96$ TeV as a function of jet $E_\perp$, for $E_\perp >$
+  62 GeV. The data is collected by the CDF II detector and has an
+  integrated luminosity of 1.13 fb$^{-1}$. The measurement was made
+  using the cone-based Midpoint jet clustering algorithm in rapidity
+  bins within $|y|<2.1$. This measurement can be used to provide
+  increased precision in PDFs at high parton momentum fraction $x$.
+NeedCrossSection: yes
+BibKey: Aaltonen:2008eq
+BibTeX: '@Article{Aaltonen:2008eq,
+     author    = "Aaltonen, T. and others",
+ collaboration = "CDF",
+     title     = "{Measurement of the Inclusive Jet Cross Section at the
+                  Fermilab Tevatron p-pbar Collider Using a Cone-Based Jet
+                  Algorithm}",
+     journal   = "Phys. Rev.",
+     volume    = "D78",
+     year      = "2008",
+     pages     = "052006",
+     eprint    = "0807.2204",
+     archivePrefix = "arXiv",
+     primaryClass  =  "hep-ex",
+     doi       = "10.1103/PhysRevD.78.052006",
+     SLACcitation  = "%%CITATION = 0807.2204;%%"
+}'

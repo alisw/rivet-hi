@@ -1,0 +1,47 @@
+Name: ATLAS_2014_I1298023
+Year: 2014
+Summary: Same-sign WW cross section
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1298023
+Status: VALIDATED
+Authors:
+ - Simone Pagan Griso <simone.pagan.griso@cern.ch>
+ - Christian Gutschow <chris.g@cern.ch>
+References:
+ - Phys.Rev.Lett. 113 (2014) 141803
+ - doi:10.1103/PhysRevLett.113.141803
+ - arXiv:1405.6241 [hep-ex]
+RunInfo:
+  p + p -> W W j j, where the W bosons decay leptonically
+Beams: [p+, p+]
+Energies: [8000]
+PtCuts: [25,30]
+NeedCrossSection: True
+Description:
+  First measurement of $W^\pm W^\pm jj$, same-electric-charge diboson production in association with two jets, using
+  $20.3 {\rm fb}^{-1}$ of proton-proton collision data at $\sqrt{s} = 8$\,TeV recorded by the ATLAS detector at the
+  Large Hadron Collider. Events with two reconstructed same-charge leptons ($e^\pm e^\pm$, $e^\pm \mu^\pm$, and
+  $\mu^\pm \mu^\pm$) and two or more jets are analyzed. Production cross sections are measured in two fiducial regions,
+  with different sensitivities to the electroweak and strong production mechanisms. First evidence
+  for $W^\pm W^\pm j j$ production and electroweak-only $W^\pm W^\pm jj$ production is observed with a significance of
+  4.5 and 3.6 standard deviations, respectively.
+BibKey: Aad:2014zda
+BibTeX: '@article{Aad:2014zda,
+      author         = "Aad, Georges and others",
+      title          = "{Evidence for Electroweak Production of
+                        $W^{\pm}W^{\pm}jj$ in $pp$ Collisions at $\sqrt{s}=8$ TeV
+                        with the ATLAS Detector}",
+      collaboration  = "ATLAS",
+      journal        = "Phys.Rev.Lett.",
+      number         = "14",
+      volume         = "113",
+      pages          = "141803",
+      doi            = "10.1103/PhysRevLett.113.141803",
+      year           = "2014",
+      eprint         = "1405.6241",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2014-079",
+      SLACcitation   = "%%CITATION = ARXIV:1405.6241;%%",
+}'

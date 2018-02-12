@@ -1,0 +1,37 @@
+Name: CDF_1996_S3418421
+Year: 1996
+Summary: Dijet angular distributions
+Experiment: CDF
+Collider: Tevatron Run 1
+SpiresID: 3418421
+InspireID: 423414
+Status: VALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+ - Phys.Rev.Lett.77:5336-5341,1996
+ - doi:10.1103/PhysRevLett.77.5336
+ - arXiv:hep-ex/9609011
+RunInfo:
+  QCD dijet events at Tevatron $\sqrt{s}=1.8$ TeV without MPI.
+NumEvents: 1000000
+Beams: [p-, p+]
+Energies: [1800]
+PtCuts: [0]
+Description:
+  Measurement of jet angular distributions in events with two jets in the final
+  state in 5 bins of dijet invariant mass. Based on $106 \mathrm{pb}^{-1}$
+BibKey: Abe:1996mj
+BibTeX: '@Article{Abe:1996mj,
+     author    = "Abe, F. and others",
+ collaboration = "CDF",
+     title     = "{Measurement of dijet angular distributions at CDF}",
+     journal   = "Phys. Rev. Lett.",
+     volume    = "77",
+     year      = "1996",
+     pages     = "5336-5341",
+     eprint    = "hep-ex/9609011",
+     archivePrefix = "arXiv",
+     doi       = "10.1103/PhysRevLett.77.5336",
+     SLACcitation  = "%%CITATION = HEP-EX/9609011;%%"
+}'

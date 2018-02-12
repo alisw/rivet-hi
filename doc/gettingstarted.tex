@@ -1,0 +1,530 @@
+As with many things, Rivet may be meaningfully approached at several distinct
+levels of detail:
+
+\begin{itemize}
+\item The simplest, and we hope the most common, is to use the analyses which
+  are already in the library to study events from a variety of generators and
+  tunes: this is enormously valuable in itself and we encourage all manner of
+  experimentalists and phenomenologists alike to use Rivet in this mode.
+\item A more involved level of usage is to write your own Rivet analyses ---
+  this may be done without affecting the installed standard analyses by use of a
+  ``plugin'' system (although we encourage users who develop analyses to submit
+  them to the Rivet developers for inclusion into a future release of the main
+  package). This approach requires some understanding of programming within
+  Rivet but you don't \emph{need} to know about exactly what the system is doing
+  with the objects that you have defined.
+\item Finally, Rivet developers and people who want to do non-standard things
+  with their analyses will need to know something about the messy details of
+  what Rivet's infrastructure is doing behind the scenes. But you'd probably
+  rather be doing some physics!
+\end{itemize}
+
+The current part of this manual is for the first sort of user, who wants to get
+on with studying some observables with a generator or tune, or comparing several
+such models. Since everyone will fall into this category at some point, our
+present interest is to get you to that all-important ``physics plots'' stage as
+quickly as possible. Analysis authors and Rivet service-mechanics will find the
+more detailed information that they crave in Part~\ref{part:writinganalyses}.
+
+
+\section{Quickstart}
+
+The point of this section is to get you up and running with Rivet as soon as
+possible. Doing this by hand may be rather frustrating, as Rivet depends on
+several external libraries --- you'll get bored downloading and building them by
+hand in the right order. Here we recommend a much simpler way --- for the
+full details of how to build Rivet by hand, please consult the Rivet Web page.
+
+
+\paragraph{Bootstrap script}
+
+We have written a bootstrapping
+script which will download tarballs of Rivet and the other required
+libraries, expand them and build them in the right order with the correct build
+flags. This is generally nicer than doing it all by hand, and virtually
+essential if you want to use the existing versions of FastJet, HepMC, generator
+libraries, and so on from CERN AFS: there are issues with these versions which
+the script works around, which you won't find easy to do yourself.
+
+To run the script, we recommend that you choose a personal installation
+directory, i.e.\ make a \kbd{\home/local} directory for this purpose, to
+avoid polluting your home directory with a lot of files. If you already use a
+directory of the same name, you might want to use a separate one, say
+\kbd{\home/rivetlocal}, such that if you need to delete everything in the
+installation area you can do so without difficulties.
+
+Now, change directory to your build area (you may also want to make this,
+e.g. \kbd{\home/build}), and download the script:\\
+%\inp{wget \url{http://rivet.hepforge.org/svn/bootstrap/rivet-bootstrap}}\\
+\inp{wget \url{http://rivet.hepforge.org/hg/bootstrap/raw-file/X.Y.Z/rivet-bootstrap}}\\
+(where X.Y.Z is the release that you want to install)\\
+\inp{chmod +x rivet-bootstrap}\\
+Now run it to get some help:
+\inp{./rivet-bootstrap --help}\\
+Now to actually do the install: for example, to bootstrap Rivet %and AGILe
+to the install area specified as the prefix argument, run this:\\
+\inp{./rivet-bootstrap --prefix=\val{localdir}}
+
+If you are running on a system where the CERN AFS area is mounted as
+\path{/afs/cern.ch}, then the bootstrap script will attempt to use the pre-built
+HepMC\cite{Dobbs:2001ck}, LHAPDF\cite{Whalley:2005nh},
+FastJet\cite{Cacciari:2005hq,fastjetweb} and GSL libraries from the LCG software area.
+Either way, finally the bootstrap script will write out a file containing the
+environment settings which will make the system useable. You can source this
+file, e.g. \kbd{source rivetenv.sh} to make your current shell ready-to-go
+for a Rivet run (use \kbd{rivetenv.csh} if you are a C shell user).
+
+You now have a working, installed copy of the Rivet library, and the
+\kbd{rivet}, \kbd{rivet-*}, and \kbd{yoda*} executables: respectively these are the
+command-line frontend to the Rivet analysis library, and a convenient steering
+command for generators which do not provide their own main program with HepMC
+output. To test that they work as expected, source the setup scripts as above,
+if you've not already done so, and run this:\\
+\inp{rivet --help}\\
+%
+This should print a quick-reference user guide for the \kbd{rivet} command to
+the terminal.
+%
+% Similarly, for \kbd{agile-runmc},\\
+% \inp{agile-runmc --help}\\
+% \inp{agile-runmc --list-gens}\\
+% \inp{agile-runmc --beams=pp:14000 Pythia6:425}\\
+% which should respectively print the help, list the available generators and make
+% 10 LHC-type events using the Fortran Pythia\cite{Sjostrand:2006za} 6.423 generator. You're on your
+% way! If no generators are listed, you probably need to install a local
+% Genser-type generator repository: see \SectionRef{sec:genser}.
+
+In this manual we will use a dummy \kbd{generator} command as our way of
+producing a stream of HepMC event data. In practice you should run a generator
+like Pythia~8\cite{Sjostrand:2007gs,Sjostrand:2008vc},
+Herwig++\cite{Bahr:2008pv} or Sherpa\cite{Gleisberg:2008ta} which provide their
+own native way to make HepMC output -- and the latter two can also call the
+Rivet library directly via their own configuration interfaces. To use these, or
+perhaps older Fortran generators via the AGILe interface, substitute the
+appropriate command in what follows.\footnote{For largely historical reference,
+  use of the AGILe commands is documented in
+\SectionRef{app:agilerunrunmc}.}
+
+
+% \subsection{Getting generators for AGILe}
+% \label{sec:genser}
+
+% One last thing before continuing, though: the generators themselves. Again, if
+% you're running on a system with the CERN LCG AFS area mounted, then
+% \kbd{agile-runmc} will attempt to automatically use the generators packaged by the
+% LCG Genser team.
+
+% Otherwise, you'll have to build your own mirror of the LCG generators. This
+% process is evolving with time, and so, rather than provide information in this
+% manual which will be outdated by the time you read it, we simply refer you to
+% the relevant page on the Rivet wiki:
+% \url{http://rivet.hepforge.org/trac/wiki/GenserMirror}.
+
+% If you are interested in using a generator not currently supported by AGILe,
+% which does not output HepMC events in its native state, then please contact the
+% authors (via the Rivet developer contact email address) and hopefully we can
+% help.
+
+
+\subsection{Command completion}
+
+A final installation point worth considering is using the supplied bash-shell
+programmable completion setup for the \kbd{rivet} and generator %\kbd{agile-runmc}
+commands. Despite being cosmetic and semi-trivial, programmable completion makes
+using \kbd{rivet} positively pleasant, especially since you no longer need to
+remember the somewhat cryptic analysis names\footnote{Standard Rivet analyses
+  have names which, as well as the publication date and experiment name,
+  incorporate the 8-digit Spires/Inspire ID code.}!
+
+To use programmable completion, source the appropriate files from the install
+location:\\
+\inp{. \val{localdir}/share/Rivet/rivet-completion}\\
+% \inp{. \val{localdir}/share/AGILe/agile-completion}\\
+(if you are using the setup script \kbd{rivetenv.sh} this is automatically
+done for you).
+If there is already a \kbd{\val{localdir}/etc/bash_completion.d} directory in
+your install path, Rivet's installation script will install an extra
+copy into that location, since automatically sourcing all completion files in
+such a path is quite standard.
+
+% Apologies to \{C,k,z,\dots\}-shell users, but this feature is currently only
+% available for the \kbd{bash} shell. Anyone who feels like supplying fixes or
+% additions for their favourite shell is very welcome to get in touch with the
+% developers.
+
+
+
+\section{Running Rivet analyses}
+\label{sec:agile-runmc}
+
+The \kbd{rivet} executable is the easiest way to use Rivet, and will be our
+example throughout this manual. This command reads HepMC events in the standard
+ASCII format, either from file or from a text stream.
+
+\subsection{The FIFO idiom}
+\label{sec:fifo-idiom}
+
+Since you rarely want to store simulated HepMC events and they are
+computationally cheap to produce (at least when compared to the remainder of
+experiment simulation chains), we recommend using a Unix \emph{named pipe} (or
+``FIFO'' --- first-in, first-out) to stream the events. While this may seem
+unusual at first, it is just a nice way of ``pretending'' that we are writing to
+and reading from a file, without actually involving any slow disk access or
+building of huge files: a 1M event LHC run would occupy $\sim 60 GB$ on disk,
+and typically it takes twice as long to make and analyse the events when the
+filesystem is involved! Here is an example:\\
+\inp{mkfifo fifo.hepmc}\\
+\inp{generator -o fifo.hepmc \&}\\
+\inp{rivet -a EXAMPLE fifo.hepmc}\\
+%
+Note that the generator process (\kbd{generator} in this case) is
+\emph{backgrounded} before \kbd{rivet} is run.
+
+Notably, \kbd{mkfifo} will not work if applied to a directory mounted via the
+AFS distributed filesystem, as widely used in HEP. This is not a big problem:
+just make your FIFO object somewhere not mounted via AFS, e.g. \kbd{/tmp}. There
+is no performance penalty, as the filesystem object is not written to during the
+streaming process.
+
+In the following command examples, we will assume that a generator has been set
+up to write to the \kbd{fifo.hepmc} FIFO, and just list the \kbd{rivet} command
+that reads from that location. % Some typical \kbd{agile-runmc} commands are
+% listed in \ref{app:agilerunmc}.
+
+
+\subsection{Analysis status}
+
+The standard Rivet analyses are divided into four status classes: validated,
+preliminary, obsolete, and unvalidated (in roughly decreasing order of academic
+acceptability).
+
+The Rivet ``validation procedure'' is not formally
+defined, but generally implies that an analysis has been checked to ensure
+reproduction of MC points shown in the paper where possible, and is believed to
+have no outstanding issues with analysis procedure or cuts.  Additionally,
+analyses marked as ``validated'' and distributed with Rivet should normally have
+been code-checked by an experienced developer to ensure that the code is a good
+example of Rivet usage and is not more complex than required or otherwise
+difficult to read or maintain. Such analyses are regarded as fully ready for use
+in any MC validation or tuning studies.
+
+Validated analyses which implement an unfinished piece of experimental work are
+considered to be trustworthy in their implementation of a conference note or
+similar ``informal'' publication, but do not have the magic stamp of approval
+that comes from a journal publication. This remains the standard mark of
+experimental respectability and accordingly we do not include such analyses in
+the Rivet standard analysis libraries, but in a special ``preliminary''
+library. While preliminary analyses may be used for physics studies, please be
+aware of the incomplete status of the corresponding experimental study, and also
+be aware that the histograms in such analyses may be renamed or removed
+entirely, as may the analysis itself.
+
+Preliminary analyses will not have a Spires/Inspire ID, and hence on their
+move into the standard Rivet analysis library they will normally undergo a name
+change: please ensure when you upgrade between Rivet versions that any scripts
+or programs which were using preliminary analyses are not broken by the
+disappearance or change of that analysis in the newer version. The minor perils
+of using preliminary analyses can be avoided by the cautious by building Rivet
+with the \kbd{-{}-disable-preliminary} configuration flag, in which case their
+temptation will not even be offered.
+
+To make transitions between Rivet versions more smooth and predictable for users
+of preliminary analyses, preliminary analyses which are superseded by a
+validated version will be reclassified as obsolete and will be retained for one
+major version of Rivet with a status of "obsolete" before being removed, to give
+users time to migrate their run scripts, i.e. if an analysis is marked as
+obsolete in version 1.4.2, it will remain in Rivet's distribution until version
+1.5.0.  Obsolete analyses may have different reference histograms from the final
+version and will not be maintained. Obsolete analyses will not be built if
+either the \kbd{-{}-disable-obsolete} configuration flag is specified at build
+time: for convenience, the default value of this flag is the value of the
+\kbd{-{}-disable-preliminary} flag.
+
+Finally, unvalidated analyses are those whose implementation is incomplete,
+flawed or just troubled by doubts. Running such analyses is not a good idea if
+you aren't trying to fix them, and Rivet's command line tools will print copious
+warning messages if you do. Unvalidated analyses in the Rivet distribution are
+not built by default, as they are only of interest to developers and would be
+distracting clutter for the majority of users: if you \emph{really} need them,
+building Rivet with the \kbd{-{}-enable-unvalidated} configuration flag will
+slake your thirst for danger.
+
+
+\subsection{Example \kbd{rivet} commands}
+
+\begin{itemize}
+
+\item \textbf{Getting help: }{\kbd{rivet --help} will print a (hopefully)
+    helpful list of options which may be used with the \kbd{rivet} command, as
+    well as other information such as environment variables which may affect the
+    run.}
+
+\item \textbf{Choosing analyses: }{\kbd{rivet --list-analyses} will list the
+    available analyses, including both those in the Rivet distribution and any
+    plugins which are found at runtime. \kbd{rivet --show-analysis \val{patt}}
+    will show a lot of details about any analyses whose name match the
+    \val{patt} regular expression pattern --- simple bits of analysis name are a
+    perfectly valid subset of this. For example, \kbd{rivet --show-analysis
+      CDF_200} exploits the standard Rivet analysis naming scheme to show
+    details of all available CDF experiment analyses published in the
+    ``noughties.''}
+
+\item \textbf{Running analyses: }{\kbd{rivet -a~DELPHI_1996_S3430090
+      fifo.hepmc} will run the Rivet
+    \kbd{DELPHI_1996_S3430090}\cite{Abreu:1996na} analysis on the events in the
+    \kbd{fifo.hepmc} file (which, from the name, is probably a filesystem named
+    pipe rather than a normal \emph{file}). This analysis is the one originally
+    used for the \Delphi ``\textsc{Professor}'' generator tuning. If the first
+    event in the data file does not have appropriate beam particles, the
+    analysis will be disabled; since there is only one analysis in this case,
+    the command will exit immediately with a warning if the first event is not
+    an $\Ppositron\Pelectron$ event.}
+
+% \item \paragraph{Using all analyses:}{\kbd{rivet -n~50000 -A -} will read up to
+%     50k events from standard input (specified by the special ``-'' input
+%     filename) and analyse them with \emph{all} the Rivet library analyses. As
+%     above, incompatible analyses will be removed before the main analysis run
+%     begins.}
+
+\item \textbf{Histogramming: }{\kbd{rivet fifo.hepmc -H~foo.yoda} will read all the
+    events in the \kbd{fifo.hepmc} file. The \kbd{-H} switch is used to
+    specify that the output histogram file will be named \kbd{foo.yoda}. By
+    default the output file is called \kbd{Rivet.yoda}.}
+
+\item \textbf{Fine-grained logging: }
+
+  {\kbd{rivet fifo.hepmc -A
+      -l~Rivet.Analysis=DEBUG~\cmdbreak -l~Rivet.Projection=DEBUG
+      -l~Rivet.Projection.FinalState=TRACE~\cmdbreak -l~NEvt=WARN}
+    will analyse events as before, but will print different status
+    information as the run progresses. Hierarchical logging control is possible
+    down to the level of individual analyses and projections as shown above;
+    this is useful for debugging without getting overloaded with debug
+    information from \emph{all} the components at once. The default level is
+    ``\textsc{info}'', which lies between ``\textsc{debug}'' and
+    ``\textsc{warning}''; the ``\textsc{trace}'' level is for very low level
+    information, and probably isn't needed by normal users.}
+
+\end{itemize}
+
+
+
+\section{Using analysis data}
+
+In this section, we summarise how to use the data files which Rivet produces for
+plotting, validation and tuning.
+
+\subsection{Histogram formats}
+
+Rivet produces output data in the YODA text-based format -- see
+\url{http://yoda.hepforge.org}. This is a significant change from versions of
+Rivet before 2.0.0, which used the AIDA programming interface and XML format. If
+you do not want to use the plotting tools that come with Rivet (cf.\
+Sec.~\ref{sec:plotting}), you might wish to convert the YODA files to a
+different format for plotting: the YODA package itself provides several scripts
+for this purpose.
+
+\paragraph{Conversion to ROOT}
+
+For many people, the first question will be ``how do I plot my Rivet histograms
+using ROOT?''\,\cite{Antcheva:2009zz}. Setting aside the suggestion of masochism
+that this raises, be assured that the \kbd{yoda2root} script (installed by YODA
+if built with ROOT support enabled) will do a direct conversion of a \kbd{.yoda}
+file into an equivalent \kbd{.root} file. Equivalent, that is, as far as ROOT
+can represent the information in a YODA histogram: YODA stores far more
+information about weights and distribution moments within bins than ROOT can
+handle. For programmatic conversion, both the C++ and Python interfaces to YODA
+can convert YODA objects into their ROOT equivalents (and vice~versa).
+
+% Rivet installs an
+% \kbd{aida2root} script, which converts the AIDA records to a \kbd{.root} file
+% full of ROOT \texttt{TGraph}s. One word of warning: a bug in ROOT means that
+% \texttt{TGraph}s do not render properly from file because the axis is not drawn by
+% default. To display the plots correctly in ROOT you will need to pass the
+% \kbd{"AP"} drawing option string to either the \kbd{TGraph::Draw()} method, or
+% in the options box in the \kbd{TBrowser} GUI interface.
+% Alternatively you can also use the \kbd{-t} option with which \kbd{aida2root}
+% produces \texttt{TH1}s instead.
+
+\paragraph{Conversion to ``flat format''}
+
+Most of our histogramming is based around a ``flat'' plain text format,
+which can easily be read (and written) by hand. YODA provides a script called
+\kbd{yoda2flat} to do this conversion. Run \kbd{yoda2flat -h} to get usage
+instructions. Aside from anything else, this is useful for simply
+checking the contents of an YODA file, with \kbd{yoda2flat Rivet.yoda - | less}.
+
+\vspace{1.8em}
+
+\begin{detail}
+  We're aften asked why we don't use ROOT internally. It's a natural question,
+  given how dominant ROOT is in (experimental) particle physics data analysis
+  and plotting. Rivet's not using ROOT was originally historical, but is now a
+  matter of our requirements. ROOT is a very monolithic system, and when we
+  started writing Rivet, many theorists (who we needed to be on-side) were
+  unhappy about introducing such a large dependency -- so we at first settled on
+  using the AIDA/LWH system, which could be fully embedded in the Rivet code.
+
+  Eventually we decided that AIDA had run its course, due to such things as the
+  awkwardness of histogram addition and division, confusion between bin heights
+  and areas, and lack of support for gaps in binning (needed by several
+  analyses). ROOT was the obvious replacement, but after detailed consideration
+  we decided that it wouldn't solve the problems: we would re-encounter many of
+  the same weighted statistics issues we had already dealt with in AIDA (as well
+  as weight-handling not being enabled by default), binning gaps still wouldn't
+  be supported, and we would block future development thanks to ROOT's notorious
+  thread-unsafety and object ownership issues. Plus, how hard can histogramming
+  be? Having thought a lot about histogramming over the years, we decided to
+  write YODA.
+
+  It's taken several years (admittedly with very low manpower fractions on that
+  task!) to iterate to a design that we're really happy with, but we think YODA
+  is a \emph{really} pleasant way to do histogramming. It's object oriented but
+  without the global state issues of ROOT, or the factory-based weirdnesses of
+  AIDA. Weights are handled naturally, bins store enough distribution moments to
+  do some pretty advanced stuff, overflows are handled by default, scalings (of
+  weights or axes) and histogram arithmetic are easy and natural, and it's
+  computationally efficient. It's also not finished -- completed 2D
+  histogramming and abstract binning ideas are still to be implemented -- but
+  that means that your desired enhancements stand a chance of getting
+  implemented. So let us know your thoughts!
+\end{detail}
+
+
+\subsection{Plotting and comparing data}
+\label{sec:plotting}
+Rivet comes with three commands --- \kbd{rivet-mkhtml}, \kbd{rivet-cmphistos} and
+\kbd{make-plots} --- for comparing and plotting data files. These commands
+produce nice comparison plots of publication quality from the YODA format text
+files.
+
+The high level program \kbd{rivet-mkhtml} will automatically create a plot
+webpage from the given YODA files. It searches for reference data automatically
+and uses the other two commands internally. Example:\\
+\inp{rivet-mkhtml withUE.yoda:'Title=With UE' withoutUE.yoda:'LineColor=blue'}\\
+Run \kbd{rivet-mkhtml --help} to find out about all features and options.
+
+You can also run the other two commands separately:
+%
+\begin{itemize}
+\item \kbd{rivet-cmphistos} will accept a number of YODA files as input (ending in
+\kbd{.yoda}), identify which plots are available in them, and combine the MC
+and reference plots appropriately into a set of plot data files ending with
+\kbd{.dat}. More options are described by running \kbd{rivet-cmphistos --help}.
+
+Incidentally, the reference files for each Rivet analysis are to be found in the
+installed Rivet shared data directory, \kbd{\val{installdir}/share/Rivet}. You
+can find the location of this by using the \kbd{rivet-config} command:\\
+\inp{rivet-config --datadir}
+
+\item You can plot the created data files using the \kbd{make-plots} command:\\
+\inp{make-plots --pdf *.dat}\\
+The \kbd{--pdf} flag makes the output plots in PDF format: by default the output
+is in PostScript (\kbd{.ps}), and flags for conversion to EPS and PNG are also
+available.
+\end{itemize}
+
+
+\subsection{Merging histograms from different Rivet runs}
+The \kbd{yodamerge} script will take several YODA files and merge them together
+into a single one. If a histogram path only occurs in one of the input files, it
+is copied directly to the output. If it occurs more than once, the statistics of
+those histograms will be merged with full accuracy, producing the same output as
+would have been obtained from a single long run containing all the same
+events. Run \kbd{yodamerge -h} to get instructions on using the script.
+
+\begin{warning}
+  This exact merging only applies for \emph{histograms}, of either normal or
+  profile type. There are heuristics in the merging script to detect whether or
+  not there should be a common normalization, but as with all heuristics they
+  are not 100\% guaranteed. Also, more complex objects such as histogrammed
+  asymmetries, of the form $H_1 - H_2 / H_1 + H_2$, are not really histograms:
+  in YODA the division operation will automatically convert them to the
+  \kbd{Scatter2D} type, for which no moments are stored. It's not possible to
+  combine the statistics of such objects in a straightforward way -- so for now
+  only one of the input copies will be output. Watch Rivet 2.x for developments
+  which will finally \emph{properly} solve the run combination problem, by
+  allowing the \kbd{finalize()} step to be re-run on combined Rivet run outputs!
+\end{warning}
+
+
+% \section{Outdated information for AIDA in Rivet~1.x}
+
+% \begin{change}
+%   The following information applies to the Rivet~1.x series and the tools
+%   provided for AIDA histogramming. YODA should make many of these features
+%   unnecessary, since its Python interface is far more powerful and precise\dots
+%   but this is subject to evolution.
+% \end{change}
+
+% \subsection{Chopping histograms}
+% \newcommand{\chophisto}{\kbd{rivet-chopbins}\xspace} In some cases you don't
+% want to keep the complete histograms produced by Rivet.  For generator tuning
+% purposes, for example, you want to get rid of the bins you already know your
+% generator is incapable of describing. You can use the script \chophisto to
+% specify those bin-ranges you want to keep individually for each histogram in a
+% Rivet output-file. The bin-ranges have to be specified using the corresponding
+% x-values of that histogram.  The usage is very simple. You can specify bin
+% ranges of histograms to keep on the command-line via the \kbd{-b}
+% switch, which can be given multiple times, e.g.\\
+% \kbd{\chophisto -b /CDF\_2001\_S4751469/d03-x01-y01:5:13 Rivet.aida}\\
+% %
+% will chop all bins with $x<5$ and $x>13$ from the histogram
+% \kbd{/CDF\_2001\_S4751469/d03\-x01\-y01} in the file \kbd{Rivet.aida}. (In
+% this particular case, $x$ would be a leading jet \pT.)
+
+% \subsection{Normalising histograms}
+% \newcommand{\normhisto}{\kbd{rivet-rescale }} Sometimes you want to
+% use histograms normalised to, e.g., the generator cross-section or the area of
+% a reference-data histogram. The script \normhisto was designed for these
+% purposes. The usage is the following:\\
+% \kbd{\normhisto -O observables -r RIVETDATA -o normalised Rivet.aida}\\
+% %
+% By default, the normalised histograms are written to file in the AIDA-XML
+% format. You can also give the \kbd{-f} switch on the command line to produce
+% flat histograms.
+
+% \paragraph{Normalising to reference data} You will need an output-file of
+% Rivet, \kbd{Rivet.aida}, a folder that contains the reference-data histograms
+% (e.g. \kbd{rivet-config --datadir}) and optionally, a text-file,
+% \kbd{observables} that contains the names of the histograms you would like to
+% normalise - those not given in the file will remain un-normalised. These
+% are examples of how your \kbd{observables} file might look like:
+% %
+% \begin{snippet}
+% /CDF_2000_S4155203/d01-x01-y01
+% \end{snippet}
+
+% If a histogram \kbd{/CDF\_2000\_S4155203/d01-x01-y01} is found in one of the
+% reference-data files in the folder specified via the \kbd{-r} switch, then this
+% will result in a histogram \kbd{/CDF\_2000\_S4155203/d01-x01-y01} being
+% normalised to the area of the corresponding reference-data histogram.  You can
+% further specify a certain range of bins to normalise:
+% %
+% \begin{snippet}
+% /CDF_2000_S4155203/d01-x01-y01:2:35
+% \end{snippet}
+% %
+% \noindent will chop off the bins
+% with $x<2$ and $x>35$ of both, the histogram in your \kbd{Rivet.aida} and the
+% reference-data histogram. The remaining MC histogram is then normalised to the
+% remaining area of the reference-data histogram.
+
+% \paragraph{Normalising to arbitrary areas}%
+% In the file \kbd{observables} you
+% can further specify an arbitrary number, e.g. a generator cross-section, as
+% follows:
+% %
+% \begin{snippet}
+% /CDF_2000_S4155203/d01-x01-y01  1.0
+% \end{snippet}
+% \noindent will result in the histogram \kbd{/CDF\_2000\_S4155203/d01-x01-y01} being
+% normalised to 1.0, and
+% %
+% \begin{snippet}
+% /CDF_2000_S4155203/d01-x01-y01:2:35  1.0
+% \end{snippet}
+% %
+% \noindent will chop off the bins with $x<2$ and $x>35$ of the histogram\\
+% \kbd{/CDF\_2000\_S4155203/d01-x01-y01} first and normalise the remaining
+% histogram to one.

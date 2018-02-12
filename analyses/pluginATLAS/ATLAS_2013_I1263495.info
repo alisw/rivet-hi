@@ -1,0 +1,47 @@
+Name: ATLAS_2013_I1263495
+Year: 2013
+Summary: Inclusive isolated prompt photon analysis with 2011 LHC data
+Experiment: ATLAS
+Collider: LHC 7TeV
+InspireID: 1263495
+Status: VALIDATED
+Authors:
+ - Giovanni Marchiori <giovanni.marchiori@cern.ch>
+References:
+ - arXiv:1311.1440 [hep-ex]
+ - Phys.Rev. D89 (2014) 052004
+RunInfo:
+  Inclusive photon $+ X$ events (primary $\gamma$+jet events) at $\sqrt{s} = 7$~TeV.
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [100]
+Description:
+  'A measurement of the cross section for the production of isolated prompt photons
+   in pp collisions at a center-of-mass energy $sqrt{s} = 7$ TeV is presented.
+   The results are based on an integrated luminosity of 4.6 fb$^{-1}$ collected with
+   the ATLAS detector at the LHC. The cross section is measured as a function of photon
+   pseudorapidity $\eta^\gamma$ and transverse energy $E_T^\gamma$ in the
+   kinematic range $100 < E_T^\gamma < 1000$ GeV and in the regions
+   $|\eta^\gamma| < 1.37$ and $1.52 < |\eta^\gamma| < 2.37$. The results are
+   compared to leading-order parton-shower Monte Carlo models and next-to-leading
+   order perturbative QCD calculations. Next to-leading-order perturbative QCD calculations
+   agree well with the measured cross sections as a function of $E_T^\gamma$ and $\eta^\gamma$.'
+BibKey: Aad:2013zba
+BibTeX: '@article{Aad:2013zba,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of the inclusive isolated prompt photon
+                        cross section in $pp$ collisions at $\sqrt{s}$ = 7 TeV with the
+                        ATLAS detector using 4.6 fb$^{-1}$}",
+      collaboration  = "ATLAS Collaboration",
+      journal        = "Phys.Rev.",
+      volume         = "D89",
+      pages          = "052004",
+      doi            = "10.1103/PhysRevD.89.052004",
+      year           = "2014",
+      eprint         = "1311.1440",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2013-164",
+      SLACcitation   = "%%CITATION = ARXIV:1311.1440;%%",
+}'

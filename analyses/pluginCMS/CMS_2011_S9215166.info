@@ -1,0 +1,38 @@
+Name: CMS_2011_S9215166
+Year: 2011
+Summary: Forward energy flow in MB and dijet events at 0.9 and 7 TeV
+Experiment: CMS
+Collider: LHC
+SpiresID: 9215166
+InspireID: 930319
+Status: VALIDATED
+Authors:
+ - S. Dooling <samantha.dooling@cern.ch>
+ - A. Knutsson <albert.knutsson@cern.ch>
+References:
+ - JHEP 1111 148
+ - doi:10.1007/JHEP11(2011)148
+ - arXiv:hep-ex/1110.0211
+RunInfo:
+  $pp$ MB and QCD interactions at 0.9 and 7~TeV. No pT-cuts.
+NumEvents: 500000
+Beams: [p+, p+]
+Energies: [900, 7000]
+Description:
+  Forward energy flow measured by CMS at $\sqrt{s} = 0.9$ and 7~TeV in MB and dijet events.
+BibKey: Chatrchyan:2011wm
+BibTeX: '@Article{Chatrchyan:2011wm,
+     author    = "Chatrchyan, Serguei and others",
+     collaboration = "CMS",
+     title     = "{Measurement of energy flow at large pseudorapidities in $pp$
+                  collisions at $\sqrt{s}$ = 0.9 and 7 TeV}",
+     journal   = "JHEP",
+     volume    = "11",
+     year      = "2011",
+     pages     = "148",
+     eprint    = "1110.0211",
+     archivePrefix = "arXiv",
+     primaryClass  =  "hep-ex",
+     doi       = "10.1007/JHEP11(2011)148",
+     SLACcitation  = "%%CITATION = 1110.0211;%%"
+}'

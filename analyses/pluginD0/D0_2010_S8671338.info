@@ -1,0 +1,43 @@
+Name: D0_2010_S8671338
+Year: 2010
+Summary: Measurement of differential $Z/\gamma^*$ pT
+Experiment: D0
+Collider: Tevatron Run 2
+SpiresID: 8671338
+InspireID: 856972
+Status: VALIDATED
+Authors:
+ - Flavia Dias <fladias@gmail.com>
+ - Gavin Hesketh <gavin.hesketh@cern.ch>
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+ - arXiv:1006.0618 [hep-ex]
+RunInfo:
+  $p \bar{p} \to \mu^+ \mu^-$ + jets at 1960~GeV.
+  Needs mass cut on lepton pair to avoid photon singularity,
+  looser than $65 < m_{\mu\mu} < 115$ GeV.
+  Restrict $Z/\gamma^*$ mass range to roughly $50~\text{GeV}/c^2 < m_{\mu\mu}
+    < 120~\text{GeV}/c^2$ for efficiency.
+  Weighted events and kinematic sampling enhancement can help to fill the pT tail.
+NumEvents: 1000000
+Beams: [p-, p+]
+Energies: [1960]
+PtCuts: [0]
+Description:
+  Cross section as a function of pT of the Z boson decaying into muons
+  in $p \bar{p}$ collisions at $\sqrt{s}$ = 1.96
+  TeV, based on an integrated luminosity of 0.97 fb$^{-1}$.
+NeedCrossSection: yes
+BibKey: Abazov:2010kn
+BibTeX: '@Article{Abazov:2010kn,
+     author    = "Abazov, Victor Mukhamedovich and others",
+ collaboration = "D0",
+     title     = "{Measurement of the normalized $Z/\gamma^*\to \mu^+\mu^-$
+                  transverse momentum distribution in $p\bar{p}$ collisions
+                  at $\sqrt{s}=1.96$ TeV}",
+     year      = "2010",
+     eprint    = "1006.0618",
+     archivePrefix = "arXiv",
+     primaryClass  =  "hep-ex",
+     SLACcitation  = "%%CITATION = 1006.0618;%%"
+}'

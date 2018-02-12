@@ -1,0 +1,40 @@
+Name: D0_2011_I895662
+Year: 2011
+Summary: 3-jet invariant mass
+Experiment: D0
+Collider: Tevatron Run 2
+InspireID: 895662
+Status: VALIDATED
+Authors:
+ - Hendrik Hoeth <hendrik.hoeth@cern.ch>
+References:
+ - arxiv:1104.1986
+RunInfo:
+  QCD events, three jets above 40 GeV.
+NumEvents: 1000000
+NeedCrossSection: yes
+Beams: [p-, p+]
+Energies: [1960]
+PtCuts: [40]
+Description:
+  Inclusive three-jet differential cross-section as a function of invariant
+  mass of the three jets with the largest transverse momenta. The measurement
+  is made in three rapidity regions ($|y|<0.8, 1.6, 2.4$) and with jets above
+  40, 70, and 100 GeV.
+BibKey: Abazov:2011ub
+BibTeX: '@article{Abazov:2011ub,
+      author         = "Abazov, Victor Mukhamedovich and others",
+      title          = "{Measurement of three-jet differential cross sections
+                        $d\sigma_{\text{3jet}} / dM_{\text{3jet}}$ in $p\bar{p}$
+                        collisions at $\sqrt{s}=1.96$ TeV}",
+      collaboration  = "D0 Collaboration",
+      journal        = "Phys.Lett.",
+      volume         = "B704",
+      pages          = "434-441",
+      year           = "2011",
+      eprint         = "1104.1986",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "FERMILAB-PUB-11-173-E",
+      SLACcitation   = "%%CITATION = ARXIV:1104.1986;%%",
+}'

@@ -1,0 +1,18 @@
+Name: MC_LEADJETUE
+Summary: Underlying event in leading jet events, extended to LHC
+Status: VALIDATED
+Authors:
+ - Andy Buckley <andy.buckley@cern.ch>
+RunInfo:
+  LHC pp QCD interactions at 0.9, 10 or 14 TeV. Particles with
+  $c \tau > 10$ mm should be set stable. Several $p_\perp^\text{min}$
+  cutoffs are probably required to fill the profile histograms.
+NumEvents: 1000000
+PtCuts: [0]
+Description:
+  Rick Field's measurement of the underlying event in leading jet
+  events, extended to the LHC. As usual, the leading jet of the defines
+  an azimuthal toward/transverse/away decomposition, in this case the
+  event is accepted within $|\eta| < 2$, as in the CDF 2008 version of
+  the analysis. Since this isn't the Tevatron, I've chosen to use
+  $k_\perp$ rather than midpoint jets.

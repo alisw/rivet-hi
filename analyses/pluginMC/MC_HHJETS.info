@@ -1,0 +1,17 @@
+Name: MC_HHJETS
+Summary: Monte Carlo validation observables for $HH$ (stable) + jets production
+Status: VALIDATED
+Authors:
+ - Andreas Papaefstathiou <apapaefs@cern.ch>
+RunInfo:
+  $HH$ production with stable Higgses
+NumEvents: 1000000
+PtCuts: [0]
+Description:
+  The available observables are the Higgs boson pair invariant mass, the
+  separation between the two Higgs bosons, pT of the di-Higgs (any, hardest,
+  second hardest), pT and pseudorapidity of Higgs bosons (any, hardest,
+  second hardest), pT of jets 1--4, jet multiplicity, $\Delta\eta(h, \text{jet1})$,
+  $\Delta R(\text{jet2}, \text{jet3})$, differential jet rates 0->1, 1->2,
+  2->3, 3->4, and integrated 0--4 jet rates.
+NeedCrossSection: yes

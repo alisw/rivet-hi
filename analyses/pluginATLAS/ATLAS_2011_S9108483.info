@@ -1,0 +1,35 @@
+Name: ATLAS_2011_S9108483
+Year: 2011
+Summary: Long-lived heavy charged particle search
+Experiment: ATLAS
+Collider: LHC
+SpiresID: 9108483
+InspireID: 914491
+Status: UNVALIDATED
+Authors:
+ - Peter Richardson <Peter.Richardson@durham.ac.uk>
+References:
+ - arXiv:arXiv:1106.4495
+RunInfo:
+  BSM signal events at 7000 GeV.
+NumEvents: 25000 for BSM signals
+Beams: [p+, p+]
+Energies: [7000]
+Description:
+  'ATLAS search for long-lived heavy charged particles for four different mass cuts. Currently only the slepton search is implemented.'
+NeedCrossSection: yes
+BibKey: Aad:2011hz
+BibTeX: '@Article{Aad:2011hz,
+     author    = "Aad, Georges and others",
+     collaboration = "ATLAS",
+     title     = "{Search for Heavy Long-Lived Charged Particles with the ATLAS detector in $pp$ collisions at $\sqrt{s} = 7$ TeV}",
+     journal   = "Phys. Lett.",
+     volume    = "B703",
+     year      = "2011",
+     pages     = "428-446",
+     eprint    = "1106.4495",
+     archivePrefix = "arXiv",
+     primaryClass  =  "hep-ex",
+     doi       = "10.1016/j.physletb.2011.08.042",
+     SLACcitation  = "%%CITATION = 1106.4495;%%"
+}'

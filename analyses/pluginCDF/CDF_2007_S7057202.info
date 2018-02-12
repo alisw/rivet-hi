@@ -1,0 +1,49 @@
+Name: CDF_2007_S7057202
+Year: 2007
+Summary: CDF Run II inclusive jet cross-section using the kT algorithm
+Experiment: CDF
+Collider: Tevatron Run 2
+SpiresID: 7057202
+InspireID: 743342
+Status: VALIDATED
+Authors:
+ - David Voong
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+ - Phys.Rev.D75:092006,2007
+ - Erratum-ibid.D75:119901,2007
+ - FNAL-PUB 07/026-E
+ - hep-ex/0701051
+RunInfo:
+  p-pbar collisions at 1960~GeV. Jet pT bins from 54~GeV to 700~GeV.
+  Jet rapidity $< |2.1|$.
+NumEvents: 1000000
+Beams: [p-, p+]
+Energies: [1960]
+PtCuts: [0]
+Description:
+  CDF Run II measurement of inclusive jet cross sections at a p-pbar
+  collision energy of 1.96~TeV. Jets are reconstructed in the central
+  part of the detector ($|y|<2.1$) using the kT algorithm with an $R$
+  parameter of 0.7. The minimum jet pT considered is 54~GeV, with a
+  maximum around 700~GeV.  The inclusive jet pT is plotted in bins of
+  rapidity $|y|<0.1$, $0.1<|y|<0.7$, $0.7<|y|<1.1$, $1.1<|y|<1.6$ and
+  $1.6<|y|<2.1$.
+NeedCrossSection: yes
+BibKey: Abulencia:2007ez
+BibTeX: '@Article{Abulencia:2007ez,
+     author    = "Abulencia, A. and others",
+     collaboration = "CDF",
+     title     = "{Measurement of the Inclusive Jet Cross Section using the
+                  {\boldmath $k_{\rm T}$} algorithmin{\boldmath
+                  $p\overline{p}$} Collisions at{\boldmath $\sqrt{s}$} = 1.96
+                  TeV with the CDF II Detector}",
+     journal   = "Phys. Rev.",
+     volume    = "D75",
+     year      = "2007",
+     pages     = "092006",
+     eprint    = "hep-ex/0701051",
+     archivePrefix = "arXiv",
+     doi       = "10.1103/PhysRevD.75.092006",
+     SLACcitation  = "%%CITATION = HEP-EX/0701051;%%"
+}'

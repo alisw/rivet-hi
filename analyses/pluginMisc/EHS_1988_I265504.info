@@ -1,0 +1,37 @@
+Name: EHS_1988_I265504
+Year: 1988
+Summary: Charged-particle production in $K^+ p$, $\pi^+ p$ and $pp$ interactions at $250 \GeV/c$
+Experiment: EHS
+Collider: SPS
+InspireID: 265504
+Status: VALIDATED
+Authors:
+ - Felix Riehn <felix.riehn@kit.edu>
+References:
+ - Z.Phys.C39 (1988), 311
+RunInfo:
+   Inelastic interactions in CM frame, excluding slow protons in the lab. frame with p < 1.2~GeV/$c$
+NumEvents: 100000
+Beams: [[p+, p+], [pi+, p+], [k+, p+]]
+Energies: [[250., 0.], [250., 0.], [250., 0.]]
+NeedCrossSection: True
+Description:
+  'Measurement of charged particle production spectra in longitudinal and transverse momentum
+  as well as rapidity by the EHS/NA22 collaboration at the SPS. Experiment was done with a
+  fixed hydrogen target and beams of $p$, $\pi^+$ and $K^+$ with $250\,\GeV/c$. Measured spectra
+  are for positively charged hadrons $C^+$ and negative charge pions $\pi^-$. $C^+$ excludes
+  slow protons with $p < 1.2\,\GeV/c$ in the laboratory. Final spectra are in center-of-mass
+  variables: $x_\mathrm{F}$, $y$ and $p_\mathrm{T}$.'
+BibKey: Adamus:1988xc
+BibTeX: '@article{Adamus:1988xc,
+      author         = "Adamus, M. and others",
+      title          = "{Charged Particle Production in $K^+ p$, $\pi^+ p$ and $p
+                        p$ Interactions at 250{GeV}/$c$}",
+      collaboration  = "EHS/NA22",
+      journal        = "Z. Phys.",
+      volume         = "C39",
+      year           = "1988",
+      pages          = "311-329",
+      reportNumber   = "IFVE-88-121",
+      SLACcitation   = "%%CITATION = ZEPYA,C39,311;%%"
+}'

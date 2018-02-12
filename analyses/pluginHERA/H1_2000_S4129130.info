@@ -1,0 +1,49 @@
+Name: H1_2000_S4129130
+Year: 2000
+Summary: H1 energy flow in DIS
+Experiment: H1
+Collider: HERA
+SpiresID: 4129130
+InspireID: 503947
+Status: VALIDATED
+Authors:
+ - Peter Richardson <peter.richardson@durham.ac.uk>
+References:
+ - Eur.Phys.J.C12:595-607,2000
+ - doi:10.1007/s100520000287
+ - arXiv:hep-ex/9907027v1
+RunInfo:
+  $e^+ p$ deep inelastic scattering with $p$ at 820\;GeV,
+  $e^+$ at 27.5 GeV \to $\sqrt{s} = 300\;\GeV$
+NumEvents: 1000000
+Beams: [p+, e+]
+Energies: [[820, 27.5]]
+PtCuts: [0]
+Description:
+  Measurements of transverse energy flow for neutral current deep-
+  inelastic scattering events produced in positron-proton collisions at
+  HERA. The kinematic range covers squared momentum transfers $Q^2$ from
+  3.2 to 2200 GeV$^2$; the Bjorken scaling variable $x$ from $8 \times 10^{-5}$ to
+  0.11 and the hadronic mass $W$ from 66 to 233 GeV. The transverse
+  energy flow is measured in the hadronic centre of mass frame and is
+  studied as a function of $Q^2$, $x$, $W$ and pseudorapidity. The
+  behaviour of the mean transverse energy in the central pseudorapidity
+  region and an interval corresponding to the photon fragmentation
+  region are analysed as a function of $Q^2$ and $W$.  This analysis is
+  useful for exploring the effect of photon PDFs and for tuning models
+  of parton evolution and treatment of fragmentation and the proton
+  remnant in DIS.
+BibKey: Adloff:1999ws
+BibTeX: '@Article{Adloff:1999ws,
+     author    = "Adloff, C. and others",
+     collaboration = "H1",
+     title     = "{Measurements of transverse energy flow in deep inelastic-scattering at HERA}",
+     journal   = "Eur. Phys. J.",
+     volume    = "C12",
+     year      = "2000",
+     pages     = "595-607",
+     eprint    = "hep-ex/9907027",
+     archivePrefix = "arXiv",
+     doi       = "10.1007/s100520000287",
+     SLACcitation  = "%%CITATION = HEP-EX/9907027;%%"
+}'

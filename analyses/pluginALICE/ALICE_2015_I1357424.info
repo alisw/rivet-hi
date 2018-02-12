@@ -1,0 +1,37 @@
+Name: ALICE_2015_I1357424
+Year: 2015
+Summary: Transverse momentum spectra of pions, kaons and protons in $pp$ collisions at 7 TeV
+Experiment: ALICE
+Collider: LHC
+InspireID: 1357424
+Status: VALIDATED
+Authors:
+ - Andreas Morsch andreas.morsch@cern.ch
+#References:
+# - <Example: Phys.Lett.B639:151-158,2006, Erratum-ibid.B658:285-289,2008>
+# - <Example: doi:10.1016/j.physletb.2006.04.048>
+# - <Example: arXiv:hep-ex/0511054 (plus erratum)>
+RunInfo: Inelastic pp collisions at sqrt(s) = 7 TeV
+NumEvents: 1000000
+NeedCrossSection: no
+Beams: [p+, p+]
+Energies: [7000]
+#PtCuts: <Insert list of kinematic pT cuts in GeV, e.g. [0, 20]>
+#NeedCrossSection: True
+Description:
+  'Obtaining the transverse momentum spectra of primary pions, kaons and protons in $pp$ collisions at
+   $\sqrt{s} = 7$ TeV with ALICE at the LHC. K/pi and p/pi ratios are also included.'
+BibKey: Adam:2015qaa
+BibTeX: '@article{Adam:2015qaa,
+      author         = "Adam, Jaroslav and others",
+      title          = "{Measurement of pion, kaon and proton production in
+                        proton-proton collisions at $\sqrt{s}=7$ TeV}",
+      collaboration  = "ALICE",
+      year           = "2015",
+      eprint         = "1504.00024",
+      archivePrefix  = "arXiv",
+      primaryClass   = "nucl-ex",
+      reportNumber   = "CERN-PH-EP-2015-068",
+      SLACcitation   = "%%CITATION = ARXIV:1504.00024;%%",
+}'
+ToDo:

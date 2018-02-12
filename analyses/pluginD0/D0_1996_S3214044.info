@@ -1,0 +1,48 @@
+Name: D0_1996_S3214044
+Year: 1996
+Summary: Topological distributions of inclusive three- and four-jet events
+Experiment: D0
+Collider: Tevatron Run 1
+SpiresID: 3214044
+InspireID: 399364
+Status: VALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+ - Phys.Rev.D53:6000-6016,1996
+ - doi:10.1103/PhysRevD.53.6000
+ - arXiv:hep-ex/9509005
+RunInfo:
+  $p \bar{p} \to$ jets at 1800 GeV with minimum jet pT in analysis = 20 GeV
+NumEvents: 1000000
+Beams: [p-, p+]
+Energies: [1800]
+PtCuts: [10]
+Description:
+  The global topologies of inclusive three- and four-jet events produced in
+  pbar p interactions are described. The three- and four-jet events are
+  selected from data recorded by the D0 detector at the Fermilab Tevatron
+  Collider operating at a center-of-mass energy of $\sqrt{s}$=1800 GeV.
+  The studies also show that the topological distributions of the different
+  subprocesses involving different numbers of quarks are very similar and
+  reproduce the measured distributions well. The parton-shower Monte Carlo
+  generators provide a less satisfactory description of the topologies of the
+  three- and four-jet events.
+BibKey: Abachi:1995zv
+BibTeX: '@Article{Abachi:1995zv,
+     author    = "Abachi, S. and others",
+ collaboration = "D0",
+     title     = "{Studies of Topological Distributions of the Three- and
+                  Four-Jet Events in $\bar{p}p$ Collisions at $\sqrt{s}=1800$
+                  GeV with the D\O\\ Detector}",
+     journal   = "Phys. Rev.",
+     volume    = "D53",
+     year      = "1996",
+     pages     = "6000-6016",
+     eprint    = "hep-ex/9509005",
+     archivePrefix = "arXiv",
+     doi       = "10.1103/PhysRevD.53.6000",
+     SLACcitation  = "%%CITATION = HEP-EX/9509005;%%"
+}'
+ToDo:
+ - Currently using wrong jet algorithm!

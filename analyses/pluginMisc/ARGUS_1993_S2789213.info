@@ -1,0 +1,33 @@
+Name: ARGUS_1993_S2789213
+Summary: Inclusive production of $K^*(892)$, $\rho^0(770)$, and $\omega(783)$ mesons in the upsilon energy region.
+Status: VALIDATED
+Authors:
+ - Peter Richardson <Peter.Richardson@durham.ac.uk>
+References:
+ - Z.Phys. C61 (1994) 1-18
+RunInfo:
+  $e^+ e^-$ analysis in the 10 GeV CMS energy range
+NumEvents: 1000000
+SpiresID: 2789213
+InspireID: 356616
+Beams: [e+, e-]
+Energies: [9.46,10.45,10.58]
+PtCuts: [0]
+Description: Measurement of the inclusive production of the vector mesons $K^*(892)$,
+     $\rho^0(770)$ and $\omega(783)$ in $e^+e^-$ annihilation in the Upsilon
+     region by the Argus Collaboration. Useful for tuning simulations of B meson and
+     bottomium decays. 
+BibKey: Albrecht:1993fs
+BibTeX: '@article{Albrecht:1993fs,
+      author         = "Albrecht, H. and others",
+      title          = "{Inclusive production of $K^*(892)$, $\rho^0(770)$, and 
+                        $\omega(783)$ mesons in the $\Upsilon$ energy region}",
+      collaboration  = "ARGUS Collaboration",
+      journal        = "Z.Phys.",
+      volume         = "C61",
+      pages          = "1-18",
+      doi            = "10.1007/BF01641882",
+      year           = "1994",
+      reportNumber   = "DESY-93-084",
+      SLACcitation   = "%%CITATION = ZEPYA,C61,1;%%",
+}'

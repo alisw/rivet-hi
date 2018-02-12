@@ -1,0 +1,37 @@
+Name: BABAR_2013_I1116411
+Year: 2013
+Summary: Exclusive semileptonic Bplus to omega decays.
+Experiment: BABAR
+Collider: PEP-II
+InspireID: 1116411
+Status: VALIDATED
+Keywords:
+ - bdecays
+ - semileptonic
+Authors:
+ - Holger Schulz <holger.schulz@cern.ch>
+RunInfo:
+  Events with B-decays, either particle guns or collisions.
+NumEvents: 10000
+NeedCrossSection: no
+Description:
+  'Implementation of Lorentz invariant q2 distributions ("form factor") for semileptonic Bplus decays'
+BibKey: Lees:2012mq
+BibTeX: '@article{Lees:2012mq,
+      author         = "Lees, J. P. and others",
+      title          = "{Branching fraction measurement of $B^+ \to \omega \ell^+
+                        \nu$ decays}",
+      collaboration  = "BaBar",
+      journal        = "Phys. Rev.",
+      volume         = "D87",
+      year           = "2013",
+      number         = "3",
+      pages          = "032004",
+      doi            = "10.1103/PhysRevD.87.099904, 10.1103/PhysRevD.87.032004",
+      note           = "[Erratum: Phys. Rev.D87,no.9,099904(2013)]",
+      eprint         = "1205.6245",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "SLAC-PUB-15029, BABAR-PUB-12-005",
+      SLACcitation   = "%%CITATION = ARXIV:1205.6245;%%"
+}'

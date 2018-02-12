@@ -1,0 +1,34 @@
+Name: ARGUS_1993_S2669951
+Summary: Production of the $\eta'(958)$ and $f_0(980)$ in $e^+e^-$ annihilation in the Upsilon region.
+Status: VALIDATED
+Authors:
+ - Peter Richardson <Peter.Richardson@durham.ac.uk>
+References:
+ - Z.Phys. C58 (1993) 199-206
+RunInfo:
+  $e^+ e^-$ analysis near the $\Upsilon(4S)$ resonance.
+NumEvents: 1000000
+SpiresID: 2669951
+InspireID: 342061
+Beams: [e+, e-]
+Energies: [9.46,10.02,10.45]
+PtCuts: [0]
+Description: Measurement of the inclusive production of the $\eta'(958)$ and $f_0(980)$
+             mesons in $e^+e^-$ annihilation in the Upsilon region.
+             Data are taken on the $\Upsilon(1S)$, $\Upsilon(2S)$ and $\Upsilon(4S)$
+             resonances and in the nearby continuum (9.36 to 10.45 GeV center-of-mass energy)
+BibKey: Albrecht:1992nu
+BibTeX: '@article{Albrecht:1992nu,
+      author         = "Albrecht, H. and others",
+      title          = "{Inclusive production of eta-prime (958) and f0 (975)
+                        mesons in the upsilon energy region}",
+      collaboration  = "ARGUS Collaboration",
+      journal        = "Z.Phys.",
+      volume         = "C58",
+      pages          = "199-206",
+      doi            = "10.1007/BF01560338",
+      year           = "1993",
+      reportNumber   = "DESY-92-174",
+      SLACcitation   = "%%CITATION = ZEPYA,C58,199;%%",
+}
+'

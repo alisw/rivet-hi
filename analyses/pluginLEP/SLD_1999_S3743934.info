@@ -1,0 +1,39 @@
+Name: SLD_1999_S3743934
+Year: 1999
+Summary: Production of $\pi^+$, $K^+$, $K^0$, $K^{*0}$, $\Phi$, $p$ and $\Lambda^0$ in hadronic $Z^0$ decay
+Experiment: SLD
+Collider: SLC
+SpiresID: 3743934
+InspireID: 469925
+Status: VALIDATED
+Authors:
+ - Peter Richardson <Peter.Richardson@durham.ac.uk>
+References:
+ - Phys.Rev.D59:052001,1999
+ - hep-ex/9805029
+RunInfo:
+  Hadronic Z decay events generated on the Z pole ($\sqrt{s} = 91.2$ GeV)
+NumEvents: 1000000
+Beams: [e+, e-]
+Energies: [91.2]
+PtCuts: [0]
+Description:
+  Measurement of scaled momentum distributions and fragmentation functions
+  in flavour tagged events at SLC. SLD measured these
+  observables in uds-, c-, and b-events separately. An inclusive
+  measurement is also included.
+BibKey: Abe:1998zs
+BibTeX: '@Article{Abe:1998zs,
+     author    = "Abe, K. and others",
+ collaboration = "SLD",
+     title     = "{Production of pi+, K+, K0, K*0, Phi, p and Lambda0 in
+                  hadronic Z0  decays}",
+     journal   = "Phys. Rev.",
+     volume    = "D59",
+     year      = "1999",
+     pages     = "052001",
+     eprint    = "hep-ex/9805029",
+     archivePrefix = "arXiv",
+     doi       = "10.1103/PhysRevD.59.052001",
+     SLACcitation  = "%%CITATION = HEP-EX/9805029;%%"
+}'

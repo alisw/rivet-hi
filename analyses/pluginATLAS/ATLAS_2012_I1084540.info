@@ -1,0 +1,47 @@
+Name: ATLAS_2012_I1084540
+Year: 2012
+Summary: Rapidity gap cross sections measured with the ATLAS detector in $pp$ collisions at $\sqrt{s} = 7$ TeV.
+Experiment: ATLAS
+Collider: LHC 7TeV
+InspireID: 1084540
+Status: VALIDATED
+Authors:
+ - Oldrich Kepka <kepkao@fzu.cz>
+ - Tim Martin <tim.martin@cern.ch>
+ - Paul Newman <Paul.Newman@cern.ch>
+ - Pavel Ruzicka <ruzicka@fzu.cz>
+References:
+ - arXiv:1201.2808 [hep-ex]
+RunInfo:
+  'Minimum bias inelastic pp collision at 7 TeV including diffractive component and overall cross section.'
+NumEvents: 300000
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [0.2, 0.4, 0.6, 0.8]
+Description:
+  'Pseudorapidity gap distributions in proton-proton collisions at $\sqrt{s} = 7$ TeV
+  are studied using a minimum bias data sample with an integrated luminosity of 7.1
+  inverse microbarns. Cross sections are measured differentially in terms of $\Delta \eta_F$,
+  the larger of the pseudorapidity regions extending to the limits of the ATLAS sensitivity,
+  at $\eta = \pm 4.9$, in which no final state particles are produced above a transverse momentum
+  threshold $\pT$ cut. The measurements span the region $0 < \Delta \eta_F < 8$ for
+  $200 < p_T\text{ cut} < 800\;\MeV$. At small $\Delta \eta_F$, the data test the reliability of hadronisation
+  models in describing rapidity and transverse momentum fluctuations in final state particle
+  production. The measurements at larger gap sizes are dominated by contributions from the single
+  diffractive dissociation process ($pp \to Xp$), enhanced by double dissociation ($pp \to XY$) where
+  the invariant mass of the lighter of the two dissociation systems satisfies $M_Y \lesssim 7\;\GeV$.
+  The resulting cross section is $\mathrm{d} \sigma / \mathrm{d} \Delta \eta_F \sim 1$ mb for
+  $\Delta \eta_F \gtrsim 3$. The large rapidity gap data are used to constrain the value of
+  the pomeron intercept appropriate to triple Regge models of soft diffraction. The cross section
+  integrated over all gap sizes is compared with other LHC inelastic cross section measurements. '
+NeedCrossSection: yes
+BibTeX: '@article{Collaboration:2012pw,
+      author         = "Collaboration, ATLAS",
+      title          = "{Rapidity gap cross sections measured with the ATLAS detector in $pp$ collisions at $\sqrt{s} = 7$ TeV}",
+      year           = "2012",
+      eprint         = "1201.2808",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2011-220",
+      SLACcitation   = "%%CITATION = ARXIV:1201.2808;%%",
+}'

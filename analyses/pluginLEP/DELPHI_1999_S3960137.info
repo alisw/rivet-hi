@@ -1,0 +1,34 @@
+Name: DELPHI_1999_S3960137
+Year: 1999
+Summary: Measurement of inclusive $\rho^0$, $f_0(980)$, $f_2(1270)$, $K^{*0}_2(1430)$ and $f'_2(1525)$ production in $Z^0$ decays 
+Experiment: DELPHI
+Collider: LEP 1
+SpiresID: 3960137
+InspireID: 482816
+Status: VALIDATED
+Authors:
+ - Peter Richardson <Peter.Richardson@durham.ac.uk>
+References:
+ - Phys.Lett.B449:364-382,1999
+RunInfo:
+  Hadronic Z decay events generated on the Z pole ($\sqrt{s} = 91.2$ GeV)
+NumEvents: 1000000
+Beams: [e+, e-]
+Energies: [91.2]
+PtCuts: [0]
+Description: DELPHI results for the production of  $\rho^0$, $f_0(980)$, $f_2(1270)$, $K^{*0}_2(1430)$ 
+         and $f'_2(1525)$ in $Z^0$ decays. Only the identified particle spectra for
+         $\rho^0$, $f_0(980)$ and $f_2(1270)$ are implemented.
+BibKey: Abreu:1998nn
+BibTeX: '@Article{Abreu:1998nn,
+     author    = "Abreu, P. and others",
+     collaboration = "DELPHI",
+     title     = "{Measurement of inclusive $\rho^0$, $f^0(980)$, $f_2(1270)$,
+                  $K^{*0}_2(1430)$  and $f^\prime_2(1525)$ production in $Z^0$ decays}",
+     journal   = "Phys. Lett.",
+     volume    = "B449",
+     year      = "1999",
+     pages     = "364-382",
+     doi       = "10.1016/S0370-2693(99)00105-7",
+     SLACcitation  = "%%CITATION = PHLTA,B449,364;%%"
+}'

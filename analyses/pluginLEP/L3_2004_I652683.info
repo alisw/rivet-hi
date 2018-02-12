@@ -1,0 +1,36 @@
+Name: L3_2004_I652683
+Year: 2004
+Summary: Jet rates and event shapes at LEP I+II
+Experiment: L3
+Collider: LEP I+II
+InspireID: 652683
+Status: VALIDATED
+Authors:
+ - Adil Jueid <adil.hep@gmail.com>
+References:
+- 'Phys.Rept. 399 (2004) 71-174'
+- '10.1016/j.physrep.2004.07.002'
+- 'http://arxiv.org/abs/hep-ex/0406049'
+RunInfo: $e^+ e^- \to q \bar{q}$
+NumEvents: 1000000
+Beams: [e+, e-]
+Energies: [41.4, 55.3, 65.4, 75.7, 82.3, 85.1, 91.2, 130.1, 136.1, 161.3, 172.3, 182.8, 188.6, 194.4, 200.2, 206.2]
+NeedCrossSection: no
+Description: Event shapes, charged particle multiplicity and scaled momentum distribution at the Z-boson peak.
+BibKey: Achard:2004sv
+BibTeX: '@article{Achard:2004sv,
+      author         = "Achard, P. and others",
+      title          = "{Studies of hadronic event structure in $e^{+} e^{-}$
+                        annihilation from 30-GeV to 209-GeV with the L3 detector}",
+      collaboration  = "L3",
+      journal        = "Phys. Rept.",
+      volume         = "399",
+      year           = "2004",
+      pages          = "71-174",
+      doi            = "10.1016/j.physrep.2004.07.002",
+      eprint         = "hep-ex/0406049",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2004-024, CERN-EP-PH-2004-024",
+      SLACcitation   = "%%CITATION = HEP-EX/0406049;%%"
+}'

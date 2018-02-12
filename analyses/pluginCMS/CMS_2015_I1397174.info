@@ -1,0 +1,52 @@
+Name: CMS_2015_I1397174
+Year: 2016
+Summary: Measurement of ttbar production with additional jet activity, including b quark jets, in the dilepton decay channel using pp collisions at sqrt(s)=8 TeV
+Experiment: CMS
+Collider: LHC
+InspireID: 1397174
+Status: VALIDATED
+Authors:
+ - Javier Fernandez <Javier.Fernandez@cern.ch>
+ - Jungwan John Goh <Junghwan.Goh@cern.ch>
+ - Efe Yazgan <efe.yazgan@cern.ch>
+ - Markus Seidel <markus.seidel@cern.ch>
+ - James Keaveney <james.keaveney@vub.ac.be>
+ - Elvire Bouvier <e.bouvier@cern.ch>
+ - Benedikt Maier <benedikt.maier@cern.ch>
+ - Andy Buckley <andy.buckley@cern.ch>
+References:
+ - arXiv:1510.03072
+RunInfo:
+  'ttbar events at $\sqrt{s}=8\;\TeV. Top quarks are expected in the event record to identify
+   additional jets. Gap fractions require high statistics in a single run or custom merging of
+   the YODA files.'
+Luminosity: 19.7/fb
+Beams: [p+, p+]
+Energies: [8000]
+Description:
+    'Jet multiplicity distributions in top quark pair ($t\bar{t}$) events are measured in $pp$
+     collisions at a centre-of-mass energy of 8\;\TeV with the CMS detector at the LHC, using
+     a data set corresponding to an integrated luminosity of 19.7/fb. The measurement is
+     performed in the dilepton decay channels $e^+e^-$, $\mu^+\mu^-$, and $e^\pm\mu^\mp$).
+     The absolute and normalized differential cross-sections for $t\bar{t}$ production are
+     measured as a function of jet multiplicity for different jet transverse momentum thresholds
+     and the kinematic properties of the leading additional jets. The differential $t\bar{t}b$
+     and $t\bar{t}b\bar{b}$ cross-sections are presented for the first time as a function of
+     the kinematic properties of the leading additional $b$-jets. Furthermore, the fraction of
+     events without additional jets above a threshold is measured as a function of the transverse
+     momenta of the leading additional jets and the scalar sum of the transverse momenta of all
+     additional jets.'
+BibKey: Khachatryan:2015mva
+BibTeX: '@article{Khachatryan:2015mva,
+      author         = "Khachatryan, Vardan and others",
+      title          = "{Measurement of $\mathrm{ t \bar{t} } $ production with
+                        additional jet activity, including $b$ quark jets, in the
+                        dilepton decay channel using $pp$ collisions at $\sqrt{s} = 8\;\TeV$}",
+      collaboration  = "CMS",
+      year           = "2015",
+      eprint         = "1510.03072",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-TOP-12-041, CERN-PH-EP-2015-240",
+      SLACcitation   = "%%CITATION = ARXIV:1510.03072;%%"
+}'

@@ -1,0 +1,36 @@
+Name: ATLAS_2015_I1364361
+Year: 2015
+Summary: Total and differential Higgs cross sections at 8 TeV with ATLAS
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1364361
+Status: VALIDATED
+Authors:
+ - Michaela Queitsch-Maitland <michaela.queitsch-maitland@cern.ch>
+References:
+ - arXiv:1504.05833
+RunInfo:
+  pp Higgs production at 8 TeV, include all processes (ggH, VH, VBF, ttH), stable Higgs
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [8000]
+NeedsCrossSection: yes
+Description:
+  'WARNING --- this analysis requires stable higgs bosons ---
+  Measurements of the total and differential cross sections of Higgs boson production are performed using 20.3 fb−1 of pp collisions produced by the Large Hadron Collider at a center-of-mass energy of 8 TeV and recorded by the ATLAS detector. Cross sections are obtained from measured Higgs to diphoton and ZZ* event yields, which are combined accounting for detector efficiencies, fiducial acceptances and branching fractions. Differential cross sections are reported as a function of Higgs boson transverse momentum, Higgs boson rapidity, number of jets in the event, and transverse momentum of the leading jet. The total production cross section is determined to be 33.0 ± 5.3 (stat) ± 1.6 (sys) pb.'
+BibKey: 'Aad:2015lha'
+BibTex: '@article{Aad:2015lha,
+      author         = "Aad, Georges and others",
+      title          = "{Measurements of the Total and Differential Higgs Boson
+                        Production Cross Sections Combining the $H \rightarrow
+                        \gamma \gamma$ and $H \rightarrow ZZ ^{*}\rightarrow
+                        4\ell$ Decay Channels at $\sqrt{s}=8$ TeV with the ATLAS
+                        Detector}",
+      collaboration  = "ATLAS",
+      year           = "2015",
+      eprint         = "1504.05833",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2015-048",
+      SLACcitation   = "%%CITATION = ARXIV:1504.05833;%%",
+}'

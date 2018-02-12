@@ -1,0 +1,44 @@
+Name: CMS_2015_I1327224
+Year: 2015
+Summary:  Search for contact interactions \& extra dimensions using dijet angular distributions in proton-proton collisions at $\sqrt{s} = 8$ TeV
+Experiment: CMS
+Collider: LHC
+InspireID: 1327224
+Status: VALIDATED
+Authors:
+ - A. Hinzmann <hinzmann@cern.ch>
+References:
+ Phys.Lett. B746 (2015) 79-99
+ https://inspirehep.net/record/1327224
+RunInfo:
+  Hard QCD process with a pT cut of 200 GeV on sub-leading jet is recommended.
+NumEvents:
+NeedCrossSection: yes
+Beams: [p+, p+]
+Energies: [8000]
+Description:
+   'A search is presented for quark contact interactions and extra spatial dimensions in proton-proton collisions at sqrt(s) = 8 TeV
+    using dijet angular distributions. The search is based on a data set corresponding to an integrated luminosity of 19.7 fb-1
+    collected by the CMS detector at the CERN LHC. Dijet angular distributions are found to be in agreement with the perturbative
+    QCD predictions that include electroweak corrections. Limits on the contact interaction scale from a variety of models at
+    next-to-leading order in QCD corrections are obtained. A benchmark model in which only left-handed quarks participate is excluded
+    up to a scale of 9.0 (11.7) TeV for destructive (constructive) interference at 95% confidence level. Lower limits between 6.0 and
+    8.4 TeV on the scale of virtual graviton exchange are extracted for the Arkani-Hamed--Dimopoulos--Dvali model of extra spatial dimensions.'
+
+BibKey: Khachatryan:2014cja
+BibTeX: '@article{Khachatryan:2014cja,
+      author         = "Khachatryan, Vardan and others",
+      title          = "{Search for quark contact interactions and extra spatial
+                        dimensions using dijet angular distributions in proton-proton collisions at $\sqrt(s) =$ 8 TeV},
+      collaboration  = "CMS",
+      journal        = "Phys. Lett.",
+      volume         = "B746",
+      year           = "2015",
+      pages          = "79-99",
+      doi            = "10.1016/j.physletb.2015.04.042",
+      eprint         = "1411.2646",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-EXO-12-050, CERN-PH-EP-2014-261",
+      SLACcitation   = "%%CITATION = ARXIV:1411.2646;%%"
+}'

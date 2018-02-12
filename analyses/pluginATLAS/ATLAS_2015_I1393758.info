@@ -1,0 +1,50 @@
+Name: ATLAS_2015_I1393758
+Year: 2015
+Summary: Jet charge
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1393758
+Status: VALIDATED
+Authors:
+ - Ben Nachman <ibenjamin.philip.nachman@cern.ch>
+References:
+ - Phys.Rev. D93 (2016) no.5, 052003
+ - doi:10.1103/PhysRevD.93.052003
+ - arXiv:1509.05190 [hep-ex]
+RunInfo:
+  dijet production
+Beams: [p+, p+]
+Energies: [8000]
+PtCuts: [25]
+NeedCrossSection: False
+Description:
+  The momentum-weighted sum of the charges of tracks associated to a jet is sensitive to the charge of the initiating quark or
+  gluon. This paper presents a measurement of the distribution of momentum-weighted sums, called jet charge, in dijet events using
+  20.3 fb${}^{-1}$ of data recorded with the ATLAS detector at $\sqrt{s} = 8$ TeV in $pp$ collisions at the LHC. The jet charge 
+  distribution is unfolded to remove distortions from detector effects and the resulting particle-level distribution is compared with 
+  several models. The $p_\text{T}$ dependence of the jet charge distribution average and standard deviation are compared to 
+  predictions obtained with several leading-order and next-to-leading-order parton distribution functions. The data are also compared 
+  to different Monte Carlo simulations of QCD dijet production using various settings of the free parameters within these models. 
+  The chosen value of the strong coupling constant used to calculate gluon radiation is found to have a significant impact on the predicted 
+  jet charge. There is evidence for a $p_\text{T}$ dependence of the jet charge distribution for a given jet flavor. In agreement with 
+  perturbative QCD predictions, the data show that the average jet charge of quark-initiated jets decreases in magnitude as the energy 
+  of the jet increases.
+BibKey: Aad:2015cua
+BibTeX: '@article{Aad:2015cua,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of jet charge in dijet events from
+                        $\sqrt{s}$=8  TeV pp collisions with the ATLAS
+                        detector}",
+      collaboration  = "ATLAS",
+      journal        = "Phys. Rev.",
+      volume         = "D93",
+      year           = "2016",
+      number         = "5",
+      pages          = "052003",
+      doi            = "10.1103/PhysRevD.93.052003",
+      eprint         = "1509.05190",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2015-207",
+      SLACcitation   = "%%CITATION = ARXIV:1509.05190;%%"
+}'

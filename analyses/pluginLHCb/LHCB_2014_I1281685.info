@@ -1,0 +1,48 @@
+Name: LHCB_2014_I1281685
+Year: 2014
+Summary: Charged particle multiplicities and densities in $pp$ collisions at $\sqrt{s} = 7$ TeV
+Experiment: LHCB
+Collider: LHC
+InspireID: 1281685
+Status: VALIDATED
+Authors:
+ - Marco Meissner <meissner@physi.uni-heidelberg.de>
+References:
+ - Eur.Phys.J.C74:2888,2014
+ - doi:10.1140/epjc/s10052-014-2888-1
+ - arXiv:1402.4430 [hep-ex]
+RunInfo:
+  'Proton-proton collisions at $\sqrt(s)=7$ TeV, minimum bias data with a fixed interaction
+  rate of 1, no pile-up events. Kinematic cuts are, minimum momentum of 2 GeV/$c$,
+  minimum transverse momentum of 0.2 GeV/$c$ and a pseudorapidity range of $2.0 < \eta < 4.8$.'
+NumEvents: 1000000
+NeedCrossSection: no
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [0.2, 100]
+Description:
+  'Measurement of prompt charged particle production in proton-proton collsions at a
+   centre-of-mass energy of 7 TeV at the LHC. The measurement is performed in
+   the kinematic range $p > 2$ GeV/$c$, $p_\perp > 0.2$ GeV/$c$ and $2.0 < \eta < 4.8$.
+   At least one prompt charged particle per event is required. A prompt particle is
+   defined as a particle, that either originates directly from the primary vertex or from
+   a decay chain in which the sum of mean lifetimes does not exceed 10 ps.
+
+   Charged particle multiplicities are measured in the full kinematic range as
+   well as in regions of pseudorapidity and transverse momentum.
+   In addition, also mean particle densities are presented as functions of pseudorapidity
+   and transverse momentum.'
+BibKey: Aaij:2014pza
+BibTeX: '@article{Aaij:2014pza,
+      author         = "Aaij, Roel and others",
+      title          = "{Measurement of charged particle multiplicities and
+                        densities in $pp$ collisions at $\sqrt{s} = 7$ TeV in the
+                        forward region}",
+      collaboration  = "LHCb collaboration",
+      year           = "2014",
+      eprint         = "1402.4430",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2014-023, LHCB-PAPER-2013-070",
+      SLACcitation   = "%%CITATION = ARXIV:1402.4430;%%",
+}'

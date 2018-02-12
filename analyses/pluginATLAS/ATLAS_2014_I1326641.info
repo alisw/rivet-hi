@@ -1,0 +1,47 @@
+Name: ATLAS_2014_I1326641
+Year: 2011
+Summary: 3-jet cross section with 7 TeV data
+Experiment: ATLAS
+Collider: LHC
+InspireID: 326641
+Status: VALIDATED
+Authors:
+ - Aliaksei Hrynevich <aliaksei.hrynevich@cern.ch>
+ - Pavel Starovoitov <pavel.starovoitov@cern.ch>
+References:
+ - arXiv:1411.1855 [hep-ex]
+ - doi:10.1140/epjc/s10052-015-3363-3
+ - Eur.Phys.J. C75 (2015) 228
+RunInfo:
+ QCD jet production with at least three leading jets
+NeedCrossSection: yes
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [150,100,50]
+Description:
+   Double-differential three-jet production cross-sections have been measured in proton-proton collisions at a centre-of-mass energy of
+   $\sqrt{s} = 7\,$TeV using the ATLAS detector at the Large Hadron Collider. The measurements are presented as a function of the
+   three-jet mass ($m_{jjj}$), in bins of the sum of the absolute rapidity separations between the three leading jets
+   ($\left|Y^\ast\right|$). Invariant masses extending up to 5\,TeV are reached for $8<\left|Y^\ast\right|<10$. These measurements use
+   a sample of data recorded using the ATLAS detector in 2011, which corresponds to an integrated luminosity of
+   $4.51\,\text{fb}^{-1}$. Jets are identified using the anti-$k_\text{t}$ algorithm with two different jet radius parameters,
+   $R=0.4$ and $R=0.6$. 
+BibKey: Aad:2014rma
+BibTeX: '@article{Aad:2014rma,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of three-jet production cross-sections in
+                        $pp$ collisions at 7 TeV centre-of-mass energy using the
+                        ATLAS detector}",
+      collaboration  = "ATLAS",
+      journal        = "Eur.Phys.J.",
+      number         = "5",
+      volume         = "C75",
+      pages          = "228",
+      doi            = "10.1140/epjc/s10052-015-3363-3",
+      year           = "2015",
+      eprint         = "1411.1855",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2014-157",
+      SLACcitation   = "%%CITATION = ARXIV:1411.1855;%%",
+}'

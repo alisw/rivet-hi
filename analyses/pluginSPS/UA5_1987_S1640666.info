@@ -1,0 +1,36 @@
+Name: UA5_1987_S1640666
+Year: 1987
+Summary: UA5 charged multiplicity measurements at 546 GeV
+Experiment: UA5
+Collider: CERN SPS
+SpiresID: 1640666
+InspireID: 244829
+Status: VALIDATED
+Authors:
+ - Holger Schulz <holger.schulz@physik.hu-berlin.de>
+References:
+ - Phys.Rept.154:247-383,1987 
+RunInfo:
+  QCD and diffractive events at 546 GeV
+NumEvents: 1000000
+Beams: [p-, p+]
+Energies: [546]
+PtCuts: 
+Description:
+  'Charged particle multiplicity measurement.'
+BibKey: Alner:1987wb
+BibTeX: '@Article{Alner:1987wb,
+     author    = "Alner, G. J. and others",
+ collaboration = "UA5",
+     title     = "{UA5: A general study of proton-antiproton physics at
+                  $\sqrt{s}$ = 546-GeV}",
+     journal   = "Phys. Rept.",
+     volume    = "154",
+     year      = "1987",
+     pages     = "247-383",
+     doi       = "10.1016/0370-1573(87)90130-X",
+     SLACcitation  = "%%CITATION = PRPLC,154,247;%%"
+}'
+ToDo:
+ - Include more distributions
+

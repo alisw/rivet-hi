@@ -1,0 +1,33 @@
+Name: UA5_1982_S875503
+SpiresID: 875503
+InspireID: 176647
+Summary: UA5 multiplicity and pseudorapidity distributions for $pp$ and $p\bar{p}$.
+Status: VALIDATED
+Experiment: UA5
+Collider: SPS
+Year: 1982
+RunInfo: Min bias QCD events at $\sqrt{s} = 53$\;GeV. Run with both $pp$ and $p\bar{p}$ beams.
+Beams: [[p-, p+], [p+, p+]]
+Energies: [53]
+PtCuts: [0]
+Authors:
+ - Andy Buckley <andy.buckley@cern.ch>
+ - Christophe Vaillant <c.l.j.j.vaillant@durham.ac.uk>
+References:
+ - Phys.Lett.112B:183,1982
+Description:
+  Comparisons of multiplicity and pseudorapidity distributions for $pp$ and
+  $p\bar{p}$ collisions at 53 GeV, based on the UA5 53~GeV runs in 1982.
+  Data confirms the lack of significant difference between the two beams.
+BibKey: Alpgard:1982zx
+BibTeX: '@Article{Alpgard:1982zx,
+     author    = "Alpgard, K. and others",
+ collaboration = "UA5",
+     title     = "{Comparison of $p\bar{p}$ and $pp$ interactions at $\sqrt{s} = 53$ GeV}",
+     journal   = "Phys. Lett.",
+     volume    = "B112",
+     year      = "1982",
+     pages     = "183",
+     doi       = "10.1016/0370-2693(82)90325-2",
+     SLACcitation  = "%%CITATION = PHLTA,B112,183;%%"
+}'

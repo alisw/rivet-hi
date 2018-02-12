@@ -1,0 +1,25 @@
+Name: ATLAS_2012_CONF_2012_153
+Year: 2012
+Summary: 4 or more lepton plus missing transverse energy SUSY search
+Experiment: ATLAS
+Collider: LHC
+Status: PRELIMINARY
+Authors:
+ - Peter Richardson <peter.richardson@durham.ac.uk>
+References:
+ - ATLAS-CONF-2012-153
+RunInfo:
+  BSM signal events at 8000 GeV.
+NumEvents: 25000 for BSM signals
+Beams: [p+, p+]
+Energies: [8000]
+NeedCrossSection: yes
+Description:
+  'Search for SUSY using events with 4 or more leptons in association with
+   missing transverse energy in proton-proton
+   collisions at a centre-of-mass energy of 8 TeV. The data sample has a total
+   integrated luminosity of 13.0 fb$^{-1}$. There is no reference data and
+   in addition to the control plots from the paper the number of events in
+   the two signal regions,
+   correctly normalized to an integrated luminosity 13.0 fb$^{-1}$,
+   are calculated.'

@@ -1,0 +1,46 @@
+Name: CMS_2013_I1122847
+Year: 2013
+Summary: Forward-backward asymmetry A\_FB in Drell-Yan lepton pairs at sqrt(s) = 7 TeV
+Experiment: CMS
+Collider: LHC
+InspireID: 1122847
+Status: VALIDATED
+Authors:
+ - Markus Radziej <radziej@physik.rwth-aachen.de>
+References:
+ - Phys. Lett. B 718 (2013) 752
+ - doi:10.1016/j.physletb.2012.10.082
+ - http://arxiv.org/abs/1207.3973
+RunInfo:
+  Drell-Yan events with an electron or muon final state are necessary. High
+  statistics as well as a NLO generator are recommended for a good agreement
+NumEvents: 5000000
+NeedCrossSection: no
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [20]
+NeedCrossSection: False
+Description:
+  'This analysis measures the forward-backward asymmetry $A_{FB}$ in Drell-Yan
+  events at a center-of-mass energy of 7 TeV. Both the individual and combined
+  electron and muon pair channels are analyzed. In four rapidity regions,
+  $A_{FB}$ is given as a function of the lepton mass. The data, recorded with the
+  CMS detector, corresponds to an integrated luminosity of
+  $5\,\textrm{fb}^{-1}$.'
+BibKey: Chatrchyan:2012dc
+BibTeX: '@article{Chatrchyan:2012dc,
+      author         = "Chatrchyan, Serguei and others",
+      title          = "{Forward-backward asymmetry of Drell-Yan lepton pairs in
+                        $pp$ collisions at $\sqrt{s} = 7$ TeV}",
+      collaboration  = "CMS Collaboration",
+      journal        = "Phys.Lett.",
+      volume         = "B718",
+      pages          = "752-772",
+      doi            = "10.1016/j.physletb.2012.10.082",
+      year           = "2013",
+      eprint         = "1207.3973",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-EWK-11-004, CERN-PH-EP-2012-187",
+      SLACcitation   = "%%CITATION = ARXIV:1207.3973;%%",
+}'

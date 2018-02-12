@@ -1,0 +1,44 @@
+Name: CDF_2001_S4517016
+Year: 2001
+Summary: Two jet triply-differential cross-section
+Experiment: CDF
+Collider: Tevatron Run 1
+SpiresID: 4517016
+InspireID: 538041
+Status: VALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+ - Phys.Rev.D64:012001,2001
+ - doi:10.1103/PhysRevD.64.012001
+ - arXiv:hep-ex/0012013
+RunInfo:
+  Dijet events at Tevatron with $\sqrt{s}=1.8$ TeV
+NumEvents: 1000000
+Beams: [p-, p+]
+Energies: [1800]
+PtCuts: [0]
+Description:
+  A measurement of the two-jet differential cross section,
+  $\mathrm{d}^3\sigma/\mathrm{d}E_T \, \mathrm{d}\eta_1 \, \mathrm{d}\eta_2$,
+  based on an integrated luminosity of $86 \mathrm{pb}^{-1}$.
+  The differential cross section is measured as a function of the transverse
+  energy, $E_\perp$, of a jet in the pseudorapidity region $0.1 < |\eta_1| < 0.7$ for
+  four different pseudorapidity bins of a second jet restricted to
+  $0.1 < |\eta_2| < 3.0$.
+NeedCrossSection: yes
+BibKey: Affolder:2000ew
+BibTeX: '@Article{Affolder:2000ew,
+     author    = "Affolder, Anthony Allen and others",
+ collaboration = "CDF",
+     title     = "{Measurement of the two-jet differential cross section in
+                  $p\bar{p}$ collisions at $\sqrt{s} = 1800$ GeV}",
+     journal   = "Phys. Rev.",
+     volume    = "D64",
+     year      = "2001",
+     pages     = "012001",
+     eprint    = "hep-ex/0012013",
+     archivePrefix = "arXiv",
+     doi       = "10.1103/PhysRevD.64.012001",
+     SLACcitation  = "%%CITATION = HEP-EX/0012013;%%"
+}'

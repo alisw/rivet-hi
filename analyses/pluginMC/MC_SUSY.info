@@ -1,0 +1,13 @@
+Name: MC_SUSY
+Summary: Validate generic SUSY events, including various lepton invariant mass
+Description:
+  Analysis of generic SUSY events at the LHC, based on Atlas Herwig++
+  validation analysis contents. Plotted are $\eta$, $\phi$ and $\pT$ observables
+  for charged tracks, photons, isolated photons, electrons, muons, and jets,
+  as well as various dilepton mass `edge' plots for different event selection
+  criteria.
+RunInfo: SUSY events at any energy. $\pT$ cutoff at 10 GeV may be advised.
+Status: VALIDATED
+Authors:
+ - Andy Buckley <andy.buckley@cern.ch>
+PtCuts: [0]

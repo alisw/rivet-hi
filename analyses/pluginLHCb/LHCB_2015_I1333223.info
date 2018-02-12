@@ -1,0 +1,40 @@
+Name: LHCB_2015_I1333223
+Year: 2015
+Summary: Measurement of inelastic interaction cross-section in pp collisions at 7 TeV for LHCb fiducial phase-space.
+Experiment: LHCB
+Collider: Large Hadron Collider (LHC)
+InspireID: 1333223
+Status: VALIDATED
+Authors:
+ - Alex Grecu <alexandru.grecu@nipne.ro>
+References:
+ - JHEP02:129,2015
+ - doi:10.1007/JHEP02(2015)129
+ - arXiv:1412.2500 [hep-ex]
+RunInfo:
+  Proton-proton interactions at sqrt(s) = 7 TeV. LHCb minimum bias, inelastic events (elastic processes may be turned off).
+NumEvents: 100000
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: 0.2
+NeedCrossSection: yes
+Description:
+  'LhCb measurement of the cross-section for inelastic proton-proton collisions at $\sqrt{s} = 7$ TeV with at least one prompt stable charged particle of transverse momentum $p_T > 0.2$ GeV/$c$ and pseudorapidity ($\eta$) in the range $2.0 < \eta < 4.5$. A prompt stable charged particle is defined as having the true impact parameter relative to the true primary vertex smaller than 200 $\mu$m.'
+BibKey: Aaij:2014vfa
+BibTeX: '@article{Aaij:2014vfa,
+      author         = "Aaij, Roel and others",
+      title          = "{Measurement of the inelastic pp cross-section at a
+                        centre-of-mass energy of $ \sqrt{s} $ = 7 TeV}",
+      collaboration  = "LHCb",
+      journal        = "JHEP",
+      volume         = "02",
+      year           = "2015",
+      pages          = "129",
+      doi            = "10.1007/JHEP02(2015)129",
+      eprint         = "1412.2500",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2014-285, LHCB-PAPER-2014-057",
+      SLACcitation   = "%%CITATION = ARXIV:1412.2500;%%"
+}
+'

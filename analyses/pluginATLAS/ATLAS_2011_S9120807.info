@@ -1,0 +1,34 @@
+Name: ATLAS_2011_S9120807
+Year: 2011
+Summary: Inclusive isolated diphoton analysis
+Experiment: ATLAS
+Collider: LHC 7TeV
+SpiresID: 9120807
+InspireID: 916832
+Status: VALIDATED
+Authors:
+ - Giovanni Marchiori <giovanni.marchiori@cern.ch>
+References:
+ - arXiv:1107.0581 [hep-ex]
+RunInfo:
+  Inclusive diphoton + $X$ events at $\sqrt{s} = 7$~TeV.
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [16]
+Description:
+  'A measurement of the cross section for inclusive isolated photon production at $\sqrt{s} = 7$ TeV.
+  The measurement is done in bins of $M_{\gamma\gamma}$, $p_{T\gamma\gamma}$, and $\Delta\phi_{\gamma\gamma}$,
+  for isolated photons with $|\eta|<2.37$ and $E_T^\gamma>16$~GeV.
+  The measurement uses 37 pb$^{-1}$ of integrated luminosity collected with
+  the ATLAS detector.'
+NeedCrossSection: yes
+BibTeX: '@Article{Aad:2011mh,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of the isolated di-photon cross-section in $pp$ collisions at $\sqrt{s} = 7$ TeV with the ATLAS detector}",
+      collaboration  = "ATLAS Collaboration",
+      year           = "2011",
+      eprint         = "1107.0581",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+}'

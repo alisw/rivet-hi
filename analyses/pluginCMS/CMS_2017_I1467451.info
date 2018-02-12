@@ -1,0 +1,47 @@
+Name: CMS_2017_I1467451
+Year: 2017
+Summary: Measurement of the transverse momentum spectrum of the Higgs boson produced in $pp$collisions at $\sqrt{s} = 8$ TeV using H to WW decays
+Experiment: CMS
+Collider: LHC
+InspireID: 1467451
+Status: VALIDATED
+Authors:
+ - Lorenzo Viliani lorenzo.viliani@cern.ch
+References:
+- 'JHEP 1703 (2017) 032, 2017'
+- 'DOI:10.1007/JHEP03(2017)032'
+- 'arXiv:1606.01522'
+- 'CMS-HIG-15-010'
+RunInfo: H->WW->lvlv, both ggH and XH (VBF anf VH) productions modes are included
+Beams: [p+, p+]
+Energies: [8000]
+Description:
+'The cross section for Higgs boson production in pp collisions is studied using the $H\rightarrow W^+ W^-$ decay mode, followed by leptonic decays of the W bosons to an oppositely charged electron-muon pair in the final state. The measurements are performed using data collected by the CMS experiment at the LHC at a centre-of-mass energy of 8 TeV, corresponding to an integrated luminosity of $19.4\,\text{fb}^{-1}$. The Higgs boson transverse momentum ($p_\text{T}$) is reconstructed using the lepton pair $p_\text{T}$ and missing $p_\text{T}$. The differential cross section times branching fraction is measured as a function of the Higgs boson $p_\text{T}$ in a fiducial phase space defined to match the experimental acceptance in terms of the lepton kinematics and event topology. The production cross section times branching fraction in the fiducial phase space is measured to be $39 \pm 8\,\text{(stat)} \pm 9\,\text{(syst)}\,\text{fb}$. The measurements are found to agree, within experimental uncertainties, with theoretical calculations based on the standard model. 
+The fiducial region is defined at particle level (using Born level leptons) as: 
+ - emununu, leptons are required not to originate from leptonic tau decays 
+ - leading lepton $p_T > 20$ GeV 
+ - subleading lepton $p_T > 10$ GeV 
+ - psudorapidity of electrons and muons $|\eta| < 2.5$ 
+ - Invariant mass of the two charged leptons $m_{ll} > 12$ GeV 
+ - Charged lepton pair $p_T > 30$ GeV 
+ - Invariant mass of the leptonic system in the transverse plane $m_T^{e\mu\nu\nu} > 50$ GeV'
+NeedCrossSection: yes
+BibKey: Khachatryan:2016vnn
+BibTeX: '@article{Khachatryan:2016vnn,
+      author         = "Khachatryan, Vardan and others",
+      title          = "{Measurement of the transverse momentum spectrum of the
+                        Higgs boson produced in pp collisions at $ \sqrt{s}=8 $
+                        TeV using $H \to WW$ decays}",
+      collaboration  = "CMS",
+      journal        = "JHEP",
+      volume         = "03",
+      year           = "2017",
+      pages          = "032",
+      doi            = "10.1007/JHEP03(2017)032",
+      eprint         = "1606.01522",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-HIG-15-010, CERN-EP-2016-125",
+      SLACcitation   = "%%CITATION = ARXIV:1606.01522;%%"
+}'
+

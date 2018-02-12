@@ -1,0 +1,36 @@
+Name: CMS_2015_I1384119
+Year: 2015
+Summary: Pseudorapidity distribution of charged hadrons in proton--proton collisions at $\sqrt{s} = 13$ TeV
+Experiment: CMS
+Collider: LHC
+InspireID: 1384119
+Status: VALIDATED
+Authors:
+ - Hannes Jung <hannes.jung@desy.de>
+References:
+ - arXiv:hep-ex/1507.05915
+RunInfo:
+   '$\sqrt{s}=13$ TeV, $pp$ inelastic events, no $p_T$ cut on partons'
+NumEvents: 100000
+NeedCrossSection: no
+Beams: [p+, p+]
+Energies: [13000]
+Description:
+  'The pseudorapidity distribution of charged hadrons in $pp$ collisions at $\sqrt{s} =13$ TeV is
+   measured using a data sample obtained with the CMS detector, operated at zero magnetic field,
+   at the CERN LHC. The yield of primary charged long-lived hadrons produced in inelastic $pp$
+   collisions is determined in the central region of the CMS pixel detector ($|eta| < 2$) using
+   both hit pairs and reconstructed tracks.'
+BibKey: Khachatryan:2015jna
+BibTeX: '@article{Khachatryan:2015jna,
+      author         = "Khachatryan, Vardan and others",
+      title          = "{Pseudorapidity distribution of charged hadrons in
+                        proton--proton collisions at $\sqrt{s} = 13$ TeV}",
+      collaboration  = "CMS",
+      year           = "2015",
+      eprint         = "1507.05915",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-FSQ-15-001, CERN-PH-EP-2015-180",
+      SLACcitation   = "%%CITATION = ARXIV:1507.05915;%%"
+}'

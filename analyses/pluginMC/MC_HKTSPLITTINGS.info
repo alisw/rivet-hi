@@ -1,0 +1,12 @@
+Name: MC_HKTSPLITTINGS
+Summary: Monte Carlo validation observables for $h[\tau^+ \, \tau^-]$ + jets production
+Status: VALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+RunInfo:
+  $h [\to \tau^+ \tau^-]$ + jets.
+NumEvents: 1000000
+PtCuts: [0]
+Description:
+  Monte Carlo validation observables for $h[\tau^+ \, \tau^-]$ + jets production
+NeedCrossSection: yes

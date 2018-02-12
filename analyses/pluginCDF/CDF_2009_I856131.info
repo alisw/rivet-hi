@@ -1,0 +1,37 @@
+Name: CDF_2009_I856131
+Year: 2009
+Summary: Z rapidity measurement
+Experiment: CDF
+Collider: Tevatron Run 2
+InspireID: 856131
+Status: VALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+ - arXiv:0908.3914 [hep-ex]
+RunInfo:
+  $p \bar{p} \to e^+ e^-$ + jets at 1960 GeV. Needs mass cut on lepton pair to
+  avoid photon singularity, looser than $66 < m_{ee} < 116$ GeV
+NumEvents: 1000000
+Beams: [p-, p+]
+Energies: [1960]
+PtCuts: [0]
+Description:
+  CDF measurement of the total cross section and rapidity distribution,
+  $\mathrm{d}\sigma/\mathrm{d}y$, for $q\bar{q}\to \gamma^{*}/Z\to e^{+}e^{-}$ events in the $Z$
+  boson mass region ($66<M_{ee}<116$ GeV/c$^2$) produced in $p\bar{p}$
+  collisions at $\sqrt{s}=1.96$ TeV with 2.1 fb$^{-1}$ of integrated luminosity.
+NeedCrossSection: yes
+BibKey: Aaltonen:2009pc
+BibTeX: '@Article{Aaltonen:2009pc,
+     author    = "Aaltonen, T. and others",
+ collaboration = "CDF",
+     title     = "{Measurement of $d\sigma/dy$ of Drell-Yan $e^+e^-$ pairs in
+                  the $Z$ Mass Region from $p\bar{p}$ Collisions at
+                  $\sqrt{s}=1.96$ TeV}",
+     year      = "2009",
+     eprint    = "0908.3914",
+     archivePrefix = "arXiv",
+     primaryClass  =  "hep-ex",
+     SLACcitation  = "%%CITATION = 0908.3914;%%"
+}'

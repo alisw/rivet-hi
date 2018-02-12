@@ -1,0 +1,43 @@
+Name: ALICE_2010_S8624100
+Year: 2010
+Summary: Charged particle multiplicities at 0.9 and 2.36\;TeV in three different pseudorapidity intervals
+Experiment: ALICE
+Collider: LHC
+SpiresID: 8624100
+InspireID: 852450
+Status: VALIDATED
+Authors:
+ - Holger Schulz <holger.schulz@physik.hu-berlin.de>
+ - Jan Fiete Grosse-Oetringhaus@cern.ch <Jan.Fiete.Grosse-Oetringhaus@cern.ch>
+References:
+ - Eur.Phys.J.C68:89-108,2010
+ - arXiv:1004.3034 [hep-ex]
+RunInfo:
+  QCD and diffractive events at $\sqrt{s} = 0.9\;\TeV$ and $\sqrt{s} = 2.36\;\TeV$
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [900, 2360]
+Description:
+  'This is an ALICE analysis where charged particle multiplicities (including
+   the zero bin) have been measured in three different pseudorapidity intervals
+   ($|\eta|<0.5; |\eta|<1.0; |\eta|<1.3$. Only the INEL distributions have
+   been considered here, i.e. this analysis can only be meaningfully compared to
+   PYTHIA 6 with diffractive processes disabled. The data were taken at 900 and
+   2360\;GeV.'
+BibKey: Aamodt:2010ft
+BibTeX: '@Article{Aamodt:2010ft,
+     author    = "Aamodt, K. and others",
+     collaboration = "ALICE",
+     title     = "{Charged-particle multiplicity measurement in proton-proton
+                  collisions at $\sqrt{s} = 0.9$ and 2.36 TeV with ALICE at
+                  LHC}",
+     journal   = "Eur. Phys. J.",
+     volume    = "C68",
+     year      = "2010",
+     pages     = "89-108",
+     eprint    = "1004.3034",
+     archivePrefix = "arXiv",
+     primaryClass  =  "hep-ex",
+     doi       = "10.1140/epjc/s10052-010-1339-x",
+     SLACcitation  = "%%CITATION = 1004.3034;%%"
+}'

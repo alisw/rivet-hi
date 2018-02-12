@@ -1,0 +1,47 @@
+Name: ATLAS_2011_I928289_W
+Year: 2011
+Summary: W inclusive cross sections at 7 TeV
+Experiment: ATLAS
+Collider: LHC
+InspireID: 928289
+Status: VALIDATED
+Authors:
+ - Roman Lysak <roman.lysak@cern.ch>, Christian Gutschow <chris.g@cern.ch>
+#References:
+ - Phys.Rev. D85 (2012) 072004
+ - doi:10.1103/PhysRevD.85.072004
+ - arXiv:1109.5141 [hep-ex]
+RunInfo:
+  p + p -> W + X ( W -> mu nu or e nu )
+  The histograms include the $W$ charge asymmetry. Note that the charge asymmetry histograms may
+  need to be constructed manually from the individual $W^+$ and $W^-$ channels if the analysis is
+  run on individual files. $A_l = (W^+ - W^-) / (W^+ + W^-)$
+NumEvents: 1000000
+NeedCrossSection: yes
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [20]
+Description:
+  The production cross sections of the inclusive Drell-Yan process $W^\pm \rightarrow \ell\nu$
+  ($\ell = e, \mu$) are measured in proton-proton collisions at $\sqrt{s} = 7$~TeV with the ATLAS detector.
+  The cross sections are evaluated differentially as a function of the $W$ boson rapidity based on an
+  integrated luminosity of about 35~$\text{pb}^{-1}$ collected in 2010. The cross sections are measured
+  separately for $W^+$ and $W^-$ production, and then used to construct the $W$ charge asymmetry as well.
+BibKey: Aad:2011dm
+BibTeX: '@article{Aad:2011dm,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of the inclusive $W^\pm$ and $Z/\gamma$ cross
+                        sections in the electron and muon decay channels in $pp$
+                        collisions at $\sqrt{s}=7$ TeV with the ATLAS detector}",
+      collaboration  = "ATLAS Collaboration",
+      journal        = "Phys.Rev.",
+      volume         = "D85",
+      pages          = "072004",
+      doi            = "10.1103/PhysRevD.85.072004",
+      year           = "2012",
+      eprint         = "1109.5141",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2011-143",
+      SLACcitation   = "%%CITATION = ARXIV:1109.5141;%%",
+}'

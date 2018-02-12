@@ -1,0 +1,43 @@
+Name: LHCB_2010_S8758301
+Year: 2010
+Summary: LHCb differential cross section measurement of prompt $K^0_S$ production in three
+  rapidity windows at $\sqrt{s} = 0.9$ TeV
+Experiment: LHCB
+Collider: LHC 900 GeV
+SpiresID: 8758301
+InspireID: 865584
+Status: VALIDATED
+Authors:
+ - Holger Schulz <holger.schulz@physik.hu-berlin.de>
+ - Alex Grecu <Alex.Grecu@cern.ch>
+References:
+ - Phys.Lett.B693:69-80,2010
+ - arXiv:1008.3105[hep-ex]
+RunInfo:
+  QCD events. See paper for MC discussion.
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [900]
+PtCuts: [0, 1.6]
+Description:
+  The paper presents the cross-section and double differential cross-section measurement
+  for prompt $K^0_S$ production in pp collisions at $\sqrt{s} = 0.9\;TeV$. The data were taken
+  during the LHCb run in December 2009 and cover a transversal momentum range from 0 to 1.6 GeV/c.
+  The differential production cross-section is calculated for three rapidity windows
+  $2.5 < y < 3.0$, $3.0 < y < 3.5$ and $3.5 < y < 4.0$ as well as the whole rapidity domain
+  $2.5 < y < 4.0$.
+BibKey: Aaij:2010nx
+BibTeX: '@Article{Aaij:2010nx,
+     author    = "Aaij, R and others",
+     collaboration = "LHCb",
+     title     = "{Prompt $K_s$ production in $pp$ collisions at $\sqrt{s} = 0.9\;\TeV$}",
+     journal   = "Phys. Lett.",
+     volume    = "B693",
+     year      = "2010",
+     pages     = "69-80",
+     eprint    = "1008.3105",
+     archivePrefix = "arXiv",
+     primaryClass  =  "Unknown",
+     doi       = "10.1016/j.physletb.2010.08.055",
+     SLACcitation  = "%%CITATION = 1008.3105;%%"
+}'

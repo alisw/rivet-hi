@@ -1,0 +1,39 @@
+Name: STAR_2006_S6860818
+Year: 2006
+Summary: Strange particle production in pp at 200 GeV
+Experiment: STAR
+Collider: RHIC pp 200 GeV
+SpiresID: 6860818
+InspireID: 722757
+Status: VALIDATED
+Authors:
+ - Hendrik Hoeth <hendrik.hoeth@cern.ch>
+References:
+ - Phys. Rev. C75, 064901
+ - nucl-ex/0607033
+RunInfo:
+  pp at 200 GeV
+NumEvents: 2500000
+Beams: [p+, p+]
+Energies: [200]
+PtCuts: [0]
+Description:
+  pT distributions of identified strange particles in pp collisions
+  at $\sqrt{s} = 200$ GeV, measured by the STAR experiment at RHIC in
+  non-single-diffractive minbias events. WARNING The $\langle pT \rangle$ vs.
+  particle mass plot is not validated yet and might be wrong.
+BibKey: Abelev:2006cs
+BibTeX: '@Article{Abelev:2006cs,
+     author    = "Abelev, B. I. and others",
+ collaboration = "STAR",
+     title     = "{Strange particle production in p + p collisions at
+                  s**(1/2) = 200-GeV}",
+     journal   = "Phys. Rev.",
+     volume    = "C75",
+     year      = "2007",
+     pages     = "064901",
+     eprint    = "nucl-ex/0607033",
+     archivePrefix = "arXiv",
+     doi       = "10.1103/PhysRevC.75.064901",
+     SLACcitation  = "%%CITATION = NUCL-EX/0607033;%%"
+}'

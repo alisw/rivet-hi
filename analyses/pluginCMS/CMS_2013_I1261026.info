@@ -1,0 +1,47 @@
+Name: CMS_2013_I1261026
+Year: 2013
+Summary: Jet and underlying event properties as a function of particle multiplicity
+Experiment: CMS
+Collider: LHC
+InspireID: 1261026
+Status: VALIDATED
+Authors:
+ - Maxim Azarkin <Maksim.Azarkin@cern.ch>
+References:
+ - Eur.Phys.J. C73 (2013) 2674
+ - arXiv:1310.4554
+ - CMS-FSQ-12-022,
+ - CERN-PH-EP-2013-195
+RunInfo: QCD MB
+Beams: [p+, p+]
+Energies: [7000]
+NumEvents: 10000000
+NeedCrossSection: no
+Description:
+  'Characteristics of multi-particle production in proton-proton
+  collisions at $\sqrt{s} = 7$ TeV are studied as a function of the
+  charged-particle multiplicity ($N_{ch}$). The produced particles are separated
+  into two classes: those belonging to jets and those belonging to the
+  underlying event. Charged particles are measured with pseudorapidity
+  $|\eta| < 2.4$ and transverse momentum $p_T > 0.25$ GeV. Jets are
+  reconstructed from charged-particles only and required to have
+  $\pt > 5$ GeV. The distributions of jet \pt, average \pt of charged particles
+  belonging to the underlying event or to jets, jet rates, and jet shapes
+  are presented as functions of $N_{ch}$.'
+BibKey: Chatrchyan:2013ala
+BibTeX: '@article{Chatrchyan:2013ala,
+      author         = "Chatrchyan, Serguei and others",
+      title          = "{Jet and underlying event properties as a function of
+                        particle multiplicity in proton-proton collisions at
+                        $\sqrt{s} = 7$ TeV}",
+      collaboration  = "CMS Collaboration",
+      journal        = "Eur.Phys.J.",
+      volume         = "C73",
+      pages          = "2674",
+      doi            = "10.1140/epjc/s10052-013-2674-5",
+      year           = "2013",
+      eprint         = "1310.4554",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-FSQ-12-022, CERN-PH-EP-2013-195",
+      SLACcitation   = "%%CITATION = ARXIV:1310.4554;%%",}'

@@ -1,0 +1,35 @@
+Name: BELLE_2011_I878990
+Year: 2011
+Summary: Exclusive semileptonic B0 to pi minus decays.
+Experiment: BELLE
+Collider: KEKB
+InspireID: 878990
+Status: VALIDATED
+Keywords:
+ - bdecays
+ - semileptonic
+Authors:
+ - Holger Schulz <holger.schulz@cern.ch>
+RunInfo:
+  Events with B-decays, either particle guns or collisions.
+NumEvents: 10000
+NeedCrossSection: no
+Description:
+  'Implementation of Lorentz invariant q2 distributions ("form factor") for semileptonic B0 decays'
+BibKey: Ha:2010rf
+BibTeX: '@article{Ha:2010rf,
+      author         = "Ha, H. and others",
+      title          = "{Measurement of the decay $B^0\to\pi^-\ell^+\nu$ and
+                        determination of $|V_{ub}|$}",
+      collaboration  = "Belle",
+      journal        = "Phys. Rev.",
+      volume         = "D83",
+      year           = "2011",
+      pages          = "071101",
+      doi            = "10.1103/PhysRevD.83.071101",
+      eprint         = "1012.0090",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "BELLE-PREPRINT-2010-22, KEK-PREPRINT-2010-37",
+      SLACcitation   = "%%CITATION = ARXIV:1012.0090;%%"
+}'

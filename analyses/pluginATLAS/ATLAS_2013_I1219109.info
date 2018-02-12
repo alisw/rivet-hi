@@ -1,0 +1,46 @@
+Name: ATLAS_2013_I1219109
+Year: 2013
+Summary: W + b production at 7 TeV
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1219109
+Status: VALIDATED
+Authors:
+ - Christian Gutschow <chris.g@cern.ch>
+References:
+ - JHEP 1306 (2013) 084
+ - doi:10.1007/JHEP06(2013)084
+ - arXiv:1302.2929 [hep-ex]
+RunInfo:
+  W+b in the electron channel
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [25,25]
+NeedCrossSection: True
+Description:
+  Measurements of the W+b-jets ($W+b+X$ and $W+b\bar{b}+X$) production cross-section in proton-proton collisions at a
+  centre-of-mass energy of 7 TeV at the LHC. These results are based on data corresponding to an integrated luminosity of 
+  4.6~$fb^{−1}$, collected with the ATLAS detector. Cross-sections are presented as a function of jet multiplicity and of the 
+  transverse momentum of the leading b-jet for both the combined muon and electron decay modes of the W boson. 
+  The default routine will consider the electron decay channel of the W boson. Use ATLAS_2013_I1217863_W_EL and 
+  ATLAS_2013_I1217863_W_MU to specify the decay channel directly.
+BibKey: Aad:2013vka
+BibTeX: '@article{Aad:2013vka,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of the cross-section for W boson production
+                        in association with b-jets in pp collisions at $\sqrt{s}$
+                        = 7 TeV with the ATLAS detector}",
+      collaboration  = "ATLAS Collaboration",
+      journal        = "JHEP",
+      volume         = "1306",
+      pages          = "084",
+      doi            = "10.1007/JHEP06(2013)084",
+      year           = "2013",
+      eprint         = "1302.2929",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2012-357",
+      SLACcitation   = "%%CITATION = ARXIV:1302.2929;%%",
+}'
+

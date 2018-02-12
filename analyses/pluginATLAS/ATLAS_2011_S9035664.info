@@ -1,0 +1,43 @@
+Name: ATLAS_2011_S9035664
+Year: 2011
+Summary: Measurement of J/Psi production
+Experiment: ATLAS
+Collider: LHC
+SpiresID: 9035664
+InspireID: 896268
+Status: VALIDATED
+Authors:
+ -
+References:
+ -
+ - arXiv:1104.3038 [hep-ex]
+RunInfo:
+  pp to hadrons including both prompt J/Psi production and the production in B decays
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts:
+Description:
+  'The inclusive $J/\psi$ production cross-section and fraction of $J/\psi$ mesons produced in B-hadron decays are measured
+   in proton-proton collisions at $\sqrt{s} = 7$ TeV with the ATLAS detector at the LHC, as a function of the transverse momentum
+   and rapidity of the J/psi, using 2.3$\textrm{pb}^{-1}$ of integrated luminosity. The cross section is measured from a minimum $p_T$
+   of 1 GeV to a maximum of 70 GeV and for rapidities within $|y| < 2.4$ giving the widest reach of any measurement of $J/\psi$ production
+  to date.'
+NeedCrossSection: yes
+BibKey: Aad:2011sp
+BibTeX: '@article{Aad:2011sp,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of the differential cross-sections of
+                        inclusive, prompt and non-prompt $J/\psi$ production in
+                        proton-proton collisions at $\sqrt{s}=7$ TeV}",
+      collaboration  = "ATLAS Collaboration",
+      journal        = "Nucl.Phys.",
+      volume         = "B850",
+      pages          = "387-444",
+      doi            = "10.1016/j.nuclphysb.2011.05.015",
+      year           = "2011",
+      eprint         = "1104.3038",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      SLACcitation   = "%%CITATION = ARXIV:1104.3038;%%",
+}'

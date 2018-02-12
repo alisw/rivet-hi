@@ -1,0 +1,35 @@
+Name: OPAL_1994_S2927284
+Year: 1994
+Summary: Measurement of the production rates of charged hadrons in $e^+e^-$ annihilation at the $Z^0$
+Experiment: OPAL
+Collider: LEP 1
+SpiresID: 2927284
+InspireID: 372772
+Status: VALIDATED
+Authors:
+ - Peter Richardson <Peter.Richardson@durham.ac.uk>
+References:
+ - Z.Phys.C63:181-196,1994
+RunInfo:
+  Hadronic Z decay events generated on the Z pole ($\sqrt{s} = 91.2$ GeV)
+NumEvents: 1000000
+Beams: [e+, e-]
+Energies: [91.2]
+PtCuts: [0]
+Description: The inclusive production rates of $\pi^\pm$, $K^\pm$ and $p\bar{p}$ in $Z^0$ decays
+  measured using the OPAL detector at LEP. Only the differential cross sections are currently
+  implemented.
+BibKey: Akers:1994ez
+BibTeX: '@Article{Akers:1994ez,
+     author    = "Akers, R. and others",
+     collaboration = "OPAL",
+     title     = "{Measurement of the production rates of charged hadrons in
+                  e+ e- annihilation at the Z0}",
+     journal   = "Z. Phys.",
+     volume    = "C63",
+     year      = "1994",
+     pages     = "181-196",
+     doi       = "10.1007/BF01411010",
+     SLACcitation  = "%%CITATION = ZEPYA,C63,181;%%"
+}
+'

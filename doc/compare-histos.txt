@@ -1,0 +1,27 @@
+compare-histos
+==============
+
+About
+-----
+
+`compare-histos` is a small script which reads two or more AIDA XML files
+and creates comparison plots of the histograms in the AIDA files. The plots are
+saved in `.dat` files in the input format of
+link:make_plot.html[`make_plot.py`]. To create PostScript or PDF file from the
+`.dat` files, you need to run link:make-plots.html[`make-plots`].
+
+Usage
+-----
+
+To run `compare-histos` call
+
+--------------------
+ compare-histos [options] [REF:'Expt data'] aidafile1:'label 1' [path/to/aidafile2:label2 ...]
+--------------------
+
+All available options can be listed by running
+
+--------------------
+ compare-histos --help
+--------------------
+

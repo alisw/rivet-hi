@@ -1,0 +1,34 @@
+Name: CDF_1988_S1865951
+SpiresID: 1865951
+InspireID: 263320
+Summary: CDF transverse momentum distributions at 630 GeV and 1800 GeV.
+Description:
+  Transverse momentum distributions at 630 GeV and 1800 GeV
+  based on data from the CDF experiment at the Tevatron collider.
+Status: VALIDATED
+Experiment: CDF
+Collider: Tevatron Run I
+Year: 1988
+Authors:
+ - Christophe Vaillant <c.l.j.j.vaillant@durham.ac.uk>
+ - Andy Buckley <andy.buckley@cern.ch>
+References:
+ - Phys.Rev.Lett.61:1819,1988
+ - doi:10.1103/PhysRevLett.61.1819
+RunInfo: QCD min bias events at $\sqrt{s} = 630$ GeV and 1800 GeV, $|\eta| < 1.0$.
+Beams: [p-, p+]
+Energies: [630, 1800]
+PtCuts: [0]
+NeedCrossSection: yes
+BibKey: Abe:1988yu
+BibTeX: '@Article{Abe:1988yu,
+     author    = "Abe, F. and others",
+     collaboration = "CDF",
+     title     = "{Transverse momentum distributions of charged particles produced in  $\bar{p}p$ interactions at $\sqrt{s} = 630$ GeV and 1800 GeV}",
+     journal   = "Phys. Rev. Lett.",
+     volume    = "61",
+     year      = "1988",
+     pages     = "1819",
+     doi       = "10.1103/PhysRevLett.61.1819",
+     SLACcitation  = "%%CITATION = PRLTA,61,1819;%%"
+}'

@@ -1,0 +1,13 @@
+Name: MC_WJETS
+Summary: Monte Carlo validation observables for $W[e \, \nu]$ + jets production
+Status: VALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+RunInfo:
+  $e \, \nu$ + jets analysis.
+NumEvents: 1000000
+PtCuts: [0]
+Description:
+  Monte Carlo validation observables for $W[e \, \nu]$ + jets production
+NeedCrossSection: yes

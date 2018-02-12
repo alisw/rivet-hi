@@ -1,0 +1,11 @@
+Name: MC_MUONS
+Summary: Monte Carlo validation observables for muon production
+Status: VALIDATED
+Authors:
+ - Andy Buckey <andy.buckley@cern.ch>
+NumEvents: 10000
+Description:
+  Any muons with $p_\perp > 0.5$ GeV are found and projected onto many different observables.
+  There is currently no photon clustering on to these muons. Multiplicities are tracked for
+  both inclusive and prompt-only particles -- maybe a MC_PROMPTMUONS analysis is needed?
+NeedCrossSection: yes

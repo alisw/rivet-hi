@@ -1,0 +1,43 @@
+Name: JADE_OPAL_2000_S4300807
+Year: 2000
+Summary: Jet rates in $e^+e^-$ at JADE [35--44 GeV] and OPAL [91--189 GeV].
+Experiment: JADE_OPAL
+Collider: PETRA and LEP
+SpiresID: 4300807
+InspireID: 513337
+Status: VALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+ - Andy Buckley <andy.buckley@cern.ch>
+References:
+ - Eur.Phys.J.C17:19-51,2000
+ - arXiv:hep-ex/0001055
+RunInfo:
+  $e^+ e^- \to$ jet jet (+ jets)
+NumEvents: 1000000
+Beams: [e+, e-]
+Energies: [35, 44, 91.2, 133, 161, 172, 183, 189]
+PtCuts: [0]
+Description:
+  'Differential and integrated jet rates for Durham and JADE jet algorithms.
+
+  The integration cut value used for the integrated rate observables is not
+  well-defined in the paper: the midpoint of the differential bin has been used
+  thanks to information from Stefan Kluth and Christoph Pahl.  We anyway
+  recommend that the differential plots be preferred over the integrated ones
+  for MC generator validation and tuning, to minimise correlations.'
+BibKey: Pfeifenschneider:1999rz
+BibTeX: '@Article{Pfeifenschneider:1999rz,
+     author    = "Pfeifenschneider, P. and others",
+ collaboration = "JADE",
+     title     = "{QCD analyses and determinations of alpha(s) in e+ e-
+                  annihilation at  energies between 35-GeV and 189-GeV}",
+     journal   = "Eur. Phys. J.",
+     volume    = "C17",
+     year      = "2000",
+     pages     = "19-51",
+     eprint    = "hep-ex/0001055",
+     archivePrefix = "arXiv",
+     doi       = "10.1007/s100520000432",
+     SLACcitation  = "%%CITATION = HEP-EX/0001055;%%"
+}'

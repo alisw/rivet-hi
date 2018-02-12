@@ -1,0 +1,13 @@
+Name: EXAMPLE_SMEAR
+Summary: A demo of how to use Rivet's detector effects features
+Status: EXAMPLE
+Authors:
+ - Andy Buckley <andy.buckley@cern.ch>
+RunInfo:
+  All event types will be accepted.
+NumEvents: 10000
+PtCuts: [0]
+Description:
+  "A demonstration of how to register and use the particle and jet smearing
+  & efficiency function machinery in Rivet 2.5.0 and later, including how
+  to use C++11 lambda functions."

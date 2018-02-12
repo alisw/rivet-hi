@@ -1,0 +1,31 @@
+#! /usr/bin/env python
+
+"""
+Path searching tool for files associated with the Rivet analysis toolkit.
+
+TODO:
+ * Add auto-categorising of the searches based on file extension
+ * Add a switch to return all or just the first match
+ * Add switches to force searching in a particular file category (libs, info, ref data, plo files)
+ * Add partial name / regex searching? (Requires extending the Rivet library)
+"""
+
+from __future__ import print_function
+
+import rivet, sys, os
+rivet.util.check_python_version()
+rivet.util.set_process_name(os.path.basename(__file__))
+
+import sys, os, optparse
+op = optparse.OptionParser()
+ops, args = op.parse_args()
+
+# print rivet.findAnalysisPlotFile()
+# print rivet.findAnalysisLibFile()
+# print rivet.findAnalysisInfoFile()
+# print rivet.findAnalysisRefFile()
+for a in args:
+    try:
+        print(rivet.findAnalysisRefFile(a))
+    except:
+        print("No match for '%s'")

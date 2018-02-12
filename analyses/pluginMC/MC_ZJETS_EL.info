@@ -1,0 +1,18 @@
+Name: MC_ZJETS_EL
+Summary: Monte Carlo validation observables for $Z[e^+ \, e^-]$ + jets production
+Status: VALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+ - Gavin Hesketh <gavin.hesketh@ucl.ac.uk>
+References:
+RunInfo:
+  $e^+ e^-$ + jets analysis. Needs mass cut on lepton pair to avoid
+  photon singularity, e.g. a min range of $66 < m_{ee} < 116$ GeV
+NumEvents: 1000000
+PtCuts: [0]
+Description:
+  Available observables are the pT of jets 1-4, jet multiplicity,
+  $\Delta\eta(Z, \text{jet1})$, $\Delta R(\text{jet2}, \text{jet3})$,
+  differential jet rates 0->1, 1->2, 2->3, 3->4, and integrated 0--4
+  jet rates.
+NeedCrossSection: yes

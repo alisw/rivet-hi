@@ -1,0 +1,47 @@
+Name: D0_2008_S7863608
+Year: 2008
+Summary: Measurement of differential $Z/\gamma^*$ + jet + $X$ cross sections
+Experiment: D0
+Collider: Tevatron Run 2
+SpiresID: 7863608
+InspireID: 792812
+Status: VALIDATED
+Authors:
+ - Andy Buckley <andy.buckley@cern.ch>
+ - Gavin Hesketh <gavin.hesketh@fnal.gov>
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+ - Phys.Lett. B669 (2008) 278-286
+ - doi:10.1016/j.physletb.2008.09.060
+ - arXiv:0808.1296 [hep-ex]
+RunInfo:
+  $p \bar{p} \to \mu^+ \mu^-$ + jets at 1960~GeV.
+  Needs mass cut on lepton pair to avoid photon singularity,
+  looser than $65 < m_{\mu\mu} < 115$ GeV.
+NumEvents: 1000000
+Beams: [p-, p+]
+Energies: [1960]
+PtCuts: [0]
+Description:
+  Cross sections as a function of pT and rapidity of the boson and pT
+  and rapidity of the leading jet in the di-muon channel in
+  $p \bar{p}$ collisions at $\sqrt{s}$ = 1.96
+  TeV, based on an integrated luminosity of 1.0 fb$^{-1}$.
+NeedCrossSection: yes
+BibKey: Abazov:2008ez
+BibTeX: '@Article{Abazov:2008ez,
+     author    = "Abazov, V. M. and others",
+ collaboration = "D0",
+     title     = "{Measurement of differential $Z / \gamma^{*}$ + jet + $X$
+                  cross sections in $p \bar{p}$ collisions at $\sqrt{s}$ =
+                  1.96-TeV}",
+     journal   = "Phys. Lett.",
+     volume    = "B669",
+     year      = "2008",
+     pages     = "278-286",
+     eprint    = "0808.1296",
+     archivePrefix = "arXiv",
+     primaryClass  =  "hep-ex",
+     doi       = "10.1016/j.physletb.2008.09.060",
+     SLACcitation  = "%%CITATION = 0808.1296;%%"
+}'

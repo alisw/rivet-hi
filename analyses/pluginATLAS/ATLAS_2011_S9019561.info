@@ -1,0 +1,36 @@
+Name: ATLAS_2011_S9019561
+Year: 2011
+Summary: Two lepton supersymmetry search
+Experiment: ATLAS
+Collider: LHC
+SpiresID: 9019561
+InspireID: 894578
+Status: VALIDATED
+Authors:
+ - Angela Chen <aqchen@fas.harvard.edu>
+References:
+ - arXiv:1103.6214
+RunInfo:
+  BSM signal events at 7000 GeV.
+NumEvents: 25000 for BSM signals
+Beams: [p+, p+]
+Energies: [7000]
+Description:
+  '2-lepton search for supersymmetric particles by ATLAS at 7 TeV.
+  Event counts in signal regions (3 same sign and 3 opposite sign) are implemented as one
+  bin histograms. Histograms for missing transverse energy are implemented.'
+BibKey: Aad:2011xm
+BibTeX: '@Article{Aad:2011xm,
+     author    = "Aad, Georges and others",
+ collaboration = "ATLAS",
+     title     = "{Search for supersymmetric particles in events with lepton
+                  pairs and large missing transverse momentum in sqrt{s} = 7
+                  TeV proton-proton collisions with the ATLAS experiment}",
+     year      = "2011",
+     eprint    = "1103.6214",
+     archivePrefix = "arXiv",
+     primaryClass  =  "hep-ex",
+     SLACcitation  = "%%CITATION = 1103.6214;%%"
+}
+
+'

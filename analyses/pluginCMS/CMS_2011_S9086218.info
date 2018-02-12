@@ -1,0 +1,41 @@
+Name: CMS_2011_S9086218
+Year: 2011
+Summary: Measurement of the inclusive jet cross-section in $pp$ collisions at $\sqrt{s} = 7$ TeV
+Experiment: CMS
+Collider: LHC
+SpiresID: 9086218
+InspireID: 902309
+Status: VALIDATED
+Authors:
+ - Rasmus Sloth Hansen<rsh07@phys.au.dk>
+References:
+ - http://cdsweb.cern.ch/record/1355680
+RunInfo:
+   Inclusive QCD at 7TeV comEnergy, ptHat (or equivalent) greater than 10 GeV
+NumEvents: 100k
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts:
+  jet PT higher than 18 GeV
+Description:
+  The inclusive jet cross section is measured in pp collisions with a center-of-mass
+  energy of 7 TeV at the LHC using the CMS experiment. The data sample corresponds to an
+  integrated luminosity of 34 inverse picobarns. The measurement is made for jet transverse
+  momenta in the range 18-1100 GeV and for absolute values of rapidity less than 3.
+  Jets are anti-kt with $R=0.5$, $p_\perp>18$ GeV and $|y|<3.0$.
+NeedCrossSection: yes
+BibKey: :2011me
+BibTeX: '@article{:2011me,
+      author         = "Chatrchyan, Serguei and others",
+      title          = "{Measurement of the inclusive jet cross section in $pp$ collisions at $\sqrt{s} = 7$ TeV}",
+      collaboration  = "CMS Collaboration",
+      journal        = "Phys. Rev. Lett.",
+      volume         = "107",
+      pages          = "132001",
+      doi            = "10.1103/PhysRevLett.107.132001",
+      year           = "2011",
+      note           = "Long author list - awaiting processing",
+      eprint         = "1106.0208",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+}'

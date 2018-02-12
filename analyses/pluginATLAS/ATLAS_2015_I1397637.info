@@ -1,0 +1,47 @@
+Name: ATLAS_2015_I1397637
+Year: 2015
+Summary: Boosted ttbar differential cross-section
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1397637
+Status: VALIDATED
+Authors:
+ - Lorenzo Massa <lorenzo.massa@cern.ch>
+ - Christian Gutschow <chris.g@cern.ch>
+References:
+ - Phys.Rev. D93 (2016) no.3, 032009
+ - doi:10.1103/PhysRevD.93.032009
+ - arXiv:1510.03818 [hep-ex]
+RunInfo:
+  Top-antitop production
+Beams: [p+, p+]
+Energies: [8000]
+PtCuts: [25,25]
+NeedCrossSection: True
+Description:
+  The differential cross-section for pair production of top quarks with high transverse momentum is measured in 20.3fb${}^{-1}$ of
+  proton-proton collisions at a center-of-mass energy of 8~TeV. The measurement is performed for $t\bar{t}$ events in the lepton+jets
+  channel. The cross-section is reported as a function of the hadronically decaying top quark transverse momentum for values above
+  300~GeV. The hadronically decaying top quark is reconstructed as an anti-$k_\text{t}$ jet with radius parameter $R=1.0$ and
+  identified with jet substructure techniques. The observed yield is corrected for detector effects to obtain a cross-section at
+  particle level in a fiducial region close to the event selection.
+BibKey: Aad:2015hna
+BibTeX: '@article{Aad:2015hna,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of the differential cross-section of highly
+                        boosted top quarks as a function of their transverse
+                        momentum in $\sqrt{s}$ = 8~TeV proton--proton collisions
+                        using the ATLAS detector}",
+      collaboration  = "ATLAS",
+      journal        = "Phys. Rev.",
+      volume         = "D93",
+      year           = "2016",
+      number         = "3",
+      pages          = "032009",
+      doi            = "10.1103/PhysRevD.93.032009",
+      eprint         = "1510.03818",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2015-237",
+      SLACcitation   = "%%CITATION = ARXIV:1510.03818;%%"
+}'

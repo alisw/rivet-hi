@@ -1,0 +1,38 @@
+Name: BABAR_2003_I593379
+Summary: Measurement of inclusive charmonium production
+Experiment: BaBar
+Collider: PEP-II
+Status: VALIDATED
+Authors:
+ - Peter Richardson <Peter.Richardson@durham.ac.uk>
+References:
+ - Phys.Rev. D67 032002, 2003
+ - hep-ex/0207097
+RunInfo:
+  Production of charmionum at the $\Upsilon(4S)$ resonace.
+NumEvents: 1000000
+InspireID: 593379
+Beams: [e+, e-]
+Energies: [[3.5, 8.0]]
+PtCuts: [0]
+Description: Measurement of  $J/\psi$, $\psi'$, $\chi_{c1}$ and $\chi_{c2}$ production using
+ a data sample corresponding to an integrated luminosity of 20.3\;fb$^{-1}$ collected
+ with the BABAR detector at the SLAC PEP-II electron-positron storage ring operating
+ at a centre-of-mass energy near 10.58\;GeV.
+BibKey: Aubert:2002hc
+BibTeX: '@article{Aubert:2002hc,
+      author         = "Aubert, Bernard and others",
+      title          = "{Study of inclusive production of charmonium mesons in
+                        $B$ decay}",
+      collaboration  = "BABAR Collaboration",
+      journal        = "Phys.Rev.",
+      volume         = "D67",
+      pages          = "032002",
+      doi            = "10.1103/PhysRevD.67.032002",
+      year           = "2003",
+      eprint         = "hep-ex/0207097",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "SLAC-PUB-9327, BABAR-PUB-02-04",
+      SLACcitation   = "%%CITATION = HEP-EX/0207097;%%",
+}'

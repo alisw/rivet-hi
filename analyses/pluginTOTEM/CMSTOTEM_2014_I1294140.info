@@ -1,0 +1,42 @@
+Name: CMSTOTEM_2014_I1294140
+Year: 2014
+Summary: Charged particle pseudorapidity distribution at $\sqrt{s}$=8 TeV 
+Experiment: CMS, TOTEM  
+Collider: LHC
+InspireID: 1294140
+Status: VALIDATED
+Authors:
+ - Panos Katsas (Panos.Katsas@desy.de) 
+References:
+  - CERN-PH-EP-2014-063
+  - arXiv:1405.0722
+  - Submitted to EPJ C
+RunInfo:
+   Inclusive, NSD-enhanced and SD-enhanced pp events. 
+NumEvents: 100000
+Beams: [p+, p+]
+Energies: [8000]
+NeedCrossSection: no
+pT Cuts: pT > 0 GeV/c (charged tracks).
+Description: 
+   'The pseudorapidity distribution of charged particles produced in proton-proton collisions 
+   at a centre-of-mass energy of 8 TeV are measured in the ranges $|\eta| < 2.2$ and 
+   $5.3 < |\eta| < 6.4$, with the CMS and TOTEM detectors, respectively. The measurement is
+   performed with a one-side TOTEM trigger, which is sensitive to 99\% of non-diffractive
+   interactions and diffractive interactions with masses above 3.6 GeV, for three different
+   event selections. An inclusive sample with the least selection bias, a sample enhanced
+   in non-single diffractive events, and a sample enhanced in single-diffractive events were 
+   selected.'
+BibKey: Chatrchyan:2014qka
+BibTeX: '@article{Chatrchyan:2014qka,
+      author         = "Chatrchyan, Serguei and others",
+      title          = "{Measurement of pseudorapidity distributions of charged
+                        particles in proton-proton collisions at sqrt(s) = 8 TeV
+                        by the CMS and TOTEM experiments}",
+      collaboration  = "CMS Collaboration, TOTEM Collaboration",
+      year           = "2014",
+      eprint         = "1405.0722",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-FSQ-12-026, CERN-PH-EP-TOTEM-2014-002,
+                        CERN-PH-EP-2014-063"}'

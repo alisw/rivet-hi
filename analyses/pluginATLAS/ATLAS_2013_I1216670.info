@@ -1,0 +1,42 @@
+Name: ATLAS_2013_I1216670
+Year: 2013
+Summary: W + DPI at 7 TeV
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1216670
+Status: VALIDATED
+Authors:
+ - Tim Martin <tim.martin@cern.ch>
+References:
+ - New J.Phys. 15 (2013) 033038
+ - doi:10.1088/1367-2630/15/3/033038
+ - arXiv:1301.6872 [hep-ex]
+RunInfo:
+  W + 2 jets (W -> l nu)
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [20,20]
+NeedCrossSection: False
+Description:
+  The production of $W$ bosons in association with two jets in proton-proton collisions at a centre-of-mass energy of $\sqrt{s} =
+  7$~TeV has been analysed for the presence of double-parton interactions using data corresponding to an integrated luminosity of 36/pb,
+  collected with the ATLAS detector at the LHC. 
+BibKey: Aad:2013bjm,
+BibTeX: '@article{Aad:2013bjm,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of hard double-parton interactions in $W(\to
+                        l\nu)$+ 2 jet events at $\sqrt{s}$=7 TeV with the ATLAS
+                        detector}",
+      collaboration  = "ATLAS Collaboration",
+      journal        = "New J.Phys.",
+      volume         = "15",
+      pages          = "033038",
+      doi            = "10.1088/1367-2630/15/3/033038",
+      year           = "2013",
+      eprint         = "1301.6872",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2012-355",
+      SLACcitation   = "%%CITATION = ARXIV:1301.6872;%%",
+}'

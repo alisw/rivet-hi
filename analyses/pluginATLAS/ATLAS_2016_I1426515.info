@@ -1,0 +1,55 @@
+Name: ATLAS_2016_I1426515
+Year: 2016
+Summary: WW production at 8 TeV
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1426515
+Status: VALIDATED
+Authors:
+ - Kristin Lohwasser <kristin.lohwasser@cern.ch>
+ - Christian Gutschow <chris.g@cern.ch>
+References:
+ - JHEP 1609 (2016) 029
+ - doi:10.1007/JHEP09(2016)029
+ - arXiv:1603.01702 [hep-ex]
+Keywords:
+ - diboson
+ - multiboson
+ - leptons
+ - W
+RunInfo:
+  pp -> WW production at 8 TeV
+Luminosity_fb: 20.3
+Beams: [p+, p+]
+Energies: [8000]
+PtCuts: [25,20] 
+Description:
+  'The production of $W$ boson pairs in proton-proton collisions at $\sqrt{s} = 8$ TeV is studied using data corresponding to 
+  20.3 fb${}^{-1}$ of integrated luminosity collected by the ATLAS detector during 2012 at the CERN Large Hadron Collider. The 
+  $W$ bosons are reconstructed using their leptonic decays into electrons or muons and neutrinos. Events with reconstructed jets 
+  are not included in the candidate event sample. A total of 6636 $WW$ candidate events are observed. Measurements are performed 
+  in fiducial regions closely approximating the detector acceptance. The integrated measurement is corrected for all acceptance 
+  effects and for the $W$ branching fractions to leptons in order to obtain the total $WW$ production cross section, which is found 
+  to be $71.1 \pm 1.1$ (stat) ${}^{+5.7}_{-5.0}$ (syst) $\pm 1.4$ (lumi) pb. This agrees with the next-to-next-to-leading-order 
+  Standard Model prediction of $63.2 {}^{+1.6}_{-1.4}$ (scale) $\pm 1.2$ (PDF) pb. Fiducial differential cross sections are 
+  measured as a function of each of six kinematic variables. The distribution of the transverse momentum of the leading lepton 
+  is used to set limits on anomalous triple-gauge-boson couplings.'
+BibKey: Aad:2016wpd
+BibTeX: '@article{Aad:2016wpd,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of total and differential $W^+W^-$
+                        production cross sections in proton-proton collisions at
+                        $\sqrt{s}=$ 8 TeV with the ATLAS detector and limits on
+                        anomalous triple-gauge-boson couplings}",
+      collaboration  = "ATLAS",
+      journal        = "JHEP",
+      volume         = "09",
+      year           = "2016",
+      pages          = "029",
+      doi            = "10.1007/JHEP09(2016)029",
+      eprint         = "1603.01702",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2015-323",
+      SLACcitation   = "%%CITATION = ARXIV:1603.01702;%%"
+}'

@@ -1,0 +1,46 @@
+Name: ATLAS_2017_I1591327
+Year: 2017
+Summary: Inclusive diphoton cross-sections at 8 TeV
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1591327
+Status: VALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+ - arXiv:1704.03839 [hep-ex]
+ - submitted to PRD
+Keywords:
+ - PHOTON
+ - DIPHOTON
+RunInfo:
+  $pp \to \gamma \gamma$ at 8 TeV
+Luminosity_fb: 20.2
+Beams: [p+, p+]
+Energies: [8000]
+PtCuts: [40,30]
+Description:
+  'A measurement of the production cross section for two isolated photons in proton--proton collisions at a center-of-mass energy of
+  $\sqrt{s}=8$ TeV is presented. The results are based on an integrated luminosity of 20.2 fb$^{-1}$ recorded by the ATLAS detector
+  at the Large Hadron Collider. The measurement considers photons with pseudorapidities satisfying $|\eta^\gamma| < 1.37$ or
+  $1.56 < |\eta^\gamma| < 2.37$ and transverse energies of respectively $E^\gamma_\text{T,1}>40$ GeV and $E^\gamma_\text{T,2}> 30$ GeV
+  for the two leading photons ordered in transverse energy produced in the interaction. The background due to hadronic jets and electrons
+  is subtracted using data-driven techniques. The fiducial cross sections are corrected for detector effects and measured
+  differentially as a function of six kinematic observables. The measured cross section integrated within the fiducial volume is
+  $16.8\pm0.8$ pb. The data are compared to fixed-order QCD calculations at next-to-leading-order and next-to-next-to-leading-order
+  accuracy as well as next-to-leading-order computations including resummation of initial-state gluon radiation at next-to-next-to-leading
+  logarithm or matched to a parton shower, with relative uncertainties varying from 5% to 20%.'
+BibKey: Aaboud:2017vol
+BibTeX: '@article{Aaboud:2017vol,
+      author         = "Aaboud, Morad and others",
+      title          = "{Measurements of integrated and differential cross
+                        sections for isolated photon pair production in pp
+                        collisions at $\sqrt{s}=8$ TeV with the ATLAS detector}",
+      collaboration  = "ATLAS",
+      year           = "2017",
+      eprint         = "1704.03839",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-EP-2017-040",
+      SLACcitation   = "%%CITATION = ARXIV:1704.03839;%%"
+}'

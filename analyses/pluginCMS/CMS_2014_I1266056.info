@@ -1,0 +1,43 @@
+Name: CMS_2014_I1266056
+Year: 2014
+Summary: Photon + jets triple differential cross-section
+Experiment: CMS
+Collider: LHC
+InspireID: 1266056
+Status: UNVALIDATED
+Authors:
+ - David Grellscheid <david.grellscheid@durham.ac.uk>
+References:
+ - arXiv:1311.6141 [hep-ex]
+RunInfo:
+  Inclusive photon+jet+X events at $\sqrt{s} = 7$~TeV.
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [7000]
+Description:
+  'A measurement of the triple differential cross section in photon+jets final states 
+  in $pp$ collisions at $\sqrt{s} = 7$ TeV.
+  Photons with $|\eta|<2.5$ and $40$~GeV$<p_T<300$~GeV and 
+  jets with $|\eta|<2.5$ and $p_T>30$ GeV are selected.
+  The measurement uses 2.14 fb$^{-1}$ of integrated luminosity collected with the CMS detector.'
+NeedCrossSection: yes
+BibKey: Chatrchyan:2013mwa
+BibTeX:
+'@article{Chatrchyan:2013mwa,
+      author         = "Chatrchyan, Serguei and others",
+      title          = "{Measurement of the triple-differential cross section for
+                        photon+jets production in proton-proton collisions at
+                        $\sqrt{s}$=7 TeV}",
+      collaboration  = "CMS",
+      journal        = "JHEP",
+      volume         = "06",
+      year           = "2014",
+      pages          = "009",
+      doi            = "10.1007/JHEP06(2014)009",
+      eprint         = "1311.6141",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-QCD-11-005, CERN-PH-EP-2013-194",
+      SLACcitation   = "%%CITATION = ARXIV:1311.6141;%%"
+}'
+

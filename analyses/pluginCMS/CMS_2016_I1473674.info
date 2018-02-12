@@ -1,0 +1,37 @@
+Name: CMS_2016_I1473674
+Year: 2016
+Summary: Measurement of the differential cross sections for top quark pair production as a function of kinematic event variables at sqrt(s) = 8 TeV
+Experiment: CMS
+Collider: LHC
+InspireID: 1473674
+Status: VALIDATED
+Authors:
+ - Markus Seidel <markus.seidel@cern.ch>
+ - Lukas Kreczko <kreczko@cern.ch>
+ - Emyr Clement <Emyr.Clement@bristol.ac.uk>
+References:
+ - arXiv:1607.00837
+RunInfo:
+  ttbar events at sqrt(s) = 8 TeV (inclusive or lepton+jets decay mode)
+  Top quarks are expected in the event record to identify the decay mode.
+Luminosity: 19.7 / fb
+Beams: [p+, p+]
+Energies: [8000]
+Description:
+  'Measurements are reported of the normalized differential cross sections for top quark pair production with respect to four kinematic event variables: the missing transverse energy; the scalar sum of the jet transverse momentum (pT); the scalar sum of the pT of all objects in the event; and the pT of leptonically decaying W bosons from top quark decays.'
+
+BibKey: Khachatryan:2016oou
+BibTeX: '@article{Khachatryan:2016oou,
+      author         = "Khachatryan, Vardan and others",
+      title          = "{Measurement of the differential cross sections for top
+                        quark pair production as a function of kinematic event
+                        variables in pp collisions at $\sqrt{s}$ = 7 and 8 TeV}",
+      collaboration  = "CMS",
+      journal        = "Submitted to: Phys. Rev. D",
+      year           = "2016",
+      eprint         = "1607.00837",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-TOP-12-042, CERN-EP-2016-139",
+      SLACcitation   = "%%CITATION = ARXIV:1607.00837;%%"
+}'

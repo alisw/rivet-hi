@@ -1,0 +1,40 @@
+Name: ATLAS_2015_I1408516_EL
+Year: 2015
+Summary: $Z$ $p_T$ and $Z$ $\phi^*$ in electron channel
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1408516
+Status: VALIDATED
+Authors:
+ - Christian Gutschow <chris.g@cern.ch>
+References:
+ - arXiv:1512.02192 [hep-ex]
+ - submitted to EPJC
+RunInfo:
+  inclusive Z production in the electron channel
+Beams: [p+, p+]
+Energies: [8000]
+PtCuts: [12,20]
+NeedCrossSection: True
+Description:
+  Distributions of transverse momentum $p_\text{T}^{\ell\ell}$ and the angular variable $\phi^\ast_\eta$ of Drell-Yan lepton pairs
+  are measured in $20.3\,\text{fb}^{-1}$ of proton-proton collisions at $\sqrt{s}=8$\,TeV with the ATLAS detector at the LHC.
+  Measurements in electron-pair and muon-pair final states are corrected for detector effects. Compared to previous measurements
+  in proto--proton collisions at i$\sqrt{s}=7$\,TeV, these new measurements benefit from a larger data sample and improved control
+  of systematic uncertainties. Measurements are performed in bins of lepton-pair mass above, around and below the $Z$-boson mass peak.
+  Specify the lepton channel (default is Z->ee) by using the dedicated plugins ATLAS_2015_I1408516_EL and ATLAS_2015_I1408516_MU.
+BibKey: Aad:2015auj
+BibTeX: '@article{Aad:2015auj,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of the transverse momentum and
+                        $\phi^*_{\eta}$ distributions of Drell-Yan lepton pairs in
+                        proton-proton collisions at $\sqrt{s}=8$~TeV with the
+                        ATLAS detector}",
+      collaboration  = "ATLAS",
+      year           = "2015",
+      eprint         = "1512.02192",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2015-275",
+      SLACcitation   = "%%CITATION = ARXIV:1512.02192;%%"
+}'

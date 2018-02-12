@@ -1,0 +1,40 @@
+Name: BELLE_2001_S4598261
+Summary: Measurement of inclusive production of neutral pions from $\Upsilon(4S)$ decays.
+Status: VALIDATED
+Experiment: Belle
+Collider: KEKB
+Authors:
+ - Peter Richardson <Peter.Richardson@durham.ac.uk>
+References:
+ - Phys.Rev. D64 (2001) 072001
+ - hep-ex/0103041
+RunInfo:
+  $e^+ e^-$ analysis on the $\Upsilon(4S)$ resonance, with CoM boosts of
+  8.0~GeV~($e^-$) and 3.5~GeV~($e^+$)
+NumEvents: 1000000
+SpiresID: 4598261
+InspireID: 554520
+Beams: [e+, e-]
+Energies: [[3.5, 8.0]]
+PtCuts: [0]
+Description: Measurement of the mean multiplicity and the momentum spectrum of
+   neutral pions from the decays of the Upsilon(4S) resonance using the Belle
+   detector operating at the KEKB $e^+e^-$ storage ring. Useful for tuning
+   $B$ meson decay models.
+BibKey: Abe:2001hj
+BibTeX: '@article{Abe:2001hj,
+      author         = "Abe, K. and others",
+      title          = "{Measurement of inclusive production of neutral pions
+                        from Upsilon(4S) decays}",
+      collaboration  = "Belle Collaboration",
+      journal        = "Phys.Rev.",
+      volume         = "D64",
+      pages          = "072001",
+      doi            = "10.1103/PhysRevD.64.072001",
+      year           = "2001",
+      eprint         = "hep-ex/0103041",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "KEK-PREPRINT-2001-2, BELLE-PREPRINT-2001-3",
+      SLACcitation   = "%%CITATION = HEP-EX/0103041;%%",
+}'

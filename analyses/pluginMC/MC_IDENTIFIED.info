@@ -1,0 +1,10 @@
+Name: MC_IDENTIFIED
+Summary: MC testing analysis for identified particle distributions
+Status: VALIDATED
+Authors:
+ - Andy Buckley <andy.buckley@cern.ch>
+NumEvents: 50000
+RunInfo: Any!
+Description:
+  Plotting of distributions of PID codes (all/stable/unstable) and ID-specific
+  distributions such as the $|\eta|$ of $K$, $\pi$ and $\Lambda$ mesons.

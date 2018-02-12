@@ -1,0 +1,40 @@
+Name: CMS_2012_I1184941
+Year: 2012
+Summary: Measurement of the differential cross section for inclusive dijet production as a function of $\xi$ in 7 TeV proton-proton collisions.
+Experiment: CMS
+Collider: LHC
+SpireID: 9762035
+InspireID: 1184941
+Status: VALIDATED
+Authors:
+ - Sercan Sen <ssen@cern.ch>
+ - Alexander Proskuryakov <aproskur@mail.cern.ch>
+References:
+ - arXiv:1209.1805 [hep-ex]
+ - Submitted to Phys. Rev. D
+RunInfo:
+   High statistics is needed to observe events in the lowest (xi) bin.
+   Distributions are presented for hard QCD events (i.e. with $\hat{\pT}$ greater than
+   15 GeV) and diffractive-enhanced events.
+NumEvents: 100000000
+NeedCrossSection: no
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [15]
+Description:
+   Measurement of the differential cross section for inclusive dijet production as a function of $\xi$
+   which approximates the fractional momentum loss of the scattered proton in single-diffraction events. The
+   data used has a total integrated luminosity of 2.7 nb$^{-1}$ collected during 2010 with low instantaneous luminosity.
+   Events are selected with at least two jets in $|\eta| < 4.4$ with $\pT > 20$ GeV and all final states particles
+   are used for the reconstruction of $\xi$.
+BibKey: Chatrchyan:2012vc
+BibTeX: '@article{Chatrchyan:2012vc,
+      author         = "Chatrchyan, Serguei and others",
+      title          = "{Observation of a diffractive contribution to dijet production in proton-proton collisions at $\sqrt{s} = 7$ TeV}",
+      collaboration  = "CMS Collaboration",
+      year           = "2012",
+      eprint         = "1209.1805",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-FWD-10-004, CERN-PH-EP-2012-248",
+      SLACcitation   = "%%CITATION = ARXIV:1209.1805;%%",}'

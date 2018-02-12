@@ -1,0 +1,38 @@
+Name: ATLAS_2014_I1300647
+Year: 2014
+Summary: Measurement of $Z/\gamma^*$ boson $p_T$ at $\sqrt{s} = 7\TeV$
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1300647
+Status: VALIDATED
+Authors:
+ - Elena Yatsenko <elena.yatsenko@cern.ch>
+References:
+ - JHEP09(2014)145
+ - arXiv:1406.3660 [hep-ex]
+RunInfo:
+  $Z/\gamma^*$ production with decays to electrons and/or muons.
+NumEvents: 1000000
+NeedCrossSection: no
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [20]
+Description:
+  A measurement of the $Z/\gamma^*$ transverse momentum spectrum using ATLAS proton-proton collision data at a center
+  of mass energy of $\sqrt{s} = 7{\TeV}$ at the LHC. The measurement is performed in both $Z/\gamma^* \rightarrow ee$
+  and $Z/\gamma^* \rightarrow \mu \mu$  channels.
+BibKey: Aad:2014xaa
+BibTeX: '@article{Aad:2014xaa,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of the $Z/\gamma^*$ boson transverse
+                        momentum distribution in $pp$ collisions at $\sqrt{s}$ = 7
+                        TeV with the ATLAS detector}",
+      collaboration  = "ATLAS Collaboration",
+      doi            = "10.1007/JHEP09(2014)145",
+      year           = "2014",
+      eprint         = "1406.3660",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2014-075",
+      SLACcitation   = "%%CITATION = ARXIV:1406.3660;%%",
+}'

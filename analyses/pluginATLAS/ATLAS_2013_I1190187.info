@@ -1,0 +1,49 @@
+Name: ATLAS_2013_I1190187
+Year: 2013
+Summary: Measurement of the $W^+ W^-$ production cross-section at 7 TeV
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1190187
+Status: VALIDATED
+Authors:
+ - Oldrich Kepka <oldrich.kepka@cern.ch>
+ - Katerina Moudra <katerina.moudra@cern.ch>
+References:
+ - arXiv:1210.2979 [hep-ex]
+RunInfo:
+  Run with inclusive $W^+ W^-$ events, with $W$ decays to electron + MET,
+  muon + MET, or tau + MET.
+NumEvents: 100k
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [20]
+NeedsCrossSection: yes
+Description:
+  'Measurement of the fiducial cross section for $W^+ W^-$ production in proton proton
+   collisions at a centre-of mass energy of 7 TeV, is presented, using data corresponding
+   to an integrated luminosity of 4.6/fb collected by the ATLAS experiment at the Large
+   Hadron Collider. The cross section is measured in the leptonic decay channels, using
+   electron+MET and muon+MET $W$ decays. $W \to \tau$ processes with the tau decaying
+   into electron + MET or muon + MET are also included in the measurement. The fiducial
+   region contains dressed leptons in restricted $p_T$ and $\eta$ ranges. The selection
+   has specific requirements for each production channel. A measurement of the normalized
+   fiducial cross section as a function of the leading lepton transverse momentum is also presented.'
+BibKey: ATLAS:2012mec
+BibTeX: '@article{ATLAS:2012mec,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of $W^+W^-$ production in $pp$ collisions at
+                        $\sqrt{s}$=7  TeV with the ATLAS detector and limits
+                        on anomalous $WWZ$ and $WW\gamma$ couplings}",
+      collaboration  = "ATLAS Collaboration",
+      journal        = "Phys.Rev.",
+      number         = "11",
+      volume         = "D87",
+      pages          = "112001",
+      doi            = "10.1103/PhysRevD.87.112001",
+      year           = "2013",
+      eprint         = "1210.2979",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2012-242",
+      SLACcitation   = "%%CITATION = ARXIV:1210.2979;%%",
+}'

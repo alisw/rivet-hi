@@ -1,0 +1,37 @@
+Name: ATLAS_2011_S9212353
+Year: 2011
+Summary: Single lepton search for supersymmetry
+Experiment: ATLAS
+Collider: LHC
+SpiresID: 9212353
+InspireID: 930005
+Status: OBSOLETE
+References:
+ - Phys. Rev.D85:012006,2012
+ - arXiv:1109.6606
+RunInfo:
+  BSM signal events at 7000 GeV.
+NumEvents: 25000 for BSM signals
+Beams: [p+, p+]
+Energies: [7000]
+Description:
+  'Single lepton search for supersymmmetric particles by ATLAS at 7 TeV.
+  Event counts in electron and muon signal regions are implemented as one-bin histograms.
+  Histograms for missing transverse energy and effective mass are implemented for the two
+  signal regions.'
+BibKey: ATLAS:2011ad
+BibTeX: '@Article{ATLAS:2011ad,
+     author    = "Aad, Georges and others",
+ collaboration = "ATLAS",
+     title     = "{Search for supersymmetry in final states with jets,
+                  missing transverse momentum and one isolated lepton in
+                  sqrt{s} = 7 TeV pp collisions using 1 fb-1 of ATLAS data}",
+     journal   = "Phys. Rev.",
+     volume    = "D85",
+     year      = "2012",
+     pages     = "012006",
+     eprint    = "1109.6606",
+     archivePrefix = "arXiv",
+     primaryClass  =  "hep-ex",
+     SLACcitation  = "%%CITATION = 1109.6606;%%"
+}'

@@ -1,0 +1,51 @@
+Name: ATLAS_2017_I1632756
+Year: 2017
+Summary: Photon + heavy flavour at 8 TeV
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1632756
+Status: VALIDATED
+Authors:
+ - Sebastien Prince <sebastien.prince@cern.ch>
+References:
+ - submitted to PLB
+ - arXiv:1710.09560 [hep-ex]
+Keywords:
+ - PHOTON
+ - HEAVYFLAVOUR
+ - JETS
+RunInfo:
+  prompt photon + heavy-flavour jets
+Luminosity_fb: 20.2
+Beams: [p+, p+]
+Energies: [8000]
+PtCuts: [25]
+NeedCrossSection: True
+Description:
+  'This Letter presents the measurement of differential cross sections of isolated prompt photons produced in association with a
+  $b$-jet or a $c$-jet. These final states provide sensitivity to the heavy-flavour content of the proton and aspects related to the
+  modelling of heavy-flavour quarks in perturbative QCD. The measurement uses proton-proton collision data at a centre-of-mass
+  energy of 8 TeV recorded by the ATLAS detector at the LHC in 2012 corresponding to an integrated luminosity of up to 20.2 fb$^{-1}$.
+  The differential cross sections are measured for each jet flavour with respect to the transverse energy of the leading photon in
+  two photon pseudorapidity regions: $|\eta^\gamma| < 1.37$ and $1.56 < |\eta^\gamma| < 2.37$. The measurement covers photon transverse
+  energies $25 < E^\gamma_\text{T} < 400$ GeV and $25 < E^\gamma_\text{T} < 350$ GeV respectively for the two $|\eta^\gamma|$ regions.
+  For each jet flavour, the ratio of the cross sections in the two $|\eta^\gamma|$ regions is also measured. The measurement is corrected 
+  for detector effects and compared to leading-order and next-to-leading-order perturbative QCD calculations, based on various treatments 
+  and assumptions about the heavy-flavour content of the proton. Overall, the predictions agree well with the measurement, but some 
+  deviations are observed at high photon transverse energies. The total uncertainty in the measurement ranges between 13% and 66%, 
+  while the central $\gamma + b$ measurement exhibits the smallest uncertainty, ranging from 13% to 27%, which is comparable to the 
+  precision of the theoretical predictions.'
+BibKey: Aaboud:2017skj
+BibTeX: '@article{Aaboud:2017skj,
+      author         = "Aaboud, Morad and others",
+      title          = "{Measurement of differential cross sections of
+                        isolated-photon plus heavy-flavour jet production in pp
+                        collisions at $\sqrt{s}=8$ TeV using the ATLAS detector}",
+      collaboration  = "ATLAS",
+      year           = "2017",
+      eprint         = "1710.09560",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-EP-2017-217",
+      SLACcitation   = "%%CITATION = ARXIV:1710.09560;%%"
+}'

@@ -1,0 +1,24 @@
+Name: CDF_2012_NOTE10874
+Year: 2012
+Summary: CDF energy scan underlying event analysis
+Experiment: CDF
+Collider: Tevatron energy scan
+Status: VALIDATED
+Authors:
+ - Rick Field <rfield@phys.ufl.edu>
+References:
+ - CDF Note 10874
+RunInfo:
+  $p\bar{p}$ QCD interactions at 300, 900, and 1960~GeV. Particles with 
+  $c \tau > {}$10 mm should be set stable.
+NumEvents: 1000000
+Beams: [p-, p+]
+Energies: [300, 900, 1960]
+PtCuts: []
+Description:
+  In this analysis the behavior of the underlying event in hard scattering
+  proton-antiproton collisions at 300 GeV, 900 GeV, and 1.96 TeV is studied.
+  The 300 GeV and 900 GeV data are a result of the Tevatron Energy Scan
+  which was performed just before the Tevatron was shut down. The energy
+  ratio histograms can be created from different runs with a merging script
+  available in the Rivet bin directory.

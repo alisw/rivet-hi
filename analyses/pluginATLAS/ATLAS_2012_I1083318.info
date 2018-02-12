@@ -1,0 +1,37 @@
+Name: ATLAS_2012_I1083318
+Year: 2012
+Summary: $W$+jets production at 7 TeV
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1083318
+Status: VALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+ - arXiv:1201.1276 [hep-ex]
+RunInfo:
+  W+jet events in either the electron or the muon decay channel (but not both).
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [0]
+NeedCrossSection: True
+Description:
+  'Differential cross-sections of properties of the four leading jets in
+  $W$+jets production, using the full 2010 dataset of 36 pb$^-1$. Observables
+  include jet multiplicities, $pT$, $H_T$, angular distances, and others.
+  All observables are available using jets with $pT>30$ and $pT>20$ GeV.'
+BibKey: Aad:2012en
+BibTeX: '
+@article{Aad:2012en,
+      author         = "Aad, Georges and others",
+      title          = "{Study of jets produced in association with a $W$ boson in
+                        $pp$ collisions at $\sqrt{s} = 7~$TeV with the ATLAS detector}",
+      collaboration  = "ATLAS Collaboration",
+      year           = "2012",
+      eprint         = "1201.1276",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2011-218",
+      SLACcitation   = "%%CITATION = ARXIV:1201.1276;%%",
+}'

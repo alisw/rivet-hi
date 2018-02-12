@@ -1,0 +1,35 @@
+Name: ATLAS_2011_I925932
+Year: 2011
+Summary: Measurement of the W pT with electrons and muons at 7 TeV
+Experiment: ATLAS
+Collider: LHC
+InspireID: 925932
+Status: VALIDATED
+Authors:
+ - Elena Yatsenko <elena.yatsenko@desy.de>
+ - Judith Katzy <jkatzy@mail.cern.ch>
+References:
+ - arXiv:1108.6308v1 [hep-ex]
+RunInfo:
+  Run with $W$ decays to $e\,\nu_e$ and/or $\mu\,\nu_\mu$.
+NumEvents: 100k
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [0]
+Description:
+  The W pT at $\sqrt{s} = 7$\;TeV is measured using $W\to e \, \nu_e$ and $W\to \mu \, \nu_\mu$
+  decay channels. The dressed leptons kinematics calculated from the sum of the post-FSR
+  lepton momentum and the momenta of all photons radiated in a cone around the lepton,
+  while the bare uses the lepton kinematics after all QED radiation.
+BibKey: Aad:2011fp
+BibTeX: '@article{Aad:2011fp,
+      author         = "Aad, Georges and others",
+      title          = "Measurement of the transverse momentum distribution of $W$
+                        bosons in $pp$ Collisions at $\sqrt{s} = 7$~TeV with the {ATLAS
+                        Detector}",
+      collaboration  = "The ATLAS",
+      year           = "2011",
+      eprint         = "1108.6308",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+}'

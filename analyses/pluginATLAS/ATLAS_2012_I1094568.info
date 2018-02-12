@@ -1,0 +1,44 @@
+Name: ATLAS_2012_I1094568
+Year: 2012
+Summary: Measurement of ttbar production with a veto on additional central jet activity
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1094568
+Status: VALIDATED
+Authors:
+ - Kiran Joshi <kiran.joshi@cern.ch>
+References:
+ - arXiv:1203.5015 [hep-ex]
+ - Eur.Phys.J. C72 (2012) 2043
+RunInfo:
+  Require dileptonic ttbar events at 7TeV. It is important to not include semileptonic decay channels in the runs, as they can not be vetoed in the analysis in a generator-independent fashion but have been subtracted from the particle level measurement. The tau decay channels also count as leptonic.
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [0]
+Description:
+  'A measurement of the additional jet activity in dileptonic ttbar events. The
+  fraction of events passing a veto requirement are shown as a function the veto
+  scale for four central rapidity intervals.
+  Two veto definitions are used: events are vetoed if they contain an additional
+  jet in the rapidity interval with transverse momentum above a threshold, or
+  alternatively, if the scalar transverse momentum sum of all additional jets
+  in the rapidity interval is above a threshold.'
+BibKey: ATLAS:2012al
+BibTeX: '@article{ATLAS:2012al,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of $t \bar{t}$ production with a veto on
+                        additional central jet activity in $pp$ collisions at
+                        $\sqrt{s} = 7$ TeV using the ATLAS detector}",
+      collaboration  = "ATLAS Collaboration",
+      journal        = "Eur.Phys.J.",
+      volume         = "C72",
+      pages          = "2043",
+      doi            = "10.1140/epjc/s10052-012-2043-9",
+      year           = "2012",
+      eprint         = "1203.5015",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2012-062",
+      SLACcitation   = "%%CITATION = ARXIV:1203.5015;%%",
+}'

@@ -1,0 +1,43 @@
+Name: H1_1995_S3167097
+Year: 1995
+Summary: Transverse energy and forward jet production in the low-$x$ regime at H1
+Experiment: H1
+Collider: HERA Run I
+SpiresID: 3167097
+InspireID: 396365
+Status: UNVALIDATED
+Authors:
+ - Leif Lonnblad <leif.lonnblad@thep.lu.se>
+References:
+ - Phys.Lett.B356:118,1995
+ - hep-ex/9506012
+RunInfo:
+  820~GeV protons colliding with 26.7~GeV electrons.
+  DIS events with an outgoing electron energy $> 12~\text{GeV}$.
+  $5~\text{GeV}^2 < Q^2 < 100~\text{GeV}^2$, $10^{-4} < x < 10^{-2}$.
+NumEvents: 1000000
+Beams: [p+, e-]
+Energies: [[820, 26.7]]
+PtCuts: [0]
+Description:
+  DIS events at low $x$ may be sensitive to new QCD dynamics such as BFKL
+  or CCFM radiation. In particular, BFKL is expected to produce more
+  radiation at high transverse energy  in the rapidity span between the
+  proton remnant and the struck quark jet. Performing a transverse
+  energy sum in bins of $x$ and $\eta$ may distinguish between DGLAP and
+  BFKL evolution.
+BibKey: Aid:1995we
+BibTeX: '@Article{Aid:1995we,
+     author    = "Aid, S. and others",
+ collaboration = "H1",
+     title     = "{Transverse energy and forward jet production in the low x
+                  regime at HERA}",
+     journal   = "Phys. Lett.",
+     volume    = "B356",
+     year      = "1995",
+     pages     = "118-128",
+     eprint    = "hep-ex/9506012",
+     archivePrefix = "arXiv",
+     doi       = "10.1016/0370-2693(95)00804-T",
+     SLACcitation  = "%%CITATION = HEP-EX/9506012;%%"
+}'

@@ -1,0 +1,52 @@
+Name: ATLAS_2016_I1467454
+Year: 2016
+Summary: High-mass Drell-Yan at 8 TeV
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1467454
+Status: VALIDATED
+Authors:
+ - Markus Zinser <markus.zinser@cern.ch>
+References:
+ - JHEP 1608 (2016) 009
+ - doi:10.1007/JHEP08(2016)009
+ - arXiv:1606.01736 [hep-ex]
+Keywords:
+ - drellyan
+ - vjets
+RunInfo:
+  Drell-Yan production in $pp$ collisons at 8 TeV, leptonic $Z$ decays
+Luminosity_fb: 20.3
+Beams: [p+, p+]
+Energies: [8000]
+NeedCrossSection: yes
+Description:
+  'This paper presents a measurement of the double-differential cross section for the Drell-Yan
+  $Z/\gamma^\ast \rightarrow \ell^+\ell^-$ and photon-induced $\gamma\gamma \rightarrow \ell^+\ell^-$ processes where
+  $\ell$ is an electron or muon. The measurement is performed for invariant masses of the lepton pairs, $m_{\ell\ell}$,
+  between 116 GeV and 1500 GeV using a sample of 20.3 fb$^{-1}$ of pp collisions data at centre-of-mass energy of
+  $\sqrt{s} = 8$ TeV collected by the ATLAS detector at the LHC in 2012. The data are presented double differentially
+  in invariant mass and absolute dilepton rapidity as well as in invariant mass and absolute pseudorapidity separation
+  of the lepton pair. The single-differential cross section as a function of $m_{\ell\ell}$ is also reported. The electron
+  and muon channel measurements are combined and a total experimental precision of better than 1\% is achieved at low
+  $m_{\ell\ell}$. A comparison to next-to-next-to-leading order perturbative QCD predictions using several recent parton
+  distribution functions and including next-to-leading order electroweak effects indicates the potential of the data to
+  constrain parton distribution functions. In particular, a large impact of the data on the photon PDF is demonstrated.'
+BibKey: Aad:2016zzw
+BibTeX: '@article{Aad:2016zzw,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of the double-differential high-mass
+                        Drell-Yan cross section in pp collisions at $ \sqrt{s}=8 $
+                        TeV with the ATLAS detector}",
+      collaboration  = "ATLAS",
+      journal        = "JHEP",
+      volume         = "08",
+      year           = "2016",
+      pages          = "009",
+      doi            = "10.1007/JHEP08(2016)009",
+      eprint         = "1606.01736",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-EP-2016-079",
+      SLACcitation   = "%%CITATION = ARXIV:1606.01736;%%"
+}'

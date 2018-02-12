@@ -1,0 +1,35 @@
+Name: OPAL_1992_I321190
+Year: 1992
+Summary: Hadronic Z decay charged multiplicity measurement
+Experiment: OPAL
+Collider: LEP 1
+InspireID: 321190
+Status: VALIDATED
+Authors:
+ - Peter Richardson <peter.richardson@durham.ac.uk>
+References:
+ - Z.Phys. C53 (1992) 539-554
+RunInfo: 
+  Hadronic Z decay events generated on the Z pole ($\sqrt{s} = 91.2$ GeV)
+NumEvents: 1000000
+Beams: [e+, e-]
+Energies: [91.2]
+PtCuts: [0]
+Description:
+  The charged particle multiplicity distribution of hadronic Z decays,
+  as measured on the peak of the Z resonance using the OPAL detector at
+  LEP.
+BibKey: Acton:1991aa
+BibTeX: '@article{Acton:1991aa,
+      author         = "Acton, P. D. and others",
+      title          = "{A Study of charged particle multiplicities in hadronic
+                        decays of the Z0}",
+      collaboration  = "OPAL",
+      journal        = "Z. Phys.",
+      volume         = "C53",
+      year           = "1992",
+      pages          = "539-554",
+      doi            = "10.1007/BF01559731",
+      reportNumber   = "CERN-PPE-91-176",
+      SLACcitation   = "%%CITATION = ZEPYA,C53,539;%%"
+}'

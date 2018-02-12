@@ -1,0 +1,46 @@
+Name: ATLAS_2017_I1589844_MU
+Year: 2017
+Summary: $k_T$ splittings in $Z$ events at 8 TeV, muon mode
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1589844
+Status: VALIDATED
+Authors:
+ - Christian Gutschow <chris.g@cern.ch>
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+ - arXiv:1704.01530 [hep-ex]
+ - submitted to JHEP
+Keywords:
+ - KTSPLITTINGS
+ - QCD
+ - Z
+ - JETS
+ - TRACKS
+RunInfo:
+  '$pp \to Z(\to ee/\mu\mu) +$ jets at 8 TeV'
+Luminosity_fb: 20.2
+Beams: [p+, p+]
+Energies: [8000]
+PtCuts: [25, 25, 0.4]
+Description:
+  'A measurement of the splitting scales occuring in the $k_\text{t}$ jet-clustering algorithm is presented for final states containing
+  a $Z$ boson. The measurement is done using 20.2 fb$^{-1}$ of proton-proton collision data collected at a centre-of-mass energy of
+  $\sqrt{s} = 8$ TeV by the ATLAS experiment at the LHC in 2012. The measurement is based on charged-particle track information,
+  which is measured with excellent precision in the $p_\text{T}$ region relevant for the transition between the perturbative and the
+  non-perturbative regimes. The data distributions are corrected for detector effects, and are found to deviate from
+  state-of-the-art predictions in various regions of the observables.'
+BibKey: Aaboud:2017hox
+BibTeX: '@article{Aaboud:2017hox,
+      author         = "Aaboud, Morad and others",
+      title          = "{Measurement of the $k_\mathrm{t}$ splitting scales in $Z
+                        \to \ell\ell$ events in $pp$ collisions at $\sqrt{s} = 8$
+                        TeV with the ATLAS detector}",
+      collaboration  = "ATLAS",
+      year           = "2017",
+      eprint         = "1704.01530",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-EP-2017-033",
+      SLACcitation   = "%%CITATION = ARXIV:1704.01530;%%"
+}'

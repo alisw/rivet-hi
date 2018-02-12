@@ -1,0 +1,52 @@
+Name: CDF_2008_S7782535
+Year: 2008
+Summary: CDF Run II $b$-jet shape paper
+Experiment: CDF
+Collider: Tevatron Run 2
+SpiresID: 7782535
+InspireID: 787780
+Status: VALIDATED
+Authors:
+ - Alison Lister <alister@fnal.gov>
+ - Emily Nurse <nurse@hep.ucl.ac.uk>
+ - Andy Buckley <andy.buckley@cern.ch>
+References:
+ - arXiv:0806.1699
+ - Phys.Rev.D78:072005,2008
+RunInfo:
+  Requires $2 \rightarrow 2$ QCD scattering processes. The minimum jet $E_\perp$ is 52\;GeV,
+  so kinematic cuts on pTmin may be required for statistical validity.
+NumEvents: 1000000
+Beams: [p-, p+]
+Energies: [1960]
+PtCuts: [0]
+Description:
+  A measurement of the shapes of $b$-jets using 300 pb$^{-1}$ of data
+  obtained with CDF II in $p\bar{p}$ collisions at $\sqrt{s}=1.96$ TeV.
+  The measured quantity is the average integrated jet shape, which is
+  computed over an ensemble of jets. This quantity is expressed as
+  $\Psi(r/R) = \langle\frac{p_\perp(0 \rightarrow r)}{p_\perp(0 \rightarrow
+  R)}\rangle$, where $p_\perp(0 \rightarrow r)$ is the scalar sum of the
+  transverse momenta of all objects inside a sub-cone of radius $r$ around
+  the jet axis. The integrated shapes are by definition normalized such
+  that  $\Psi(r/R =1) = 1$.   The measurement is done in bins of jet pT
+  in the range 52 to 300\;GeV/$c$. The jets have $|\eta| < 0.7$. The $b$-jets
+  are expected to be broader than inclusive jets. Moreover, $b$-jets
+  containing a single $b$-quark are expected to be narrower than those
+  containing a $b \bar{b}$ pair from gluon splitting.
+BibKey: Aaltonen:2008de
+BibTeX: '@Article{Aaltonen:2008de,
+     author    = "Aaltonen, T. and others",
+ collaboration = "CDF",
+     title     = "{Measurement of $b$-jet Shapes in Inclusive Jet Production
+                  in $p \bar{p}$ Collisions at $\sqrt{s}$ = 1.96-TeV}",
+     journal   = "Phys. Rev.",
+     volume    = "D78",
+     year      = "2008",
+     pages     = "072005",
+     eprint    = "0806.1699",
+     archivePrefix = "arXiv",
+     primaryClass  =  "hep-ex",
+     doi       = "10.1103/PhysRevD.78.072005",
+     SLACcitation  = "%%CITATION = 0806.1699;%%"
+}'

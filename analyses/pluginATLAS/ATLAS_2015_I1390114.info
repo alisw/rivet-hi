@@ -1,0 +1,52 @@
+Name: ATLAS_2015_I1390114
+Year: 2015
+Summary: $tt+b(b)$ at 8 TeV
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1390114
+Status: VALIDATED
+Authors:
+ - Matthias Danninger <matthias.danninger@cern.ch>
+ - Christian Gutschow <chris.g@cern.ch>
+References:
+ - Eur.Phys.J. C76 (2016) no.1, 11
+ - doi:10.1140/epjc/s10052-015-3852-4
+ - arXiv:1508.06868 [hep-ex]
+RunInfo:
+  Top-antitop production
+Beams: [p+, p+]
+Energies: [8000]
+PtCuts: [25,20]
+NeedCrossSection: True
+Description:
+  'Fiducial cross-sections for $t\bar{t}$ production with one or two additional $b$-jets are presented, using an integrated luminosity
+  of 20.3 fb${}^{-1}$ of proton-proton collisions at a centre-of-mass energy of 8 TeV at the Large Hadron Collider, collected with the
+  ATLAS detector. The cross-section times branching ratio for $t\bar{t}$ events with at least one additional $b$-jet is measured to be
+  950 $\pm$ 70 (stat.)~${}^{+240}_{-190}$ (syst.)~fb in the lepton-plus-jets channel and
+  50 $\pm$ 10 (stat.) ${}^{+15}_{-10}$ (syst.) fb in the $e\mu$ channel. The cross-section times branching ratio for events with at
+  least two additional $b$-jets is measured to be 19.3 $\pm$ 3.5 (stat.) $\pm$ 5.7 (syst.) fb in the dilepton channel
+  ($e\mu$, $\mu\mu$, $ee$) using a method based on tight selection criteria, and 13.5 $\pm$ 3.3 (stat.) $\pm$ 3.6 (syst.) fb using a
+  looser selection that allows the background normalisation to be extracted from data. The latter method also measures a value of
+  1.30 $\pm$ 0.33 (stat.) $\pm$ 0.28 (syst.)$\%$ for the ratio of $t\bar{t}$ production with two additional $b$-jets to $t\bar{t}$
+  production with any two additional jets.
+  NB: When merging several output YODA files, the ratio (d02-x01-y01) needs to be reconstructed in a post-processing step.'
+BibKey: Aad:2015yja
+BibTeX: '@article{Aad:2015yja,
+      author         = "Aad, Georges and others",
+      title          = "{Measurements of fiducial cross-sections for $t\bar{t}$
+                        production with one or two additional $b$-jets in $pp$
+                        collisions at $\sqrt{s} = 8$ TeV using the ATLAS
+                        detector}",
+      collaboration  = "ATLAS",
+      journal        = "Eur. Phys. J.",
+      volume         = "C76",
+      year           = "2016",
+      number         = "1",
+      pages          = "11",
+      doi            = "10.1140/epjc/s10052-015-3852-4",
+      eprint         = "1508.06868",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2015-200",
+      SLACcitation   = "%%CITATION = ARXIV:1508.06868;%%"
+}'

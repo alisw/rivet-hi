@@ -1,0 +1,59 @@
+Name: ATLAS_2014_I1268975
+Year: 2014
+Summary: High-mass dijet cross section
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1268975
+Status: VALIDATED
+Authors:
+ - Christopher Meyer <chris.meyer@cern.ch>
+References:
+ - arXiv:1312.3524 [hep-ex]
+ - JHEP 1405 (2014) 059
+RunInfo:
+  QCD jet production with a minimum leading jet pT of 100 GeV and minimum second jet pT of 50 GeV at 7 TeV.
+NeedCrossSection: True
+NumEvents: 10000000
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [100,50]
+Description:
+  'Double-differential dijet cross sections measured in pp collisions
+   at the LHC with a 7 TeV centre-of-mass energy are presented as
+   functions of dijet mass and rapidity separation of the two highest-pT
+   jets. These measurements are obtained using data corresponding to an
+   integrated luminosity of 4.5/fb, recorded by the ATLAS detector in
+   2011. The data are corrected for detector effects so that cross
+   sections are presented at the particle level. Cross sections are
+   measured up to 5 TeV dijet mass using jets reconstructed with the
+   anti-kt algorithm for values of the jet radius parameter of 0.4 and
+   0.6. The cross sections are compared with next-to-leading-order
+   perturbative QCD calculations by NLOJET++ corrected to account for
+   non-perturbative effects. Comparisons with POWHEG predictions, using a
+   next-to-leading-order matrix element calculation interfaced to a
+   parton-shower Monte Carlo simulation, are also shown. Electroweak
+   effects are accounted for in both cases. The quantitative comparison
+   of data and theoretical predictions obtained using various
+   parameterizations of the parton distribution functions is performed
+   using a frequentist method. An example setting a lower limit on the
+   compositeness scale for a model of contact interactions is presented,
+   showing that the unfolded results can be used to constrain
+   contributions to dijet production beyond that predicted by the
+   Standard Model.'
+BibKey: Aad:2013tea
+BibTeX: '@article{Aad:2013tea,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of dijet cross sections in $pp$ collisions
+                        at 7 TeV centre-of-mass energy using the ATLAS detector}",
+      collaboration  = "ATLAS Collaboration",
+      journal        = "JHEP",
+      volume         = "1405",
+      pages          = "059",
+      doi            = "10.1007/JHEP05(2014)059",
+      year           = "2014",
+      eprint         = "1312.3524",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2013-192",
+      SLACcitation   = "%%CITATION = ARXIV:1312.3524;%%",
+}'

@@ -1,0 +1,44 @@
+Name: D0_2000_I499943
+Year: 2000
+Summary: The $b\bar{b}$ production cross-section and angular correlations
+Experiment: D0
+Collider: Tevatron Run 1
+InspireID: 499943
+Status: VALIDATED
+Authors:
+ - Simone Amoroso <amoroso@cern.ch>
+References:
+ - Phys.Lett.B487:264-272,2000
+ - doi:10.1016/PhysLettB.487.264
+ - arXiv:hep-ex/9905024v2
+RunInfo:
+  $p\bar{p}$ dijet events at 1.8\;\TeV, with a minimum \pt of 12\;GeV.
+NumEvents: 1000000
+Beams: [p-, p+]
+Energies: [1800]
+NeedsCrossSection: yes
+Description:
+ 'Measurements of the $b\bar{b}$ production cross-section and angular
+  correlations using the D0 detector at the Fermilab Tevatron $p\bar{p}$
+  collider operating at $\sqrt{s} = 1.8\;\TeV$. The $b$ quark production
+  cross-section and the angular correlations between $b$-quark pairs,
+  for $|y(b)| < 1.0$ and $p_T(b) > 6\;\GeV/c$, are extracted from single
+  muon and dimuon data samples. '
+BibKey: Abbott:1999se
+BibTeX: '@article{Abbott:1999se,
+      author         = "Abbott, B. and others",
+      title          = "{The $b\bar{b}$ production cross section and angular
+                        correlations in $p\bar{p}$ collisions at $\sqrt{s} = 1.8$
+                        TeV}",
+      collaboration  = "D0 Collaboration",
+      journal        = "Phys.Lett.",
+      volume         = "B487",
+      pages          = "264-272",
+      doi            = "10.1016/S0370-2693(00)00844-3",
+      year           = "2000",
+      eprint         = "hep-ex/9905024",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "FERMILAB-PUB-99-144-E",
+      SLACcitation   = "%%CITATION = HEP-EX/9905024;%%",
+}'

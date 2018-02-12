@@ -1,0 +1,11 @@
+Name: MC_JETTAGS
+Summary: Monte Carlo validation analysis for ideal heavy flavour tagging observables
+Status: VALIDATED
+Authors:
+ - Andy Buckley <andy.buckley@cern.ch>
+RunInfo:
+  Run any events which will produce jets above 20 GeV. Of most interest for processes
+  where c and b hadrons can be produced (either hard or soft) of course!
+NumEvents: 100000
+Description:
+  'Plots to study theoretical tagging of heavy flavour hadrons in jets.'

@@ -1,0 +1,47 @@
+Name: ATLAS_2012_I1203852
+Year: 2013
+Summary: Measurement of the $ZZ(*)$ production cross-section in $pp$ collisions at 7 TeV with ATLAS
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1203852
+Status: VALIDATED
+Authors:
+ - Oldrich Kepka <oldrich.kepka@cern.ch>
+ - Katerina Moudra <katerina.moudra@cern.ch>
+References:
+ - arXiv:1211.6096 [hep-ex]
+RunInfo:
+  Run with inclusive $Z$ events, with $Z$ decays to 4 leptons or 2 leptons + MET.
+NumEvents: 100k
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [20]
+NeedsCrossSection: yes
+Description:
+  'Measurement of the fiducial cross section for $ZZ(*)$ production in proton proton collisions
+   at a centre-of mass energy of 7 TeV, is presented, using data corresponding to an integrated
+   luminosity of 4.6/fb collected by the ATLAS experiment at the Large Hadron Collider. The
+   cross-section is measured using processes with two $Z$ bosons decaying to electrons or muons
+   or with one $Z$ boson decaying to electrons or muons and a second $Z$ boson decaying to neutrinos.
+   The fiducial region contains dressed leptons in restricted $p_T$ and $\eta$ ranges. The
+   selection has specific requirements for both production processes. A measurement of the
+   normalized fiducial cross-section as a function of $ZZ$ invariant mass, leading $Z$ $p_T$ and
+   angle of two leptons coming from the leading $Z$ is also presented for both signal processes.'
+BibKey: Aad:2012awa
+BibTeX: '@article{Aad:2012awa,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of $ZZ$ production in $pp$ collisions at
+                        $\sqrt{s}=7$ TeV and limits on anomalous $ZZZ$ and
+                        $ZZ\gamma$ couplings with the ATLAS detector}",
+      collaboration  = "ATLAS Collaboration",
+      journal        = "JHEP",
+      volume         = "1303",
+      pages          = "128",
+      doi            = "10.1007/JHEP03(2013)128",
+      year           = "2013",
+      eprint         = "1211.6096",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2012-318",
+      SLACcitation   = "%%CITATION = ARXIV:1211.6096;%%",
+}'

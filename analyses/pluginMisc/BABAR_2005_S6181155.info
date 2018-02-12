@@ -1,0 +1,42 @@
+Name: BABAR_2005_S6181155
+Summary: Production and decay of $\Xi^0_c$ at BABAR.
+Experiment: BaBar
+Collider: PEP-II
+Status: VALIDATED
+Authors:
+ - Peter Richardson <Peter.Richardson@durham.ac.uk>
+References:
+ - Phys.Rev.Lett. 95 (2005) 142003
+ - hep-ex/0504014
+RunInfo:
+  $e^+ e^-$ analysis on the $\Upsilon(4S)$ resonance, with CoM boosts
+  of 8.0~GeV~($e^-$) and 3.5~GeV~($e^+$)
+NumEvents: 1000000
+SpiresID: 6895344
+InspireID: 679961
+Beams: [e+, e-]
+Energies: [[3.5, 8.0],[3.5,7.91]]
+PtCuts: [0]
+Description: Analysis of $\Xi_c^0$ production in B decays and from the $c\bar{c}$ continuum, with the $\Xi_c^0$
+  decaying into $\Omega^- K^+$ and $\Xi^- \pi^+$ final states measured using 116.1 $\text{fb}^{-1}$ of data
+  collected by the BABAR detector.
+  The normalisation of the data as been modifed from that presented in the original paper in order
+  to produce a differential cross section rather than the cross section in each bin. In addition to the data
+  presented in the paper plots are alos made with unit normalisation which can be more useful for
+  Monte Carlo tuning.
+BibKey: Aubert:2005cu
+BibTeX: '@article{Aubert:2005cu,
+      author         = "Aubert, Bernard and others",
+      title          = "{Production and decay of $\Xi_c^0$ at BABAR}",
+      collaboration  = "BABAR Collaboration",
+      journal        = "Phys.Rev.Lett.",
+      volume         = "95",
+      pages          = "142003",
+      doi            = "10.1103/PhysRevLett.95.142003",
+      year           = "2005",
+      eprint         = "hep-ex/0504014",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "SLAC-PUB-11100, BABAR-PUB-05-008",
+      SLACcitation   = "%%CITATION = HEP-EX/0504014;%%",
+}'

@@ -1,0 +1,39 @@
+Name: SLD_2002_S4869273
+Year: 2002
+Summary: Measurement of the b-quark fragmentation function in $Z^0$ decays
+Experiment: SLD
+Collider: SLC
+SpiresID: 4869273
+InspireID: 582951
+Status: VALIDATED
+Authors:
+ - Peter Richardson <Peter.Richardson@durham.ac.uk>
+References:
+ - Phys. Rev.D65:092006,2002
+ - hep-ex/0202031
+RunInfo:
+  Hadronic Z decay events generated on the Z pole ($\sqrt{s} = 91.2$ GeV)
+NumEvents: 1000000
+Beams: [e+, e-]
+Energies: [91.2]
+PtCuts: [0]
+Description:
+  Measurement of the $b$-quark fragmentation function by SLC.
+  The fragmentation function for weakly decaying $b$-quarks has been
+  measured.
+BibKey: Abe:2002iq
+BibTeX: '@Article{Abe:2002iq,
+     author    = "Abe, Koya and others",
+     collaboration = "SLD",
+     title     = "{Measurement of the b-quark fragmentation function in Z0
+                  decays}",
+     journal   = "Phys. Rev.",
+     volume    = "D65",
+     year      = "2002",
+     pages     = "092006",
+     eprint    = "hep-ex/0202031",
+     archivePrefix = "arXiv",
+     doi       = "10.1103/PhysRevD.65.092006",
+     note      = "[Erratum-ibid.D66:079905,2002]",
+     SLACcitation  = "%%CITATION = HEP-EX/0202031;%%"
+}'

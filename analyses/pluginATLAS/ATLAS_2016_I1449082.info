@@ -1,0 +1,52 @@
+Name: ATLAS_2016_I1449082
+Year: 2016
+Summary: Charge asymmetry in top quark pair production in dilepton channel
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1449082
+Status: VALIDATED
+Authors:
+ - Roman Lysak <roman.lysak@cern.ch>
+References:
+ - Phys.Rev. D94 (2016) no.3, 032006
+ - doi:10.1103/PhysRevD.94.032006
+ -  arXiv:1604.05538 [hep-ex]
+Keywords:
+ - ttbar
+ - asymmetry
+RunInfo:
+  pp --> top + antitop events at 8 TeV
+Luminosity_fb: 20.3
+Beams: [p+, p+]
+Energies: [8000]
+PtCuts: [25]
+Description:
+  'Measurements of the top-antitop quark pair production charge asymmetry in the dilepton channel are presented using data
+  corresponding to an integrated luminosity of $20.3\;\text{fb}^{-1}$ from $pp$ collisions at a center-of-mass energy of
+  $\sqrt{s} = 8$ TeV collected with the ATLAS detector at the Large Hadron Collider at CERN. Inclusive and differential
+  measurements as a function of the invariant mass, transverse momentum, and longitudinal boost of the $t\bar{t}$ system are
+  performed both in the full phase space and in a fiducial phase space closely matching the detector acceptance (at least
+  2 leptons and 2 jets with $p_\text{T} > 25$ GeV and $|\eta| < 2.5$). Two observables are studied: $A_C^{\ell\ell}$ based
+  on the selected leptons and $A_C^{t\bar{t}}$ based on the reconstructed $t\bar{t}$ final state. The unfolded distributions
+  of $\Delta|\eta| = |\eta|_{\ell^+} - |\eta|_{\ell^-}$ and $\Delta|y| = |y|_\text{top} - |y|_\text{antitop}$ are provided.
+  USERS SHOULD NOTE THAT EXPLICIT RECONSTRUCTION OF INDIVIDUAL STANDARD MODEL NEUTRINOS IS USED IN THIS ANALYSIS ROUTINE
+  TO MATCH THE MONTE-CARLO-BASED CORRECTION TO THE FIDUCIAL REGION APPLIED IN THE PAPER.'
+BibKey: Aad:2016ove
+BibTeX: '@article{Aad:2016ove,
+      author         = "Aad, Georges and others",
+      title          = "{Measurements of the charge asymmetry in top-quark pair
+                        production in the dilepton final state at $\sqrt{s}=8$
+                         TeV with the ATLAS detector}",
+      collaboration  = "ATLAS",
+      journal        = "Phys. Rev.",
+      volume         = "D94",
+      year           = "2016",
+      number         = "3",
+      pages          = "032006",
+      doi            = "10.1103/PhysRevD.94.032006",
+      eprint         = "1604.05538",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-EP-2016-051",
+      SLACcitation   = "%%CITATION = ARXIV:1604.05538;%%"
+}'

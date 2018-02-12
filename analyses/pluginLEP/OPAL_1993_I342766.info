@@ -1,0 +1,33 @@
+Name: OPAL_1993_I342766
+Year: 1993
+Summary: A Measurement of $K^{*\pm}$ (892) production in hadronic Z0 decays
+Experiment: OPAL
+Collider: LEP
+InspireID: 342766
+Status: VALIDATED
+Authors:
+ - Simone Amoroso <amoroso@cern.ch>
+References:
+ - Phys.Lett. B305 (1993) 407-414
+ - doi:10.1016/0370-2693(93)91075-X
+RunInfo: electron positron collisions at the Z0 resonance with hadronic decays
+NumEvents: 1000000
+NeedCrossSection: no
+Beams: [e+,e-]
+Energies: [91.2]
+Description: 'OPAL measurement of the inclusive cross section for K^{*\pm} (892) production in hadronic decays of the Z0' 
+BibKey: Acton:1992us
+BibTeX: '@article{Acton:1992us,
+      author         = "Acton, P. D. and others",
+      title          = "{A Measurement of K*+- (892) production in hadronic Z0
+                        decays}",
+      collaboration  = "OPAL",
+      journal        = "Phys. Lett.",
+      volume         = "B305",
+      year           = "1993",
+      pages          = "407-414",
+      doi            = "10.1016/0370-2693(93)91075-X",
+      reportNumber   = "CERN-PPE-92-213",
+      SLACcitation   = "%%CITATION = PHLTA,B305,407;%%"
+}'
+

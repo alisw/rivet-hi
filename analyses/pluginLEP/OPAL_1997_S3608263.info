@@ -1,0 +1,40 @@
+Name: OPAL_1997_S3608263
+Year: 1997
+Summary: $K^{*0}$ meson production measured by OPAL at LEP 1.
+Experiment: OPAL
+Collider: LEP 1
+SpiresID: 3608263
+InspireID: 447146
+Status: VALIDATED
+Authors:
+ - Peter Richardson <Peter.Richardson@durham.ac.uk>
+References:
+ - Phys.Lett.B412:210-224,1997
+ - hep-ex/9708022
+RunInfo:
+  Hadronic Z decay events generated on the Z pole ($\sqrt{s} = 91.2$ GeV)
+NumEvents: 1000000
+Beams: [e+, e-]
+Energies: [91.2]
+PtCuts: [0]
+Description:  The $K^{*0}$ fragmentation function has been measured in hadronic $Z^0$ decays. 
+ In addition the  helicity density matrix elements for inclusive $K^*(892)^0$ mesons
+ from hadronic $Z^0$ decays have been measured over the full range of $K^{*0}$ momentum
+ using data taken with the OPAL experiment at LEP. Only the fragmentation function
+ measurement is currently implemented.
+
+BibKey: Ackerstaff:1997kj
+BibTeX: '@Article{Ackerstaff:1997kj,
+     author    = "Ackerstaff, K. and others",
+ collaboration = "OPAL",
+     title     = "{Spin alignment of leading K*(892)0 mesons in hadronic Z0
+                  decays}",
+     journal   = "Phys. Lett.",
+     volume    = "B412",
+     year      = "1997",
+     pages     = "210-224",
+     eprint    = "hep-ex/9708022",
+     archivePrefix = "arXiv",
+     doi       = "10.1016/S0370-2693(97)01077-0",
+     SLACcitation  = "%%CITATION = HEP-EX/9708022;%%"
+}'

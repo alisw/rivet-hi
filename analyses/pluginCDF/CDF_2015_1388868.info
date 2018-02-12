@@ -1,0 +1,48 @@
+Name: CDF_2015_I1388868
+Year: 2015
+Summary: Studies of the underlying event at 300, 900 and 1960 GeV with leading charged particles
+Experiment: CDF
+Collider: Tevatron
+InspireID:
+Status: VALIDATED
+Authors:
+ - Oreste Tumbarell Aranda
+ - Hannes Jung (hannes.jung@cern.ch)
+ - Paolo Gunnellini (paolo.gunnellini@desy.de)
+ - Andy Buckley (cleaining/integration)
+References:
+ - 'Phys. Rev. D 92, 092009 (2015)'
+ - 'arXiv:1508.05340'
+RunInfo:
+  'Minimum bias proton-antiproton collision events at 300, 900 and 1960 GeV.
+  Set particles with c*tau > 10 mm stable.'
+NumEvents: 1000000
+Beams: [p+, p-]
+Energies: [300, 900, 1960]
+Description:
+  'We study charged particle production in proton--antiproton collisions at 300 GeV,
+  900 GeV, and 1.96 TeV. We use the direction of the charged particle with the largest
+  transverse momentum in each event to define three regions of $\eta$--$\phi$ space;
+  toward, away, and transverse. The average number and the average scalar pT sum of
+  charged particles in the transverse region are sensitive to the modeling of the
+  underlying event. The transverse region is divided into a MAX and MIN transverse
+  region, which helps separate the hard component (initial and final-state radiation)
+  from the beam-beam remnant and multiple parton interaction components of the scattering.'
+BibKey: Aaltonen:2015aoa
+BibTeX: '@article{Aaltonen:2015aoa,
+      author         = "Aaltonen, Timo Antero and others",
+      title          = "{Study of the energy dependence of the underlying event
+                        in proton-antiproton collisions}",
+      collaboration  = "CDF",
+      journal        = "Phys. Rev.",
+      volume         = "D92",
+      year           = "2015",
+      number         = "9",
+      pages          = "092009",
+      doi            = "10.1103/PhysRevD.92.092009",
+      eprint         = "1508.05340",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "FERMILAB-PUB-15-361-E",
+      SLACcitation   = "%%CITATION = ARXIV:1508.05340;%%"
+}'

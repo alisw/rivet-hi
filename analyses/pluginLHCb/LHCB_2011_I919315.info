@@ -1,0 +1,39 @@
+Name: LHCB_2011_I919315
+Year: 2011
+Summary: Inclusive differential $\Phi$ production cross-section as a function of $p_\text{T}$ and $y$
+Experiment: LHCB
+Collider: LHC
+InspireID: 919315
+Status: VALIDATED
+Authors:
+ - Friederike Blatt <friederike.blatt@tu-dortmund.de>
+ - Michael Kaballo <michael.kaballo@tu-dortmund.de>
+ - Till Moritz Karbach
+References:
+ - Phys.Lett.B703:267-273,2011
+ - arXiv:1107.3935 [hep-ex]
+RunInfo:
+  $pp$ collisions, QCD-Events, $\sqrt{s}=7$TeV 
+Beams: [p+, p+]
+Energies: [7000]
+Description:
+  'Measurement of the inclusive differential $\Phi$ cross-section in $pp$
+   collisions at $\sqrt {s}=7$TeV in the rapidity range of
+   $ 2.44 < y < 4.06$ and the $p_\text{T}$ range of
+   0.6 GeV/c $< p_\text{T} <$ 5.0 GeV/c.'
+NeedCrossSection: yes
+BibKey: Aaij:2011uk
+BibTeX: '@article{Aaij:2011uk,
+      author         = "Aaij, R. and others",
+      title          = "{Measurement of the inclusive $\phi$ cross-section in $pp$
+                        collisions at $\sqrt{s} = 7$ TeV}",
+      collaboration  = "LHCb Collaboration",
+      journal        = "Phys.Lett.",
+      volume         = "B703",
+      pages          = "267-273",
+      doi            = "10.1016/j.physletb.2011.08.017",
+      year           = "2011",
+      eprint         = "1107.3935",
+      archivePrefix  = "arXiv",
+      primaryClass   = "Unknown",
+}'

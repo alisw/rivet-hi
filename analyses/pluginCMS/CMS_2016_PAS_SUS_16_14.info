@@ -1,0 +1,22 @@
+Name: CMS_2016_PAS_SUS_16_14
+Year: 2013
+Summary: Search for supersymmetry in events with jets and missing transverse momentum at 13~\TeV
+Experiment: CMS
+Collider: LHC
+Status: VALIDATED
+Authors:
+ - Andy Buckley <andy.buckley@cern.ch>
+RunInfo: BSM physics signal events
+NumEvents: 50000
+NeedCrossSection: yes
+Beams: [p+, p+]
+Energies: [13000]
+Description:
+  'A search for supersymmetry in all-hadronic events with large missing transverse
+  momentum, produced in proton--proton collisions at $\sqrt{s} = 13~\TeV$. The data
+  sample, corresponding to an integrated luminosity of 12.9/fb, was collected with
+  the CMS detector at the CERN LHC in 2016. The data are examined in search regions
+  of jet multiplicity, tagged bottom quark jet multiplicity, missing transverse momentum,
+  and the scalar sum of jet transverse momenta. The observed numbers of events in all
+  search regions are found to be consistent with the expectations from standard model
+  processes.'

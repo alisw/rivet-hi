@@ -1,0 +1,15 @@
+Name: MC_HJETS
+Summary: Monte Carlo validation observables for $h[\tau^+ \, \tau^-]$ + jets production
+Status: VALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+RunInfo:
+  $h [\to \tau^+ \tau^-]$ + jets.
+NumEvents: 1000000
+PtCuts: [0]
+Description:
+  The available observables are the Higgs mass, pT of jets 1--4, jet
+  multiplicity, $\Delta\eta(h, \text{jet1})$, $\Delta R(\text{jet2},
+  \text{jet3})$, differential jet rates 0->1, 1->2, 2->3, 3->4, and integrated
+  0--4 jet rates.
+NeedCrossSection: yes

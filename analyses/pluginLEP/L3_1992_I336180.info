@@ -1,0 +1,31 @@
+Name: L3_1992_I336180
+Year: 1992
+Summary: Measurement of inclusive eta production in hadronic decays of the Z0
+Experiment: L3
+Collider: LEP
+InspireID: 336180
+Status: VALIDATED
+Authors:
+ - Simone Amoroso <amoroso@cern.ch>
+References:
+ - Phys.Lett. B286 (1992) 403-412
+ - doi:10.1016/0370-2693(92)91795-B
+RunInfo: electron positron collisions at the Z0 peak, with hadronic decays.
+Beams: [e+,e-]
+Energies: [91.2]
+Description: L3  measurement of the inclusive momentum distribution of the eta meson in hadronic decays of the Z0
+  normalized to the total hadronic cross-section.
+BibKey: Adriani:1992hd
+BibTeX: '@article{Adriani:1992hd,
+      author         = "Adriani, O. and others",
+      title          = "{Measurement of inclusive eta production in hadronic
+                        decays of the Z0}",
+      collaboration  = "L3",
+      journal        = "Phys. Lett.",
+      volume         = "B286",
+      year           = "1992",
+      pages          = "403-412",
+      doi            = "10.1016/0370-2693(92)91795-B",
+      reportNumber   = "CERN-PPE-92-083, CERN-PPE-92-83",
+      SLACcitation   = "%%CITATION = PHLTA,B286,403;%%"
+}'

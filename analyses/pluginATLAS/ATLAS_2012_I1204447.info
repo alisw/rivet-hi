@@ -1,0 +1,57 @@
+Name: ATLAS_2012_I1204447
+Year: 2013
+Summary: Inclusive multi-lepton search
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1204447
+Status: VALIDATED
+Authors:
+ - Joern Mahlstedt <joern.mahlstedt@cern.ch>
+References:
+ - arXiv:1211.6312 [hep-ex]
+ - Phys. Rev. D 87, 052002 (2013)
+RunInfo:
+  Any process producing at least 3 leptons (e.g. pair production of doubly-charged Higgs)
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [7000]
+NeedCrossSection: True
+Description:
+  'A generic search for anomalous production of events with at least
+   three charged leptons is presented. The search uses a pp-collision
+   data sample at a center-of-mass energy of $\sqrt{s}$ = 7 TeV
+   corresponding to 4.6/fb of integrated luminosity collected in 2011
+   by the ATLAS detector at the CERN Large Hadron Collider. Events are
+   required to contain at least two electrons or muons, while the
+   third lepton may either be an additional electron or muon, or a
+   hadronically decaying tau lepton. Events are categorized by the
+   presence or absence of a reconstructed tau-lepton or Z-boson
+   candidate decaying to leptons. No significant excess above
+   backgrounds expected from Standard Model processes is
+   observed. Results are presented as upper limits on event
+   yields from non-Standard-Model processes producing at least three
+   prompt, isolated leptons, given as functions of lower bounds on
+   several kinematic variables. Fiducial efficiencies for model testing
+   are also provided.
+
+   This Rivet module implements the event selection and the fiducial
+   efficiencies to test various models for their exclusion based on
+   observed/excluded limits.'
+BibKey: Aad:2012xsa
+BibTeX: '@article{Aad:2012xsa,
+      author         = "Aad, Georges and others",
+      title          = "{Search for new phenomena in events with three charged
+                        leptons at $\sqrt{s}$ = 7 TeV with the ATLAS detector}",
+      collaboration  = "ATLAS Collaboration",
+      journal        = "Phys.Rev.",
+      number         = "5",
+      volume         = "D87",
+      pages          = "052002",
+      doi            = "10.1103/PhysRevD.87.052002",
+      year           = "2013",
+      eprint         = "1211.6312",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2012-310",
+      SLACcitation   = "%%CITATION = ARXIV:1211.6312;%%",
+     }'

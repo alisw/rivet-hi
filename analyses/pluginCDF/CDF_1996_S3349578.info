@@ -1,0 +1,41 @@
+Name: CDF_1996_S3349578
+Year: 1996
+Summary: Further properties of high-mass multijet events
+Experiment: CDF
+Collider: Tevatron Run 1
+SpiresID: 3349578
+InspireID: 418504
+Status: VALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+ - Phys.Rev.D54:4221-4233,1996
+ - doi:10.1103/PhysRevD.54.4221
+ - arXiv:hep-ex/9605004
+RunInfo:
+  Pure QCD events without underlying event (the paper states that UE was
+  corrected for).
+  Several runs with different kinematic cuts might be needed to fill the 
+  2,3,4,5 and 6-jet properly.
+NumEvents: 10000000
+Beams: [p-, p+]
+Energies: [1800]
+PtCuts: [20]
+Description:
+  Multijet distributions corresponding to ($4N-4$) variables that span 
+  the $N$-body parameter space in inclusive $N = 3$-, 4-, and 5-jet events.
+BibKey: Abe:1996nn
+BibTeX: '@Article{Abe:1996nn,
+     author    = "Abe, F. and others",
+ collaboration = "CDF",
+     title     = "{Further Properties of High-Mass Multijet Events at the
+                  Fermilab Proton-Antiproton Collider}",
+     journal   = "Phys. Rev.",
+     volume    = "D54",
+     year      = "1996",
+     pages     = "4221-4233",
+     eprint    = "hep-ex/9605004",
+     archivePrefix = "arXiv",
+     doi       = "10.1103/PhysRevD.54.4221",
+     SLACcitation  = "%%CITATION = HEP-EX/9605004;%%"
+}'

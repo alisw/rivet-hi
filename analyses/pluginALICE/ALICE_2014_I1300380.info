@@ -1,0 +1,44 @@
+Name: ALICE_2014_I1300380
+Year: 2014
+Summary: Production of $\Sigma(1385)^{\pm}$ and $\Xi(1530)^{0}$ in proton-proton collisions at $\sqrt{s} =$ 7 TeV 
+Experiment: ALICE
+Collider: LHC
+InspireID: 1300380
+Status: VALIDATED
+Authors:
+- Enrico Fragiacomo enrico.fragiacomo@ts.infn.it 
+- Andreas Morsch andreas.morsch@cern.ch
+References:
+    -doi:10.1140/epjc/s10052-014-3191-x
+    -arXiv:1406.3206
+RunInfo: inelastic collisions pp at sqrt(s) = 7 TeV
+NumEvents: 1000000
+NeedCrossSection: no
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: 
+Description:
+  'Transverse momentum spectra $\frac{1}{N_{\rm inel}} \frac{{\rm d}^2N}{{\rm d}p_{\rm T}{\rm d}y}$ of $\Sigma(1385)^{\pm}$, $\overline{\Sigma}(1385)^{\pm}$  and $(\Xi(1530)^{0}+\overline{\Xi}(1530)^{0})/2$ at mid-rapidity ($|y| < 0.5$)
+in inelastic proton-proton collisions at $\sqrt{s} =$ 7 TeV'
+BibKey: Abelev:2014qqa
+BibTeX: '@article{Abelev:2014qqa,
+      author         = "Abelev, Betty Bezverkhny and others",
+      title          = "{Production of $\Sigma(1385)^{\pm}$ and $\Xi(1530)^{0}$
+                        in proton-proton collisions at $\sqrt{s}=$ 7 TeV}",
+      collaboration  = "ALICE",
+      journal        = "Eur.Phys.J.",
+      number         = "1",
+      volume         = "C75",
+      pages          = "1",
+      doi            = "10.1140/epjc/s10052-014-3191-x",
+      year           = "2015",
+      eprint         = "1406.3206",
+      archivePrefix  = "arXiv",
+      primaryClass   = "nucl-ex",
+      reportNumber   = "CERN-PH-EP-2014-128",
+      SLACcitation   = "%%CITATION = ARXIV:1406.3206;%%",
+}'
+ToDo: 'The original ALICE_2014_I1300380.yoda file extracted from HEPdata has 0 bin size for
+the particle masses in the <pT> vs mass scatter plot. 
+I had to change this to a small bin size in order to fill the automatically booked
+histogram. This might be not the best procedure and one could change this in the future.'

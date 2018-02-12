@@ -1,0 +1,29 @@
+\begin{itemize}
+\item \textbf{Simple run: }{\kbd{agile-runmc Herwig:6510 -P~lep1.params
+      --beams=LEP:91.2 \cmdbreak -n~1000} will use the Fortran Herwig 6.5.10
+    generator (the \kbd{-g} option switch) to generate 1000 events (the \kbd{-n}
+    switch) in LEP1 mode, i.e. $\Ppositron\Pelectron$ collisions at $\sqrt{s} =
+    \unit{91.2}{\GeV}$.}
+
+\item \textbf{Parameter changes: }{\kbd{agile-runmc Pythia6:425
+      --beams=LEP:91.2 \cmdbreak -n~1000 -P~myrun.params -p~"PARJ(82)=5.27"}
+    will generate 1000 events using the Fortran Pythia 6.423 generator, again
+    in LEP1 mode. The \kbd{-P} switch is actually the way of specifying a
+    parameters file, with one parameter per line in the format ``\val{key}
+    \val{value}'': in this case, the file \kbd{lep1.params} is loaded from the
+    \kbd{\val{installdir}/share/AGILe} directory, if it isn't first found in the
+    current directory.  The \kbd{-p} (lower-case) switch is used to change a
+    named generator parameter, here Pythia's \kbd{PARJ(82)}, which sets the
+    parton shower cutoff scale. Being able to change parameters on the command
+    line is useful for scanning parameter ranges from a shell loop, or rapid
+    testing of parameter values without needing to write a parameters file for
+    use with~\kbd{-P}.}
+
+\item \textbf{Writing out HepMC events: }{\kbd{agile-runmc Pythia6:425
+      --beams=LHC:14TeV -n~50 -o~out.hepmc -R} will generate 50 LHC events with
+    Pythia. The~\kbd{-o} switch is being used here to tell \kbd{agile-runmc} to
+    write the generated events to the \kbd{out.hepmc} file. This file will be a
+    plain text dump of the HepMC event records in the standard HepMC format. Use
+    of filename ``-'' will result in the event stream being written to standard
+    output (i.e. dumping to the terminal.}
+\end{itemize}

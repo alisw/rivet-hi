@@ -1,0 +1,40 @@
+Name: DELPHI_2011_I890503
+Year: 2011
+Summary: Study of the b-quark fragmentation function at LEP 1
+Experiment: DELPHI
+Collider: LEP1
+InspireID: 890503
+Status: VALIDATED
+Authors:
+ - Holger Schulz <holger.schulz@cern.ch>
+References:
+ - 10.1140/epjc/s10052-011-1557-x
+RunInfo:
+  Hadronic Z decay events generated on the Z pole ($\sqrt{s} = 91.2$ GeV)
+NumEvents: 1000000
+Beams: [e+, e-]
+Energies: [91.2]
+PtCuts: [0]
+Description:
+  Measurement of the $b$-quark fragmentation function by DELPHI using 1994
+  LEP 1 data. The fragmentation function for weakly decaying $b$-quarks has
+  been determined in a model independent way. Note --- this analysis
+  supersedes DELPHI_2002_069_CONF_603.
+BibKey: DELPHI:2011aa
+BibTeX: '@article{DELPHI:2011aa,
+      author         = "Abdallah, J. and others",
+      title          = "{A study of the b-quark fragmentation function with the
+                        DELPHI detector at LEP I and an averaged distribution
+                        obtained at the Z Pole}",
+      collaboration  = "DELPHI",
+      journal        = "Eur. Phys. J.",
+      volume         = "C71",
+      year           = "2011",
+      pages          = "1557",
+      doi            = "10.1140/epjc/s10052-011-1557-x",
+      eprint         = "1102.4748",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2010-057",
+      SLACcitation   = "%%CITATION = ARXIV:1102.4748;%%"
+}'

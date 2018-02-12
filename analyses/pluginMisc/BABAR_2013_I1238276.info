@@ -1,0 +1,41 @@
+Name: BABAR_2013_I1238276
+Summary: Production of charged pions, kaons, and protons in $e^+e^-$ annihilations into hadrons at $\sqrt{s}=10.54$GeV
+Status: VALIDATED
+Experiment: BaBar
+Collider: PEP-II
+Authors:
+ - Peter Richardson <Peter.Richardson@durham.ac.uk>
+References:
+ - Phys.Rev. D88 (2013) 3, 032011
+ - arXiv:1306.2895
+ - doi:10.1103/PhysRevD.88.032011
+RunInfo:
+  $e^+ e^-$ analysis in the continuum near the $\Upsilon(4S)$ resonance, with CoM boosts
+  of 8.0~GeV~($e^-$) and 3.5~GeV~($e^+$)
+NumEvents: 1000000
+InspireID: 1238276
+Beams: [e+, e-]
+Energies: [[3.5, 8.0]]
+PtCuts: [0]
+Description: Measurement of charged pion, kaon and proton production in $e^+e^-$ collisions
+ with the BABAR detector at the SLAC PEP-II electron-positron storage ring operating
+ at a center-of-mass energy of 10.54 GeV. This is a measurement in the  continuum.
+BibKey: Lees:2013rqd
+BibTeX: '@article{Lees:2013rqd,
+      author         = "Lees, J.P. and others",
+      title          = "{Production of charged pions, kaons, and protons in
+                        $e^+e^-$ annihilations into hadrons at
+                        $\sqrt{s}$=10.54  GeV}",
+      collaboration  = "BaBar Collaboration",
+      journal        = "Phys.Rev.",
+      number         = "3",
+      volume         = "D88",
+      pages          = "032011",
+      doi            = "10.1103/PhysRevD.88.032011",
+      year           = "2013",
+      eprint         = "1306.2895",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "BABAR-PUB-13-003, SLAC-PUB-15524",
+      SLACcitation   = "%%CITATION = ARXIV:1306.2895;%%",
+}'

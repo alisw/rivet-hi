@@ -1,0 +1,38 @@
+Name: ATLAS_2015_I1387176
+Year: 2015
+Summary: Energy-energy correlation
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1387176
+Status: VALIDATED
+Authors:
+ - Javier Llorente <javier.llorente.merino@cern.ch>
+References:
+ - arXiv:1508.01579 [hep-ex]
+RunInfo:
+  inclusive jets
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [50.0]
+NeedCrossSection: False
+Description:
+  High transverse momentum jets produced in $pp$ collisions at a centre-of-mass energy of 7\,TeV are used to measure the transverse
+  energy-energy correlation function and its associated azimuthal asymmetry. The data were recorded with the ATLAS detector at the LHC
+  in the year 2011 and correspond to an integrated luminosity of $158\,\text{pb}^{−1}$. The selection criteria demand the average 
+  transverse  momentum of the two leading jets in an event to be larger than 250\,GeV. The data are unfolded to the particle level.
+  NB--If the routine is to be run on several samples (with different cross sections), the asymmetry has to be calculated again in a
+  post-processing step using the merged output file.
+BibKey: ATLAS:2015yaa
+BibTeX: '@article{ATLAS:2015yaa,
+      title          = "{Measurement of transverse energy-energy correlations in
+                        multi-jet events in $pp$ collisions at $\sqrt{s} = 7$ TeV
+                        using the ATLAS detector and determination of the strong
+                        coupling constant $\alpha\_{\mathrm{s}}(m\_Z)$}",
+      collaboration  = "ATLAS",
+      year           = "2015",
+      eprint         = "1508.01579",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2015-177",
+      SLACcitation   = "%%CITATION = ARXIV:1508.01579;%%"
+}'

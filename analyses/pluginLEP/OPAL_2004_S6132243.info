@@ -1,0 +1,42 @@
+Name: OPAL_2004_S6132243
+Year: 2004
+Summary: Event shape distributions and moments in $e^+ e^-$ -> hadrons at 91--209 GeV
+Experiment: OPAL
+Collider: LEP 1 & 2
+SpiresID: 6132243
+InspireID: 669402
+Status: VALIDATED
+Authors:
+ - Andy Buckley <andy.buckley@cern.ch>
+References:
+ - Eur.Phys.J.C40:287-316,2005
+ - arXiv:hep-ex/0503051
+RunInfo:
+  Hadronic $e^+ e^-$ events at 4 representative energies (91, 133, 177, 197).
+  Runs need to have ISR suppressed, since the analysis was done using a cut of
+  $\sqrt{s} - \sqrt{s_\text{reco}} < 1\,\text{GeV}$. Particles with a livetime
+  $> 3 \cdot 10^{-10}\,\text{s}$ are considered to be stable.
+NumEvents: 200000
+Beams: [e+, e-]
+Energies: [91.2, 133, 177, 197]
+PtCuts: [0]
+Description:
+  Measurement of $e^+ e^-$ event shape variable distributions and their 1st 
+  to 5th moments in LEP running from the Z pole to the highest LEP 2 energy
+  of 209 GeV.
+BibKey: Abbiendi:2004qz
+BibTeX: '@Article{Abbiendi:2004qz,
+     author    = "Abbiendi, G. and others",
+ collaboration = "OPAL",
+     title     = "{Measurement of event shape distributions and moments in $e^+
+                  e^- \to$ hadrons at 91 GeV - 209 GeV and a determination of
+                  $\alpha_s$}",
+     journal   = "Eur. Phys. J.",
+     volume    = "C40",
+     year      = "2005",
+     pages     = "287-316",
+     eprint    = "hep-ex/0503051",
+     archivePrefix = "arXiv",
+     doi       = "10.1140/epjc/s2005-02120-6",
+     SLACcitation  = "%%CITATION = HEP-EX/0503051;%%"
+}'

@@ -1,0 +1,40 @@
+Name: OPAL_2000_S4418603
+Year: 2000
+Summary: Multiplicities of $\pi^0$, $\eta$, $K^0$ and of charged particles in quark and gluon jets
+Experiment: OPAL
+Collider: LEP 1
+SpiresID: 4418603
+InspireID: 529898
+Status: VALIDATED
+Authors:
+ - Peter Richardson <Peter.Richardson@durham.ac.uk>
+References:
+ - Eur.Phys.J.C17:373-387,2000
+ - hep-ex/0007017
+RunInfo:
+  Hadronic Z decay events generated on the Z pole ($\sqrt{s} = 91.2$ GeV)
+NumEvents: 1000000
+Beams: [e+, e-]
+Energies: [91.2]
+PtCuts: [0]
+Description: Multiplicities of $\pi^0$, $\eta$, $K^0$ and of charged particles
+             in quark and gluon jets in 3-jet events, as measured by the OPAL
+             experiment at LEP. The main implemented measurement is the 
+             $K^0$ fragmentation function.
+BibKey: Abbiendi:2000cv
+BibTeX: '@article{Abbiendi:2000cv,
+      author         = "Abbiendi, G. and others",
+      title          = "{Multiplicities of pi0, eta, K0 and of charged particles
+                        in quark and gluon jets}",
+      collaboration  = "OPAL Collaboration",
+      journal        = "Eur.Phys.J.",
+      volume         = "C17",
+      pages          = "373-387",
+      doi            = "10.1007/s100520000505",
+      year           = "2000",
+      eprint         = "hep-ex/0007017",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-EP-2000-070",
+      SLACcitation   = "%%CITATION = HEP-EX/0007017;%%",
+}'

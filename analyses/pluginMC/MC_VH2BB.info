@@ -1,0 +1,15 @@
+Name: MC_VH2BB
+Summary: MC unboosted VH2bb validation plots
+Collider: LHC
+Status: VALIDATED
+Authors:
+ - Ben Smart <bsmart@cern.ch>
+ - Andy Buckley <andy.buckley@cern.ch>
+RunInfo:
+  $VH$ with $H \to b \bar{b}$ and the vector boson decaying to electron or
+  muon channels.
+NumEvents: 100000
+PtCuts: [0]
+Description:
+  'Various plots for characterising the process $V H \to b\bar{b}$'
+NeedCrossSection: yes

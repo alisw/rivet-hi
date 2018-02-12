@@ -1,0 +1,40 @@
+Name: ATLAS_2014_I1282441
+Year: 2014
+Summary: The differential production cross section of the $\phi(1020)$ meson in $\sqrt{s}=7$ TeV $pp$ collisions measured with the ATLAS detector
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1282441
+Status: VALIDATED
+Authors:
+ - Tim Martin <tim.martin@cern.ch>
+ - Kiran Joshi <kiran.joshi@cern.ch>
+References:
+ - arXiv:1402.6162 [hep-ex]
+RunInfo:
+  Run minimum bias events
+NumEvents: 1000k
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [0.5, 1.2]
+NeedsCrossSection: yes
+Description:
+  'A measurement is presented of the $\phi \rightarrow K^+K^-$ production cross section at $\sqrt{s}$ = 7 TeV using pp collision data
+  corresponding to an integrated luminosity of 383 $\mu$b$^{-1}$ collected with the ATLAS experiment at the LHC. Selection of $\phi(1020)$
+  mesons is based on the identification of charged kaons by their energy loss in the pixel detector. The differential cross section is
+  measured as a function of the transverse momentum, $pT,\phi$, and rapidity, $y_\phi$, of the $\phi(1020)$ meson in the fiducial region
+  500 < $pT,\phi$ < 1200 MeV, |$y_\phi$| < 0.8, kaon $pT,K$ > 230 MeV and kaon momentum $p_K$ < 800 MeV. The integrated $\phi(1020)$
+  production cross section in this fiducial range is measured to be $\sigma_{\phi \rightarrow K^+K^-}$ = 570 \pm 8 (stat) \pm 66 (syst) \pm 20 (lumi) $\mu$b.'
+BibKey: Aad:2014rca
+BibTeX: '@article{Aad:2014rca,
+      author         = "Aad, Georges and others",
+      title          = "{The differential production cross section of the
+                        $\phi(1020)$ meson in $\sqrt{s}$ = 7 TeV $pp$ collisions
+                        measured with the ATLAS detector}",
+      collaboration  = "ATLAS Collaboration",
+      year           = "2014",
+      eprint         = "1402.6162",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2012-269",
+      SLACcitation   = "%%CITATION = ARXIV:1402.6162;%%",
+}'

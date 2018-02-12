@@ -1,0 +1,191 @@
+#! /usr/bin/env python
+
+"""%prog ID [ID ...]
+
+%prog -- paper ID lookup helper for Rivet
+
+Looks up the Rivet analysis and other ID formats matching the given ID.
+
+Arguments:
+ ID            A paper ID in one of the following formats
+                - arXiv:   yymm.nnnnn
+                - arXiv:   foo-bar/yymmnnn
+                - SPIRES:  [S]nnnnnnn
+                - Inspire: [I]nnnnnn[n]"""
+
+from __future__ import print_function
+import rivet, sys, os, re
+rivet.util.check_python_version()
+rivet.util.set_process_name(os.path.basename(__file__))
+
+def main():
+
+    ## Handle command line args
+    import optparse
+    op = optparse.OptionParser(usage=__doc__)
+    opts, args = op.parse_args()
+    if not args:
+        op.print_help()
+        exit(1)
+
+
+    ## Set up some variables before the loop over args
+    arxiv_pattern = re.compile('^\d\d[01]\d\.\d{4,5}$|^(hep-(ex|ph|th)|nucl-ex)/\d\d[01]\d{4}$')
+    spires_pattern = re.compile('^(S|I)?(\d{6}\d?)$')
+
+
+    ## Loop over requested IDs
+    for N, id in enumerate(args):
+
+        a_match = arxiv_pattern.match(id)
+        s_match = spires_pattern.match(id)
+        RESULT = {}
+
+        if a_match:
+            RESULT = try_arxiv(id)
+        elif s_match:
+            prefix = s_match.group(1)
+            number = s_match.group(2)
+
+            if prefix == 'S' and len(number) == 7:
+                RESULT = try_spires(number)
+            elif prefix == 'I':
+                RESULT = try_inspire(number)
+            else:
+                if len(number) == 7:
+                    RESULT = try_spires(number)
+                RESULT.update( try_inspire(number) )
+        else:
+            sys.stderr.write('error       Pattern %s does not match any known ID pattern.\n' % id)
+            continue
+
+
+        rivet_candidates = []
+        if 'inspire' in RESULT:
+            rivet_candidates += try_rivet('I'+RESULT['inspire'])
+        if not rivet_candidates and 'spires' in RESULT:
+            rivet_candidates += try_rivet('S'+RESULT['spires'])
+        if rivet_candidates:
+            RESULT['rivet'] = rivet_candidates[0]
+
+        if N > 0:
+            print()
+        output(RESULT)
+
+
+
+
+def output(result):
+    if not result.get('title'):
+        return
+
+    print('title       %s' % result['title'])
+    ar = result.get('arxiv')
+    if ar:
+        print('arxiv       %s' % ar)
+        print('arxiv_url   http://arxiv.org/abs/%s' % ar)
+
+    sp = result.get('spires')
+    if sp:
+        print('spires      %s' % sp)
+
+    insp = result.get('inspire')
+    if insp:
+        print('inspire     %s' % insp)
+        print('inspire_url http://inspirehep.net/record/%s' % insp)
+
+    tex = result.get('bibtex')
+    if tex:
+        print('bibtex      %s' % tex)
+
+    riv = result.get('rivet')
+    if riv:
+        print('rivet       %s' % riv)
+
+
+
+
+def try_arxiv(id):
+    url = 'http://inspirehep.net/search?p=eprint+%s&of=xm' % id
+    ret = _search_inspire(url)
+    if ret.get('arxiv') == id:
+        return ret
+    else:
+        return {}
+
+
+def try_spires(id):
+    url = 'http://inspirehep.net/search?p=key+%s&of=xm' % id
+    ret = _search_inspire(url)
+    if ret.get('spires') == id:
+        return ret
+    else:
+        return {}
+
+
+def try_inspire(id):
+    url = 'http://inspirehep.net/record/%s/export/xm' % id
+    ret = _search_inspire(url)
+    if ret.get('inspire') == id:
+        return ret
+    else:
+        return {}
+
+
+def try_rivet(id):
+    id = re.compile(id)
+    import rivet
+    ALL_ANALYSES = rivet.AnalysisLoader.analysisNames()
+    return filter(id.search, ALL_ANALYSES)
+
+
+
+
+
+def _search_inspire(url):
+    result = {}
+    try:
+        from urllib.request import urlopen
+    except ImportError:
+        from urllib2 import urlopen
+    urlstream = urlopen(url)
+    ET = rivet.util.import_ET()
+    tree = ET.parse(urlstream)
+    for i in tree.getiterator('{http://www.loc.gov/MARC21/slim}controlfield'):
+        if i.get('tag') == '001':
+            result['inspire'] = i.text
+
+    for i in tree.getiterator('{http://www.loc.gov/MARC21/slim}datafield'):
+
+        if i.get('tag') == '035':
+            entries = {}
+            for c in i.getchildren():
+                for k,v in c.items():
+                    if k=='code':
+                        entries[v] = c.text
+            if entries.get('9') == 'SPIRESTeX':
+                result['bibtex'] = entries['a']
+
+        if i.get('tag') == '037':
+            entries = {}
+            for c in i.getchildren():
+                for k,v in c.items():
+                    if k=='code':
+                        entries[v] = c.text
+            if entries.get('9') == 'arXiv':
+                result['arxiv'] = entries['a'].replace('arXiv:','')
+
+        elif i.get('tag') == '970':
+            for c in i.getchildren():
+                if c.text[:7] == 'SPIRES-':
+                    result['spires'] = c.text[7:]
+
+        elif i.get('tag') == '245':
+            for c in i.getchildren():
+                result['title'] = c.text
+
+    return result
+
+
+if __name__ == "__main__":
+    main()

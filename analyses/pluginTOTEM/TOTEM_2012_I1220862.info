@@ -1,0 +1,47 @@
+Name: TOTEM_2012_I1220862
+Year: 2012
+Summary: Measurement of proton-proton elastic scattering and total cross section at $\sqrt{s} = 7\;\TeV$
+Experiment: TOTEM
+Collider: LHC
+InspireID: 1220862
+Status: VALIDATED
+Authors:
+ - Sercan Sen <Sercan.Sen@cern.ch>
+ - Peter Skands <Peter.Skands@cern.ch>
+References:
+ - CERN-PH-EP-2012-239
+ - http://cds.cern.ch/record/1472948
+RunInfo:
+   Elastic events only.
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [0]
+Description:
+   'Measurement of the elastic differential cross-section in proton-proton interactions at a centre-of-mass energy $\sqrt{s} = 7\;\TeV$ at the LHC.
+    The data, which cover the $|t|$ range $0.005-0.2\;\GeV^2$, were collected using Roman Pot detectors very close to the outgoing beam
+    in October 2011, allowing the precise extrapolation down to the optical point, $t = 0$, and hence the derivation of the elastic as well as
+    the total cross-section via the optical theorem.'
+BibKey: Antchev:1472948
+BibTeX: '@article{Antchev:2013gaa,
+      author         = "Antchev, G. and others",
+      title          = "{Measurement of proton-proton elastic scattering and
+                        total cross-section at S**(1/2) = 7-TeV}",
+      collaboration  = "TOTEM",
+      journal        = "Europhys. Lett.",
+      volume         = "101",
+      year           = "2013",
+      pages          = "21002",
+      doi            = "10.1209/0295-5075/101/21002",
+      SLACcitation   = "%%CITATION = EULEE,101,21002;%%"
+}'
+# BibKey: Antchev:1472948
+# BibTeX: '@techreport{Antchev:1472948,
+#       author        = "Antchev, G. and others",
+#       collaboration = "TOTEM",
+#       title         = "Measurement of proton-proton elastic scattering and total cross-section at $\sqrt{s} = 7$ TeV",
+#       institution   = "CERN",
+#       address       = "Geneva",
+#       number        = "CERN-PH-EP-2012-239. TOTEM-2012-002",
+#       month         = "Aug",
+#       year          = "2012"}'

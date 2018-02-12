@@ -1,0 +1,31 @@
+Name: ATLAS_2010_S8918562
+Year: 2010
+Summary: Track-based minimum bias at 900 GeV and 2.36 and 7 TeV in ATLAS
+Experiment: ATLAS
+Collider: LHC
+SpiresID: 8918562
+InspireID: 882098
+Status: VALIDATED
+Authors:
+ - Thomas Burgess <thomas.burgess@cern.ch>
+ - Andy Buckley <andy.buckley@cern.ch>
+References:
+ - arXiv:1012.5104
+RunInfo:
+  $pp$ QCD interactions at 0.9, 2.36, and 7 TeV. Diffractive events should
+  be included. Multiple kinematic cuts should not be required.
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [900, 2360, 7000]
+PtCuts: [0]
+Description:
+  Measurements from proton-proton collisions at centre-of-mass energies
+  of $\sqrt{s} = 0.9$, 2.36, and 7 TeV recorded with the ATLAS detector at
+  the LHC. Events were collected using a single-arm minimum-bias
+  trigger. The charged-particle multiplicity, its dependence on
+  transverse momentum and pseudorapidity and the relationship between
+  the mean transverse momentum and charged-particle multiplicity are
+  measured. Measurements in different regions of phase-space are shown,
+  providing diffraction-reduced measurements as well as more inclusive
+  ones. The observed distributions are corrected to well-defined
+  phase-space regions, using model-independent corrections.

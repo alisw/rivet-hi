@@ -1,0 +1,43 @@
+Name: CMS_2013_I1208923
+Year: 2013
+Summary: Jet-pT and dijet mass at sqrt(s) = 7 TeV
+Experiment: CMS
+Collider: LHC
+InspireID: 1208923
+Status: VALIDATED
+Authors:
+ - Markus Radziej <radziej@physik.rwth-aachen.de>
+ - Samatha Dooling <samantha.dooling@desy.de>
+RunInfo:
+  Hard QCD process with a flat pT spectrum is recommended.
+NumEvents: 1000000
+NeedCrossSection: yes
+Beams: [p, p]
+Energies: [7000]
+PtCuts: [20]
+Description:
+  'The single jet differential cross section has been measured as a function of
+  the jet momentum and the dijet differential cross section as a function of the
+  dijet mass. The data has been recorded by the CMS detector at the center of
+  mass energy of 7 TeV. To reconstruct the jets, the anti-$k_T$ algorithm with a
+  cone radius of $R = 0.7$ (AK7) has been used. The results are split into five
+  rapditiy bins, ranging from 0.0 to 2.5 with a width of 0.5 each.'
+BibKey: Chatrchyan:2012bja
+BibTeX: '@article{Chatrchyan:2012bja,
+      author         = "Chatrchyan, Serguei and others",
+      title          = "{Measurements of differential jet cross sections in
+                        proton-proton collisions at $\sqrt{s}=7$ TeV with the CMS
+                        detector}",
+      collaboration  = "CMS Collaboration",
+      journal        = "Phys.Rev.",
+      number         = "11",
+      volume         = "D87",
+      pages          = "112002",
+      doi            = "10.1103/PhysRevD.87.112002",
+      year           = "2013",
+      eprint         = "1212.6660",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-QCD-11-004, CERN-PH-EP-2012-343",
+      SLACcitation   = "%%CITATION = ARXIV:1212.6660;%%",
+}'

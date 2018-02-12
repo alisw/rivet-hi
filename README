@@ -1,0 +1,102 @@
+Rivet quickstart guide
+----------------------
+
+Assuming you've got a copy of Rivet installed on your machine, you'll now want
+to know how to use it. Here's an example session with the 'rivet' command, which
+should be illustrative.
+
+
+GENERATING AND ANALYSING
+
+The main interface to Rivet is the rivet command. We will demonstrate how to use
+this to analyse HepMC events from a text file in the "IO_GenEvent" HepMC format.
+(This is the only supported HepMC text format from HepMC 2.5 onwards.)
+
+Firstly, we recommend using a filesystem pipe (or 'FIFO') so that your events
+don't create a huge file that takes all your disk space. The idea is that the
+generator will push events into what looks like a file, and Rivet will read from
+the same 'file'. In fact, though, the 'file' is a disguised pipe between the two
+processes, so no slow filesystem access needs to take place, and the system will
+automatically balance the data flow between the writing and reading processes:
+the generator will only write more event data when Rivet has read that currently
+available in the FIFO buffer. All this is completely transparent to the user:
+good old Unix!  Here's how you do it:
+
+> mkfifo hepmc.fifo
+> my-generator --num-events=500000 --hepmc-output=hepmc.fifo &
+> rivet --analysis=ANALYSIS_NAME hepmc.fifo
+
+The backgrounding of the generator process is important: the generator will wait
+until the hepmc.fifo pipe is being read by Rivet, so unless it is backgrounded
+you will never get the terminal focus back to run rivet!
+
+The generator used above can be anything which writes HepMC text output to the
+specified FIFO. As a concrete example, the AGILe package
+(http://projects.hepforge.org/agile/) provides an interface to several
+generators with a command line tool called agile-rungen:
+
+> agile-rungen Pythia6:418 --beams=TVT:1800 &
+> rivet --analysis=CDF_2001_S4751469 hepmc.fifo
+
+The agile-rungen and rivet commands both provide extensive command line
+documentation when called with the -h/--help flag.
+
+
+CHECKING THE DATA
+
+By default, Rivet outputs its histograms in the AIDA XML format, which is not
+particularly easy to read or plot. An easier format is available if you convert
+the AIDA file to a flat text format (the long-term Rivet data format) with the
+aida2flat command:
+
+> aida2flat Rivet.aida | less
+
+Again, check the aida2flat --help documentation for details on more options.
+
+There is also an aida2root command which provides the data as ROOT TGraph
+objects for those of a ROOTy disposition. Due to a ROOT bug, for TGraphs to
+display properly you will have to specify the "AP" option in the top right-hand
+box of the ROOT TBrowser or alternatively draw the TGraph programmatically using
+'myTGraph->Draw("AP")'. This isn't a Rivet bug: it's ROOT forgetting to draw the
+graph axes!
+
+
+PLOTTING
+
+Because we don't get on well with ROOT, Rivet comes with two commands ---
+compare-histos and make-plots --- for comparing and plotting AIDA data. These
+commands produce nice comparison plots of publication quality from the YODA
+"dat" format text files, e.g.:
+
+> compare-plots path/to/CDF_2001_S4751469.aida py.aida:'Pythia 6.418' hw.aida:'Herwig++ 2.3.0'
+
+This command will have compared the three named data files (ending in .aida),
+identified which plots are available in them, and combined the MC and reference
+plots appropriately into a set of plot data files ending with .dat. The strings
+after the ":" for the MC files are specifying ID strings to appear in the plot
+legends. You can also run compare-plots to just compare MC-MC data files. More
+options are described by running 'compare-histos --help'.
+
+Incidentally, the reference files for each Rivet analysis are to be found in the
+installed Rivet shared data directory. You can find the location of this by
+using the rivet-config command:
+
+> rivet-config --datadir
+
+You can now plot the created data files using the make-plots command:
+
+> make-plots --pdf *.dat
+
+The --pdf flag makes the output plots in PDF format: by default the output is in
+PostScript (.ps), and flags for conversion to EPS and PNG are also available.
+
+
+THAT'S ALL!
+
+We hope this was useful as a quick guide to getting started with running Rivet's
+built-in analyses for Monte Carlo generator validation. Be aware that we will be
+overhauling Rivet's histogramming system in version 1.3.0, from which point all
+the conversions away from AIDA XML will no longer be necessary, and a fully
+programmatic interface to the Rivet data files will be possible. Please bear
+with us while we get this sorted out: we're as keen to have better histogramming
+as you are! ;)

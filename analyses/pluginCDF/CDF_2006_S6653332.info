@@ -1,0 +1,44 @@
+Name: CDF_2006_S6653332
+Year: 2006
+Summary: b-jet cross section in Z + jets events
+Experiment: CDF
+Collider: Tevatron Run 2
+SpiresID: 6653332
+InspireID: 717572
+Status: VALIDATED
+Authors:
+ - Lars Sonnenschein <Lars.Sonnenschein@cern.ch>
+ - Steffen Schumann <s.schumann(at)thphys.uni-heidelberg.de>
+References:
+ - Phys.Rev.D.74:032008,2006
+ - doi:10.1103/PhysRevD.74.032008
+ - arXiv:hep-ex/0605099v2
+RunInfo:
+  Z + jets events at $\sqrt{s} = 1960$ GeV.
+  Jets min $\pT$ cut = 20~GeV, leptons min $\pT$ cut = 10\;GeV
+NumEvents: 1000000
+Beams: [p-, p+]
+PtCuts: [10]
+Energies: [1960]
+Description:
+  Measurement of the $b$-jet cross section in events with $Z$ boson in
+  $p\bar{p}$ collisions at center-of-mass energy $\sqrt{s} = 1.96$ TeV. The data
+  cover jet transverse momenta above 20 GeV and jet pseudorapidities in
+  the range -1.5 to 1.5. $Z$ bosons are identified in their electron and
+  muon decay modes in an invariant dilepton mass range between 66 and
+  116 GeV.
+NeedCrossSection: yes
+BibKey: Abulencia:2006ce
+BibTeX: '@Article{Abulencia:2006ce,
+     author    = "Abulencia, A. and others",
+ collaboration = "CDF",
+     title     = "{Measurement of the $b$ jet cross-section in events with a $Z$ boson in $p \bar{p}$ collisions at $\sqrt{s} = 1.96$ TeV}",
+     journal   = "Phys. Rev.",
+     volume    = "D74",
+     year      = "2006",
+     pages     = "032008",
+     eprint    = "hep-ex/0605099",
+     archivePrefix = "arXiv",
+     doi       = "10.1103/PhysRevD.74.032008",
+     SLACcitation  = "%%CITATION = HEP-EX/0605099;%%"
+}'

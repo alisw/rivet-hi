@@ -1,0 +1,38 @@
+Name: OPAL_2004_I631361
+Year: 2004
+Summary: Gluon jet charged multiplicities and fragmentation functions
+Experiment: OPAL
+Collider: LEP
+InspireID: 631361
+Status: VALIDATED
+Authors:
+ - Daniel Reichelt [d.reichelt@cern.ch]
+References:
+ - Phys. Rev. D69, 032002,2004
+ - hep-ex/0310048
+RunInfo:
+  The fictonal $e^+e^-\to gg$ process is required.
+NumEvents: 100000
+NeedCrossSection: no
+Beams: [e+, e- ] 
+Energies: [10.50,11.96,13.96,16.86,21.84,28.48,35.44]
+NeedCrossSection: False
+Description:
+  ' Measurement of gluon jet properties using the jet boost algorithm, a technique to select unbiased samples of gluon jets in $e^+e^-$ annihilation, i.e. gluon jets free of biases introduced by event selection or jet finding criteria. This analysis requires the  fictional $e^+e^-\to g g $ process to be used due to the corrections applied to the data. It allows the study of gluon jet properties. This analysis can be used for tuning etc..'
+BibKey: Abbiendi:2004gh
+BibTeX: '@article{Abbiendi:2004gh,
+      author         = "Abbiendi, G. and others",
+      title          = "{Experimental studies of unbiased gluon jets from $e^{+}
+                        e^{-}$ annihilations using the jet boost algorithm}",
+      collaboration  = "OPAL",
+      journal        = "Phys. Rev.",
+      volume         = "D69",
+      year           = "2004",
+      pages          = "032002",
+      doi            = "10.1103/PhysRevD.69.032002",
+      eprint         = "hep-ex/0310048",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-EP-2004-067",
+      SLACcitation   = "%%CITATION = HEP-EX/0310048;%%"
+}'

@@ -1,0 +1,54 @@
+Name: ATLAS_2015_I1345452
+Year: 2015
+Summary: Pseudo-top-antitop cross sections
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1345452
+Status: VALIDATED
+Authors:
+ - Longen Lan <llongen@physics.usyd.edu.au>
+ - Aldo Saavedra <a.saavedra@physics.usyd.edu.au>
+ - Kevin Finelli <kevin.finelli@cern.ch>
+References:
+ - arXiv:1502.05923 [hep-ex]
+RunInfo:
+  top-antitop production, reconstructed from leptons + jets final state
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [25,25,25]
+NeedCrossSection: True
+Description:
+  'Various differential cross-sections are measured in top-quark pair
+  ($t\bar{t}$) events produced in proton-proton collisions at a centre-of-mass
+  energy of $\sqrt{s}=7$ TeV at the LHC with the ATLAS detector. These
+  differential cross-sections are presented in a data set corresponding to an
+  integrated luminosity of 4.6 fb$^{-1}$. The differential cross-sections are
+  presented in terms of kinematic variables of a top-quark proxy referred to as
+  the pseudo-top-quark whose dependence on theoretical models is minimal. The
+  pseudo-top-quark can be defined in terms of either reconstructed detector
+  objects or stable particles in an analogous way. The measurements are
+  performed on $t\bar{t}$ events in the lepton+jets channel, requiring exactly
+  one charged lepton and at least four jets with at least two of them tagged as
+  originating from a $b$-quark. The hadronic and leptonic pseudo-top-quarks are
+  defined via the leptonic or hadronic decay mode of the W boson produced by
+  the top-quark decay in events with a single charged lepton. The cross-section
+  is measured as a function of the transverse momentum and rapidity of both the
+  hadronic and leptonic pseudo-top-quark as well as the transverse momentum,
+  rapidity and invariant mass of the pseudo-top-quark pair system. The
+  measurements are corrected for detector effects and are presented within a
+  kinematic range that closely matches the detector acceptance.'
+BibKey: Aad:2015eia
+BibTeX: '@article{Aad:2015eia,
+      author         = "Aad, Georges and others",
+      title          = "{Differential top-antitop cross-section measurements as a
+                        function of observables constructed from final-state
+                        particles using pp collisions at $\sqrt{s}=7$ TeV in the
+                        ATLAS detector}",
+      collaboration  = "ATLAS Collaboration",
+      year           = "2015",
+      eprint         = "1502.05923",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2014-295",
+      SLACcitation   = "%%CITATION = ARXIV:1502.05923;%%",
+}'

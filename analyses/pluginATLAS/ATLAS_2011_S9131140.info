@@ -1,0 +1,40 @@
+Name: ATLAS_2011_S9131140
+Year: 2011
+Summary: Measurement of the Z pT with electrons and muons at 7 TeV
+Experiment: ATLAS
+Collider: LHC
+SpiresID: 9131140
+InspireID: 917931
+Status: VALIDATED
+Authors:
+ - Elena Yatsenko <elena.yatsenko@desy.de>
+ - Judith Katzy <jkatzy@mail.cern.ch>
+References:
+ - arXiv:1107.2381 [hep-ex]
+RunInfo:
+  Run with inclusive $Z$ events, with $Z/\gamma^*$ decays to electrons and/or
+  muons.
+NumEvents: 100k
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [20]
+Description:
+  'The Z pT at $\sqrt{s} = 7$\;TeV is measured using electron and muon $Z$ decay
+  channels. The dressed leptons definition uses photons clustered in a cone around
+  the charged leptons, while the bare lepton definition uses the post-FSR charged
+  leptons only in the $Z$ reconstruction. The data used in the bare leptons calculation
+  are based on a forward application of a PHOTOS-based energy loss correction and are
+  hence not quite model-independent.'
+BibKey: Aad:2011gj
+BibTeX: '@Article{Aad:2011gj,
+     author    = "Aad, Georges and others",
+     collaboration = "ATLAS",
+     title     = "{Measurement of the transverse momentum distribution of
+                  $Z/\gamma^*$ bosons in proton-proton collisions at $\sqrt{s} =
+                  7$\;TeV with the ATLAS detector}",
+     year      = "2011",
+     eprint    = "1107.2381",
+     archivePrefix = "arXiv",
+     primaryClass  =  "hep-ex",
+     SLACcitation  = "%%CITATION = 1107.2381;%%"
+}'

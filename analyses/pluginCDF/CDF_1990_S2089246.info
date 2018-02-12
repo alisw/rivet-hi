@@ -1,0 +1,40 @@
+Name: CDF_1990_S2089246
+Year: 1990
+Summary: CDF pseudorapidity distributions at 630 and 1800 GeV
+Experiment: CDF
+Collider: Tevatron Run 0
+SpiresID: 2089246
+InspireID: 283352
+Status: VALIDATED
+Authors:
+ - Andy Buckley <andy.buckley@cern.ch>
+References:
+ - Phys.Rev.D41:2330,1990
+ - doi:10.1103/PhysRevD.41.2330
+RunInfo:
+  QCD min bias events at $\sqrt{s} = 630$ and 1800 GeV.
+  Particles with $c \tau > 10$\;mm should be set stable.
+NumEvents: 1000000
+Beams: [p-, p+]
+Energies: [630, 1800]
+PtCuts: [0]
+Description:
+  Pseudorapidity distributions based on the CDF 630 and 1800 GeV runs
+  from 1987. All data is detector corrected. The data confirms the UA5
+  measurement of a $\mathrm{d}{N}/\mathrm{d}{\eta}$ rise with energy faster than
+  $\ln{\sqrt{s}}$, and as such this analysis is important for
+  constraining the energy evolution of minimum bias and underlying event
+  characteristics in MC simulations.
+BibKey: Abe:1989td
+BibTeX: '@Article{Abe:1989td,
+     author    = "Abe, F. and others",
+     collaboration = "CDF",
+     title     = "{Pseudorapidity distributions of charged particles produced in
+                   $\bar{p}p$ interactions at $\sqrt{s} = 630$ GeV and 1800 GeV}",
+     journal   = "Phys. Rev.",
+     volume    = "D41",
+     year      = "1990",
+     pages     = "2330",
+     doi       = "10.1103/PhysRevD.41.2330",
+     SLACcitation  = "%%CITATION = PHRVA,D41,2330;%%"
+}'

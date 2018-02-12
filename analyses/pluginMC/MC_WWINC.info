@@ -1,0 +1,13 @@
+Name: MC_WWINC
+Summary: Monte Carlo validation observables for $W^+[e^+ \, \nu]W^-[\mu^- \, \nu]$ production
+Status: VALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+RunInfo:
+  $WW$ analysis.
+NumEvents: 1000000
+PtCuts: [0]
+Description:
+  Monte Carlo validation observables for $W^+[e^+ \, \nu]W^-[\mu^- \, \nu]$ production
+NeedCrossSection: yes

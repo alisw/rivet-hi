@@ -1,0 +1,234 @@
+#! /usr/bin/env python
+
+## Parse arguments
+import sys, os, re
+import optparse
+op = optparse.OptionParser()
+#op.add_option("--embed", dest="EMBED", action="store_true", default=False, help="do not generate <html>, <head>, and <body> surrounging tags")
+opts, args = op.parse_args()
+
+## Get output filename
+if not args:
+    OUTFILE = "analyses.html"
+    OUTDIR = "analyses"
+else:
+    OUTFILE = args[0]+".html"
+    OUTDIR = args[0]
+print "Using output file name '%s' and directory '%s'" % (OUTFILE, OUTDIR)
+
+
+## Add the rivet Python module build dir(s) to the Python module path, then import
+pybuild = os.path.abspath(os.path.join(os.getcwd(), "..", "pyext", "build"))
+pydirs = [os.path.join(pybuild, d) for d in os.listdir(pybuild)
+          if re.match(r"lib\..*-.*-%d\.%d" % (sys.version_info[0], sys.version_info[1]), d)]
+sys.path = pydirs + sys.path
+import rivet
+
+## Add info file locations
+from glob import glob
+dirpatt = os.path.join(os.getcwd(), "..", "analyses", "plugin*")
+for d in glob(dirpatt):
+    #print d
+    rivet.addAnalysisDataPath(os.path.abspath(d))
+
+
+## Get some strings of html ready.
+from rivet.util import htmlify
+foot = """\
+</body>
+</html>
+"""
+head = '''\
+<html>
+<head>
+  <title>Rivet analyses reference</title>
+  <style>
+    /* body { font-family:sans-serif; padding: 1em 1em 2em 2em; } */
+    p, li { max-width:50em; }
+    /* h2 { margin-left:-1em; margin-bottom:1.5em; } */
+    /* h3 { color:#349; margin-top:2em; } */
+  </style>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {inlineMath: [["$","$"]]}
+  });
+  </script>
+  <script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+</head>
+<body>
+  <h2>Rivet analyses reference</h2>
+'''
+
+
+## Build analysis pages
+all_analyses = rivet.AnalysisLoader.analysisNames()
+
+## Remove any existing directory with name OUTDIR, make new one.
+if os.path.exists(OUTDIR) and not os.path.realpath(OUTDIR) == os.getcwd():
+    import shutil
+    shutil.rmtree(OUTDIR)
+try:
+    os.makedirs(OUTDIR)
+except:
+    print "Error: failed to make new directory '%s'" % OUTDIR
+    sys.exit(1)
+
+## Find analysis source files
+ccpatt = os.path.join(os.getcwd(), "..", "analyses", "plugin*", "*.cc")
+ccfiles = glob(ccpatt)
+#print ccfiles
+
+summaries = {}
+pages = []
+## Use list(...) ctor for 2.3 compatibility
+for aname in sorted(list(all_analyses)):
+    page = ""
+    ana = rivet.AnalysisLoader.getAnalysis(aname)
+
+    ## Summary and biblio links
+    summaries[aname] = ana.summary()
+    page += "<h3 id='%s'>%s</h3>\n" % (aname, aname)
+    page += "<b>%s</b><br/>\n" %  htmlify(ana.summary())
+    page += "<b>Experiment:</b> %s (%s)<br/>\n" % (ana.experiment(), ana.collider())
+    if ana.inspireId():
+        spiresbase = "http://inspire-hep.net/record"
+        page += "<b>Inspire ID:</b> <a href='%s/%s'>%s</a><br/>\n" % \
+            (spiresbase, ana.inspireId(), ana.inspireId())
+    elif ana.spiresId():
+        spiresbase = "http://inspire-hep.net/search?p=find+key"
+        page += "<b>Spires ID:</b> <a href='%s+%s'>%s</a><br/>\n" % \
+            (spiresbase, ana.spiresId(), ana.spiresId())
+    page += "<b>Status:</b> %s<br/>\n" % ana.status()
+
+    ## Authors
+    if ana.authors():
+        page += "<b>Authors:</b>\n"
+        page += "<ul>\n"
+        for a in ana.authors():
+            s = a
+            import re
+            if re.search(".* <.*@.*>", a):
+                name = " ".join(a.split()[:-1])
+                email = a.split()[-1].replace("<", "").replace(">", "")
+                #s = "<a href='mailto:%s'>%s</a>" % (email, name)
+                s = name
+            page += "  <li>%s</li>\n" % htmlify(s)
+        page += "</ul>\n"
+    else:
+        page += "<b>No authors listed</b>\n"
+
+    ## References
+    if ana.references():
+        page += "<b>References:</b>\n"
+        page += "<ul>\n"
+        for r in ana.references():
+            if r.startswith("arXiv:"):
+                code = r.split()[0].replace("arXiv:", "")
+                url = "http://arxiv.org/abs/" + code
+                page += "  <li>%s <a href='%s'>%s</a></li>\n" % ("arXiv:", htmlify(url), htmlify(code))
+            elif r.startswith("doi:"):
+                code = r.replace("doi:", "")
+                url = "http://dx.doi.org/" + code
+                page += "  <li>%s <a href='%s'>%s</a></li>\n" % ("DOI:", htmlify(url), htmlify(code))
+            else:
+                page += "  <li>%s</li>\n" % htmlify(r)
+        page += "</ul>\n"
+    else:
+        page += "<b>No references listed</b><br/>\n"
+
+    ## Beams
+    if ana.requiredBeams():
+        def pid_to_str(pid):
+            if pid == 11:
+                return "e-"
+            elif pid == -11:
+                return "e+"
+            elif pid == 2212:
+                return "p+"
+            elif pid == -2212:
+                return "p-"
+            elif pid == 10000:
+                return "*"
+            else:
+                return str(pid)
+        beamstrs = []
+        for bp in ana.requiredBeams():
+            beamstrs.append(pid_to_str(bp[0]) + " " + pid_to_str(bp[1]))
+        page += "<b>Beams:</b> %s<br/>\n" % ", ".join(beamstrs)
+
+    page += "<b>Beam energies:</b> "
+    if ana.requiredEnergies():
+        page += "; ".join(["(%0.1f, %0.1f)" % (epair[0], epair[1]) for epair in ana.requiredEnergies()])
+        page += "&nbsp;GeV"
+    else:
+        page += "ANY"
+    page += "<br/>\n"
+
+    ## Run info
+    if ana.runInfo():
+        page += "<b>Run details:</b>\n"
+        page += "<ul>\n"
+        for l in ana.runInfo().split("\n*"):
+            l = l.strip()
+            if l.startswith("*"):
+                l = l[1:].strip()
+            page += "  <li>%s</li>\n" % htmlify(l)
+        page += "</ul>\n"
+    else:
+        page += "<ul>No run details listed</ul>\n"
+
+    ## Description
+    page += "\n<p>" + htmlify(ana.description(), para=True) + "</p>\n"
+
+    ## Source code
+    anaccfiles = [cc for cc in ccfiles if os.path.basename(cc).startswith(aname)]
+    if anaccfiles:
+        page += "<b>Source code:</b>\n"
+        for cc in anaccfiles:
+            page += "<b><kbd>%s</kbd></b>\n" % os.path.basename(cc)
+            with open(cc, 'r') as f:
+                src = f.read()
+            try:
+                import pygments
+                from pygments.lexers import get_lexer_by_name
+                from pygments.formatters import get_formatter_by_name
+                lx = get_lexer_by_name("c++")
+                fm = get_formatter_by_name("html", linenos=True, noclasses=True)
+                page += pygments.highlight(src, lx, fm)
+            except:
+                page += "<kbd>" + src.replace("\n", "<br/>\n") + "</kbd>"
+
+    # Write out HTML analysis file
+    #print aname
+    ANAFILE = os.path.join(OUTDIR, aname+'.html')
+    f = open(ANAFILE, "w")
+    outstr = unicode(head + page + foot)
+    f.write(outstr.encode(errors="ignore"))
+    f.close()
+
+
+## Write out HTML toc file(s)
+toc = "<h3>Contents</h3>\n"
+toc += "<ul style=\"white-space: nowrap;\">\n"
+for a in all_analyses:
+    ## NB. initial links designed for linking from inside the OUTDIR
+    toc += '<li><a id="%s" href="../%s/%s.html">%s</a> &ndash; %s</li>\n' % \
+                       (a, OUTDIR, a, a, htmlify(summaries[a]))
+toc += "</ul>\n"
+outstr = head + toc + foot
+
+## Index file in dir
+f = open(os.path.join(OUTDIR, "index.html"), "w")
+f.write(outstr.encode(errors="ignore"))
+f.close()
+
+## External index file
+outstr = outstr.replace("../%s" % OUTDIR, OUTDIR) #< correct link depth
+if OUTFILE == "-":
+    sys.stdout.write(outstr.encode(errors="ignore"))
+else:
+    f = open(OUTFILE, "w")
+    f.write(outstr.encode(errors="ignore"))
+    f.close()

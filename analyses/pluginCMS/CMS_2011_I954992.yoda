@@ -1,0 +1,9 @@
+BEGIN YODA_SCATTER2D_V2 /REF/CMS_2011_I954992/d01-x01-y01
+IsRef: 1
+Path: /REF/CMS_2011_I954992/d01-x01-y01
+Title: ~
+Type: Scatter2D
+---
+# xval	 xerr-	 xerr+	 yval	 yerr-	 yerr+
+7.000000e+03	5.000000e-01	5.000000e-01	3.380000e+00	6.177378e-01	6.177378e-01
+END YODA_SCATTER2D_V2

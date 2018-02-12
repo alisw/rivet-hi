@@ -1,0 +1,41 @@
+Name: H1_1994_S2919893
+Year: 1994
+Summary: H1 energy flow and charged particle spectra in DIS
+Experiment: H1
+Collider: HERA
+SpiresID: 2919893
+InspireID: 372350
+Status: VALIDATED
+Authors:
+ - Peter Richardson <peter.richardson@durham.ac.uk>
+References:
+ - Z.Phys.C63:377-390,1994
+ - doi:10.1007/BF01580319
+RunInfo:
+  $e^- p$ / $e^+ p$ deep inelastic scattering,
+  820~GeV protons colliding with 26.7~GeV electrons
+NumEvents: 1000000
+Beams: [[p+, e-], [p+, e+]]
+Energies: [[820, 26.7]]
+PtCuts: [0]
+Description:
+  Global properties of the hadronic final state in deep inelastic
+  scattering events at HERA are investigated. The data are corrected for
+  detector effects. Energy flows in both the laboratory frame and the
+  hadronic centre of mass system, and energy-energy correlations in the
+  laboratory frame are presented.  Historically, the Ariadne colour
+  dipole model provided the only satisfactory description of this data,
+  hence making it a useful 'target' analysis for MC shower models.
+BibKey: Abt:1994ye
+BibTeX: '@Article{Abt:1994ye,
+     author    = "Abt, I. and others",
+ collaboration = "H1",
+     title     = "{Energy flow and charged particle spectrum in deep
+                  inelastic scattering at HERA}",
+     journal   = "Z. Phys.",
+     volume    = "C63",
+     year      = "1994",
+     pages     = "377-390",
+     doi       = "10.1007/BF01580319",
+     SLACcitation  = "%%CITATION = ZEPYA,C63,377;%%"
+}'

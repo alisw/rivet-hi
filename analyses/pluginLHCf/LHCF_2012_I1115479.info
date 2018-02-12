@@ -1,0 +1,40 @@
+Name: LHCF_2012_I1115479
+Year: 2012
+Summary: Measurement of forward neutral pion transverse momentum spectra for $\sqrt{s}$ = 7 TeV proton-proton collisions at LHC
+Experiment: LHCF
+Collider: LHC
+SpireID: 9602062
+InspireID: 1115479
+Status: VALIDATED
+Authors:
+ - Sercan Sen <ssen@cern.ch>
+References:
+ - Phys.Rev. D86 (2012) 092001
+ - arXiv:1205.4578 [hep-ex]
+RunInfo:
+   Inelastic events (ND+SD+DD) at $\sqrt{s}$ = 7 TeV.
+NumEvents: 500000
+Beams: [p+, p+]
+Energies: [7000]
+Description:
+   The inclusive production rate of neutral pions has been measured by
+   LHCf experiment during $\sqrt{s}=7$ TeV pp collision operation in early
+   2010. In order to ensure good event reconstruction efficiency, the
+   range of the $\pi^0$ rapidity and $p_\perp$ are limited to $8.9 < y < 11.0$
+   and $p_\perp < 0.6$ GeV, respectively.
+BibKey: Adriani:2012ap
+BibTeX: '@Article{Adriani:2012ap,
+      author         = "Adriani, O. and others",
+      title          = "{Measurement of forward neutral pion transverse momentum
+                        spectra for $\sqrt{s} = 7$ TeV proton-proton collisions at
+                        LHC}",
+      collaboration  = "LHCf Collaboration",
+      journal        = "Phys.Rev.",
+      volume         = "D86",
+      pages          = "092001",
+      doi            = "10.1103/PhysRevD.86.092001",
+      year           = "2012",
+      eprint         = "1205.4578",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      SLACcitation   = "%%CITATION = ARXIV:1205.4578;%%",}'

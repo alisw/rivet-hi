@@ -1,0 +1,38 @@
+Name: D0_2010_S8566488
+Year: 2010
+Summary: Dijet invariant mass
+Experiment: D0
+Collider: Tevatron Run 2
+SpiresID: 8566488
+InspireID: 846483
+Status: VALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+ - arXiv:1002.4594
+RunInfo:
+  $p \bar{p} \to$ jets at 1960 GeV. Analysis needs two hard jets above 40 GeV.
+NumEvents: 1000000
+Beams: [p-, p+]
+Energies: [1960]
+PtCuts: [30]
+Description:
+  The inclusive dijet production double differential cross section as a
+  function of the dijet invariant mass and of the largest absolute rapidity
+  ($|y|_\text{max}$) of the two jets with the largest transverse momentum in an
+  event is measured using 0.7 fb$^{-1}$ of data.
+  The measurement is performed in six rapidity regions up to
+  $|y|_\text{max}=2.4$.
+NeedCrossSection: yes
+BibKey: Abazov:2010fr
+BibTeX: '@Article{Abazov:2010fr,
+     author    = "Abazov, V. M. and others",
+ collaboration = "D0",
+     title     = "{Measurement of the dijet invariant mass cross section in
+                  $p\overline{p}$ collisions at $\sqrt{s} =$ 1.96 TeV}",
+     year      = "2010",
+     eprint    = "1002.4594",
+     archivePrefix = "arXiv",
+     primaryClass  =  "hep-ex",
+     SLACcitation  = "%%CITATION = 1002.4594;%%"
+}'

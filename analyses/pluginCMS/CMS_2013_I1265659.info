@@ -1,0 +1,45 @@
+Name: CMS_2013_I1265659
+Year: 2013
+Summary: Probing color coherence effects in $pp$ collisions at $\sqrt{s} = 7$ TeV
+Experiment: CMS
+Collider: LHC
+InspireID: 1265659
+Status: VALIDATED
+Authors:
+ - Maxime Gouzevitch <mgouzevi@cern.ch>
+ - Chawon Park <parknkim@gmail.com>
+ - Inkyu Park <inkyu.park@cern.ch>
+References:
+ - CMS-SMP-12-010
+ - CERN-PH-EP-2013-200
+ - arXiv:1311.5815
+RunInfo:
+  $pp$ QCD interactions at $\sqrt{s} = 7$ TeV. Data collected by CMS during the year 2010.
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [30.0]
+Description:
+  A study of color coherence effects in $pp$ collisions at a center-of-mass energy of 7 TeV
+  is presented. The data used in the analysis were collected in 2010 with the CMS detector
+  at the LHC and correspond to an integrated luminosity of 36/pb. Events are
+  selected that contain at least three jets and where the two jets with the largest transverse
+  momentum exhibit a back-to-back topology. The measured angular correlation
+  between the second- and third-leading jet is shown to be sensitive to color coherence
+  effects, and is compared to the predictions of Monte Carlo models with various implementations
+  of color coherence. None of the models describe the data satisfactorily.
+BibKey: 'Chatrchyan:2013fha'
+BibTeX: '@article{Chatrchyan:2013fha,
+      author         = "Chatrchyan, Serguei and others",
+      title          = "{Probing color coherence effects in $pp$ collisions at
+                        $\sqrt{s} = 7$ TeV}",
+      collaboration  = "CMS Collaboration",
+      year           = "2013",
+      eprint         = "1311.5815",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-SMP-12-010, CERN-PH-EP-2013-200",
+      SLACcitation   = "%%CITATION = ARXIV:1311.5815;%%",
+}'
+ToDo:
+ - Update references when accepted by journal

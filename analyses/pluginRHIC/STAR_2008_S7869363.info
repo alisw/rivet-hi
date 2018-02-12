@@ -1,0 +1,40 @@
+Name: STAR_2008_S7869363
+Year: 2008
+Summary: Multiplicities and pT spectra from STAR for $pp$ at 200 GeV
+Experiment: STAR
+Collider: RHIC
+SpiresID: 7869363
+InspireID: 793126
+Status: UNVALIDATED
+Authors:
+ - Holger Schulz <holger.schulz@physik.hu-berlin.de>
+References:
+ - arXiv:0808.2041
+ - http://drupal.star.bnl.gov/STAR/files/starpublications/124/data.html
+RunInfo:
+  QCD (pp) events at 200 GeV
+NumEvents: 1.000.000
+Beams: [p+, p+]
+Energies: [200]
+PtCuts:
+Description:
+  'Charged multiplicity and identified charged particle spectra'
+BibKey: :2008ez
+BibTeX: '@Article{:2008ez,
+     author    = "Abelev, B. I. and others",
+ collaboration = "STAR",
+     title     = "{Systematic measurements of identified particle spectra in
+                  $p p$, $d^+$ Au and Au+Au collisions from STAR}",
+     journal   = "Phys. Rev.",
+     volume    = "C79",
+     year      = "2009",
+     pages     = "034909",
+     eprint    = "0808.2041",
+     archivePrefix = "arXiv",
+     primaryClass  =  "nucl-ex",
+     doi       = "10.1103/PhysRevC.79.034909",
+     SLACcitation  = "%%CITATION = 0808.2041;%%"
+}'
+ToDo:
+ - Understand first bin in multiplicity distribution
+ - Normalise to generator values (just scale by 1/nPassedCuts?) rather than data areas?

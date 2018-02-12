@@ -1,0 +1,35 @@
+Name: TASSO_1989_I277658
+Year: 1989
+Summary: Hadronic charged multiplicity measurement between 14 and 43.6 GeV
+Experiment: TASSO
+Collider: PEP
+InspireID: 277658
+Status: VALIDATED
+Authors:
+ - Peter Richardson <peter.richardson@durham.ac.uk>
+References:
+- Z.Phys. C45 (1989) 193
+RunInfo: 
+  Hadronic e+ e- events generated below the Z pole
+NumEvents: 1000000
+Beams: [e+, e-]
+Energies: [14.,22.,34.8,43.6]
+PtCuts: [0]
+Description:
+  The charged particle multiplicity distribution of hadronic $e^+e^-$ events
+  as measured between 14 and 43.6 GeV using the TASSO detector at
+  PEP.
+BibKey: Braunschweig:1989bp
+BibTeX: '@article{Braunschweig:1989bp,
+      author         = "Braunschweig, W. and others",
+      title          = "{Charged Multiplicity Distributions and Correlations in
+                        e+ e- Annihilation at PETRA Energies}",
+      collaboration  = "TASSO",
+      journal        = "Z. Phys.",
+      volume         = "C45",
+      year           = "1989",
+      pages          = "193",
+      doi            = "10.1007/BF01674450",
+      reportNumber   = "DESY-89-038",
+      SLACcitation   = "%%CITATION = ZEPYA,C45,193;%%"
+}'

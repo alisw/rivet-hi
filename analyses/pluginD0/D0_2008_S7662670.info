@@ -1,0 +1,43 @@
+Name: D0_2008_S7662670
+Year: 2008
+Summary: Measurement of D0 Run II differential jet cross sections
+Experiment: D0
+Collider: Tevatron Run 2
+SpiresID: 7662670
+InspireID: 779574
+Status: VALIDATED
+Authors:
+ - Andy Buckley <andy.buckley@cern.ch>
+ - Gavin Hesketh <gavin.hesketh@cern.ch>
+References:
+ - Phys.Rev.Lett.101:062001,2008
+ - doi:10.1103/PhysRevLett.101.062001
+ - arXiv:0802.2400v3 [hep-ex]
+RunInfo:
+  QCD events at $\sqrt{s} = 1960\;\GeV$. A $\pT^\text{min} cut is probably necessary since
+  the lowest jet $\pT$ bin is at 50\;GeV
+NumEvents: 1000000
+Beams: [p-, p+]
+Energies: [1960]
+PtCuts: [40]
+Description:
+  Measurement of the inclusive jet cross section in $p \bar{p}$ collisions at
+  center-of-mass energy $\sqrt{s} = 1.96\;\TeV$. The data cover jet
+  transverse momenta from 50--600\;GeV and jet rapidities in the range
+  -2.4 to 2.4.
+NeedCrossSection: yes
+BibKey: :2008hua
+BibTeX: '@Article{:2008hua,
+     author    = "Abazov, V. M. and others",
+     collaboration = "D0",
+     title     = "{Measurement of the inclusive jet cross-section in $p \bar{p}$ collisions at $s^{1/2} = $1.96 TeV}",
+     journal   = "Phys. Rev. Lett.",
+     volume    = "101",
+     year      = "2008",
+     pages     = "062001",
+     eprint    = "0802.2400",
+     archivePrefix = "arXiv",
+     primaryClass  =  "hep-ex",
+     doi       = "10.1103/PhysRevLett.101.062001",
+     SLACcitation  = "%%CITATION = 0802.2400;%%"
+}'

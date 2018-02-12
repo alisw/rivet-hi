@@ -1,0 +1,38 @@
+Name: D0_2010_S8821313
+Year: 2010
+Summary: Precise study of Z pT using novel technique
+Experiment: D0
+Collider: Tevatron Run 2
+SpiresID: 8821313
+InspireID: 871787
+Status: VALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+ - arXiv:1010.0262
+RunInfo:
+  Inclusive $Z/\gamma^*$ production in both electron and muon channels.
+  Cut on invariant lepton mass should be wider than $70 < m_{\ell\ell} < 110$ GeV.
+NumEvents: 1000000
+Beams: [p-, p+]
+Energies: [1960]
+Description:
+  Using 7.3 pb$^{-1}$ the distribution of the variable $\phi^*$ is measured, which
+  probes the same physical effects as the $Z/\gamma^*$ boson transverse
+  momentum, but is less susceptible to the effects of experimental resolution
+  and efficiency. Results are presented for both the di-electron and di-muon
+  channel.
+BibKey: Abazov:2010mk
+BibTeX: '@Article{Abazov:2010mk,
+     author    = "Abazov, Victor Mukhamedovich and others",
+ collaboration = "D0",
+     title     = "{Precise study of the Z/gamma* boson transverse momentum
+                  distribution in ppbar collisions using a novel technique}",
+     year      = "2010",
+     eprint    = "1010.0262",
+     archivePrefix = "arXiv",
+     primaryClass  =  "hep-ex",
+     SLACcitation  = "%%CITATION = 1010.0262;%%"
+}'
+ToDo:
+

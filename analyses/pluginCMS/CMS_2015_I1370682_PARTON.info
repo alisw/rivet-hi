@@ -1,0 +1,40 @@
+Name: CMS_2015_I1370682_PARTON
+Year: 2015
+Summary: Parton-level differential top-quark pair production cross-sections in $pp$ collisions at $\sqrt{s} = 8\,\TeV$
+Experiment: CMS
+Collider: LHC
+InspireID: 1370682
+Status: VALIDATED
+Authors:
+ - Jungwan John Goh <Junghwan.Goh@cern.ch>
+ - Markus Seidel <markus.seidel@cern.ch>
+References:
+ - Eur.Phys.J. C75 (2015) 542
+RunInfo:
+  $t\bar{t}$ events at $\sqrt{s}= 8\,\TeV$.
+  Top quarks with physical momenta must be present in the event record.
+Luminosity: 19.7/fb
+Beams: [p+, p+]
+Energies: [8000]
+Description:
+  'The normalized parton level differential cross section for top quark pair production
+  is measured in $pp$ collisions at a centre-of-mass energy of 8\,\TeV.'
+BibKey: Khachatryan:2015oqa
+BibTeX: '@article{Khachatryan:2015oqa,
+      author         = "Khachatryan, Vardan and others",
+      title          = "{Measurement of the differential cross section for top
+                        quark pair production in $pp$ collisions at $\sqrt{s} =
+                        8\,\text{TeV} $}",
+      collaboration  = "CMS",
+      journal        = "Eur. Phys. J.",
+      volume         = "C75",
+      year           = "2015",
+      number         = "11",
+      pages          = "542",
+      doi            = "10.1140/epjc/s10052-015-3709-x",
+      eprint         = "1505.04480",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-TOP-12-028, CERN-PH-EP-2015-117",
+      SLACcitation   = "%%CITATION = ARXIV:1505.04480;%%"
+}'

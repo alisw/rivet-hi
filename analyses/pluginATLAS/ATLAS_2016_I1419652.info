@@ -1,0 +1,42 @@
+Name: ATLAS_2016_I1419652
+Year: 2016
+Summary: Track-based minimum bias at 13 TeV in ATLAS
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1419652
+Status: VALIDATED
+Authors:
+ - Roman Lysak <roman.lysak@cern.ch>
+References:
+ - arXiv:1602.01633
+ - doi:10.1016/j.physletb.2016.04.050
+ - Physics Letters B (2016), Vol. 758, pp. 67-88
+RunInfo:
+  $pp$ QCD interactions at 13 TeV. Diffractive events should
+  be included. Multiple kinematic cuts should not be required.
+Beams: [p+, p+]
+Energies: [13000]
+PtCuts: [0.5]
+Description:
+  Measurements from proton-proton collisions at centre-of-mass energy
+  of $\sqrt{s} = 13$ TeV recorded with the ATLAS detector at
+  the LHC. Events were collected using a single-arm minimum-bias
+  trigger. The charged-particle multiplicity, its dependence on
+  transverse momentum and pseudorapidity and the relationship between
+  the mean transverse momentum and charged-particle multiplicity are
+  measured. The observed distributions are corrected to well-defined
+  phase-space regions ($p_\text{T} > 500$ MeV and $|\eta| < 2.5$ of the particles),
+  using model-independent corrections.
+BibKey: Aad:2016mok
+BibTeX: '@article{Aad:2016mok,
+      author         = "Aad, Georges and others",
+      title          = "{Charged-particle distributions in $\sqrt{s}=13$ TeV $pp$
+                        interactions measured with the ATLAS detector at the LHC}",
+      collaboration  = "ATLAS",
+      year           = "2016",
+      eprint         = "1602.01633",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-EP-2016-014",
+      SLACcitation   = "%%CITATION = ARXIV:1602.01633;%%"
+}'

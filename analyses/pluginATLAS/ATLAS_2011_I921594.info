@@ -1,0 +1,46 @@
+Name: ATLAS_2011_I921594
+Year: 2011
+Summary: Inclusive isolated prompt photon analysis with full 2010 LHC data
+Experiment: ATLAS
+Collider: LHC 7TeV
+InspireID: 921594
+Status: VALIDATED
+Authors:
+ - Giovanni Marchiori <giovanni.marchiori@cern.ch>
+References:
+ - arXiv:1108.0253 [hep-ex]
+ - Phys.Lett. B706 (2011) 150-167
+RunInfo:
+  Inclusive photon $+ X$ events (primary $\gamma$+jet events) at $\sqrt{s} = 7$~TeV.
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [45]
+Description:
+  'A measurement of the differential cross-section for the inclusive
+  production of isolated prompt photons in $pp$ collisions at a
+  center-of-mass energy $\sqrt{s} = 7$ TeV is presented. The measurement
+  covers the pseudorapidity ranges $|\eta|<1.37$ and $1.52<|\eta|<2.37$ in
+  the transverse energy range $45<E_T<400$ GeV. The results are based on
+  an integrated luminosity of 35 pb$^{-1}$, collected with the ATLAS detector
+  at the LHC. The yields of the signal photons are measured using a
+  data-driven technique, based on the observed distribution of the
+  hadronic energy in a narrow cone around the photon candidate and the
+  photon selection criteria. The results are compared with
+  next-to-leading order perturbative QCD calculations and found to be in
+  good agreement over four orders of magnitude in cross-section.'
+BibTeX: '@article{Aad:2011tw,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of the inclusive isolated prompt photon cross-section in $pp$ collisions at $\sqrt{s}=7$ TeV using 35 pb$^{-1}$ of ATLAS data}",
+      collaboration  = "ATLAS Collaboration",
+      journal        = "Phys. Lett.",
+      volume         = "B706",
+      pages          = "150-167",
+      doi            = "10.1016/j.physletb.2011.11.010",
+      year           = "2011",
+      eprint         = "1108.0253",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2011-115",
+      SLACcitation   = "%%CITATION = ARXIV:1108.0253;%%",
+}'

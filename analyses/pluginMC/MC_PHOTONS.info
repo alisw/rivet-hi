@@ -1,0 +1,18 @@
+Name: MC_PHOTONS
+Summary: Monte Carlo validation observables for general photons
+Status: VALIDATED
+Authors:
+ - Steve Lloyd
+ - Andy Buckley <andy.buckley@cern.ch>
+RunInfo:
+  Any event type, but there are many observables for photons associated to
+  (semi-)hard leptons.
+NumEvents: 10000
+PtCuts: [0]
+Description:
+  Observables for testing general unisolated photon properties, especially those
+  associated with charged leptons (e and mu).
+NeedCrossSection: no
+ToDo:
+  - Add a cone size cut on the photon--lepton association.
+  - Add FastJet-based clustering of photons on to leptons.

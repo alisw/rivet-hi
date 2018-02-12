@@ -1,0 +1,39 @@
+Name: ATLAS_2010_S8591806
+Year: 2010
+Summary: Charged particles at 900 GeV in ATLAS
+Experiment: ATLAS
+Collider: LHC 900GeV
+SpiresID: 8591806
+InspireID: 849050
+Status: VALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+ - arXiv:1003.3124
+RunInfo:
+  pp QCD interactions at 900 GeV including diffractive events.
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [900]
+PtCuts: [0]
+Description:
+  The first measurements with the ATLAS detector at the LHC.
+  Data were collected using a minimum-bias trigger in December 2009 during
+  proton-proton collisions at a centre of mass energy of 900 GeV. The charged-
+  particle density, its dependence on transverse momentum and pseudorapid-
+  ity, and the relationship between transverse momentum and charged-particle
+  multiplicity are measured for events with at least one charged particle in
+  the kinematic range $|\eta| < 2.5$ and $p_\perp > 500$ MeV.
+  All data is corrected to the particle level.
+BibKey: Aad:2010rd
+BibTeX: '@Article{Aad:2010rd,
+     author    = "Aad, G. and others",
+     collaboration = "ATLAS",
+     title     = "{Charged-particle multiplicities in $pp$ interactions at $\sqrt{s} = 900$ GeV measured with the ATLAS detector at the LHC}",
+     year      = "2010",
+     eprint    = "1003.3124",
+     archivePrefix = "arXiv",
+     primaryClass  =  "hep-ex",
+     doi       = "10.1016/j.physletb.2010.03.064",
+     SLACcitation  = "%%CITATION = 1003.3124;%%"
+}'

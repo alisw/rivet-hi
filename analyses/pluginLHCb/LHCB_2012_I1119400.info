@@ -1,0 +1,42 @@
+Name: LHCB_2012_I1119400
+Year: 2012
+Summary: Measurement of prompt hadron production ratios in $pp$ collisions at $\sqrt{s} = 0.9$ and 7 TeV
+Experiment: LHCb
+Collider: LHC
+SpireID: 9635220
+InspireID: 1119400
+Status: VALIDATED
+Authors:
+ - Andrea Contu <Andrea.Contu@cern.ch>
+ - Alex Grecu <Alex.Grecu@cern.ch>
+References:
+ - arXiv:1206.5160 [hep-ex]
+RunInfo:
+   Minimum bias events at $\sqrt{s} = 0.9$ and 7 TeV.
+NumEvents: 500000
+NeedCrossSection: no
+Beams: [p+, p+]
+Energies: [900, 7000]
+PtCuts: [0]
+Description:
+  'WARNING --- particle map is incomplete for determination of promptness,
+   assume unknown particles to have a life time of 0 ---
+   Measurement of the production ratios of prompt charged particles (protons,
+   pions and kaons). Promptness is defined as originating from the primary
+   interaction, either directly, or through the subsequent decay of a
+   resonance.'
+BibKey: Aaij:2012ut
+BibTeX: '@article{Aaij:2012ut,
+      author         = "Aaij, R and others",
+      title          = "{Measurement of prompt hadron production ratios in $pp$ collisions at $\sqrt{s} = 0.9$ and 7 TeV}",
+      collaboration  = "LHCb Collaboration",
+      journal        = "Eur.Phys.J.",
+      volume         = "C72",
+      pages          = "2168",
+      year           = "2012",
+      eprint         = "1206.5160",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2012-171, LHCB-PAPER-2011-037",
+      SLACcitation   = "%%CITATION = ARXIV:1206.5160;%%"
+}'

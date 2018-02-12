@@ -1,0 +1,14 @@
+Name: MC_WINC_MU_BARE
+Summary: Monte Carlo validation observables for inclusive $W[mu \, \nu]$ production
+Status: VALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+ - Gavin Hesketh <gavin.hesketh@ucl.ac.uk>
+References:
+RunInfo:
+  $mu \, \nu$ + jets analysis.
+NumEvents: 1000000
+PtCuts: [0]
+Description:
+  Monte Carlo validation observables for inclusive $W[mu \, \nu]$ production, with bare leptons.
+NeedCrossSection: yes

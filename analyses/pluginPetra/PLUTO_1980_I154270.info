@@ -1,0 +1,36 @@
+Name: PLUTO_1980_I154270
+Year: 1980
+Summary: Hadronic charged multiplicity measurement between 12 and 31.3 GeV
+Experiment: PLUTO
+Collider: PETRA
+InspireID: 154270
+Status: VALIDATED
+Authors:
+ - Peter Richardson <peter.richardson@durham.ac.uk>
+References:
+- Phys.Lett. 95B (1980) 313-317
+RunInfo: 
+  Hadronic e+ e- events generated below the Z pole
+NumEvents: 1000000
+Beams: [e+, e-]
+Energies: [9.4,12.0,13.0,17.0,22.0,27.6,30.2,30.7,31.3,30.75]
+PtCuts: [0]
+Description:
+  The charged particle multiplicity distribution of hadronic $e^+e^-$ events
+  as measured between 12 and 31.3 GeV using the PLUTO detector at
+  PETRA. The decay products of weakly decaying strange hadrons, 
+  e.g. $K^0_s$ and $\Lambda^0$, are not included in the measurement.
+BibKey: Berger:1980zb
+BibTeX: '@article{Berger:1980zb,
+      author         = "Berger, Christoph and others",
+      title          = "{Multiplicity Distributions in e+ e- Annihilations at
+                        PETRA Energies}",
+      collaboration  = "PLUTO",
+      journal        = "Phys. Lett.",
+      volume         = "B95",
+      year           = "1980",
+      pages          = "313-317",
+      doi            = "10.1016/0370-2693(80)90494-3",
+      reportNumber   = "DESY-80-69",
+      SLACcitation   = "%%CITATION = PHLTA,B95,313;%%"
+}'

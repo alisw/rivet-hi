@@ -1,0 +1,36 @@
+Name: TPC_1987_I235694
+Year: 1987
+Summary: Charged Hadron multiplicity at 29 GeV, flavour separated
+Experiment: TPC
+Collider: PEP
+InspireID: 235694
+Status: VALIDATED
+Authors:
+ - Peter Richardson <peter.richardson@durham.ac.uk>
+References:
+- Phys.Lett. B184 (1987) 299-304
+RunInfo: 
+  Hadronic e+e- events at $\sqrt{s} = 29.$ GeV
+NumEvents: 1000000
+Beams: [e+, e-]
+Energies: [29.]
+PtCuts: [0]
+Description:
+  The charged particle multiplicity distribution of hadronic $e^+e^-$ events,
+  as measured at $\sqrt{s} = 29.$ GeV using the TPC detector at
+  PEP. The multiplicities are measured separately for light, charm and bottom events 
+  as well as the results averaged over the quark flavours.
+BibKey: Aihara:1986mv
+BibTeX: '@article{Aihara:1986mv,
+      author         = "Aihara, H. and others",
+      title          = "{Pion and kaon multiplicities in heavy quark jets from
+                        $e^+e^-$ annihilation at 29-GeV}",
+      collaboration  = "TPC/Two Gamma",
+      journal        = "Phys. Lett.",
+      volume         = "B184",
+      year           = "1987",
+      pages          = "299-304",
+      doi            = "10.1016/0370-2693(87)90586-7",
+      reportNumber   = "JHU-HEP-86-105",
+      SLACcitation   = "%%CITATION = PHLTA,B184,299;%%"
+}'

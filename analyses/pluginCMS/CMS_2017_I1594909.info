@@ -1,0 +1,38 @@
+Name: CMS_2017_I1594909
+Year: 2017
+Summary: Search for SUSY in multijet events with missing transverse momentum in $pp$ collisions at 13 TeV
+Experiment: CMS
+Collider: LHC
+InspireID: 1594909
+Status: VALIDATED
+Authors:
+ - Andy Buckley <andy.buckley@cern.ch>
+References:
+ - 'arXiv:1704.07781'
+RunInfo: BSM signal events.
+NeedCrossSection: no
+Beams: [p+, p+]
+Energies: [13000]
+Description:
+  'A search for supersymmetry based on multijet events with large missing transverse
+  momentum produced in proton-proton collisions at a center-of-mass energy of $\sqrt{s}
+  = 13\,\TeV$. The data, corresponding to an integrated luminosity of 35.9/fb, were
+  collected with the CMS detector at the CERN LHC in 2016. The analysis utilizes
+  four-dimensional exclusive search regions defined in terms of the number of jets,
+  the number of tagged bottom quark jets, the scalar sum of jet transverse momenta,
+  and the magnitude of the vector sum of jet transverse momenta. This coding presents
+  the fully detailed 174 signal regions, as well as 12 aggregate signal regions.'
+BibKey: Sirunyan:2017cwe
+BibTeX: '@article{Sirunyan:2017cwe,
+      author         = "Sirunyan, Albert M and others",
+      title          = "{Search for supersymmetry in multijet events with missing
+                        transverse momentum in proton-proton collisions at 13
+                        TeV}",
+      collaboration  = "CMS",
+      year           = "2017",
+      eprint         = "1704.07781",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-SUS-16-033, CERN-EP-2017-072",
+      SLACcitation   = "%%CITATION = ARXIV:1704.07781;%%"
+}'

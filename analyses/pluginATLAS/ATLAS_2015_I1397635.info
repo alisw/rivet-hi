@@ -1,0 +1,44 @@
+Name: ATLAS_2015_I1397635
+Year: 2015
+Summary: $Wt$ at 8 TeV
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1397635
+Status: VALIDATED
+Authors:
+ - Reinhard Schwienhorst <schwier@cern.ch>
+References:
+ - JHEP01 (2016) 064
+ - doi:10.1007/JHEP01(2016)064
+ - arXiv:1510.03752 [hep-ex]
+RunInfo:
+  Single top $Wt$ + top--antitop production
+Beams: [p+, p+]
+Energies: [8000]
+PtCuts: [25,20]
+NeedCrossSection: True
+Description:
+     Fiducial cross-section for $Wt+t\bar{t}$ production in events with two leptons and exactly one jet, using an integrated
+     luminosity of 20.3 fb${}^{-1}$ of proton-proton collisions at a centre-of-mass energy of 8~TeV at the Large Hadron Collider,
+     collected with the ATLAS detector. The cross-section for the production of a top quark and a $W$ boson is measured in a
+     fiducial acceptance requiring two leptons with $\pT > 25$~GeV and $|\eta| < 2.5$, one jet with $\pT > 20$~GeV
+     and $|\eta| < 2.5$, and $E^\text{miss}_\text{T}  > 20$~GeV, including both $Wt$ and top-quark pair events as signal.
+     The measured value of the fiducial cross-section is $0.85 \pm 0.01$ (stat.) $\pm 0.07$ (syst.) $\pm 0.03$ (lumi.)~pb.
+BibKey: Aad:2015eto
+BibTeX: '@article{Aad:2015eto,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of the production cross-section of a single
+                        top quark in association with a $W$ boson at 8~TeV with
+                        the ATLAS experiment}",
+      collaboration  = "ATLAS",
+      journal        = "JHEP",
+      volume         = "01",
+      year           = "2016",
+      pages          = "064",
+      doi            = "10.1007/JHEP01(2016)064",
+      eprint         = "1510.03752",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-2015-230, CERN-PH-EP-2015-230",
+      SLACcitation   = "%%CITATION = ARXIV:1510.03752;%%"
+}'

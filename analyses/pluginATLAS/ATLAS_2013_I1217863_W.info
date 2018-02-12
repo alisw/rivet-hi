@@ -1,0 +1,45 @@
+Name: ATLAS_2013_I1217863_W
+Year: 2013
+Summary: W + gamma production at 7 TeV
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1217863
+Status: VALIDATED
+Authors:
+ - Chritian Gutschow <chris.g@cern.ch>
+References:
+ - Phys.Rev. D87 (2013) 112003
+ - doi:10.1103/PhysRevD.87.112003
+ - arXiv:1302.1283 [hep-ex]
+RunInfo:
+  W+gamma in the electron channel
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [25,15]
+NeedCrossSection: True
+Description:
+  Measurements of the differential fiducial cross sections for the production of a W boson in association with a high-energy
+  photon are measured using pp collisions at $\sqrt{s}=7~\TeV$. The analysis uses a data sample with an integrated luminosity of
+  4.6/fb collected by the ATLAS detector during the 2011 LHC data-taking period. Events are selected using leptonic decays
+  of the W bosons with the requirement of an associated isolated photon. The default routine will consider the electron decay
+  channel of the W boson. Use ATLAS_2013_I1217863_W_EL and ATLAS_2013_I1217863_W_MU to specify the decay channel directly.
+BibKey: Aad:2013iz
+BibTeX: '@article{Aad:2013izg,
+      author         = "Aad, Georges and others",
+      title          = "{Measurements of $W\gamma$ and $Z\gamma$ production in $pp$ collisions
+                        at $\sqrt{s}$=7  TeV with the ATLAS detector at the
+                        LHC}",
+      collaboration  = "ATLAS Collaboration",
+      journal        = "Phys.Rev.",
+      number         = "11",
+      volume         = "D87",
+      pages          = "112003",
+      doi            = "10.1103/PhysRevD.87.112003",
+      year           = "2013",
+      eprint         = "1302.1283",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2012-345",
+      SLACcitation   = "%%CITATION = ARXIV:1302.1283;%%",
+}'

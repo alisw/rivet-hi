@@ -1,0 +1,48 @@
+Name: ATLAS_2012_I1094061
+Year: 2012
+Summary: Measurement of two-particle correlation function at 900 GeV and 7 TeV
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1094061
+Status: VALIDATED
+Authors:
+ - James Monk <jmonk@cern.ch>
+References:
+ - JHEP 1205 (2012) 157
+ - CERN-PH-EP-2012-011
+ - doi:10.1007/JHEP05(2012)157
+ - arxiv:1203.3549
+RunInfo:
+  Soft-QCD proton-proton interactions (including diffraction) at 900 GeV or 
+  7 TeV. Generated events should include an average lifetime cut of ctau < 10mm
+NumEvents: 1000000
+NeedCrossSection: no
+Beams: [p+, p+]
+Energies: [900, 7000] 
+
+Description:
+  'Two-particle angular correlations are measured in proton-proton collisions at
+  $\sqrt(s)=900$ GeV and 7 TeV.  Correlations are determined for charged 
+  particles with $\pT > 100 MeV$ and $|\eta| < 2.5$.  A complicated function of 
+  both pseudorapidity and azimuth is observed.  Results are obtained from an 
+  inclusive sample of events (900 GeV and 7 TeV), as well as a sample satisfying
+   $n_{ch} \ge 20$ (7 TeV only).'
+BibKey: ATLAS:2012ap
+BibTeX: '@article{ATLAS:2012ap,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of inclusive two-particle angular
+                        correlations in pp collisions with the ATLAS detector at
+                        the LHC}",
+      collaboration  = "ATLAS Collaboration",
+      journal        = "JHEP",
+      volume         = "1205",
+      pages          = "157",
+      doi            = "10.1007/JHEP05(2012)157",
+      year           = "2012",
+      eprint         = "1203.3549",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2012-011",
+      SLACcitation   = "%%CITATION = ARXIV:1203.3549;%%",
+}'
+

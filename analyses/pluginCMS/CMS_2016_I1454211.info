@@ -1,0 +1,73 @@
+Name: CMS_2016_I1454211
+Year: 2016
+Summary: Boosted $t\bar{t}$ in $pp$ collisions at $\sqrt{s} = 8~\TeV$
+Experiment: CMS
+Collider: LHC
+InspireID: 1454211
+Status: VALIDATED
+Authors:
+ - Salvatore Rappoccio <rappoccio@gmail.com>
+ - Maral Alyari <maralaly@buffalo.edu>
+ - Julia Thom <thom.julia@gmail.com>
+ - Louise Skinnari <louise.skinnari@cern.ch>
+ - Susan Dittmer <Susan.Dittmer@cern.ch>
+ - Matthew Bellis <mbellis@sienna.edu>
+References:
+ - CMS-PAS-TOP-14-012 (PAS)
+ - CERN-EP-2016-078   (paper)
+RunInfo:
+  '$pp$ QCD interactions at $\sqrt{s} = 8~\TeV with $t\bar{t}$ process. Data collected by CMS
+  during the year 2012. Boosted topology restricts phase space, requiring high statistics in
+  a single run or custom merging of the YODA files.'
+Luminosity: 19.7/fb
+Beams: [p+, p+]
+Energies: [8000]
+Description:
+  'The cross section for pair production of top quarks with high transverse momenta
+  ($p_\mathrm{T} > 400$~\GeV) is measured in 19.7~fb$^{-1}$ of $\mathrm{pp}$
+  collisions, collected with the CMS detector at $\sqrt{s} = 8~\TeV$. The
+  measurement is performed for lepton+jets events, where one top quark decays
+  according to $t \rightarrow Wb \rightarrow \ell \nu b$, with $\ell$ denoting an
+  electron or muon, and the second top quark decays to an hadronic final state and
+  is reconstructed as a single large-radius jet and identified as a top quark
+  candidate using jet substructure techniques. Integrated cross sections, as well
+  as differential cross sections as a function of the top quark $p_\mathrm{T}$ and
+  rapidity, are measured both at particle level within a fiducial region
+  resembling the detector-level selections and at parton level.
+
+  RIVET:
+  This analysis is to be run on $t\bar{t}$ Monte Carlo.  It utilizes the
+  PartonicTops projection, which assumes top quarks in the event record. The
+  analysis has been validated with Powheg+Pythia6.
+
+  The parton-level phase space is defined by requiring two PartonicTops.
+  Exactly one PartonicTop must decay directly to a muon or electron (no
+  intermediate tau), and exactly one PartonicTop decays hadronically.  For
+  $t\bar{t}$ Monte Carlo, this is equivalent to requiring the event to be
+  semileptonic at parton level.  The parton-level top quark is defined as the
+  hadronically decaying top. The parton-level top quark is required to have
+  $p_\mathrm{T} > 400~\GeV$.
+
+  The particle-level phase space is defined using the following object definitions:
+  - Lepton: A dressed electron or muon, meaning the lepton has been clustered with all photons within a cone of $R=0.1$. The DressedLepton projection is used to construct the dressed lepton.  The lepton is required to have $p_\mathrm{T} > 45$~GeV and $|\eta| < 2.1$.
+  - B Jet Candidate: Gen AK5 jets are formed by clustering the final state particles in the event using the anti-$k_{T}$ algorithm with distance parameter $R=0.5$.  Neutrinos are excluded from the clustering, as are any particles included in the dressed lepton.  The gen AK5 jet is required to have $p_{T} > 30$~GeV and $|\eta| < 2.4$. Gen AK5 jets in the same hemisphere as the lepton ($\Delta R(e/\mu,~\mathrm{jet}) < \pi/2$) are defined as $b$-jet candidates.
+  - Top Jet Candidate: Gen CA8 jets are formed by clustering the final state particles in the event using the Cambridge-Aachen algorithm with distance parameter $R=0.8$. Neutrinos are excluded from the clustering, as are any particles included in the dressed lepton. The gen CA8 jet is required to have $p_{T} > 30$~GeV and $|\eta| < 2.4$. Gen CA8 jets which have $p_{T} > 400$~GeV, 140 GeV $<$ mass $<$ 250 GeV, and are in the opposite hemisphere from the lepton ($\Delta{\rm R(e/\mu,~jet)} > \pi/2$) are defined as top jet candidates.
+
+  The particle-level phase space is defined by requiring $\geq 1$ b jet
+  candidate, $\geq 1$ top jet candidate, and exactly one lepton. This is in
+  addition to the parton-level semileptonic requirement. The highest-$p_\mathrm{T}$ top
+  jet candidate is defined as the particle-level $t$ jet.'
+BibKey: Khachatryan:2016gxp
+BibTex: '@article{Khachatryan:2016gxp,
+      author         = "Khachatryan, Vardan and others",
+      title          = "{Measurement of the integrated and differential t-tbar
+                        production cross sections for high-pt top quarks in pp
+                        collisions at sqrt(s) = 8 TeV}",
+      collaboration  = "CMS",
+      year           = "2016",
+      eprint         = "1605.00116",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-TOP-14-012, CERN-EP-2016-078",
+      SLACcitation   = "%%CITATION = ARXIV:1605.00116;%%"
+}'

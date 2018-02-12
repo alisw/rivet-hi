@@ -1,0 +1,42 @@
+Name: D0_2007_S7075677
+Year: 2007
+Summary: $Z/\gamma^* + X$ cross-section shape, differential in $y(Z)$
+Experiment: D0
+Collider: Tevatron Run 2
+SpiresID: 7075677
+InspireID: 744624
+Status: VALIDATED
+Authors:
+ - Andy Buckley <andy.buckley@cern.ch>
+ - Gavin Hesketh <ghesketh@fnal.gov>
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+ - Phys.Rev.D76:012003,2007
+ - arXiv:hep-ex/0702025
+RunInfo:
+  Drell-Yan $p \bar{p} \to Z/\gamma^*$ + jets events at $\sqrt{s}$ = 1960 GeV.
+  Needs mass cut on lepton pair to avoid photon singularity, looser than  $71 < m_{ee} < 111$ GeV
+NumEvents: 1000000
+Beams: [p-, p+]
+Energies: [1960]
+PtCuts: [0]
+Description:
+  Cross sections as a function of di-electron rapidity $p \bar{p}$
+  collisions at $\sqrt{s}$ = 1.96 TeV, based on an integrated luminosity 
+  of $0.4~\text{fb}^{-1}$.
+BibKey: Abazov:2007jy
+BibTeX: '@Article{Abazov:2007jy,
+     author    = "Abazov, V. M. and others",
+ collaboration = "D0",
+     title     = "{Measurement of the shape of the boson rapidity
+                  distribution for $p \bar{p} \to Z/gamma^* \to e^{+} e^{-}$
+                  + $X$ events produced at $\sqrt{s}$ of 1.96-TeV}",
+     journal   = "Phys. Rev.",
+     volume    = "D76",
+     year      = "2007",
+     pages     = "012003",
+     eprint    = "hep-ex/0702025",
+     archivePrefix = "arXiv",
+     doi       = "10.1103/PhysRevD.76.012003",
+     SLACcitation  = "%%CITATION = HEP-EX/0702025;%%"
+}'

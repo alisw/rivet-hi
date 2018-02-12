@@ -1,0 +1,41 @@
+Name: ALEPH_1996_S3196992
+Year: 1996
+Summary: Measurement of the quark to photon fragmentation function
+Experiment: ALEPH
+Collider: LEP Run 1
+SpiresID: 3196992
+InspireID: 398193
+Status: VALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+ - Z.Phys.C69:365-378,1996
+ - doi:10.1007/s002880050037
+RunInfo:
+  $e^+e^-\to$ jets with $\pi$ and $\eta$ decays turned off.
+NumEvents: 1000000
+Beams: [e+, e-]
+Energies: [91.2]
+PtCuts: [0]
+Description:
+  Earlier measurements at LEP of isolated hard photons in hadronic Z decays,
+  attributed to radiation from primary quark pairs, have been extended in the
+  ALEPH experiment to include hard photon production inside hadron jets. Events
+  are selected where all particles combine democratically to form hadron jets,
+  one of which contains a photon with a fractional energy $z > 0.7$. After 
+  statistical subtraction of non-prompt photons, the quark-to-photon
+  fragmentation function, $D(z)$, is extracted directly from the measured 2-jet
+  rate.
+BibKey: Buskulic:1995au
+BibTeX: '@Article{Buskulic:1995au,
+     author    = "Buskulic, D. and others",
+ collaboration = "ALEPH",
+     title     = "{First measurement of the quark to photon fragmentation
+                  function}",
+     journal   = "Z. Phys.",
+     volume    = "C69",
+     year      = "1996",
+     pages     = "365-378",
+     doi       = "10.1007/s002880050037",
+     SLACcitation  = "%%CITATION = ZEPYA,C69,365;%%"
+}'

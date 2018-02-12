@@ -1,0 +1,34 @@
+Name: ATLAS_2010_S8894728
+Year: 2010
+Summary: Track-based underlying event at 900 GeV and 7 TeV in ATLAS
+Experiment: ATLAS
+Collider: LHC
+SpiresID: 8894728
+InspireID: 879407
+Status: VALIDATED
+Authors:
+ - Andy Buckley <andy.buckley@cern.ch>
+ - Holger Schulz <holger.schulz@physik.hu-berlin.de>
+References:
+ - arXiv:1012.0791
+RunInfo:
+  pp QCD interactions at 900 GeV and 7 TeV. Diffractive events should be
+  included, but only influence the lowest bins. Multiple kinematic cuts
+  should not be required.
+NumEvents: 10000000
+Beams: [p+, p+]
+Energies: [900, 7000]
+PtCuts: [0]
+Description:
+  The underlying event measurements with the ATLAS detector at the LHC
+  at the center of mass energies of 900 GeV and 7 TeV. The observables
+  sensitive to the underlying event, i.e the charged particle density
+  and charged pT sum, as well as their standard deviations and the
+  average pT, are measured as functions of the leading track. A track pT
+  cut of 500 MeV is applied for most observables, but the main profile
+  plots are also shown for a lower track cut of 100 MeV, which includes
+  much more of the soft cross-section. The angular distribution of the
+  charged tracks with respect to the leading track is also studied, as
+  are the correlation between mean transverse momentum and charged
+  particle multiplicity, and the `plateau' height as a function of the
+  leading track $|\eta|$.

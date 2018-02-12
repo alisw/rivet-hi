@@ -1,0 +1,41 @@
+Name: D0_2008_S6879055
+Year: 2008
+Summary: Measurement of the ratio $\sigma(Z/\gamma^* + n \text{ jets})/\sigma(Z/\gamma^*)$
+Experiment: D0
+Collider: Tevatron Run 2
+SpiresID: 6879055
+InspireID: 724239
+Status: VALIDATED
+Authors:
+ - Giulio Lenzi
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+ - hep-ex/0608052
+RunInfo:
+  $p \bar{p} \to e^+ e^-$ + jets at 1960~GeV.
+  Needs mass cut on lepton pair to avoid photon singularity,
+  looser than $75 < m_{ee} < 105$ GeV.
+NumEvents: 1000000
+Beams: [p-, p+]
+Energies: [1960]
+PtCuts: [0]
+Description:
+  Cross sections as a function of $\pT$ of the three leading jets and $n$-jet
+  cross section ratios in $p \bar{p}$ collisions at $\sqrt{s}$ = 1.96 TeV, based
+  on an integrated luminosity of $0.4~\text{fb}^{-1}$.
+BibKey: Abazov:2006gs
+BibTeX: '@Article{Abazov:2006gs,
+     author    = "Abazov, V. M. and others",
+     collaboration = "D0",
+     title     = "{Measurement of the ratios of the $Z/\gamma^* + \ge n$-jet
+                  production cross-sections to the total inclusive $Z/\gamma^*$
+                  cross section in $p \bar{p}$ collisions at $\sqrt{s} = 1.96$ TeV}",
+     journal   = "Phys. Lett.",
+     volume    = "B658",
+     year      = "2008",
+     pages     = "112-119",
+     eprint    = "hep-ex/0608052",
+     archivePrefix = "arXiv",
+     doi       = "10.1016/j.physletb.2007.10.046",
+     SLACcitation  = "%%CITATION = HEP-EX/0608052;%%"
+}'

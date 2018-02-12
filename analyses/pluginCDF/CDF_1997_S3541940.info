@@ -1,0 +1,36 @@
+Name: CDF_1997_S3541940
+Year: 1997
+Summary: Properties of six-jet events with large six-jet mass
+Experiment: CDF
+Collider: Tevatron Run 1
+SpiresID: 3541940
+InspireID: 442265
+Status: VALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+ - Phys.Rev.D56:2532-2543,1997
+ - doi:10.1103/PhysRevD.56.2532
+ - http://lss.fnal.gov/archive/1997/pub/Pub-97-093-E.pdf
+RunInfo:
+  Pure QCD events without underlying event.
+NumEvents: 1000000
+Beams: [p-, p+]
+Energies: [1800]
+PtCuts: [0]
+Description:
+  Multijet distributions corresponding to 20 variables that span the 6-body
+  parameter space in inclusive 6-jet events.
+BibKey: Abe:1997yb
+BibTeX: '@Article{Abe:1997yb,
+     author    = "Abe, F. and others",
+ collaboration = "CDF",
+     title     = "{Properties of six-jet events with large six-jet mass at
+                  the Fermilab $p\bar{p}$ collider}",
+     journal   = "Phys. Rev.",
+     volume    = "D56",
+     year      = "1997",
+     pages     = "2532-2543",
+     doi       = "10.1103/PhysRevD.56.2532",
+     SLACcitation  = "%%CITATION = PHRVA,D56,2532;%%"
+}'

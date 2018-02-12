@@ -1,0 +1,39 @@
+Name: ALEPH_2004_S5765862
+Year: 2004
+Summary: Jet rates and event shapes at LEP I and II
+Experiment: ALEPH
+Collider: LEP Run 1 and 2
+SpiresID: 5765862
+InspireID: 636645
+Status: VALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+ - Eur.Phys.J.C35:457-486,2004
+ - doi:10.1140/epjc/s2004-01891-4
+ - http://cdsweb.cern.ch/record/690637/files/ep-2003-084.pdf
+RunInfo:
+  $e^+ e^- \to$ jet jet (+ jets)
+NumEvents: 1000000
+Beams: [e+, e-]
+Energies: [91.2, 133, 161, 172, 183, 189, 197, 200, 206]
+PtCuts: [0]
+Description:
+  Jet rates, event-shape variables and inclusive charged particle spectra are
+  measured in $e^+ e^-$ collisions at CMS energies between 91 and 209 GeV.
+  The previously published data at 91.2 GeV and 133 GeV have been re-processed
+  and the higher energy data are presented here for the first time.
+  Note that the data have been corrected to include neutrinos.
+BibKey: Heister:2003aj
+BibTeX: '@Article{Heister:2003aj,
+     author    = "Heister, A. and others",
+ collaboration = "ALEPH",
+     title     = "{Studies of QCD at e+ e- centre-of-mass energies between
+                  91-GeV and  209-GeV}",
+     journal   = "Eur. Phys. J.",
+     volume    = "C35",
+     year      = "2004",
+     pages     = "457-486",
+     doi       = "10.1140/epjc/s2004-01891-4",
+     SLACcitation  = "%%CITATION = EPHJA,C35,457;%%"
+}'

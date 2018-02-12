@@ -1,0 +1,47 @@
+Name: CMS_2014_I1303894
+Year: 2011
+Summary: Differential cross-section of $W$ bosons + jets in $pp$ collisions at $\sqrt{s}=7$ TeV
+Experiment: CMS
+Collider: LHC
+InspireID: 1303894
+Status: VALIDATED
+Authors:
+ - Darin Baumgartel (darinb@cern.ch)
+ - Emanuela Barberis (barberis@fnal.gov)
+References:
+ - Phys. Lett. B741 (2014) 12-37
+ - https://inspirehep.net/record/1303894
+ - http://arxiv.org/abs/1406.7533
+RunInfo:
+   Run MC generators with $W$ decaying leptonically at 7 TeV CoM energy. A large number of
+    events are required to populate the high jet multiplicity region. Suitable results can
+    be achieved with 85M events.
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts:
+  Leading muon $pT > 25 GeV$ and leading muon $|eta| < 2.1$
+  Jet $pT > 30 GeV$ and $|eta| < 2.4$
+Description:
+  A study of jet production in association with $W$ bosons has been performed, in
+  events with the $W$ decaying to a muon. Jets are required to have $pT > 30$ GeV and $|eta| < 2.4$.
+  Muons are required to have $pT > 25$ and $|eta| < 2.1$. Jets are only considered if they are
+  separated from the muon by $\Delta{R} > 0.5$. Muons are dressed with photons in a cone of $0.1$
+  around the muon.
+BibKey: Khachatryan:2014uva
+BibTeX: '@article{Khachatryan:2014uva,
+      author         = "Khachatryan, Vardan and others",
+      title          = "{Differential cross section measurements for the
+                        production of a $W$ boson in association with jets in
+                        proton–proton collisions at $\sqrt{s} = 7$ TeV}",
+      collaboration  = "CMS Collaboration",
+      journal        = "Phys.Lett.",
+      volume         = "B741",
+      pages          = "12-37",
+      doi            = "10.1016/j.physletb.2014.12.003",
+      year           = "2014",
+      eprint         = "1406.7533",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-SMP-12-023, CERN-PH-EP-2014-134",
+      SLACcitation   = "%%CITATION = ARXIV:1406.7533;%%",
+}'

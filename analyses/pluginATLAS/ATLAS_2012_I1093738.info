@@ -1,0 +1,41 @@
+Name: ATLAS_2012_I1093738
+Year: 2012
+Summary: Isolated prompt photon + jet cross-section
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1093738
+Status: VALIDATED
+Authors:
+ - Giovanni Marchiori <giovanni.marchiori@cern.ch>
+References:
+ - arXiv:1203.3161 [hep-ex]
+RunInfo:
+  Inclusive photon+jet+X events at $\sqrt{s} = 7$~TeV.
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [7000]
+Description:
+  'A measurement of the production cross section for isolated photons in association with jets
+  in $pp$ collisions at $\sqrt{s} = 7$ TeV.
+  Photons with $|\eta|<1.37$ and $E_T>25$~GeV and jets with $|y|<4.4$ and $p_T>20$ GeV
+  are selected.
+  The differential cross section as a function of the photon transverse energy is measured, for
+  three leading jet rapidity configurations, separately for the cases where the photon and
+  jet rapidities have the same or the opposite sign.
+  The measurement uses 37 pb$^{-1}$ of integrated luminosity collected with the ATLAS detector.'
+NeedCrossSection: yes
+BibKey: Aad:2012cv
+BibTeX: '@article{Aad:2012cv,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of the production cross section of an
+                        isolated photon associated with jets in proton-proton
+                        collisions at $\sqrt{s} = 7$ TeV with the ATLAS detector}",
+      collaboration  = "ATLAS",
+      year           = "2012",
+      eprint         = "1203.3161",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2012-009",
+      SLACcitation   = "%%CITATION = ARXIV:1203.3161;%%",
+}'
+

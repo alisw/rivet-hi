@@ -1,0 +1,55 @@
+## These variables need to exist
+set prefix=@prefix@
+set exec_prefix=@exec_prefix@
+set datarootdir=@datarootdir@
+
+## Try to automatically work out the YODA Python path
+set YODA_PYTHONPATH="@YODA_PYTHONPATH@"
+test -n "$YODA_PYTHONPATH" || (which yoda-config > /dev/null) && set YODA_PYTHONPATH="`yoda-config --pythonpath`"
+test -n "$YODA_PYTHONPATH" || echo "yoda-config could not be found: you may need to manually set paths to libYODA and the yoda Python package" 1>&2
+
+setenv PATH "$exec_prefix/bin:@YODABINPATH@:$PATH"
+
+if ($?@LIBPATHVARNAME@) then
+setenv @LIBPATHVARNAME@ "@libdir@:@YODALIBPATH@:@HEPMCLIBPATH@:@FASTJETLIBPATH@:@GSLLIBPATH@:$@LIBPATHVARNAME@"
+else
+setenv @LIBPATHVARNAME@ "@libdir@:@YODALIBPATH@:@HEPMCLIBPATH@:@FASTJETLIBPATH@:@GSLLIBPATH@"
+endif
+
+if ($?PYTHONPATH) then
+setenv PYTHONPATH "@RIVET_PYTHONPATH@:${YODA_PYTHONPATH}:$PYTHONPATH"
+else
+setenv PYTHONPATH "@RIVET_PYTHONPATH@:$YODA_PYTHONPATH"
+endif
+
+if ($?TEXMFHOME) then
+setenv TEXMFHOME "@datadir@/Rivet/texmf:$TEXMFHOME"
+else
+setenv TEXMFHOME "@datadir@/Rivet/texmf"
+endif
+
+if ($?HOMETEXMF) then
+setenv HOMETEXMF "@datadir@/Rivet/texmf:$HOMETEXMF"
+else
+setenv HOMETEXMF "@datadir@/Rivet/texmf"
+endif
+
+if ($?TEXMFCNF) then
+setenv TEXMFCNF "@datadir@/Rivet/texmf/cnf:$TEXMFCNF"
+else
+setenv TEXMFCNF "@datadir@/Rivet/texmf/cnf:"
+endif
+
+if ($?TEXINPUTS) then
+setenv TEXINPUTS "@datadir@/Rivet/texmf/tex//:$TEXINPUTS"
+else
+setenv TEXINPUTS "@datadir@/Rivet/texmf/tex//:"
+endif
+
+if ($?LATEXINPUTS) then
+setenv LATEXINPUTS "@datadir@/Rivet/texmf/tex//:$LATEXINPUTS"
+else
+setenv LATEXINPUTS "@datadir@/Rivet/texmf/tex//:"
+endif
+
+unset YODA_PYTHONPATH

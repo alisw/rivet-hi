@@ -1,0 +1,38 @@
+Name: OPAL_1998_S3702294
+Year: 1998
+Summary: Production of $f_0(980)$, $f_2(1270)$ and $\phi(1020)$ in hadronic $Z^0$ decay 
+Experiment: OPAL
+Collider: LEP 1
+SpiresID: 3702294
+InspireID: 467092
+Status: VALIDATED
+Authors:
+ - Peter Richardson <Peter.Richardson@durham.ac.uk>
+References:
+ - Eur.Phys.J.C4:19-28,1998
+ - hep-ex/9802013
+RunInfo:
+  Hadronic Z decay events generated on the Z pole ($\sqrt{s} = 91.2$ GeV)
+NumEvents: 1000000
+Beams: [e+, e-]
+Energies: [91.2]
+PtCuts: [0]
+Description: Inclusive production of the $f_0(980)$, $f_2(1270)$ and $\phi(1020)$ 
+             resonances studied in a sample of 4.3 million hadronic $Z^0$ decays
+             from the OPAL experiment at LEP. Fragmentation functions are reported
+             for the three states. 
+BibKey: Ackerstaff:1998ue
+BibTeX: '@Article{Ackerstaff:1998ue,
+     author    = "Ackerstaff, K. and others",
+     collaboration = "OPAL",
+     title     = "{Production of f0(980), f2(1270) and Phi(1020) in hadronic
+                  Z0 decay}",
+     journal   = "Eur. Phys. J.",
+     volume    = "C4",
+     year      = "1998",
+     pages     = "19-28",
+     eprint    = "hep-ex/9802013",
+     archivePrefix = "arXiv",
+     doi       = "10.1007/s100520050183",
+     SLACcitation  = "%%CITATION = HEP-EX/9802013;%%"
+}'

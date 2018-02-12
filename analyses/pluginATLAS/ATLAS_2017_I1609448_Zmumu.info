@@ -1,0 +1,53 @@
+Name: ATLAS_2017_I1609448_Zmumu
+Year: 2017
+Summary: pTmiss+jets cross section ratios at 13 TeV
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1609448
+Status: VALIDATED
+Authors:
+ - Christian Gutschow <chris.g@cern.ch>
+References:
+ - arXiv:1707.03263 [hep-ex]
+ - submitted to EPJC
+Keywords:
+ - MET
+ - JETS
+ - Z
+ - VJETS
+ - RATIOS
+RunInfo:
+  pp -> mu+ mu- + jets at 13 TeV
+Luminosity_fb: 3.2
+Beams: [p+, p+]
+Energies: [13000]
+PtCuts: [200] 
+Description: |
+  Observables sensitive to the anomalous production of events containing hadronic jets and missing momentum in the plane transverse
+  to the proton beams at the Large Hadron Collider are presented. The observables are defined as a ratio of cross sections, for
+  events containing jets and large missing transverse momentum to events containing jets and a pair of charged leptons from the
+  decay of a $Z/\gamma^\ast$ boson. This definition minimises experimental and theoretical systematic uncertainties in the measurements.
+  This ratio is measured differentially with respect to a number of kinematic properties of the hadronic system in two phase-space
+  regions; one inclusive single-jet region and one region sensitive to vector-boson-fusion topologies. The data are found to be in
+  agreement with the Standard Model predictions and used to constrain a variety of theoretical models for dark-matter production,
+  including simplified models, effective field theory models, and invisible decays of the Higgs boson. The measurements use 
+  3.2 fb${}^{-1}$ of proton-proton collision data recorded by the ATLAS experiment at a centre-of-mass energy of 13 TeV and are 
+  fully corrected for detector effects, meaning that the data can be used to constrain new-physics models beyond those shown in 
+  this paper. The reference data file comes with the measured $R^\text{miss}$ (y01), the expected $R^\text{miss}$ in the Standard
+  Model (y02), the expected $R^\text{miss}$ numerator in the Standard Model (y03) as well as the expected $R^\text{miss}$
+  denominator in the Standard Model (y04).
+BibKey: Aaboud:2017buf
+BibTeX: '@article{Aaboud:2017buf,
+      author         = "Aaboud, Morad and others",
+      title          = "{Measurement of detector-corrected observables sensitive
+                        to the anomalous production of events with jets and large
+                        missing transverse momentum in $pp$ collisions at
+                        $\sqrt{s} = 13$ TeV using the ATLAS detector}",
+      collaboration  = "ATLAS",
+      year           = "2017",
+      eprint         = "1707.03263",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-EP-2017-116",
+      SLACcitation   = "%%CITATION = ARXIV:1707.03263;%%"
+}'

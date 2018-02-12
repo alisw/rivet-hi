@@ -1,0 +1,52 @@
+Name: ATLAS_2014_I1312627_EL
+Year: 2014
+Summary: Ratios of $V$+jets observables between $W$ and $Z$ events, electron channel
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1312627
+Status: VALIDATED
+Authors:
+ - Christian Gutschow <chris.g@cern.ch>
+References:
+ - Eur.Phys.J. C74 (2014) 3168
+ - doi:10.1140/epjc/s10052-014-3168-9
+ - arXiv:1408.6510 [hep-ex]
+RunInfo:
+  Inclusive $W$ and inclusive $Z$ in the electron channel
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [25,30]
+NeedCrossSection: True
+Description:
+  'Measurements of the ratio of the production cross sections for $W$ and $Z$ bosons in association with jets in proton–proton
+  collisions at $\sqrt{s} = 7$~TeV with the ATLAS experiment at the Large Hadron Collider. The measurement is based on the
+  entire 2011 dataset, corresponding to an integrated luminosity of 4.6fb−1. Inclusive and differential cross-section ratios
+  for massive vector bosons decaying to electrons and muons are measured in association with jets with transverse momentum
+  $p_\text{T} > 30$~GeV and jet rapidity $|y| < 4.4$. The default routine will pick up the electron decay channel of the
+  heavy bosons and compare it to the combined (muon and electron channel) data. Individual channels (for data) are available
+  as well, use ATLAS_2014_I1312627_EL and ATLAS_2014_I1312627_MU to specify the decay channel directly.
+  NB #1: The "x01" Scatter2D objects are constructed from the ratio of "x02" to "x03" Histo1D objects. If several output yoda
+         files are merged with yodamerge, the merged "x01" objects will become meaningless. New "x01" Scatter2Ds can easil be
+         constructed in a postprocessing step from the merged "x02" (nominator) and "x03" (denominator) objects.
+  NB #2: Special care ought to be taken when evaluating theoretical uncertainties due to potential cancellations/correlations
+         between numerator and denominator.'
+BibKey: Aad:2014rta
+BibTeX: '@article{Aad:2014rta,
+      author         = "Aad, Georges and others",
+      title          = "{A measurement of the ratio of the production cross
+                        sections for $W$ and $Z$ bosons in association with jets
+                        with the ATLAS detector}",
+      collaboration  = "ATLAS",
+      journal        = "Eur.Phys.J.",
+      number         = "12",
+      volume         = "C74",
+      pages          = "3168",
+      doi            = "10.1140/epjc/s10052-014-3168-9",
+      year           = "2014",
+      eprint         = "1408.6510",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2014-200",
+      SLACcitation   = "%%CITATION = ARXIV:1408.6510;%%",
+}'

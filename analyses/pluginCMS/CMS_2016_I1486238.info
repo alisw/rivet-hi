@@ -1,0 +1,52 @@
+Name: CMS_2016_I1486238
+Year: 2016
+Summary: Studies of 2 $b$-jet + 2 jet production in proton-proton collisions at 7 TeV
+Experiment: CMS
+Collider: LHC
+InspireID: 1486238
+Status: VALIDATED
+Authors:
+ - P. Gunnellini
+References:
+ - CMS-FSQ-13-010
+ - CERN-EP-2016-191
+ - arXiv:1609.03489
+ - Phys.Rev. D94 (2016) no.11, 112005
+RunInfo:
+   'Hard QCD events with \pT cut at generator level of 15 GeV. Needs 2 $b$-jets with
+   $\pT > 20$ GeV in $|\eta|$ $<$ 2.4; 2 jets with $\pT > 20$ GeV in $|\eta|$ $<$ 4.7'
+NumEvents: 20000000
+NeedCrossSection: yes
+Beams: [p+, p+]
+Energies: [7000]
+Description:
+   'Measurements are presented of the cross section for the production of at
+    least four jets, of which at least two originate from $b$ quarks, in
+    proton-proton collisions. Data collected with the CMS detector at the LHC at
+    a center-of-mass energy of 7 TeV are used, corresponding to an integrated
+    luminosity of 3 inverse picobarns. The cross section is measured as a
+    function of the jet transverse momentum for \pT 20 GeV, and of the jet
+    pseudorapidity for $|\eta|<2.4$ ($b$ jets) and 4.7 (untagged jets). The
+    correlations in azimuthal angle and \pT between the jets are also
+    studied. The $\eta$ and \pT distributions of the four jets and the correlations
+    between them are well reproduced by event generators that combine
+    perturbative QCD calculations at next-to-leading-order accuracy with
+    contributions from parton showers and multiparton interactions.'
+BibKey: Khachatryan:2016rjt
+BibTeX: '@article{Khachatryan:2016rjt,
+      author         = "Khachatryan, Vardan and others",
+      title          = "{Studies of inclusive four-jet production with two
+                        $b$-tagged jets in proton-proton collisions at 7 TeV}",
+      collaboration  = "CMS",
+      journal        = "Phys. Rev.",
+      volume         = "D94",
+      year           = "2016",
+      number         = "11",
+      pages          = "112005",
+      doi            = "10.1103/PhysRevD.94.112005",
+      eprint         = "1609.03489",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-FSQ-13-010, CERN-EP-2016-191",
+      SLACcitation   = "%%CITATION = ARXIV:1609.03489;%%"
+}'

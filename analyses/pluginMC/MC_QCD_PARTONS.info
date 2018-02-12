@@ -1,0 +1,15 @@
+Name: MC_QCD_PARTONS
+Summary: Generic parton-level Monte Carlo validation analysis for <X> + jets.
+Status: VALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+RunInfo:
+  Any <X> + jets.
+NumEvents: 1000000
+PtCuts: [0]
+Description:
+  Only partons (excluding top quarks) are taken into account to construct a
+  kt cluster sequence. Thus this analysis can be used as a generic validation
+  tool for QCD activity.
+NeedCrossSection: yes

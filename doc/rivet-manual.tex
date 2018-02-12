@@ -1,0 +1,86 @@
+\documentclass{JHEP3}
+%\JHEP{00(2007)000}
+
+\include{preamble}
+
+\title{Rivet user manual\\ {\smaller \textsc{version \RivetVersion}}}
+
+\author{Andy Buckley\\ PPE Group, School of Physics, University of Glasgow, UK.\\ E-mail: \email{andy.buckley@cern.ch}}
+\author{Jonathan Butterworth\\ HEP Group, Dept. of Physics and Astronomy, UCL, London, UK.\\ E-mail: \email{J.Butterworth@ucl.ac.uk}}
+\author{David Grellscheid\\ IPPP, Durham University, UK.\\ E-mail: \email{david.grellscheid@durham.ac.uk}}
+\author{Hendrik Hoeth\\ IPPP, Durham University, UK.\\ E-mail: \email{hendrik.hoeth@cern.ch}}
+\author{Leif L\"onnblad\\ Theoretical Physics, Lund University, Sweden.\\ E-mail: \email{lonnblad@thep.lu.se}}
+\author{James Monk\\ Experimental Particle Physics, Niels Bohr Institute, Copenhagen, Denmark.\\ E-mail: \email{jmonk@cern.ch}}
+\author{Chris Pollard\\ PPE Group, School of Physics, University of Glasgow, UK.\\ E-mail: \email{cpollard@cern.ch}}
+\author{Holger Schulz\\ IPPP, Durham University, UK.\\ E-mail: \email{holger.schulz@durham.ac.uk}}
+%% \author{Jan Eike von Seggern\\ Institut f\"ur Physik, Berlin Humboldt University, Germany.\\ E-mail: \email{vseggern@physik.hu-berlin.de}}
+\author{Frank Siegert\\ Technische Universit\"at Dresden, Germany.\\ E-mail: \email{frank.siegert@cern.ch}}
+
+
+\preprint{}
+
+\abstract{This is the manual and user guide for the Rivet system for the
+  validation and tuning of Monte Carlo event generators. As well as the core
+  Rivet library, this manual describes the usage of the \kbd{rivet} program.
+  % and the AGILe generator interface library
+  The depth and level of description is
+  chosen for users of the system, starting with the basics of using validation
+  code written by others, and then covering sufficient details to write new
+  Rivet analyses and calculational components.}
+
+\keywords{Event generator, simulation, validation, tuning, QCD}
+
+
+\begin{document}
+
+\section{Introduction}
+\label{sec:intro}
+\input{intro}
+
+\cleardoublepage
+
+\part{Getting started with Rivet}
+\label{part:gettingstarted}
+\input{gettingstarted}
+
+\cleardoublepage
+
+\part{Standard Rivet analyses}
+\label{part:analyses}
+In this section we describe the standard experimental analyses included with the
+Rivet library. To maintain synchronisation with the code, these descriptions are
+generated automatically from the metadata in the analysis objects
+themselves.
+\input{analyses}
+
+\cleardoublepage
+
+\part{How Rivet works}
+\label{part:writinganalyses}
+\input{writinganalyses}
+
+\cleardoublepage
+
+\part{Appendices}
+\appendix
+
+\section{The \kbd{agile-runmc} Fortran generator interface (deprecated)}
+\label{app:agilerunmc}
+\input{agilerunmc}
+
+
+\section{Acknowledgements}
+\label{app:acknowledgements}
+\input{acknowledgements}
+
+
+\cleardoublepage
+
+\part{Bibliography}
+\bibliographystyle{h-physrev3}
+{\raggedright
+  \bibliography{refs,analyses}
+}
+
+
+\end{document}

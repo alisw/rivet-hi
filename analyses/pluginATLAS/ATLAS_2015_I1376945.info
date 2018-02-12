@@ -1,0 +1,38 @@
+Name: ATLAS_2015_I1376945
+Year: 2015
+Summary: Colour flow in hadronic top decay at 8 TeV
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1376945
+Status: VALIDATED
+Authors:
+ - Ben Nachman <benjamin.philip.nachman@cern.ch>
+ - Christian Gutschow <chris.g@cern.ch>
+References:
+ - arXiv:1506.05629 [hep-ex]
+RunInfo:
+  ttbar production with one W decaying leptonically, the other one hadronically
+Beams: [p+, p+]
+Energies: [8000]
+PtCuts: [25,25,25]
+NeedCrossSection: False
+Description:
+  The distribution and orientation of energy inside jets is predicted to be an experimental handle on colour connections between the
+  hard-scatter quarks and gluons initiating the jets. This is a measurement of the distribution of one such variable, the jet pull angle.
+  The pull angle is measured for jets produced in $t\bar{t}$ events with one $W$ boson decaying leptonically and the other decaying to
+  jets using 20.3\,$\text{fb}^{-1}$ of data recorded with the ATLAS detector at a centre-of-mass energy of $\sqrt{s} = 8$\,TeV at the LHC.
+  The jet pull angle distribution is corrected for detector resolution and acceptance effects.
+BibKey: Aad:2015lxa
+BibTeX: '@article{Aad:2015lxa,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of colour flow with the jet pull angle in
+                        $t\bar{t}$ events using the ATLAS detector at $\sqrt{s}=8$
+                        TeV}",
+      collaboration  = "ATLAS",
+      year           = "2015",
+      eprint         = "1506.05629",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2015-128",
+      SLACcitation   = "%%CITATION = ARXIV:1506.05629;%%"
+}'

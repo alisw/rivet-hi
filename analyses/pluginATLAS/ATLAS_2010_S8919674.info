@@ -1,0 +1,43 @@
+Name: ATLAS_2010_S8919674
+Year: 2010
+Summary: $W$ + jets jet multiplicities and $\pT$
+Experiment: ATLAS
+Collider: LHC
+SpiresID: 8919674
+InspireID: 882534
+Status: VALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+ - arXiv:1012.5382 [hep-ex]
+RunInfo:
+  W+jets events ideally with matrix element corrections to describe the
+  higher jet multiplicities correctly. Both channels, electron and muon,
+  are part of this analysis and should be run simultaneously.
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [0]
+Description:
+  'Cross sections, in both the electron and muon decay modes of the W boson,
+   are presented as a function of jet multiplicity and of the transverse
+   momentum of the leading and next-to-leading jets in the event.
+   Measurements are also presented of the ratio of cross sections for inclusive
+   jet multiplicities.
+   The results, based on an integrated luminosity of 1.3 pb-1, have been
+   corrected for all known detector effects and are quoted in a limited and
+   well-defined range of jet and lepton kinematics.'
+NeedCrossSection: yes
+BibKey: Aad:2010pg
+BibTeX: '@Article{Aad:2010pg,
+     author    = "Collaboration, The ATLAS",
+     title     = "{Measurement of the production cross section for W-bosons in association with jets in $pp$ collisions at $\sqrt{s} = 7$ TeV with the ATLAS detector}",
+     year      = "2010",
+     eprint    = "1012.5382",
+     archivePrefix = "arXiv",
+     primaryClass  =  "hep-ex",
+     SLACcitation  = "%%CITATION = 1012.5382;%%"
+}'
+ToDo:
+ - Implement jet multiplicity ratio plots.
+ - Export original data file from HepForge.

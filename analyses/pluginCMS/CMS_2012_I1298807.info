@@ -1,0 +1,45 @@
+Name: CMS_2012_I1298807
+Year: 2012
+Summary: Inclusive ZZ production cross section and constraints on anomalous triple gauge couplings at 8~TeV
+Experiment: CMS
+Collider: LHC
+InspireID: 1298807
+Status: VALIDATED
+Authors:
+ - Alexander Savin
+ - Ian Ross
+References:
+ - arXiv:hep-ex/1406.0113
+NeedCrossSection: no
+Beams:  [p+, p+]
+Energies: [8000]
+RunInfo: ZZ production, leptonic Z decays
+Description:
+  'A measurement of the inclusive $ZZ$ production cross section and constraints on anomalous triple gauge
+  couplings in proton-proton collisions at $\sqrt{s} = 8 TeV$ are presented. The analysis is based on a
+  data sample, corresponding to an integrated luminosity of 19.6/fb, collected with the CMS experiment
+  at the LHC. The measurements are performed in the leptonic decay modes $ZZ \to lll^\prime l^\prime$, where $l = e,\mu$
+  and $l^\prime = e, \mu, \tau$. The measured total cross section $ \sigma (pp \to ZZ) = 7.7 \pm 0.5~(\mathrm{stat})
+  + 0.5 -0.4~(\mathrm{syst}) \pm 0.4~(\mathrm{theo}) \pm 0.2~(\mathrm{lumi})~pb$, for both $Z$ bosons
+  produced in the mass range $60 < m_Z < 120 \GeV$, is consistent with standard model predictions.
+  Differential cross sections, in phase space $p_T(\mu) > 5 \GeV$, $p_T(e) > 7 \GeV$, $|\eta(\mu)|<2.4$ ,
+  $|\eta(e)|<2.5$ and the 60--120~\GeV mass requirement, are measured and well described by the
+  theoretical predictions. The invariant mass distribution of the four-lepton system is used to set
+  limits on anomalous $ZZZ$ and $ZZ\gamma$ couplings at the 95\% confidence level, $-0.004 < f4Z < 0.004$,
+  $-0.004 < f5Z < 0.004$, $-0.005 < f4\gamma < 0.005$, and $-0.005 < f5\gamma < 0.005.$'
+BibKey: Chatrchyan:2011wt
+BibTeX: '@article{Chatrchyan:2011wt,
+      author         = "Chatrchyan, Serguei and others",
+      title          = "{Measurement of the $pp$ to $ZZ$ production cross section and constraints on anomalous triple gauge couplings in four-lepton final states at $\sqrt{s} = 8$~TeV}",
+      collaboration  = "CMS Collaboration",
+      journal        = "Phys. Lett.",
+      volume         = "B740",
+      pages          = "250",
+      doi            = "10.1016/j.physletb.2014.11.059",
+      year           = "2015",
+      eprint         = "1406.0113",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2014-080",
+      SLACcitation   = "%%CITATION = ARXIV:1406.0113;%%",
+}'

@@ -1,0 +1,41 @@
+Name: CDF_1996_S3108457
+Year: 1996
+Summary: Properties of high-mass multijet events
+Experiment: CDF
+Collider: Tevatron Run 1
+SpiresID: 3108457
+InspireID: 393345
+Status: VALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+ - Phys.Rev.Lett.75:608-612,1995
+ - doi:10.1103/PhysRevLett.75.608
+RunInfo:
+  Pure QCD events without underlying event (the paper states that UE was
+  corrected for).
+  Several runs with different kinematic cuts might be needed to fill the 
+  2,3,4,5 and 6-jet properly.
+NumEvents: 1000000
+Beams: [p-, p+]
+Energies: [1800]
+PtCuts: [20]
+Description:
+  Properties of two-, three-, four-, five-, and six-jet events...
+  Multijet-mass, leading jet angle, jet pT.
+NeedCrossSection: yes
+ToDo:
+ - This is at 1800 GeV only, or also 630 GeV?
+BibKey: Abe:1995rw
+BibTeX: '@Article{Abe:1995rw,
+     author    = "Abe, F. and others",
+ collaboration = "CDF",
+     title     = "{Properties of high mass multi - jet events at the Fermilab
+                  $p\bar{p}$ collider}",
+     journal   = "Phys. Rev. Lett.",
+     volume    = "75",
+     year      = "1995",
+     pages     = "608-612",
+     doi       = "10.1103/PhysRevLett.75.608",
+     SLACcitation  = "%%CITATION = PRLTA,75,608;%%"
+}'

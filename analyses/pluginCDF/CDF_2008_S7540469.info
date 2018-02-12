@@ -1,0 +1,42 @@
+Name: CDF_2008_S7540469
+Year: 2008
+Summary: Measurement of differential Z/$\gamma^*$ + jet + X cross sections
+Experiment: CDF
+Collider: Tevatron Run 2
+SpiresID: 7540469
+InspireID: 768451
+Status: VALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+ - Phys.Rev.Lett.100:102001,2008
+ - arXiv:0711.3717 [hep-ex]
+RunInfo:
+  $p \bar{p} \to e^+ e^-$ + jets at 1960 GeV. Needs mass cut on lepton pair to
+  avoid photon singularity, looser than $66 < m_{ee} < 116$
+NumEvents: 1000000
+Beams: [p-, p+]
+Energies: [1960]
+PtCuts: [0]
+Description:
+  Cross sections as a function of jet transverse momentum in 1 and 2 jet
+  events, and jet multiplicity in $p \bar{p}$ collisions at $\sqrt{s} = 1.96$
+  TeV, based on an integrated luminosity of $1.7~\text{fb}^{-1}$. The
+  measurements cover the rapidity region $|y_\text{jet}| < 2.1$ and
+  the transverse momentum range $\pT^\text{jet} > 30~\GeV/c$.
+NeedCrossSection: yes
+BibKey: :2007cp
+BibTeX: '@Article{:2007cp,
+     author    = "Aaltonen, T. and others",
+     collaboration = "CDF",
+     title     = "{Measurement of inclusive jet cross-sections in $Z/\gamma^* \to e^+ e^-$ + jets production in $p \bar{p}$ collisions at $\sqrt{s}$ = 1.96\;TeV}",
+     journal   = "Phys. Rev. Lett.",
+     volume    = "100",
+     year      = "2008",
+     pages     = "102001",
+     eprint    = "0711.3717",
+     archivePrefix = "arXiv",
+     primaryClass  =  "hep-ex",
+     doi       = "",
+     SLACcitation  = "%%CITATION = 0711.3717;%%"
+}'

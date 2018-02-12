@@ -1,0 +1,31 @@
+Name: CDF_2010_S8591881_QCD
+Year: 2010
+Summary: CDF Run 2 underlying event in leading jet events
+Experiment: CDF
+Collider: Tevatron Run 2
+SpiresID: 8591881
+InspireID: 849042
+Status: VALIDATED
+Authors:
+ - Hendrik Hoeth <hendrik.hoeth@cern.ch>
+References:
+ - Phys.Rev.D82:034001,2010
+RunInfo:
+  $p\bar{p}$ QCD interactions at 1960~GeV. Particles with 
+  $c \tau > {}$10 mm should be set stable. Several $p_\perp^\text{min}$ 
+  cutoffs are probably required to fill the profile histograms.
+  $p_\perp^\text{min} = {}$ 0 (min bias), 10, 20, 50, 100, 150 GeV.
+  The corresponding merging points are at $p_T = $ 0, 30, 50, 80, 
+  130, 180 GeV
+NumEvents: 1000000
+Beams: [p-, p+]
+Energies: [1960]
+PtCuts: [0, 10, 20, 50, 100, 150]
+Description:
+  Rick Field's measurement of the underlying event in leading jet
+  events. If the leading jet of the event is within $|\eta| < 2$, the
+  event is accepted and ``toward'', ``away'' and ``transverse'' regions
+  are defined in the same way as in the original (2001) CDF underlying
+  event analysis. The leading jet defines the $\phi$ direction of the
+  toward region. The transverse regions are most sensitive to the
+  underlying event.

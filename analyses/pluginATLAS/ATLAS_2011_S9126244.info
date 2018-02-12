@@ -1,0 +1,43 @@
+Name: ATLAS_2011_S9126244
+Year: 2011
+Summary: Measurement of dijet production with a veto on additional central jet activity
+Experiment: ATLAS
+Collider: LHC
+SpiresID: 9126244
+InspireID: 917526
+Status: VALIDATED
+Authors:
+ - Graham Jones <grahamj@cern.ch>
+References:
+ - arXiv:1107.1641 [hep-ex]
+RunInfo:
+  Require QCD interactions at 7TeV. A substantial number of events are required
+  to populate the large rapidity seperation region.
+NumEvents: 10000000
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [0]
+Description:
+  'A measurement of the jet activity in rapidity intervals bounded by a dijet
+  system. The fraction of events passing a veto requirement are shown as a
+  function of both the rapidity interval size and the average transverse
+  momentum of the dijet system. The average number of jets above the veto
+  threshold are also shown as a function of the same variables. There are
+  two possible selection criteria applied to data. Either the two highest
+  transverse momentum jets or the jets most forward and backward in rapidity
+  are taken to define the dijet system, where the veto threhsold is 20\;GeV.
+  Additionally for the latter selection an alternative veto transverse
+  momentum threshold which is equal to the average transverse momentum is
+  applied.
+  Jet selections are based on the anti-$k_t$ algorithm with $R=0.6$,
+  $p_\perp > 20$\;GeV and $|y_\text{jet}| < 4.4$.'
+BibTeX: '@Article{Aad:2011jz,
+     author    = "Aad, Georges and others",
+     collaboration = "ATLAS",
+     title     = "{Measurement of dijet production with a veto on additional central jet activity
+                   in $pp$ collisions at $\sqrt{s} = 7$ TeV using the ATLAS detector}",
+     year      = "2011",
+     eprint    = "1107.1641",
+     archivePrefix = "arXiv",
+     primaryClass  =  "hep-ex",
+}'

@@ -1,0 +1,11 @@
+Name: MC_ELECTRONS
+Summary: Monte Carlo validation observables for electron production
+Status: VALIDATED
+Authors:
+ - Andy Buckey <andy.buckley@cern.ch>
+NumEvents: 10000
+Description:
+  Any electrons with $p_\perp > 0.5$ GeV are found and projected onto many different observables.
+  There is currently no photon clustering on to these electrons. Multiplicities are tracked for
+  both inclusive and prompt-only particles -- maybe a MC_PROMPTELECTRONS analysis is needed?
+NeedCrossSection: yes

@@ -1,0 +1,58 @@
+Name: ATLAS_2011_I930220
+Year: 2011
+Summary: Inclusive and dijet cross-sections of $b$-jets in $pp$ collisions at $\sqrt{s} = 7$ TeV with ATLAS
+Experiment: ATLAS
+Collider: LHC
+InspireID: 930220
+Status: VALIDATED
+Authors:
+ - Stephen Paul Bieniek <stephen.paul.bieniek@cern.ch>
+References:
+ - Eur.Phys.J. C71 (2011) 1846
+ - arXiv:1109.6833 [hep-ex]
+RunInfo:
+  QCD events at 7 TeV
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [7000]
+NeedCrossSection: True
+Description:
+  'The inclusive and dijet production cross-sections have been
+   measured for jets containing $b$-hadrons ($b$-jets) in proton--proton
+   collisions at a centre-of-mass energy of $\sqrt{s} = 7$ TeV, using the
+   ATLAS detector at the LHC. The measurements use data corresponding to
+   an integrated luminosity of 34 pb$^-1$. The $b$-jets are identified using
+   either a lifetime-based method, where secondary decay vertices of
+   $b$-hadrons in jets are reconstructed using information from the
+   tracking detectors, or a muon-based method where the presence of a
+   muon is used to identify semileptonic decays of $b$-hadrons inside
+   jets. The inclusive $b$-jet cross-section is measured as a function of
+   transverse momentum in the range $20 < pT < 400$ GeV and rapidity in the
+   range $|y| < 2.1$. The $b\bar{b}$-dijet cross-section is measured as a
+   function of the dijet invariant mass in the range $110 < $m_{jj}$ < 760$\;GeV,
+   the azimuthal angle difference between the two jets and the
+   angular variable $\chi$ in two dijet mass regions. The results are
+   compared with next-to-leading-order QCD predictions. Good agreement is
+   observed between the measured cross-sections and the predictions
+   obtained using POWHEG+Pythia6. MC@NLO+Herwig shows good agreement
+   with the measured $b\bar{b}$-dijet cross-section. However, it does not
+   reproduce the measured inclusive cross-section well, particularly for
+   central $b$-jets with large transverse momenta.'
+BibKey: ATLAS:2011ac
+BibTeX: '@article{ATLAS:2011ac,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of the inclusive and dijet cross-sections of
+                        $b$-jets in $pp$ collisions at $\sqrt{s}=7$ TeV with the
+                        ATLAS detector}",
+      collaboration  = "ATLAS Collaboration",
+      journal        = "Eur.Phys.J.",
+      volume         = "C71",
+      pages          = "1846",
+      doi            = "10.1140/epjc/s10052-011-1846-4",
+      year           = "2011",
+      eprint         = "1109.6833",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2011-146",
+      SLACcitation   = "%%CITATION = ARXIV:1109.6833;%%",
+}'

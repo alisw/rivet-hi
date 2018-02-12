@@ -1,0 +1,45 @@
+Name: CDF_2005_S6080774
+Year: 2005
+Summary: Differential cross sections for prompt diphoton production
+Experiment: CDF
+Collider: Tevatron Run 2
+SpiresID: 6080774
+InspireID: 667384
+Status: VALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+ - Phys. Rev. Lett. 95, 022003
+ - doi:10.1103/PhysRevLett.95.022003
+ - arXiv:hep-ex/0412050
+RunInfo:
+  $p \bar{p} \to \gamma \gamma$ [+ jets] at 1960 GeV. The analysis uses photons
+  with pT larger then 13 GeV. To allow for shifts in the shower, the ME
+  cut on the transverse photon momentum shouldn't be too hard, e.g. 5 GeV.
+NumEvents: 1000000
+Beams: [p-, p+]
+Energies: [1960]
+PtCuts: [5]
+Description:
+  Measurement of the cross section of prompt diphoton production in $p\bar{p}$
+  collisions at $\sqrt{s} = 1.96$ TeV using a data sample of
+  207~pb$^{-1}$ as a function of the diphoton mass, the transverse
+  momentum of the diphoton system, and the azimuthal angle between the two
+  photons.
+NeedCrossSection: yes
+BibKey: Acosta:2004sn
+BibTeX: '@Article{Acosta:2004sn,
+     author    = "Acosta, Darin E. and others",
+ collaboration = "CDF",
+     title     = "{Measurement of the cross section for prompt diphoton
+                  production in $p\bar{p}$ collisions at $\sqrt{s} = 1.96$
+                  TeV}",
+     journal   = "Phys. Rev. Lett.",
+     volume    = "95",
+     year      = "2005",
+     pages     = "022003",
+     eprint    = "hep-ex/0412050",
+     archivePrefix = "arXiv",
+     doi       = "10.1103/PhysRevLett.95.022003",
+     SLACcitation  = "%%CITATION = HEP-EX/0412050;%%"
+}'

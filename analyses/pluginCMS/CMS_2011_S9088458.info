@@ -1,0 +1,40 @@
+Name: CMS_2011_S9088458
+Year: 2011
+Summary: Measurement of ratio of the 3-jet over 2-jet cross section in $pp$ collisions at $\sqrt{s} = 7$ TeV
+Experiment: CMS
+Collider: LHC
+SpiresID: 9088458
+InspireID: 912560
+Status: VALIDATED
+Authors:
+ - Tomo Umer <tomo.umer@cern.ch>
+References:
+ - Phys. Lett. B 702 (2011) 336
+RunInfo:
+   Inclusive QCD at 7 TeV. $\hat{\pT}$ (or equivalent) greater than 30 GeV
+NumEvents: 100k
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts:
+  jet PT higher than 50 GeV
+Description:
+  A measurement of the ratio of the inclusive 3-jet to 2-jet cross sections as a function of the total jet
+  transverse momentum, $H_T$, in the range $0.2 < H_T < 2.5$ TeV is presented. The data have been collected
+  at a proton--proton centre-of-mass energy of 7\;TeV with the CMS detector at the LHC, and correspond
+  to an integrated luminosity of 36/pb.
+  Jets are anti-$k_t$ with $R = 0.5$, $p_\perp > 50\;\GeV$ and $|\eta| < 2.5$.
+BibKey: Chatrchyan:2011wn
+BibTeX: '@article{Chatrchyan:2011wn,
+      author         = "Chatrchyan, Serguei and others",
+      title          = "{Measurement of the ratio of the 3-jet to 2-jet cross sections in $pp$ collisions at $\sqrt{s} = 7$ TeV}",
+      collaboration  = "CMS Collaboration",
+      journal        = "Phys.Lett.",
+      volume         = "B702",
+      pages          = "336-354",
+      year           = "2011",
+      eprint         = "1106.0647",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",}'
+
+
+

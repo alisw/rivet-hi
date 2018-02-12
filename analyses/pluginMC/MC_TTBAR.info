@@ -1,0 +1,15 @@
+Name: MC_TTBAR
+Summary: MC analysis for ttbar studies
+Status: VALIDATED
+Authors:
+ - Hendrik Hoeth <hendrik.hoeth@cern.ch>
+ - Andy Buckley <andy.buckley@cern.ch>
+ - Dave Mallows
+ - Michal Kawalec
+RunInfo:
+ "* For Pythia6, set MSEL=6 and fix $W^+$ and $W^-$ decays to semi-leptonic modes via the MDME array.
+  * For Fortran Herwig/Jimmy select IPROC=1706."
+NumEvents: 10000
+PtCuts: [0]
+Description:
+  This is a pure Monte Carlo study for semi-leptonic $t\bar{t}$ production.

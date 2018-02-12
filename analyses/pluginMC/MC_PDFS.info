@@ -1,0 +1,11 @@
+Name: MC_PDFS
+Summary: Analysis to study PDF sampling in any MC run
+Status: VALIDATED
+Authors:
+ - Andy Buckley <andy.buckley@cern.ch>
+NumEvents: 10000
+RunInfo: Any!
+Description:
+  Plotting of PDF sampling info, such as the $Q^2$ and both $x$ values of the
+  sampling (aggregated and distinguished as max/min, and some correlations with
+  event properties.

@@ -1,0 +1,46 @@
+Name: CMS_2011_S8941262
+Year: 2011
+Summary: Production cross-sections of muons from $b$ hadron decays in $pp$ collisions
+Experiment: CMS
+Collider: LHC
+SpiresID: 8941262
+InspireID: 884811
+Status: VALIDATED
+Authors:
+ - Wolfram Erdmann <wolfram.erdmann@psi.ch>
+References:
+ - JHEP 1103,090
+ - doi:10.1007/JHEP03(2011)090
+ - arXiv:hep-ex/1101.3512
+RunInfo:
+   Inclusive QCD at 7 TeV, with no pT cuts.
+NumEvents: 10000000
+Beams: [p+, p+]
+Energies: [7000]
+NeedsCrossSection: true
+Description:
+  'A measurement of the $b$-hadron production cross-section in proton-proton
+  collisions at $\sqrt{s} = 7$~TeV. The dataset, corresponding to 85
+  inverse nanobarns, was recorded with the CMS experiment at the LHC using a
+  low-threshold single-muon trigger. Events are selected by the presence of a
+  muon with transverse momentum greater than 6 GeV with respect to the beam
+  direction and pseudorapidity less than 2.1. The transverse momentum of the
+  muon with respect to the closest jet discriminates events containing $b$ hadrons
+  from background. The inclusive $b$-hadron production cross section is presented
+  as a function of muon transverse momentum and pseudorapidity.'
+BibKey: Khachatryan:2011hf
+BibTeX: '@Article{Khachatryan:2011hf,
+     author    = "Khachatryan, Vardan and others",
+     collaboration = "CMS",
+     title     = "{Inclusive $b$-hadron production cross-section with muons in
+                  $pp$ collisions at $\sqrt{s} = 7$~TeV}",
+     journal   = "JHEP",
+     volume    = "03",
+     year      = "2011",
+     pages     = "090",
+     eprint    = "1101.3512",
+     archivePrefix = "arXiv",
+     primaryClass  =  "hep-ex",
+     doi       = "10.1007/JHEP03(2011)090",
+     SLACcitation  = "%%CITATION = 1101.3512;%%"
+}'

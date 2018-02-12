@@ -1,0 +1,57 @@
+Name: CMS_2012_I1102908
+Year: 2012
+Summary: Measurement of inclusive and exclusive dijet production
+   ratio at large rapidity intervals at center-of-mass energy 7 TeV.
+Experiment: CMS
+Collider: LHC
+NeedCrossSection: no
+InspireID: 1102908
+Status: VALIDATED
+Authors:
+ - Grzegorz Brona
+ - Vladimir Gavrilov
+ - Hannes Jung
+ - Victor Kim
+ - Victor Murzin
+ - Vadim Oreshkin
+ - Grigory Pivovarov
+ - Ivan Pozdnyakov
+ - Grigory Safronov
+References:
+ - CMS-FWD-10-014
+ - CERN-PH-EP-2012-088
+ - arXiv:1204.0696 [hep-ex]
+ - Submitted to the EPJ C
+RunInfo:
+   Inclusive QCD at 7TeV comEnergy, ptHat (or equivalent) greater than 15 GeV
+NumEvents: 500M with ptHat > 15
+Beams: [p+, p+]
+Energies: [[3500, 3500]]
+PtCuts: [15]
+Description:
+   This is a measurement of the ratio of inclusive to exclusive
+   dijet production as a function of the absolute distance in
+   rapidity, $\Delta y$, between jets. The ratio of the
+   Mueller-Navelet to exclusive dijet production is also
+   measured.  These measurements were performed with the CMS
+   detector in proton-proton collisions at $\sqrt{s} = 7$ TeV for
+   jets with $p_T > 35$ GeV and $|y| < 4.7$ taken from a mixture
+   of two data samples, one of which containing dijets with
+   moderate rapidity separation and the other containing dijets
+   with large rapidity separation, with integrated luminosity of
+   33/nb and 5/pb respectively. The measured observables are
+   corrected for detector effects.
+BibKey: Chatrchyan:2012pb
+BibTeX: '@article{Chatrchyan:2012pb,
+      author         = "Chatrchyan, Serguei and others",
+      title          = "{Ratios of dijet production cross sections as a function
+                        of the absolute difference in rapidity between jets in
+                        proton--proton collisions at $\sqrt{s} = 7$ TeV}",
+      collaboration  = "CMS Collaboration",
+      year           = "2012",
+      eprint         = "1204.0696",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-FWD-10-014, CERN-PH-EP-2012-088",
+      SLACcitation   = "%%CITATION = ARXIV:1204.0696;%%",}'
+

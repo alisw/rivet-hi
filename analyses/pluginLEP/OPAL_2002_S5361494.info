@@ -1,0 +1,40 @@
+Name: OPAL_2002_S5361494
+Year: 2002
+Summary: Charged particle multiplicities in heavy and light quark initiated events above the $Z^0$ peak 
+Experiment: OPAL
+Collider: LEP 2
+SpiresID: 5361494
+InspireID: 601225
+Status: VALIDATED
+Authors:
+ - Peter Richardson <Peter.Richardson@durham.ac.uk>
+References:
+ - Phys.Lett. B550 (2002) 33-46
+ - hep-ex/0211007
+RunInfo:
+  Hadronic Z decay events generated on the Z pole ($\sqrt{s} = 91.2$ GeV)
+NumEvents: 1000000
+Beams: [e+, e-]
+Energies: [130,136,161,172,183,189,192,196,200,202,206]
+PtCuts: [0]
+Description: Measurements of the mean charged multiplicities separately for $b\bar b$,
+  $c\bar c$ and light quark ($uds$) initiated events in $e^+e^-$ interactions at energies
+  above the $Z^0$ mass. The data is from the LEP running periods between 1995 and 2000.
+BibKey: Abbiendi:2002vn
+BibTeX: '@article{Abbiendi:2002vn,
+      author         = "Abbiendi, G. and others",
+      title          = "{Charged particle multiplicities in heavy and light quark
+                        initiated events above the Z0 peak}",
+      collaboration  = "OPAL Collaboration",
+      journal        = "Phys.Lett.",
+      volume         = "B550",
+      pages          = "33-46",
+      doi            = "10.1016/S0370-2693(02)02935-0",
+      year           = "2002",
+      note           = "18 pages, 5 figures Report-no: CERN-EP-2002-0079",
+      eprint         = "hep-ex/0211007",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-EP-2002-079",
+      SLACcitation   = "%%CITATION = HEP-EX/0211007;%%",
+}'

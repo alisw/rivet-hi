@@ -1,0 +1,41 @@
+Name: ALICE_2010_S8706239
+Year: 2010
+Summary: Charged particle $\langle p_\perp \rangle$ vs. $N_\text{ch}$ in $pp$ collisions at 900 GeV
+Experiment: ALICE
+Collider: LHC
+SpiresID: 8706239
+InspireID: 860416
+Status: VALIDATED
+Authors:
+ - Holger Schulz <holger.schulz@physik.hu-berlin.de>
+ - Jan Fiete Grosse-Oetringhaus@cern.ch <Jan.Fiete.Grosse-Oetringhaus@cern.ch>
+References:
+ - Phys.Lett.B693:53-68,2010
+ - arXiv:1007.0719 [hep-ex]
+RunInfo:
+  Diffractive events need to be switched on
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [900]
+PtCuts:
+Description:
+  'ALICE measurement of $\langle p_\perp \rangle$ vs. $N_\text{ch}$ and
+  invariant particle yield (as function of $p_\perp$) in proton-proton
+  collisions at $\sqrt{s} = 900\;\GeV$.'
+BibKey: Aamodt:2010my
+BibTeX: '@Article{Aamodt:2010my,
+     author    = "Aamodt, K and others",
+ collaboration = "ALICE",
+     title     = "{Transverse momentum spectra of charged particles in
+                  proton-proton collisions at $\sqrt{s} = 900$~GeV with ALICE
+                  at the LHC}",
+     journal   = "Phys. Lett.",
+     volume    = "B693",
+     year      = "2010",
+     pages     = "53-68",
+     eprint    = "1007.0719",
+     archivePrefix = "arXiv",
+     primaryClass  =  "hep-ex",
+     doi       = "10.1016/j.physletb.2010.08.026",
+     SLACcitation  = "%%CITATION = 1007.0719;%%"
+}'

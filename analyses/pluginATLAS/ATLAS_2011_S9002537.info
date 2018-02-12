@@ -1,0 +1,24 @@
+Name: ATLAS_2011_S9002537
+Year: 2011
+Summary: Muon charge asymmetry in W events at 7 TeV in ATLAS
+Experiment: ATLAS
+Collider: LHC
+SpiresID: 9002537
+InspireID: 892704
+Status: VALIDATED
+Authors:
+ - Frank Krauss <frank.krauss@durham.ac.uk>
+ - Hendrik Hoeth <hendrik.hoeth@cern.ch>
+References:
+ - arXiv:1103.2929
+RunInfo:
+  $W \to \mu\nu$ events at 7 TeV
+NumEvents: 10000000
+Beams: [p+, p+]
+Energies: [7000]
+Description:
+  Measurement of the muon charge asymmetry from W bosons produced in
+  proton-proton collisions at a centre-of-mass energy of 7 TeV with ATLAS.
+  The asymmetry is measured in the $W \to \mu$ decay mode as a function
+  of the muon pseudorapidity using a data sample corresponding to a total
+  integrated luminosity of 31 pb$^{-1}$.

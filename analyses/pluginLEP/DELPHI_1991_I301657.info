@@ -1,0 +1,35 @@
+Name: DELPHI_1991_I301657
+Year: 1991
+Summary:  Hadronic Z decay charged multiplicity measurement
+Experiment: DELPHI
+Collider: LEP 1
+InspireID: 301657
+Status: VALIDATED
+Authors:
+ - Peter Richardson <peter.richardson@durham.ac.uk>
+References:
+- Z.Phys. C50 (1991) 185-194
+RunInfo: 
+  Hadronic Z decay events generated on the Z pole ($\sqrt{s} = 91.2$ GeV)
+NumEvents: 1000000
+Beams: [e+, e-]
+Energies: [91.2]
+PtCuts: [0]
+Description:
+  The charged particle multiplicity distribution of hadronic Z decays,
+  as measured on the peak of the Z resonance using the DELPHI detector at
+  LEP.
+BibKey: Abreu:1990cc
+BibTeX: '@article{Abreu:1990cc,
+      author         = "Abreu, P. and others",
+      title          = "{Charged particle multiplicity distributions in Z0
+                        hadronic decays}",
+      collaboration  = "DELPHI",
+      journal        = "Z. Phys.",
+      volume         = "C50",
+      year           = "1991",
+      pages          = "185-194",
+      doi            = "10.1007/BF01474073",
+      reportNumber   = "CERN-PPE-90-173",
+      SLACcitation   = "%%CITATION = ZEPYA,C50,185;%%"
+}'

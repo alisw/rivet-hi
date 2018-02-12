@@ -1,0 +1,36 @@
+Name: TASSO_1990_S2148048
+Year: 1990
+Summary: Event shapes in $e^+ e^-$ annihilation at 14--44\;GeV
+Experiment: TASSO
+Collider: PETRA
+SpiresID: 2148048
+InspireID: 294755
+Status: VALIDATED
+Authors:
+ - Holger Schulz <holger.schulz@physik.hu-berlin.de>
+References:
+ - Z.Phys.C47:187-198,1990
+ - DESY-90-013
+RunInfo: '$e^+ e^- \to \text{jet jet}$ (+ jets). Kinematic cuts such as
+          CKIN(1) in Pythia need to be set slightly below the CMS energy.'
+NumEvents: 100000
+Beams: [e-, e+]
+Energies: [14.03, 21.99, 35, 43.7]
+PtCuts:
+Description:
+  'Event shapes Thrust, Sphericity, Aplanarity at four different energies'
+BibKey: Braunschweig:1990yd
+BibTeX: '@Article{Braunschweig:1990yd,
+     author    = "Braunschweig, W. and others",
+     collaboration = "TASSO",
+     title     = "{Global jet properties at 14\;GeV to 44\;GeV center-of-mass energy in $e^+e^-$ annihilation}",
+     journal   = "Z. Phys.",
+     volume    = "C47",
+     year      = "1990",
+     pages     = "187-198",
+     doi       = "10.1007/BF01552339",
+     SLACcitation  = "%%CITATION = ZEPYA,C47,187;%%"
+}'
+ToDo:
+ - Add the missing distributions
+ - Add missing Trigger conditions, move to Trigger Projection

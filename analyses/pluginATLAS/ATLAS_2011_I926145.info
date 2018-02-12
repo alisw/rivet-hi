@@ -1,0 +1,38 @@
+Name: ATLAS_2011_I926145
+Year: 2011
+Summary: Measurement of electron and muon differential cross-section from heavy-flavour decays
+Experiment: ATLAS
+Collider: LHC
+InspireID: 9185208
+Status: VALIDATED
+Authors:
+ - Paul Bell <paul.bell@cern.ch>
+ - Holger Schulz <holger.schulz@physik.hu-berlin.de>
+References:
+ - CERN-PH-EP-2011-108
+ - arXiv:1109.0525 [hep-ex]
+RunInfo:
+  $pp$ to electron $+ X$ or muon $+ X$ at 7 TeV, heavy-flavour ($bb$ and $cc$) production with $B/D \to e/\mu$
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts:
+Description:
+  'Measurement of inclusive electron and muon cross sections for
+  $7 < \pT <26$~GeV in  $|\eta| <2.0$, excluding $1.37<|\eta|<1.52$,
+  and muon cross section for $4 < \pT < 100$~GeV in  $|\eta| <2.50$.
+  The $W/Z/\gamma^*$ component must be subtracted to leave the heavy flavour
+  contribution.'
+NeedCrossSection: yes
+BibKey: Aad:2011rr
+BibTeX: '@article{Aad:2011rr,
+      author         = "Aad, Georges and others",
+      title          = "{Measurements of the electron and muon inclusive cross-sections in proton-proton collisions at $\sqrt{s} = 7$ TeV with the ATLAS detector}",
+      collaboration  = "ATLAS Collaboration",
+      year           = "2011",
+      eprint         = "1109.0525",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2011-108",
+      SLACcitation   = "%%CITATION = ARXIV:1109.0525;%%",
+}'

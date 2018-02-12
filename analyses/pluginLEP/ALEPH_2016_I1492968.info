@@ -1,0 +1,29 @@
+Name: ALEPH_2016_I1492968
+Year: 2016
+Summary: Dimuon invariant mass in OS and SS channel.
+Experiment: ALEPH
+Collider: LEP
+InspireID: 1492968
+Status: UNVALIDATED
+Authors:
+ - Arno Heister <Arno.Heister@cern.ch>
+RunInfo: Z to bbar events, 1M events when running Z to bbar inclusively.
+NeedCrossSection: no
+Beams: [e+, e-]
+Energies: [91.2]
+Description:
+  'Measurement of the dimuon invariant mass (OS and SS) and related quantities in Z to bbar events with ALEPH archived data.'
+BibKey: Heister:2016stz
+BibTeX: '@article{Heister:2016stz,
+      author         = "Heister, Arno",
+      title          = "{Observation of an excess at 30 GeV in the opposite sign
+                        di-muon spectra of ${\rm Z} \to b\overline{ b} + {\rm X}$
+                        events recorded by the ALEPH experiment at LEP}",
+      year           = "2016",
+      eprint         = "1610.06536",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      SLACcitation   = "%%CITATION = ARXIV:1610.06536;%%"
+}'
+ToDo:
+ - Check normalisation

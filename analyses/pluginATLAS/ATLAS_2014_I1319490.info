@@ -1,0 +1,48 @@
+Name: ATLAS_2014_I1319490
+Year: 2014
+Summary: W + jets
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1319490
+Status: VALIDATED
+Authors:
+ - Matthew Mondragon <matthew.craig.mondragon@cern.ch>
+References:
+ - Eur.Phys.J. C75 (2015) 82
+ - doi:10.1140/epjc/s10052-015-3262-7
+ - arXiv:1409.8639 [hep-ex]
+RunInfo:
+  inclusive W production in the electron channel
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [25,30]
+NeedCrossSection: True
+Description:
+  Measurements of cross sections for the production of a $W$ boson in association with jets in proton–proton collisions at
+  $\sqrt{s} = 7$~TeV with the ATLAS experiment at the Large Hadron Collider. With an integrated luminosity of 4.6~$\text{fb}^{−1}$,
+  this data set allows for an exploration of a large kinematic range, including jet production up to a transverse momentum of 1~TeV 
+  and multiplicities up to seven associated jets. The production cross sections for W bosons are measured in both the electron and 
+  muon decay channels. Differential cross sections for many observables are also presented including measurements of the jet 
+  observables such as the rapidities and the transverse momenta as well as measurements of event observables such as the scalar sums 
+  of the transverse momenta  of the jets. The default routine will pick up the electron decay channel of the $W$ boson and compare it
+  to the combined (muon and electron channel) data. Individual channels (for data) are available as well, use ATLAS_2014_I1312627_EL 
+  and ATLAS_2014_I1312627_MU to specify the decay channel directly.
+BibKey: Aad:2014qxa
+BibTeX: '@article{Aad:2014qxa,
+      author         = "Aad, Georges and others",
+      title          = "{Measurements of the W production cross sections in
+                        association with jets with the ATLAS detector}",
+      collaboration  = "ATLAS",
+      journal        = "Eur.Phys.J.",
+      number         = "2",
+      volume         = "C75",
+      pages          = "82",
+      doi            = "10.1140/epjc/s10052-015-3262-7",
+      year           = "2015",
+      eprint         = "1409.8639",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2014-199",
+      SLACcitation   = "%%CITATION = ARXIV:1409.8639;%%",
+}'

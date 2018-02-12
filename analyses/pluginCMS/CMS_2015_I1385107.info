@@ -1,0 +1,43 @@
+Name: CMS_2015_I1385107
+Year: 2015
+Summary: Underlying event measurement with leading jets at $\sqrt{s} = 2.76$~\TeV
+Experiment: CMS
+Collider: LHC
+InspireID: 1385107
+Status: VALIDATED
+Authors:
+ - Wei Yang Wang <wei.yang.wang@cern.ch>
+ - Xavier Janssen <xavier.janssen@cern.ch>
+RunInfo:
+  Requires inclusive inelastic events (non-diffractive and inelastic
+  diffractive). The profile plots require large statistics.
+NumEvents: 1000000
+NeedCrossSection: no
+Beams: [p+, p+]
+Energies: 2760
+PtCuts: 'Charged particles leading jet: $p_T > 1.0$~\GeV, $|\eta| < 2.0$.
+         Charged particles:             $p_T > 0.5$~\GeV, $|\eta| < 2.0$'
+Description:
+  'A measurement of the underlying event (UE) activity in proton-proton collisions
+   is performed using events with charged-particle jets produced in the central pseudorapidity
+   region ($|\eta|^\text{jet} < 2$)  and with transverse momentum $1 \leq p_T^\text{jet} < 100$~\GeV.
+   The analysis uses a data sample collected at a centre-of-mass energy of 2.76~\TeV with the CMS experiment at the LHC.
+   The UE activity is measured as a function of $p_T^\text{jet}$ in terms of the average multiplicity and
+   scalar sum of transverse momenta of charged particles, with $|\eta| < 2$ and $p_T > 0.5$~\GeV,
+   in the azimuthal region transverse to the highest-$p_T$ jet direction.
+   By further dividing the transverse region into two regions of smaller and larger activity,
+   various components of the UE activity are separated.'
+BibKey: Khachatryan:2015jza
+BibTeX: '@article{Khachatryan:2015jza,
+      author         = "Khachatryan, Vardan and others",
+      title          = "{Measurement of the underlying event activity using
+                        charged-particle jets in proton--proton collisions at
+                        $\sqrt{s} = 2.76$~TeV}",
+      collaboration  = "CMS",
+      year           = "2015",
+      eprint         = "1507.07229",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-FSQ-12-025, CERN-PH-EP-2015-176",
+      SLACcitation   = "%%CITATION = ARXIV:1507.07229;%%"
+}'

@@ -1,0 +1,37 @@
+Name: CMS_2012_I1193338
+Year: 2012
+Summary: Measurement of the inelastic proton-proton cross section at $\sqrt{s} = 7$ TeV
+Experiment: CMS
+Collider: LHC
+SpireID:
+InspireID: 1193338
+Status: VALIDATED
+Authors:
+ - Sercan Sen <ssen@cern.ch>
+References:
+ - arXiv:1210.6718 [hep-ex]
+RunInfo:
+   Inelastic events (non-diffractive and inelastic diffractive).
+NumEvents: 100000
+NeedCrossSection: no
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [0]
+Description:
+   'The inelastic cross-section is measured through two independent methods
+    based on information from (i) forward calorimetry (for pseudorapidity
+    $3 < |\eta| < 5$), in collisions where at least one proton loses more than
+    $\xi > 5 \cdot 10^{-6}$ of its longitudinal momentum, and (ii) the central
+    tracker ($|\eta| < 2.4$), in collisions containing an interaction vertex
+    with more than 1, 2, or 3 tracks with $p_\perp > 200\;\MeV/c$.'
+BibKey: :2012
+BibTeX: '@article{:2012,
+      author         = "Chatrchyan, Serguei and others",
+      title          = "{Measurement of the inelastic proton-proton cross section at $\sqrt{s} = 7$ TeV}",
+      collaboration  = " CMS Collaboration",
+      year           = "2012",
+      eprint         = "1210.6718",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-FWD-11-001, CERN-PH-EP-2012-293",
+      SLACcitation   = "%%CITATION = ARXIV:1210.6718;%%",}'

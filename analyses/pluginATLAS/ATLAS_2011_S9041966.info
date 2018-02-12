@@ -1,0 +1,22 @@
+Name: ATLAS_2011_S9041966
+Year: 2011
+Summary: 1-lepton and 2-lepton search for first or second generation leptoquarks
+Experiment: ATLAS
+Collider: LHC
+SpiresID: 9041966
+InspireID: 897002
+Status: OBSOLETE
+Authors:
+ - Angela Chen <aqchen@fas.harvard.edu>
+References:
+ - arXiv:1104.4481
+RunInfo:
+  BSM signal events at 7000 GeV.
+NumEvents: 25000 for BSM signals
+Beams: [p+, p+]
+Energies: [7000]
+Description:
+  'Single and dilepton search for first and second generation scalar leptoquarks by ATLAS at 7 TeV.
+  Event counts in four signal regions (single lepton and dilepton for first and second generation) are implemented as one-bin histograms.
+  Histograms for event transverse energy are implemented for dilepton signal regions and histograms for leptoquark mass are implemented for single lepton signal regions.
+  Histograms for observables in six control regions are implemented.'

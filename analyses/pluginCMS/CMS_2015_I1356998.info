@@ -1,0 +1,50 @@
+Name: CMS_2015_I1356998
+Year: 2015
+Summary: Measurement of diffraction dissociation cross sections in pp collisions at sqrt(s)=7 TeV
+Experiment: CMS
+Collider: LHC
+SpireID:
+InspireID: 1356998
+Status: VALIDATED
+Authors:
+ - Sercan Sen <Sercan.Sen@cern.ch>
+ - Robert Ciesielski <Robert.Ciesielski@cern.ch>
+ - J. L. Cuspinera Contreras
+ - Yavuz Zengindemir <y.zengindemir@hacettepe.edu.tr>
+References:
+ - CMS-FSQ-12-005
+ - CERN-PH-EP-2015-062
+ - ARXIV:1503.08689 [hep-ex]
+RunInfo:
+   Inelastic events (non-diffractive and inelastic diffractive).
+NumEvents: 2M
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts:
+Description:
+    'Measurements of diffractive dissociation cross sections in pp collisions at $\sqrt{s}=7$~TeV are presented 
+    in kinematic regions defined by the masses $M_{\mathrm{X}}$ and $M_{\mathrm{Y}}$ of the two final-state hadronic 
+    systems separated by the largest rapidity gap in the event. Differential cross sections are measured as a function 
+    of $\xi_{\mathrm{X}}= M^2_{\mathrm{X}}/s$ in the region $-5.5<\log_{10}\xi_{\mathrm{X}}<-2.5$, for $\log_{10}M_{\mathrm{Y}}<0.5$, 
+    dominated by single dissociation (SD), and $0.5<\log_{10}M_{\mathrm{Y}}<1.1$, dominated by double dissociation (DD), 
+    where $M_{\mathrm{X}}$ and $M_{\mathrm{Y}}$ are given in GeV. The inclusive pp cross section is also measured as a function 
+    of the width of the central pseudorapidity gap $\Delta\eta$ for $\Delta\eta>3$, $\log_{10}M_{\mathrm{X}}>1.1$, 
+    and $\log_{10}M_{\mathrm{Y}}>1.1$, a region dominated by DD. The cross sections integrated over these regions are 
+    used to extract the total SD and DD cross sections. In addition, the inclusive differential cross section, 
+    $\mathrm{d}\sigma / \mathrm{d}\Delta\eta^\mathrm{F}$, for events with a pseudorapidity gap adjacent to the edge of 
+    the detector, is measured over $\Delta\eta^\mathrm{F}$ = 8.4 units of pseudorapidity. The results are compared to 
+    those of other experiments and to theoretical predictions, and found compatible with slowly-rising diffractive cross 
+    sections as a function of center-of-mass energy.'
+BibKey: Khachatryan:2015gka
+BibTeX: '@article{Khachatryan:2015gka,
+      author         = "Khachatryan, Vardan and others",
+      title          = "{Measurement of diffraction dissociation cross sections
+                        in pp collisions at sqrt(s)=7 TeV}",
+      collaboration  = "CMS",
+      year           = "2015",
+      eprint         = "1503.08689",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-FSQ-12-005, CERN-PH-EP-2015-062",
+      SLACcitation   = "%%CITATION = ARXIV:1503.08689;%%",
+}'

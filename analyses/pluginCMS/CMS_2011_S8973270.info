@@ -1,0 +1,43 @@
+Name: CMS_2011_S8973270
+Year: 2011
+Summary: '$B/\bar{B}$ angular correlations based on secondary vertex reconstruction in $pp$ collisions'
+Experiment: CMS
+Collider: LHC
+SpiresID: 8973270
+InspireID: 889807
+Status: VALIDATED
+Authors:
+ - Lukas Wehrli <wehrlilu@cern.ch>
+References:
+ - JHEP 1103 136
+ - doi:10.1007/JHEP03(2011)136
+ - arXiv:1102.3194
+RunInfo:
+   Inclusive QCD at 7 TeV. A $\hat{\pT}$ cut (or similar) is recommended since
+   a leading jet $\pT > 56$ GeV is required.
+NumEvents: 100000
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [56, 84, 120]
+NeedsCrossSection: true
+Description: 'The differential $B\bar{B}$ cross-section is measured as a function of the opening angle $\Delta{R}$ and $\Delta\phi$
+   using data collected with the CMS detector during 2010 and corresponding to an integrated luminosity of 3.1 pb$^{-1}$.
+   The measurement is performed for three different event energy scales, characterized by the transverse momentum of the
+   leading jet in the event (above 56 GeV, above 84 GeV and above 120 GeV). Simulated events are normalised in the region
+   $\Delta{R} > 2.4$ and $\Delta\phi > 3/4\pi$ respectively.'
+BibKey: Khachatryan:2011wq
+BibTeX: '@Article{Khachatryan:2011wq,
+     author    = "Khachatryan, Vardan and others",
+     collaboration = "CMS",
+     title     = "{Measurement of $B \bar{B}$ angular correlations based on
+                  secondary vertex reconstruction at $\sqrt{s} = 7$~TeV}",
+     journal   = "JHEP",
+     volume    = "03",
+     year      = "2011",
+     pages     = "136",
+     eprint    = "1102.3194",
+     archivePrefix = "arXiv",
+     primaryClass  =  "hep-ex",
+     doi       = "10.1007/JHEP03(2011)136",
+     SLACcitation  = "%%CITATION = 1102.3194;%%"
+}'

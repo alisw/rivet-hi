@@ -1,0 +1,31 @@
+Name: D0_1995_I398175
+Year: 1995
+Summary: Transverse energy distributions within jets in $p\bar{p}$ collisions at 1800 GeV
+Experiment: D0
+Collider: Tevatron
+InspireID: 398175
+Status: VALIDATED
+Authors:
+ - Simone Amoroso <amoroso@cern.ch>
+References:
+ - Phys.Lett. B357 (1995) 500-508
+ - doi:10.1016/0370-2693(95)00889-S
+RunInfo: proton-antiproton collisions at a c.o.m. energy of 1.8 TeV
+Beams: [p-, p+] 
+Energies: [1800]
+Description: D0 measurement of the jet shape as a function of jet transverse energy in both the central ($|\eta|<0.2$)
+  and forward ($2.5<|\eta|<3.5$) rapidity regions.
+BibKey: Abachi:1995zw
+BibTeX: '@article{Abachi:1995zw,
+      author         = "Abachi, S. and others",
+      title          = "{Transverse energy distributions within jets in
+                        $p\bar{p}$ collisions at $\sqrt{s} = 1.8$ TeV}",
+      collaboration  = "D0",
+      journal        = "Phys. Lett.",
+      volume         = "B357",
+      year           = "1995",
+      pages          = "500-508",
+      doi            = "10.1016/0370-2693(95)00889-S",
+      reportNumber   = "FERMILAB-PUB-95-203-E",
+      SLACcitation   = "%%CITATION = PHLTA,B357,500;%%"
+}'

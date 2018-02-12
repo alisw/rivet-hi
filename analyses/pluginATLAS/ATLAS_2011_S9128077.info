@@ -1,0 +1,39 @@
+Name: ATLAS_2011_S9128077
+Year: 2011
+Summary: Measurement of multi-jet cross sections
+Experiment: ATLAS
+Collider: LHC
+InspireID: 917599
+SpiresID: 9128077
+InspireID: 917599
+Status: VALIDATED
+Authors:
+ - Frank Siegert <frank.siegert@cern.ch>
+References:
+ - arXiv:1107.2092
+RunInfo:
+  Pure QCD, inclusive enough for jet pT down to 60 GeV.
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [0]
+Description:
+  'Inclusive multi-jet production is studied using an integrated luminosity of
+  2.4 pb-1. Results on multi-jet cross sections are presented differential
+  in pT of the four leading jets, HT. Additionally three-to-two jet fractions
+  are presented differential in different observables.
+  Jets are anti-$k_t$ with $R=0.4$ and $R=0.6$, $p_\perp>80(60)$ GeV and $|\eta|<2.8$.'
+NeedCrossSection: yes
+BibKey: Aad:2011tqa
+BibTeX: '@Article{Aad:2011tqa,
+     author    = "Collaboration, ATLAS",
+     title     = "{Measurement of multi-jet cross sections in proton-proton
+                  collisions at a 7 TeV center-of-mass energy}",
+     year      = "2011",
+     eprint    = "1107.2092",
+     archivePrefix = "arXiv",
+     primaryClass  =  "hep-ex",
+     SLACcitation  = "%%CITATION = 1107.2092;%%"
+}'
+ToDo:
+ - Validate.

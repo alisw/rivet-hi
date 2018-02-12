@@ -1,0 +1,53 @@
+Name: ZEUS_2001_S4815815
+Year: 2001
+Summary: Dijet photoproduction analysis
+Experiment: ZEUS
+Collider: HERA Run I
+SpiresID: 4815815
+InspireID: 568665
+Status: VALIDATED
+Authors:
+ - Andy Buckley <andy.buckley@cern.ch>
+ - Ilkka Helenius <ilkka.helenius@uni-tuebingen.de>
+ - Jon Butterworth <jmb@hep.ucl.ac.uk>
+References:
+ - Eur.Phys.J.C23:615,2002
+ - DESY 01/220
+ - hep-ex/0112029
+RunInfo:
+  820 GeV protons colliding with 27.5 GeV positrons;
+  Direct and resolved photoproduction of dijets;
+  Leading jet $pT > 14$ GeV, second jet $pT > 11$ GeV;
+  Jet pseudorapidity $-1 < |\eta| < 2.4$
+NumEvents: 1000000
+Beams: [p+, e+]
+Energies: [[820, 27.5]]
+PtCuts: [0]
+Description:
+  ZEUS photoproduction of jets from proton--positron collisions at beam
+  energies of 820~GeV on 27.5~GeV. Photoproduction can either be direct,
+  in which case the photon interacts directly with the parton, or
+  resolved, in which case the photon acts as a source of quarks and
+  gluons. A photon-proton centre of mass energy of between 134~GeV and
+  227~GeV is probed, with values of $x_P$, the fractional momentum of the
+  partons inside the proton, predominantly in the region between 0.01
+  and 0.1. The fractional momentum of the partons from the photon,
+  $x_\gamma$, is in the region 0.1 to 1. Jets are reconstructed in the
+  range $-1 < |\eta| < 2.4$ using the $k_\perp$ algorithm with an $R$
+  parameter of 1.0. The minimum \pT of the leading jet should be greater
+  than 14~GeV, and at least one other jet must have $\pT > 11$~GeV.
+BibKey: Chekanov:2001bw
+BibTeX: '@Article{Chekanov:2001bw,
+     author    = "Chekanov, S. and others",
+ collaboration = "ZEUS",
+     title     = "{Dijet photoproduction at HERA and the structure of the
+                  photon}",
+     journal   = "Eur. Phys. J.",
+     volume    = "C23",
+     year      = "2002",
+     pages     = "615-631",
+     eprint    = "hep-ex/0112029",
+     archivePrefix = "arXiv",
+     doi       = "10.1007/s100520200936",
+     SLACcitation  = "%%CITATION = HEP-EX/0112029;%%"
+}'

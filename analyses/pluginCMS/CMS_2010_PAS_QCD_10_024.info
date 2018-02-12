@@ -1,0 +1,28 @@
+Name: CMS_QCD_10_024
+Year: 2010
+Summary: Pseudorapidity distributions of charged particles at $\sqrt{s} = 0.9$ and 7 TeV
+Experiment: CMS
+Collider: LHC
+#SpiresID:
+Status: VALIDATED
+Authors:
+ - P. Katsas <panagiotis.katsas@cern.ch>
+ - A. Knutsson <albert.knutsson@cern.ch>
+References:
+  - CMS-PAS-QCD-10-024
+  - https://cdsweb.cern.ch/record/1341853?ln=en
+RunInfo:
+  $pp$ collisions at 0.9 and 7\;TeV. Minimum bias events.
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [900, 7000]
+Description:
+  Pseudorapidity distributions of charged particles in $pp$ collisions
+  at $\sqrt{s} = 0.9$ and 7\;TeV with at least one central charged particle.
+BibKey: CMS-PAS-QCD-10-024
+BibTeX: '@article{CMS-PAS-QCD-10-024,
+      title        = "Pseudorapidity distributions of charged particles in $pp$
+                      collisions at $\sqrt{s} = 7\;\TeV$ with at least one central
+                      charged particle",
+      year         = "2011",
+}'

@@ -1,0 +1,43 @@
+Name: ATLAS_2013_I1244522
+Year: 2013
+Summary: Photon + jets
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1244522
+Status: VALIDATED
+Authors:
+ - Josu Cantero <josu.cantero@cern.ch>
+References:
+ - Nucl.Phys. B875 (2013) 483-535
+ - doi:10.1016/j.nuclphysb.2013.07.025
+ - arXiv:1307.6795 [hep-ex]
+RunInfo:
+  p + p -> gamma + jet + X
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [7000]
+PtCuts: [45,40]
+NeedCrossSection: True
+Description:
+  Measurements of isolated photon plus jet production in $pp$ collisions at a centre-of-mass energy of 7~TeV with the  ATLAS detector
+  at the LHC using an integrated luminosity of $37~\text{pb}^{-1}$. Differential cross sections are presented as functions of photon
+  transverse energy, jet transverse momentum and jet rapidity. In addition, the differential cross sections as functions of the 
+  difference between the azimuthal angles of the photon and the jet, the photon-jet invariant mass as well as the scattering angle 
+  in the photon-jet centre-of-mass frame have been measured. 
+BibKey: Aad:2013gaa
+BibTeX: '@article{Aad:2013gaa,
+      author         = "Aad, Georges and others",
+      title          = "{Dynamics of isolated-photon plus jet production in pp
+                        collisions at $\sqrt(s)=7$ TeV with the ATLAS detector}",
+      collaboration  = "ATLAS",
+      journal        = "Nucl.Phys.",
+      volume         = "B875",
+      pages          = "483-535",
+      doi            = "10.1016/j.nuclphysb.2013.07.025",
+      year           = "2013",
+      eprint         = "1307.6795",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2013-092",
+      SLACcitation   = "%%CITATION = ARXIV:1307.6795;%%",
+}'

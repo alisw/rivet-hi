@@ -1,0 +1,43 @@
+Name: CDF_1994_S2952106
+Year: 1994
+Summary: CDF Run I color coherence analysis.
+Experiment: CDF
+Collider: Tevatron Run 1
+SpiresID: 2952106
+InspireID: 374155
+Status: VALIDATED
+Authors:
+ - Lars Sonnenschein <Lars.Sonnenschein@cern.ch>
+ - Andy Buckley <andy.buckley@cern.ch>
+References:
+ - Phys.Rev.D50,5562,1994
+ - doi:10.1103/PhysRevD.50.5562
+RunInfo:
+  QCD events at $\sqrt{s} = 1800$ GeV. Leading jet $\pT_\text{min} = 100$ GeV.
+NumEvents: 1000000
+Beams: [p-, p+]
+Energies: [1800]
+PtCuts: [90]
+Description:
+  CDF Run I color coherence analysis. Events with $\ge 3$ jets are
+  selected and Et distributions of the three highest-pT jets are
+  obtained. The plotted quantities are the $\Delta{R}$ between the 2nd
+  and 3rd leading jets in the pT and pseudorapidity of the 3rd jet, and
+  $\alpha = \mathrm{d}{\eta}/\mathrm{d}{\phi}$, where $\mathrm{d}{\eta}$
+  is the pseudorapidity difference between the 2nd and 3rd jets and
+  $\mathrm{d}{\phi}$ is their azimuthal angle difference.  Since the
+  data has not been detector-corrected, a bin by bin correction is
+  applied, based on the distributions with ideal and CDF simulation as
+  given in the publication.
+BibKey: Abe:1994nj
+BibTeX: '@Article{Abe:1994nj,
+     author    = "Abe, F. and others",
+     collaboration = "CDF",
+     title     = "{Evidence for color coherence in $p\bar{p}$ collisions at $\sqrt{s} = 1.8$ TeV}",
+     journal   = "Phys. Rev.",
+     volume    = "D50",
+     year      = "1994",
+     pages     = "5562-5579",
+     doi       = "10.1103/PhysRevD.50.5562",
+     SLACcitation  = "%%CITATION = PHRVA,D50,5562;%%"
+}'

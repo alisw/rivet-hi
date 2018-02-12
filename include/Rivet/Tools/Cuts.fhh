@@ -1,0 +1,22 @@
+#ifndef RIVET_Cuts_FHH
+#define RIVET_Cuts_FHH
+
+#include <memory>
+
+namespace Rivet {
+
+
+  /// @internal Forward declaration of helper class. Not for end users.
+  class CuttableBase;
+
+  /// @internal Base class for cut objects.
+  /// @note End users should always use the @ref Cut typedef instead.
+  class CutBase;
+
+  /// Main cut object
+  typedef std::shared_ptr<CutBase> Cut;
+
+
+}
+
+#endif

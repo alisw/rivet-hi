@@ -1,0 +1,25 @@
+## These variables need to exist
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+datarootdir=@datarootdir@
+
+## Try to automatically work out the YODA Python path
+YODA_PYTHONPATH="@YODA_PYTHONPATH@"
+test -n "$YODA_PYTHONPATH" || { (which yoda-config > /dev/null) && YODA_PYTHONPATH=`yoda-config --pythonpath`; }
+test -n "$YODA_PYTHONPATH" || echo "yoda-config could not be found: you may need to manually set paths to libYODA and the yoda Python package" 1>&2
+
+export PATH="$exec_prefix/bin:@YODABINPATH@:$PATH"
+export @LIBPATHVARNAME@="@libdir@:@YODALIBPATH@:@HEPMCLIBPATH@:@FASTJETLIBPATH@:@GSLLIBPATH@:$@LIBPATHVARNAME@"
+export PYTHONPATH="@RIVET_PYTHONPATH@:$YODA_PYTHONPATH:$PYTHONPATH"
+
+export TEXMFHOME="@datadir@/Rivet/texmf:$TEXMFHOME"
+export HOMETEXMF="@datadir@/Rivet/texmf:$HOMETEXMF"
+export TEXMFCNF="@datadir@/Rivet/texmf/cnf:$TEXMFCNF"
+export TEXINPUTS="@datadir@/Rivet/texmf/tex//:$TEXINPUTS"
+export LATEXINPUTS="@datadir@/Rivet/texmf/tex//:$LATEXINPUTS"
+
+if (complete &> /dev/null); then
+    test -e "@datadir@/Rivet/rivet-completion" && source "@datadir@/Rivet/rivet-completion"
+fi
+
+unset YODA_PYTHONPATH

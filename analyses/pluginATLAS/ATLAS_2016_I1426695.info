@@ -1,0 +1,46 @@
+Name: ATLAS_2016_I1426695
+Year: 2016
+Summary: Track-based minimum bias at 8 TeV
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1426695
+Status: VALIDATED
+Authors:
+ - Roman Lysak <roman.lysak@cern.ch>
+References:
+ - Eur.Phys.J. C76 (2016) no.7, 403
+ - doi:10.1140/epjc/s10052-016-4203-9
+ - arXiv:1603.02439 [hep-ex]
+RunInfo:
+  $pp$ QCD interactions at 8 TeV. Diffractive events should
+  be included. Multiple kinematic cuts should not be required.
+Beams: [p+, p+]
+Energies: [8000]
+PtCuts: [0.1, 0.5] 
+Description:
+    This paper presents measurements of distributions of charged particles which are produced in proton-proton collisions at a
+    centre-of-mass energy of $\sqrt{s} = 8$ TeV and recorded by the ATLAS detector at the LHC. A special dataset recorded in 2012 
+    with a small number of interactions per beam crossing (below 0.004) and corresponding to an integrated luminosity of 
+    160 $\mu\text{b}^{-1}$ was used. A minimum-bias trigger was utilised to select a data sample of more than 9 million collision 
+    events. The multiplicity, pseudorapidity, and transverse momentum distributions of charged particles are shown in different 
+    regions of kinematics and charged-particle multiplicity, including measurements of final states at high multiplicity. The results are
+    corrected for detector effects and are compared to the predictions of various Monte Carlo event generator models which simulate
+    the full hadronic final state.
+BibKey: Aad:2016xww
+BibTeX: '@article{Aad:2016xww,
+      author         = "Aad, Georges and others",
+      title          = "{Charged-particle distributions in $pp$ interactions at
+                        $\sqrt{s}=$ 8 TeV measured with the ATLAS detector}",
+      collaboration  = "ATLAS",
+      journal        = "Eur. Phys. J.",
+      volume         = "C76",
+      year           = "2016",
+      number         = "7",
+      pages          = "403",
+      doi            = "10.1140/epjc/s10052-016-4203-9",
+      eprint         = "1603.02439",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-EP-2016-020",
+      SLACcitation   = "%%CITATION = ARXIV:1603.02439;%%"
+}'

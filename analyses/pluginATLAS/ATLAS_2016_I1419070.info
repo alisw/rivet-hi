@@ -1,0 +1,46 @@
+Name: ATLAS_2016_I1419070
+Year: 2016
+Summary: Number of tracks in jets
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1419070
+Status: VALIDATED
+Authors:
+ - Ben Nachman <ibenjamin.philip.nachman@cern.ch>
+ - Christian Gutschow <chris.g@cern.ch>
+References:
+ - arXiv:1602.00988 [hep-ex]
+ - Eur.Phys.J. C76 (2016) no.6, 322
+ - doi:10.1140/epjc/s10052-016-4126-5
+RunInfo:
+  dijet production
+Beams: [p+, p+]
+Energies: [8000]
+PtCuts: [25]
+NeedCrossSection: False
+Description:
+  The number of charged particles inside jets is a widely used discriminant for identifying the quark or gluon nature of the
+  initiating parton and is sensitive to both the perturbative and non-perturbative components of fragmentation. This analysis
+  presents a measurement of the average number of charged particles with $p_\text{T}>500$ MeV inside high-momentum jets in dijet 
+  events using 20.3 fb${}^{-1}$ of data recorded with the ATLAS detector in $pp$ collisions at $\sqrt{s}=8$ TeV collisions at the
+  LHC. The jets considered have transverse momenta from 50 GeV up to and beyond 1.5 TeV. The reconstructed charged-particle track 
+  multiplicity distribution is unfolded to remove distortions from detector effects.
+BibKey: Aad:2016oit
+BibTeX: '@article{Aad:2016oit,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of the charged-particle multiplicity inside
+                        jets from $\sqrt{s}=8$ TeV $pp$ collisions with the ATLAS
+                        detector}",
+      collaboration  = "ATLAS",
+      journal        = "Eur. Phys. J.",
+      volume         = "C76",
+      year           = "2016",
+      number         = "6",
+      pages          = "322",
+      doi            = "10.1140/epjc/s10052-016-4126-5",
+      eprint         = "1602.00988",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2016-001, CERN-EP-2016-001",
+      SLACcitation   = "%%CITATION = ARXIV:1602.00988;%%"
+}'

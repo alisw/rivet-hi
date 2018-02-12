@@ -1,0 +1,46 @@
+Name: ATLAS_2016_I1468168
+Year: 2016
+Summary: Dileptonic $e \mu$ $t\bar{t}$ early cross-section measurement at 13~TeV
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1468168
+Status: VALIDATED
+Authors:
+ - Tom Neep <tom.neep@cern.ch>
+ - Barbara Alvarez Gonzalez <barbara.alvarez.gonzalez@cern.ch>
+ - Yang Qin <yang.qin@cern.ch>
+References:
+ - Submitted to PLB
+ - arXiv:1606.02699 [hep-ex]
+RunInfo:
+  $t\bar{t}$ production
+Beams: [p+, p+]
+Energies: [13000]
+PtCuts: [25,25]
+NeedCrossSection: True
+Description:
+     'This paper describes a measurement of the inclusive top quark pair production cross-section ($\sigma_{t\bar{t}}$) with a data
+     sample of 3.2~fb${}^{-1}$ of proton-proton collisions at a centre-of-mass energy of $\sqrt{s}=13$~TeV, collected in 2015 by the
+     ATLAS detector at the LHC. This measurement uses events with an opposite-charge electron-muon pair in the final state. Jets
+     containing $b$-quarks are tagged using an algorithm based on track impact parameters and reconstructed secondary vertices. The
+     numbers of events with exactly one and exactly two $b$-tagged jets are counted and used to determine simultaneously
+     $\sigma_{t\bar{t}}$ and the efficiency to reconstruct and $b$-tag a jet from a top quark decay, thereby minimising the associated
+     systematic uncertainties. The cross-section is measured to be: $\sigma_{t\bar{t}} = 818 \pm 8$ (stat) $\pm 27$ (syst) $\pm 19$
+     (lumi) $\pm 12$ (beam) pb, where the four uncertainties arise from data statistics, experimental and theoretical systematic effects,
+     the integrated luminosity and the LHC beam energy, giving a total relative uncertainty of 4.4\%. The result is consistent with
+     theoretical QCD calculations at next-to-next-to-leading order. A fiducial measurement corresponding to the experimental acceptance
+     of the leptons is also presented.'
+BibKey: Aaboud:2016pbd
+BibTeX: '@article{Aaboud:2016pbd,
+      author         = "Aaboud, Morad and others",
+      title          = "{Measurement of the $t\bar{t}$ production cross-section
+                        using $e\mu$ events with $b$-tagged jets in $pp$ collisions at
+                        $\sqrt{s}=13$~TeV with the ATLAS detector}",
+      collaboration  = "ATLAS",
+      year           = "2016",
+      eprint         = "1606.02699",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-EP-2016-088",
+      SLACcitation   = "%%CITATION = ARXIV:1606.02699;%%"
+}'

@@ -1,0 +1,52 @@
+Name: CMS_2016_I1430892
+Year: 2016
+Summary: Measurements of ttbar charge asymmetry using dilepton final states in pp collisions at sqrt(s) = 8 TeV
+Experiment: CMS
+Collider: LHC
+InspireID: 1430892
+Status: VALIDATED
+Authors:
+ - Jacob Linacre <jacob.linacre@cern.ch>
+References:
+ - Phys. Lett. B 760 (2016) 365
+ - DOI:10.1016/j.physletb.2016.07.006
+ - arXiv:1603.06221
+ - https://hepdata.net/record/ins1430892
+RunInfo: 'Dilepton ttbar events at $\sqrt{s}=8\;\TeV$, where the leptons are prompt elecrons or muons (not from tau). No other cuts. All but one of the variables require top quarks in the event record.'
+NeedCrossSection: no
+Luminosity: 19.5/fb
+Beams: [p+, p+]
+Energies: [8000]
+Description:
+  '
+  $\textbf{Abstract:}$
+  The charge asymmetry in $\mathrm{t\bar{t}}$ events is measured using dilepton final states produced in pp collisions at the LHC at $\sqrt{s}=8\:$TeV. The data sample, collected with the CMS detector, corresponds to an integrated luminosity of 19.5 $\mathrm{fb^{-1}}$. The measurements are performed using events with two oppositely charged leptons (electrons or muons) and two or more jets, where at least one of the jets is identified as originating from a bottom quark. The charge asymmetry is measured from differences in kinematic distributions, unfolded to the parton level, of positively and negatively charged top quarks and leptons. The $\mathrm{t\bar{t}}$ and leptonic charge asymmetries are found to be 0.011 +/- 0.011 (stat) +/- 0.007 (syst) and 0.003 +/- 0.006 (stat) +/- 0.003 (syst), respectively. These results, as well as charge asymmetry measurements made as a function of $\mathrm{t\bar{t}}$ system kinematic properties, are in agreement with predictions of the standard model.
+
+  $\textbf{Particle-level addition to Rivet routine:}$
+  While the analysis was performed at the parton-level only, $\Delta|\eta_{\ell}|$ is a purely leptonic variable and it has been checked that the results of the analysis would have been essentially unchanged had it been defined at particle-level using dressed leptons instead of using the parton-level top quark daughter leptons. We therefore include both particle- and parton-level versions of this distribution in the Rivet routine, with the former identified in the plot title. For same-flavour dilepton final states, the particle-level definition in the full phase space is problematic because the two leptons can come from fully-hadronic $\mathrm{t\bar{t}}$ plus a dilepton pair from radiation. Such pairs have invariant mass $M_{\ell\ell}\sim 0$ and produce a peak near zero in the $\Delta|\eta_{\ell}|$ distribution. We therefore select only the $\mathrm{t\bar{t}}\to e\mu$ final state, by requiring exactly one electron and exactly one muon. Note this means $\mathrm{t\bar{t}}\to e\mu$ events with additional dilepton pairs from radiation are vetoed. For PYTHIA8 this amounts to ~0.5% of $\mathrm{t\bar{t}}\to e\mu$ events - well below the level of sensitivity of the measured distribution.
+
+  $\textbf{Histograms and covariance matrices:}$
+  The error bars in the measured distributions should not be used for fitting because there are significant correlations between bins.  
+  The covariance matrices for the statistical and systematic uncertainties in each distribution can be found in hepdata. The single-differential cross sections in hepdata are normalised to unit area (i.e. the integral is equal to one), while the double-differential cross sections in hepdata are normalised to the sum of entries (such that the sum of all bin heights is equal to one). This should be taken into account when comparing the measured distributions to the Rivet results and when using the covariance matrices.
+
+  $\textbf{Underflow and overflow bins:}$
+  The lower and upper $\Delta|y_\mathrm{t}|$ and $\Delta|\eta_{\ell}|$ bins (starting and ending at -2 and +2, respectively) contain underflow and overflow events, i.e. the complete distribution from -infinity to +infinity is covered. Similarly, the upper $M_\mathrm{t\bar{t}}$, $p_\mathrm{T}^\mathrm{t\bar{t}}$, and $\left|y_\mathrm{t\bar{t}}\right|$ bins contain overflow events up to +infinity.
+  '
+BibKey: Khachatryan:2016ysn
+BibTeX: '@article{Khachatryan:2016ysn,
+      author         = "Khachatryan, Vardan and others",
+      title          = "{Measurements of $t \bar t$ charge asymmetry using
+                        dilepton final states in pp collisions at $\sqrt s=8$
+                        TeV}",
+      collaboration  = "CMS",
+      journal        = "Phys. Lett.",
+      volume         = "B760",
+      year           = "2016",
+      pages          = "365-386",
+      doi            = "10.1016/j.physletb.2016.07.006",
+      eprint         = "1603.06221",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-TOP-15-009, CERN-EP-2016-059",
+      SLACcitation   = "%%CITATION = ARXIV:1603.06221;%%"
+}'

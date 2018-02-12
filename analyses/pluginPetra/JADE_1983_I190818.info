@@ -1,0 +1,34 @@
+Name: JADE_1983_I190818
+Year: 1983
+Summary: Hadronic charged multiplicity measurement between 12 and 35 GeV
+Experiment: JADE
+Collider: PETRA
+InspireID: 190818
+Status: VALIDATED
+Authors:
+ - Peter Richardson <peter.richardson@durham.ac.uk>
+References:
+- Z.Phys. C20 (1983) 187
+RunInfo: 
+  Hadronic e+ e- events generated below the Z pole
+NumEvents: 1000000
+Beams: [e+, e-]
+Energies: [12.,30.,35.]
+PtCuts: [0]
+Description:
+  The charged particle multiplicity distribution of hadronic $e^+e^-$ events
+  as measured between 12 and 35 GeV using the JADE detector at
+  PETRA.
+BibKey: Bartel:1983qp
+BibTeX: '@article{Bartel:1983qp,
+      author         = "Bartel, W. and others",
+      title          = "{Charged Particle and Neutral Kaon Production in e+ e-
+                        Annihilation at PETRA}",
+      collaboration  = "JADE",
+      journal        = "Z. Phys.",
+      volume         = "C20",
+      year           = "1983",
+      pages          = "187",
+      reportNumber   = "DESY-83-042",
+      SLACcitation   = "%%CITATION = ZEPYA,C20,187;%%"
+}'

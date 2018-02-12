@@ -1,0 +1,47 @@
+Name: ATLAS_2014_I1306615
+Year: 2014
+Summary: Higgs diphoton events at 8 TeV in ATLAS
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1306615
+Status: VALIDATED
+Authors:
+ - Michaela Queitsch-Maitland <michaela.queitsch-maitland@cern.ch>
+References:
+ - arXiv:1407.4222
+ - JHEP 09 (2014) 112
+RunInfo:
+  pp Higgs production at 8 TeV, include all processes (ggH, VH, VBF, ttH)
+NumEvents: 1000000
+Beams: [p+, p+]
+Energies: [8000]
+PtCuts: [25]
+NeedsCrossSection: yes
+Description:
+  Measurements of fiducial and differential cross sections are presented for Higgs
+  boson production in proton-proton collisions at a centre-of-mass energy of 8TeV. The 
+  analysis is performed in the Higgs diphoton decay channel using 20.3/fb of data 
+  recorded by the ATLAS experiment at the CERN Large Hadron Collider.  The signal 
+  yields are corrected for the effects of detector inefficiency and resolution. 
+  Differential cross sections are also presented, as a function of variables 
+  related to the diphoton kinematics and the jet activity produced in the Higgs 
+  boson events. The observed spectra are statistically limited but
+  broadly in line with the theoretical expectations.
+BibKey: Aad:2014lwa
+BibTeX: '@article{Aad:2014lwa,
+      author         = "Aad, Georges and others",
+      title          = "{Measurements of fiducial and differential cross sections
+                        for Higgs boson production in the diphoton decay channel
+                        at $\sqrt{s}=8$ TeV with ATLAS}",
+      collaboration  = "ATLAS Collaboration",
+      journal        = "JHEP",
+      volume         = "1409",
+      pages          = "112",
+      doi            = "10.1007/JHEP09(2014)112",
+      year           = "2014",
+      eprint         = "1407.4222",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2014-148",
+      SLACcitation   = "%%CITATION = ARXIV:1407.4222;%%",
+}'

@@ -1,0 +1,34 @@
+Name: ATLAS_2012_I1082936
+Year: 2012
+Summary: Inclusive jet and dijet cross sections at 7 TeV
+Experiment: ATLAS
+Collider: LHC
+InspireID: 1082936
+Status: VALIDATED
+Authors:
+ - Holger Schulz hschulz@physik.hu-berlin.de
+References:
+ - arXiv:1112.6297v2 [hep-ex]
+ - CERN-PH-EP-2011-192
+RunInfo:
+  QCD jet production with a minimum leading jet pT of 30 GeV and minimum second jet pT of 20 GeV at 7 TeV.
+NumEvents: 1000000
+NeedCrossSection: no
+Beams: [p+, p+]
+Energies: [[3500, 3500]]
+PtCuts: [15]
+NeedCrossSection: True
+Description:
+  'Inclusive jet and dijet cross sections have been measured in proton-proton collisions at a centre-of-mass energy of 7 TeV using the ATLAS detector at the Large Hadron Collider. The cross sections were measured using jets clustered with the anti-kT algorithm with parameters R=0.4 and R=0.6. These measurements are based on the 2010 data sample, consisting of a total integrated luminosity of 37 inverse picobarns. Inclusive jet double-differential cross sections are presented as a function of jet transverse momentum, in bins of jet rapidity. Dijet double-differential cross sections are studied as a function of the dijet invariant mass, in bins of half the rapidity separation of the two leading jets. The measurements are performed in the jet rapidity range $|y|<4.4$, covering jet transverse momenta from 20 GeV to 1.5 TeV and dijet invariant masses from 70 GeV to 5 TeV. This is the successor analysis of ATLAS_2010_S8817804'
+BibKey: Aad:2011fc
+BibTeX: '@article{Aad:2011fc,
+      author         = "Aad, Georges and others",
+      title          = "{Measurement of inclusive jet and dijet production in $pp$ collisions at $\sqrt{s} = 7$ TeV using the ATLAS detector}",
+      collaboration  = "ATLAS Collaboration",
+      year           = "2011",
+      eprint         = "1112.6297",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CERN-PH-EP-2011-192",
+      SLACcitation   = "%%CITATION = ARXIV:1112.6297;%%",
+}'

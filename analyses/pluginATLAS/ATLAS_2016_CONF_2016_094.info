@@ -1,0 +1,18 @@
+Name: ATLAS_2016_CONF_2016_094
+Year: 2016
+Summary: ATLAS 2016 1-lepton + many jets SUSY search at 13~\TeV, from 14.8/fb CONF note
+Experiment: ATLAS
+Collider: LHC
+Status: UNVALIDATED
+Authors:
+ - Andy Buckley <andy.buckley@cern.ch>
+RunInfo: BSM signal events
+NumEvents: 100000
+NeedCrossSection: no
+Beams: [p+, p+]
+Energies: [13000]
+Description:
+  'A search for new phenomena in final states characterized by high jet multiplicity,
+  an isolated lepton (electron or muon), and either zero or at least three $b$-tagged
+  jets is. The search uses 14.8/fb of $\sqrt{s} = 13~\TeV$ proton--proton collision
+  data collected by the ATLAS experiment at the Large Hadron Collider in 2015 and 2016.'

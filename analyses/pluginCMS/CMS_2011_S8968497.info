@@ -1,0 +1,39 @@
+Name: CMS_2011_S8968497
+Year: 2011
+Summary: Measurement of dijet angular distributions and search for quark compositeness in $pp$ collisions at $\sqrt{s} = 7$ TeV
+Experiment: CMS
+Collider: LHC
+SpiresID: 8968497
+InspireID: 889175
+Status: VALIDATED
+Authors:
+ - A. Hinzmann
+References:
+ - Phys.Rev.Lett.106:201804,2011
+ - doi:10.1103/PhysRevLett.106.201804
+ - arXiv:hep-ex/1102.2020
+Beams: [p+, p+]
+Energies: [7000]
+RunInfo: QCD dijet events
+Description:
+   Measurement of dijet angular distributions in proton-proton collisions at a
+   center-of-mass energy of 7 TeV. The data sample, collected with single jet
+   triggers, has a total integrated luminosity of 36 pb$^{-1}$, with jets being
+   reconstructed using the anti-$k_t$ clustering algorithm with $R=0.5$. The data
+   are presented for the variable $\chi$ defined as $\chi = \exp(|y_1 - y_2|)$
+   where $y_1$ and $y_2$ are the rapidities of the two leading (highest $\pT$) jets.'
+BibKey: Khachatryan:2011as
+BibTeX: '@Article{Khachatryan:2011as,
+     author    = "Khachatryan, Vardan and others",
+     collaboration = "CMS",
+     title     = "{Measurement of Dijet Angular Distributions and Search for Quark Compositeness in pp Collisions at 7 TeV}",
+     journal   = "Phys. Rev. Lett.",
+     volume    = "106",
+     year      = "2011",
+     pages     = "201804",
+     eprint    = "1102.2020",
+     archivePrefix = "arXiv",
+     primaryClass  =  "hep-ex",
+     doi       = "10.1103/PhysRevLett.106.201804",
+     SLACcitation  = "%%CITATION = 1102.2020;%%"
+}'

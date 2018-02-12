@@ -1,0 +1,34 @@
+Name: ARGUS_1993_S2653028
+Summary: Inclusive production of charged pions, kaons and protons in $\Upsilon(4S)$ decays.
+Status: VALIDATED
+Authors:
+ - Peter Richardson <Peter.Richardson@durham.ac.uk>
+References:
+ - Z.Phys. C58 (1993) 191-198
+RunInfo:
+  $e^+ e^-$ analysis on the $\Upsilon(4S)$ resonance.
+NumEvents: 1000000
+SpiresID: 2653028
+InspireID: 340894
+Beams: [e+, e-]
+Energies: [10.58]
+PtCuts: [0]
+Description: Measurement of inclusive production of charged pions, kaons and protons
+ from $\Upsilon(4S)$ decays. Kaon spectra are determined in two different ways using
+ particle identification and detecting decays in-flight. 
+ Results are background continuum subtracted. This analysis is useful for
+ tuning $B$ meson decay modes.
+BibKey: Albrecht:1992qf
+BibTeX: '@article{Albrecht:1992qf,
+      author         = "Albrecht, H. and others",
+      title          = "{Inclusive production of charged pions, kaons and protons
+                        in upsilon (4S) decays}",
+      collaboration  = "ARGUS Collaboration",
+      journal        = "Z.Phys.",
+      volume         = "C58",
+      pages          = "191-198",
+      doi            = "10.1007/BF01560337",
+      year           = "1993",
+      reportNumber   = "DESY-92-155",
+      SLACcitation   = "%%CITATION = ZEPYA,C58,191;%%",
+}'

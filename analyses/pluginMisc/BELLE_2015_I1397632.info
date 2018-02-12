@@ -1,0 +1,37 @@
+Name: BELLE_2015_I1397632
+Year: 2015
+Summary: Exclusive semileptonic B to D decays.
+Experiment: BELLE
+Collider: KEKB
+InspireID: 1397632
+Status: VALIDATED
+Authors:
+ - Holger Schulz <holger.schulz@cern.ch>
+RunInfo:
+  Events with B-decays, either particle guns or collisions.
+Keywords:
+ - bdecays
+ - semileptonic
+NumEvents: 10000
+NeedCrossSection: no
+Description:
+  'Implementation of Lorentz invariant recoil w distributions for semileptonic B decays'
+BibKey: Glattauer:2015teq
+BibTeX: '@article{Glattauer:2015teq,
+      author         = "Glattauer, R. and others",
+      title          = "{Measurement of the decay $B\to D\ell\nu_\ell$ in fully
+                        reconstructed events and determination of the
+                        Cabibbo-Kobayashi-Maskawa matrix element $|V_{cb}|$}",
+      collaboration  = "Belle",
+      journal        = "Phys. Rev.",
+      volume         = "D93",
+      year           = "2016",
+      number         = "3",
+      pages          = "032006",
+      doi            = "10.1103/PhysRevD.93.032006",
+      eprint         = "1510.03657",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "BELLE-PREPRINT-2015-16, KEK-PREPRINT-2015-43",
+      SLACcitation   = "%%CITATION = ARXIV:1510.03657;%%"
+}'
