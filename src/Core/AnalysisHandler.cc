@@ -171,6 +171,28 @@ namespace Rivet {
     cout << "Please acknowledge plots made with Rivet analyses, and cite arXiv:1003.0694 (http://arxiv.org/abs/1003.0694)" << endl;
   }
 
+  void AnalysisHandler::post() {
+    MSG_INFO("Post-processing analyses");
+    for (AnaHandle a : _analyses) {
+      if( !_initialised ) {
+        MSG_INFO( "No MC running: The post-processing is based on YODA files only." );
+        try {
+          a->_allowProjReg = true;
+          a->init();
+        } catch( const Error& err ) {
+          MSG_ERROR( "Unexpected error in " << a->name() << "::init() during the initialisation for the post-processing: " << err.what() );
+          exit(1);
+        }
+      }
+      try {
+        a->post();
+      } catch (const Error& err) {
+        MSG_ERROR("Unexpected error in post() in analysis " << a->name() );
+      }
+    }
+    MSG_INFO("Post-processing finished");
+  }
+
 
   AnalysisHandler& AnalysisHandler::addAnalysis(const string& analysisname) {
     // Check for a duplicate analysis

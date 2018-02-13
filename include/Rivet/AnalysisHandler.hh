@@ -196,6 +196,11 @@ namespace Rivet {
     /// functions of all included analysis objects.
     void finalize();
 
+    /// Function for postprocessing is introduced. This allows for further processing
+    /// e. g. additional analyses which were done in the past but should be included
+    /// in a certain analysis in one way or the other
+    void post();
+
     //@}
 
 
