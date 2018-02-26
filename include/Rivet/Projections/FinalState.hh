@@ -48,6 +48,9 @@ namespace Rivet {
     /// @todo Rename to _accept or acceptFinal?
     virtual bool accept(const Particle& p) const;
 
+    /// Get the cut object
+    virtual Cut getCuts() const { return _cuts; }
+
   };
 
 

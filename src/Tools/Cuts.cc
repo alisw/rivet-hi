@@ -32,6 +32,10 @@ namespace Rivet {
       std::shared_ptr<Open_Cut> cc = dynamic_pointer_cast<Open_Cut>(c);
       return bool(cc);
     }
+    // Description method for open cut
+    virtual std::string description() const {
+      return "true";
+    }
   protected:
     // open cut accepts everything
     bool _accept(const CuttableBase&) const { return true; }
@@ -57,6 +61,10 @@ namespace Rivet {
       std::shared_ptr<Cut_Eq> cc = dynamic_pointer_cast<Cut_Eq>(c);
       return cc  &&  _qty == cc->_qty  &&  _val == cc->_val;
     }
+    // Description method for ==
+    virtual std::string description() const {
+      return "(" + toString(_qty) + " == " + toString(_val) + ")";
+    }
   protected:
     bool _accept(const CuttableBase& o) const { return o.getValue(_qty) == _val; }
   private:
@@ -72,6 +80,10 @@ namespace Rivet {
     bool operator==(const Cut& c) const {
       std::shared_ptr<Cut_NEq> cc = dynamic_pointer_cast<Cut_NEq>(c);
       return cc  &&  _qty == cc->_qty  &&  _val == cc->_val;
+    }
+    // Description method for !=
+    virtual std::string description() const {
+      return "(" + toString(_qty) + " != " + toString(_val) + ")";
     }
   protected:
     bool _accept(const CuttableBase& o) const { return o.getValue(_qty) != _val; }
@@ -89,6 +101,10 @@ namespace Rivet {
       std::shared_ptr<Cut_GtrEq> cc = dynamic_pointer_cast<Cut_GtrEq>(c);
       return cc && _qty == cc->_qty  &&  _val == cc->_val;
     }
+    // Description method for >=
+    virtual std::string description() const {
+      return "(" + toString(_qty) + " >= " + toString(_val) + ")";
+    }
   protected:
     bool _accept(const CuttableBase& o) const { return o.getValue(_qty) >= _val; }
   private:
@@ -104,6 +120,10 @@ namespace Rivet {
     bool operator==(const Cut& c) const {
       std::shared_ptr<Cut_Less> cc = dynamic_pointer_cast<Cut_Less>(c);
       return cc  && _qty == cc->_qty  &&  _val == cc->_val;
+    }
+    // Description method for <
+    virtual std::string description() const {
+      return "(" + toString(_qty) + " < " + toString(_val) + ")";
     }
   protected:
     bool _accept(const CuttableBase& o) const { return o.getValue(_qty) < _val; }
@@ -121,6 +141,10 @@ namespace Rivet {
       std::shared_ptr<Cut_Gtr> cc = dynamic_pointer_cast<Cut_Gtr>(c);
       return cc && _qty == cc->_qty  &&  _val == cc->_val;
     }
+    // Description method for >
+    virtual std::string description() const {
+      return "(" + toString(_qty) + " > " + toString(_val) + ")";
+    }
   protected:
     bool _accept(const CuttableBase& o) const { return o.getValue(_qty) > _val; }
   private:
@@ -136,6 +160,10 @@ namespace Rivet {
     bool operator==(const Cut& c) const {
       std::shared_ptr<Cut_LessEq> cc = dynamic_pointer_cast<Cut_LessEq>(c);
       return cc && _qty == cc->_qty  &&  _val == cc->_val;
+    }
+    // Description method for <=
+    virtual std::string description() const {
+      return "(" + toString(_qty) + " <= " + toString(_val) + ")";
     }
   protected:
     bool _accept(const CuttableBase& o) const { return o.getValue(_qty) <= _val; }
@@ -193,6 +221,10 @@ namespace Rivet {
       return cc && (   ( cut1 == cc->cut1  &&  cut2 == cc->cut2 )
                        || ( cut1 == cc->cut2  &&  cut2 == cc->cut1 ));
     }
+    // Description method
+    std::string description() const {
+      return "(" + cut1->description() + " || " + cut2->description() + ")";
+    }
   protected:
     bool _accept(const CuttableBase& o) const {
       return cut1->accept(o) || cut2->accept(o);
@@ -211,6 +243,10 @@ namespace Rivet {
       return cc && (   ( cut1 == cc->cut1  &&  cut2 == cc->cut2 )
                        || ( cut1 == cc->cut2  &&  cut2 == cc->cut1 ));
     }
+    // Description method
+    std::string description() const {
+      return "(" + cut1->description() + " && " + cut2->description() + ")";
+    }
   protected:
     bool _accept(const CuttableBase& o) const {
       return cut1->accept(o) && cut2->accept(o);
@@ -228,6 +264,10 @@ namespace Rivet {
       std::shared_ptr<CutInvert> cc = dynamic_pointer_cast<CutInvert>(c);
       return cc && cut == cc->cut;
     }
+    // Description method
+    std::string description() const {
+      return "(!" + cut->description() + ")";
+    }
   protected:
     bool _accept(const CuttableBase& o) const {
       return !cut->accept(o);
@@ -244,6 +284,10 @@ namespace Rivet {
       std::shared_ptr<CutsXor> cc = dynamic_pointer_cast<CutsXor>(c);
       return cc && (   ( cut1 == cc->cut1  &&  cut2 == cc->cut2 )
                        || ( cut1 == cc->cut2  &&  cut2 == cc->cut1 ));
+    }
+    // Description method
+    std::string description() const {
+      return "(" + cut1->description() + " XOR " + cut2->description() + ")";
     }
   protected:
     bool _accept(const CuttableBase& o) const {
@@ -449,5 +493,34 @@ namespace Rivet {
 
   SPECIALISE_ACCEPT(HepMC::FourVector)
 
+  // Get the name of quantity used in cut
+  std::string toString(Cuts::Quantity qty) {
+    switch (qty) {
+    case Cuts::pT         : return "pT";
+    case Cuts::Et         : return "Et";
+    case Cuts::mass       : return "mass";
+    case Cuts::rap        : return "rap";
+    case Cuts::absrap     : return "absrap";
+    case Cuts::eta        : return "eta";
+    case Cuts::abseta     : return "abseta";
+    case Cuts::phi        : return "phi";
+    case Cuts::pid        : return "pid";
+    case Cuts::abspid     : return "abspid";
+    case Cuts::charge     : return "charge";
+    case Cuts::abscharge  : return "abscharge";
+    case Cuts::charge3    : return "charge3";
+    case Cuts::abscharge3 : return "abscharge3";
+    default: qty_not_found();
+    }
+    return "unknown";
+  }
+
+  // Convert the quantity value to string with a specified precision
+  std::string toString(double val) {
+    std::stringstream buff;
+    buff << std::setprecision(3);
+    buff << val;
+    return buff.str();
+  }
 
 }

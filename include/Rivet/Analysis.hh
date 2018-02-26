@@ -93,6 +93,15 @@ namespace Rivet {
     /// function.
     virtual void finalize() { }
 
+    /// A new method for postprocessing analyses is introduced.
+    /// This function can be called to handle e. g. merging analyses from
+    /// different runs. Besides finalize() this method can be called as
+    /// often as wanted because it only depends on finished processed
+    /// histograms which stay itself untouched but are used to produce
+    /// further output. This method is virtual because it is considered
+    /// to be overwritten in inherited classes.
+    virtual void post() { }
+
     //@}
 
 
