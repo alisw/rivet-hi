@@ -1,5 +1,6 @@
 #! /usr/bin/env python
 
+from __future__ import print_function
 import sys, os, re
 
 ## Get output filename
@@ -8,7 +9,7 @@ if len(sys.argv) >= 2:
     OUTFILE = sys.argv[1]
 if not OUTFILE.endswith(".json"):
     OUTFILE += ".json"
-print "Using output file name '%s'" % OUTFILE
+print("Using output file name '%s'" % OUTFILE)
 
 ## Add the rivet Python module build dir(s) to the Python module path, then import
 pybuild = os.path.abspath(os.path.join(os.getcwd(), "..", "pyext", "build"))

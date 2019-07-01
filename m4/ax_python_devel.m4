@@ -119,7 +119,7 @@ to something else than an empty string.
         cat << EOF > ax_python_devel_vpy.py
 class VPy:
     def vtup(self, s):
-        return map(int, s.strip().split("."))
+        return tuple(map(int, s.strip().split(".")))
     def __init__(self):
         import platform
         self.vpy = self.vtup(platform.python_version())
